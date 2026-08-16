@@ -51,7 +51,7 @@ export const EmptyTranslationsIllustration = () => {
       <rect x="10.2588" y="96" width="50" height="5" rx="2.5" fill="url(#paint17_linear_640_550983)" />
       <path
         d="M208.259 57H188.453C187.515 57 186.616 56.7893 185.953 56.4142C185.29 56.0391 184.918 55.5304 184.918 55V23C184.918 22.4696 184.546 21.9609 183.883 21.5858C183.22 21.2107 182.321 21 181.383 21H132.259"
-        stroke="#DD2450"
+        stroke="#8444df"
         strokeWidth="0.5"
         strokeLinejoin="round"
         strokeDasharray="4 4"
@@ -65,7 +65,7 @@ export const EmptyTranslationsIllustration = () => {
       />
       <path
         d="M208.259 57H188.453C187.515 57 186.616 57.2107 185.953 57.5858C185.29 57.9609 184.918 58.4696 184.918 59V91C184.918 91.5304 184.546 92.0391 183.883 92.4142C183.22 92.7893 182.321 93 181.383 93H132.259"
-        stroke="#DD2450"
+        stroke="#8444df"
         strokeWidth="0.5"
         strokeLinejoin="round"
         strokeDasharray="4 4"
@@ -79,14 +79,14 @@ export const EmptyTranslationsIllustration = () => {
       />
       <path
         d="M208.741 57H228.547C229.484 57 230.384 56.7893 231.046 56.4142C231.709 56.0391 232.082 55.5304 232.082 55V23C232.082 22.4696 232.454 21.9609 233.117 21.5858C233.78 21.2107 234.679 21 235.617 21H284.741"
-        stroke="#DD2450"
+        stroke="#8444df"
         strokeWidth="0.5"
         strokeLinejoin="round"
         strokeDasharray="4 4"
       />
       <path
         d="M208.741 57H228.547C229.484 57 230.384 57.2107 231.046 57.5858C231.709 57.9609 232.082 58.4696 232.082 59V91C232.082 91.5304 232.454 92.0391 233.117 92.4142C233.78 92.7893 234.679 93 235.617 93H284.741"
-        stroke="#DD2450"
+        stroke="#8444df"
         strokeWidth="0.5"
         strokeLinejoin="round"
         strokeDasharray="4 4"
@@ -148,7 +148,7 @@ export const EmptyTranslationsIllustration = () => {
       <rect x="362.741" y="92" width="44" height="5" rx="2.5" fill="url(#paint36_linear_640_550983)" />
       <rect x="294.741" y="99" width="50" height="5" rx="2.5" fill="url(#paint37_linear_640_550983)" />
       <rect x="176.874" y="48.375" width="63.25" height="17.25" rx="3.625" fill="white" />
-      <rect x="176.874" y="48.375" width="63.25" height="17.25" rx="3.625" stroke="#DD2450" strokeWidth="0.75" />
+      <rect x="176.874" y="48.375" width="63.25" height="17.25" rx="3.625" stroke="#8444df" strokeWidth="0.75" />
       <rect x="176.874" y="48.375" width="63.25" height="17.25" rx="3.625" stroke="#E1E4EA" strokeWidth="0.75" />
       <rect x="178.874" y="50.375" width="59.25" height="13.25" rx="1.625" fill="white" />
       <rect x="178.874" y="50.375" width="59.25" height="13.25" rx="1.625" stroke="#F2F5F8" strokeWidth="0.75" />

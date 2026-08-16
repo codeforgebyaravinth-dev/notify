@@ -187,8 +187,8 @@ export function InboxPlayground({ appId, subscriberId }: { appId: string; subscr
                 className="px-2.5 text-white disabled:opacity-50"
                 style={{
                   background:
-                    'linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 100%), #DD2450',
-                  boxShadow: '0px 1px 2px rgba(14, 18, 27, 0.24), 0px 0px 0px 1px #DD2450',
+                    'linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 100%), #8444df',
+                  boxShadow: '0px 1px 2px rgba(14, 18, 27, 0.24), 0px 0px 0px 1px #8444df',
                   fontFamily: 'Inter',
                   fontSize: '12px',
                   lineHeight: '16px',

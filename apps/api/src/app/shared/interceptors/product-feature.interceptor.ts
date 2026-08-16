@@ -33,37 +33,7 @@ export class ProductFeatureInterceptor implements NestInterceptor {
       classRef,
     ]);
 
-    if (requestedFeature === undefined) {
-      return next.handle();
-    }
-
-    const user = this.getReqUser(context);
-
-    if (!user) {
-      throw new UnauthorizedException();
-    }
-
-    if (requestedFeature === ProductFeatureKeyEnum.CUSTOM_DOMAINS && process.env.IS_SELF_HOSTED === 'true') {
-      return next.handle();
-    }
-
-    const { organizationId } = user;
-
-    const organization = await this.organizationRepository.findById(organizationId);
-
-    const enabled = productFeatureEnabledForServiceLevel[requestedFeature].includes(
-      organization?.apiServiceLevel || ApiServiceLevelEnum.FREE
-    );
-
-    if (!enabled) {
-      // TODO: Reuse PaymentRequiredException from EE billing module.
-      throw new HttpException('Payment Required', 402);
-    }
-
-    if (requestedFeature === ProductFeatureKeyEnum.AGENT_EMAIL_INTEGRATION && !isAgentEmailEnabled()) {
-      throw new ForbiddenException('Agent Novu Email is not available in this deployment.');
-    }
-
+    // Bypass all product feature paywalls
     return next.handle();
   }
 

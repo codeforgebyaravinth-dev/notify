@@ -60,7 +60,7 @@ export function AgentUsecasePreviewIllustration() {
         rx="7.625"
       />
       <rect width="35.25" height="35.25" x="202.375" y="83.023" fill="#fff" rx="5.625" />
-      <rect width="35.25" height="35.25" x="202.375" y="83.023" stroke="#dd2450" strokeWidth=".75" rx="5.625" />
+      <rect width="35.25" height="35.25" x="202.375" y="83.023" stroke="#8444df" strokeWidth=".75" rx="5.625" />
       <path
         fill="url(#i)"
         fillRule="evenodd"

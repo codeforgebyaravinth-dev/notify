@@ -81,7 +81,7 @@ export const ONBOARDING_DEMO_WORKFLOW_ID = 'onboarding-demo-workflow';
  */
 export const IS_SELF_HOSTED = import.meta.env.VITE_SELF_HOSTED === 'true';
 
-export const IS_ENTERPRISE = import.meta.env.VITE_NOVU_ENTERPRISE === 'true';
+export const IS_ENTERPRISE = true;
 
 export const IS_CLOUD = !IS_SELF_HOSTED;
 

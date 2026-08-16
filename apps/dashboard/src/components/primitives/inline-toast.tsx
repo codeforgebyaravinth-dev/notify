@@ -29,7 +29,7 @@ const VARIANT_COLORS = {
 } as const;
 
 const BUTTON_COLORS = {
-  tip: 'text-[#DD2450]',
+  tip: 'text-[#8444df]',
   warning: 'text-warning',
   'soft-warning': 'text-warning',
   success: 'text-success',

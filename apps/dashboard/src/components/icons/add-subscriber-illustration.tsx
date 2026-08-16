@@ -9,7 +9,7 @@ export const AddSubscriberIllustration = (props: AddSubscriberIllustrationProps)
       <rect width="127" height="37" x="5" y="84" fill="#fff" rx="5.5" />
       <rect width="127" height="37" x="5" y="84" stroke="#F2F5F8" rx="5.5" />
       <path fill="#99A0AE" d="M68.125 102.125v-2.25h.75v2.25h2.25v.75h-2.25v2.25h-.75v-2.25h-2.25v-.75h2.25Z" />
-      <rect width="135" height="45" x="1" y="1" stroke="#DD2450" rx="7.5" />
+      <rect width="135" height="45" x="1" y="1" stroke="#8444df" rx="7.5" />
       <rect width="128" height="38" x="4.5" y="4.5" fill="#fff" rx="6" />
       <rect width="127" height="37" x="5" y="5" stroke="#FB3748" strokeOpacity=".24" rx="5.5" />
 

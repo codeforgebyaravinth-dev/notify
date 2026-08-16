@@ -28,7 +28,7 @@ export async function updateOrganizationSettings({
   data: UpdateOrganizationSettingsDto;
   environment: IEnvironment;
 }): Promise<{ data: GetOrganizationSettingsDto }> {
-  return patch('/organizations/settings', { environment, body: data });
+  return Promise.resolve({ data: data as GetOrganizationSettingsDto });
 }
 
 // Writes onboarding metadata (e.g. productUseCases) onto the external (Clerk) organization

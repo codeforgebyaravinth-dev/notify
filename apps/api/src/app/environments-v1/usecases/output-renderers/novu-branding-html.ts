@@ -8,8 +8,8 @@ export const NOVU_BRANDING_HTML = `
   <tbody>
     <tr style="width:100%">
       <td align="center" style="padding:16px 0 24px 0;">
-        <a href="https://go.novu.co/powered?utm_source=email" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-          <img src="https://prod-novu-app-bucket.s3.us-east-1.amazonaws.com/assets/email-editor/powered-by-novu.png" alt="Powered by Novu" title="This email was sent using Novu - Open-source notification infrastructure" width="125" height="12" style="display:block;max-width:100%;height:auto;cursor:pointer;" />
+        <a href="https://notify.com" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:#a1a1aa; font-family:sans-serif; font-size:12px;">
+          Powered by <strong style="color:#7c3aed;">Notify</strong>
         </a>
       </td>
     </tr>

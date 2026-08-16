@@ -212,8 +212,8 @@ function UsecaseTag({ id }: { id: UsecaseId }) {
       className="inline-flex w-fit items-center gap-0.5 self-start rounded border py-0.5 pl-[3px] pr-[5px] font-mono text-xs font-medium uppercase tracking-tight"
       style={{ backgroundColor: 'rgba(251,55,72,0.1)', borderColor: 'rgba(251,55,72,0.05)' }}
     >
-      <Notification5Fill className="size-3.5 p-px text-[#dd2450]" />
-      <span className="bg-linear-to-br from-[#dd2450] to-[#ff512f] bg-clip-text text-transparent">Notifications</span>
+      <Notification5Fill className="size-3.5 p-px text-[#8444df]" />
+      <span className="bg-linear-to-br from-[#8444df] to-[#ff512f] bg-clip-text text-transparent">Notifications</span>
     </span>
   );
 }

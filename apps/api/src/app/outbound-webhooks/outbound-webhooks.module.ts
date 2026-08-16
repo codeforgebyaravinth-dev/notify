@@ -13,7 +13,7 @@ const cachedOutboundWebhooksRootModule: Partial<Record<'enterprise' | 'community
 
 export const OutboundWebhooksModule = {
   forRoot(): DynamicModule {
-    const isEnterprise = process.env.NOVU_ENTERPRISE === 'true' || process.env.CI_EE_TEST === 'true';
+    const isEnterprise = true;
     const cacheKey = isEnterprise ? 'enterprise' : 'community';
     const hit = cachedOutboundWebhooksRootModule[cacheKey];
 

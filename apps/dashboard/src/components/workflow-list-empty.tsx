@@ -161,7 +161,7 @@ const WorkflowsIllustration = (props: SVGProps<SVGSVGElement>) => {
       <rect width="127" height="37" x="4.5" y="83.5" fill="#fff" rx="5.5" />
       <rect width="127" height="37" x="4.5" y="83.5" stroke="#f2f5f8" rx="5.5" />
       <path fill="#99a0ae" d="M67.625 101.625v-2.25h.75v2.25h2.25v.75h-2.25v2.25h-.75v-2.25h-2.25v-.75z" />
-      <rect width="135" height="45" x=".5" y=".5" stroke="#dd2450" rx="7.5" />
+      <rect width="135" height="45" x=".5" y=".5" stroke="#8444df" rx="7.5" />
       <rect width="128" height="38" x="4" y="4" fill="#fff" rx="6" />
       <rect width="127" height="37" x="4.5" y="4.5" stroke="#fb3748" strokeOpacity=".24" rx="5.5" />
       <path

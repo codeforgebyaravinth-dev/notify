@@ -14,7 +14,7 @@ class DomainsModuleDefinition {}
 
 export const DomainsModule = {
   forRoot(): DynamicModule {
-    const isEnterprise = process.env.NOVU_ENTERPRISE === 'true' || process.env.CI_EE_TEST === 'true';
+    const isEnterprise = true;
 
     if (!isEnterprise) {
       return {

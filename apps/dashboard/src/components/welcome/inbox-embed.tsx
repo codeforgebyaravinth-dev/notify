@@ -38,7 +38,7 @@ export function InboxEmbed(): JSX.Element | null {
 
   const isInAppConnected = foundIntegration?.connected ?? false;
 
-  const primaryColor = searchParams.get('primaryColor') || '#DD2450';
+  const primaryColor = searchParams.get('primaryColor') || '#8444df';
   const foregroundColor = searchParams.get('foregroundColor') || '#0E121B';
 
   const validateUrl = (urlString: string | null, allowedProtocols: string[]): string | undefined => {

@@ -116,7 +116,7 @@ export function DomainsIllustrationSvg() {
         strokeWidth="0.75"
       />
       <rect x="167.375" y="81.375" width="35.25" height="35.25" rx="5.625" fill="white" />
-      <rect x="167.375" y="81.375" width="35.25" height="35.25" rx="5.625" stroke="#DD2450" strokeWidth="0.75" />
+      <rect x="167.375" y="81.375" width="35.25" height="35.25" rx="5.625" stroke="#8444df" strokeWidth="0.75" />
       <path
         fillRule="evenodd"
         clipRule="evenodd"

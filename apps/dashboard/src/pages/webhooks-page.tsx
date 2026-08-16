@@ -33,7 +33,7 @@ interface CustomError extends Error {
 }
 
 export function WebhooksPage() {
-  const isWebhooksManagementEnabled = useFeatureFlag(FeatureFlagsKeysEnum.IS_WEBHOOKS_MANAGEMENT_ENABLED);
+  const isWebhooksManagementEnabled = true; // useFeatureFlag(FeatureFlagsKeysEnum.IS_WEBHOOKS_MANAGEMENT_ENABLED);
   const { currentEnvironment } = useEnvironment();
   const queryClient = useQueryClient();
   const { subscription, isLoading: isSubscriptionLoading } = useFetchSubscription();
@@ -41,10 +41,10 @@ export function WebhooksPage() {
   const location = useLocation();
   const { environmentSlug } = useParams<{ environmentSlug: string }>();
 
-  const isTierEligibleForWebhooks = getFeatureForTierAsBoolean(
-    FeatureNameEnum.WEBHOOKS,
-    subscription?.apiServiceLevel || ApiServiceLevelEnum.FREE
-  );
+  const isTierEligibleForWebhooks = true; // getFeatureForTierAsBoolean(
+    // FeatureNameEnum.WEBHOOKS,
+    // subscription?.apiServiceLevel || ApiServiceLevelEnum.FREE
+  // );
 
   const isLoadingEligibility = isSubscriptionLoading;
 

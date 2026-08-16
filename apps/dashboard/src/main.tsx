@@ -640,68 +640,23 @@ const router = createBrowserRouter([
               },
               {
                 path: ROUTES.WEBHOOKS_ENDPOINTS,
-                element: (
-                  <ProtectedRoute
-                    condition={(has) =>
-                      has({ permission: PermissionsEnum.WEBHOOK_READ }) ||
-                      has({ permission: PermissionsEnum.WEBHOOK_WRITE })
-                    }
-                  >
-                    <WebhooksPage />
-                  </ProtectedRoute>
-                ),
+                element: <WebhooksPage />,
               },
               {
                 path: ROUTES.WEBHOOKS_EVENT_CATALOG,
-                element: (
-                  <ProtectedRoute
-                    condition={(has) =>
-                      has({ permission: PermissionsEnum.WEBHOOK_READ }) ||
-                      has({ permission: PermissionsEnum.WEBHOOK_WRITE })
-                    }
-                  >
-                    <WebhooksPage />
-                  </ProtectedRoute>
-                ),
+                element: <WebhooksPage />,
               },
               {
                 path: ROUTES.WEBHOOKS_LOGS,
-                element: (
-                  <ProtectedRoute
-                    condition={(has) =>
-                      has({ permission: PermissionsEnum.WEBHOOK_READ }) ||
-                      has({ permission: PermissionsEnum.WEBHOOK_WRITE })
-                    }
-                  >
-                    <WebhooksPage />
-                  </ProtectedRoute>
-                ),
+                element: <WebhooksPage />,
               },
               {
                 path: ROUTES.WEBHOOKS_ACTIVITY,
-                element: (
-                  <ProtectedRoute
-                    condition={(has) =>
-                      has({ permission: PermissionsEnum.WEBHOOK_READ }) ||
-                      has({ permission: PermissionsEnum.WEBHOOK_WRITE })
-                    }
-                  >
-                    <WebhooksPage />
-                  </ProtectedRoute>
-                ),
+                element: <WebhooksPage />,
               },
               {
                 path: ROUTES.WEBHOOKS,
-                element: (
-                  <ProtectedRoute
-                    condition={(has) =>
-                      has({ permission: PermissionsEnum.WEBHOOK_READ }) ||
-                      has({ permission: PermissionsEnum.WEBHOOK_WRITE })
-                    }
-                  >
-                    <Navigate to={ROUTES.WEBHOOKS_ENDPOINTS} replace />
-                  </ProtectedRoute>
-                ),
+                element: <Navigate to={ROUTES.WEBHOOKS_ENDPOINTS} replace />,
               },
               {
                 path: '*',

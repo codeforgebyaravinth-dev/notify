@@ -39,7 +39,7 @@ export function InboxPreviewContent() {
     },
     appearance: {
       variables: {
-        colorPrimary: '#DD2450',
+        colorPrimary: '#8444df',
       },
       elements: {
         inboxHeader: {

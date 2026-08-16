@@ -638,47 +638,7 @@ function getConvertToMs(conversionToMs: boolean | undefined) {
 }
 
 export function getFeatureForTierAsBoolean(featureName: FeatureNameEnum, tier: ApiServiceLevelEnum): boolean {
-  const featureTiers = novuServiceTiers[featureName];
-
-  if (!featureTiers) return false;
-
-  const feature: FeatureValue = featureTiers[tier];
-
-  // Handle DetailedPriceListItem
-  if (isDetailedPriceListItem(feature)) {
-    if (typeof feature.value === 'boolean') return feature.value;
-    if (typeof feature.value === 'number') {
-      if (feature.value === 0) return false;
-      if (feature.value === 1) return true;
-      throw new Error(`Cannot convert number ${feature.value} to boolean for ${featureName} at tier ${tier}`);
-    }
-    if (typeof feature.value === 'string') {
-      const lowercased = feature.value.toLowerCase();
-      if (lowercased === 'true') return true;
-      if (lowercased === 'false') return false;
-      throw new Error(`Cannot convert string "${feature.value}" to boolean for ${featureName} at tier ${tier}`);
-    }
-  }
-
-  // Direct boolean
-  if (typeof feature === 'boolean') return feature;
-
-  // Number conversion
-  if (typeof feature === 'number') {
-    if (feature === 0) return false;
-    if (feature === 1) return true;
-    throw new Error(`Cannot convert number ${feature} to boolean for ${featureName} at tier ${tier}`);
-  }
-
-  // String conversion
-  if (typeof feature === 'string') {
-    const lowercased = feature.toLowerCase();
-    if (lowercased === 'true') return true;
-    if (lowercased === 'false') return false;
-    throw new Error(`Cannot convert string "${feature}" to boolean for ${featureName} at tier ${tier}`);
-  }
-
-  throw new Error(`Cannot convert feature ${featureName} at tier ${tier} to boolean`);
+  return true;
 }
 
 function getTextFromItem(feature: DetailedPriceListItem) {

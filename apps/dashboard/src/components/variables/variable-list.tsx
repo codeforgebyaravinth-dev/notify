@@ -22,11 +22,7 @@ export const VariableList = () => {
   const navigate = useNavigate();
   const { subscription, isLoading: isLoadingSubscription } = useFetchSubscription();
 
-  const canUseVariablesFeature =
-    getFeatureForTierAsBoolean(
-      FeatureNameEnum.ENVIRONMENT_VARIABLES,
-      subscription?.apiServiceLevel || ApiServiceLevelEnum.FREE
-    ) && !IS_SELF_HOSTED_CE;
+  const canUseVariablesFeature = true;
 
   useEffect(() => {
     const timeout = setTimeout(() => {

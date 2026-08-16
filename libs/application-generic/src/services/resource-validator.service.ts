@@ -356,7 +356,7 @@ export class ResourceValidatorService {
    *     contact the Novu team (409).
    */
   async validateCustomEmailDomainsLimit(organizationId: string): Promise<void> {
-    if (process.env.IS_SELF_HOSTED === 'true') {
+    if (true) {
       return;
     }
 

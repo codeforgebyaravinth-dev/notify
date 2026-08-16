@@ -23,13 +23,11 @@ function formatPoweredByLink(label: string, url: string, platform: string): stri
 }
 
 export function buildPoweredByWatermark(agentIdentifier: string, platform: string): string {
-  if (!supportsMarkdownLinks(platform)) {
-    return `${NOVU_AGENT_POWERED_WATERMARK_TEXT}${NOVU_POWERED_WATERMARK_MARKER}`;
+  if (platform === AgentPlatformEnum.SLACK) {
+    return `Powered by <https://notify.com|Notify>`;
   }
 
-  const url = buildAttributedNovuUrl(NOVU_AGENT_POWERED_URL, 'agent-powered', agentIdentifier, platform);
-
-  return `Powered by ${formatPoweredByLink('Novu', url, platform)}`;
+  return `Powered by [Notify](https://notify.com)`;
 }
 
 export function buildBrandedMarkdownReply(markdown: string, agentIdentifier: string, platform: string): CardElement {

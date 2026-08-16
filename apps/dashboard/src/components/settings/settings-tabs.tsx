@@ -109,14 +109,14 @@ function checkRbacEnabled(subscription: GetSubscriptionDto | undefined, featureF
 
 function resolveCurrentTab(pathname: string, routes: SettingsTabRoutes, rootRoute: string): SettingsTab {
   if (pathname === rootRoute) {
-    return 'account';
+    return 'organization';
   }
 
   const entry = (Object.entries(routes) as Array<[SettingsTab, string]>).find(
     ([, url]) => pathname === url || pathname.startsWith(`${url}/`)
   );
 
-  return entry?.[0] ?? 'account';
+  return entry?.[0] ?? 'organization';
 }
 
 export function SettingsTabs({ routes, rootRoute }: SettingsTabsProps) {
@@ -160,14 +160,8 @@ export function SettingsTabs({ routes, rootRoute }: SettingsTabsProps) {
   return (
     <Tabs value={currentTab} onValueChange={handleTabChange} className="-mx-2 w-full">
       <TabsList align="center" variant="regular" className="border-t-transparent py-0!">
-        <TabsTrigger variant="regular" value="account" size="xl">
-          Account
-        </TabsTrigger>
         <TabsTrigger variant="regular" value="organization" size="xl">
           Organization
-        </TabsTrigger>
-        <TabsTrigger variant="regular" value="team" size="xl">
-          Team
         </TabsTrigger>
 
         {canShowBillingTab && (

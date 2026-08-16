@@ -301,26 +301,17 @@ export const LegacySideNavigation = () => {
                     <span>API Keys</span>
                   </NavigationLink>
                 </Protect>
-                {isWebhooksManagementEnabled && (
-                  <Protect
-                    condition={(has) =>
-                      has({ permission: PermissionsEnum.WEBHOOK_READ }) ||
-                      has({ permission: PermissionsEnum.WEBHOOK_WRITE })
-                    }
-                  >
-                    <NavigationLink
-                      to={
-                        currentEnvironment?.slug
-                          ? buildRoute(ROUTES.WEBHOOKS, { environmentSlug: currentEnvironment?.slug ?? '' })
-                          : undefined
-                      }
-                    >
-                      <RiSignalTowerLine className="size-4" />
-                      <span className="flex items-center gap-2">Webhooks</span>
-                    </NavigationLink>
-                  </Protect>
-                )}
-                {isDomainsPageEnabled && !IS_SELF_HOSTED_CE && (
+                <NavigationLink
+                  to={
+                    currentEnvironment?.slug
+                      ? buildRoute(ROUTES.WEBHOOKS, { environmentSlug: currentEnvironment?.slug ?? '' })
+                      : undefined
+                  }
+                >
+                  <RiSignalTowerLine className="size-4" />
+                  <span className="flex items-center gap-2">Webhooks</span>
+                </NavigationLink>
+                {!IS_SELF_HOSTED_CE && (
                   <NavigationLink
                     to={
                       currentEnvironment?.slug

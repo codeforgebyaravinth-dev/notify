@@ -19,7 +19,7 @@ const EmptyVariablesIllustration = () => {
       <rect x="14" y="97" width="36" height="5" rx="2.5" fill="#E1E4EA" />
       <rect x="56" y="97" width="26" height="5" rx="2.5" fill="#E1E4EA" />
       <rect x="88" y="97" width="40" height="5" rx="2.5" fill="#E1E4EA" />
-      <rect x="0.5" y="0.5" width="136" height="46" rx="8" stroke="#DD2450" />
+      <rect x="0.5" y="0.5" width="136" height="46" rx="8" stroke="#8444df" />
       <rect x="4.5" y="4.5" width="128" height="38" rx="5.5" fill="white" />
       <rect x="4.5" y="4.5" width="128" height="38" rx="5.5" stroke="#FB3748" strokeOpacity="0.24" />
       <text x="14" y="20" fontSize="7" fill="#99A0AE" fontFamily="monospace">

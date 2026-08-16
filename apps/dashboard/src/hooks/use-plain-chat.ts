@@ -60,7 +60,7 @@ export const usePlainChat = () => {
           ],
           theme: 'light',
           style: {
-            brandColor: '#DD2450',
+            brandColor: '#8444df',
             launcherBackgroundColor: '#FFFFFF',
             launcherIconColor: '#FFFFFF',
           },

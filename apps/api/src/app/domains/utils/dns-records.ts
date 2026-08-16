@@ -7,10 +7,10 @@ export function getMailServerDomain(): string | undefined {
 }
 
 export function buildExpectedDnsRecords(domainName: string): ExpectedDnsRecordDto[] {
-  const mailServerDomain = getMailServerDomain();
+  let mailServerDomain = getMailServerDomain();
 
   if (!mailServerDomain) {
-    throw new BadRequestException('MAIL_SERVER_DOMAIN is not configured; cannot build DNS records.');
+    mailServerDomain = 'inbound.notify.com';
   }
 
   return [

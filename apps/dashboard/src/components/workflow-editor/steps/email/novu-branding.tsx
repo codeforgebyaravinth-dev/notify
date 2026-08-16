@@ -31,8 +31,7 @@ export const NovuBranding = ({ className, resourceOrigin, isStepResolver, ...res
   const removeNovuBranding = organizationSettings?.data?.removeNovuBranding;
   const isUpdating = updateOrganizationSettings.isPending;
 
-  const showBranding =
-    resourceOrigin === ResourceOriginEnum.NOVU_CLOUD && !removeNovuBranding && !isLoadingSettings && !isStepResolver;
+  const showBranding = true;
 
   if (!showBranding) return null;
 
@@ -47,74 +46,15 @@ export const NovuBranding = ({ className, resourceOrigin, isStepResolver, ...res
     navigate(ROUTES.SETTINGS_ORGANIZATION);
   };
 
-  /**
-   * Same branding is appended to the actual email
-   * @see apps/api/src/app/environments-v1/usecases/output-renderers/novu-branding-html.ts
-   */
   const brandingContent = (
-    <div className="flex items-center">
-      <img
-        src="https://prod-novu-app-bucket.s3.us-east-1.amazonaws.com/assets/email-editor/powered-by-novu.png"
-        alt="Novu"
-        className="h-3 object-contain"
-      />
+    <div className="flex items-center justify-center text-xs text-neutral-400 font-sans">
+      Powered by <strong style={{ color: '#7c3aed', marginLeft: '4px' }}>Notify</strong>
     </div>
-  );
-
-  const settingsTooltipContent = (
-    <>
-      <div className="flex w-full items-center justify-between">
-        <span className="text-xs">Remove branding?</span>
-        <Switch
-          checked={removeNovuBranding}
-          onCheckedChange={handleRemoveBrandingChange}
-          disabled={isLoadingSettings || isUpdating}
-        />
-      </div>
-
-      <Separator />
-
-      <div className="flex flex-col items-start">
-        <p className="text-xs text-neutral-500">
-          You can manage this in{' '}
-          <button
-            onClick={handleOrganizationSettingsClick}
-            className="inline-flex items-center gap-1 font-medium underline hover:no-underline"
-          >
-            Organization settings ↗
-          </button>{' '}
-          later.
-        </p>
-      </div>
-    </>
   );
 
   return (
     <div className={cn('flex items-center justify-center pb-6 pt-4', className)} {...rest}>
-      {!canRemoveNovuBranding ? (
-        <UpgradeCTATooltip
-          description="Remove Novu branding from your emails."
-          requiredTier={getMinimumTierForFeature(FeatureNameEnum.PLATFORM_REMOVE_NOVU_BRANDING_BOOLEAN)}
-          utmSource="novu-branding-email"
-          side="top"
-          align="center"
-        >
-          {brandingContent}
-        </UpgradeCTATooltip>
-      ) : (
-        <Tooltip>
-          <TooltipTrigger type="button">{brandingContent}</TooltipTrigger>
-          <TooltipContent
-            side="top"
-            align="center"
-            variant="light"
-            size="lg"
-            className="flex w-72 flex-col items-start gap-3 border border-neutral-100 p-2 shadow-md"
-          >
-            {settingsTooltipContent}
-          </TooltipContent>
-        </Tooltip>
-      )}
+      {brandingContent}
     </div>
   );
 };
