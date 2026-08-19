@@ -21,9 +21,9 @@ const toastVariants = cva(
   {
     variants: {
       variant: {
-        default: 'rounded-lg p-2',
-        md: 'rounded-lg px-2.5 py-2',
-        lg: 'rounded-xl p-3.5',
+        default: 'rounded-none p-2',
+        md: 'rounded-none px-2.5 py-2',
+        lg: 'rounded-none p-3.5',
       },
     },
     defaultVariants: {
@@ -78,7 +78,7 @@ const ToastClose = ({ className, ...props }: React.HTMLAttributes<HTMLButtonElem
     <CompactButton
       icon={RiCloseLine}
       variant="ghost"
-      className={cn('h-min w-min rounded-sm p-0', className)}
+      className={cn('h-min w-min rounded-none p-0', className)}
       {...props}
     >
       <span className="sr-only">Close</span>

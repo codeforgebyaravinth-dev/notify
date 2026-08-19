@@ -17,6 +17,7 @@ import {
   SelectIntegration,
   SelectVariant,
   SendWebhookMessage,
+  BillingService,
 } from '@novu/application-generic';
 import {
   IntegrationEntity,
@@ -109,7 +110,8 @@ export class SendMessagePush extends SendMessageBase {
     protected moduleRef: ModuleRef,
     private sendWebhookMessage: SendWebhookMessage,
     private invalidateCache: InvalidateCacheService,
-    private featureFlagsService: FeatureFlagsService
+    private featureFlagsService: FeatureFlagsService,
+    protected billingService: BillingService
   ) {
     super(
       messageRepository,
@@ -118,7 +120,8 @@ export class SendMessagePush extends SendMessageBase {
       selectIntegration,
       getNovuProviderCredentials,
       selectVariant,
-      moduleRef
+      moduleRef,
+      billingService
     );
   }
 
@@ -304,6 +307,7 @@ export class SendMessagePush extends SendMessageBase {
 
         if (result.success) {
           status = SendMessageStatus.SUCCESS;
+          await this.reportUsage(command.organizationId, integration.providerId);
         } else {
           const errorMessage = result.error.message || result.error.toString();
           const logMethod = isSubscriberError(errorMessage) ? 'debug' : 'error';
@@ -356,6 +360,7 @@ export class SendMessagePush extends SendMessageBase {
 
         if (result.success) {
           status = SendMessageStatus.SUCCESS;
+          await this.reportUsage(command.organizationId, integration.providerId);
         } else {
           const errorMessage = result.error.message || result.error.toString();
           const logMethod = isSubscriberError(errorMessage) ? 'debug' : 'error';

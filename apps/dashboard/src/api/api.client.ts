@@ -39,12 +39,14 @@ const request = async <T>(
 
   try {
     const jwt = await getToken();
+    const activeOrgId = localStorage.getItem('activeOrganizationId');
     const config: RequestInit = {
       method,
       headers: {
         Authorization: `Bearer ${jwt}`,
         'Content-Type': 'application/json',
         ...(environment && { 'Novu-Environment-Id': environment._id }),
+        ...(activeOrgId && { 'Novu-Organization-Id': activeOrgId }),
         ...headers,
       },
       signal,

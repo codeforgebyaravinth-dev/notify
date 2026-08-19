@@ -13,7 +13,7 @@ export const GenericShell = ({ card, children }: ChatShellProps) => {
     >
       <div className="flex w-full items-start">
         <img
-          src="/images/chat-preview-novu-avatar.webp"
+          src="/images/providers/light/square/notify.jpg"
           alt=""
           width={36}
           height={36}
@@ -23,7 +23,7 @@ export const GenericShell = ({ card, children }: ChatShellProps) => {
           className="mr-2 size-9 shrink-0 object-cover"
         />
         <div className="flex min-w-0 flex-1 flex-col">
-          <span className="leading-5.5 mb-1 text-[15px] font-black text-[#1d1c1d]">Novu</span>
+          <span className="leading-5.5 mb-1 text-[15px] font-black text-[#1d1c1d]">Notify</span>
           {card ? <CardRenderer card={card} /> : children}
         </div>
       </div>

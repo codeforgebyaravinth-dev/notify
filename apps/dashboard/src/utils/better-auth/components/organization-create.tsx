@@ -80,19 +80,25 @@ function CreateOrganizationForm({ onSuccess }: { onSuccess: () => void }) {
     setIsLoading(true);
 
     try {
-      const { data, error: createError } = await authClient.organization.create({
-        name: orgName,
-        slug: orgName.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+      const apiUrl = import.meta.env.VITE_API_HOSTNAME || 'http://localhost:3000';
+      const token = localStorage.getItem('better-auth-session-token');
+      
+      const response = await fetch(`${apiUrl}/v1/organizations`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ name: orgName }),
       });
 
-      if (createError) {
-        throw new Error(createError.message || 'Failed to create organization');
+      if (!response.ok) {
+        throw new Error('Failed to create organization');
       }
 
-      if (data?.id) {
-        await authClient.organization.setActive({
-          organizationId: data.id,
-        });
+      const responseData = await response.json();
+      if (responseData?.data?._id) {
+        localStorage.setItem('activeOrganizationId', responseData.data._id);
         onSuccess();
       }
     } catch (e: any) {
@@ -147,8 +153,21 @@ function OrganizationListContent({
   useEffect(() => {
     const loadOrganizations = async () => {
       try {
-        const { data } = await authClient.organization.list();
-        setOrganizations(data || []);
+        const apiUrl = import.meta.env.VITE_API_HOSTNAME || 'http://localhost:3000';
+        const token = localStorage.getItem('better-auth-session-token');
+        const res = await fetch(`${apiUrl}/v1/organizations`, {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        if (!res.ok) throw new Error('Failed to fetch organizations data');
+        const responseData = await res.json();
+        
+        // Map Novu organizations to the expected Organization type
+        const orgs = (responseData?.data || []).map((org: any) => ({
+          id: org._id,
+          name: org.name,
+          slug: org.slug || org.name.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+        }));
+        setOrganizations(orgs);
       } catch (e: any) {
         console.error('Failed to load organizations:', e);
       } finally {
@@ -162,9 +181,7 @@ function OrganizationListContent({
   const handleSelectOrganization = async (organizationId: string) => {
     setIsSelecting(true);
     try {
-      await authClient.organization.setActive({
-        organizationId,
-      });
+      localStorage.setItem('activeOrganizationId', organizationId);
       window.location.href = afterSelectOrganizationUrl || ROUTES.ENV;
     } catch (e: any) {
       console.error('Failed to set active organization:', e);

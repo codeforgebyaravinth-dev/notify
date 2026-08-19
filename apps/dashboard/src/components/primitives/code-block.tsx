@@ -221,7 +221,7 @@ export function CodeBlock({
   return (
     <div
       className={cn(
-        'flex w-full flex-col overflow-hidden rounded-xl border',
+        'flex w-full flex-col overflow-hidden rounded-none border',
         theme === 'light' ? 'border-neutral-200 bg-white shadow-sm' : 'border-neutral-800/50 bg-[#0d1117] shadow-lg',
         !title && 'group',
         className
@@ -241,7 +241,7 @@ export function CodeBlock({
                   type="button"
                   onClick={() => setShowSecrets(!showSecrets)}
                   className={cn(
-                    'rounded-md p-1.5 transition-all duration-200 active:scale-95',
+                    'rounded-none p-1.5 transition-all duration-200 active:scale-95',
                     theme === 'light'
                       ? 'text-neutral-500 hover:bg-neutral-100 hover:text-neutral-900'
                       : 'text-neutral-400 hover:text-neutral-200 hover:bg-neutral-800/50'
@@ -256,7 +256,7 @@ export function CodeBlock({
                   content={code}
                   theme={theme}
                   className={cn(
-                    'rounded-md p-1.5 transition-all duration-200 active:scale-95',
+                    'rounded-none p-1.5 transition-all duration-200 active:scale-95',
                     theme === 'light'
                       ? 'text-neutral-500 hover:bg-neutral-100 hover:text-neutral-900'
                       : 'text-neutral-400 hover:text-neutral-200 hover:bg-neutral-800/50'
@@ -273,7 +273,7 @@ export function CodeBlock({
         <div className="relative">
           <div
             className={cn(
-              'absolute right-2 top-2 z-10 flex items-center gap-1 rounded-md',
+              'absolute right-2 top-2 z-10 flex items-center gap-1 rounded-none',
               'opacity-0 transition-opacity duration-200 group-hover:opacity-100',
               theme === 'light' ? 'bg-white/90' : 'bg-[#0d1117]/90',
               'backdrop-blur-xs border',
@@ -285,7 +285,7 @@ export function CodeBlock({
                 type="button"
                 onClick={() => setShowSecrets(!showSecrets)}
                 className={cn(
-                  'rounded-md p-1.5 transition-all duration-200 active:scale-95',
+                  'rounded-none p-1.5 transition-all duration-200 active:scale-95',
                   theme === 'light'
                     ? 'text-neutral-500 hover:bg-neutral-100 hover:text-neutral-900'
                     : 'text-neutral-400 hover:text-neutral-200 hover:bg-neutral-800/50'
@@ -304,7 +304,7 @@ export function CodeBlock({
         <div
           ref={scrollContainerRef}
           className={cn(
-            'relative h-full overflow-y-auto rounded-lg border p-2.5',
+            'relative h-full overflow-y-auto rounded-none border p-2.5',
             theme === 'light' ? 'border-neutral-200 bg-neutral-50' : 'border-neutral-600/50 bg-[#161b22]'
           )}
         >

@@ -20,6 +20,7 @@ import {
 } from 'react-icons/ri';
 import { useNavigate } from 'react-router-dom';
 import { SidebarContent } from '@/components/side-navigation/sidebar';
+import { cn } from '@/utils/ui';
 import { useEnvironment } from '@/context/environment/hooks';
 import { useLocalMode } from '@/context/local-mode';
 import { useAreConversationalAgentsAvailable } from '@/hooks/use-are-conversational-agents-available';
@@ -88,7 +89,7 @@ const BottomSection = ({
   );
 };
 
-export const LegacySideNavigation = () => {
+export const LegacySideNavigation = ({ isCollapsed, toggleSidebar }: { isCollapsed?: boolean; toggleSidebar?: () => void }) => {
   const { subscription, daysLeft, isLoading: isLoadingSubscription } = useFetchSubscription();
   const isTrialActive = subscription?.trial.isActive;
   const isFreeTier = subscription?.apiServiceLevel === ApiServiceLevelEnum.FREE;
@@ -132,17 +133,55 @@ export const LegacySideNavigation = () => {
   };
 
   return (
-    <aside className="relative flex h-full w-[275px] shrink-0 flex-col">
-      <SidebarContent className="h-full">
-        <OrganizationDropdown />
-        <EnvironmentDropdown
-          currentEnvironment={currentEnvironment}
-          data={environments}
-          onChange={onEnvironmentChange}
-          localEntry={showLocalEntry ? { status: localMode.healthStatus } : undefined}
-          isLocalSelected={localMode.isLocalRoute}
-        />
-        <nav className="flex h-full flex-1 flex-col overflow-auto">
+    <aside className={cn("relative flex h-full w-full shrink-0 flex-col bg-transparent", isCollapsed ? "collapsed-sidebar items-center" : "")}>
+      <style>
+        {`
+          .collapsed-sidebar span {
+            display: none !important;
+          }
+          .collapsed-sidebar .navigation-group-label {
+            display: none !important;
+          }
+          .collapsed-sidebar a {
+            justify-content: center;
+            padding-left: 0;
+            padding-right: 0;
+          }
+          .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+          }
+          .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+        `}
+      </style>
+      
+      <div className="flex w-full items-center justify-end p-2 border-b border-neutral-200 dark:border-neutral-800">
+        <button 
+          onClick={toggleSidebar}
+          className="text-neutral-500 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-white p-1 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors"
+        >
+          {isCollapsed ? (
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg>
+          ) : (
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="11 17 6 12 11 7"></polyline><polyline points="18 17 13 12 18 7"></polyline></svg>
+          )}
+        </button>
+      </div>
+
+      <SidebarContent className="h-full w-full">
+        {!isCollapsed && <OrganizationDropdown />}
+        {!isCollapsed && (
+          <EnvironmentDropdown
+            currentEnvironment={currentEnvironment}
+            data={environments}
+            onChange={onEnvironmentChange}
+            localEntry={showLocalEntry ? { status: localMode.healthStatus } : undefined}
+            isLocalSelected={localMode.isLocalRoute}
+          />
+        )}
+        <nav className="flex h-full flex-1 flex-col overflow-auto hide-scrollbar">
           <div className="flex flex-col gap-4">
             {showAgents && (
               <NavigationGroup label="Agents">
@@ -190,7 +229,7 @@ export const LegacySideNavigation = () => {
                   <span>Layouts</span>
                 </NavigationLink>
               </Protect>
-              <NavigationLink
+              {/* <NavigationLink
                 to={
                   currentEnvironment?.slug
                     ? buildRoute(ROUTES.TRANSLATIONS, { environmentSlug: currentEnvironment?.slug ?? '' })
@@ -199,7 +238,7 @@ export const LegacySideNavigation = () => {
               >
                 <RiTranslate2 className="size-4" />
                 <span>Translations</span>
-              </NavigationLink>
+              </NavigationLink> */}
             </NavigationGroup>
             <NavigationGroup label="Data">
               <Protect permission={PermissionsEnum.SUBSCRIBER_READ}>
@@ -341,7 +380,7 @@ export const LegacySideNavigation = () => {
                   }
                 >
                   <RiCodeSSlashLine className="size-4" />
-                  <span>Variables</span>
+                  <span>Secret Store</span>
                 </NavigationLink>
               </NavigationGroup>
             </Protect>
@@ -356,7 +395,7 @@ export const LegacySideNavigation = () => {
                     }
                   >
                     <RiStore3Line className="size-4" />
-                    <span>Integration Store</span>
+                    <span>Connectors</span>
                   </NavigationLink>
                 </Protect>
                 {!IS_SELF_HOSTED_CE && (

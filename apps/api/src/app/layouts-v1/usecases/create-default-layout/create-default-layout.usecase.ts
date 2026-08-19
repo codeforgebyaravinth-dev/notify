@@ -20,11 +20,11 @@ export class CreateDefaultLayout {
         userId: command.userId,
         name: 'Default Layout',
         isDefault: true,
-        identifier: 'novu-default-layout',
+        identifier: 'notify-default-layout',
         content: await this.getNovuLayout.execute({}),
         environmentId: command.environmentId,
         organizationId: command.organizationId,
-        description: 'The default layout created by Novu',
+        description: 'The default layout created by Notify',
       })
     );
   }

@@ -14,7 +14,7 @@ function DefaultPreviewFrame({ children }: { children: ReactNode }) {
     <div className="border-stroke-soft pointer-events-none flex w-full flex-col overflow-clip rounded-md border">
       <div className="border-stroke-weak bg-bg-weak flex w-full items-center justify-between border-b px-2.5 py-2">
         <div className="flex items-center gap-1">
-          <span className="text-text-strong text-[14px] font-medium leading-5 tracking-[-0.084px]">Novu</span>
+          <span className="text-text-strong text-[14px] font-medium leading-5 tracking-[-0.084px]">Notify</span>
           <span className="text-text-sub rounded-[3px] bg-[#f4f5f6] px-1 py-px text-[10px] font-normal leading-3.5 opacity-70">
             APP
           </span>

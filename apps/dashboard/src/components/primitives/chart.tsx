@@ -156,7 +156,7 @@ const ChartTooltipContent = React.forwardRef<
       <div
         ref={ref}
         className={cn(
-          'grid min-w-[160px] items-start gap-1 rounded-xl border border-border/40 bg-background px-2.5 py-1.5 text-[12px] shadow-popover',
+          'grid min-w-[160px] items-start gap-1 rounded-none border border-border/40 bg-background px-2.5 py-1.5 text-[12px] shadow-popover',
           className
         )}
       >
@@ -351,7 +351,7 @@ const NovuTooltip = React.forwardRef<HTMLDivElement, NovuTooltipProps>(
     return (
       <div
         ref={ref}
-        className="min-w-[160px] overflow-hidden rounded-xl border border-border/40 bg-bg-white text-[12px] shadow-popover"
+        className="min-w-[160px] overflow-hidden rounded-none border border-border/40 bg-bg-white text-[12px] shadow-popover"
       >
         <div className="bg-bg-weak px-2.5 py-1.5">
           <p className="truncate font-medium tracking-tight text-text-soft">{displayTitle}</p>

@@ -20,7 +20,7 @@ export function SlackPreviewFrame({ children, variant = 'default' }: SlackPrevie
     >
       <div className="flex w-full items-start">
         <img
-          src="/images/chat-preview-novu-avatar.webp"
+          src="/images/providers/light/square/notify.jpg"
           alt=""
           width={36}
           height={36}
@@ -31,7 +31,7 @@ export function SlackPreviewFrame({ children, variant = 'default' }: SlackPrevie
         />
         <div className="flex min-w-0 flex-1 flex-col">
           <div className="mb-1 flex items-center">
-            <span className="leading-5.5 mr-1.25 text-[15px] font-black text-[#1d1c1d]">Novu</span>
+            <span className="leading-5.5 mr-1.25 text-[15px] font-black text-[#1d1c1d]">Notify</span>
             <span className="mr-1.25 rounded-xs bg-[rgba(29,28,29,0.06)] px-0.75 py-px text-[10px] font-bold leading-[12.5px] text-[#454447]">
               APP
             </span>

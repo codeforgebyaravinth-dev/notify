@@ -95,7 +95,7 @@ export const SystemVariableRow = ({ variableKey, description, resolve, environme
         </SystemVariableCell>
         <SystemVariableCell>
           {totalCount > 0 && (
-            <span className="bg-success/10 text-success-600 inline-flex items-center gap-1 rounded-full px-1.5 py-0.5 text-xs font-medium">
+            <span className="bg-success/10 text-success-600 inline-flex items-center gap-1 rounded-none px-1.5 py-0.5 text-xs font-medium">
               <RiCheckLine className="size-3" />
               {totalCount}/{totalCount}
             </span>

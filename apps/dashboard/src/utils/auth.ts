@@ -5,5 +5,8 @@ declare namespace Clerk {
 }
 
 export async function getToken(): Promise<string> {
-  return (await Clerk.session?.getToken()) || '';
+  if (typeof Clerk !== 'undefined' && Clerk.session) {
+    return (await Clerk.session.getToken()) || '';
+  }
+  return localStorage.getItem('better-auth-session-token') || '';
 }

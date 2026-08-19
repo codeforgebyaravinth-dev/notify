@@ -19,11 +19,12 @@ export const useFetchSubscription = () => {
   const { data: subscription, isLoading: isLoadingSubscription } = useQuery<GetSubscriptionDto>({
     queryKey: [QueryKeys.billingSubscription, currentOrganization?._id],
     queryFn: () => getSubscription({ environment: currentEnvironment! }),
-    enabled: false,
+    enabled: !IS_SELF_HOSTED_CE,
     initialData: {
       apiServiceLevel: 'business' as any,
       hasPaymentMethod: true,
       trial: { isActive: false, start: null, end: null, daysTotal: 0 },
+      events: { current: 0, included: 10000 },
     } as unknown as GetSubscriptionDto,
     meta: {
       showError: false,

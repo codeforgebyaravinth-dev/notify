@@ -9,7 +9,7 @@ import { isApexInboundDomain } from '@/utils/inbound-domain';
 
 function MxRecordStatusBadge({ configured }: { configured: boolean }) {
   return (
-    <Badge variant="lighter" color={configured ? 'green' : 'orange'} size="md">
+    <Badge variant="lighter" color={configured ? 'green' : 'orange'} size="md" className="rounded-none">
       <AnimatedBadgeDot color={configured ? 'green' : 'orange'} size="md" variant="lighter" />
       {configured ? 'Verified' : 'Pending'}
     </Badge>

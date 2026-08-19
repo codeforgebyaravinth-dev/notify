@@ -89,10 +89,10 @@ export const EditBridgeUrlButton = () => {
       <Tooltip>
         <TooltipTrigger asChild>
           <PopoverTrigger asChild>
-            <button className="text-foreground-600 flex h-5 w-5 items-center justify-center rounded-md text-xs leading-4 hover:bg-neutral-50 focus:bg-neutral-50">
+            <button className="text-foreground-600 flex h-5 w-5 items-center justify-center rounded-none text-xs leading-4 hover:bg-neutral-50 focus:bg-neutral-50">
               <div
                 className={cn(
-                  'relative flex size-4 items-center justify-center rounded-lg',
+                  'relative flex size-4 items-center justify-center rounded-none',
                   status === ConnectionStatus.DISCONNECTED
                     ? 'bg-[rgba(220,38,38,0.1)]'
                     : status === ConnectionStatus.LOADING

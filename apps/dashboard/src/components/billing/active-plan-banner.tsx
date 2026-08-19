@@ -168,7 +168,7 @@ function CardHeader({ title, children, rightContent, titleInline = false }: Card
 
   return (
     <div
-      className={`flex justify-between self-stretch bg-bg-weak px-3 py-2.5 rounded-t-xl border-b border-neutral-200 h-[60px] ${containerClasses}`}
+      className={`flex justify-between self-stretch bg-bg-weak px-3 py-2.5 rounded-none border-b border-neutral-200 h-[60px] ${containerClasses}`}
     >
       <div className={contentClasses}>
         <h3 className="text-sm font-medium leading-5 tracking-tight text-foreground">{title}</h3>

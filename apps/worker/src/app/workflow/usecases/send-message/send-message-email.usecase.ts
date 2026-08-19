@@ -19,6 +19,7 @@ import {
   SelectIntegration,
   SelectVariant,
   SendWebhookMessage,
+  BillingService,
 } from '@novu/application-generic';
 import {
   EnvironmentEntity,
@@ -73,7 +74,8 @@ export class SendMessageEmail extends SendMessageBase {
     private featureFlagService: FeatureFlagsService,
     private getLayoutUseCaseV0: GetLayoutUseCaseV0,
     private sendWebhookMessage: SendWebhookMessage,
-    private resolveAgentInboundAddresses: ResolveAgentInboundAddresses
+    private resolveAgentInboundAddresses: ResolveAgentInboundAddresses,
+    protected billingService: BillingService
   ) {
     super(
       messageRepository,
@@ -82,7 +84,8 @@ export class SendMessageEmail extends SendMessageBase {
       selectIntegration,
       getNovuProviderCredentials,
       selectVariant,
-      moduleRef
+      moduleRef,
+      billingService
     );
   }
 
@@ -378,7 +381,7 @@ export class SendMessageEmail extends SendMessageBase {
       }
     }
 
-    resolvedFromEmail = resolvedFromEmail || integration?.credentials.from || 'no-reply@novu.co';
+    resolvedFromEmail = resolvedFromEmail || integration?.credentials.from || 'no-reply@notifyhq.in';
 
     const mailData: IEmailOptions = createMailData(
       {
@@ -642,6 +645,8 @@ export class SendMessageEmail extends SendMessageBase {
           },
         }
       );
+
+      await this.reportUsage(command.organizationId, integration.providerId);
 
       return {
         status: SendMessageStatus.SUCCESS,

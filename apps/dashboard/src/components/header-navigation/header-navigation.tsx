@@ -52,17 +52,17 @@ export const HeaderNavigation = (props: HeaderNavigationProps) => {
         <Button
           variant="secondary"
           mode="outline"
-          className="hidden h-[26px] px-[5px] md:inline-flex"
+          className="hidden h-[26px] px-[5px] md:inline-flex rounded-none"
           size="2xs"
           onClick={openCommandPalette}
         >
           <RiSearchLine className="size-3 text-text-sub" />
-          <Kbd className="bg-bg-weak rounded-4 h-[16px]">⌘K</Kbd>
+          <Kbd className="bg-bg-weak rounded-none h-[16px]">⌘K</Kbd>
         </Button>
         <Button
           variant="secondary"
           mode="outline"
-          className="h-[26px] px-[5px] md:hidden"
+          className="h-[26px] px-[5px] md:hidden rounded-none"
           size="2xs"
           onClick={openCommandPalette}
         >

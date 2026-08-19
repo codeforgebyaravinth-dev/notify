@@ -23,7 +23,7 @@ export function NovuBrandingSwitch({ id, value, onChange, isReadOnly }: NovuBran
     <div className="flex items-center">
       {isFreePlan ? (
         <UpgradeCTATooltip
-          description="Hide Novu branding from your notification channels."
+          description="Hide Notify branding from your notification channels."
           requiredTier={getMinimumTierForFeature(FeatureNameEnum.PLATFORM_REMOVE_NOVU_BRANDING_BOOLEAN)}
           utmCampaign="remove_branding_prompt"
           utmSource="remove_branding_prompt"

@@ -92,7 +92,7 @@ export function AnalyticsCard({
     return (
       <div
         className={cn(
-          'bg-bg-white rounded-xl border-none p-2.5 shadow-box-xs w-full min-h-[88px] flex flex-col gap-1',
+          'bg-bg-white rounded-none border-none p-2.5 shadow-box-xs w-full min-h-[88px] flex flex-col gap-1',
           className
         )}
       >
@@ -113,7 +113,7 @@ export function AnalyticsCard({
   const trendColors = getTrendColor(trendDirection);
 
   return (
-    <div className={cn('bg-bg-white rounded-xl border-none p-2.5 shadow-box-xs w-full', className)}>
+    <div className={cn('bg-bg-white rounded-none border-none p-2.5 shadow-box-xs w-full', className)}>
       <div className="flex flex-col gap-1">
         <div className="flex min-w-0 items-center justify-between gap-2 overflow-hidden">
           <div className="flex min-w-0 items-center gap-1">

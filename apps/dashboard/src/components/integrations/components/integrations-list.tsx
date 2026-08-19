@@ -1,4 +1,4 @@
-import { ChannelTypeEnum, EmailProviderIdEnum, FeatureFlagsKeysEnum, providers as novuProviders } from '@novu/shared';
+import { ChannelTypeEnum, EmailProviderIdEnum, SmsProviderIdEnum, PushProviderIdEnum, FeatureFlagsKeysEnum, providers as novuProviders } from '@novu/shared';
 import { useMemo } from 'react';
 import { Skeleton } from '@/components/primitives/skeleton';
 import { useEnvironment } from '@/context/environment/hooks';
@@ -18,18 +18,18 @@ type IntegrationsListProps = {
 
 function IntegrationCardSkeleton() {
   return (
-    <div className="bg-card shadow-xs group relative flex min-h-[125px] cursor-pointer flex-col gap-2 overflow-hidden rounded-xl border border-neutral-100 p-3 transition-all hover:shadow-lg">
+    <div className="bg-card shadow-xs group relative flex min-h-[125px] cursor-pointer flex-col gap-2 overflow-hidden rounded-none border border-neutral-100 p-3 transition-all hover:shadow-lg">
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-1.5">
           <div className="relative h-6 w-6">
-            <Skeleton className="h-full w-full rounded-lg" />
+            <Skeleton className="h-full w-full rounded-none" />
           </div>
           <Skeleton className="h-4 w-32" />
         </div>
         <Skeleton className="h-4 w-4" />
       </div>
       <div className="flex items-center gap-2">
-        <Skeleton className="h-[16px] w-16 rounded-sm" />
+        <Skeleton className="h-[16px] w-16 rounded-none" />
       </div>
       <div className="mt-auto flex items-center gap-2">
         <Skeleton className="h-[26px] w-24" />
@@ -42,7 +42,7 @@ function IntegrationCardSkeleton() {
 function ConnectSheetTileSkeleton() {
   return (
     <div className="flex min-w-0 flex-1 basis-[calc(50%-0.5rem)] flex-col gap-1.5">
-      <Skeleton className="border-stroke-soft h-20 w-full rounded-lg border" />
+      <Skeleton className="border-stroke-soft h-20 w-full rounded-none border" />
       <Skeleton className="h-4 w-24" />
     </div>
   );
@@ -89,6 +89,9 @@ export function IntegrationsList({ onItemClick, excludeIntegrationIds, variant =
   const groupedIntegrations = useMemo(() => {
     return integrations
       ?.filter((i) => i.providerId !== EmailProviderIdEnum.NovuAgent)
+      .filter((i) => i.providerId !== EmailProviderIdEnum.Notify)
+      .filter((i) => i.providerId !== SmsProviderIdEnum.Notify)
+      .filter((i) => i.providerId !== PushProviderIdEnum.Notify)
       .filter((i) => isChannelVisibleInUi(i.channel, isToolChannelEnabled))
       .reduce(
         (acc, integration) => {

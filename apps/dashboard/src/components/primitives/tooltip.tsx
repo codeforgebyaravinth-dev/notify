@@ -20,7 +20,7 @@ const tooltipContentVariants = cva(
         light: 'border border-neutral-alpha-400 bg-background shadow-xs',
       },
       size: {
-        default: 'rounded-md',
+        default: 'rounded-none',
         '2xs': '',
         xs: '',
         lg: 'p-3 w-72 rounded-[12px]',

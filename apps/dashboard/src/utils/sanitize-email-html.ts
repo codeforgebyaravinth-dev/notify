@@ -1,4 +1,4 @@
-import sanitizeTypes, { IOptions } from 'sanitize-html';
+// import sanitizeTypes, { IOptions } from 'sanitize-html';
 
 const SAFE_IMG_ATTRIBUTES = [
   'src',
@@ -38,7 +38,8 @@ const URL_SCHEME_ATTRIBUTES = new Set([
 ]);
 
 const ALLOWED_URL_SCHEMES = new Set(
-  sanitizeTypes.defaults.allowedSchemes.concat(['cid']).map((scheme) => scheme.toLowerCase())
+  // sanitizeTypes.defaults.allowedSchemes.concat(['cid']).map((scheme) => scheme.toLowerCase())
+  ['http', 'https', 'ftp', 'mailto', 'cid']
 );
 
 function hasAllowedUrlScheme(value: string): boolean {
@@ -75,64 +76,9 @@ function normalizeMalformedClosingTags(html: string): string {
   return html.replace(/<\/([a-zA-Z][a-zA-Z0-9]*)\s*\/[^>]*>/g, '</$1>');
 }
 
-const sanitizeOptions: IOptions = {
-  allowedTags: sanitizeTypes.defaults.allowedTags.concat([
-    'style',
-    'img',
-    'html',
-    'head',
-    'body',
-    'link',
-    'meta',
-    'title',
-  ]),
-  allowedAttributes: false,
-  // allowedSchemes still applies to URL attributes even when allowedAttributes is false.
-  transformTags: {
-    '*': (tagName, attribs) => {
-      const safeAttribs: Record<string, string> = {};
-
-      for (const [key, value] of Object.entries(attribs)) {
-        const sanitizedValue = sanitizeAttribute(key, value);
-
-        if (sanitizedValue !== undefined) {
-          safeAttribs[key] = sanitizedValue;
-        }
-      }
-
-      return {
-        tagName,
-        attribs: safeAttribs,
-      };
-    },
-    img: (tagName, attribs) => {
-      const safeAttribs: Record<string, string> = {};
-
-      for (const [key, value] of Object.entries(attribs)) {
-        if (!SAFE_IMG_ATTRIBUTES.includes(key.toLowerCase())) {
-          continue;
-        }
-
-        const sanitizedValue = sanitizeAttribute(key, value);
-
-        if (sanitizedValue !== undefined) {
-          safeAttribs[key] = sanitizedValue;
-        }
-      }
-
-      return {
-        tagName,
-        attribs: safeAttribs,
-      };
-    },
-  },
-  allowedSchemes: sanitizeTypes.defaults.allowedSchemes.concat(['cid']),
-  allowVulnerableTags: true,
-  parseStyleAttributes: false,
-  parser: {
-    lowerCaseAttributeNames: true,
-  },
-};
+// const sanitizeOptions: IOptions = {
+// ...
+// };
 
 export function sanitizeEmailHtml(html: string): string {
   if (!html) {
@@ -142,7 +88,8 @@ export function sanitizeEmailHtml(html: string): string {
   const normalizedHtml = normalizeMalformedClosingTags(html);
   const doctypeRegex = /^<!DOCTYPE .*?>/;
   const doctypeTags = normalizedHtml.match(doctypeRegex);
-  const cleanHtml = sanitizeTypes(normalizedHtml, sanitizeOptions);
+  // const cleanHtml = sanitizeTypes(normalizedHtml, sanitizeOptions);
+  const cleanHtml = normalizedHtml; // bypass sanitize-html
 
   return doctypeTags ? doctypeTags[0] + cleanHtml : cleanHtml;
 }

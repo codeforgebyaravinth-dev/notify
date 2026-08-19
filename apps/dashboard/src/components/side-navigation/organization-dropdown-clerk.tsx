@@ -204,7 +204,7 @@ export function OrganizationDropdown() {
       <DropdownMenuTrigger asChild>
         <button
           className={cn(
-            'group relative flex w-full items-center justify-start gap-2 rounded-lg px-1.5 py-1.5 transition-all duration-300',
+            'group relative flex w-full items-center justify-start gap-2 rounded-none px-1.5 py-1.5 transition-all duration-300',
             'hover:bg-background hover:shadow-sm',
             'before:absolute before:bottom-0 before:left-0 before:h-0 before:w-full before:border-b before:border-b-neutral-200 before:transition-all before:duration-300 before:content-[""]',
             'hover:before:border-transparent',
@@ -219,7 +219,7 @@ export function OrganizationDropdown() {
         </button>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent className="w-64 p-0" align="start">
+      <DropdownMenuContent className="w-64 p-0 rounded-none border-neutral-200 dark:border-neutral-800" align="start">
         <div
           ref={scrollContainerRef}
           className="max-h-[200px] overflow-y-auto"

@@ -2,7 +2,9 @@
   "parallel": 4,
   "targetDefaults": {
     "build": {
-      "dependsOn": ["^build"],
+      "dependsOn": [
+        "^build"
+      ],
       "cache": true
     },
     "test": {
@@ -12,12 +14,18 @@
       "cache": true
     },
     "lint-biome": {
-      "inputs": ["default", "{workspaceRoot}/biome.json"],
+      "inputs": [
+        "default",
+        "{workspaceRoot}/biome.json"
+      ],
       "cache": true
     }
   },
   "namedInputs": {
-    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "default": [
+      "{projectRoot}/**/*",
+      "sharedGlobals"
+    ],
     "production": [
       "default",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
@@ -79,15 +87,6 @@
     },
     "version": {
       "useLegacyVersioning": true
-    }
-  },
-  "tasksRunnerOptions": {
-    "default": {
-      "options": {
-        "canTrackAnalytics": false,
-        "nxCloudId": "61d98cffc3343830d132e541"
-      },
-      "runner": "nx-cloud"
     }
   },
   "useInferencePlugins": false,

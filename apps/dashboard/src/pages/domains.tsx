@@ -41,14 +41,14 @@ const DOMAINS_TABLE_ID = 'domains-list';
 function DomainStatusBadge({ status }: { status: DomainStatusEnum }) {
   if (status === DomainStatusEnum.VERIFIED) {
     return (
-      <Badge variant="light" color="green">
+      <Badge variant="light" color="green" className="rounded-none">
         Verified
       </Badge>
     );
   }
 
   return (
-    <Badge variant="light" color="orange">
+    <Badge variant="light" color="orange" className="rounded-none">
       Pending
     </Badge>
   );
@@ -131,7 +131,7 @@ function DomainsEmptyState({ onCreateDomain }: { onCreateDomain: () => void }) {
             variant="primary"
             mode="gradient"
             size="xs"
-            className="mb-3.5"
+            className="mb-3.5 rounded-none"
             onClick={onCreateDomain}
             leadingIcon={RiAddLine}
           >
@@ -262,7 +262,7 @@ export function DomainsPage() {
                   placeholder="Search domains..."
                 />
               </div>
-              <Button onClick={() => setIsAddDialogOpen(true)}>
+              <Button onClick={() => setIsAddDialogOpen(true)} className="rounded-none">
                 <RiAddLine className="size-4" />
                 Add domain
               </Button>

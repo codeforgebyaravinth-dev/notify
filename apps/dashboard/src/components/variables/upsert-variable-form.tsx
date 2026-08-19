@@ -96,14 +96,14 @@ export const UpsertVariableForm = ({
 
   const { createEnvironmentVariable } = useCreateEnvironmentVariable({
     onSuccess: () => {
-      showSuccessToast('Variable created successfully');
+      showSuccessToast('Secret added successfully');
       onSuccess?.();
     },
     onError: (error: unknown) => {
       if (error instanceof NovuApiError && error.status === 409) {
-        form.setError('key', { type: 'manual', message: 'A variable with this key already exists' });
+        form.setError('key', { type: 'manual', message: 'A secret with this key already exists' });
       } else {
-        const message = error instanceof Error ? error.message : 'Failed to create variable';
+        const message = error instanceof Error ? error.message : 'Failed to add secret';
         showErrorToast(message);
       }
       onError?.(error instanceof Error ? error : new Error('Unknown error'));
@@ -112,11 +112,11 @@ export const UpsertVariableForm = ({
 
   const { updateEnvironmentVariable } = useUpdateEnvironmentVariable({
     onSuccess: () => {
-      showSuccessToast('Variable updated successfully');
+      showSuccessToast('Secret updated successfully');
       onSuccess?.();
     },
     onError: (error: unknown) => {
-      const message = error instanceof Error ? error.message : 'Failed to update variable';
+      const message = error instanceof Error ? error.message : 'Failed to update secret';
       showErrorToast(message);
       onError?.(error instanceof Error ? error : new Error('Unknown error'));
     },
@@ -180,12 +180,13 @@ export const UpsertVariableForm = ({
           name="key"
           render={({ field, fieldState }) => (
             <FormItem>
-              <FormLabel>Variable key</FormLabel>
+              <FormLabel>Secret key</FormLabel>
               <FormControl>
                 <Input
                   {...field}
                   placeholder="e.g. BASE_URL"
                   size="xs"
+                  className="rounded-none"
                   hasError={!!fieldState.error}
                   onChange={(e) => field.onChange(e.target.value)}
                 />
@@ -207,7 +208,7 @@ export const UpsertVariableForm = ({
         <div className="flex flex-col gap-3">
           <div className="flex flex-col gap-1">
             <p className="text-text-strong text-xs font-medium">Values</p>
-            <p className="text-text-sub text-xs">Add values for this variable in different environments.</p>
+            <p className="text-text-sub text-xs">Add values for this secret in different environments.</p>
           </div>
 
           <div className="flex flex-col gap-1.5">
@@ -229,7 +230,7 @@ export const UpsertVariableForm = ({
                         </div>
                         <div className="flex flex-1 flex-col gap-1">
                           <FormControl>
-                            <Input {...field} placeholder={placeholder} size="xs" hasError={!!fieldState.error} />
+                            <Input {...field} placeholder={placeholder} size="xs" className="rounded-none" hasError={!!fieldState.error} />
                           </FormControl>
                           {fieldState.error && <FormMessage />}
                         </div>
@@ -242,9 +243,9 @@ export const UpsertVariableForm = ({
           </div>
         </div>
 
-        <div className="rounded-lg border border-neutral-100 bg-neutral-50 p-3">
+        <div className="rounded-none border border-neutral-100 bg-neutral-50 p-3">
           <div className="flex gap-2">
-            <div className="bg-faded-base mt-0.5 h-auto w-1 shrink-0 rounded-full" />
+            <div className="bg-faded-base mt-0.5 h-auto w-1 shrink-0 rounded-none" />
             <p className="text-text-sub text-xs">
               <span className="text-text-strong font-medium">Note</span>
               {': These values can be accessed in the workflows via '}

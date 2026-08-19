@@ -18,6 +18,7 @@ export * from './schemas/channel-endpoint';
 export * from './schemas/chat';
 export * from './schemas/control';
 export * from './services';
+export * from './services/billing/billing.service';
 export * from './services/agent-entitlements.service';
 export * from './services/plan-limits';
 export * from './services/resource-validator.service';

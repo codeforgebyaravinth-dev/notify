@@ -137,7 +137,7 @@ export function OrganizationSettings({ clerkAppearance }: { clerkAppearance: Cle
             <div className="flex flex-col border-t border-neutral-100 pt-4 pl-1">
               <div className="flex items-center justify-between py-1">
                 <div className="flex items-center gap-1">
-                  <span className="text-label-sm text-text-strong">Remove Novu branding</span>
+                  <span className="text-label-sm text-text-strong">Remove Notify branding</span>
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <RiInformation2Line className="size-4 text-text-soft cursor-help" />
@@ -149,15 +149,8 @@ export function OrganizationSettings({ clerkAppearance }: { clerkAppearance: Cle
                         hideWhenDetached
                         className="w-[220px] border-0 bg-white p-1 shadow-md"
                       >
-                        <figure className="aspect-[3] w-full overflow-hidden rounded-md border border-gray-200">
-                          <img
-                            src="/images/novu-branding.png"
-                            alt="Novu branding preview"
-                            className="h-full w-full object-contain"
-                          />
-                        </figure>
                         <p className="mt-2 px-0.5 text-xs text-gray-500">
-                          Novu branding appears at the bottom of your emails and in your inbox.
+                          Notify branding appears at the bottom of your emails and in your inbox.
                         </p>
                       </TooltipContent>
                     </TooltipPortal>
@@ -171,7 +164,7 @@ export function OrganizationSettings({ clerkAppearance }: { clerkAppearance: Cle
                 />
               </div>
               <p className="text-paragraph-sm text-text-soft mb-1">
-                When enabled, removes Novu branding from your notifications and agent messages.
+                When enabled, removes Notify branding from your notifications and agent messages.
               </p>
             </div>
           </div>

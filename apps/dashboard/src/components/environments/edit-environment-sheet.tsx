@@ -98,8 +98,8 @@ export const EditEnvironmentSheet = ({ environment, isOpen, onOpenChange }: Edit
           <Button
             isLoading={isPending}
             trailingIcon={RiArrowRightSLine}
-            variant="secondary"
-            mode="gradient"
+            variant="primary"
+            className="rounded-none bg-foreground-950 text-background hover:bg-foreground-900 dark:bg-white dark:text-black dark:hover:bg-neutral-200 transition-colors h-8 text-xs px-3"
             type="submit"
             form="edit-environment"
           >

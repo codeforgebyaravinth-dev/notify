@@ -122,7 +122,7 @@ export class SendTestEmail {
         to: Array.isArray(email) ? email : [email],
         subject,
         html: html as string,
-        from: (command.payload.$sender_email as string) || integration?.credentials.from || 'no-reply@novu.co',
+        from: (command.payload.$sender_email as string) || integration?.credentials.from || 'no-reply@notifyhq.in',
       };
 
       await this.sendMessage(integration, mailData, mailFactory, command, bridgeProviderData);

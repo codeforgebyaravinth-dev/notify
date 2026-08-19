@@ -44,6 +44,10 @@ const brandRetrievalService = {
 export const USE_CASES = [
   AddMember,
   CreateOrganization,
+  {
+    provide: 'CreateOrganizationUsecase',
+    useExisting: CreateOrganization,
+  },
   brandRetrievalService,
   EnrichOrganizationBrand,
   {

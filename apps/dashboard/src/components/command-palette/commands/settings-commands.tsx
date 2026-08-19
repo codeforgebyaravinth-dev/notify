@@ -6,7 +6,7 @@ import { Command, CommandExecutionContext } from '../command-types';
 
 export function useSettingsCommands(_context: CommandExecutionContext): Command[] {
   const navigate = useNavigate();
-  const canShowBilling = IS_CLOUD;
+  const canShowBilling = true; // Always show billing for Notify
 
   const commands: Command[] = [
     {

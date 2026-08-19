@@ -116,12 +116,13 @@ export const InboxButton = ({
 
   const subscriber = useMemo(
     () => ({
-      subscriberId: user?.externalId ?? '',
+      // Fall back to user.id (Clerk's own ID) when externalId is null for JIT-provisioned users
+      subscriberId: (user?.externalId || user?.id) ?? '',
       email: user?.primaryEmailAddress?.emailAddress ?? user?.emailAddresses?.[0]?.emailAddress ?? '',
       firstName: user?.firstName ?? '',
       lastName: user?.lastName ?? '',
     }),
-    [user?.externalId, user?.primaryEmailAddress?.emailAddress, user?.emailAddresses, user?.firstName, user?.lastName]
+    [user?.externalId, user?.id, user?.primaryEmailAddress?.emailAddress, user?.emailAddresses, user?.firstName, user?.lastName]
   );
 
   // On the (non-test) dashboard Inbox we authenticate against Novu's own production account with the
@@ -159,11 +160,15 @@ export const InboxButton = ({
     [isTestPage, localizationTestSuffix]
   );
 
-  if (!user?.externalId || !currentEnvironment || !currentOrganization) {
+  if (!(user?.externalId || user?.id) || !currentEnvironment || !currentOrganization) {
     return null;
   }
 
   if (!isTestPage && IS_SELF_HOSTED) {
+    return null;
+  }
+
+  if (!appId) {
     return null;
   }
 

@@ -123,7 +123,7 @@ function ProfileSection() {
       </div>
 
       <div className="space-y-4">
-        <div className="rounded-lg border border-neutral-200 bg-white p-4">
+        <div className="rounded-none border border-neutral-200 bg-white p-4">
           <div className="mb-3 flex items-center gap-2">
             <RiUser3Line className="size-5 text-foreground-600" />
             <h3 className="text-sm font-medium text-foreground-950">Full Name</h3>
@@ -185,7 +185,7 @@ function ProfileSection() {
           )}
         </div>
 
-        <div className="rounded-lg border border-neutral-200 bg-white p-4">
+        <div className="rounded-none border border-neutral-200 bg-white p-4">
           <div className="mb-3 flex items-center gap-2">
             <RiMailLine className="size-5 text-foreground-600" />
             <h3 className="text-sm font-medium text-foreground-950">Email Address</h3>
@@ -329,7 +329,7 @@ function SecuritySection() {
         <p className="mt-1 text-sm text-foreground-600">Manage your password and security settings</p>
       </div>
 
-      <div className="rounded-lg border border-neutral-200 bg-white p-4">
+      <div className="rounded-none border border-neutral-200 bg-white p-4">
         <div className="mb-3 flex items-center gap-2">
           <RiLockPasswordLine className="size-5 text-foreground-600" />
           <h3 className="text-sm font-medium text-foreground-950">Password</h3>

@@ -175,7 +175,7 @@ export class SendAgentTestEmail {
         ...configured,
         credentials: {
           apiKey: process.env.NOVU_EMAIL_INTEGRATION_API_KEY,
-          from: delivery.agentInboundFrom ?? 'no-reply@novu.co',
+          from: delivery.agentInboundFrom ?? 'no-reply@notifyhq.in',
           senderName: delivery.senderName,
           ipPoolName: 'Demo',
         },

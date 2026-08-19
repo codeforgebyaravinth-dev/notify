@@ -23,7 +23,7 @@ const Textarea = React.forwardRef<
           'text-paragraph-xs text-text-strong block w-full resize-none outline-hidden',
           !simple && ['pointer-events-auto h-full min-h-[82px] bg-transparent pl-3 pr-2.5 pt-2.5'],
           simple && [
-            'bg-bg-white shadow-regular-xs min-h-28 rounded-xl px-3 py-2.5',
+            'bg-bg-white shadow-regular-xs min-h-28 rounded-none px-3 py-2.5',
             'ring-stroke-soft ring-1 ring-inset',
             'transition duration-200 ease-out',
             // hover
@@ -115,7 +115,7 @@ const TextareaRoot = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         className={cn(
           [
             // base
-            'group/textarea bg-bg-white shadow-regular-xs relative flex w-full flex-col rounded-md pb-2.5',
+            'group/textarea bg-bg-white shadow-regular-xs relative flex w-full flex-col rounded-none pb-2.5',
             'ring-stroke-soft ring-1 ring-inset',
             'transition duration-200 ease-out',
             // hover

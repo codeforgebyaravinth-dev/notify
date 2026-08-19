@@ -1,7 +1,7 @@
 import { LogoCircle } from '@/components/icons/logo-circle';
 import { motion } from 'motion/react';
 import { ComponentType, useEffect, useState } from 'react';
-import { RiCheckboxCircleFill, RiLoader3Line, RiLoader4Fill } from 'react-icons/ri';
+import { RiCheckboxCircleFill, RiFlashlightFill, RiLoader3Line, RiLoader4Fill } from 'react-icons/ri';
 
 type LoaderLogoComponent = ComponentType<{ className?: string }>;
 
@@ -31,12 +31,12 @@ const VARIANT_CONFIG: Record<
   platform: {
     steps: PLATFORM_STEPS,
     title: 'Setting up your workspace',
-    Logo: LogoCircle,
+    Logo: RiFlashlightFill,
   },
   agents: {
     steps: AGENTS_STEPS,
     title: 'Build and distribute agents',
-    Logo: LogoCircle,
+    Logo: RiFlashlightFill,
   },
 };
 

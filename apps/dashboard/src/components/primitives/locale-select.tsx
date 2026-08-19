@@ -234,7 +234,7 @@ export function LocaleSelect(props: LocaleSelectProps) {
         <Button
           variant="secondary"
           mode="outline"
-          className={cn('flex h-8 w-full items-center justify-between gap-1 rounded-lg px-3 focus:z-10', className)}
+          className={cn('flex h-8 w-full items-center justify-between gap-1 rounded-none px-3 focus:z-10', className)}
           disabled={disabled || readOnly}
           onClick={handleToggle}
           type="button"
@@ -254,7 +254,7 @@ export function LocaleSelect(props: LocaleSelectProps) {
         {isOpen && (
           <div
             className={cn(
-              'border-border bg-background absolute z-[9999] mt-1 w-full min-w-[320px] rounded-lg border shadow-lg',
+              'border-border bg-background absolute z-[9999] mt-1 w-full min-w-[320px] rounded-none border shadow-lg',
               dropdownPosition === 'right' ? 'right-0' : 'left-0'
             )}
           >
@@ -285,7 +285,7 @@ export function LocaleSelect(props: LocaleSelectProps) {
                         key={locale.langIso}
                         type="button"
                         className={cn(
-                          'hover:bg-accent focus:bg-accent flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-sm transition-colors focus:outline-hidden',
+                          'hover:bg-accent focus:bg-accent flex w-full items-center gap-2 rounded-none px-2 py-1.5 text-sm transition-colors focus:outline-hidden',
                           isSelected && 'bg-accent'
                         )}
                         onClick={() => handleSelect(locale.langIso)}

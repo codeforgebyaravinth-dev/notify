@@ -27,7 +27,7 @@ export function UserProfile() {
         userProfileUrl={ROUTES.SETTINGS_ACCOUNT}
         appearance={{
           elements: {
-            avatarBox: 'h-6 w-6',
+            avatarBox: 'h-6 w-6 rounded-none',
             userButtonTrigger: 'focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring',
           },
         }}
@@ -48,7 +48,7 @@ export function UserProfile() {
         userProfileUrl={ROUTES.SETTINGS_ACCOUNT}
         appearance={{
           elements: {
-            avatarBox: 'h-6 w-6',
+            avatarBox: 'h-6 w-6 rounded-none',
             userButtonTrigger: 'focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring',
           },
         }}

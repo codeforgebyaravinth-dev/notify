@@ -39,7 +39,7 @@ type EnvironmentDropdownProps = {
 const LocalEnvironmentIcon = ({ status, size = 'sm' }: { status: ConnectionStatus; size?: 'sm' | 'md' }) => (
   <div
     className={cn(
-      'flex shrink-0 items-center justify-center rounded-[6px] border border-solid p-1',
+      'flex shrink-0 items-center justify-center rounded-none border border-solid p-1',
       size === 'md' ? 'size-6' : 'size-5',
       {
         'bg-success/10 border-success text-success': status === ConnectionStatus.CONNECTED,
@@ -82,7 +82,7 @@ export const EnvironmentDropdown = ({
         open={isSelectOpen}
         onOpenChange={setIsSelectOpen}
       >
-        <SelectTrigger className={cn('group p-1.5 shadow-sm [&>svg]:last:hidden', className)}>
+        <SelectTrigger className={cn('group p-1.5 shadow-sm rounded-none [&>svg]:last:hidden', className)}>
           <SelectValue asChild>
             {isLocalSelected && localEntry ? (
               <LocalEntryContent status={localEntry.status} size="md" />
@@ -99,7 +99,7 @@ export const EnvironmentDropdown = ({
             <RiExpandUpDownLine className="ml-auto size-4 opacity-0 transition duration-300 ease-out group-focus-within:opacity-100 group-hover:opacity-100" />
           </SelectIcon>
         </SelectTrigger>
-        <SelectContent>
+        <SelectContent className="rounded-none border-neutral-200 dark:border-neutral-800">
           {localEntry && (
             <SelectItem value={LOCAL_ENVIRONMENT_VALUE}>
               <LocalEntryContent status={localEntry.status} />

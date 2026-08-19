@@ -1,6 +1,6 @@
 import { ApiServiceLevelEnum } from '@novu/shared';
 import { ReactNode } from 'react';
-import { RiExternalLinkLine, RiLockStarLine } from 'react-icons/ri';
+import { RiArrowRightLine, RiFlashlightLine, RiLockLine } from 'react-icons/ri';
 import { useNavigate } from 'react-router-dom';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/primitives/tooltip';
 import { IS_SELF_HOSTED, SELF_HOSTED_UPGRADE_REDIRECT_URL } from '@/config';
@@ -14,9 +14,8 @@ type UpgradeCTATooltipProps = {
   description?: string;
   /**
    * Lowest tier that unlocks the gated feature. When set (on cloud), the copy
-   * and CTA name the exact plan the user needs (e.g. "Upgrade to Team") instead
-   * of a generic upgrade prompt. Ignored on self-hosted, where naming a cloud
-   * tier would be misleading.
+   * and CTA name the exact plan the user needs (e.g. "Upgrade to Pro") instead
+   * of a generic upgrade prompt. Ignored on self-hosted.
    */
   requiredTier?: ApiServiceLevelEnum | null;
   side?: 'top' | 'right' | 'bottom' | 'left';
@@ -32,7 +31,7 @@ export function UpgradeCTATooltip({
   requiredTier,
   side = 'bottom',
   align = 'end',
-  sideOffset = 4,
+  sideOffset = 6,
   utmCampaign = 'upgrade_prompt',
   utmSource = 'upgrade_prompt',
 }: UpgradeCTATooltipProps) {
@@ -44,13 +43,12 @@ export function UpgradeCTATooltip({
   if (IS_SELF_HOSTED) {
     defaultDescription = 'Unlock this feature by upgrading to Cloud plans';
   } else if (tierLabel) {
-    defaultDescription = `Unlock this feature by upgrading to the ${tierLabel} plan`;
+    defaultDescription = `Available on the ${tierLabel} plan and above`;
   } else {
-    defaultDescription = 'Unlock this feature by upgrading to a paid plan';
+    defaultDescription = 'Unlock this feature by upgrading your plan';
   }
 
   const ctaLabel = tierLabel ? `Upgrade to ${tierLabel}` : 'Upgrade plan';
-
   const finalDescription = description || defaultDescription;
 
   const handleUpgradeClick = () => {
@@ -70,38 +68,60 @@ export function UpgradeCTATooltip({
         sideOffset={sideOffset}
         variant="light"
         size="lg"
-        className="flex w-72 flex-col items-start gap-3 border border-neutral-100 p-2 shadow-md"
+        className="w-72 overflow-hidden rounded-lg border border-neutral-200 p-0 shadow-xl"
       >
-        {/* Badge */}
-        <div className="flex items-center gap-1 rounded bg-red-50 px-2 py-1">
-          <RiLockStarLine className="h-3 w-3 text-pink-600" />
-          <span
-            className="text-[10px] font-medium uppercase leading-normal"
+        {/* Top accent bar */}
+        <div
+          className="h-0.5 w-full"
+          style={{ background: 'linear-gradient(90deg, #8444df 0%, #fb3748 50%, #ff884d 100%)' }}
+        />
+
+        <div className="p-3">
+          {/* Header row */}
+          <div className="mb-2.5 flex items-center gap-2">
+            <div
+              className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md"
+              style={{ background: 'linear-gradient(135deg, #8444df20 0%, #fb374815 100%)', border: '1px solid #8444df30' }}
+            >
+              <RiLockLine className="h-3.5 w-3.5" style={{ color: '#8444df' }} />
+            </div>
+            <div className="flex items-center gap-1.5">
+              {/* Gradient badge */}
+              <span
+                className="rounded px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-widest"
+                style={{
+                  background: 'linear-gradient(135deg, #8444df15, #fb374810)',
+                  border: '1px solid #8444df25',
+                  color: '#8444df',
+                }}
+              >
+                {tierLabel ? `${tierLabel} feature` : 'Paid feature'}
+              </span>
+            </div>
+          </div>
+
+          {/* Description */}
+          <p className="mb-3 text-[12px] leading-relaxed text-neutral-600">{finalDescription}</p>
+
+          {/* CTA button */}
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              handleUpgradeClick();
+            }}
+            className="group flex w-full items-center justify-between rounded-md px-3 py-2 text-xs font-medium text-white transition-all hover:opacity-90 active:scale-[0.98]"
             style={{
-              background: 'linear-gradient(225deg, #FF884D 23.17%, #E300BD 80.17%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
+              background: 'linear-gradient(135deg, #8444df 0%, #6b35b8 100%)',
+              boxShadow: '0 1px 4px #8444df40',
             }}
           >
-            PREMIUM FEATURE
-          </span>
-        </div>
-
-        {/* Label */}
-        <div className="flex flex-col items-start gap-3">
-          <p className="text-xs text-neutral-500">{finalDescription}</p>
-          <div className="flex w-full">
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                handleUpgradeClick();
-              }}
-              className="flex items-center gap-1 text-xs font-medium text-neutral-900 hover:underline"
-            >
-              {ctaLabel} <RiExternalLinkLine className="h-3 w-3" />
-            </button>
-          </div>
+            <span className="flex items-center gap-1.5">
+              <RiFlashlightLine className="h-3.5 w-3.5" />
+              {ctaLabel}
+            </span>
+            <RiArrowRightLine className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+          </button>
         </div>
       </TooltipContent>
     </Tooltip>

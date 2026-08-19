@@ -10,10 +10,6 @@ import { ROUTES } from '../../utils/routes';
 import { InboxConnectedGuide } from './inbox-connected-guide';
 import { InboxFrameworkGuide } from './inbox-framework-guide';
 
-const LAYOUT_CONSTANTS = {
-  MAIN_PADDING_LEFT: 'pl-[100px]',
-  FOOTER_MARGIN_LEFT: '-ml-[100px]',
-} as const;
 
 export function InboxEmbed(): JSX.Element | null {
   const [showConfetti, setShowConfetti] = useState(false);
@@ -97,7 +93,7 @@ export function InboxEmbed(): JSX.Element | null {
 
   if (!foundIntegration) {
     return (
-      <main className={LAYOUT_CONSTANTS.MAIN_PADDING_LEFT}>
+      <main>
         <InboxFrameworkGuide
           currentEnvironment={selectedEnvironment}
           subscriberId={subscriberId}
@@ -111,7 +107,7 @@ export function InboxEmbed(): JSX.Element | null {
   }
 
   return (
-    <main className={LAYOUT_CONSTANTS.MAIN_PADDING_LEFT}>
+    <main>
       {showConfetti && <ReactConfetti recycle={false} numberOfPieces={1000} />}
       {foundIntegration?.connected ? (
         <InboxConnectedGuide subscriberId={subscriberId} environment={selectedEnvironment} />

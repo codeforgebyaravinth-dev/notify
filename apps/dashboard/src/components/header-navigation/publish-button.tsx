@@ -164,7 +164,7 @@ export const PublishButton = () => {
         <PermissionButton
           permission={PermissionsEnum.ENVIRONMENT_WRITE}
           variant="secondary"
-          className="h-[26px]"
+          className="h-[26px] rounded-none"
           mode="outline"
           size="2xs"
           leadingIcon={LuBookUp2}
@@ -207,7 +207,7 @@ export const PublishButton = () => {
       <PermissionButton
         permission={PermissionsEnum.ENVIRONMENT_WRITE}
         variant="secondary"
-        className="h-[26px]"
+        className="h-[26px] rounded-none"
         mode="outline"
         size="2xs"
         leadingIcon={LuBookUp2}
@@ -224,7 +224,7 @@ export const PublishButton = () => {
         <DropdownMenuTrigger asChild>
           <Button
             variant="secondary"
-            className="h-[26px]"
+            className="h-[26px] rounded-none"
             mode="outline"
             size="2xs"
             leadingIcon={LuBookUp2}

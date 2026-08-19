@@ -8,6 +8,7 @@ export enum HttpRequestHeaderKeysEnum {
   SENTRY_TRACE = 'Sentry-Trace',
   BAGGAGE = 'Baggage',
   NOVU_ENVIRONMENT_ID = 'Novu-Environment-Id',
+  NOVU_ORGANIZATION_ID = 'Novu-Organization-Id',
   NOVU_API_VERSION = 'Novu-API-Version',
   NOVU_CLIENT_VERSION = 'Novu-Client-Version',
   NOVU_USER_AGENT = 'Novu-User-Agent',

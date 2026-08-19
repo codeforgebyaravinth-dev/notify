@@ -83,7 +83,7 @@ export function SignIn() {
         return;
       }
 
-      window.location.href = ROUTES.SIGNUP_ORGANIZATION_LIST;
+      window.location.href = ROUTES.ENV;
     } catch (e: any) {
       setError(e.message || 'An unexpected error occurred.');
     } finally {

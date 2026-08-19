@@ -21,7 +21,7 @@ export const LocalPublishButton = () => {
     <>
       <Button
         variant="secondary"
-        className="h-[26px]"
+        className="h-[26px] rounded-none"
         mode="outline"
         size="2xs"
         leadingIcon={LuBookUp2}

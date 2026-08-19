@@ -38,7 +38,7 @@ const DialogContent = React.forwardRef<
     <DialogPrimitive.Content
       ref={ref}
       className={cn(
-        'bg-background data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fixed left-[50%]! top-[50%]! z-50 grid w-auto min-w-[320px] max-w-[calc(100vw-2rem)] translate-x-[-50%]! translate-y-[-50%]! gap-3 border p-4 shadow duration-200 sm:rounded-xl',
+        'bg-background data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fixed left-[50%]! top-[50%]! z-50 grid w-auto min-w-[320px] max-w-[calc(100vw-2rem)] translate-x-[-50%]! translate-y-[-50%]! gap-3 border p-4 shadow duration-200 sm:rounded-none',
         className
       )}
       {...props}
@@ -46,7 +46,7 @@ const DialogContent = React.forwardRef<
       {children}
       {!hideCloseButton && (
         <DialogPrimitive.Close
-          className="ring-offset-background focus:ring-ring data-[state=open]:bg-accent absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-md text-foreground-alpha-600 transition-colors hover:bg-neutral-alpha-100 hover:text-foreground focus:outline-hidden focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none"
+          className="ring-offset-background focus:ring-ring data-[state=open]:bg-accent absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-none text-foreground-alpha-600 transition-colors hover:bg-neutral-alpha-100 hover:text-foreground focus:outline-hidden focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none"
           aria-label="Close"
         >
           <Cross2Icon className="h-4 w-4" />

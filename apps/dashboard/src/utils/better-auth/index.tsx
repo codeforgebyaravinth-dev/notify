@@ -31,47 +31,66 @@ export function ClerkProvider({ children }: { children: React.ReactNode }) {
   const { data: sessionData, isPending, refetch } = authClient.useSession();
   const [organization, setOrganization] = useState<BetterAuthOrganization | undefined>(undefined);
   const [memberRole, setMemberRole] = useState<MemberRoleEnum | null>(null);
+  const [hasAttemptedFetch, setHasAttemptedFetch] = useState(false);
 
   const activeOrganizationId = sessionData?.session?.activeOrganizationId;
   const currentUserId = sessionData?.user?.id;
 
-  const isOrgLoading = !!activeOrganizationId && !organization;
+  const isOrgLoading = !!currentUserId && !hasAttemptedFetch;
 
   useEffect(() => {
+    setHasAttemptedFetch(false);
     const fetchOrganization = async () => {
-      if (activeOrganizationId && currentUserId) {
+      if (currentUserId) {
         try {
-          const { data: fullOrgData } = await authClient.organization.getFullOrganization({
-            query: {
-              organizationId: activeOrganizationId,
-            },
+          const apiUrl = import.meta.env.VITE_API_HOSTNAME || 'http://localhost:3000';
+          const token = localStorage.getItem('better-auth-session-token');
+          
+          if (!token) {
+            setOrganization(undefined);
+            setMemberRole(null);
+            return;
+          }
+
+          const res = await fetch(`${apiUrl}/v1/organizations`, {
+            headers: { Authorization: `Bearer ${token}` }
           });
+          
+          if (!res.ok) throw new Error('Failed to fetch organizations data');
+          const responseData = await res.json();
+          const organizations = responseData?.data || [];
 
-          if (fullOrgData) {
+          const storedActiveId = localStorage.getItem('activeOrganizationId');
+          let activeOrg = organizations.find((org: any) => org._id === storedActiveId);
+          
+          if (!activeOrg && organizations.length > 0) {
+            activeOrg = organizations[0];
+            localStorage.setItem('activeOrganizationId', activeOrg._id);
+          }
+
+          if (activeOrg) {
             setOrganization({
-              id: fullOrgData.id,
-              name: fullOrgData.name,
-              slug: fullOrgData.slug,
+              id: activeOrg._id,
+              name: activeOrg.name,
+              slug: activeOrg.name.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
             });
-
-            const currentMember = (fullOrgData as any).members?.find((member: any) => member.userId === currentUserId);
-            if (currentMember?.role) {
-              setMemberRole(currentMember.role as MemberRoleEnum);
-            } else {
-              setMemberRole(null);
-            }
+            // We'll just assume admin if not specified in the payload, since Novu API handles actual permissions
+            setMemberRole(MemberRoleEnum.ADMIN);
           } else {
             setOrganization(undefined);
             setMemberRole(null);
           }
         } catch (error) {
-          console.error('Failed to fetch organization:', error);
+          console.error('Failed to fetch organization from Novu API:', error);
           setOrganization(undefined);
           setMemberRole(null);
+        } finally {
+          setHasAttemptedFetch(true);
         }
       } else {
         setOrganization(undefined);
         setMemberRole(null);
+        setHasAttemptedFetch(true);
       }
     };
 
@@ -253,8 +272,19 @@ export function useOrganizationList(options?: { userMemberships?: { infinite?: b
 
   const revalidate = useCallback(async () => {
     try {
-      const { data } = await authClient.organization.list();
-      setOrganizations(data || []);
+      const apiUrl = import.meta.env.VITE_API_HOSTNAME || 'http://localhost:3000';
+      const token = localStorage.getItem('better-auth-session-token');
+      const res = await fetch(`${apiUrl}/v1/organizations`, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      if (!res.ok) throw new Error('Failed to fetch organizations data');
+      const responseData = await res.json();
+      const orgs = (responseData?.data || []).map((org: any) => ({
+        id: org._id,
+        name: org.name,
+        slug: org.slug || org.name.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+      }));
+      setOrganizations(orgs);
       setHasLoaded(true);
     } catch (error) {
       console.error('Failed to load organizations:', error);
@@ -288,9 +318,7 @@ export function useOrganizationList(options?: { userMemberships?: { infinite?: b
 
   const setActive = async ({ organization }: { organization: string }) => {
     try {
-      await authClient.organization.setActive({
-        organizationId: organization,
-      });
+      localStorage.setItem('activeOrganizationId', organization);
       window.location.reload();
     } catch (error) {
       console.error('Failed to set active organization:', error);
@@ -319,18 +347,13 @@ export function useClerk() {
     loaded: context?.isSessionLoaded ?? !isPending,
     setActive: async ({ organization }: { organization?: string | null }) => {
       if (organization === null) {
-        await authClient.organization.setActive({
-          organizationId: null,
-        });
+        localStorage.removeItem('activeOrganizationId');
         window.location.reload();
-
         return;
       }
 
       if (organization) {
-        await authClient.organization.setActive({
-          organizationId: organization,
-        });
+        localStorage.setItem('activeOrganizationId', organization);
         window.location.reload();
       }
     },

@@ -89,11 +89,11 @@ export function IntegrationCard({
         onClick={handleConfigureClick}
         data-test-id={`integration-${integration._id}-row`}
       >
-        <div className="border-stroke-soft relative flex min-h-20 items-center justify-center rounded-lg border bg-bg-white px-6 py-4 shadow-xs transition-shadow group-hover:shadow-md">
+        <div className="border-stroke-soft relative flex min-h-20 items-center justify-center rounded-none border bg-bg-white px-6 py-4 shadow-xs transition-shadow group-hover:shadow-md">
           {integration.primary ? (
             <Tooltip>
               <TooltipTrigger asChild>
-                <span className="absolute left-2 top-2 flex size-6 items-center justify-center rounded-md">
+                <span className="absolute left-2 top-2 flex size-6 items-center justify-center rounded-none">
                   <RiStarSmileLine className="text-feature size-4" aria-hidden />
                 </span>
               </TooltipTrigger>
@@ -114,7 +114,7 @@ export function IntegrationCard({
               </TooltipContent>
             </Tooltip>
           ) : null}
-          <div className="shadow-xs ring-stroke-soft/80 flex size-10 shrink-0 items-center justify-center rounded-full bg-bg-white p-2 ring-1">
+          <div className="shadow-xs ring-stroke-soft/80 flex size-10 shrink-0 items-center justify-center rounded-none bg-bg-white p-2 ring-1">
             <ProviderIcon providerId={provider.id} providerDisplayName={provider.displayName} className="size-5" />
           </div>
         </div>
@@ -128,7 +128,7 @@ export function IntegrationCard({
   return (
     <div
       className={cn(
-        'bg-card shadow-xs group relative flex min-h-[125px] cursor-pointer flex-col gap-2 overflow-hidden rounded-xl border border-neutral-200 p-3 transition-all hover:shadow-lg',
+        'bg-card shadow-xs group relative flex min-h-[125px] cursor-pointer flex-col gap-2 overflow-hidden rounded-none border border-neutral-200 p-3 transition-all hover:shadow-lg',
         !integration.active && 'opacity-75 grayscale'
       )}
       onClick={handleConfigureClick}
@@ -156,7 +156,7 @@ export function IntegrationCard({
           )}
           {integration.channel === ChannelTypeEnum.IN_APP && isFreePlan && (
             <UpgradeCTATooltip
-              description="Remove the Novu branding and extend notification snooze beyond 24 hours in your Inbox component."
+              description="Remove the Notify branding and extend notification snooze beyond 24 hours in your Inbox component."
               requiredTier={getMinimumTierForFeature(FeatureNameEnum.PLATFORM_REMOVE_NOVU_BRANDING_BOOLEAN)}
               utmSource="in-app-upgrade-tooltip"
               side="right"

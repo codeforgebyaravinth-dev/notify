@@ -1,18 +1,19 @@
 import animate from 'tailwindcss-animate';
 
 export const borderRadii = {
-  4: '.25rem',
-  6: '.375rem',
-  8: '.5rem',
-  10: '.625rem',
-  12: '.75rem',
-  16: '1rem',
-  20: '1.25rem',
-  24: '1.5rem',
+  4: '0px',
+  6: '0px',
+  8: '0px',
+  10: '0px',
+  12: '0px',
+  16: '0px',
+  20: '0px',
+  24: '0px',
   full: '999px',
-  lg: 'var(--radius)', // DEPRECATED
-  md: 'calc(var(--radius) - 2px)', // DEPRECATED
-  sm: 'calc(var(--radius) - 4px)', // DEPRECATED
+  DEFAULT: '0px',
+  lg: '0px', // DEPRECATED
+  md: '0px', // DEPRECATED
+  sm: '0px', // DEPRECATED
 };
 
 export const texts = {

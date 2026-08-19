@@ -8,8 +8,8 @@ import { useTelemetry } from './use-telemetry';
 
 interface CheckoutResponse {
   data: {
-    stripeCheckoutUrl: string;
-    apiServiceLevel: ApiServiceLevelEnum;
+    url: string;
+    apiServiceLevel?: ApiServiceLevelEnum;
   };
 }
 
@@ -31,7 +31,7 @@ export function useCheckoutSession() {
         toPlan: params.requestedServiceLevel,
         billingInterval: params.billingInterval,
       });
-      window.location.href = response.data.stripeCheckoutUrl;
+      window.location.href = response.data.url;
     },
     onError: (error: Error, params) => {
       track(TelemetryEvent.BILLING_UPGRADE_ERROR, {

@@ -11,6 +11,7 @@ import {
   SelectIntegrationCommand,
   SelectVariant,
   SelectVariantCommand,
+  BillingService,
 } from '@novu/application-generic';
 import {
   IntegrationEntity,
@@ -81,7 +82,8 @@ export abstract class SendMessageBase extends SendMessageType {
     protected selectIntegration: SelectIntegration,
     protected getNovuProviderCredentials: GetNovuProviderCredentials,
     protected selectVariant: SelectVariant,
-    protected moduleRef: ModuleRef
+    protected moduleRef: ModuleRef,
+    protected billingService: BillingService
   ) {
     super(messageRepository, createExecutionDetails);
   }
@@ -256,5 +258,12 @@ export abstract class SendMessageBase extends SendMessageType {
     } catch (e) {
       Logger.error(e, `Unexpected error while importing enterprise modules`, 'TranslationsService');
     }
+  }
+
+  protected async reportUsage(organizationId: string, providerId: string) {
+    if (!this.billingService) {
+      return;
+    }
+    await this.billingService.reportUsage(organizationId, providerId, this.channelType);
   }
 }

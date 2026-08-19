@@ -121,6 +121,11 @@ export class ControlsTranslationService {
 
     try {
       const translate = this.getTranslationModule();
+      
+      if (!translate || typeof translate.createContext !== 'function') {
+        return null;
+      }
+
       const liquidEngine = createLiquidEngine();
 
       return await translate.createContext({

@@ -48,8 +48,8 @@ export function HomeMenuItem() {
         to={
           currentEnvironment?.slug
             ? buildRoute(ROUTES.WELCOME, {
-                environmentSlug: currentEnvironment?.slug ?? '',
-              })
+              environmentSlug: currentEnvironment?.slug ?? '',
+            })
             : undefined
         }
       >

@@ -26,7 +26,7 @@ export function CollapsibleSection({
   const handleOpenChange = onOpenChange ?? setInternalIsOpen;
 
   return (
-    <Collapsible open={isOpen} onOpenChange={handleOpenChange} className="rounded-lg bg-neutral-alpha-50 p-1 space-y-1">
+    <Collapsible open={isOpen} onOpenChange={handleOpenChange} className="rounded-none bg-neutral-alpha-50 p-1 space-y-1">
       <div className="flex items-center justify-between px-2 py-1">
         <p className="font-mono text-xs font-medium tracking-tight text-foreground-500 uppercase">{title}</p>
         <div className="flex items-center gap-2">

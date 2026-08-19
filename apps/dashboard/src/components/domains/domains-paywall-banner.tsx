@@ -1,15 +1,21 @@
 import { FeatureNameEnum } from '@novu/shared';
 import { useId } from 'react';
-import { RiBookMarkedLine, RiSparkling2Line } from 'react-icons/ri';
+import { RiBookMarkedLine, RiGlobalLine } from 'react-icons/ri';
 import { Link, useNavigate } from 'react-router-dom';
-import { Button } from '@/components/primitives/button';
-import { LinkButton } from '@/components/primitives/button-link';
+import { FeaturePaywallState } from '@/components/billing/feature-paywall-state';
 import { ROUTES } from '@/utils/routes';
 import { getMinimumTierForFeature, getPlanLabel, getUpgradeButtonLabel } from '@/utils/upgrade-tier';
 import { openInNewTab } from '@/utils/url';
 import { IS_SELF_HOSTED, SELF_HOSTED_UPGRADE_REDIRECT_URL } from '../../config';
 import { useTelemetry } from '../../hooks/use-telemetry';
 import { TelemetryEvent } from '../../utils/telemetry';
+import { LinkButton } from '../primitives/button-link';
+
+const DOMAIN_BENEFITS = [
+  'Receive emails at your own domain and route them to agents',
+  'Build trust with senders using your branded email address',
+  'Connect multiple domains for different brands or teams',
+];
 
 export function DomainsPaywallBanner() {
   const track = useTelemetry();
@@ -19,57 +25,34 @@ export function DomainsPaywallBanner() {
   const tierLabel = !IS_SELF_HOSTED && requiredTier ? getPlanLabel(requiredTier) : null;
 
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center gap-6 px-4">
-      <div className="flex w-full max-w-[480px] flex-col items-center gap-6 text-center">
-        <div className="flex w-full flex-col gap-3">
-          <div className="flex flex-col items-center gap-2">
-            <div className="mb-[50px]">
-              <DomainsIllustrationSvg />
-            </div>
-            <h2 className="text-foreground-900 text-label-md">Domains</h2>
-            <p className="text-text-soft text-label-xs mb-3 max-w-[300px]">
-              Receive emails on your domain and route them to agents or webhooks.
-            </p>
-          </div>
-        </div>
+    <FeaturePaywallState
+      icon={RiGlobalLine}
+      title="Custom Domains"
+      description="Receive emails on your own domain and route them to agents or webhooks. Build trust with branded email addresses."
+      tierLabel={tierLabel}
+      benefits={DOMAIN_BENEFITS}
+      upgradeLabel={getUpgradeButtonLabel(requiredTier)}
+      onUpgrade={() => {
+        track(TelemetryEvent.UPGRADE_TO_TEAM_TIER_CLICK, {
+          source: 'domains-page',
+        });
 
-        <div className="flex flex-col items-center gap-1">
-          <p className="text-text-soft text-label-xs mb-3 text-center">
-            {tierLabel
-              ? `To create domains, upgrade to the ${tierLabel} plan.`
-              : 'To create domains, upgrade your plan.'}
-          </p>
-          <Button
-            variant="primary"
-            mode="gradient"
-            size="xs"
-            className="mb-3.5"
-            onClick={() => {
-              track(TelemetryEvent.UPGRADE_TO_TEAM_TIER_CLICK, {
-                source: 'domains-page',
-              });
-
-              if (IS_SELF_HOSTED) {
-                openInNewTab(SELF_HOSTED_UPGRADE_REDIRECT_URL + '?utm_campaign=domains');
-              } else {
-                navigate(ROUTES.SETTINGS_BILLING);
-              }
-            }}
-            leadingIcon={RiSparkling2Line}
-          >
-            {getUpgradeButtonLabel(requiredTier)}
-          </Button>
-
-          <Link to="https://docs.novu.co/agents/get-started/mental-model" target="_blank" rel="noreferrer noopener">
-            <LinkButton size="sm" leadingIcon={RiBookMarkedLine}>
-              How does this help?
-            </LinkButton>
-          </Link>
-        </div>
-      </div>
-    </div>
+        if (IS_SELF_HOSTED) {
+          openInNewTab(SELF_HOSTED_UPGRADE_REDIRECT_URL + '?utm_campaign=domains');
+        } else {
+          navigate(ROUTES.SETTINGS_BILLING);
+        }
+      }}
+    >
+      <Link to="https://docs.novu.co/agents/get-started/mental-model" target="_blank" rel="noreferrer noopener">
+        <LinkButton size="sm" leadingIcon={RiBookMarkedLine}>
+          How does this help?
+        </LinkButton>
+      </Link>
+    </FeaturePaywallState>
   );
 }
+
 
 export function DomainsIllustrationSvg() {
   const id = useId();

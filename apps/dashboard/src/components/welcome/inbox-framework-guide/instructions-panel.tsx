@@ -1,13 +1,9 @@
 import { AnimatePresence, motion } from 'motion/react';
 import { useTelemetry } from '../../../hooks/use-telemetry';
 import { TelemetryEvent } from '../../../utils/telemetry';
-import { Tabs, TabsList, TabsTrigger } from '../../primitives/tabs';
 import { FrameworkCliInstructions, FrameworkInstructions } from '../framework-guides';
 import type { Framework } from '../framework-guides.instructions';
 import type { InstallationMethod } from './types';
-
-const TABS_TRIGGER_CLASSES =
-  'relative text-xs font-medium text-[#99A0AE] transition-all data-[state=active]:text-[#0E121B] data-[state=active]:bg-white data-[state=active]:shadow-[0px_4px_10px_rgba(14,18,27,0.06),0px_2px_4px_rgba(14,18,27,0.03)] hover:text-[#0E121B] px-1.5 py-0.5 rounded data-[state=active]:rounded-sm h-5 flex items-center justify-center min-w-fit';
 
 type InstallationMethodSelectorProps = {
   installationMethod: InstallationMethod;
@@ -17,25 +13,42 @@ type InstallationMethodSelectorProps = {
 function InstallationMethodSelector({ installationMethod, onMethodChange }: InstallationMethodSelectorProps) {
   const track = useTelemetry();
 
-  const handleMethodChange = (value: string) => {
-    track(TelemetryEvent.INBOX_IMPLEMENTATION_CLICKED, { method: value });
-    onMethodChange(value as InstallationMethod);
+  const handleMethodChange = (method: InstallationMethod) => {
+    track(TelemetryEvent.INBOX_IMPLEMENTATION_CLICKED, { method });
+    onMethodChange(method);
   };
 
+  const methods: { value: InstallationMethod; label: string }[] = [
+    { value: 'ai-assist', label: 'AI Assist' },
+    { value: 'manual', label: 'Manual' },
+  ];
+
   return (
-    <div className="mb-2 pl-8">
-      <div className="inline-flex items-center gap-64 border border-gray-100 rounded-lg p-4">
-        <span className="text-base font-medium text-[#222]">Installation method</span>
-        <Tabs defaultValue="ai-assist" value={installationMethod} onValueChange={handleMethodChange}>
-          <TabsList className="h-7 gap-1 rounded-md bg-[#FBFBFB] p-1 shadow-none">
-            <TabsTrigger value="ai-assist" className={TABS_TRIGGER_CLASSES}>
-              AI Assist
-            </TabsTrigger>
-            <TabsTrigger value="manual" className={TABS_TRIGGER_CLASSES}>
-              Manual
-            </TabsTrigger>
-          </TabsList>
-        </Tabs>
+    <div className="mb-4 flex items-center justify-between border-b border-neutral-100 pb-4">
+      <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-400">Installation method</p>
+      <div className="flex border border-neutral-200 bg-neutral-50">
+        {methods.map((m) => (
+          <button
+            key={m.value}
+            type="button"
+            onClick={() => handleMethodChange(m.value)}
+            className="relative px-4 py-1.5 text-xs font-medium transition-colors"
+            style={{
+              color: installationMethod === m.value ? '#7C3AED' : '#6b7280',
+              backgroundColor: installationMethod === m.value ? '#fff' : 'transparent',
+              boxShadow: installationMethod === m.value ? '0 1px 3px rgba(0,0,0,0.08)' : 'none',
+            }}
+          >
+            {installationMethod === m.value && (
+              <motion.div
+                layoutId="method-active"
+                className="absolute inset-x-0 top-0 h-[2px]"
+                style={{ background: 'linear-gradient(90deg, #7C3AED 0%, #DB2777 100%)' }}
+              />
+            )}
+            {m.label}
+          </button>
+        ))}
       </div>
     </div>
   );
@@ -59,18 +72,24 @@ export function InstructionsPanel({
   const isCliMethod = showInstallationTabs && installationMethod === 'cli';
 
   return (
-    <div className="relative flex flex-col overflow-hidden pl-0">
-      {showInstallationTabs ? (
-        <InstallationMethodSelector installationMethod={installationMethod} onMethodChange={onMethodChange} />
-      ) : null}
+    <div className="flex flex-col overflow-hidden border border-neutral-200 bg-white shadow-sm">
+      {/* Panel header */}
+      <div className="border-b border-neutral-100 px-6 py-4">
+        <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-400">Setup instructions</p>
+        <p className="mt-0.5 text-sm font-semibold text-neutral-800">{selectedFramework.name}</p>
+      </div>
 
-      <div className="overflow-y-auto">
-        <AnimatePresence>
+      <div className="overflow-y-auto p-6">
+        {showInstallationTabs ? (
+          <InstallationMethodSelector installationMethod={installationMethod} onMethodChange={onMethodChange} />
+        ) : null}
+
+        <AnimatePresence mode="wait">
           <motion.div
             key={`${selectedFramework.name}-${installationMethod}-${showInstallationTabs ? 'tabs' : 'manual-only'}`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0, transition: { duration: 0 } }}
+            initial={{ opacity: 0, y: 4 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.15 }}
             className="w-full"
           >
@@ -83,7 +102,11 @@ export function InstructionsPanel({
         </AnimatePresence>
       </div>
 
-      {footer && <div className="border-t border-neutral-100 bg-white py-3 pl-8">{footer}</div>}
+      {footer && (
+        <div className="border-t border-neutral-100 bg-neutral-50 px-6 py-3">
+          {footer}
+        </div>
+      )}
     </div>
   );
 }

@@ -4,7 +4,7 @@ import { ROUTES } from '@/utils/routes';
 
 export function SettingsPage() {
   return (
-    <DashboardLayout headerStartItems={<h1 className="text-foreground-950">Settings</h1>}>
+    <DashboardLayout contentClassName="p-0 bg-white dark:bg-[#000000]">
       <SettingsTabs
         rootRoute={ROUTES.SETTINGS}
         routes={{
@@ -17,3 +17,4 @@ export function SettingsPage() {
     </DashboardLayout>
   );
 }
+

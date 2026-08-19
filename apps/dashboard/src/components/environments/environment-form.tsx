@@ -26,7 +26,7 @@ export function EnvironmentFormFields({ form, colorHelperText, autoFocusName = t
           <FormItem>
             <FormLabel required>Name</FormLabel>
             <FormControl>
-              <FormInput {...field} autoFocus={autoFocusName} />
+              <FormInput {...field} autoFocus={autoFocusName} className="rounded-none" />
             </FormControl>
             <FormMessage />
           </FormItem>

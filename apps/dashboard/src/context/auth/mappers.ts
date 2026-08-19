@@ -17,7 +17,7 @@ export const toUserEntity = (clerkUser: UserResource): IUserEntity => {
    */
 
   return {
-    _id: clerkUser.externalId as string,
+    _id: (clerkUser.externalId as string) || (clerkUser.id as string),
     firstName: clerkUser.firstName,
     lastName: clerkUser.lastName,
     email: clerkUser.primaryEmailAddress?.emailAddress ?? clerkUser.emailAddresses?.[0]?.emailAddress ?? '',
@@ -41,7 +41,7 @@ export const toOrganizationEntity = (clerkOrganization: OrganizationResource): I
    */
 
   return {
-    _id: clerkOrganization.publicMetadata.externalOrgId as string,
+    _id: (clerkOrganization.publicMetadata.externalOrgId as string) || (clerkOrganization.id as string),
     name: clerkOrganization.name,
     createdAt: clerkOrganization.createdAt.toISOString(),
     updatedAt: clerkOrganization.updatedAt.toISOString(),

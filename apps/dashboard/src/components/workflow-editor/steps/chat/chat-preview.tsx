@@ -36,7 +36,7 @@ export const ChatPreview = ({
           </div>
           <div className="flex min-w-0 flex-1 flex-col gap-1">
             <div className="flex items-center gap-1">
-              <span className="text-foreground-950 text-xs font-bold">Novu</span>
+              <span className="text-foreground-950 text-xs font-bold">Notify</span>
               <span className="text-2xs text-foreground-600 bg-neutral-alpha-100 flex h-4 items-center rounded-sm px-1 opacity-70">
                 APP
               </span>

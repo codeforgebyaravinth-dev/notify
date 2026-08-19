@@ -1,18 +1,12 @@
 import { post } from './api.client';
 
 export const measure = async (event: string, data?: Record<string, unknown>): Promise<void> => {
-  await post('/telemetry/measure', {
-    body: {
-      event,
-      data,
-    },
-  });
+  // Telemetry is disabled locally, so we silently ignore tracking events
+  // to prevent 404 Not Found errors in the console.
+  return Promise.resolve();
 };
 
 export const identifyTelemetry = async (anonymousId: string): Promise<void> => {
-  await post('/telemetry/identify', {
-    body: {
-      anonymousId,
-    },
-  });
+  // Silently ignore
+  return Promise.resolve();
 };

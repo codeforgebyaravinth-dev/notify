@@ -270,7 +270,7 @@ const TagInput = forwardRef<HTMLInputElement, TagInputProps>((props, ref) => {
                 <CommandGroup className="p-0!">
                   {isNewTag && inputValue.trim() && (
                     <CommandItem
-                      className="rounded-md px-2.5 py-2"
+                      className="rounded-none px-2.5 py-2"
                       value={inputValue.trim()}
                       onMouseDown={(event) => {
                         event.preventDefault();
@@ -287,7 +287,7 @@ const TagInput = forwardRef<HTMLInputElement, TagInputProps>((props, ref) => {
 
                   {filteredSuggestions.map((tag) => (
                     <CommandItem
-                      className="rounded-md px-2.5 py-2"
+                      className="rounded-none px-2.5 py-2"
                       key={tag}
                       value={`${tag}-suggestion`}
                       onMouseDown={(event) => {

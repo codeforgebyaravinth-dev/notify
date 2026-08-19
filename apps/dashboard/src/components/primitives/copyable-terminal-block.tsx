@@ -41,7 +41,7 @@ export function CopyableTerminalBlock({
   };
 
   return (
-    <div className="relative w-full overflow-hidden rounded-lg shadow-[inset_0px_0px_0px_1px_#18181b,inset_0px_0px_0px_1.5px_rgba(255,255,255,0.1)]">
+    <div className="relative w-full overflow-hidden rounded-none shadow-[inset_0px_0px_0px_1px_#18181b,inset_0px_0px_0px_1.5px_rgba(255,255,255,0.1)]">
       <div className="flex items-center justify-between bg-[rgba(14,18,27,0.9)] px-4 py-1.5">
         <span className="text-label-xs text-[#99a0ae]">Terminal</span>
         <button
@@ -58,7 +58,7 @@ export function CopyableTerminalBlock({
       </div>
       <div className="bg-[rgba(14,18,27,0.9)] px-[5px] pb-[5px]">
         <div
-          className="flex gap-4 rounded-md border border-[rgba(14,18,27,0.9)] bg-[rgba(14,18,27,0.9)] p-3"
+          className="flex gap-4 rounded-none border border-[rgba(14,18,27,0.9)] bg-[rgba(14,18,27,0.9)] p-3"
           onCopy={handleContentCopy}
         >
           <span className="shrink-0 font-mono text-xs text-[#525866]">❯</span>

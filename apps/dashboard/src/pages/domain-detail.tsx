@@ -97,7 +97,7 @@ function DomainStatusBadge({ status }: { status: DomainStatusEnum }) {
   const isVerified = status === DomainStatusEnum.VERIFIED;
 
   return (
-    <Badge variant="lighter" color={isVerified ? 'green' : 'orange'} size="md">
+    <Badge variant="lighter" color={isVerified ? 'green' : 'orange'} size="md" className="rounded-none">
       <AnimatedBadgeDot color={isVerified ? 'green' : 'orange'} size="md" variant="lighter" />
       {isVerified ? 'Verified' : 'Pending verification'}
     </Badge>
@@ -395,12 +395,12 @@ export function DomainDetailPage() {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
+                    className="text-text-sub size-8 min-w-8 shrink-0 gap-0 rounded-none px-0"
                     variant="secondary"
                     mode="outline"
                     size="xs"
                     leadingIcon={RiMore2Fill}
                     type="button"
-                    className="text-text-sub size-8 min-w-8 shrink-0 gap-0 rounded-md px-0"
                   >
                     <span className="sr-only">Open menu</span>
                   </Button>

@@ -182,6 +182,12 @@ importers:
 
   .:
     dependencies:
+      mongoose:
+        specifier: ^8.24.1
+        version: 8.24.1(@aws-sdk/credential-providers@3.1052.0)(gcp-metadata@5.3.0(encoding@0.1.13))(socks@2.8.7)
+      stripe:
+        specifier: ^11.18.0
+        version: 11.18.0
       tslib:
         specifier: ^2.4.0
         version: 2.8.1
@@ -642,6 +648,9 @@ importers:
       shortid:
         specifier: ^2.2.17
         version: 2.2.17
+      stripe:
+        specifier: ^11.18.0
+        version: 11.18.0
       svix:
         specifier: ^1.96.1
         version: 1.96.1
@@ -2164,6 +2173,9 @@ importers:
       jwks-rsa:
         specifier: ^3.1.0
         version: 3.1.0
+      mongodb:
+        specifier: ^6.21.0
+        version: 6.21.0(@aws-sdk/credential-providers@3.1052.0)(gcp-metadata@5.3.0(encoding@0.1.13))(socks@2.8.7)
       mongoose:
         specifier: ^8.24.1
         version: 8.24.1(@aws-sdk/credential-providers@3.1052.0)(gcp-metadata@5.3.0(encoding@0.1.13))(socks@2.8.7)
@@ -2745,6 +2757,9 @@ importers:
       sqs-producer:
         specifier: ^8.0.1
         version: 8.0.4(@aws-sdk/client-sqs@3.996.0)
+      stripe:
+        specifier: ^11.18.0
+        version: 11.18.0
       svix:
         specifier: ^1.96.1
         version: 1.96.1
@@ -8674,9 +8689,6 @@ packages:
   '@mole-inc/bin-wrapper@8.0.1':
     resolution: {integrity: sha512-sTGoeZnjI8N4KS+sW2AN95gDBErhAguvkw/tWdCjeM8bvxpz5lqrnd0vOJABA1A+Ic3zED7PYoLP/RANLgVotA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
-
-  '@mongodb-js/saslprep@1.1.8':
-    resolution: {integrity: sha512-qKwC/M/nNNaKUBMQ0nuzm47b7ZYWQHN3pcXq4IIcoSBc2hOIrflAxJduIvvqmhoz3gR2TacTAs8vlsCVPkiEdQ==}
 
   '@mongodb-js/saslprep@1.4.4':
     resolution: {integrity: sha512-p7X/ytJDIdwUfFL/CLOhKgdfJe1Fa8uw9seJYvdOmnP9JBWGWHW69HkOixXS6Wy9yvGf1MbhcS6lVmrhy4jm2g==}
@@ -22367,9 +22379,6 @@ packages:
   moment@2.29.4:
     resolution: {integrity: sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==}
 
-  mongodb-connection-string-url@3.0.1:
-    resolution: {integrity: sha512-XqMGwRX0Lgn05TDB4PyG2h2kKO/FfWJyCzYQbIhXUxz7ETt0I/FqHjUeqj37irJ+Dl1ZtU82uYyj14u2XsZKfg==}
-
   mongodb-connection-string-url@3.0.2:
     resolution: {integrity: sha512-rMO7CGo/9BFwyZABcKAWL8UJwH/Kc2x0g72uhDWzG48URRax5TCIcJ7Rc3RZqffZzO/Gwff/jyKwCU9TN8gehA==}
 
@@ -22410,33 +22419,6 @@ packages:
       kerberos: ^2.0.1
       mongodb-client-encryption: '>=6.0.0 <7'
       snappy: ^7.3.2
-      socks: ^2.8.7
-    peerDependenciesMeta:
-      '@aws-sdk/credential-providers':
-        optional: true
-      '@mongodb-js/zstd':
-        optional: true
-      gcp-metadata:
-        optional: true
-      kerberos:
-        optional: true
-      mongodb-client-encryption:
-        optional: true
-      snappy:
-        optional: true
-      socks:
-        optional: true
-
-  mongodb@6.8.0:
-    resolution: {integrity: sha512-HGQ9NWDle5WvwMnrvUxsFYPd3JEbqD3RgABHBQRuoCEND0qzhsd0iH5ypHsf1eJ+sXmvmyKpP+FLOKY8Il7jMw==}
-    engines: {node: '>=16.20.1'}
-    peerDependencies:
-      '@aws-sdk/credential-providers': ^3.188.0
-      '@mongodb-js/zstd': ^1.1.0
-      gcp-metadata: ^5.2.0
-      kerberos: ^2.0.1
-      mongodb-client-encryption: '>=6.0.0 <7'
-      snappy: ^7.2.2
       socks: ^2.8.7
     peerDependenciesMeta:
       '@aws-sdk/credential-providers':
@@ -34815,10 +34797,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@mongodb-js/saslprep@1.1.8':
-    dependencies:
-      sparse-bitfield: 3.0.3
-
   '@mongodb-js/saslprep@1.4.4':
     dependencies:
       sparse-bitfield: 3.0.3
@@ -37199,7 +37177,7 @@ snapshots:
       debug: 4.3.6
       human-interval: 2.0.1
       moment-timezone: 0.5.48
-      mongodb: 6.8.0(@aws-sdk/credential-providers@3.1052.0)(gcp-metadata@5.3.0(encoding@0.1.13))(socks@2.8.7)
+      mongodb: 6.21.0(@aws-sdk/credential-providers@3.1052.0)(gcp-metadata@5.3.0(encoding@0.1.13))(socks@2.8.7)
     transitivePeerDependencies:
       - '@aws-sdk/credential-providers'
       - '@mongodb-js/zstd'
@@ -53122,11 +53100,6 @@ snapshots:
 
   moment@2.29.4: {}
 
-  mongodb-connection-string-url@3.0.1:
-    dependencies:
-      '@types/whatwg-url': 11.0.5
-      whatwg-url: 13.0.0
-
   mongodb-connection-string-url@3.0.2:
     dependencies:
       '@types/whatwg-url': 11.0.5
@@ -53147,16 +53120,6 @@ snapshots:
       '@mongodb-js/saslprep': 1.4.4
       bson: 6.10.4
       mongodb-connection-string-url: 3.0.2
-    optionalDependencies:
-      '@aws-sdk/credential-providers': 3.1052.0
-      gcp-metadata: 5.3.0(encoding@0.1.13)
-      socks: 2.8.7
-
-  mongodb@6.8.0(@aws-sdk/credential-providers@3.1052.0)(gcp-metadata@5.3.0(encoding@0.1.13))(socks@2.8.7):
-    dependencies:
-      '@mongodb-js/saslprep': 1.1.8
-      bson: 6.10.4
-      mongodb-connection-string-url: 3.0.1
     optionalDependencies:
       '@aws-sdk/credential-providers': 3.1052.0
       gcp-metadata: 5.3.0(encoding@0.1.13)

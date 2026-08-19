@@ -321,7 +321,7 @@ export function IntegrationSettings({
                         description="These credentials are only required for Bot App authentication and are not needed for incoming webhook functionality."
                       />
                     )}
-                    <div className="border-neutral-alpha-200 bg-background text-foreground-600 mx-0 mt-0 flex flex-col gap-2 rounded-lg border p-3">
+                    <div className="border-neutral-alpha-200 bg-background text-foreground-600 mx-0 mt-0 flex flex-col gap-2 rounded-none border p-3">
                       {isSlackOnboarding && (
                         <SlackCredentialsPaste control={control} setValue={setValue} isReadOnly={isReadOnly} />
                       )}

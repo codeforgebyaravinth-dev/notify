@@ -75,7 +75,7 @@ const CountrySelect = ({ disabled, value: selectedCountry, options: countryList,
           <RiArrowDownSLine className={cn('-mr-2 size-4 opacity-50', disabled ? 'hidden' : 'opacity-100')} />
         </Button>
       </PopoverTrigger>
-      <PopoverContent portal={false} className="w-[300px] rounded-lg p-0" side="bottom" align="start">
+      <PopoverContent portal={false} className="w-[300px] rounded-none p-0" side="bottom" align="start">
         <Command>
           <CommandInput
             placeholder="Search country..."
@@ -103,7 +103,7 @@ const CountrySelect = ({ disabled, value: selectedCountry, options: countryList,
           />
           <CommandList ref={listRef}>
             <CommandEmpty>No country found.</CommandEmpty>
-            <CommandGroup className="rounded-md py-2">
+            <CommandGroup className="rounded-none py-2">
               {countryList.map(({ value, label }) =>
                 value ? (
                   <CountrySelectOption
@@ -155,7 +155,7 @@ const FlagComponent = ({ country, countryName }: RPNInput.FlagProps) => {
 
   return (
     <span
-      className="bg-foreground/20 flex h-4 w-6 overflow-hidden rounded-sm drop-shadow-md [&_svg]:size-full"
+      className="bg-foreground/20 flex h-4 w-6 overflow-hidden rounded-none drop-shadow-md [&_svg]:size-full"
       key={country}
     >
       {Flag ? <Flag title={countryName} /> : <RiPhoneLine className="size-4 text-neutral-400" />}

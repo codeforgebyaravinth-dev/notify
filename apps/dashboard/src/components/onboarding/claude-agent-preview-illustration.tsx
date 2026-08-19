@@ -7,7 +7,7 @@ import {
 } from '@novu/shared';
 import { AnimatePresence, motion } from 'motion/react';
 import { useMemo, useState } from 'react';
-import { RiFileCodeLine } from 'react-icons/ri';
+import { RiFileCodeLine, RiFlashlightFill } from 'react-icons/ri';
 import { AwsIcon } from '@/components/icons/aws';
 import { ProviderIcon } from '@/components/integrations/components/provider-icon';
 import { getAgentChannelDisplayName } from '@/utils/agent-email-provider-display';
@@ -819,8 +819,8 @@ function ChannelStatusPill({ status }: ChannelStatusPillProps) {
 function NovuConnectFooter() {
   return (
     <div className="mt-1 flex h-7 items-center gap-1 px-1">
-      <LogoCircle className="size-4" />
-      <span className="text-text-strong text-label-xs font-normal leading-4">Novu</span>
+      <RiFlashlightFill className="size-4" />
+      <span className="text-text-strong text-label-xs font-normal leading-4">Notify</span>
     </div>
   );
 }

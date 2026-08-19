@@ -31,7 +31,9 @@ export function InboxPreviewContent() {
 
   const configuration: InboxProps = {
     applicationIdentifier: currentEnvironment?.identifier,
-    subscriberId: user?.externalId as string,
+    // user.externalId is null for JIT-provisioned users; fall back to Clerk's own user.id
+    // which we store as externalId in MongoDB during ClerkAuthGuard provisioning.
+    subscriberId: (user?.externalId || user?.id) as string,
     backendUrl: apiHostnameManager.getHostname(),
     socketUrl: apiHostnameManager.getWebSocketHostname(),
     localization: {

@@ -76,7 +76,7 @@ export const UpsertVariableDrawer = forwardRef<HTMLDivElement, UpsertVariableDra
           <SheetHeader className="px-3 py-1.5">
             <SheetTitle className="flex items-center gap-1.5">
               <RiCodeSSlashLine className="size-4" />
-              {isEditing ? 'Edit variable' : 'Create variable'}
+              {isEditing ? 'Edit secret' : 'Add secret'}
             </SheetTitle>
           </SheetHeader>
           <Separator />
@@ -93,16 +93,16 @@ export const UpsertVariableDrawer = forwardRef<HTMLDivElement, UpsertVariableDra
           <Separator />
           <SheetFooter className="justify-end p-3">
             <Button
-              variant="secondary"
-              size="xs"
-              mode="gradient"
+              variant="primary"
+              size="sm"
+              className="rounded-none bg-foreground-950 text-background hover:bg-foreground-900 dark:bg-white dark:text-black dark:hover:bg-neutral-200 transition-colors h-8 text-xs px-3"
               type="submit"
               disabled={isSubmitting}
               isLoading={isSubmitting}
               trailingIcon={RiArrowRightSLine}
               form={formId}
             >
-              {isEditing ? 'Save variable' : 'Create variable'}
+              {isEditing ? 'Save secret' : 'Add secret'}
             </Button>
           </SheetFooter>
         </SheetContent>

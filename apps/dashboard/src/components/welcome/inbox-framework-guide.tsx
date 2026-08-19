@@ -20,10 +20,15 @@ const CONTAINER_VARIANTS = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.05,
+      staggerChildren: 0.06,
       delayChildren: 0.1,
     },
   },
+};
+
+const ITEM_VARIANTS = {
+  hidden: { opacity: 0, y: 10 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.25, ease: 'easeOut' } },
 };
 
 interface InboxFrameworkGuideProps {
@@ -61,6 +66,7 @@ export function InboxFrameworkGuide({
     () => getFrameworks(effectiveInstallationMethod, currentEnvironment?.identifier, subscriberId),
     [effectiveInstallationMethod, currentEnvironment?.identifier, subscriberId]
   );
+
   const updatedFrameworks = useMemo(() => {
     if (!currentEnvironment?.identifier || !subscriberId) return currentFrameworks;
     return currentFrameworks.map((framework) =>
@@ -101,19 +107,26 @@ export function InboxFrameworkGuide({
   }
 
   return (
-    <>
+    <div className="flex min-h-screen flex-col bg-neutral-50">
       <HeaderSection />
 
-      <motion.div variants={CONTAINER_VARIANTS} initial="hidden" animate="show" className="flex flex-col gap-6 px-6">
-        <div className="flex flex-col gap-4">
+      <motion.div
+        variants={CONTAINER_VARIANTS}
+        initial="hidden"
+        animate="show"
+        className="flex flex-1 flex-col gap-6 p-8"
+      >
+        {/* Framework selector */}
+        <motion.div variants={ITEM_VARIANTS}>
           <FrameworkGrid
             frameworks={currentFrameworks}
             selectedFrameworkName={selectedFrameworkName}
             onSelect={handleFrameworkSelect}
           />
-        </div>
+        </motion.div>
 
-        <div className="flex flex-col gap-3">
+        {/* Instructions panel */}
+        <motion.div variants={ITEM_VARIANTS} className="flex-1">
           <InstructionsPanel
             selectedFramework={selectedFramework}
             installationMethod={effectiveInstallationMethod}
@@ -129,14 +142,14 @@ export function InboxFrameworkGuide({
                   });
                   navigate(buildRoute(ROUTES.WELCOME, { environmentSlug: currentEnvironment?.slug ?? '' }));
                 }}
-                className="text-foreground-400 hover:text-foreground-600 cursor-pointer text-sm transition-colors"
+                className="text-xs font-medium text-neutral-400 transition-colors hover:text-neutral-600"
               >
-                Skip, I'll set up later
+                Skip for now — I'll set up later
               </button>
             }
           />
-        </div>
+        </motion.div>
       </motion.div>
-    </>
+    </div>
   );
 }

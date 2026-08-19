@@ -16,6 +16,7 @@ import {
   SelectVariant,
   SendWebhookMessage,
   validateEndpointForType,
+  BillingService,
 } from '@novu/application-generic';
 import {
   EnvironmentEntity,
@@ -97,7 +98,8 @@ export class SendMessageChat extends SendMessageBase {
     protected moduleRef: ModuleRef,
     private sendWebhookMessage: SendWebhookMessage,
     private resolveChannelEndpoints: ResolveChannelEndpoints,
-    private featureFlagsService: FeatureFlagsService
+    private featureFlagsService: FeatureFlagsService,
+    protected billingService: BillingService
   ) {
     super(
       messageRepository,
@@ -106,7 +108,8 @@ export class SendMessageChat extends SendMessageBase {
       selectIntegration,
       getNovuProviderCredentials,
       selectVariant,
-      moduleRef
+      moduleRef,
+      billingService
     );
   }
 
@@ -343,13 +346,13 @@ export class SendMessageChat extends SendMessageBase {
       for (const providerId of activePhoneProviders) {
         if (existingProviderIds.has(providerId)) continue;
 
-        // @ts-expect-error - Adding a phone-based channel without _integrationId
+        // Adding a phone-based channel without _integrationId
         chatChannels.push({
           providerId,
           credentials: {
             phoneNumber: subscriber.phone,
           },
-        });
+        } as unknown as IChannelSettings);
       }
     }
 

@@ -1,9 +1,8 @@
 import { GetSubscriptionDto } from '@novu/shared';
 import { ComponentType } from 'react';
-import { RiArrowRightDoubleLine, RiInformationFill } from 'react-icons/ri';
+import { RiArrowRightDoubleLine, RiFlashlightFill, RiInformationFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '@/utils/routes';
-import { LogoCircle } from '../icons';
 import { Button } from '../primitives/button';
 import { Progress } from '../primitives/progress';
 import { Tooltip, TooltipArrow, TooltipContent, TooltipTrigger } from '../primitives/tooltip';
@@ -14,19 +13,15 @@ const pluralizeDaysLeft = (numberOfDays: number) => {
   return `${numberOfDays} day${numberOfDays > 1 ? 's' : ''}`;
 };
 
-type BrandLogo = ComponentType<{ className?: string }>;
-
 const CardContent = ({
   pluralizedDays,
   daysTotal,
   daysLeft,
-  Logo,
   showLogoBackground,
 }: {
   pluralizedDays: string;
   daysTotal: number;
   daysLeft: number;
-  Logo: BrandLogo;
   showLogoBackground: boolean;
 }) => (
   <>
@@ -34,11 +29,12 @@ const CardContent = ({
       {showLogoBackground ? (
         <div
           className={`flex h-4 w-4 items-center justify-center rounded-full bg-neutral-700 ${transition} group-hover:bg-neutral-0`}
+          style={{ background: 'linear-gradient(135deg, #8444df 0%, #fb3748 100%)' }}
         >
-          <Logo className={`h-3 w-3 ${transition} group-hover:h-4 group-hover:w-4`} />
+          <RiFlashlightFill className={`text-white h-2.5 w-2.5 ${transition} group-hover:h-3 group-hover:w-3`} />
         </div>
       ) : (
-        <Logo className={`h-4 w-4 ${transition}`} />
+        <RiFlashlightFill className={`h-4 w-4 ${transition}`} />
       )}
       <span className="text-foreground-950 text-sm">{pluralizedDays} left on trial</span>
       <Tooltip>
@@ -55,14 +51,14 @@ const CardContent = ({
         <TooltipContent variant="light" size="lg" side="right" className="w-48">
           <TooltipArrow variant="light" className="-translate-y-px" />
           <span className="text-foreground-600 text-xs">
-            After the trial ends, continue to enjoy Novu's free tier with up to 20 workflows and up to 10k workflow
+            After the trial ends, continue to enjoy Notify's free tier with up to 20 workflows and up to 10k workflow
             runs/month.
           </span>
         </TooltipContent>
       </Tooltip>
     </div>
     <span className="text-foreground-600 text-xs">
-      Enjoy unlimited access to Novu for free for the next {pluralizedDays}.
+      Enjoy unlimited access to Notify for free for the next {pluralizedDays}.
     </span>
     <div className={`max-h-3 overflow-hidden opacity-100 ${transition} group-hover:max-h-0 group-hover:opacity-0`}>
       <Progress value={daysTotal - daysLeft} max={daysTotal} />
@@ -94,7 +90,6 @@ export const FreeTrialCard = ({ subscription, daysLeft }: { subscription?: GetSu
         pluralizedDays={pluralizedDays}
         daysTotal={daysTotal}
         daysLeft={daysLeft}
-        Logo={LogoCircle}
         showLogoBackground
       />
     </Link>

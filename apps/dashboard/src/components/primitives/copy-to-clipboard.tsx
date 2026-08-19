@@ -32,7 +32,7 @@ export function CopyToClipboard({
       onClick={copyToClipboard}
       type="button"
       className={cn(
-        'rounded-md p-2 transition-all duration-200 active:scale-95',
+        'rounded-none p-2 transition-all duration-200 active:scale-95',
         theme === 'light'
           ? 'text-gray-500 hover:bg-gray-100 hover:text-gray-900'
           : 'text-foreground-400 hover:text-foreground-50 hover:bg-[#32424a]',

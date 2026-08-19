@@ -19,11 +19,10 @@ export function usePlanUpgradeClick(source: string, utmCampaign: string) {
   return () => {
     track(TelemetryEvent.UPGRADE_TO_TEAM_TIER_CLICK, { source });
 
-    if (IS_SELF_HOSTED) {
-      openInNewTab(`${SELF_HOSTED_UPGRADE_REDIRECT_URL}?utm_campaign=${utmCampaign}`);
-
-      return;
-    }
+    // if (IS_SELF_HOSTED) {
+    //   openInNewTab(`${SELF_HOSTED_UPGRADE_REDIRECT_URL}?utm_campaign=${utmCampaign}`);
+    //   return;
+    // }
 
     void navigate(`${ROUTES.SETTINGS_BILLING}?utm_campaign=${utmCampaign}`);
   };

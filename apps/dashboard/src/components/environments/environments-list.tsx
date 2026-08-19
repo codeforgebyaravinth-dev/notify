@@ -115,7 +115,7 @@ export function EnvironmentsList({ environments, isLoading }: { environments: IE
           <div className="flex items-center gap-1">
             <TruncatedText className="max-w-[32ch]">{environment.name}</TruncatedText>
             {environment._id === currentEnvironment?._id && (
-              <Badge color="blue" size="sm" variant="lighter">
+              <Badge color="blue" size="sm" variant="lighter" className="rounded-none">
                 Current
               </Badge>
             )}

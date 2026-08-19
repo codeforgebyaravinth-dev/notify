@@ -32,6 +32,12 @@ export const corsOptionsDelegate: Parameters<INestApplication['enableCors']>[0] 
     if (ALLOWED_ORIGINS_REGEX.test(requestOrigin)) {
       corsOptions.origin.push(requestOrigin);
     }
+    
+    // Explicitly allow localhost origins in local dev mode
+    if (isDevelopmentEnvironment() && (requestOrigin === 'http://localhost:4201' || requestOrigin === 'http://localhost:4200')) {
+      corsOptions.origin.push(requestOrigin);
+    }
+
     if (process.env.WIDGET_BASE_URL) {
       corsOptions.origin.push(process.env.WIDGET_BASE_URL);
     }

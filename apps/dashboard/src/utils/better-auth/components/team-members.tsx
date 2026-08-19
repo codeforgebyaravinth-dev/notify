@@ -113,11 +113,11 @@ function MemberListItem({
       className="flex items-center justify-between border-b border-neutral-100 py-3 last:border-b-0"
     >
       <div className="flex items-center gap-3">
-        <Avatar className="h-10 w-10">
+        <Avatar className="h-10 w-10 rounded-none">
           {member.user.image ? (
             <img src={member.user.image} alt={member.user.name} className="h-full w-full object-cover" />
           ) : (
-            <AvatarFallback className="bg-neutral-100 text-foreground-700 text-sm font-medium">
+            <AvatarFallback className="bg-neutral-100 text-foreground-700 text-sm font-medium rounded-none">
               {getInitials(member.user.name)}
             </AvatarFallback>
           )}
@@ -131,7 +131,7 @@ function MemberListItem({
         </div>
       </div>
       <div className="flex items-center gap-3">
-        <span className={`rounded-full px-2.5 py-1 text-xs font-medium ${getRoleBadgeStyle(member.role)}`}>
+        <span className={`rounded-none px-2.5 py-1 text-xs font-medium ${getRoleBadgeStyle(member.role)}`}>
           {getRoleLabel(member.role)}
         </span>
         {!isOwner && canManageMembers && (
@@ -141,7 +141,7 @@ function MemberListItem({
             size="sm"
             onClick={() => onRemove(member.id)}
             disabled={isCurrentUser || isRemoving}
-            className="h-8 w-8 p-0"
+            className="h-8 w-8 p-0 rounded-none"
           >
             {isRemoving ? (
               <RiLoader4Line className="size-4 animate-spin" />
@@ -189,8 +189,8 @@ function InvitationListItem({
       className="flex items-center justify-between border-b border-neutral-100 py-3 last:border-b-0"
     >
       <div className="flex items-center gap-3">
-        <Avatar className="h-10 w-10">
-          <AvatarFallback className="bg-neutral-100 text-foreground-700 text-sm font-medium">
+        <Avatar className="h-10 w-10 rounded-none">
+          <AvatarFallback className="bg-neutral-100 text-foreground-700 text-sm font-medium rounded-none">
             {getInitials(invitation.email)}
           </AvatarFallback>
         </Avatar>
@@ -200,7 +200,7 @@ function InvitationListItem({
         </div>
       </div>
       <div className="flex items-center gap-3">
-        <span className="rounded-full bg-neutral-100 px-2.5 py-1 text-xs font-medium text-foreground-700">
+        <span className="rounded-none bg-neutral-100 px-2.5 py-1 text-xs font-medium text-foreground-700">
           {getRoleLabel(invitation.role)}
         </span>
         {canManageMembers && (
@@ -210,7 +210,7 @@ function InvitationListItem({
             size="sm"
             onClick={() => onCancel(invitation.id)}
             disabled={isCancelling}
-            className="h-8 w-8 p-0"
+            className="h-8 w-8 p-0 rounded-none"
           >
             {isCancelling ? (
               <RiLoader4Line className="size-4 animate-spin" />
@@ -373,7 +373,7 @@ export function TeamMembers({ appearance }: { appearance?: any }) {
       </div>
 
       {canManageMembers && (
-        <div className="rounded-lg border border-neutral-200 bg-white p-4">
+        <div className="rounded-none border border-neutral-200 bg-white p-4">
           <div className="mb-4 flex items-center gap-2">
             <RiUserAddLine className="size-5 text-foreground-600" />
             <h3 className="text-sm font-medium text-foreground-950">Invite new member</h3>
@@ -393,7 +393,7 @@ export function TeamMembers({ appearance }: { appearance?: any }) {
                   placeholder="member@example.com"
                   required
                   disabled={isInviting}
-                  className="h-10"
+                  className="h-10 rounded-none"
                 />
               </div>
               <div className="w-32">
@@ -402,7 +402,7 @@ export function TeamMembers({ appearance }: { appearance?: any }) {
                   onValueChange={(value) => setInviteRole(value as MemberRoleEnum)}
                   disabled={isInviting}
                 >
-                  <SelectTrigger className="h-10">
+                  <SelectTrigger className="h-10 rounded-none">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -416,8 +416,8 @@ export function TeamMembers({ appearance }: { appearance?: any }) {
                 type="submit"
                 disabled={isInviting || !inviteEmail.trim()}
                 variant="primary"
-                mode="gradient"
-                className="h-10 px-4"
+                mode="filled"
+                className="h-10 px-4 rounded-none"
               >
                 {isInviting ? (
                   <RiLoader4Line className="size-4 animate-spin" />
@@ -437,7 +437,7 @@ export function TeamMembers({ appearance }: { appearance?: any }) {
       )}
 
       {pendingInvitations.length > 0 && canManageMembers && (
-        <div className="rounded-lg border border-neutral-200 bg-white">
+        <div className="rounded-none border border-neutral-200 bg-white">
           <button
             onClick={() => setShowPendingInvites(!showPendingInvites)}
             className="flex w-full items-center justify-between p-4 text-left transition-colors hover:bg-neutral-50"
@@ -480,7 +480,7 @@ export function TeamMembers({ appearance }: { appearance?: any }) {
         </div>
       )}
 
-      <div className="rounded-lg border border-neutral-200 bg-white">
+      <div className="rounded-none border border-neutral-200 bg-white">
         <div className="p-4">
           <AnimatePresence>
             {members.map((member) => (

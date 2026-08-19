@@ -55,15 +55,15 @@ export const buttonVariants = tv({
         icon: '',
       },
       sm: {
-        root: 'h-9 gap-3 rounded-lg px-3 text-label-sm',
+        root: 'h-9 gap-3 rounded-none px-3 text-label-sm',
         icon: '',
       },
       xs: {
-        root: 'h-8 gap-2.5 rounded-lg px-3 text-label-xs',
+        root: 'h-8 gap-2.5 rounded-none px-3 text-label-xs',
         icon: 'size-4',
       },
       '2xs': {
-        root: 'h-7 gap-2.5 rounded-lg px-2 text-label-xs',
+        root: 'h-7 gap-2.5 rounded-none px-2 text-label-xs',
         icon: 'size-4',
       },
     },
@@ -132,7 +132,7 @@ export const buttonVariants = tv({
       class: {
         root: [
           // base
-          'bg-gradient-to-b from-primary/90 to-primary text-primary-foreground [clip-path:border-box] shadow-[inset_0_-4px_2px_-2px_hsl(var(--primary)),inset_0_0_0_1px_rgba(255,255,255,0.16),0_0_0_1px_hsl(var(--primary)),0px_1px_2px_0px_#0E121B3D] after:content-[""] after:absolute after:w-full after:h-full after:bg-gradient-to-b after:from-background/10 after:opacity-0  after:rounded-lg after:transition-opacity after:duration-300',
+          'bg-gradient-to-b from-primary/90 to-primary text-primary-foreground [clip-path:border-box] shadow-[inset_0_-4px_2px_-2px_hsl(var(--primary)),inset_0_0_0_1px_rgba(255,255,255,0.16),0_0_0_1px_hsl(var(--primary)),0px_1px_2px_0px_#0E121B3D] after:content-[""] after:absolute after:w-full after:h-full after:bg-gradient-to-b after:from-background/10 after:opacity-0  after:rounded-none after:transition-opacity after:duration-300',
           // hover
           'hover:after:opacity-100',
           // focus
@@ -207,7 +207,7 @@ export const buttonVariants = tv({
       class: {
         root: [
           // base
-          'bg-gradient-to-b from-neutral-alpha-900 to-neutral-900 text-neutral-foreground [clip-path:border-box] shadow-[inset_0_-4px_2px_-2px_hsl(var(--neutral-900)),inset_0_0_0_1px_rgba(255,255,255,0.16),0_0_0_1px_hsl(var(--neutral-900)),0px_1px_2px_0px_#0E121B3D] after:content-[""] after:absolute after:w-full after:h-full after:bg-gradient-to-b after:from-background/10 after:opacity-0  after:rounded-lg after:transition-opacity after:duration-300',
+          'bg-gradient-to-b from-neutral-alpha-900 to-neutral-900 text-neutral-foreground [clip-path:border-box] shadow-[inset_0_-4px_2px_-2px_hsl(var(--neutral-900)),inset_0_0_0_1px_rgba(255,255,255,0.16),0_0_0_1px_hsl(var(--neutral-900)),0px_1px_2px_0px_#0E121B3D] after:content-[""] after:absolute after:w-full after:h-full after:bg-gradient-to-b after:from-background/10 after:opacity-0  after:rounded-none after:transition-opacity after:duration-300',
           // hover
           'hover:after:opacity-100',
           // focus
@@ -341,7 +341,7 @@ const ButtonRoot = React.forwardRef<HTMLButtonElement, ButtonRootProps>(
       >
         {extendedChildren}
         {isLoading && (
-          <div className="animate-in zoom-in-50 fade-in absolute inset-0 flex w-full items-center justify-center rounded-lg text-current backdrop-blur-sm duration-300">
+          <div className="animate-in zoom-in-50 fade-in absolute inset-0 flex w-full items-center justify-center rounded-none text-current backdrop-blur-sm duration-300">
             <RiLoader4Line className="size-4 animate-spin" />
           </div>
         )}

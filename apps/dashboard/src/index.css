@@ -497,7 +497,7 @@
     --input: var(--neutral-200);
     --ring: var(--novu-500);
 
-    --radius: 0.5rem;
+    --radius: 0rem;
 
     --font-code: "JetBrains Mono";
     --font-code-fallback: monospace;

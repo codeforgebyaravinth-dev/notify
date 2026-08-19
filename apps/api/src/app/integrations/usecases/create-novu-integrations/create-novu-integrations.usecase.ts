@@ -88,7 +88,7 @@ export class CreateNovuIntegrations {
         defaultValue: false,
       });
 
-      const name = isV2Enabled ? 'Novu Inbox' : 'Novu In-App';
+      const name = isV2Enabled ? 'Notify Inbox' : 'Notify In-App';
 
       /*
        * Default the Inbox (in-app) integration to HMAC-enabled for any

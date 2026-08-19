@@ -15,7 +15,7 @@ const BADGE_DOT_NAME = 'BadgeDot';
 
 export const badgeVariants = tv({
   slots: {
-    root: 'inline-flex items-center justify-center rounded-full leading-none transition duration-200 ease-out',
+    root: 'inline-flex items-center justify-center rounded-none leading-none transition duration-200 ease-out',
     icon: 'shrink-0',
     dot: [
       // base

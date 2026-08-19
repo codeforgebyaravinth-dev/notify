@@ -21,6 +21,11 @@ import { UpdateBrandingDetailsCommand } from './usecases/update-branding-details
 import { UpdateBrandingDetails } from './usecases/update-branding-details/update-branding-details.usecase';
 import { UpdateOrganizationSettingsCommand } from './usecases/update-organization-settings/update-organization-settings.command';
 import { UpdateOrganizationSettings } from './usecases/update-organization-settings/update-organization-settings.usecase';
+import { CreateOrganization } from './usecases/create-organization/create-organization.usecase';
+import { CreateOrganizationCommand } from './usecases/create-organization/create-organization.command';
+import { CreateOrganizationDto } from './dtos/create-organization.dto';
+import { Post } from '@nestjs/common';
+import { GetOrganizations } from './usecases/get-organizations/get-organizations.usecase';
 
 @Controller('/organizations')
 @UseInterceptors(ClassSerializerInterceptor)
@@ -34,8 +39,45 @@ export class EEOrganizationController {
     private getMyOrganizationUsecase: GetMyOrganization,
     private renameOrganizationUsecase: RenameOrganization,
     private getOrganizationSettingsUsecase: GetOrganizationSettings,
-    private updateOrganizationSettingsUsecase: UpdateOrganizationSettings
+    private updateOrganizationSettingsUsecase: UpdateOrganizationSettings,
+    private createOrganizationUsecase: CreateOrganization,
+    private getOrganizationsUsecase: GetOrganizations
   ) {}
+
+  @Post('/')
+  @ApiResponse(OrganizationResponseDto)
+  @ApiOperation({
+    summary: 'Create an organization',
+  })
+  @ExternalApiAccessible()
+  async createOrganization(
+    @UserSession() user: UserSessionData,
+    @Body() body: CreateOrganizationDto
+  ): Promise<OrganizationResponseDto> {
+    const command = CreateOrganizationCommand.create({
+      userId: user._id,
+      logo: body.logo,
+      name: body.name,
+    });
+
+    const result = await this.createOrganizationUsecase.execute(command);
+    return result as unknown as OrganizationResponseDto;
+  }
+
+  @Get('/')
+  @ExternalApiAccessible()
+  @ApiResponse(OrganizationResponseDto, 200, true)
+  @ApiOperation({
+    summary: 'Fetch all organizations',
+  })
+  async listOrganizations(@UserSession() user: UserSessionData) {
+    const command = require('./usecases/get-organizations/get-organizations.command').GetOrganizationsCommand.create({
+      userId: user._id,
+    });
+
+    return await this.getOrganizationsUsecase.execute(command);
+  }
+
 
   /**
    * @deprecated - used in v1 legacy web

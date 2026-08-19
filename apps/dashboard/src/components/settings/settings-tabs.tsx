@@ -10,12 +10,10 @@ import {
 } from '@novu/shared';
 import { motion } from 'motion/react';
 import { useMemo } from 'react';
+import { RiBuilding2Line, RiMoneyDollarCircleLine, RiTeamLine, RiUserLine, RiShieldLine, RiSettings2Line } from 'react-icons/ri';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { BillingRestrictedState } from '@/components/billing/billing-restricted-state';
-import { Plan } from '@/components/billing/plan';
-import { Card } from '@/components/primitives/card';
-import { InlineToast } from '@/components/primitives/inline-toast';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/primitives/tabs';
+import { NotifyBilling } from '@/components/billing/notify-billing';
 import { OrganizationSettings } from '@/components/settings/organization-settings';
 import { EE_AUTH_PROVIDER, IS_CLOUD } from '@/config';
 import { useFeatureFlag } from '@/hooks/use-feature-flag';
@@ -25,16 +23,15 @@ import { TeamMembers } from '@/utils/better-auth/components/team-members';
 import { UserProfile as BetterAuthUserProfile } from '@/utils/better-auth/index';
 import { ROUTES } from '@/utils/routes';
 import { getRequiredTierLabelForFeature } from '@/utils/upgrade-tier';
+import { cn } from '@/utils/ui';
 
-// Pin Clerk's post-leave/delete redirect to the local `/auth/organization-list` so `AuthProvider`
-// can clear any org Clerk auto-activates and let the picker render the empty state.
 const AFTER_LEAVE_ORG_URL = ROUTES.SIGNUP_ORGANIZATION_LIST;
 
 const FADE_ANIMATION = {
-  initial: { opacity: 0 },
-  animate: { opacity: 1 },
-  exit: { opacity: 0 },
-  transition: { duration: 0.15 },
+  initial: { opacity: 0, y: 4 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -4 },
+  transition: { duration: 0.18 },
 } as const;
 
 const SETTINGS_TABS = ['account', 'organization', 'team', 'billing'] as const;
@@ -43,12 +40,7 @@ export type SettingsTab = (typeof SETTINGS_TABS)[number];
 export type SettingsTabRoutes = Record<SettingsTab, string>;
 
 type SettingsTabsProps = {
-  /** Concrete (already-built) route URLs for each tab. */
   routes: SettingsTabRoutes;
-  /**
-   * The base settings route URL (without a tab segment). When the user lands on
-   * this URL we default to the account tab.
-   */
   rootRoute: string;
 };
 
@@ -57,42 +49,20 @@ const getClerkComponentAppearance = (isRbacEnabled: boolean): ClerkAppearanceThe
     colorPrimary: 'hsl(var(--bg-surface))',
     colorForeground: 'rgba(82, 88, 102, 0.95)',
     fontSize: '14px',
+    borderRadius: '0px',
   },
   elements: {
     navbar: { display: 'none' },
     navbarMobileMenuRow: { display: 'none !important' },
-    rootBox: {
-      width: '100%',
-      height: '100%',
-    },
-    cardBox: {
-      display: 'block',
-      width: '100%',
-      height: '100%',
-      boxShadow: 'none',
-    },
-    pageScrollBox: {
-      padding: '0 !important',
-    },
-    header: {
-      display: 'none',
-    },
-    profileSection: {
-      borderBottom: 'none',
-      borderTop: '1px solid hsl(var(--neutral-100))',
-    },
-    profileSectionTitleText: {
-      color: 'hsl(var(--text-strong))',
-    },
-    page: {
-      padding: '0 5px',
-    },
-    selectButton__role: {
-      visibility: isRbacEnabled ? 'visible' : 'hidden',
-    },
-    formFieldRow__role: {
-      visibility: isRbacEnabled ? 'visible' : 'hidden',
-    },
+    rootBox: { width: '100%', height: '100%' },
+    cardBox: { display: 'block', width: '100%', height: '100%', boxShadow: 'none' },
+    pageScrollBox: { padding: '0 !important' },
+    header: { display: 'none' },
+    profileSection: { borderBottom: 'none', borderTop: '1px solid hsl(var(--neutral-100))' },
+    profileSectionTitleText: { color: 'hsl(var(--text-strong))' },
+    page: { padding: '0 5px' },
+    selectButton__role: { visibility: isRbacEnabled ? 'visible' : 'hidden' },
+    formFieldRow__role: { visibility: isRbacEnabled ? 'visible' : 'hidden' },
     apiKeys: 'py-1',
   },
 });
@@ -103,21 +73,30 @@ function checkRbacEnabled(subscription: GetSubscriptionDto | undefined, featureF
     FeatureNameEnum.ACCOUNT_ROLE_BASED_ACCESS_CONTROL_BOOLEAN,
     apiServiceLevel
   );
-
   return rbacFeatureEnabled && featureFlag;
 }
 
 function resolveCurrentTab(pathname: string, routes: SettingsTabRoutes, rootRoute: string): SettingsTab {
-  if (pathname === rootRoute) {
-    return 'organization';
-  }
-
+  if (pathname === rootRoute) return 'organization';
   const entry = (Object.entries(routes) as Array<[SettingsTab, string]>).find(
     ([, url]) => pathname === url || pathname.startsWith(`${url}/`)
   );
-
   return entry?.[0] ?? 'organization';
 }
+
+type NavItem = {
+  tab: SettingsTab;
+  label: string;
+  icon: React.ElementType;
+  description: string;
+};
+
+const NAV_ITEMS: NavItem[] = [
+  { tab: 'account', label: 'Account', icon: RiUserLine, description: 'Profile & security' },
+  { tab: 'organization', label: 'Organization', icon: RiBuilding2Line, description: 'Name, branding & SSO' },
+  { tab: 'team', label: 'Team', icon: RiTeamLine, description: 'Members & permissions' },
+  { tab: 'billing', label: 'Billing', icon: RiMoneyDollarCircleLine, description: 'Plans & invoices' },
+];
 
 export function SettingsTabs({ routes, rootRoute }: SettingsTabsProps) {
   const navigate = useNavigate();
@@ -131,130 +110,226 @@ export function SettingsTabs({ routes, rootRoute }: SettingsTabsProps) {
   const clerkAppearance = useMemo(() => getClerkComponentAppearance(isRbacEnabled), [isRbacEnabled]);
   const UserProfile = EE_AUTH_PROVIDER === 'clerk' ? ClerkUserProfile : BetterAuthUserProfile;
 
-  const canShowBillingTab = IS_CLOUD;
-  const canManageBilling = IS_CLOUD && hasBillingPermission;
+  const canShowBillingTab = true;
+  const canManageBilling = hasBillingPermission;
   const brandingTierLabel = getRequiredTierLabelForFeature(FeatureNameEnum.PLATFORM_REMOVE_NOVU_BRANDING_BOOLEAN);
 
   const currentTab = resolveCurrentTab(location.pathname, routes, rootRoute);
 
-  const handleTabChange = (value: string) => {
-    switch (value as SettingsTab) {
-      case 'account':
-        navigate(routes.account);
-        break;
-      case 'organization':
-        navigate(routes.organization);
-        break;
-      case 'team':
-        navigate(routes.team);
-        break;
-      case 'billing':
-        if (canShowBillingTab) {
-          navigate(routes.billing);
-        }
-
-        break;
-    }
+  const handleTabChange = (tab: SettingsTab) => {
+    if (tab === 'billing' && !canShowBillingTab) return;
+    navigate(routes[tab]);
   };
 
+  const visibleNavItems = NAV_ITEMS.filter((item) => item.tab !== 'billing' || canShowBillingTab);
+
+  // Tab content metadata
+  const tabMeta: Record<SettingsTab, { title: string; subtitle: string; icon: React.ElementType }> = {
+    account: { title: 'Account', subtitle: 'Manage your personal profile and security settings', icon: RiUserLine },
+    organization: { title: 'Organization', subtitle: 'Configure your organization settings and integrations', icon: RiBuilding2Line },
+    team: { title: 'Team Members', subtitle: 'Invite members and manage roles and permissions', icon: RiTeamLine },
+    billing: { title: 'Billing & Plans', subtitle: 'Manage your subscription, usage, and invoices', icon: RiMoneyDollarCircleLine },
+  };
+
+  const meta = tabMeta[currentTab];
+
   return (
-    <Tabs value={currentTab} onValueChange={handleTabChange} className="-mx-2 w-full">
-      <TabsList align="center" variant="regular" className="border-t-transparent py-0!">
-        <TabsTrigger variant="regular" value="organization" size="xl">
-          Organization
-        </TabsTrigger>
+    <div className="flex h-full w-full min-h-0">
+      {/* Sidebar */}
+      <nav className="w-[220px] shrink-0 border-r border-neutral-200 bg-neutral-50/50 flex flex-col h-full">
+        {/* Sidebar header */}
+        <div className="flex items-center gap-2 px-4 py-5 border-b border-neutral-200">
+          <RiSettings2Line className="size-4 text-neutral-400" />
+          <span className="text-xs font-semibold tracking-widest text-neutral-400 uppercase">Settings</span>
+        </div>
 
-        {canShowBillingTab && (
-          <TabsTrigger variant="regular" value="billing" size="xl">
-            Billing
-          </TabsTrigger>
-        )}
-      </TabsList>
-
-      <div
-        className={`mx-auto mt-1 px-1.5 ${currentTab === 'billing' && canShowBillingTab ? 'max-w-[1400px]' : 'max-w-[700px]'}`}
-      >
-        <TabsContent value="account" className="rounded-lg">
-          <motion.div {...FADE_ANIMATION}>
-            <Card className="border-none shadow-none">
-              <div className="pb-6 pt-4 flex flex-col">
-                <UserProfile appearance={clerkAppearance}>
-                  <UserProfile.Page label="account" />
-                  <UserProfile.Page label="security" />
-                </UserProfile>
-
-                <h1 className="text-foreground mb-6 mt-10 text-xl font-semibold">Security</h1>
-                <UserProfile appearance={clerkAppearance}>
-                  <UserProfile.Page label="security" />
-                  <UserProfile.Page label="account" />
-                </UserProfile>
-              </div>
-            </Card>
-          </motion.div>
-        </TabsContent>
-
-        <TabsContent value="organization" className="rounded-lg">
-          <motion.div {...FADE_ANIMATION}>
-            <Card className="border-none shadow-none">
-              <div className="pb-6 pt-4 flex flex-col">
-                {subscription?.apiServiceLevel === ApiServiceLevelEnum.FREE && canManageBilling && (
-                  <InlineToast
-                    title="Tip:"
-                    description={
-                      brandingTierLabel
-                        ? `Hide Novu branding from your notification channels by upgrading to the ${brandingTierLabel} plan.`
-                        : 'Hide Novu branding from your notification channels by upgrading to a paid plan.'
-                    }
-                    ctaLabel={brandingTierLabel ? `Upgrade to ${brandingTierLabel}` : 'Upgrade Plan'}
-                    onCtaClick={() => navigate(`${routes.billing}?utm_source=organization_settings_upgrade_prompt`)}
-                    className="mb-4"
-                    variant="tip"
-                  />
-                )}
-                <OrganizationSettings clerkAppearance={clerkAppearance} />
-              </div>
-            </Card>
-          </motion.div>
-        </TabsContent>
-
-        <TabsContent value="team" className="rounded-lg">
-          <motion.div {...FADE_ANIMATION}>
-            <Card className="border-none shadow-none">
-              <div className={`pb-6 pt-4 flex flex-col ${isRbacEnabled ? 'show-role-column' : 'hide-role-column'}`}>
-                {isRbacEnabledFlag && !isRbacEnabled && canManageBilling && (
-                  <InlineToast
-                    title="Tip:"
-                    description="Get role-based access control and add unlimited members by upgrading."
-                    ctaLabel="Upgrade to Team"
-                    onCtaClick={() => navigate(`${routes.billing}?utm_source=team_members_upgrade_prompt`)}
-                    className="mb-4"
-                    variant="tip"
-                  />
-                )}
-                {EE_AUTH_PROVIDER === 'clerk' ? (
-                  <OrganizationProfile appearance={clerkAppearance} afterLeaveOrganizationUrl={AFTER_LEAVE_ORG_URL}>
-                    <OrganizationProfile.Page label="general" />
-                  </OrganizationProfile>
-                ) : (
-                  <TeamMembers appearance={clerkAppearance} />
-                )}
-              </div>
-            </Card>
-          </motion.div>
-        </TabsContent>
-
-        {canShowBillingTab && (
-          <TabsContent value="billing" className="rounded-lg">
-            <motion.div {...FADE_ANIMATION}>
-              <Card className="border-none shadow-none">
-                <div className="pb-6 pt-4 flex flex-col">
-                  {canManageBilling ? <Plan /> : <BillingRestrictedState />}
+        {/* Nav items */}
+        <div className="flex-1 overflow-y-auto py-2">
+          {visibleNavItems.map((item) => {
+            const Icon = item.icon;
+            const isActive = currentTab === item.tab;
+            return (
+              <button
+                key={item.tab}
+                type="button"
+                onClick={() => handleTabChange(item.tab)}
+                className={`w-full flex items-center gap-3 px-4 py-2.5 text-left transition-colors group ${
+                  isActive
+                    ? 'bg-white border-r-2 border-r-neutral-900 text-neutral-900'
+                    : 'text-neutral-500 hover:text-neutral-900 hover:bg-neutral-100/70 border-r-2 border-r-transparent'
+                }`}
+              >
+                <Icon className={`size-4 shrink-0 ${isActive ? 'text-neutral-900' : 'text-neutral-400 group-hover:text-neutral-600'}`} />
+                <div className="min-w-0">
+                  <div className={`text-sm font-medium leading-none ${isActive ? 'text-neutral-900' : ''}`}>{item.label}</div>
+                  <div className="text-[11px] text-neutral-400 mt-0.5 truncate">{item.description}</div>
                 </div>
-              </Card>
-            </motion.div>
-          </TabsContent>
-        )}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Sidebar footer */}
+        <div className="border-t border-neutral-200 px-4 py-3">
+          <p className="text-[11px] text-neutral-400">Notify Settings</p>
+        </div>
+      </nav>
+
+      {/* Main content */}
+      <div className={cn("flex-1 min-w-0 overflow-y-auto", currentTab === 'billing' && canShowBillingTab ? "bg-zinc-950 text-zinc-100" : "bg-white")}>
+        <motion.div key={currentTab} {...FADE_ANIMATION} className="min-h-full flex flex-col">
+          {/* Content header */}
+          <div className={cn("border-b px-8 py-6", currentTab === 'billing' && canShowBillingTab ? "border-zinc-800" : "border-neutral-200")}>
+            <div className="flex items-center gap-3">
+              <div className={cn("flex items-center justify-center size-8 shrink-0", currentTab === 'billing' && canShowBillingTab ? "bg-zinc-900" : "bg-neutral-100")}>
+                <meta.icon className={cn("size-4", currentTab === 'billing' && canShowBillingTab ? "text-zinc-400" : "text-neutral-700")} />
+              </div>
+              <div>
+                <h1 className={cn("text-base font-semibold leading-none", currentTab === 'billing' && canShowBillingTab ? "text-zinc-100" : "text-neutral-900")}>{meta.title}</h1>
+                <p className={cn("text-xs mt-1", currentTab === 'billing' && canShowBillingTab ? "text-zinc-400" : "text-neutral-500")}>{meta.subtitle}</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Tab content */}
+          <div className={`px-8 py-6 flex-1 ${currentTab === 'billing' && canShowBillingTab ? 'max-w-[1200px]' : 'max-w-[860px]'}`}>
+
+            {/* ACCOUNT TAB */}
+            {currentTab === 'account' && (
+              <div className="space-y-8">
+                <SettingsSection
+                  title="Profile"
+                  description="Update your name, avatar, and email address."
+                >
+                  <UserProfile appearance={clerkAppearance}>
+                    <UserProfile.Page label="account" />
+                    <UserProfile.Page label="security" />
+                  </UserProfile>
+                </SettingsSection>
+
+                <SettingsDivider />
+
+                <SettingsSection
+                  title="Security"
+                  description="Manage your password, two-factor authentication, and active sessions."
+                >
+                  <UserProfile appearance={clerkAppearance}>
+                    <UserProfile.Page label="security" />
+                    <UserProfile.Page label="account" />
+                  </UserProfile>
+                </SettingsSection>
+              </div>
+            )}
+
+            {/* ORGANIZATION TAB */}
+            {currentTab === 'organization' && (
+              <div className="space-y-8">
+                {subscription?.apiServiceLevel === ApiServiceLevelEnum.FREE && canManageBilling && (
+                  <div className="flex items-start gap-3 border border-amber-200 bg-amber-50 px-4 py-3">
+                    <div className="shrink-0 mt-0.5 size-4 rounded-full bg-amber-400 flex items-center justify-center">
+                      <span className="text-[10px] font-bold text-white">!</span>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-medium text-amber-900">Remove Notify branding</p>
+                      <p className="text-xs text-amber-700 mt-0.5">
+                        {brandingTierLabel
+                          ? `Upgrade to the ${brandingTierLabel} plan to hide Notify branding from your notification channels.`
+                          : 'Upgrade to a paid plan to hide Notify branding from your notification channels.'}
+                      </p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => navigate(`${routes.billing}?utm_source=organization_settings_upgrade_prompt`)}
+                      className="shrink-0 text-xs font-medium text-amber-900 underline underline-offset-2 hover:no-underline"
+                    >
+                      {brandingTierLabel ? `Upgrade to ${brandingTierLabel}` : 'Upgrade'}
+                    </button>
+                  </div>
+                )}
+
+                <SettingsSection
+                  title="Organization Details"
+                  description="Manage your organization's name, logo, and general settings."
+                >
+                  <OrganizationSettings clerkAppearance={clerkAppearance} />
+                </SettingsSection>
+              </div>
+            )}
+
+            {/* TEAM TAB */}
+            {currentTab === 'team' && (
+              <div className={`space-y-8 ${isRbacEnabled ? 'show-role-column' : 'hide-role-column'}`}>
+                {isRbacEnabledFlag && !isRbacEnabled && canManageBilling && (
+                  <div className="flex items-start gap-3 border border-blue-200 bg-blue-50 px-4 py-3">
+                    <div className="shrink-0 mt-0.5">
+                      <RiShieldLine className="size-4 text-blue-500" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-medium text-blue-900">Role-based access control available</p>
+                      <p className="text-xs text-blue-700 mt-0.5">Upgrade to Team to get RBAC and add unlimited members.</p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => navigate(`${routes.billing}?utm_source=team_members_upgrade_prompt`)}
+                      className="shrink-0 text-xs font-medium text-blue-900 underline underline-offset-2 hover:no-underline"
+                    >
+                      Upgrade to Team
+                    </button>
+                  </div>
+                )}
+
+                <SettingsSection
+                  title="Members"
+                  description="Invite team members and manage their access levels."
+                >
+                  {EE_AUTH_PROVIDER === 'clerk' ? (
+                    <OrganizationProfile appearance={clerkAppearance} afterLeaveOrganizationUrl={AFTER_LEAVE_ORG_URL}>
+                      <OrganizationProfile.Page label="general" />
+                    </OrganizationProfile>
+                  ) : (
+                    <TeamMembers appearance={clerkAppearance} />
+                  )}
+                </SettingsSection>
+              </div>
+            )}
+
+            {/* BILLING TAB */}
+            {currentTab === 'billing' && canShowBillingTab && (
+              <div className="space-y-8">
+                {canManageBilling ? <NotifyBilling /> : <BillingRestrictedState />}
+              </div>
+            )}
+          </div>
+        </motion.div>
       </div>
-    </Tabs>
+    </div>
   );
+}
+
+/* ─── Sub-components ─────────────────────────────────────── */
+
+function SettingsSection({
+  title,
+  description,
+  children,
+}: {
+  title: string;
+  description?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="flex flex-col gap-4 lg:flex-row lg:gap-8">
+      {/* Left label column */}
+      <div className="w-full lg:w-[200px] lg:shrink-0">
+        <h2 className="text-sm font-semibold text-neutral-900 leading-none">{title}</h2>
+        {description && <p className="text-xs text-neutral-500 mt-1.5 leading-relaxed">{description}</p>}
+      </div>
+      {/* Right content column */}
+      <div className="flex-1 min-w-0 overflow-hidden">{children}</div>
+    </div>
+  );
+}
+
+function SettingsDivider() {
+  return <div className="h-px bg-neutral-100" />;
 }

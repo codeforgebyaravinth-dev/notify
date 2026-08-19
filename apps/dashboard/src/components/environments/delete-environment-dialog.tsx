@@ -45,10 +45,10 @@ export const DeleteEnvironmentDialog = ({
           </DialogDescription>
         </DialogHeader>
         <DialogFooter>
-          <Button variant="secondary" mode="ghost" onClick={() => onOpenChange(false)}>
+          <Button variant="secondary" mode="ghost" onClick={() => onOpenChange(false)} className="rounded-none">
             Cancel
           </Button>
-          <Button variant="error" mode="gradient" onClick={onConfirm} isLoading={isLoading}>
+          <Button variant="error" onClick={onConfirm} isLoading={isLoading} className="rounded-none">
             Delete {environment.name}
           </Button>
         </DialogFooter>

@@ -169,7 +169,7 @@ export function AddDomainDialog({ open, onOpenChange }: AddDomainDialogProps) {
             />
             {showApexDomainWarning && <ApexDomainMxWarning />}
             <DialogFooter>
-              <Button type="submit" disabled={isPending}>
+              <Button type="submit" disabled={isPending} className="rounded-none">
                 {isPending ? 'Setting up...' : 'Setup domain'}
               </Button>
             </DialogFooter>

@@ -50,12 +50,13 @@ export function CopilotConnectProvider({ children, fallback = null }: CopilotCon
 
   const subscriber = useMemo(
     () => ({
-      subscriberId: user?.externalId ?? '',
+      // Fall back to user.id (Clerk's own ID) when externalId is null for JIT-provisioned users
+      subscriberId: (user?.externalId || user?.id) ?? '',
       email: user?.primaryEmailAddress?.emailAddress ?? user?.emailAddresses?.[0]?.emailAddress ?? '',
       firstName: user?.firstName ?? '',
       lastName: user?.lastName ?? '',
     }),
-    [user?.externalId, user?.primaryEmailAddress?.emailAddress, user?.emailAddresses, user?.firstName, user?.lastName]
+    [user?.externalId, user?.id, user?.primaryEmailAddress?.emailAddress, user?.emailAddresses, user?.firstName, user?.lastName]
   );
 
   // Mint the tenant context + contextHash + subscriberHash from the customer-authenticated
@@ -79,7 +80,7 @@ export function CopilotConnectProvider({ children, fallback = null }: CopilotCon
   }
 
   const isContextReady =
-    !!user?.externalId && !!currentEnvironment && !!currentOrganization && !isConnectContextLoading;
+    !!(user?.externalId || user?.id) && !!currentEnvironment && !!currentOrganization && !isConnectContextLoading;
 
   if (!isContextReady) {
     return <>{fallback}</>;

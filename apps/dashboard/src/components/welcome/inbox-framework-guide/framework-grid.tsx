@@ -9,15 +9,20 @@ type FrameworkGridProps = {
 
 export function FrameworkGrid({ frameworks, selectedFrameworkName, onSelect }: FrameworkGridProps) {
   return (
-    <div className="flex gap-2">
-      {frameworks.map((framework) => (
-        <FrameworkCard
-          key={framework.name}
-          framework={framework}
-          isSelected={framework.name === selectedFrameworkName}
-          onSelect={onSelect}
-        />
-      ))}
+    <div>
+      <p className="mb-3 text-[10px] font-semibold uppercase tracking-widest text-neutral-400">
+        Choose your framework
+      </p>
+      <div className="flex flex-wrap gap-2">
+        {frameworks.map((framework) => (
+          <FrameworkCard
+            key={framework.name}
+            framework={framework}
+            isSelected={framework.name === selectedFrameworkName}
+            onSelect={onSelect}
+          />
+        ))}
+      </div>
     </div>
   );
 }

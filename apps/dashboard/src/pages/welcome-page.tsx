@@ -39,15 +39,15 @@ export function WelcomePage(): ReactElement {
 
   return (
     <>
-      <PageMeta title="Get Started with Novu" />
+      <PageMeta title="Get Started — Notify" />
       <DashboardLayout>
-        <motion.div className="flex flex-col gap-2.5 p-2.5" variants={pageVariants} initial="hidden" animate="show">
+        <motion.div className="flex flex-col gap-4 p-4" variants={pageVariants} initial="hidden" animate="show">
           <motion.div variants={sectionVariants}>
             <WelcomeHeading />
           </motion.div>
 
-          <div className="grid grid-cols-1 gap-2.5 lg:grid-cols-[minmax(0,1fr)_375px]">
-            <div className="flex min-w-0 flex-col gap-2.5">
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1fr)_340px]">
+            <div className="flex min-w-0 flex-col gap-4">
               <motion.div variants={sectionVariants}>
                 <SetupStepsCard steps={steps} onLearnMore={openDocs} />
               </motion.div>

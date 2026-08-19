@@ -8,7 +8,7 @@ const BILLING_ROLES_DOCS_URL = 'https://docs.novu.co/platform/account/roles-and-
 export function BillingRestrictedState() {
   return (
     <div className="flex w-full flex-col items-center justify-center gap-6 px-4 py-16 text-center">
-      <div className="bg-bg-weak text-text-soft flex size-12 items-center justify-center rounded-full">
+      <div className="bg-bg-weak text-text-soft flex size-12 items-center justify-center rounded-none">
         <RiLockLine className="size-6" />
       </div>
 

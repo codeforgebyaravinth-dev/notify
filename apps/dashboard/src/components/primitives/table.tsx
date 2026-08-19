@@ -27,7 +27,7 @@ type TableCellProps = React.TdHTMLAttributes<HTMLTableCellElement>;
 const LoadingRow = () => (
   <TableRow>
     <TableCell className="animate-pulse" colSpan={100}>
-      <div className="h-8 w-full rounded-md bg-neutral-100" />
+      <div className="h-8 w-full rounded-none bg-neutral-100" />
     </TableCell>
   </TableRow>
 );
@@ -36,7 +36,7 @@ const Table = React.forwardRef<HTMLTableElement, TableProps>(
   ({ className, containerClassname, isLoading, loadingRowsCount = 5, loadingRow, children, ...props }, ref) => (
     <div
       className={cn(
-        'border-neutral-alpha-200 shadow-xs relative w-full overflow-x-auto rounded-lg border',
+        'border-neutral-alpha-200 shadow-xs relative w-full overflow-x-auto rounded-none border',
         containerClassname
       )}
     >

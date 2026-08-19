@@ -53,7 +53,7 @@ function CoverageBadge({ filledCount, totalCount }: { filledCount: number; total
   return (
     <span
       className={cn(
-        'inline-flex items-center gap-1 rounded-full px-1.5 py-0.5 text-xs font-medium',
+        'inline-flex items-center gap-1 rounded-none px-1.5 py-0.5 text-xs font-medium',
         isFull ? 'bg-success/10 text-success-600' : 'bg-warning/10 text-warning-600'
       )}
     >
@@ -156,7 +156,7 @@ export const VariableRow = ({
               {variable.key}
             </span>
             {variable.isSecret && (
-              <span className="bg-feature/10 text-feature rounded px-1.5 py-0.5 text-xs font-medium">Secret</span>
+              <span className="bg-feature/10 text-feature rounded-none px-1.5 py-0.5 text-xs font-medium">Secret</span>
             )}
           </div>
         </VariableCell>
@@ -185,14 +185,14 @@ export const VariableRow = ({
                     onClick={() => setTimeout(() => setIsEditDrawerOpen(true), 0)}
                   >
                     <RiEditLine />
-                    Edit variable
+                    Edit secret
                   </DropdownMenuItem>
                   <DropdownMenuItem
                     className="text-destructive cursor-pointer"
                     onClick={() => setTimeout(() => setIsDeleteModalOpen(true), 0)}
                   >
                     <RiDeleteBin2Line />
-                    Delete variable
+                    Delete secret
                   </DropdownMenuItem>
                 </Protect>
               </DropdownMenuGroup>

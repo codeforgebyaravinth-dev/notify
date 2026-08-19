@@ -28,8 +28,8 @@ export const DeleteVariableDialog = ({
       onOpenChange={onOpenChange}
       onConfirm={onConfirm}
       resourceName={variable.key}
-      resourceLabel="variable"
-      deleteButtonText="Delete variable"
+      resourceLabel="secret"
+      deleteButtonText="Delete secret"
       impactDescription={
         <>
           that reference <b className="break-all">{`{{env.${variable.key}}}`}</b>

@@ -43,6 +43,7 @@ import { ChannelPreferences } from './components/workflow-editor/channel-prefere
 import { WorkflowAgentAssignment } from './components/workflow-editor/workflow-agent-assignment';
 import { EE_AUTH_PROVIDER, IS_CLOUD, IS_SELF_HOSTED, IS_SELF_HOSTED_CE } from './config';
 import { FeatureFlagsProvider } from './context/feature-flags-provider';
+import { ThemeProvider } from './components/theme-provider';
 import { AgentDetailsPage } from './pages/agent-details';
 import { AgentSlackSetupPage } from './pages/agent-slack-setup-page';
 import { AgentTelegramMobileSetupPage } from './pages/agent-telegram-mobile-setup-page';
@@ -733,7 +734,7 @@ const router = createBrowserRouter([
           },
           {
             path: ROUTES.SETTINGS_BILLING,
-            element: IS_SELF_HOSTED ? <Navigate to={ROUTES.ROOT} /> : <SettingsPage />,
+            element: IS_SELF_HOSTED_CE ? <Navigate to={ROUTES.ROOT} /> : <SettingsPage />,
           },
           {
             path: ROUTES.LOCAL_STUDIO_AUTH,
@@ -764,8 +765,10 @@ if (!rootElement) throw new Error('Root element not found');
 
 createRoot(rootElement).render(
   <StrictMode>
-    <FeatureFlagsProvider>
-      <RouterProvider router={router} />
-    </FeatureFlagsProvider>
+    <ThemeProvider>
+      <FeatureFlagsProvider>
+        <RouterProvider router={router} />
+      </FeatureFlagsProvider>
+    </ThemeProvider>
   </StrictMode>
 );

@@ -61,9 +61,8 @@ export const VariableListUpgradeCta = () => {
       <div className="flex flex-col items-center gap-1">
         <Button
           variant="primary"
-          mode="gradient"
-          size="xs"
-          className="mb-3.5"
+          size="sm"
+          className="mb-3.5 rounded-none bg-foreground-950 text-background hover:bg-foreground-900 dark:bg-white dark:text-black dark:hover:bg-neutral-200 transition-colors h-8 text-xs px-3"
           onClick={() => {
             track(TelemetryEvent.UPGRADE_TO_TEAM_TIER_CLICK, {
               source: 'variables-page',

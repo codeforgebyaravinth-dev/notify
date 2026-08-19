@@ -454,67 +454,47 @@ export function OrganizationPicker({
   );
 
   const handleCreate = useCallback(
-    async ({ name, slug }: { name: string; slug: string }) => {
-      if (!createOrganization || !setActive) return;
-
+    async ({ name }: { name: string; slug: string }) => {
       setIsCreating(true);
       clearOnboardingProvisioning();
 
-      let createdOrg: Awaited<ReturnType<typeof createOrganization>> | null = null;
-      let lastError: unknown = null;
-
-      // Retry with a numeric suffix on slug collision so common names don't need manual renames.
-      for (let attempt = 0; attempt < SLUG_RETRY_LIMIT; attempt += 1) {
-        const candidateSlug = attempt === 0 ? slug : `${slug}-${Math.floor(Math.random() * 9000 + 1000)}`;
-
-        try {
-          createdOrg = await createOrganization({ name, slug: candidateSlug });
-          break;
-        } catch (error) {
-          lastError = error;
-          if (!isSlugTakenError(error)) {
-            break;
-          }
-        }
-      }
-
-      if (!createdOrg) {
-        clearOnboardingProvisioning();
-        const message = readClerkErrorMessage(lastError, 'Failed to create organization.');
-        showErrorToast(message, 'Create organization failed');
-        setIsCreating(false);
-
-        return;
-      }
-
       try {
-        await setActive({ organization: createdOrg.id });
+        // Use our own backend to create the organization instead of Clerk's cloud API.
+        // This avoids the 403 error from Clerk's Organizations feature restriction.
+        const apiUrl = import.meta.env.VITE_API_HOSTNAME || 'http://localhost:3000';
+        const token = await (window as any).Clerk?.session?.getToken();
+
+        const response = await fetch(`${apiUrl}/v1/organizations`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({ name }),
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json().catch(() => ({}));
+          throw new Error(errorData?.message || 'Failed to create organization.');
+        }
+
+        // Redirect to the dashboard — the ClerkAuthGuard will pick up the new org on the next request.
+        if (isAbsoluteUrl(afterCreateOrganizationUrl)) {
+          window.location.assign(afterCreateOrganizationUrl);
+
+          return;
+        }
+
+        // Force a full page reload so the session cache picks up the new organization
+        window.location.assign(afterCreateOrganizationUrl);
       } catch (error) {
         clearOnboardingProvisioning();
-        const message = readClerkErrorMessage(error, 'Failed to activate the new organization.');
-        showErrorToast(message, 'Activation failed');
+        const message = error instanceof Error ? error.message : 'Failed to create organization.';
+        showErrorToast(message, 'Create organization failed');
         setIsCreating(false);
-
-        return;
       }
-
-      track(TelemetryEvent.CREATE_ORGANIZATION_FORM_SUBMITTED, {
-        location: 'web',
-        organizationId: createdOrg.id,
-        organizationName: createdOrg.name,
-        autoCreated: false,
-      });
-      hasTrackedRef.current = true;
-
-      if (isAbsoluteUrl(afterCreateOrganizationUrl)) {
-        window.location.assign(afterCreateOrganizationUrl);
-
-        return;
-      }
-
-      void navigate(afterCreateOrganizationUrl);
     },
-    [createOrganization, setActive, afterCreateOrganizationUrl, track, navigate]
+    [afterCreateOrganizationUrl]
   );
 
   const handleCancel = useCallback(() => {

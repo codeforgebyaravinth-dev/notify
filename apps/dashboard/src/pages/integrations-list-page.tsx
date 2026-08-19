@@ -6,6 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/primitive
 import { buildRoute, ROUTES } from '@/utils/routes';
 import { DashboardLayout } from '../components/dashboard-layout';
 import { IntegrationsList } from '../components/integrations/components/integrations-list';
+import { ManagedIntegrationsSection } from '../components/integrations/components/managed-integrations-section';
 import { TableIntegration } from '../components/integrations/types';
 
 export function IntegrationsListPage() {
@@ -23,10 +24,12 @@ export function IntegrationsListPage() {
     <DashboardLayout
       headerStartItems={
         <h1 className="text-foreground-950 flex items-center gap-1">
-          <span>Integration Store</span>
+          <span>Connectors</span>
         </h1>
       }
     >
+      <ManagedIntegrationsSection />
+      
       <Tabs defaultValue="providers" className="-mx-2">
         <div className="border-neutral-alpha-200 flex items-center justify-between border-b">
           <TabsList variant="regular" className="border-b-0 border-transparent p-0 px-2!">
@@ -40,7 +43,7 @@ export function IntegrationsListPage() {
             variant="primary"
             mode="gradient"
             onClick={onAddIntegrationClickCallback}
-            className="mr-2.5"
+            className="mr-2.5 rounded-none"
           >
             Connect Provider
           </PermissionButton>

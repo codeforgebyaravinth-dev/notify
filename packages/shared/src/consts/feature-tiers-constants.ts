@@ -147,14 +147,14 @@ const novuServiceTiers: Record<FeatureNameEnum, Record<ApiServiceLevelEnum, Feat
       label: '$0',
     },
     [ApiServiceLevelEnum.PRO]: {
-      value: 30,
+      value: 49,
       currency: '$',
-      label: '$30',
+      label: '$49',
     },
     [ApiServiceLevelEnum.BUSINESS]: {
-      value: 250,
+      value: 299,
       currency: '$',
-      label: '$250',
+      label: '$299',
     },
     [ApiServiceLevelEnum.ENTERPRISE]: {
       value: 'Custom Pricing',
@@ -171,14 +171,14 @@ const novuServiceTiers: Record<FeatureNameEnum, Record<ApiServiceLevelEnum, Feat
       label: '$0',
     },
     [ApiServiceLevelEnum.PRO]: {
-      value: 330,
+      value: 490,
       currency: '$',
-      label: '$330',
+      label: '$490',
     },
     [ApiServiceLevelEnum.BUSINESS]: {
-      value: 2700,
+      value: 2990,
       currency: '$',
-      label: '$2,700',
+      label: '$2,990',
     },
     [ApiServiceLevelEnum.ENTERPRISE]: {
       value: 'Custom Pricing',
@@ -297,7 +297,7 @@ const novuServiceTiers: Record<FeatureNameEnum, Record<ApiServiceLevelEnum, Feat
   },
   [FeatureNameEnum.WEBHOOKS]: {
     [ApiServiceLevelEnum.FREE]: { label: 'Webhooks', value: false },
-    [ApiServiceLevelEnum.PRO]: { label: 'Webhooks', value: false },
+    [ApiServiceLevelEnum.PRO]: { label: 'Webhooks', value: true },
     [ApiServiceLevelEnum.BUSINESS]: { label: 'Webhooks', value: true },
     [ApiServiceLevelEnum.ENTERPRISE]: { label: 'Webhooks', value: true },
     [ApiServiceLevelEnum.UNLIMITED]: { label: 'Webhooks', value: true },
@@ -381,11 +381,11 @@ const novuServiceTiers: Record<FeatureNameEnum, Record<ApiServiceLevelEnum, Feat
     [ApiServiceLevelEnum.UNLIMITED]: 1,
   },
   [FeatureNameEnum.PLATFORM_REMOVE_NOVU_BRANDING_BOOLEAN]: {
-    [ApiServiceLevelEnum.FREE]: { label: 'Remove Novu branding', value: false },
-    [ApiServiceLevelEnum.PRO]: { label: 'Remove Novu branding', value: true },
-    [ApiServiceLevelEnum.BUSINESS]: { label: 'Remove Novu branding', value: true },
-    [ApiServiceLevelEnum.ENTERPRISE]: { label: 'Remove Novu branding', value: true },
-    [ApiServiceLevelEnum.UNLIMITED]: { label: 'Remove Novu branding', value: true },
+    [ApiServiceLevelEnum.FREE]: { label: 'Remove Notify branding', value: false },
+    [ApiServiceLevelEnum.PRO]: { label: 'Remove Notify branding', value: true },
+    [ApiServiceLevelEnum.BUSINESS]: { label: 'Remove Notify branding', value: true },
+    [ApiServiceLevelEnum.ENTERPRISE]: { label: 'Remove Notify branding', value: true },
+    [ApiServiceLevelEnum.UNLIMITED]: { label: 'Remove Notify branding', value: true },
   },
   // Inbox Features
   [FeatureNameEnum.INBOX_COMPONENT_BOOLEAN]: {
@@ -638,7 +638,21 @@ function getConvertToMs(conversionToMs: boolean | undefined) {
 }
 
 export function getFeatureForTierAsBoolean(featureName: FeatureNameEnum, tier: ApiServiceLevelEnum): boolean {
-  return true;
+  const feature = novuServiceTiers[featureName][tier];
+
+  if (isDetailedPriceListItem(feature)) {
+    return feature.value ? true : false;
+  }
+  
+  if (typeof feature === 'boolean') {
+    return feature;
+  }
+  
+  if (typeof feature === 'number' || typeof feature === 'string') {
+    return Boolean(feature);
+  }
+
+  return false;
 }
 
 function getTextFromItem(feature: DetailedPriceListItem) {

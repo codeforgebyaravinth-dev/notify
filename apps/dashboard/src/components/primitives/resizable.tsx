@@ -60,7 +60,7 @@ const ResizableHandle = ({ withHandle, className, ...props }: SeparatorProps & {
     {...props}
   >
     {withHandle && (
-      <div className="z-10 flex h-4 w-3 items-center justify-center rounded-sm border bg-neutral-100 opacity-0 transition-opacity duration-150 group-hover:opacity-100">
+      <div className="z-10 flex h-4 w-3 items-center justify-center rounded-none border bg-neutral-100 opacity-0 transition-opacity duration-150 group-hover:opacity-100">
         <DragHandleDots2Icon className="h-2.5 w-2.5" />
       </div>
     )}

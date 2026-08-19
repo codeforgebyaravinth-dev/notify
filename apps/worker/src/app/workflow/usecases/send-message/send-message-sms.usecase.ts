@@ -13,6 +13,7 @@ import {
   SelectVariant,
   SendWebhookMessage,
   SmsFactory,
+  BillingService,
 } from '@novu/application-generic';
 
 import { IntegrationEntity, MessageEntity, MessageRepository, SubscriberRepository } from '@novu/dal';
@@ -45,7 +46,8 @@ export class SendMessageSms extends SendMessageBase {
     protected getNovuProviderCredentials: GetNovuProviderCredentials,
     protected selectVariant: SelectVariant,
     protected moduleRef: ModuleRef,
-    private sendWebhookMessage: SendWebhookMessage
+    private sendWebhookMessage: SendWebhookMessage,
+    protected billingService: BillingService
   ) {
     super(
       messageRepository,
@@ -54,7 +56,8 @@ export class SendMessageSms extends SendMessageBase {
       selectIntegration,
       getNovuProviderCredentials,
       selectVariant,
-      moduleRef
+      moduleRef,
+      billingService
     );
   }
 
@@ -364,6 +367,8 @@ export class SendMessageSms extends SendMessageBase {
         organizationId: command.organizationId,
         environmentId: command.environmentId,
       });
+
+      await this.reportUsage(command.organizationId, integration.providerId);
 
       return {
         status: SendMessageStatus.SUCCESS,

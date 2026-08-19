@@ -13,6 +13,7 @@ import {
   SelectIntegration,
   SelectVariant,
   ToolFactory,
+  BillingService,
 } from '@novu/application-generic';
 import { IntegrationEntity, MessageEntity, MessageRepository, SubscriberRepository } from '@novu/dal';
 import {
@@ -57,7 +58,8 @@ export class SendMessageTool extends SendMessageBase {
     protected selectVariant: SelectVariant,
     protected moduleRef: ModuleRef,
     private getDecryptedIntegrations: GetDecryptedIntegrations,
-    private resolveChannelEndpoints: ResolveChannelEndpoints
+    private resolveChannelEndpoints: ResolveChannelEndpoints,
+    protected billingService: BillingService
   ) {
     super(
       messageRepository,
@@ -66,7 +68,8 @@ export class SendMessageTool extends SendMessageBase {
       selectIntegration,
       getNovuProviderCredentials,
       selectVariant,
-      moduleRef
+      moduleRef,
+      billingService
     );
   }
 

@@ -14,7 +14,7 @@ const Pagination = ({ className, ...props }: React.ComponentProps<'nav'>) => (
   <nav
     role="navigation"
     aria-label="pagination"
-    className={cn('text-foreground-600 mx-auto flex w-fit justify-center overflow-hidden rounded-md border', className)}
+    className={cn('text-foreground-600 mx-auto flex w-fit justify-center overflow-hidden rounded-none border', className)}
     {...props}
   />
 );

@@ -76,7 +76,7 @@ export class GetNovuProviderCredentials {
     if (integration.providerId === EmailProviderIdEnum.Novu) {
       return {
         apiKey: process.env.NOVU_EMAIL_INTEGRATION_API_KEY,
-        from: 'no-reply@novu.co',
+        from: 'no-reply@notifyhq.in',
         senderName: 'Novu',
         ipPoolName: 'Demo',
       };

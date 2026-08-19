@@ -123,7 +123,7 @@ export function SignUp() {
         return;
       }
 
-      navigate(ROUTES.SIGNUP_ORGANIZATION_LIST);
+      navigate(ROUTES.ENV);
     } catch (e: any) {
       setError(e.message || 'An unexpected error occurred.');
     } finally {

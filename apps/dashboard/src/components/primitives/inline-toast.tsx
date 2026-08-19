@@ -3,7 +3,7 @@ import * as React from 'react';
 import { cn } from '@/utils/ui';
 import { Button } from './button';
 
-const inlineToastVariants = cva('flex items-center justify-between gap-3 rounded-lg border px-2 py-1.5', {
+const inlineToastVariants = cva('flex items-center justify-between gap-3 rounded-none border px-2 py-1.5', {
   variants: {
     variant: {
       tip: 'border-neutral-100 bg-neutral-50',

@@ -25,7 +25,7 @@ export function MsTeamsPreviewFrame({ children, variant = 'default' }: MsTeamsPr
     >
       <div className="flex w-full items-start">
         <img
-          src="/images/chat-preview-novu-avatar.webp"
+          src="/images/providers/light/square/notify.jpg"
           alt=""
           width={28}
           height={28}
@@ -36,7 +36,7 @@ export function MsTeamsPreviewFrame({ children, variant = 'default' }: MsTeamsPr
         />
         <div className="flex min-w-0 flex-1 flex-col gap-1 max-w-[448px]">
           <div className="flex items-baseline gap-1.5">
-            <span className="text-[13px] font-semibold leading-4 text-[#616161]">Novu</span>
+            <span className="text-[13px] font-semibold leading-4 text-[#616161]">Notify</span>
             <span className="text-[12px] font-normal leading-4 text-[#616161]">10:50</span>
           </div>
           <div className="border-stroke-soft w-full rounded-lg border p-3 text-[#242424] bg-[#fafafa]">{children}</div>

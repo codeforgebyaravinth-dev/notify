@@ -163,7 +163,7 @@ export function FacetedFormFilter({
           className={cn(
             'h-10 border-neutral-300 bg-white px-3 text-neutral-600',
             'hover:border-neutral-300 hover:bg-neutral-50/30 hover:text-neutral-700',
-            'rounded-lg border-neutral-200 ring-0 ring-offset-0 transition-colors duration-200 ease-out',
+            'rounded-none border-neutral-200 ring-0 ring-offset-0 transition-colors duration-200 ease-out',
             sizes.trigger,
             isEmpty && 'border border-dashed px-1.5 hover:border-neutral-300',
             !isEmpty && 'border bg-white',

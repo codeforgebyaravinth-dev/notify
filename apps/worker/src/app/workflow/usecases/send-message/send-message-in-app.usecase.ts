@@ -15,6 +15,7 @@ import {
   SelectVariant,
   SendWebhookMessage,
   WebSocketsQueueService,
+  BillingService,
 } from '@novu/application-generic';
 
 import { MessageEntity, MessageRepository, SubscriberRepository } from '@novu/dal';
@@ -50,7 +51,8 @@ export class SendMessageInApp extends SendMessageBase {
     protected selectVariant: SelectVariant,
     protected moduleRef: ModuleRef,
     protected compileInAppTemplate: CompileInAppTemplate,
-    private sendWebhookMessage: SendWebhookMessage
+    private sendWebhookMessage: SendWebhookMessage,
+    protected billingService: BillingService
   ) {
     super(
       messageRepository,
@@ -59,7 +61,8 @@ export class SendMessageInApp extends SendMessageBase {
       selectIntegration,
       getNovuProviderCredentials,
       selectVariant,
-      moduleRef
+      moduleRef,
+      billingService
     );
   }
 

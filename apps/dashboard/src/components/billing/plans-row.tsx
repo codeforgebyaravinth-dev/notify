@@ -58,7 +58,7 @@ function PlanHeader({ planKey, planConfig, currentPlan, isOnTrial }: PlanHeaderP
       <div className="flex items-center gap-2">
         <h3 className="text-label-sm">{planName}</h3>
         {showRecommended && (
-          <Badge variant="lighter" color="orange" size="sm" className="rounded-md">
+          <Badge variant="lighter" color="orange" size="sm" className="rounded-none">
             RECOMMENDED
           </Badge>
         )}
@@ -145,7 +145,7 @@ function PlanCard({ planKey, planConfig, selectedBillingInterval, currentPlan, i
 
   return (
     <motion.div
-      className={`flex flex-col items-start flex-1 rounded-xl p-4 ${cardStyles.className}`}
+      className={`flex flex-col items-start flex-1 rounded-none p-4 ${cardStyles.className}`}
       style={cardStyles.style}
       layout
       animate={{ gap: isSticky ? '1rem' : '1.75rem' }}

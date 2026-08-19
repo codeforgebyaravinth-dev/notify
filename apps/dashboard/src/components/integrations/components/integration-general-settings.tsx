@@ -49,7 +49,7 @@ export function GeneralSettings({
   );
 
   return (
-    <div className="border-neutral-alpha-200 bg-background text-foreground-600 mx-0 mt-0 flex flex-col gap-2 rounded-lg border p-3">
+    <div className="border-neutral-alpha-200 bg-background text-foreground-600 mx-0 mt-0 flex flex-col gap-2 rounded-none border p-3">
       <FormField
         control={control}
         name="active"

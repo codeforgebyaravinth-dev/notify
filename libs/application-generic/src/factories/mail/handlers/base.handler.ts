@@ -71,7 +71,7 @@ export abstract class BaseEmailHandler extends BaseHandler<IEmailProvider> imple
     const mailData: IEmailOptions = {
       html: '<div>checking integration</div>',
       subject: 'Checking Integration',
-      to: ['no-reply@novu.co'],
+      to: ['no-reply@notifyhq.in'],
     };
 
     const { message, success, code } = await this.provider.checkIntegration(mailData);

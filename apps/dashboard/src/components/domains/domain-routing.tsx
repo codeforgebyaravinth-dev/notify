@@ -296,7 +296,7 @@ function ExistingRouteRow({
               animate={catchAllAnimate}
               transition={{ duration: 0.18, ease: 'easeOut' }}
             >
-              <Badge variant="lighter" color="blue" size="sm">
+              <Badge variant="lighter" color="blue" size="sm" className="rounded-none">
                 Catch-all
               </Badge>
             </motion.span>
@@ -468,10 +468,10 @@ function RouteTestDialog({ open, onOpenChange, domainName, route, mutation }: Ro
         ) : null}
 
         <DialogFooter className="gap-2 sm:gap-0">
-          <Button type="button" variant="secondary" mode="outline" size="sm" onClick={() => onOpenChange(false)}>
+          <Button type="button" variant="secondary" mode="outline" size="sm" onClick={() => onOpenChange(false)} className="rounded-none">
             Close
           </Button>
-          <Button type="button" size="sm" onClick={handleSubmit} isLoading={mutation.isPending}>
+          <Button type="button" size="sm" onClick={handleSubmit} isLoading={mutation.isPending} className="rounded-none">
             Run test
           </Button>
         </DialogFooter>
@@ -811,6 +811,7 @@ export const DomainRouting = forwardRef<DomainRoutingHandle, DomainRoutingProps>
                       <Button
                         size="sm"
                         mode="outline"
+                        className="rounded-none"
                         variant="secondary"
                         onClick={openAddRouteTypeDialog}
                         disabled={!canWrite}
@@ -831,6 +832,7 @@ export const DomainRouting = forwardRef<DomainRoutingHandle, DomainRoutingProps>
           <Button
             size="xs"
             mode="outline"
+            className="rounded-none"
             variant="secondary"
             disabled={!routesResponse?.previous || areRoutesLoading}
             onClick={() => setCursor({ before: routesResponse?.previous ?? undefined })}
@@ -840,6 +842,7 @@ export const DomainRouting = forwardRef<DomainRoutingHandle, DomainRoutingProps>
           <Button
             size="xs"
             mode="outline"
+            className="rounded-none"
             variant="secondary"
             disabled={!routesResponse?.next || areRoutesLoading}
             onClick={() => setCursor({ after: routesResponse?.next ?? undefined })}

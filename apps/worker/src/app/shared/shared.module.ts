@@ -40,6 +40,7 @@ import {
   UpdateTenant,
   WorkflowRunRepository,
   WorkflowRunService,
+  BillingService,
 } from '@novu/application-generic';
 import {
   AgentIntegrationRepository,
@@ -61,6 +62,8 @@ import {
   TopicRepository,
   TopicSubscribersRepository,
   WorkflowOverrideRepository,
+  OrganizationRepository,
+  CommunityOrganizationRepository,
 } from '@novu/dal';
 
 import { JobTopicNameEnum } from '@novu/shared';
@@ -141,6 +144,11 @@ const PROVIDERS = [
   GetTenant,
   CreateTenant,
   ProcessTenant,
+  OrganizationRepository,
+  {
+    provide: 'ORGANIZATION_REPOSITORY',
+    useClass: CommunityOrganizationRepository,
+  },
   ...DAL_MODELS,
   ActiveJobsMetricService,
   ExecuteBridgeRequest,
@@ -150,6 +158,7 @@ const PROVIDERS = [
   HttpClientService,
   SafeOutboundHttpService,
   ...ANALYTICS_PROVIDERS,
+  BillingService,
 ];
 
 @Module({

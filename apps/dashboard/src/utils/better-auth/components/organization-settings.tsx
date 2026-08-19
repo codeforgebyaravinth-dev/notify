@@ -85,7 +85,7 @@ export function OrganizationSettings() {
 
   return (
     <div className="space-y-6">
-      <div className="rounded-lg border border-neutral-200 bg-white p-4">
+      <div className="rounded-none border border-neutral-200 bg-white p-4">
         <div className="mb-3 flex items-center gap-2">
           <RiOrganizationChart className="size-5 text-foreground-600" />
           <h3 className="text-sm font-medium text-foreground-950">Organization Name</h3>

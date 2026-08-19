@@ -6,8 +6,8 @@ import { VariableList } from '@/components/variables/variable-list';
 export const VariablesPage = () => {
   return (
     <>
-      <PageMeta title="Variables" />
-      <DashboardLayout headerStartItems={<h1 className="text-foreground-950">Variables</h1>}>
+      <PageMeta title="Secret Store" />
+      <DashboardLayout headerStartItems={<h1 className="text-foreground-950 text-xl font-medium tracking-tight">Secret Store</h1>}>
         <VariableList />
         <AnimatedOutlet />
       </DashboardLayout>

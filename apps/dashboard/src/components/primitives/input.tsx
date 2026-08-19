@@ -106,14 +106,14 @@ export const inputVariants = tv({
         input: 'h-10',
       },
       sm: {
-        root: 'rounded-lg',
+        root: 'rounded-none',
         wrapper: 'gap-2 px-2.5',
         input: 'h-[2.35rem] text-paragraph-xs',
         affix: 'text-paragraph-xs',
         inlineAffix: 'text-paragraph-xs',
       },
       xs: {
-        root: 'rounded-lg',
+        root: 'rounded-none',
         wrapper: 'gap-1.5 px-2',
         input: 'h-8 text-paragraph-xs',
         affix: 'text-paragraph-xs',
@@ -121,7 +121,7 @@ export const inputVariants = tv({
         icon: 'size-4',
       },
       '2xs': {
-        root: 'rounded-lg',
+        root: 'rounded-none',
         wrapper: 'gap-1.5 px-2',
         input: 'h-7 text-paragraph-xs',
         icon: 'size-4',

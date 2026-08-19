@@ -15,6 +15,7 @@ import {
   IntegrationEntity,
   IntegrationQuery,
   IntegrationRepository,
+  OrganizationRepository,
 } from '@novu/dal';
 import {
   AgentRuntimeProviderIdEnum,
@@ -26,7 +27,9 @@ import {
   IntegrationKindEnum,
   providers,
   SmsProviderIdEnum,
+  PushProviderIdEnum,
   slugify,
+  ApiServiceLevelEnum,
 } from '@novu/shared';
 import shortid from 'shortid';
 import { validateOutboundIntegrationCredentials } from '../../utils/validate-outbound-integration-credentials';
@@ -43,6 +46,7 @@ export class CreateIntegration {
     private integrationRepository: IntegrationRepository,
     private analyticsService: AnalyticsService,
     private environmentRepository: EnvironmentRepository,
+    private organizationRepository: OrganizationRepository,
     private logger: PinoLogger
   ) {
     this.logger.setContext(CreateIntegration.name);
@@ -102,6 +106,16 @@ export class CreateIntegration {
     }
 
     if (!isAgentKind) {
+      const organization = await this.organizationRepository.findById(command.organizationId);
+      const managedProviders = [SmsProviderIdEnum.Novu, EmailProviderIdEnum.Novu, PushProviderIdEnum.Novu];
+      
+      if (
+        organization?.apiServiceLevel === ApiServiceLevelEnum.FREE &&
+        managedProviders.includes(command.providerId as any)
+      ) {
+        throw new BadRequestException('Free tier users are not allowed to activate 1-Click managed providers. Please upgrade.');
+      }
+
       const existingIntegration = await this.integrationRepository.findOne({
         _environmentId: command.environmentId,
         providerId: command.providerId,

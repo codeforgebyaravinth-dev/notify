@@ -47,7 +47,7 @@ export const VariableList = () => {
         <Table isLoading loadingRowsCount={5} loadingRow={<VariableRowSkeleton />}>
           <TableHeader>
             <TableRow>
-              <TableHead className="w-[370px]">Variable</TableHead>
+              <TableHead className="w-[370px]">Secret Key</TableHead>
               <TableHead>Value</TableHead>
               <TableHead className="w-[175px]">Last updated</TableHead>
               <TableHead className="w-[52px]" />
@@ -89,23 +89,22 @@ export const VariableList = () => {
           title="Search"
           value={search}
           onChange={handleSearchChange}
-          placeholder="Search variables..."
+          placeholder="Search secrets..."
         />
         <PermissionButton
           permission={PermissionsEnum.WORKFLOW_WRITE}
           variant="primary"
-          mode="gradient"
-          size="xs"
-          leadingIcon={RiAddCircleLine}
+          size="sm"
+          className="rounded-none bg-foreground-950 text-background hover:bg-foreground-900 dark:bg-white dark:text-black dark:hover:bg-neutral-200 transition-colors h-8 text-xs px-3"
           onClick={handleCreateClick}
         >
-          Create variable
+          Add secret
         </PermissionButton>
       </div>
       <Table isLoading={isLoadingVariables} loadingRowsCount={5} loadingRow={<VariableRowSkeleton />}>
         <TableHeader>
           <TableRow>
-            <TableHead className="w-[370px]">Variable</TableHead>
+            <TableHead className="w-[370px]">Secret Key</TableHead>
             <TableHead>Value</TableHead>
             <TableHead className="w-[175px]">Last updated</TableHead>
             <TableHead className="w-[52px]" />
@@ -116,7 +115,7 @@ export const VariableList = () => {
             {hasNoResults && (
               <TableRow>
                 <TableCell colSpan={4} className="text-text-soft py-10 text-center text-sm">
-                  {debouncedSearch ? 'No variables match your search.' : 'No variables yet. Create your first one.'}
+                  {debouncedSearch ? 'No secrets match your search.' : 'No secrets yet. Add your first one.'}
                 </TableCell>
               </TableRow>
             )}

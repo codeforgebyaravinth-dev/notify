@@ -200,7 +200,7 @@ function ConnectedWorkspacesContent({ organizationId }: ConnectedWorkspacesConte
   }
 
   return (
-    <div className="border-stroke-soft divide-stroke-soft divide-y overflow-hidden rounded-xl border">
+    <div className="border-stroke-soft divide-stroke-soft divide-y overflow-hidden rounded-none border">
       <div className="flex items-center justify-between gap-4 p-3 bg-bg-weak">
         <WorkspaceRowLabel />
         <ActionSlot>
@@ -303,7 +303,7 @@ function ActionFade({ children, className }: ActionFadeProps) {
  */
 function ConnectedWorkspacesSkeleton() {
   return (
-    <div className="border-stroke-soft divide-stroke-soft divide-y overflow-hidden rounded-xl border">
+    <div className="border-stroke-soft divide-stroke-soft divide-y overflow-hidden rounded-none border">
       <div className="flex items-center justify-between gap-4 p-3 bg-bg-weak">
         <WorkspaceRowLabel />
         <ActionSlot>

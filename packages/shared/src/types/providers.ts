@@ -95,6 +95,7 @@ export enum EmailProviderIdEnum {
   EmailWebhook = 'email-webhook',
   Braze = 'braze',
   NovuAgent = 'novu-email-agent',
+  Notify = 'notify-email',
 }
 
 export enum SmsProviderIdEnum {
@@ -139,6 +140,7 @@ export enum SmsProviderIdEnum {
   ISendProSms = 'isendpro-sms',
   CmTelecom = 'cm-telecom',
   RuachSms = 'ruach-sms',
+  Notify = 'notify-sms',
 }
 
 export enum ChatProviderIdEnum {
@@ -170,6 +172,8 @@ export enum PushProviderIdEnum {
   PushWebhook = 'push-webhook',
   PusherBeams = 'pusher-beams',
   AppIO = 'appio',
+  Novu = 'novu-push',
+  Notify = 'notify-push',
 }
 
 export enum InAppProviderIdEnum {

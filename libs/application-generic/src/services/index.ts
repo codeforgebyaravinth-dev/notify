@@ -1,5 +1,6 @@
 export * from './analytic-logs';
 export { AnalyticsService } from './analytics.service';
+export * from './billing/billing.service';
 export * from './auth';
 export {
   BullMqConnectionOptions,
