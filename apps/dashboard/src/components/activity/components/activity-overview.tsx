@@ -1,4 +1,4 @@
-import { FeatureFlagsKeysEnum, IActivity } from '@novu/shared';
+import { FeatureFlagsKeysEnum, IActivity } from '@notify/shared';
 import { format } from 'date-fns';
 import { motion } from 'motion/react';
 import React from 'react';

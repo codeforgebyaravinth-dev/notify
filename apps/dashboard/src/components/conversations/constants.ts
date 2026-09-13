@@ -1,4 +1,4 @@
-import type { ConversationalProvider } from '@novu/shared';
+import type { ConversationalProvider } from '@notify/shared';
 import { ConversationFiltersData } from '@/types/conversation';
 import { getAgentChannelDisplayName } from '@/utils/agent-email-provider-display';
 

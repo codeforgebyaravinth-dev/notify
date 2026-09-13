@@ -1,4 +1,4 @@
-import { ChannelTypeEnum, SeverityLevelEnum } from '@novu/shared';
+import { ChannelTypeEnum, SeverityLevelEnum } from '@notify/shared';
 import { ActivityFilters } from '@/api/activity';
 
 export type ActivityFiltersData = {

@@ -1,7 +1,7 @@
 import { ClerkClient, createClerkClient } from '@clerk/backend';
 import { clerk, clerkSetup } from '@clerk/testing/playwright';
 import { faker } from '@faker-js/faker';
-import { DalService, EnvironmentEntity, OrganizationEntity, UserEntity } from '@novu/dal';
+import { DalService, EnvironmentEntity, OrganizationEntity, UserEntity } from '@notify/dal';
 import { Page } from '@playwright/test';
 import { EnvironmentService } from './environment-service';
 import { IntegrationService } from './integration-service';

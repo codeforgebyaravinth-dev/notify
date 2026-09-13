@@ -12,7 +12,7 @@ inputs:
 
 Rules for authoring **step content** (subject, body, `editorType`, headers, body, conditions) on workflows that live in the Novu Dashboard — whether you're editing them by hand or via the Novu MCP.
 
-> Authoring **in code** with [`@novu/framework`](../framework-integration)? Skip this skill — the Framework SDK encodes these constraints in its types and helpers.
+> Authoring **in code** with [`@notify/framework`](../framework-integration)? Skip this skill — the Framework SDK encodes these constraints in its types and helpers.
 >
 > Still need to **decide** what the workflow should look like (channels, severity, critical, digest, templates)? Start with [`design-workflow/`](../design-workflow), then come back here to fill in the step content.
 
@@ -70,5 +70,5 @@ Each step type has its own content rules. Open the matching reference before wri
 ## See Also
 
 - [`design-workflow/`](../design-workflow) — choose channels, severity, `critical`, digest defaults, and pick a workflow template **before** authoring step content
-- [`framework-integration/`](../framework-integration) — author the same workflows in code with `@novu/framework` instead
+- [`framework-integration/`](../framework-integration) — author the same workflows in code with `@notify/framework` instead
 - [`trigger-notification/`](../trigger-notification) — fire a workflow once it's authored

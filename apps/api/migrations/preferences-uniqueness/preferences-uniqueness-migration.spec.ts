@@ -1,6 +1,6 @@
-import { PreferencesRepository, SubscriberRepository } from '@novu/dal';
-import { ChannelTypeEnum, PreferencesTypeEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { PreferencesRepository, SubscriberRepository } from '@notify/dal';
+import { ChannelTypeEnum, PreferencesTypeEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { run } from './preferences-uniqueness-migration';
 

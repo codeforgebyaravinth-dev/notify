@@ -1,10 +1,10 @@
-import { ChatProviderIdEnum } from '@novu/shared';
-import { safeOutboundJsonRequest } from '@novu/shared/utils/safe-outbound-http';
+import { ChatProviderIdEnum } from '@notify/shared';
+import { safeOutboundJsonRequest } from '@notify/shared/utils/safe-outbound-http';
 import {
   assertSafeOutboundUrl,
   normalizeOutboundHttpUrl,
   SsrfBlockedError,
-} from '@novu/shared/utils/ssrf-url-validation';
+} from '@notify/shared/utils/ssrf-url-validation';
 import {
   ChannelTypeEnum,
   ENDPOINT_TYPES,
@@ -12,7 +12,7 @@ import {
   IChatProvider,
   ISendMessageSuccessResponse,
   isChannelDataOfType,
-} from '@novu/stateless';
+} from '@notify/stateless';
 import crypto from 'crypto';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
 import { WithPassthrough } from '../../../utils/types';

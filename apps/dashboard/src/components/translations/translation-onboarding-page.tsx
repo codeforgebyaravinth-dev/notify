@@ -1,4 +1,4 @@
-import { DEFAULT_LOCALE, PermissionsEnum } from '@novu/shared';
+import { DEFAULT_LOCALE, PermissionsEnum } from '@notify/shared';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { RiBookMarkedLine, RiRouteFill } from 'react-icons/ri';

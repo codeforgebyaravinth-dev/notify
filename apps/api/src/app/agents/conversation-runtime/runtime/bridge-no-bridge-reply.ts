@@ -1,5 +1,5 @@
-import { buildSlug, shortenEnvironmentName } from '@novu/application-generic';
-import { type AgentAnalyticsSource, ShortIsPrefixEnum } from '@novu/shared';
+import { buildSlug, shortenEnvironmentName } from '@notify/application-generic';
+import { type AgentAnalyticsSource, ShortIsPrefixEnum } from '@notify/shared';
 import type { CardChild, CardElement } from 'chat';
 
 export const ONBOARDING_NO_BRIDGE_DASHBOARD_TEXT =

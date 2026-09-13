@@ -387,7 +387,7 @@ function printDebugTimingSummary(store: WizardStore, agentResult: AgentRunResult
  * Builds the one-line `hint` rendered next to the "Packages installed"
  * row in the pipeline pane. Examples:
  *
- *   "@novu/nextjs in apps/web (pnpm)"
+ *   "@notify/nextjs in apps/web (pnpm)"
  *   "Installed in 2 workspaces; 1 declared in package.json"
  *   "Skipped — packages already installed"
  */

@@ -1,4 +1,4 @@
-import { DirectionEnum, DomainRouteTypeEnum, DomainStatusEnum, IEnvironment } from '@novu/shared';
+import { DirectionEnum, DomainRouteTypeEnum, DomainStatusEnum, IEnvironment } from '@notify/shared';
 import { del, get, patch, post } from './api.client';
 
 export type DomainRouteResponse = {

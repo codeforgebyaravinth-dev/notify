@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { PinoLogger } from '@novu/application-generic';
-import { LayoutEntity } from '@novu/dal';
+import { PinoLogger } from '@notify/application-generic';
+import { LayoutEntity } from '@notify/dal';
 import { ResourceTypeEnum } from '../../../types/sync.types';
 import { LayoutComparatorAdapter } from '../adapters/layout-comparator.adapter';
 import { LayoutDeleteAdapter } from '../adapters/layout-delete.adapter';

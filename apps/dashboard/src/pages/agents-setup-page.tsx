@@ -1,4 +1,4 @@
-import { ProductUseCasesEnum } from '@novu/shared';
+import { ProductUseCasesEnum } from '@notify/shared';
 import { useQuery } from '@tanstack/react-query';
 import { AnimatePresence, motion } from 'motion/react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';

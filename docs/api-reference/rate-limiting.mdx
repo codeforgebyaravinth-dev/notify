@@ -1,6 +1,6 @@
 ---
 title: 'Rate Limiting'
-description: "Learn Novu API rate limits by tier, read the RateLimit response headers, and handle 429 responses with exponential backoff and idempotency keys."
+description: "Learn Notify API rate limits by tier, read the RateLimit response headers, and handle 429 responses with exponential backoff and idempotency keys."
 ---
 
 Rate limiting is an essential functionality for establishing a robust and resilient system. It safeguards system resources from being misused by malicious actors or being monopolized by one client.
@@ -9,7 +9,7 @@ A variable-cost token bucket rate limited algorithm has been added to provide th
 
 ## Limits
 
-The following limits apply to each category of the Novu system. Each category has an independent bucket of request tokens to consume from.
+The following limits apply to each category of the Notify system. Each category has an independent bucket of request tokens to consume from.
 
 Each category has a different limit of requests per second (RPS), with the endpoints in each category shown below.
 
@@ -31,7 +31,7 @@ Each category has a different limit of requests per second (RPS), with the endpo
 
 ### HTTP response headers
 
-When integrating with Novu API, it’s important to consider the rate limiting HTTP headers included in the response. These headers help you manage your API usage and avoid hitting rate limits.
+When integrating with Notify API, it’s important to consider the rate limiting HTTP headers included in the response. These headers help you manage your API usage and avoid hitting rate limits.
 
 ```
 RateLimit-Remaining: 219

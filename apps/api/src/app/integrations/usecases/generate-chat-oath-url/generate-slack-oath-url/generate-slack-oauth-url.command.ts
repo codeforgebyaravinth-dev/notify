@@ -1,6 +1,6 @@
-import { IsValidContextPayload } from '@novu/application-generic';
-import { IntegrationEntity } from '@novu/dal';
-import { ConnectionMode, ContextPayload } from '@novu/shared';
+import { IsValidContextPayload } from '@notify/application-generic';
+import { IntegrationEntity } from '@notify/dal';
+import { ConnectionMode, ContextPayload } from '@notify/shared';
 import { IsArray, IsBoolean, IsIn, IsOptional, IsString } from 'class-validator';
 import { EnvironmentCommand } from '../../../../shared/commands/project.command';
 import { OAuthMode } from './generate-slack-oauth-url.usecase';

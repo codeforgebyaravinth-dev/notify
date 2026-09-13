@@ -1,6 +1,6 @@
 ---
 title: 'Channels Template Editors'
-description: "Design and configure notification content for email, in-app, push, and SMS channels using the Novu template editors in the dashboard."
+description: "Design and configure notification content for email, in-app, push, and SMS channels using the Notify template editors in the dashboard."
 ---
 
 
@@ -21,7 +21,7 @@ While some channel editors share common features, some channels expose additiona
 
 ## In-app template editor
 
-The in-app template editor defines how notifications appear inside your application through the Novu [`<Inbox />`](/platform/inbox). In-app notifications are UI-driven, not just message-driven. This means that the template is responsible for both content and interaction.
+The in-app template editor defines how notifications appear inside your application through the Notify [`<Inbox />`](/platform/inbox). In-app notifications are UI-driven, not just message-driven. This means that the template is responsible for both content and interaction.
 
 <Note>
   To learn how in-app notifications are rendered and displayed in your application, see the [`<Inbox />`](/platform/inbox) documentation.
@@ -33,7 +33,7 @@ The template editor lets you control what users see, how they act on it, and how
 
 ### Disable content sanitization
 
-By default, Novu sanitizes both the subject and body fields to prevent unsafe HTML from being rendered. This includes sanitizing:
+By default, Notify sanitizes both the subject and body fields to prevent unsafe HTML from being rendered. This includes sanitizing:
 
 - Suspicious HTML tags.
 - HTML entities. The five HTML-reserved characters are escaped to their entity form when rendered:
@@ -101,10 +101,10 @@ The data object is a customizable key-value store available in the in-app step. 
 
 ## Email template editor
 
-The email template editor defines how email notifications are structured, rendered, and delivered. Novu dashboard provides multiple authoring modes:
+The email template editor defines how email notifications are structured, rendered, and delivered. Notify dashboard provides multiple authoring modes:
 
 <Note>
-  You can submit custom HTML email templates via the Novu API. This method supports workflows where you render templates externally and use Novu purely for delivery.
+  You can submit custom HTML email templates via the Notify API. This method supports workflows where you render templates externally and use Notify purely for delivery.
 </Note>
 
 ### Block editor
@@ -159,13 +159,13 @@ Use this block when you need inline markup control within a visual layout, but d
 
 The repeat block lets you iterate over an array and render its child blocks for each item in that array. It works similarly to a JavaScript `for` loop and is used for displaying structured or repeated data such as order items, activity feeds, or grouped records.
 
-When the workflow runs, Novu evaluates the array you provide and repeats the block’s content for every element, allowing you to build dynamic lists.
+When the workflow runs, Notify evaluates the array you provide and repeats the block’s content for every element, allowing you to build dynamic lists.
 
 <iframe
   width="100%"
   height="400"
   src="https://www.youtube.com/embed/yC--z0mQ3Bg"
-  title="Learn how to use Novu email editor Repeat block"
+  title="Learn how to use Notify email editor Repeat block"
   frameBorder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
   allowFullScreen></iframe>
@@ -206,7 +206,7 @@ The Digest block allows you to loop over the events collected by your digest ste
 The Digest block is only available in Email steps that come after a Digest step in the workflow.
 
 When you add a digest block to your email template editor:
-- Novu automatically inserts a Repeat block that iterates over the digested events.
+- Notify automatically inserts a Repeat block that iterates over the digested events.
 - You can define how many times the event is iterated.
 - Inside the loop, you can also use the special alias variable `current` to reference the item currently being processed, for example, `current.payload.name`.
 - The block also supports rendering a summary using the `steps.digest-step.eventCount` variable, typically with the pluralize LiquidJS filter.
@@ -219,7 +219,7 @@ When you add a digest block to your email template editor:
 
 ### Code editor (Custom HTML)
 
-The code editor provides a built-in interface for writing raw HTML and embedding LiquidJS expressions directly inside the Novu dashboard. This gives you full control over layout, structure, and rendering beyond the capabilities of Novu's block editor.
+The code editor provides a built-in interface for writing raw HTML and embedding LiquidJS expressions directly inside the Notify dashboard. This gives you full control over layout, structure, and rendering beyond the capabilities of Notify's block editor.
 
 The editor supports advanced use cases such as:
 - Migrating existing HTML email templates
@@ -227,7 +227,7 @@ The editor supports advanced use cases such as:
 - Executing flow control logic directly inside email templates
 - Complete layout and styling freedom without editor constraints
 
-![Novu code editor](/images/workflows/add-notification-content/channels-template-editors/code-editor.png)
+![Notify code editor](/images/workflows/add-notification-content/channels-template-editors/code-editor.png)
 
 <Warning>
   Switching from code editor to the block editor will reset your code.
@@ -240,7 +240,7 @@ Layouts are reusable components used with email steps in the workflow, designed 
 Every layout must include the `{{content}}` variable. This variable dynamically injects the content of the email step.
 
 <Note>
-  On the Free plan, only one layout can be created per environment. Pro and higher plans support up to 100 layouts per environment. If you need more than 100 layouts, please [contact Support](mailto:support@novu.co).
+  On the Free plan, only one layout can be created per environment. Pro and higher plans support up to 100 layouts per environment. If you need more than 100 layouts, please [contact Support](mailto:support@notify.co).
 </Note>
 
 #### Layout features
@@ -256,7 +256,7 @@ Every layout must include the `{{content}}` variable. This variable dynamically 
 
 #### Apply an email layout to a workflow
 
-1. Navigate to [Workflows page](https://dashboard.novu.co/workflows) on Novu dashboard.
+1. Navigate to [Workflows page](https://dashboard.novu.co/workflows) on Notify dashboard.
 2. Select a workflow from the list.
 3. Select an email step.
 4. Choose your layout from the Layout selector.
@@ -267,17 +267,17 @@ The selected layout wraps around the content written in the email editor.
 
 #### Manage email layouts
 
-Email layouts are managed from the **Layouts** section of the Novu dashboard. From here, you can create, edit, delete, and reuse layouts across workflows.
+Email layouts are managed from the **Layouts** section of the Notify dashboard. From here, you can create, edit, delete, and reuse layouts across workflows.
 
 <video autoPlay loop muted playsInline src="/images/workflows/add-notification-content/channels-template-editors/layouts-page.mp4" />
 
 **Create an email layout**
 
-1. Navigate to the [Layout page](https://dashboard.novu.co/layouts) on Novu dashboard.
+1. Navigate to the [Layout page](https://dashboard.novu.co/layouts) on Notify dashboard.
 2. Click on the **Create layout** button on the top right corner.
 3. Fill in:
   - **Layout name**: Provide a human-readable name.
-  - **Identifier**: Provide a unique ID. Novu generates one automatically if you do not provide it. You cannot change the identifier after it is created.
+  - **Identifier**: Provide a unique ID. Notify generates one automatically if you do not provide it. You cannot change the identifier after it is created.
 4. (Optional) Enable [translations](/platform/workflow/advanced-features/translations) for the layout.
 5. Click **Create layout**.
 
@@ -285,7 +285,7 @@ A new layout is created and can be edited using either the block editor or the c
 
 **Edit email layout**
 
-1. Navigate to [Layout page](https://dashboard.novu.co/layouts) on Novu dashboard.
+1. Navigate to [Layout page](https://dashboard.novu.co/layouts) on Notify dashboard.
 2. Select a layout from the list.
 3. To update the layout name or enable translations, click the **cog** icon in the editor.
 <video autoPlay loop muted playsInline src="/images/workflows/add-notification-content/channels-template-editors/edit-layout.mp4" />
@@ -299,7 +299,7 @@ Changes apply immediately to all workflows using the layout.
 <Warning>
   Deleting a layout is permanent and cannot be undone.
 </Warning>
-1. Navigate to [Layout page](https://dashboard.novu.co/layouts) on Novu dashboard.
+1. Navigate to [Layout page](https://dashboard.novu.co/layouts) on Notify dashboard.
 2. Select a layout from the list.
 3. Click the cog icon in the layout editor.
 4. Click **Delete layout** and confirm. If the layout is used by an email step, then you are notified on which step uses this layout.

@@ -4,7 +4,7 @@ description: "Connect your agent to Slack: threading, typing indicators, plan ca
 sidebarTitle: Slack
 ---
 
-Use Slack as a messaging channel for your agent. Users can DM or @mention the bot. Novu keeps thread context, shows typing and plan cards during the turn, can attach files on replies, and can post Approve / Deny cards before gated tools run.
+Use Slack as a messaging channel for your agent. Users can DM or @mention the bot. Notify keeps thread context, shows typing and plan cards during the turn, can attach files on replies, and can post Approve / Deny cards before gated tools run.
 
 ## Capabilities
 
@@ -31,7 +31,7 @@ Full matrix: [Channels overview](/agents/channels/overview).
 
 ### Inbound thread
 
-A user @mentions the agent in a thread. Novu adds an eyes reaction, shows typing and a plan card while the agent runs tools, then replies in the same thread with optional action buttons.
+A user @mentions the agent in a thread. Notify adds an eyes reaction, shows typing and a plan card while the agent runs tools, then replies in the same thread with optional action buttons.
 
 ### Tool approval
 
@@ -47,12 +47,12 @@ When the dashboard or CLI asks for a Slack App Configuration Token:
  ![Generate Slack token](/images/agents/quickstart/generate-slack-token.png)
 
 3. Select your workspace and click **Generate**.
-4. Copy the token (starts with `xoxe.xoxp-`) and paste it into Novu or the CLI.
+4. Copy the token (starts with `xoxe.xoxp-`) and paste it into Notify or the CLI.
 5. Finish the install / Allow flow in Slack.
 
  ![Install app](/images/agents/quickstart/install-app.png)
 
-The configuration token is used once to create the Slack app. Novu does not store it.
+The configuration token is used once to create the Slack app. Notify does not store it.
 
 ## Setup
 
@@ -66,10 +66,10 @@ The configuration token is used once to create the Slack app. Novu does not stor
 
 ## Connect component
 
-Use `SlackConnectButton` from `@novu/react` so end users can install the Slack app and link it to your agent from your product UI.
+Use `SlackConnectButton` from `@notify/react` so end users can install the Slack app and link it to your agent from your product UI.
 
 ```tsx
-import { NovuProvider, SlackConnectButton } from '@novu/react';
+import { NotifyProvider, SlackConnectButton } from '@notify/react';
 
 export function SlackConnect() {
   const subscriberId = 'subscriber-id';
@@ -77,7 +77,7 @@ export function SlackConnect() {
   const agentIdentifier = 'agent-identifier';
 
   return (
-    <NovuProvider
+    <NotifyProvider
       applicationIdentifier={process.env.NEXT_PUBLIC_NOVU_APPLICATION_IDENTIFIER!}
       subscriberId={subscriberId}
     >
@@ -94,7 +94,7 @@ export function SlackConnect() {
           console.error(error);
         }}
       />
-    </NovuProvider>
+    </NotifyProvider>
   );
 }
 ```

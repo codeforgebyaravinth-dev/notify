@@ -2,7 +2,7 @@ import './instrument';
 
 import { INestApplication, Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-import { BullMqService, getErrorInterceptor, Logger as PinoLogger } from '@novu/application-generic';
+import { BullMqService, getErrorInterceptor, Logger as PinoLogger } from '@notify/application-generic';
 import bodyParser from 'body-parser';
 import helmet from 'helmet';
 import { ResponseInterceptor } from './app/shared/response.interceptor';
@@ -70,13 +70,13 @@ export async function bootstrap(): Promise<INestApplication> {
   try {
     await startAppInfra(app);
   } catch (e) {
-    Logger.error('[@novu/worker]: Failed to start app infra', e.message, e.start);
+    Logger.error('[@notify/worker]: Failed to start app infra', e.message, e.start);
     process.exit(1);
   }
 
   await app.listen(process.env.PORT!);
 
-  Logger.log(`[@novu/worker]: Listening for NODE_ENV=${process.env.NODE_ENV} on port ${process.env.PORT}`);
+  Logger.log(`[@notify/worker]: Listening for NODE_ENV=${process.env.NODE_ENV} on port ${process.env.PORT}`);
 
   return app;
 }

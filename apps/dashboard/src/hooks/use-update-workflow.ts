@@ -1,4 +1,4 @@
-import type { WorkflowResponseDto } from '@novu/shared';
+import type { WorkflowResponseDto } from '@notify/shared';
 import { UseMutationOptions, useMutation, useQueryClient } from '@tanstack/react-query';
 import { updateWorkflow } from '@/api/workflows';
 import { useEnvironment } from '@/context/environment/hooks';
@@ -27,7 +27,7 @@ function markNewSteps(previousWorkflow: WorkflowResponseDto, currentWorkflow: Wo
 
   currentWorkflow.steps.forEach((step) => {
     if (!previousStepIds.has(step.stepId)) {
-      // @ts-expect-error - isNew doesn't exist on StepResponseDto and it's too much work to override the @novu/shared types now
+      // @ts-expect-error - isNew doesn't exist on StepResponseDto and it's too much work to override the @notify/shared types now
       step.isNew = true;
     }
   });

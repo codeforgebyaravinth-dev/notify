@@ -1,4 +1,4 @@
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { AnimatePresence, motion } from 'motion/react';
 import { type ReactNode } from 'react';
 import { RiCheckboxCircleFill, RiLinkUnlinkM } from 'react-icons/ri';

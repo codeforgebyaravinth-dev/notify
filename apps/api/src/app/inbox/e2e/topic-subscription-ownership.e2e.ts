@@ -1,5 +1,5 @@
-import { SubscriberRepository } from '@novu/dal';
-import { UserSession } from '@novu/testing';
+import { SubscriberRepository } from '@notify/dal';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { CreateTopicSubscriptionRequestDto } from '../dtos/create-topic-subscription-request.dto';
 

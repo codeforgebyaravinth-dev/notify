@@ -1,4 +1,4 @@
-import { EnvironmentTypeEnum, ResourceOriginEnum } from '@novu/shared';
+import { EnvironmentTypeEnum, ResourceOriginEnum } from '@notify/shared';
 import { useWorkflow } from '@/components/workflow-editor/workflow-provider';
 import { useEnvironment } from '@/context/environment/hooks';
 import { ChannelPreferencesForm } from './channel-preferences-form';

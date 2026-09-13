@@ -12,8 +12,8 @@ import {
 } from '@nestjs/common';
 import { ApiExcludeEndpoint, ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
 import { ApiExcludeController } from '@nestjs/swagger/dist/decorators/api-exclude-controller.decorator';
-import { OrganizationEntity } from '@novu/dal';
-import { MemberRoleEnum, UserSessionData } from '@novu/shared';
+import { OrganizationEntity } from '@notify/dal';
+import { MemberRoleEnum, UserSessionData } from '@notify/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import { ApiCommonResponses, ApiResponse } from '../shared/framework/response.decorator';

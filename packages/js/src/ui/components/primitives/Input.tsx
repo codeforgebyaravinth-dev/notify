@@ -6,12 +6,12 @@ import type { AllAppearanceKey } from '../../types';
 
 export const inputVariants = cva(
   cn(
-    `focus-visible:nt-outline-none focus-visible:nt-ring-2 focus-visible:nt-rounded-md focus-visible:nt-ring-ring focus-visible:nt-ring-offset-2`
+    `focus-visible:nt-outline-none focus-visible:nt-ring-2 focus-visible:nt-nt-rounded-none focus-visible:nt-ring-ring focus-visible:nt-ring-offset-2`
   ),
   {
     variants: {
       variant: {
-        default: 'nt-border nt-border-neutral-200 nt-rounded-md nt-p-1 nt-bg-background',
+        default: 'nt-border nt-border-neutral-200 nt-nt-rounded-none nt-p-1 nt-bg-background',
       },
       size: {
         default: 'nt-h-9',

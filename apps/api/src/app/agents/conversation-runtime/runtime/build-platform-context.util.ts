@@ -1,5 +1,5 @@
-import type { NovuEmailRawMessage } from '@novu/chat-adapter-email';
-import type { AgentPlatformContext } from '@novu/framework';
+import type { NovuEmailRawMessage } from '@notify/chat-adapter-email';
+import type { AgentPlatformContext } from '@notify/framework';
 import type { Message } from 'chat';
 import { AgentPlatformEnum } from '../../shared/enums/agent-platform.enum';
 

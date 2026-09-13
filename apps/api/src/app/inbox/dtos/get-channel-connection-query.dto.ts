@@ -1,5 +1,5 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { ConnectionMode } from '@novu/shared';
+import { ConnectionMode } from '@notify/shared';
 import { IsIn, IsOptional, IsString } from 'class-validator';
 
 export class GetChannelConnectionQueryDto {

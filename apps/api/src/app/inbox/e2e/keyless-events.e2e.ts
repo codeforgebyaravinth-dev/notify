@@ -3,9 +3,9 @@ import {
   NotificationRepository,
   NotificationTemplateEntity,
   SubscriberRepository,
-} from '@novu/dal';
-import { StepTypeEnum, TriggerTypeEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/dal';
+import { StepTypeEnum, TriggerTypeEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { KEYLESS_ENVIRONMENT_PREFIX, KEYLESS_WORKFLOW_IDENTIFIER } from '../utils';
 

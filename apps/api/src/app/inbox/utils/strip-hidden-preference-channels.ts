@@ -1,4 +1,4 @@
-import { IPreferenceChannels, isPreferenceChannelVisibleInUi } from '@novu/shared';
+import { IPreferenceChannels, isPreferenceChannelVisibleInUi } from '@notify/shared';
 import type { InboxPreference } from './types';
 
 /** Drop preference channels that have no UI surface (e.g. tool) before inbox responses. */

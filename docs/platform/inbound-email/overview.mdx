@@ -1,36 +1,36 @@
 ---
 title: 'Inbound Email'
-description: "Receive email on your verified domain in Novu and route inbound messages to agents or webhook endpoints for replies, ticketing, and automated responses."
+description: "Receive email on your verified domain in Notify and route inbound messages to agents or webhook endpoints for replies, ticketing, and automated responses."
 sidebarTitle: 'Overview'
 ---
 
-Inbound Email lets you receive mail on addresses you control and route each message inside Novu. Use it to forward replies to your backend via webhooks, or deliver them to an [agent](/agents) for two-way conversations.
+Inbound Email lets you receive mail on addresses you control and route each message inside Notify. Use it to forward replies to your backend via webhooks, or deliver them to an [agent](/agents) for two-way conversations.
 
 <Note>
-  Inbound Email domains are available on **Novu Cloud Team plans and above**. On Enterprise self-hosted, configure verified domains and routes in the dashboard. Community self-hosted does not include this feature.
+  Inbound Email domains are available on **Notify Cloud Team plans and above**. On Enterprise self-hosted, configure verified domains and routes in the dashboard. Community self-hosted does not include this feature.
 </Note>
 
 ## How it works
 
-1. Add and verify a domain in the Novu dashboard (**Domains**).
-2. Point your domain's **MX record** to Novu's inbound mail servers.
+1. Add and verify a domain in the Notify dashboard (**Domains**).
+2. Point your domain's **MX record** to Notify's inbound mail servers.
 3. Create **routes** that map local-parts (for example, `support@yourcompany.com`) to a destination.
-4. When mail arrives, Novu parses the message and delivers it according to the matching route.
+4. When mail arrives, Notify parses the message and delivers it according to the matching route.
 
 ```mermaid
 sequenceDiagram
   participant User
   participant Mail as Your domain MX
-  participant Novu as Novu inbound mail
+  participant Notify as Notify inbound mail
   participant Dest as Agent or your webhook
 
   User->>Mail: Sends email to support@yourcompany.com
-  Mail->>Novu: Routes via MX
-  Novu->>Novu: Match domain route
+  Mail->>Notify: Routes via MX
+  Notify->>Notify: Match domain route
   alt Webhook route
-    Novu->>Dest: POST email.received webhook
+    Notify->>Dest: POST email.received webhook
   else Agent route
-    Novu->>Dest: Forward to agent bridge
+    Notify->>Dest: Forward to agent bridge
   end
 ```
 
@@ -38,15 +38,15 @@ sequenceDiagram
 
 <Steps>
   <Step title="Open Domains">
-    In the Novu dashboard, go to **Domains** and click **Add domain**.
+    In the Notify dashboard, go to **Domains** and click **Add domain**.
   </Step>
 
   <Step title="Enter your domain">
-    Use a subdomain (for example, `mail.yourcompany.com`) or an apex domain. Apex domains require an MX record at the root; Novu warns if a conflicting CNAME is present.
+    Use a subdomain (for example, `mail.yourcompany.com`) or an apex domain. Apex domains require an MX record at the root; Notify warns if a conflicting CNAME is present.
   </Step>
 
   <Step title="Verify DNS">
-    Add the MX record (and any other records) shown in the dashboard. Novu checks verification automatically; you can also click **Verify** to re-check.
+    Add the MX record (and any other records) shown in the dashboard. Notify checks verification automatically; you can also click **Verify** to re-check.
   </Step>
 
   <Step title="Optional: Domain Connect">
@@ -71,11 +71,11 @@ Set the local-part to `*` to match any address on the domain that does not have 
 
 ### Route metadata
 
-Each route supports optional JSON **metadata**. Novu includes this metadata in webhook payloads under `route.data`, so you can pass tenant IDs, product slugs, or routing hints without encoding them in the email address.
+Each route supports optional JSON **metadata**. Notify includes this metadata in webhook payloads under `route.data`, so you can pass tenant IDs, product slugs, or routing hints without encoding them in the email address.
 
 ## Webhook routes and email.received
 
-When a message matches a **Webhook** route, Novu emits an [`email.received`](/platform/developer/webhooks/event-types#email-events) event to your configured [webhook endpoints](/platform/developer/webhooks/webhooks).
+When a message matches a **Webhook** route, Notify emits an [`email.received`](/platform/developer/webhooks/event-types#email-events) event to your configured [webhook endpoints](/platform/developer/webhooks/webhooks).
 
 Enable webhooks in the dashboard under **Webhooks**, create an endpoint, and subscribe to **email.received**.
 
@@ -87,9 +87,9 @@ The event payload includes normalized mail fields (from, to, subject, text, html
 
 ## Agent routes
 
-When a message matches an **Agent** route, Novu forwards it to the selected agent's email integration. Your agent handler receives the message on your [bridge URL](/agents/custom-code-agent/connecting-your-app) and can reply with `ctx.reply()`.
+When a message matches an **Agent** route, Notify forwards it to the selected agent's email integration. Your agent handler receives the message on your [bridge URL](/agents/custom-code-agent/connecting-your-app) and can reply with `ctx.reply()`.
 
-For quick setup on Novu Cloud, agents can also use the shared `@agentconnect.sh` inbox provisioned during `npx novu connect`. For production, add a custom domain route so users email `@yourcompany.com`.
+For quick setup on Notify Cloud, agents can also use the shared `@agentconnect.sh` inbox provisioned during `npx novu connect`. For production, add a custom domain route so users email `@yourcompany.com`.
 
 See [Agents and providers - Email](/agents/get-started/agents-and-providers) and [Custom code agent setup](/agents/get-started/ai-sdk).
 

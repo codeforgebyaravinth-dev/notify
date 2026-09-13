@@ -11,8 +11,8 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { ApiExcludeController, ApiTags } from '@nestjs/swagger';
-import { RequirePermissions } from '@novu/application-generic';
-import { PermissionsEnum, UserSessionData } from '@novu/shared';
+import { RequirePermissions } from '@notify/application-generic';
+import { PermissionsEnum, UserSessionData } from '@notify/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { UserSession } from '../shared/framework/user.decorator';
 import { CreateVercelIntegrationRequestDto } from './dtos/create-vercel-integration-request.dto';

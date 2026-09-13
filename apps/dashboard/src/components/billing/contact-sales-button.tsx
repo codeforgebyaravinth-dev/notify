@@ -1,5 +1,5 @@
 import { getCalApi } from '@calcom/embed-react';
-import { ApiServiceLevelEnum } from '@novu/shared';
+import { ApiServiceLevelEnum } from '@notify/shared';
 import { useEffect } from 'react';
 import { Button } from '@/components/primitives/button';
 import { useTelemetry } from '../../hooks/use-telemetry';

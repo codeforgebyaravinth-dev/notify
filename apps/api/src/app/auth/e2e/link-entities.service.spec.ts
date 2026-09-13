@@ -5,15 +5,15 @@ import {
   FeatureFlagsService,
   LoggerModule,
   PinoLogger,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   CommunityOrganizationRepository,
   CommunityUserRepository,
   OrganizationRepository,
   UserRepository,
-} from '@novu/dal';
-import { ResourceOriginEnum, ResourceTypeEnum } from '@novu/shared';
-import { CLERK_ORGANIZATION_1, CLERK_USER_1, ClerkClientMock } from '@novu/testing';
+} from '@notify/dal';
+import { ResourceOriginEnum, ResourceTypeEnum } from '@notify/shared';
+import { CLERK_ORGANIZATION_1, CLERK_USER_1, ClerkClientMock } from '@notify/testing';
 import { expect } from 'chai';
 import mongoose from 'mongoose';
 import sinon from 'sinon';
@@ -29,7 +29,7 @@ describe('Link external and internal entities #novu-v2', () => {
   let eeAuth: any;
 
   try {
-    eeAuth = require('@novu/ee-auth');
+    eeAuth = require('@notify/ee-auth');
   } catch (error) {
     return;
   }

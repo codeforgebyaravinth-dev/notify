@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { PreferenceLevelEnum } from '@novu/shared';
+import { PreferenceLevelEnum } from '@notify/shared';
 import { Type } from 'class-transformer';
 import { IsDefined, IsEnum, IsOptional, ValidateNested } from 'class-validator';
 import { RulesLogic } from 'json-logic-js';

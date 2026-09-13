@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { AnalyticsService, GetLayoutUseCaseV0, PinoLogger } from '@novu/application-generic';
-import { ChangeRepository, LayoutRepository } from '@novu/dal';
-import { ChangeEntityTypeEnum, ResourceOriginEnum } from '@novu/shared';
+import { AnalyticsService, GetLayoutUseCaseV0, PinoLogger } from '@notify/application-generic';
+import { ChangeRepository, LayoutRepository } from '@notify/dal';
+import { ChangeEntityTypeEnum, ResourceOriginEnum } from '@notify/shared';
 
 import { EnvironmentId, LayoutId, OrganizationId } from '../../types';
 import { CreateDefaultLayoutChangeCommand } from '../create-default-layout-change/create-default-layout-change.command';

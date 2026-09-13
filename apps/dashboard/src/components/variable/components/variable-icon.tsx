@@ -1,4 +1,4 @@
-import { TRANSLATION_NAMESPACE_SEPARATOR } from '@novu/shared';
+import { TRANSLATION_NAMESPACE_SEPARATOR } from '@notify/shared';
 import { RiErrorWarningLine } from 'react-icons/ri';
 import { Code2 } from '@/components/icons/code-2';
 import { DigestVariableIcon } from '@/components/icons/digest-variable-icon';

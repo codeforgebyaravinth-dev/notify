@@ -1,6 +1,6 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { CredentialsDto, StepFilterDto } from '@novu/application-generic';
-import { ChannelTypeEnum, ICreateIntegrationBodyDto, IntegrationKindEnum } from '@novu/shared';
+import { CredentialsDto, StepFilterDto } from '@notify/application-generic';
+import { ChannelTypeEnum, ICreateIntegrationBodyDto, IntegrationKindEnum } from '@notify/shared';
 import { Type } from 'class-transformer';
 import {
   IsArray,

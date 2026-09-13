@@ -1,4 +1,4 @@
-import { SubscriberResponseDto } from '@novu/api/models/components';
+import { SubscriberResponseDto } from '@notify/api/models/components';
 import { UseQueryOptions, useQuery } from '@tanstack/react-query';
 import { getSubscriber } from '@/api/subscribers';
 import { useEnvironment } from '@/context/environment/hooks';

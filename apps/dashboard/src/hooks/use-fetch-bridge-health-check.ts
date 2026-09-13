@@ -1,4 +1,4 @@
-import type { HealthCheck } from '@novu/framework/internal';
+import type { HealthCheck } from '@notify/framework/internal';
 import { useQuery } from '@tanstack/react-query';
 import { useMemo } from 'react';
 import { getBridgeHealthCheck } from '@/api/bridge';

@@ -1,4 +1,4 @@
-import { ChannelTypeEnum, IEnvironment, IIntegration, IProviderConfig } from '@novu/shared';
+import { ChannelTypeEnum, IEnvironment, IIntegration, IProviderConfig } from '@notify/shared';
 import { CHANNEL_TYPE_TO_STRING } from '@/utils/channels';
 import { cn } from '@/utils/ui';
 import { TableIntegration } from '../types';

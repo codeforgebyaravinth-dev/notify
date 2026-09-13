@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { ConversationActivityRepository, ConversationRepository } from '@novu/dal';
+import { ConversationActivityRepository, ConversationRepository } from '@notify/dal';
 
 export type MintEventSequenceRequest = {
   environmentId: string;

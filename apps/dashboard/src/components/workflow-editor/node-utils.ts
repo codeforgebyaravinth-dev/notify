@@ -1,4 +1,4 @@
-import { IEnvironment, ResourceOriginEnum, Slug, WorkflowResponseDto } from '@novu/shared';
+import { IEnvironment, ResourceOriginEnum, Slug, WorkflowResponseDto } from '@notify/shared';
 import { Node } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import { getFirstErrorMessage } from '@/components/workflow-editor/step-utils';

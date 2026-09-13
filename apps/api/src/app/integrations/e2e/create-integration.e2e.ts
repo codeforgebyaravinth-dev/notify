@@ -1,4 +1,4 @@
-import { EnvironmentRepository, IntegrationRepository } from '@novu/dal';
+import { EnvironmentRepository, IntegrationRepository } from '@notify/dal';
 import {
   ChannelTypeEnum,
   ChatProviderIdEnum,
@@ -8,8 +8,8 @@ import {
   PushProviderIdEnum,
   SmsProviderIdEnum,
   ToolProviderIdEnum,
-} from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Create Integration - /integration (POST) #novu-v2', () => {

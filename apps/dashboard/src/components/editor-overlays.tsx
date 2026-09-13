@@ -1,4 +1,4 @@
-import { WorkflowResponseDto } from '@novu/shared';
+import { WorkflowResponseDto } from '@notify/shared';
 import { PayloadSchemaDrawer } from '@/components/workflow-editor/payload-schema-drawer';
 import {
   EditTranslationPopover,

@@ -1,4 +1,4 @@
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { useFeatureFlag } from '@/hooks/use-feature-flag';
 
 export function useManagedAgentRuntimeEnabled(override?: boolean): boolean {

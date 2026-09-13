@@ -1,4 +1,4 @@
-import { TranslationGroupDto } from '@novu/api/models/components';
+import { TranslationGroupDto } from '@notify/api/models/components';
 import { useCallback, useState } from 'react';
 import { useDeleteTranslationGroup } from '@/hooks/use-delete-translation-group';
 

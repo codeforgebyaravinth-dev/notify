@@ -1,4 +1,4 @@
-import { AgentRuntimeProviderIdEnum, type IIntegration, IntegrationKindEnum } from '@novu/shared';
+import { AgentRuntimeProviderIdEnum, type IIntegration, IntegrationKindEnum } from '@notify/shared';
 import { isDemoIntegration } from '@/components/integrations/components/utils/helpers';
 
 function compareClaudeManagedIntegrations(left: IIntegration, right: IIntegration): number {

@@ -1,5 +1,5 @@
-import { NotificationStepEntity, NotificationTemplateEntity } from '@novu/dal';
-import { providerSchemas } from '@novu/framework';
+import { NotificationStepEntity, NotificationTemplateEntity } from '@notify/dal';
+import { providerSchemas } from '@notify/framework';
 import {
   CHAT_CONTENT_OVERRIDE_PROVIDER_IDS,
   ChatProviderIdEnum,
@@ -7,7 +7,7 @@ import {
   StepTypeEnum,
   TOOL_CONTENT_OVERRIDE_PROVIDER_IDS,
   ToolProviderIdEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { expect } from 'chai';
 import { ConstructFrameworkWorkflow } from './construct-framework-workflow.usecase';
 

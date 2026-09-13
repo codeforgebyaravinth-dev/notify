@@ -1,7 +1,7 @@
 import { promises as dnsPromises } from 'node:dns';
 import { HttpService } from '@nestjs/axios';
 import { Injectable } from '@nestjs/common';
-import { PinoLogger } from '@novu/application-generic';
+import { PinoLogger } from '@notify/application-generic';
 import { lastValueFrom } from 'rxjs';
 import {
   buildDnsProviderDomainConnectDiscovery,

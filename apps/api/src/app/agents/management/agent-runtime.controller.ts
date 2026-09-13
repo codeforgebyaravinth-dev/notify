@@ -16,8 +16,8 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { ApiExcludeEndpoint, ApiOperation, ApiTags } from '@nestjs/swagger';
-import { RequirePermissions } from '@novu/application-generic';
-import { ApiAuthSchemeEnum, ApiRateLimitCategoryEnum, PermissionsEnum, UserSessionData } from '@novu/shared';
+import { RequirePermissions } from '@notify/application-generic';
+import { ApiAuthSchemeEnum, ApiRateLimitCategoryEnum, PermissionsEnum, UserSessionData } from '@notify/shared';
 import type { Request } from 'express';
 import { getClientIp } from 'request-ip';
 import { RequireAuthentication } from '../../auth/framework/auth.decorator';

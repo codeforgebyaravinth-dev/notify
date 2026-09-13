@@ -1,4 +1,4 @@
-import { EnvironmentTypeEnum, type UiSchema, UiSchemaGroupEnum } from '@novu/shared';
+import { EnvironmentTypeEnum, type UiSchema, UiSchemaGroupEnum } from '@notify/shared';
 import { useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 import {

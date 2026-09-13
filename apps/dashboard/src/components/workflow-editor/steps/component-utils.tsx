@@ -1,4 +1,4 @@
-import { EnvironmentTypeEnum, UiComponentEnum } from '@novu/shared';
+import { EnvironmentTypeEnum, UiComponentEnum } from '@notify/shared';
 import { EmailEditorSelect } from '@/components/email-editor-select';
 import { DelayWindow } from '@/components/workflow-editor/steps/delay/delay-window';
 import { DigestDelayTabs } from '@/components/workflow-editor/steps/digest-delay-tabs/digest-delay-tabs';

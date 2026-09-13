@@ -1,4 +1,4 @@
-import type { IEnvironment } from '@novu/shared';
+import type { IEnvironment } from '@notify/shared';
 import { useQuery } from '@tanstack/react-query';
 import { getEnvironments } from '@/api/environments';
 import { createContextHook } from '@/utils/context';

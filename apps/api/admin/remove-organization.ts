@@ -19,7 +19,7 @@ import {
   TenantRepository,
   TopicRepository,
   TopicSubscribersRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 
 import { connect } from './connect-to-dal';
 import { makeJsonBackup } from './make-json-backup';

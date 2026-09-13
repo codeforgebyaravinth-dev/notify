@@ -1,7 +1,7 @@
 import { ForbiddenException, NotFoundException } from '@nestjs/common';
-import { FeatureFlagsService } from '@novu/application-generic';
-import { CommunityOrganizationRepository, EnvironmentRepository, OrganizationEntity } from '@novu/dal';
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsService } from '@notify/application-generic';
+import { CommunityOrganizationRepository, EnvironmentRepository, OrganizationEntity } from '@notify/dal';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 
 export const CHAT_INTEGRATION_NOT_FOUND_MESSAGE = 'Chat integration not found';
 

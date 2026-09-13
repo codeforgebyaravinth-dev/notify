@@ -1,5 +1,5 @@
-import { ChatProviderIdEnum } from '@novu/shared';
-import { CardElement, IChatRenderValidation } from '@novu/stateless';
+import { ChatProviderIdEnum } from '@notify/shared';
+import { CardElement, IChatRenderValidation } from '@notify/stateless';
 import { validateTeamsCard } from './msTeams/card-render.utils';
 import { validateSlackCard } from './slack/card-render.utils';
 import { validateTelegramCard } from './telegram/card-render.utils';

@@ -1,7 +1,7 @@
 import { Body, ClassSerializerInterceptor, Controller, Get, Patch, Put, UseInterceptors } from '@nestjs/common';
 import { ApiExcludeController, ApiOperation, ApiTags } from '@nestjs/swagger';
-import { ExternalApiAccessible, RequirePermissions } from '@novu/application-generic';
-import { PermissionsEnum, UserSessionData } from '@novu/shared';
+import { ExternalApiAccessible, RequirePermissions } from '@notify/application-generic';
+import { PermissionsEnum, UserSessionData } from '@notify/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ApiCommonResponses, ApiResponse } from '../shared/framework/response.decorator';
 import { UserSession } from '../shared/framework/user.decorator';

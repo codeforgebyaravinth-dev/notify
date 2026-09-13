@@ -1,4 +1,4 @@
-import { NOVU_ANALYTICS_SOURCE_HEADER } from '@novu/shared';
+import { NOVU_ANALYTICS_SOURCE_HEADER } from '@notify/shared';
 import { AxiosError, AxiosInstance } from 'axios';
 import { createNovuAxios, extractNovuApiMessage } from '../../shared/novu-http';
 

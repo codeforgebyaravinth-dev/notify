@@ -1,6 +1,6 @@
 import '../src/config';
 import { NestFactory } from '@nestjs/core';
-import { CreateChange, CreateChangeCommand } from '@novu/application-generic';
+import { CreateChange, CreateChangeCommand } from '@notify/application-generic';
 import {
   ChangeRepository,
   EnvironmentRepository,
@@ -9,8 +9,8 @@ import {
   NotificationGroupRepository,
   NotificationTemplateRepository,
   OrganizationRepository,
-} from '@novu/dal';
-import { ChangeEntityTypeEnum, MemberRoleEnum } from '@novu/shared';
+} from '@notify/dal';
+import { ChangeEntityTypeEnum, MemberRoleEnum } from '@notify/shared';
 import { ApplyChangeCommand } from '../src/app/change/usecases/apply-change/apply-change.command';
 import { ApplyChange } from '../src/app/change/usecases/apply-change/apply-change.usecase';
 import { CreateEnvironmentCommand } from '../src/app/environments-v1/usecases/create-environment/create-environment.command';

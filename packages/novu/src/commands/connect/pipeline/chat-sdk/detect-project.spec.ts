@@ -33,7 +33,7 @@ describe('detectChatSdkProject', () => {
     const dir = makeTempDir();
     fs.writeFileSync(
       path.join(dir, 'package.json'),
-      JSON.stringify({ dependencies: { '@novu/chat-sdk-adapter': 'latest' } })
+      JSON.stringify({ dependencies: { '@notify/chat-sdk-adapter': 'latest' } })
     );
 
     expect(detectChatSdkProject(dir).kind).toBe('project');

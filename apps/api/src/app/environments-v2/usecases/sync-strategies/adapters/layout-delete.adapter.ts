@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { LayoutEntity, NotificationTemplateEntity } from '@novu/dal';
+import { LayoutEntity, NotificationTemplateEntity } from '@notify/dal';
 import { DeleteLayoutCommand } from '../../../../layouts-v2/usecases/delete-layout/delete-layout.command';
 import { DeleteLayoutUseCase } from '../../../../layouts-v2/usecases/delete-layout/delete-layout.use-case';
 import { DeleteWorkflowCommand } from '../../../../workflows-v1/usecases/delete-workflow/delete-workflow.command';

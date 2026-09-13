@@ -1,4 +1,4 @@
-import { PermissionsEnum, EnvironmentTypeEnum } from '@novu/shared';
+import { PermissionsEnum, EnvironmentTypeEnum } from '@notify/shared';
 import { RiFileAddLine, RiRouteFill } from 'react-icons/ri';
 import { useNavigate } from 'react-router-dom';
 import { useFetchWorkflows } from '@/hooks/use-fetch-workflows';

@@ -1,5 +1,5 @@
 /**
- * Re-exports the shared OAuth state util from `@novu/application-generic`.
+ * Re-exports the shared OAuth state util from `@notify/application-generic`.
  *
  * The implementation moved to `libs/application-generic/src/oauth/oauth-state.util.ts`
  * so it can be reused by other OAuth flows (e.g. the per-subscriber MCP
@@ -12,4 +12,4 @@ export {
   type OAuthStateParts,
   peekOAuthStatePayload,
   splitOAuthState,
-} from '@novu/application-generic';
+} from '@notify/application-generic';

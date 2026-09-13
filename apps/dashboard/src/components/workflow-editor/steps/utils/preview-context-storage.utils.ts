@@ -1,4 +1,4 @@
-import { ContextPayload, WorkflowResponseDto } from '@novu/shared';
+import { ContextPayload, WorkflowResponseDto } from '@notify/shared';
 import { clearFromStorage, loadFromStorage, saveToStorage } from '@/utils/local-storage';
 import { ParsedData, PayloadData, PreviewSubscriberData } from '../types/preview-context.types';
 

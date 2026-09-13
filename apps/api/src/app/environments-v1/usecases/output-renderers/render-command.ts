@@ -1,7 +1,7 @@
-import { BaseCommand } from '@novu/application-generic';
-import { OrganizationEntity } from '@novu/dal';
-import type { ContextResolved } from '@novu/framework/internal';
-import { LAYOUT_CONTENT_VARIABLE } from '@novu/shared';
+import { BaseCommand } from '@notify/application-generic';
+import { OrganizationEntity } from '@notify/dal';
+import type { ContextResolved } from '@notify/framework/internal';
+import { LAYOUT_CONTENT_VARIABLE } from '@notify/shared';
 
 export class RenderCommand extends BaseCommand {
   controlValues: Record<string, unknown>;

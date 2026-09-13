@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { CacheService, PinoLogger } from '@novu/application-generic';
-import { ContextPayload } from '@novu/shared';
+import { CacheService, PinoLogger } from '@notify/application-generic';
+import { ContextPayload } from '@notify/shared';
 
 import { mintAutolinkSafeOpaqueToken } from '../shared/helpers';
 import {

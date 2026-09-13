@@ -4,8 +4,8 @@ import {
   StepRunRepository,
   WorkflowRunService,
   WorkflowRunStatusEnum,
-} from '@novu/application-generic';
-import { JobEntity, JobRepository, JobStatusEnum } from '@novu/dal';
+} from '@notify/application-generic';
+import { JobEntity, JobRepository, JobStatusEnum } from '@notify/dal';
 
 import { SetJobAsFailedCommand } from './set-job-as.command';
 import { UpdateJobStatusCommand } from './update-job-status.command';

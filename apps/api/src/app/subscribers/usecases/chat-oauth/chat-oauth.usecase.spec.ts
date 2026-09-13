@@ -1,7 +1,7 @@
 import { BadRequestException, ForbiddenException, NotFoundException } from '@nestjs/common';
-import { createHash, FeatureFlagsService, PinoLogger } from '@novu/application-generic';
-import { CommunityOrganizationRepository, EnvironmentRepository, IntegrationRepository } from '@novu/dal';
-import { ChatProviderIdEnum } from '@novu/shared';
+import { createHash, FeatureFlagsService, PinoLogger } from '@notify/application-generic';
+import { CommunityOrganizationRepository, EnvironmentRepository, IntegrationRepository } from '@notify/dal';
+import { ChatProviderIdEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { ChatOauthCommand } from './chat-oauth.command';

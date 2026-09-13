@@ -3,8 +3,8 @@
 import '../../src/config';
 
 import { NestFactory } from '@nestjs/core';
-import { EnvironmentRepository, IntegrationRepository, OrganizationRepository } from '@novu/dal';
-import { CHANNELS_WITH_PRIMARY, ChannelTypeEnum } from '@novu/shared';
+import { EnvironmentRepository, IntegrationRepository, OrganizationRepository } from '@notify/dal';
+import { CHANNELS_WITH_PRIMARY, ChannelTypeEnum } from '@notify/shared';
 
 import { AppModule } from '../../src/app.module';
 

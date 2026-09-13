@@ -1,4 +1,4 @@
-import { type CardElement, isMailyChatBody } from '@novu/shared';
+import { type CardElement, isMailyChatBody } from '@notify/shared';
 import { RiCloseCircleLine } from 'react-icons/ri';
 
 import { ProviderIcon } from '@/components/integrations/components/provider-icon';

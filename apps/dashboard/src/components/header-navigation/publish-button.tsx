@@ -1,5 +1,5 @@
-import type { IEnvironment } from '@novu/shared';
-import { PermissionsEnum } from '@novu/shared';
+import type { IEnvironment } from '@notify/shared';
+import { PermissionsEnum } from '@notify/shared';
 import { useQueryClient } from '@tanstack/react-query';
 import { AnimatePresence, motion } from 'motion/react';
 import { useCallback, useEffect, useState } from 'react';

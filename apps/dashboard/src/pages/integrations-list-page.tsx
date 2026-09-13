@@ -1,4 +1,4 @@
-import { PermissionsEnum } from '@novu/shared';
+import { PermissionsEnum } from '@notify/shared';
 import { useCallback } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { PermissionButton } from '@/components/primitives/permission-button';

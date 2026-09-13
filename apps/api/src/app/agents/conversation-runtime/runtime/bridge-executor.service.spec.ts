@@ -1,6 +1,6 @@
-import { FeatureFlagsService } from '@novu/application-generic';
-import { AgentEventEnum } from '@novu/framework/internal';
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsService } from '@notify/application-generic';
+import { AgentEventEnum } from '@notify/framework/internal';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { BridgeExecutorService } from './bridge-executor.service';

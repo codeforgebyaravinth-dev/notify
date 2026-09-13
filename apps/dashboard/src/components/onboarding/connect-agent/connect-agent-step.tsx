@@ -4,7 +4,7 @@ import {
   IntegrationKindEnum,
   isProviderManagedMcp,
   slugify,
-} from '@novu/shared';
+} from '@notify/shared';
 import { useQueryClient } from '@tanstack/react-query';
 import type { FormEvent } from 'react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';

@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { PinoLogger } from '@novu/application-generic';
-import { ConversationActivityEntity, ConversationActivitySenderTypeEnum } from '@novu/dal';
-import { buildApprovalActionId } from '@novu/framework/internal';
+import { PinoLogger } from '@notify/application-generic';
+import { ConversationActivityEntity, ConversationActivitySenderTypeEnum } from '@notify/dal';
+import { buildApprovalActionId } from '@notify/framework/internal';
 import { AgentEventEnum } from '../../shared/enums/agent-event.enum';
 import { usesReplyBasedApprovals } from '../../shared/enums/agent-platform.enum';
 import { captureAgentWarning } from '../../shared/errors/capture-agent-sentry';

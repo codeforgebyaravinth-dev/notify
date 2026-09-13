@@ -1,4 +1,4 @@
-import type { PendingToolApproval } from '@novu/application-generic';
+import type { PendingToolApproval } from '@notify/application-generic';
 import type { ActionRequired, Response as ThalamusResponse } from '@novu/thalamus';
 import type { SlackNativeDelivery } from '../../conversation-runtime/egress/slack-native-delivery';
 import type { ReplyContentDto } from '../../shared/dtos/agent-reply-payload.dto';

@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { InstrumentUsecase, PinoLogger, TraceRollupRepository } from '@novu/application-generic';
+import { InstrumentUsecase, PinoLogger, TraceRollupRepository } from '@notify/application-generic';
 import { AvgMessagesPerSubscriberDataPointDto } from '../../dtos/get-charts.response.dto';
 import { BuildAvgMessagesPerSubscriberChartCommand } from './build-avg-messages-per-subscriber-chart.command';
 

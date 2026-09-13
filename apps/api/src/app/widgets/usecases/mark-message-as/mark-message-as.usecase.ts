@@ -15,9 +15,9 @@ import {
   SendWebhookMessage,
   StepType,
   WebSocketsQueueService,
-} from '@novu/application-generic';
-import { MessageEntity, MessageRepository, SubscriberEntity, SubscriberRepository } from '@novu/dal';
-import { DeliveryLifecycleStatusEnum, WebhookEventEnum, WebhookObjectTypeEnum, WebSocketEventEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { MessageEntity, MessageRepository, SubscriberEntity, SubscriberRepository } from '@notify/dal';
+import { DeliveryLifecycleStatusEnum, WebhookEventEnum, WebhookObjectTypeEnum, WebSocketEventEnum } from '@notify/shared';
 
 import { MarkEnum, MarkMessageAsCommand } from './mark-message-as.command';
 

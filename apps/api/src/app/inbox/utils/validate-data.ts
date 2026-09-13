@@ -4,7 +4,7 @@ import {
   type DataFilterMongoFragment,
   DataFilterValidationError,
   normalizeDataFilter,
-} from '@novu/shared';
+} from '@notify/shared';
 
 /**
  * Validate a parsed `data` filter object against the shape supported by the

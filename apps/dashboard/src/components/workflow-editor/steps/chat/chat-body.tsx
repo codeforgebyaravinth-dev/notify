@@ -1,4 +1,4 @@
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { TabsSection } from '@/components/workflow-editor/steps/tabs-section';
 import { useFeatureFlag } from '@/hooks/use-feature-flag';
 import { BaseBody } from '../base/base-body';

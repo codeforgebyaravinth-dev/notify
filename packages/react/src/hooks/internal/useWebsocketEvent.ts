@@ -1,4 +1,4 @@
-import { EventHandler, Events, SocketEventNames } from '@novu/js';
+import { EventHandler, Events, SocketEventNames } from '@notify/js';
 import { useEffect } from 'react';
 import { isWebLocksSupported, requestLock } from '../../utils/requestLock';
 import { useNovu } from '../NovuProvider';

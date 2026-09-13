@@ -1,4 +1,4 @@
-import { IIntegration } from '@novu/shared';
+import { IIntegration } from '@notify/shared';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { AutoConfigureIntegrationResponse, autoConfigureIntegration } from '../api/integrations';
 import { showErrorToast, showSuccessToast } from '../components/primitives/sonner-helpers';

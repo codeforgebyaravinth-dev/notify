@@ -4,7 +4,7 @@ import {
   ApiRateLimitAlgorithmEnvVarFormat,
   DEFAULT_API_RATE_LIMIT_ALGORITHM_CONFIG,
   IApiRateLimitAlgorithm,
-} from '@novu/shared';
+} from '@notify/shared';
 
 @Injectable()
 export class GetApiRateLimitAlgorithmConfig {

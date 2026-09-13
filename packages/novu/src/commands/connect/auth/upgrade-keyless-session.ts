@@ -1,4 +1,4 @@
-import { CLI_DEVICE_SESSION_NAME_NOVU_CONNECT } from '@novu/shared';
+import { CLI_DEVICE_SESSION_NAME_NOVU_CONNECT } from '@notify/shared';
 import { type ConnectApiClient, createConnectApiClient } from '../api/client';
 import type { ConnectCommandOptions } from '../types';
 import type { ConnectUI } from '../ui/ui';

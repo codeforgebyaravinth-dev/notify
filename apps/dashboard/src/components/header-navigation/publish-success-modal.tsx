@@ -1,4 +1,4 @@
-import type { IEnvironment } from '@novu/shared';
+import type { IEnvironment } from '@notify/shared';
 import { useState } from 'react';
 import {
   RiArrowRightSLine,

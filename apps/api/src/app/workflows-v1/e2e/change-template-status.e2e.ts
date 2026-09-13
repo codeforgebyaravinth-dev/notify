@@ -1,5 +1,5 @@
-import { NotificationTemplateRepository } from '@novu/dal';
-import { NotificationTemplateService, UserSession } from '@novu/testing';
+import { NotificationTemplateRepository } from '@notify/dal';
+import { NotificationTemplateService, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Change workflow status by id - /workflows/:workflowId/status (PUT) #novu-v0', async () => {

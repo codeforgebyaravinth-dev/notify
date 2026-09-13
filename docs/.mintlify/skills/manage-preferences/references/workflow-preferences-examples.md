@@ -3,7 +3,7 @@
 ## All Channels Enabled, Subscriber-Editable
 
 ```typescript
-import { workflow } from "@novu/framework";
+import { workflow } from "@notify/framework";
 
 const myWorkflow = workflow("general-notification", execute, {
   preferences: {

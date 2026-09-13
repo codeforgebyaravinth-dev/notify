@@ -1,5 +1,5 @@
 {
-  "name": "@novu/ee-billing",
+  "name": "@notify/ee-billing",
   "version": "2.0.24",
   "private": true,
   "main": "dist/index.js",
@@ -16,10 +16,10 @@
   },
   "dependencies": {
     "@date-fns/utc": "^2.1.0",
-    "@novu/application-generic": "workspace:*",
-    "@novu/ee-auth": "workspace:*",
-    "@novu/shared": "workspace:*",
-    "@novu/notifications": "workspace:*",
+    "@notify/application-generic": "workspace:*",
+    "@notify/ee-auth": "workspace:*",
+    "@notify/shared": "workspace:*",
+    "@notify/notifications": "workspace:*",
     "class-transformer": "0.5.1",
     "class-validator": "0.15.1",
     "date-fns": "^4.1.0",
@@ -49,6 +49,6 @@
     "@nestjs/platform-express": "11.1.27",
     "@nestjs/swagger": "7.4.0",
     "@nestjs/throttler": "6.5.0",
-    "@novu/dal": "workspace:*"
+    "@notify/dal": "workspace:*"
   }
 }

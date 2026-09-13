@@ -6,9 +6,9 @@ import {
   Instrument,
   PinoLogger,
   WorkflowDataContainer,
-} from '@novu/application-generic';
-import { LocalizationResourceEnum, NotificationTemplateEntity } from '@novu/dal';
-import { UserSessionData } from '@novu/shared';
+} from '@notify/application-generic';
+import { LocalizationResourceEnum, NotificationTemplateEntity } from '@notify/dal';
+import { UserSessionData } from '@notify/shared';
 import { diff } from 'deep-object-diff';
 import { DiffActionEnum, IResourceDiff, ResourceTypeEnum } from '../../../types/sync.types';
 import { WorkflowNormalizer } from '../normalizers/workflow.normalizer';
@@ -108,7 +108,7 @@ export class WorkflowComparator {
   ): Promise<IResourceDiff[]> {
     try {
       // Use the new DiffTranslationGroups use case from the translation module
-      const diffTranslationGroups = this.moduleRef.get(require('@novu/ee-translation')?.DiffTranslationGroups, {
+      const diffTranslationGroups = this.moduleRef.get(require('@notify/ee-translation')?.DiffTranslationGroups, {
         strict: false,
       });
 

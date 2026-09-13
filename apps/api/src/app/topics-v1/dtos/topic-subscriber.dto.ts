@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { ITopicSubscriber } from '@novu/shared';
+import { ITopicSubscriber } from '@notify/shared';
 
 export class TopicSubscriberDto implements ITopicSubscriber {
   @ApiProperty({

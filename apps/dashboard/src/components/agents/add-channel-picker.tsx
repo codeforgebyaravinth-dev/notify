@@ -1,4 +1,4 @@
-import type { IIntegration } from '@novu/shared';
+import type { IIntegration } from '@notify/shared';
 import { type ReactNode, useMemo, useRef, useState } from 'react';
 import type { AgentIntegrationLink } from '@/api/agents';
 import type { PlanUsage } from '@/api/agents-plan-usage';

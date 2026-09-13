@@ -7,7 +7,7 @@ import {
   StepFilterDto,
   TenantFilterPartDto,
   WebhookFilterPartDto,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   ExecutionDetailFeedItem,
   JobFeedItem,
@@ -16,7 +16,7 @@ import {
   StepFilter,
   SubscriberFeedItem,
   TemplateFeedItem,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   DigestTypeEnum,
   FilterParts,
@@ -27,7 +27,7 @@ import {
   ProvidersIdEnum,
   SeverityLevelEnum,
   StepTypeEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { MessageTemplateDto } from '../../../shared/dtos/message.template.dto';
 import {
   ActivityNotificationExecutionDetailResponseDto,

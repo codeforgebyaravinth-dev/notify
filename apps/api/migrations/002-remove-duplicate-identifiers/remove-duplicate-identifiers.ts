@@ -1,8 +1,8 @@
 import '../../src/config';
 
 import { NestFactory } from '@nestjs/core';
-import { PinoLogger } from '@novu/application-generic';
-import { TopicSubscribersRepository } from '@novu/dal';
+import { PinoLogger } from '@notify/application-generic';
+import { TopicSubscribersRepository } from '@notify/dal';
 import { AppModule } from '../../src/app.module';
 
 interface DuplicateGroup {

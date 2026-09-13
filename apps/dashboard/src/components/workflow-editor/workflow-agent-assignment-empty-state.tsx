@@ -1,4 +1,4 @@
-import { PermissionsEnum } from '@novu/shared';
+import { PermissionsEnum } from '@notify/shared';
 import { RiArrowRightSLine, RiBookMarkedLine } from 'react-icons/ri';
 import { useNavigate } from 'react-router-dom';
 import { PermissionButton } from '@/components/primitives/permission-button';

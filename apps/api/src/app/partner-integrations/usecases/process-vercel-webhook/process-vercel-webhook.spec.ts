@@ -1,14 +1,14 @@
 import crypto from 'node:crypto';
 import { BadRequestException } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
-import { PinoLogger } from '@novu/application-generic';
+import { PinoLogger } from '@notify/application-generic';
 import {
   CommunityOrganizationRepository,
   CommunityUserRepository,
   EnvironmentRepository,
   MemberRepository,
-} from '@novu/dal';
-import { UserSession } from '@novu/testing';
+} from '@notify/dal';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { assert, restore, stub } from 'sinon';
 import { Sync } from '../../../bridge/usecases/sync';

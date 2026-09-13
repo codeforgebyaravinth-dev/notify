@@ -1,4 +1,4 @@
-import { BaseCommand } from '@novu/application-generic';
+import { BaseCommand } from '@notify/application-generic';
 import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 export class ChatOauthCallbackCommand extends BaseCommand {

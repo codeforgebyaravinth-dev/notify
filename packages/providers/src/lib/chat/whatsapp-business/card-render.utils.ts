@@ -4,7 +4,7 @@ import {
   CardElementChild,
   ChatRenderValidationLevelEnum,
   IChatRenderValidation,
-} from '@novu/stateless';
+} from '@notify/stateless';
 import { CardValidator, convertText, InlineNode, maxMessageLength, runCardValidators } from '../card-render.utils';
 
 /** WhatsApp: `*bold*`, `_italic_`, `~strike~`, ```` ```mono``` ````; no link markup, so render `label (url)`. */

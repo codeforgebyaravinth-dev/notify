@@ -1,9 +1,9 @@
 import { randomUUID } from 'node:crypto';
 import { Test } from '@nestjs/testing';
-import { CacheService, MockCacheService } from '@novu/application-generic';
-import { GetEventResourceUsage, GetSubscription } from '@novu/ee-billing';
-import { ApiServiceLevelEnum, GetSubscriptionDto } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { CacheService, MockCacheService } from '@notify/application-generic';
+import { GetEventResourceUsage, GetSubscription } from '@notify/ee-billing';
+import { ApiServiceLevelEnum, GetSubscriptionDto } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { AppModule } from '../../../app.module';

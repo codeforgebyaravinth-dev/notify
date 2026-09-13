@@ -3,7 +3,7 @@ import {
   EmailProviderIdEnum,
   emailProviders as emailProviderConfigs,
   type IIntegration,
-} from '@novu/shared';
+} from '@notify/shared';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useMemo, useState } from 'react';
 import {

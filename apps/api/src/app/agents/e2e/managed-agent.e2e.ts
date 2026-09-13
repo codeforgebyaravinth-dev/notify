@@ -4,10 +4,10 @@ import {
   AgentRuntimeRateLimitedError,
   AgentRuntimeUnauthorizedError,
   decryptCredentials,
-} from '@novu/application-generic';
-import { AgentMcpServerRepository, AgentRepository, IntegrationRepository } from '@novu/dal';
-import { AGENT_NAME_MAX_LENGTH, AgentRuntimeProviderIdEnum, IntegrationKindEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/application-generic';
+import { AgentMcpServerRepository, AgentRepository, IntegrationRepository } from '@notify/dal';
+import { AGENT_NAME_MAX_LENGTH, AgentRuntimeProviderIdEnum, IntegrationKindEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import sinon from 'sinon';
 

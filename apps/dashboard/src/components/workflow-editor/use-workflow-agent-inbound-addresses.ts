@@ -1,4 +1,4 @@
-import { ChannelTypeEnum, DomainRouteTypeEnum, EmailProviderIdEnum, type IEnvironment } from '@novu/shared';
+import { ChannelTypeEnum, DomainRouteTypeEnum, EmailProviderIdEnum, type IEnvironment } from '@notify/shared';
 import { useQuery } from '@tanstack/react-query';
 import { useMemo } from 'react';
 import { getAgent, getAgentDetailQueryKey, getAgentIntegrationsQueryKey, listAgentIntegrations } from '@/api/agents';

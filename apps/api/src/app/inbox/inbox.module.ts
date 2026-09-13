@@ -7,7 +7,7 @@ import {
   SubscriberRepository,
   TopicRepository,
   TopicSubscribersRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import { AuthModule } from '../auth/auth.module';
 import { ChannelConnectionsModule } from '../channel-connections/channel-connections.module';
 import { ChannelEndpointsModule } from '../channel-endpoints/channel-endpoints.module';

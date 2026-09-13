@@ -1,6 +1,6 @@
-import { Novu } from '@novu/api';
-import { NotificationTemplateEntity, SubscriberRepository } from '@novu/dal';
-import { UserSession } from '@novu/testing';
+import { Novu } from '@notify/api';
+import { NotificationTemplateEntity, SubscriberRepository } from '@notify/dal';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { expectSdkExceptionGeneric, initNovuClassSdk } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';
 

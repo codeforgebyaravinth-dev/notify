@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { SupportService } from '@novu/application-generic';
-import { OrganizationRepository, UserRepository } from '@novu/dal';
+import { SupportService } from '@notify/application-generic';
+import { OrganizationRepository, UserRepository } from '@notify/dal';
 import { SharedModule } from '../shared/shared.module';
 import { PlainCardsGuard } from './guards/plain-cards.guard';
 import { SupportController } from './support.controller';

@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import type { AgentRuntime, AgentVisibility } from '@novu/shared';
+import type { AgentRuntime, AgentVisibility } from '@notify/shared';
 
 import { AgentBehaviorDto } from './agent-behavior.dto';
 import { AgentIntegrationSummaryDto } from './agent-integration-summary.dto';

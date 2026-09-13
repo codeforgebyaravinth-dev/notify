@@ -1,11 +1,11 @@
-import { PushProviderIdEnum } from '@novu/shared';
-import { safeOutboundJsonRequest } from '@novu/shared/utils/safe-outbound-http';
+import { PushProviderIdEnum } from '@notify/shared';
+import { safeOutboundJsonRequest } from '@notify/shared/utils/safe-outbound-http';
 import {
   assertSafeOutboundUrl,
   normalizeOutboundHttpUrl,
   SsrfBlockedError,
-} from '@novu/shared/utils/ssrf-url-validation';
-import { ChannelTypeEnum, IPushOptions, IPushProvider, ISendMessageSuccessResponse } from '@novu/stateless';
+} from '@notify/shared/utils/ssrf-url-validation';
+import { ChannelTypeEnum, IPushOptions, IPushProvider, ISendMessageSuccessResponse } from '@notify/stateless';
 import crypto from 'crypto';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
 import { WithPassthrough } from '../../../utils/types';

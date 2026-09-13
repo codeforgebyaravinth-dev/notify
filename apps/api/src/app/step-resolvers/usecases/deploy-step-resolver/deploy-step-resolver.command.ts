@@ -1,5 +1,5 @@
-import { EnvironmentWithUserObjectCommand } from '@novu/application-generic';
-import { StepTypeEnum } from '@novu/shared';
+import { EnvironmentWithUserObjectCommand } from '@notify/application-generic';
+import { StepTypeEnum } from '@notify/shared';
 import { Type } from 'class-transformer';
 import {
   ArrayMinSize,

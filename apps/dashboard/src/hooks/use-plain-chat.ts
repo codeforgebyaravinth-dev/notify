@@ -1,4 +1,4 @@
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import * as Sentry from '@sentry/react';
 import { useEffect } from 'react';
 import { PLAIN_SUPPORT_CHAT_APP_ID } from '@/config';

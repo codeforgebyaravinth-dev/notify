@@ -9,7 +9,7 @@ import {
   NotificationTemplateRepository,
   SubscriberRepository,
   TopicRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import { SharedModule } from '../shared/shared.module';
 import { MachineInfoService } from './usecases/machineInfoService.usecase';
 import { UserInfoService } from './usecases/userInfoService.usecase';

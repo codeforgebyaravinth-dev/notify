@@ -1,7 +1,7 @@
 import { BadRequestException, ForbiddenException, Injectable, NotFoundException } from '@nestjs/common';
-import { assertSafeOutboundUrl, PinoLogger, resolvePublicAddresses, SsrfBlockedError } from '@novu/application-generic';
-import { AgentIntegrationRepository, AgentRepository, EnvironmentRepository, IntegrationRepository } from '@novu/dal';
-import { EmailProviderIdEnum, EnvironmentTypeEnum } from '@novu/shared';
+import { assertSafeOutboundUrl, PinoLogger, resolvePublicAddresses, SsrfBlockedError } from '@notify/application-generic';
+import { AgentIntegrationRepository, AgentRepository, EnvironmentRepository, IntegrationRepository } from '@notify/dal';
+import { EmailProviderIdEnum, EnvironmentTypeEnum } from '@notify/shared';
 import type { ClientSession } from 'mongoose';
 import type { AgentResponseDto, AgentRuntimeConfigResponseDto } from '../../../shared/dtos';
 import { toAgentResponse } from '../../../shared/mappers/agent-response.mapper';

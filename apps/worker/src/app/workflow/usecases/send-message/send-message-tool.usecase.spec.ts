@@ -1,6 +1,6 @@
-import { ToolFactory } from '@novu/application-generic';
-import { ChannelTypeEnum, ToolProviderIdEnum } from '@novu/shared';
-import { ENDPOINT_TYPES } from '@novu/stateless';
+import { ToolFactory } from '@notify/application-generic';
+import { ChannelTypeEnum, ToolProviderIdEnum } from '@notify/shared';
+import { ENDPOINT_TYPES } from '@notify/stateless';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { SendMessageChannelCommand } from './send-message-channel.command';

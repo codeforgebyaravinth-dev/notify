@@ -1,6 +1,6 @@
 import { OpenAPIObject } from '@nestjs/swagger';
 import { OperationObject, PathItemObject, PathsObject } from '@nestjs/swagger/dist/interfaces/open-api-spec.interface';
-import { API_KEY_SWAGGER_SECURITY_NAME } from '@novu/application-generic';
+import { API_KEY_SWAGGER_SECURITY_NAME } from '@notify/application-generic';
 import Nimma from 'nimma';
 
 const jpath = '$.paths..responses["200","201"].content["application/json"]';

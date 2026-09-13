@@ -1,8 +1,8 @@
-/** @jsxImportSource @novu/framework */
+/** @jsxImportSource @notify/framework */
 
 import { tool } from '@langchain/core/tools';
-import { Actions, Button, Card, CardText } from '@novu/framework';
-import { agent } from '@novu/framework/langchain';
+import { Actions, Button, Card, CardText } from '@notify/framework';
+import { agent } from '@notify/framework/langchain';
 
 import { searchNovuDocsIndex, searchNovuDocsInputSchema } from './tools/search-novu-docs';
 

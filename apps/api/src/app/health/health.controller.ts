@@ -8,7 +8,7 @@ import {
   ExternalApiAccessible,
   SkipPermissionsCheck,
   WorkflowQueueServiceHealthIndicator,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import { version } from '../../../package.json';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ApiCommonResponses, ApiCreatedResponse } from '../shared/framework/response.decorator';

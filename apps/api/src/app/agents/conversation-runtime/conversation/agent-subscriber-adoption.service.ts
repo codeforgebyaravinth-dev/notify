@@ -1,13 +1,13 @@
 import { Injectable } from '@nestjs/common';
-import { AnalyticsService, PinoLogger } from '@novu/application-generic';
+import { AnalyticsService, PinoLogger } from '@notify/application-generic';
 import {
   AgentToolTrustRepository,
   ConversationActivityRepository,
   ConversationRepository,
   McpConnectionRepository,
   SubscriberRepository,
-} from '@novu/dal';
-import { AGENT_PLATFORM_PROVISION_SOURCE, AGENT_PROVISION_DATA_KEYS } from '@novu/shared';
+} from '@notify/dal';
+import { AGENT_PLATFORM_PROVISION_SOURCE, AGENT_PROVISION_DATA_KEYS } from '@notify/shared';
 
 /**
  * Identity pair for a subscriber involved in an adoption merge. The email

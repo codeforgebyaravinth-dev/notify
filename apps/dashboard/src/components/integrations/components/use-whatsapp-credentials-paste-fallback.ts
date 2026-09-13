@@ -1,4 +1,4 @@
-import { CredentialsKeyEnum } from '@novu/shared';
+import { CredentialsKeyEnum } from '@notify/shared';
 import { type ClipboardEvent, useCallback } from 'react';
 import { type Control, type UseFormSetValue, useWatch } from 'react-hook-form';
 import { showSuccessToast, showWarningToast } from '@/components/primitives/sonner-helpers';

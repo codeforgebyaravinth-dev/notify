@@ -1,10 +1,10 @@
 ---
 title: "Managing Workflows"
-description: "Update workflow definitions in the Novu Development environment through the API, then publish them to Staging and Production through CI/CD pipelines."
+description: "Update workflow definitions in the Notify Development environment through the API, then publish them to Staging and Production through CI/CD pipelines."
 ---
 
 
-Use the Novu API to keep workflow definitions aligned with your codebase and promote them across environments. The sections below explain the production flow first, then show how to implement each phase.
+Use the Notify API to keep workflow definitions aligned with your codebase and promote them across environments. The sections below explain the production flow first, then show how to implement each phase.
 
 <Note>
   Workflows are scoped to the environment. The same `workflowId` in Development and Production refers to two separate workflow records. Update definitions in Development, then sync when you are ready to publish. For more on environments, refer to [Publishable assets](/platform/developer/environments#publishable-assets).
@@ -22,7 +22,7 @@ Store workflow definitions in your repository (steps, payload schema, and channe
 
 ### Phase 2: Publish workflows to other environments in CI/CD
 
-When definitions in Development are correct, publish them with [Sync a workflow](/api-reference/workflows/sync-a-workflow). Run sync from your CI/CD pipeline (for example, after a merge to `main`) once per `workflowId` so Staging and Production receive the same set of workflows. Use your Development secret key when calling sync. Pass the target environment identifier from the [Novu Dashboard](https://dashboard.novu.co). Each sync copies one workflow from Development into the target environment under the same `workflowId`.
+When definitions in Development are correct, publish them with [Sync a workflow](/api-reference/workflows/sync-a-workflow). Run sync from your CI/CD pipeline (for example, after a merge to `main`) once per `workflowId` so Staging and Production receive the same set of workflows. Use your Development secret key when calling sync. Pass the target environment identifier from the [Notify Dashboard](https://dashboard.novu.co). Each sync copies one workflow from Development into the target environment under the same `workflowId`.
 
 ### End-to-end sequence
 
@@ -42,17 +42,17 @@ flowchart TB
 
 ## Prerequisites
 
-Install the SDK for your stack and set your secret key from the [Novu Dashboard](https://dashboard.novu.co):
+Install the SDK for your stack and set your secret key from the [Notify Dashboard](https://dashboard.novu.co):
 
 <Tabs>
   <Tab title="Node.js">
     ```bash
-    npm install @novu/api zod
+    npm install @notify/api zod
     ```
   </Tab>
   <Tab title="Python">
     ```bash
-    pip install novu-py
+    pip install notify-py
     ```
   </Tab>
   <Tab title="Go">
@@ -67,7 +67,7 @@ Install the SDK for your stack and set your secret key from the [Novu Dashboard]
   </Tab>
   <Tab title=".NET">
     ```bash
-    dotnet add package Novu
+    dotnet add package Notify
     ```
   </Tab>
   <Tab title="Java">
@@ -75,7 +75,7 @@ Install the SDK for your stack and set your secret key from the [Novu Dashboard]
     ```xml
     <dependency>
       <groupId>co.novu</groupId>
-      <artifactId>novu-java</artifactId>
+      <artifactId>notify-java</artifactId>
       <version>LATEST</version>
     </dependency>
     ```
@@ -96,9 +96,9 @@ Keep a list of every `workflowId` you manage as code (a constant array, a regist
 <Tabs>
   <Tab title="Node.js">
     ```typescript
-    import { Novu } from '@novu/api';
+    import { Notify } from '@notify/api';
 
-    const novu = new Novu({
+    const notify = new Notify({
       secretKey: process.env.NOVU_SECRET_KEY!,
     });
 
@@ -155,7 +155,7 @@ Keep a list of every `workflowId` you manage as code (a constant array, a regist
   <Tab title="Python">
     ```python
     import os
-    from novu_py import Novu
+    from novu_py import Notify
 
     MANAGED_WORKFLOW_IDS = (
         "payout-initiated",
@@ -175,7 +175,7 @@ Keep a list of every `workflowId` you manage as code (a constant array, a regist
 
     def create_or_update_workflow_in_development(workflow_id: str):
         definition = build_workflow_definition(workflow_id)
-        with Novu(secret_key=os.environ["NOVU_SECRET_KEY"]) as novu:
+        with Notify(secret_key=os.environ["NOVU_SECRET_KEY"]) as notify:
             try:
                 return novu.workflows.update(workflow_id=workflow_id, update_workflow_dto=definition)
             except Exception as error:
@@ -216,7 +216,7 @@ Keep a list of every `workflowId` you manage as code (a constant array, a regist
   </Tab>
   <Tab title="PHP">
     ```php
-    use novu;
+    use notify;
 
     $managedWorkflowIds = [
         'payout-initiated',
@@ -224,7 +224,7 @@ Keep a list of every `workflowId` you manage as code (a constant array, a regist
         'order-shipped',
     ];
 
-    $sdk = novu\Novu::builder()
+    $sdk = notify\Notify::builder()
         ->setSecurity(getenv('NOVU_SECRET_KEY'))
         ->build();
 
@@ -243,7 +243,7 @@ Keep a list of every `workflowId` you manage as code (a constant array, a regist
   </Tab>
   <Tab title=".NET">
     ```csharp
-    using Novu;
+    using Notify;
 
     var managedWorkflowIds = new[] { "payout-initiated", "weekly-digest", "order-shipped" };
     var sdk = new NovuSDK(secretKey: Environment.GetEnvironmentVariable("NOVU_SECRET_KEY")!);
@@ -263,7 +263,7 @@ Keep a list of every `workflowId` you manage as code (a constant array, a regist
   </Tab>
   <Tab title="Java">
     ```java
-    import co.novu.Novu;
+    import co.novu.Notify;
     import java.util.List;
 
     List<String> managedWorkflowIds = List.of(
@@ -272,7 +272,7 @@ Keep a list of every `workflowId` you manage as code (a constant array, a regist
         "order-shipped"
     );
 
-    Novu novu = Novu.builder()
+    Notify novu = Notify.builder()
         .secretKey(System.getenv("NOVU_SECRET_KEY"))
         .build();
 
@@ -299,18 +299,18 @@ For individual workflow operations, refer to these guides:
 
 <Columns cols={2}>
   <Card title="Create a workflow" icon="circle-plus" href="/api-reference/workflows/create-a-workflow">
-    Create a workflow with the Novu API.
+    Create a workflow with the Notify API.
   </Card>
   <Card title="Update a workflow" icon="pencil" href="/api-reference/workflows/update-a-workflow">
-    Update a workflow with the Novu API.
+    Update a workflow with the Notify API.
   </Card>
   <Card title="Delete a workflow" icon="trash-2" href="/api-reference/workflows/delete-a-workflow">
-    Delete a workflow with the Novu API.
+    Delete a workflow with the Notify API.
   </Card>
   <Card title="Retrieve a workflow" icon="file-search" href="/api-reference/workflows/retrieve-a-workflow">
-    Retrieve a workflow with the Novu API.
+    Retrieve a workflow with the Notify API.
   </Card>
   <Card title="Sync a workflow" icon="arrow-left-right" href="/api-reference/workflows/sync-a-workflow">
-    Sync a workflow with the Novu API.
+    Sync a workflow with the Notify API.
   </Card>
 </Columns>

@@ -1,5 +1,5 @@
 import { useOrganization } from '@clerk/react';
-import { ChannelTypeEnum, FeatureFlagsKeysEnum, SeverityLevelEnum } from '@novu/shared';
+import { ChannelTypeEnum, FeatureFlagsKeysEnum, SeverityLevelEnum } from '@notify/shared';
 import { CalendarIcon } from 'lucide-react';
 import { useMemo } from 'react';
 import { useForm } from 'react-hook-form';

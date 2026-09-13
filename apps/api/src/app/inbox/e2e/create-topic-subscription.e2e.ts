@@ -1,5 +1,5 @@
-import { StepTypeEnum, TOPIC_SUBSCRIPTION_IDENTIFIER_MAX_LENGTH } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { StepTypeEnum, TOPIC_SUBSCRIPTION_IDENTIFIER_MAX_LENGTH } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { CreateTopicSubscriptionRequestDto } from '../dtos/create-topic-subscription-request.dto';
 

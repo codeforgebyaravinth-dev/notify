@@ -14,7 +14,7 @@ import {
   TopicResponseDto,
   TopicSubscriptionResponseDto,
   WorkflowResponse,
-} from '@novu/api/models/components';
+} from '@notify/api/models/components';
 
 // subscriber
 export type Subscriber = SubscriberResponseDto;

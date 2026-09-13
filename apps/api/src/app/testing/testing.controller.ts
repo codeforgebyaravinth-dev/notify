@@ -1,7 +1,7 @@
 import { Controller, Get, NotFoundException } from '@nestjs/common';
 import { ApiExcludeController } from '@nestjs/swagger';
-import { ProductFeature, ResourceCategory } from '@novu/application-generic';
-import { ProductFeatureKeyEnum, ResourceEnum } from '@novu/shared';
+import { ProductFeature, ResourceCategory } from '@notify/application-generic';
+import { ProductFeatureKeyEnum, ResourceEnum } from '@notify/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 

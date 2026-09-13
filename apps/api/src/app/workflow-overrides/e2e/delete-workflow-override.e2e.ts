@@ -1,5 +1,5 @@
-import { TenantRepository, WorkflowOverrideRepository } from '@novu/dal';
-import { UserSession, WorkflowOverrideService } from '@novu/testing';
+import { TenantRepository, WorkflowOverrideRepository } from '@notify/dal';
+import { UserSession, WorkflowOverrideService } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Delete workflow override - /workflow-overrides/:overrideId (Delete) #novu-v0', async () => {

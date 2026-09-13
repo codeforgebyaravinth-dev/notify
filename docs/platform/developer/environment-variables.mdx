@@ -1,9 +1,9 @@
 ---
 title: 'Environment Variables'
-description: "Create reusable, environment-scoped variables in the Novu dashboard and reference them inside workflow steps to avoid hardcoding secrets and URLs."
+description: "Create reusable, environment-scoped variables in the Notify dashboard and reference them inside workflow steps to avoid hardcoding secrets and URLs."
 ---
 
-Environment variables in Novu are named values you define once in the dashboard and reuse across workflows. Each [Novu environment](/platform/developer/environments) can hold its own value for the same variable, so Development and Production (and any custom environments) stay isolated without duplicating workflow logic.
+Environment variables in Notify are named values you define once in the dashboard and reuse across workflows. Each [Notify environment](/platform/developer/environments) can hold its own value for the same variable, so Development and Production (and any custom environments) stay isolated without duplicating workflow logic.
 
 Environment variables help you avoid hardcoding URLs, feature flags, or copy in every step, and give you a single place to update shared configuration when something changes.
 
@@ -19,7 +19,7 @@ Environment variables help you avoid hardcoding URLs, feature flags, or copy in 
 
 ## Create and manage variables
 
-1. Log in to the [Novu dashboard](https://dashboard.novu.co).
+1. Log in to the [Notify dashboard](https://dashboard.novu.co).
 2. Open **Environment variables** from the developer area of the dashboard (same general area as API keys and other workspace settings).
 3. Create a variable: set the **key**, and enter the value for each environment that should have one.
 4. Save. Workflows that reference the key pick up the current value for the environment where the workflow runs.
@@ -32,7 +32,7 @@ You can update values per environment, rotate secrets by replacing the stored va
 
 Each environment stores its own value for a given key. For example, the same variable might point to a staging API base URL in Development and a production URL in Production. You configure both from the environment variables screen, often in one table so you can compare environments side by side.
 
-If a variable has no value in an environment where a workflow references it, Novu can surface a warning on the Environment variables page (for example when a value is missing in one environment but set in others) and in workflow step preview or execution context, so you can add or correct the value before relying on it in production.
+If a variable has no value in an environment where a workflow references it, Notify can surface a warning on the Environment variables page (for example when a value is missing in one environment but set in others) and in workflow step preview or execution context, so you can add or correct the value before relying on it in production.
 
 ## Reference variables in workflows
 
@@ -44,7 +44,7 @@ Use Liquid with the `env` namespace. Keys are case-sensitive: use the same spell
 
 <video autoPlay loop muted playsInline src="/images/platform/environment-variables/using-variable-in-email.mp4" />
 
-You can use these references anywhere Novu accepts Liquid syntax, including:
+You can use these references anywhere Notify accepts Liquid syntax, including:
 
 - Channel step editors
 - HTTP request steps (URL, headers, body)

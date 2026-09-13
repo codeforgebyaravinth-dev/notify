@@ -5,10 +5,10 @@ import {
   buildUserKey,
   decryptApiKey,
   InvalidateCacheService,
-} from '@novu/application-generic';
-import { EnvironmentRepository, UserRepository } from '@novu/dal';
+} from '@notify/application-generic';
+import { EnvironmentRepository, UserRepository } from '@notify/dal';
 
-import { normalizeEmail } from '@novu/shared';
+import { normalizeEmail } from '@notify/shared';
 import type { UserResponseDto } from '../../dtos/user-response.dto';
 import { BaseUserProfileUsecase } from '../base-user-profile.usecase';
 import { UpdateProfileEmailCommand } from './update-profile-email.command';

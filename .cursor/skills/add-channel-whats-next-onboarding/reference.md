@@ -12,7 +12,7 @@ Pick the closest sibling to copy:
 
 ## 1. Config — `whats-next/<channel>-whats-next-config.tsx`
 
-Copy `telegram-whats-next-config.tsx`. Build the snippet from the `@novu/react`
+Copy `telegram-whats-next-config.tsx`. Build the snippet from the `@notify/react`
 `<Channel>ConnectButton`, escape attribute values, and return recap + dev steps.
 
 ```tsx
@@ -20,7 +20,7 @@ import { PrebuiltPromptBanner } from '@/components/onboarding/connect-agent/preb
 import { CodeBlock } from '@/components/primitives/code-block';
 import type { ChannelWhatsNextConfig, WhatsNextConfigContext } from './whats-next-types';
 
-const DISCORD_REACT_PACKAGE = '@novu/react';
+const DISCORD_REACT_PACKAGE = '@notify/react';
 const APPLICATION_IDENTIFIER_PLACEHOLDER = '<YOUR_NOVU_APPLICATION_IDENTIFIER>';
 
 function escapeJsxStringAttributeValue(value: string): string {
@@ -43,12 +43,12 @@ function buildDiscordConnectSnippet(integrationIdentifier: string, applicationId
 }
 
 function buildDiscordPrompt(integrationIdentifier: string, agentName: string, applicationIdentifier: string): string {
-  return `Add the Novu DiscordConnectButton from @novu/react to my app so each of my end users can connect "${agentName}" to their own Discord.
+  return `Add the Novu DiscordConnectButton from @notify/react to my app so each of my end users can connect "${agentName}" to their own Discord.
 
 Context: I'm already signed in to the Novu dashboard and the "${agentName}" Discord integration already exists. This is purely a frontend code integration — do NOT run the Novu CLI, the agent-onboarding flow, or keyless mode.
 
 Requirements:
-- Install @novu/react with my project's package manager.
+- Install @notify/react with my project's package manager.
 - Render <DiscordConnectButton /> inside a <NovuProvider> configured for the currently signed-in end user.
 - Use applicationIdentifier="${applicationIdentifier}" and integrationIdentifier="${integrationIdentifier}". Store applicationIdentifier in an environment variable.
 - Each user gets their own connection, so pass the authenticated user's id as subscriberId; source it from my app's existing auth.
@@ -93,7 +93,7 @@ export function buildDiscordWhatsNextConfig({
       {
         title: 'Add Discord connect button to your application',
         description:
-          'DiscordConnectButton is a pre-built UI component in the @novu/react SDK that links a subscriber to your Discord bot.',
+          'DiscordConnectButton is a pre-built UI component in the @notify/react SDK that links a subscriber to your Discord bot.',
         fullWidthContent: (
           <div className="pt-3">
             <CodeBlock code={connectSnippet} language="tsx" title="main.tsx" />
@@ -133,7 +133,7 @@ Copy `telegram-agent-connected-details.tsx`. Wrap `AgentConnectedDetailsShell` a
 provider credential sections via the render-prop. The shell renders the "What's next" guide.
 
 ```tsx
-import { ChatProviderIdEnum, type ICredentials } from '@novu/shared';
+import { ChatProviderIdEnum, type ICredentials } from '@notify/shared';
 import type { AgentIntegrationLink, AgentResponse } from '@/api/agents';
 import {
   AgentConnectedDetailsShell,
@@ -262,7 +262,7 @@ Skip this entirely to ride the umbrella `IS_AGENT_WHATS_NEXT_ENABLED` flag.
 ## 7. Worked example — Discord (no dedicated flag)
 
 ```
-Prereqs: ChatProviderIdEnum.Discord exists · discord-setup-guide.tsx exists · DiscordConnectButton in @novu/react.
+Prereqs: ChatProviderIdEnum.Discord exists · discord-setup-guide.tsx exists · DiscordConnectButton in @notify/react.
 
 Create:
   agent-integration-guides/whats-next/discord-whats-next-config.tsx

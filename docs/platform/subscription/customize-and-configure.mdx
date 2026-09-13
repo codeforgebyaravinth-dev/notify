@@ -1,9 +1,9 @@
 ---
 title: 'Customize and configure'
-description: "Filter visible preferences, customize the Subscription component styling, and use custom render functions to tailor the Novu subscription UI."
+description: "Filter visible preferences, customize the Subscription component styling, and use custom render functions to tailor the Notify subscription UI."
 ---
 
-The Subscription UI works within the existing Novu environment and uses the same provider and styling architecture as the [`<Inbox />`](/platform/inbox) component.
+The Subscription UI works within the existing Notify environment and uses the same provider and styling architecture as the [`<Inbox />`](/platform/inbox) component.
 
 You can configure which options are visible to your users, apply your brand's theme, or take full control of the rendering.
 
@@ -16,11 +16,11 @@ The `preferences` prop on the [`<Subscription />`](/platform/subscription/overvi
 If you want to simply filter which workflows are visible without changing their labels, then you can pass an array of workflow identifier strings. The component uses the workflow names defined in the Dashboard as the labels.
 
 ```tsx
-import { NovuProvider, Subscription } from '@novu/react';
+import { NotifyProvider, Subscription } from '@notify/react';
 
-export function Novu() {
+export function Notify() {
   return (
-    <NovuProvider 
+    <NotifyProvider 
       subscriber="SUBSCRIBER_ID"
       applicationIdentifier="APPLICATION_IDENTIFIER"
     >
@@ -30,7 +30,7 @@ export function Novu() {
         // Only shows these two workflows
         preferences={["workflow-identifier-1", "workflow-identifier-2"]}
       />
-    </NovuProvider>
+    </NotifyProvider>
   )
 }
 ```
@@ -40,11 +40,11 @@ export function Novu() {
 You can filter using tags, workflow IDs, or both. You can also customize the labels, descriptions, or default states by passing an array of objects.
 
 ```tsx
-import { NovuProvider, Subscription,  } from '@novu/react';
+import { NotifyProvider, Subscription,  } from '@notify/react';
 
-export function Novu() {
+export function Notify() {
   return (
-    <NovuProvider 
+    <NotifyProvider 
       subscriber="SUBSCRIBER_ID"
       applicationIdentifier="APPLICATION_IDENTIFIER"
     >
@@ -71,7 +71,7 @@ export function Novu() {
           },
         ]}
       />
-    </NovuProvider>
+    </NotifyProvider>
   );
 }
 ```
@@ -86,17 +86,17 @@ For full styling and theming options, see the [Inbox styling documentation](/pla
 
 ### Dark mode
 
-Novu provides `subscriptionDarkTheme` in the `@novu/react/themes` package to apply the built-in dark theme to the [`<Subscription />`](/platform/subscription/quickstart) component. You can apply this conditionally based on your app's state.
+Notify provides `subscriptionDarkTheme` in the `@notify/react/themes` package to apply the built-in dark theme to the [`<Subscription />`](/platform/subscription/quickstart) component. You can apply this conditionally based on your app's state.
 
 ```tsx
-import { NovuProvider, Subscription } from '@novu/react';
-import { subscriptionDarkTheme } from '@novu/react/themes';
+import { NotifyProvider, Subscription } from '@notify/react';
+import { subscriptionDarkTheme } from '@notify/react/themes';
 
-export function Novu() {
+export function Notify() {
   const isDarkMode = true;
   
   return (
-    <NovuProvider 
+    <NotifyProvider 
       subscriber="SUBSCRIBER_ID"
       applicationIdentifier="APPLICATION_IDENTIFIER"
     >
@@ -107,7 +107,7 @@ export function Novu() {
           baseTheme: isDarkMode ? subscriptionDarkTheme : undefined,
         }}
       />
-    </NovuProvider>
+    </NotifyProvider>
   );
 }
 ```
@@ -116,11 +116,11 @@ export function Novu() {
 
 You can customize the text labels used in the component to support different languages or to match your app's voice. This works identically to Inbox localization.
 ```tsx
-import { NovuProvider, Subscription } from '@novu/react';
+import { NotifyProvider, Subscription } from '@notify/react';
  
-export function Novu() {
+export function Notify() {
   return (
-    <NovuProvider 
+    <NotifyProvider 
       subscriber="SUBSCRIBER_ID"
       applicationIdentifier="APPLICATION_IDENTIFIER"
     >
@@ -132,7 +132,7 @@ export function Novu() {
           locale: "en-US",
         }}
       />
-    </NovuProvider>
+    </NotifyProvider>
   );
 }
 ```
@@ -146,11 +146,11 @@ The `renderPreferences` prop on the [`<Subscription />`](/platform/subscription/
 The function receives the current `subscription` object and a `loading` boolean. You can map over the `preferences` array and render your own HTML elements.
 
 ```tsx
-import { NovuProvider, Subscription, TopicSubscription } from '@novu/react';
+import { NotifyProvider, Subscription, TopicSubscription } from '@notify/react';
 
-export function Novu() {
+export function Notify() {
   return (
-    <NovuProvider 
+    <NotifyProvider 
       subscriber="SUBSCRIBER_ID"
       applicationIdentifier="APPLICATION_IDENTIFIER"
     >
@@ -177,7 +177,7 @@ export function Novu() {
           </div>
         )}
       />
-    </NovuProvider>
+    </NotifyProvider>
   )
 }
 ```

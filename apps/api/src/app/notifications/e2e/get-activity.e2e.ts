@@ -1,8 +1,8 @@
-import { Novu } from '@novu/api';
-import { ActivityNotificationResponseDto } from '@novu/api/models/components';
-import { MessageRepository, NotificationRepository, NotificationTemplateEntity, SubscriberRepository } from '@novu/dal';
-import { JobStatusEnum, StepTypeEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { Novu } from '@notify/api';
+import { ActivityNotificationResponseDto } from '@notify/api/models/components';
+import { MessageRepository, NotificationRepository, NotificationTemplateEntity, SubscriberRepository } from '@notify/dal';
+import { JobStatusEnum, StepTypeEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { initNovuClassSdk } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';
 

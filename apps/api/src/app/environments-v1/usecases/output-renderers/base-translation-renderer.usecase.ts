@@ -1,7 +1,7 @@
 import { InternalServerErrorException } from '@nestjs/common';
-import { LayoutDto, PinoLogger } from '@novu/application-generic';
-import { LocalizationResourceEnum, NotificationTemplateEntity, OrganizationEntity } from '@novu/dal';
-import { JSONContent as MailyJSONContent } from '@novu/maily-render';
+import { LayoutDto, PinoLogger } from '@notify/application-generic';
+import { LocalizationResourceEnum, NotificationTemplateEntity, OrganizationEntity } from '@notify/dal';
+import { JSONContent as MailyJSONContent } from '@notify/maily-render';
 import { ControlsTranslationService } from './controls-translation.service';
 import { FullPayloadForRender } from './render-command';
 

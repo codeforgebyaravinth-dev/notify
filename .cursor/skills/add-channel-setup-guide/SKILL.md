@@ -55,7 +55,7 @@ All from `setup-guide-primitives.tsx` and `setup-guide-step-utils.ts`:
 
 ## Step 0 — Prerequisites
 
-- `ChatProviderIdEnum.<Channel>` exists in `@novu/shared`, and the provider exists in `packages/providers` (brand-new providers are ask-first).
+- `ChatProviderIdEnum.<Channel>` exists in `@notify/shared`, and the provider exists in `packages/providers` (brand-new providers are ask-first).
 - The integration can be created/selected (the "add provider" flow passes you an `integrationId`).
 
 ## File checklist

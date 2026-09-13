@@ -1,5 +1,5 @@
 import { SESv2Client, SendEmailCommand } from '@aws-sdk/client-sesv2';
-import { EmailProviderIdEnum } from '@novu/shared';
+import { EmailProviderIdEnum } from '@notify/shared';
 import {
   ChannelTypeEnum,
   CheckIntegrationResponseEnum,
@@ -9,7 +9,7 @@ import {
   IEmailOptions,
   IEmailProvider,
   ISendMessageSuccessResponse,
-} from '@novu/stateless';
+} from '@notify/stateless';
 import nodemailer, { SendMailOptions } from 'nodemailer';
 import MessageValidator from 'sns-validator';
 import { BaseProvider, CasingEnum } from '../../../base.provider';

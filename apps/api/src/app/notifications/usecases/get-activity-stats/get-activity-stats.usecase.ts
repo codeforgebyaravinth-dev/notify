@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { NotificationRepository } from '@novu/dal';
+import { NotificationRepository } from '@notify/dal';
 import { ActivityStatsResponseDto } from '../../dtos/activity-stats-response.dto';
 import { GetActivityStatsCommand } from './get-activity-stats.command';
 

@@ -1,4 +1,4 @@
-import { NewDashboardOptInStatusEnum } from '@novu/shared';
+import { NewDashboardOptInStatusEnum } from '@notify/shared';
 import { PropsWithChildren, useEffect } from 'react';
 import { useNewDashboardOptIn } from '@/hooks/use-new-dashboard-opt-in';
 

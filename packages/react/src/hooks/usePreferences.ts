@@ -1,4 +1,4 @@
-import { NovuError, Preference, SeverityLevelEnum, WorkflowCriticalityEnum } from '@novu/js';
+import { NovuError, Preference, SeverityLevelEnum, WorkflowCriticalityEnum } from '@notify/js';
 import { useEffect, useState } from 'react';
 import { useNovu } from './NovuProvider';
 

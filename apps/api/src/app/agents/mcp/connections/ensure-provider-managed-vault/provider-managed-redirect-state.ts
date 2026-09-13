@@ -1,5 +1,5 @@
 import { BadRequestException } from '@nestjs/common';
-import { createHash, encodeOAuthState, splitOAuthState } from '@novu/application-generic';
+import { createHash, encodeOAuthState, splitOAuthState } from '@notify/application-generic';
 
 import { buildAgentApiRootUrl } from '../../../shared/util/agent-api-root-url';
 

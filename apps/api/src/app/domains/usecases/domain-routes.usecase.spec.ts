@@ -1,5 +1,5 @@
 import { ConflictException, NotFoundException } from '@nestjs/common';
-import { DirectionEnum, DomainRouteTypeEnum } from '@novu/shared';
+import { DirectionEnum, DomainRouteTypeEnum } from '@notify/shared';
 import { expect } from 'chai';
 import { restore, stub } from 'sinon';
 import { CreateDomainRoute } from './create-domain-route/create-domain-route.usecase';

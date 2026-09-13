@@ -1,7 +1,7 @@
 import { Test } from '@nestjs/testing';
-import { LayoutRepository } from '@novu/dal';
-import { ApiServiceLevelEnum, TemplateVariableTypeEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { LayoutRepository } from '@notify/dal';
+import { ApiServiceLevelEnum, TemplateVariableTypeEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { ChangeModule } from '../../../change/change.module';
 import { MessageTemplateModule } from '../../../message-template/message-template.module';

@@ -1,4 +1,4 @@
-import { SubscriberEntity } from '@novu/dal';
+import { SubscriberEntity } from '@notify/dal';
 import { expect } from 'chai';
 import { mapSubscriberEntityToDto } from './map-subscriber-entity-to.dto';
 

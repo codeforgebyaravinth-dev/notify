@@ -1,4 +1,4 @@
-import { capitalize, Instrument, PinoLogger } from '@novu/application-generic';
+import { capitalize, Instrument, PinoLogger } from '@notify/application-generic';
 import {
   IResourceToPublish,
   ISyncContext,

@@ -1,8 +1,8 @@
 import { HttpService } from '@nestjs/axios';
 import { BadRequestException } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
-import { OrganizationRepository } from '@novu/dal';
-import { UserSession } from '@novu/testing';
+import { OrganizationRepository } from '@notify/dal';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { of } from 'rxjs';
 import { assert, restore, stub } from 'sinon';

@@ -1,4 +1,4 @@
-import { ContextPayload, type ISubscriberResponseDto, type WorkflowResponseDto } from '@novu/shared';
+import { ContextPayload, type ISubscriberResponseDto, type WorkflowResponseDto } from '@notify/shared';
 import { useState } from 'react';
 import { PreviewContextSection } from '@/components/preview-context-section';
 import { PreviewSubscriberSection } from '@/components/preview-subscriber-section';

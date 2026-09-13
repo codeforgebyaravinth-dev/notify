@@ -12,8 +12,8 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
-import { ExternalApiAccessible, RequirePermissions } from '@novu/application-generic';
-import { ApiRateLimitCategoryEnum, PermissionsEnum, UserSessionData } from '@novu/shared';
+import { ExternalApiAccessible, RequirePermissions } from '@notify/application-generic';
+import { ApiRateLimitCategoryEnum, PermissionsEnum, UserSessionData } from '@notify/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ThrottlerCategory } from '../rate-limiting/guards/throttler.decorator';
 import { ApiCommonResponses, ApiResponse } from '../shared/framework/response.decorator';

@@ -5,7 +5,7 @@ import {
   IWorkflowOverride,
   OrganizationId,
   WorkflowOverrideId,
-} from '@novu/shared';
+} from '@notify/shared';
 import { SubscriberPreferenceChannels } from '../../shared/dtos/preference-channels';
 
 export class OverrideResponseDto implements IWorkflowOverride {

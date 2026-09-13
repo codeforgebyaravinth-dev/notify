@@ -25,7 +25,7 @@ describe('detectChatSdkWiring', () => {
     fs.mkdirSync(path.join(dir, 'lib'), { recursive: true });
     fs.writeFileSync(
       path.join(dir, 'lib/bot.ts'),
-      "import { createNovuAdapter } from '@novu/chat-sdk-adapter';\nexport const novu = createNovuAdapter();"
+      "import { createNovuAdapter } from '@notify/chat-sdk-adapter';\nexport const novu = createNovuAdapter();"
     );
     fs.mkdirSync(path.join(dir, 'app/api/webhooks/novu'), { recursive: true });
     fs.writeFileSync(path.join(dir, 'app/api/webhooks/novu/route.ts'), 'export async function POST() {}');
@@ -54,7 +54,7 @@ describe('detectChatSdkWiring', () => {
     fs.mkdirSync(path.join(dir, 'lib'), { recursive: true });
     fs.writeFileSync(
       path.join(dir, 'lib/bot.ts'),
-      "import { createNovuAdapter } from '@novu/chat-sdk-adapter';\nexport const novu = createNovuAdapter();\n// handleWebhook(request)"
+      "import { createNovuAdapter } from '@notify/chat-sdk-adapter';\nexport const novu = createNovuAdapter();\n// handleWebhook(request)"
     );
 
     expect(detectChatSdkWiring(dir)).toEqual({

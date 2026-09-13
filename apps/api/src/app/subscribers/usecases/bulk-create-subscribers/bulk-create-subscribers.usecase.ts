@@ -1,5 +1,5 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { SubscriberRepository } from '@novu/dal';
+import { SubscriberRepository } from '@notify/dal';
 import { BulkCreateSubscriberResponseDto } from '../../dtos/bulk-create-subscriber-response.dto';
 import { BulkCreateSubscribersCommand } from './bulk-create-subscribers.command';
 

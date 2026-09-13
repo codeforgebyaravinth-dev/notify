@@ -1,4 +1,4 @@
-import { assertSafeOutboundUrl, SsrfBlockedError } from '@novu/shared/utils/ssrf-url-validation';
+import { assertSafeOutboundUrl, SsrfBlockedError } from '@notify/shared/utils/ssrf-url-validation';
 
 const PUSHER_BEAMS_INSTANCE_ID_PATTERN = /^[A-Za-z0-9_-]+$/;
 const PUSHER_BEAMS_HOST_SUFFIX = '.pushnotifications.pusher.com';

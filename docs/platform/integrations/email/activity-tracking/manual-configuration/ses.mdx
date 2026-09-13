@@ -1,19 +1,19 @@
 ---
 title: 'Amazon SES'
-description: "Manually configure Amazon SES with SNS notifications so Novu can track delivered, bounced, complained, and opened events for outbound transactional emails."
+description: "Manually configure Amazon SES with SNS notifications so Notify can track delivered, bounced, complained, and opened events for outbound transactional emails."
 ---
 
-Amazon SES requires a manual configuration flow to enable Email Activity Tracking in Novu. This process involves creating an IAM user, setting up an SNS topic, subscribing Novu’s webhook, and linking SES configuration sets with the SNS topic.
+Amazon SES requires a manual configuration flow to enable Email Activity Tracking in Notify. This process involves creating an IAM user, setting up an SNS topic, subscribing Notify’s webhook, and linking SES configuration sets with the SNS topic.
 
 <Note>
-  Email Activity Tracking is available on **Novu Cloud** and **Enterprise self-hosted** only. It is not included in the **Community self-hosted** edition. Contact us at sales@novu.co to learn more about Enterprise self-hosted licensing.
+  Email Activity Tracking is available on **Notify Cloud** and **Enterprise self-hosted** only. It is not included in the **Community self-hosted** edition. Contact us at sales@notify.co to learn more about Enterprise self-hosted licensing.
 </Note>
 
 Setting up Amazon SES for activity tracking is a multi-step process because it requires configuring several AWS services (IAM, SNS, and SES) to work together. This guide provides a complete, step-by-step walkthrough.
 
 ## Step 1: Create an IAM User
 
-First, you need to create a dedicated IAM user in AWS that Novu will use to interact with SES.
+First, you need to create a dedicated IAM user in AWS that Notify will use to interact with SES.
 
 1. Log in to your AWS Console and navigate to the **IAM** service.
 2. In the sidebar under **Access Management**, click **Users**.
@@ -38,11 +38,11 @@ First, you need to create a dedicated IAM user in AWS that Novu will use to inte
 7. Click **Done**.
   ![Access keys](/images/channels-and-providers/email/activity-tracking/ses/access-keys.png)
 
-## Step 3: Set up the SES integration in Novu
+## Step 3: Set up the SES integration in Notify
 
-Now, use the keys you just downloaded to connect your SES account to Novu.
+Now, use the keys you just downloaded to connect your SES account to Notify.
 
-1. In the Novu dashboard, go to the Integration Store.
+1. In the Notify dashboard, go to the Integration Store.
 2. Click **Connect provider** and select **SES**.
 3. Under **Delivery Provider Credentials**, open the .csv file you downloaded in [Step 2](/platform/integrations/email/activity-tracking/manual-configuration/ses#step-2-generate-access-keys).
 4. Copy the **Access key** into the **Access key ID** field.
@@ -63,16 +63,16 @@ Next, you'll set up an SNS (Simple Notification Service) topic to receive events
   ![Create topic](/images/channels-and-providers/email/activity-tracking/ses/sns-standard.png)
 5. Enter a topic name, then scroll down and click **Create topic**.
 
-## Step 5: Subscribe Novu’s webhook to the SNS topic
+## Step 5: Subscribe Notify’s webhook to the SNS topic
 
 1. On the topic's page, click **Create subscription**.
   ![Create subscription](/images/channels-and-providers/email/activity-tracking/ses/subscription.png)
-2. In another browser tab, return to your **SES integration settings in Novu**. Enable the **Email Activity Tracking** toggle.
+2. In another browser tab, return to your **SES integration settings in Notify**. Enable the **Email Activity Tracking** toggle.
 3. Copy the **Inbound Webhook URL** it provides.
   ![Inbound Webhook URL](/images/channels-and-providers/email/activity-tracking/ses/ses-inbound-webhook.png)
 4. Go back to your AWS SNS subscription page.
     - For **Protocol**, select **HTTPS**.
-    - For **Endpoint**, paste the **Inbound Webhook URL** you copied from Novu.
+    - For **Endpoint**, paste the **Inbound Webhook URL** you copied from Notify.
     ![AWS SNS subscription page](/images/channels-and-providers/email/activity-tracking/ses/create-subscription.png)
 5. Click **Create subscription**
 6. In the sidebar, click **Subscriptions** to confirm that the subscription status is “Confirmed.”
@@ -89,9 +89,9 @@ Create a Configuration set in SES to tie everything together.
 4.  Enter a configuration set name, then click **Create set**.
   ![Set name](/images/channels-and-providers/email/activity-tracking/ses/set-name.png)
 5.  Copy the **Configuration set name**.
-6.  Go back to your SES integration settings in Novu. 
+6.  Go back to your SES integration settings in Notify. 
 7. Paste the name into the **Configuration Set Name** field under the **Email Activity Tracking** section.
-  ![Set name Novu](/images/channels-and-providers/email/activity-tracking/ses/set-name-novu.png)
+  ![Set name Notify](/images/channels-and-providers/email/activity-tracking/ses/set-name-novu.png)
 8. Click **Save changes**.
 
 ## Step 7: Add event destination
@@ -107,13 +107,13 @@ Create a Configuration set in SES to tie everything together.
 6. Click **Next**, review the details, and then click **Add destination**.
   ![SNS topic](/images/channels-and-providers/email/activity-tracking/ses/review-destination-details.png)
 
-Your Amazon SES integration is now fully configured for activity tracking. Events will begin appearing in your Novu **Activity Feed** as you send notifications.
+Your Amazon SES integration is now fully configured for activity tracking. Events will begin appearing in your Notify **Activity Feed** as you send notifications.
 
 ## Troubleshooting
 
 ### Email address is not verified
 
-If you get "MessageRejected: Email address is not verified" error when you trigger a workflow in Novu. This error means that the sender email address you are trying to use has not been verified in SES.
+If you get "MessageRejected: Email address is not verified" error when you trigger a workflow in Notify. This error means that the sender email address you are trying to use has not been verified in SES.
 
 To fix this:
 1. Go to the SES console.

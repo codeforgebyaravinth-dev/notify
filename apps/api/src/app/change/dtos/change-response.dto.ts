@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { ChangeEntityTypeEnum } from '@novu/shared';
+import { ChangeEntityTypeEnum } from '@notify/shared';
 
 export class ChangeResponseDto {
   @ApiPropertyOptional()

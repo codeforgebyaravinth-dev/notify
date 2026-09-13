@@ -1,4 +1,4 @@
-import type { MessageEntity } from '@novu/dal';
+import type { MessageEntity } from '@notify/dal';
 import {
   ButtonTypeEnum,
   MessageActionStatusEnum,
@@ -6,7 +6,7 @@ import {
   ResourceTypeEnum,
   SeverityLevelEnum,
   sanitizeInAppRedirect,
-} from '@novu/shared';
+} from '@notify/shared';
 
 import { InboxNotificationDto, InboxSubscriberResponseDto } from '../dtos/inbox-notification.dto';
 

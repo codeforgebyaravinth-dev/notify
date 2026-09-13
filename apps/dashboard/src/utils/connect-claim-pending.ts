@@ -1,4 +1,4 @@
-import { isConnectClaimTokenFormat } from '@novu/shared';
+import { isConnectClaimTokenFormat } from '@notify/shared';
 import { ROUTES } from '@/utils/routes';
 
 const STORAGE_KEY = 'pendingConnectClaim';

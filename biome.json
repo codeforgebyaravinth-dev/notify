@@ -87,14 +87,14 @@
           "level": "error",
           "options": {
             "paths": {
-              "@novu/*/**/*": "Please import only from the root package entry point. For example, use 'import { Client } from '@novu/api';' instead of 'import { Client } from '@novu/api/src';'",
-              "@novu/shared/utils/ssrf-url-validation": {
+              "@notify/*/**/*": "Please import only from the root package entry point. For example, use 'import { Client } from '@notify/api';' instead of 'import { Client } from '@notify/api/src';'",
+              "@notify/shared/utils/ssrf-url-validation": {
                 "importNames": ["validateUrlSsrf"],
-                "message": "validateUrlSsrf is a one-shot pre-flight check vulnerable to redirects and DNS rebinding. Use safeOutboundRequest / safeOutboundJsonRequest from '@novu/shared/utils/safe-outbound-http' (or HttpClientService with enforceSsrfProtection: true) so the connection is pinned to a validated IP and every redirect is re-validated."
+                "message": "validateUrlSsrf is a one-shot pre-flight check vulnerable to redirects and DNS rebinding. Use safeOutboundRequest / safeOutboundJsonRequest from '@notify/shared/utils/safe-outbound-http' (or HttpClientService with enforceSsrfProtection: true) so the connection is pinned to a validated IP and every redirect is re-validated."
               },
-              "@novu/application-generic": {
+              "@notify/application-generic": {
                 "importNames": ["validateUrlSsrf"],
-                "message": "validateUrlSsrf is a one-shot pre-flight check vulnerable to redirects and DNS rebinding. Use safeOutboundRequest / safeOutboundJsonRequest from '@novu/application-generic' (or HttpClientService with enforceSsrfProtection: true) so the connection is pinned to a validated IP and every redirect is re-validated."
+                "message": "validateUrlSsrf is a one-shot pre-flight check vulnerable to redirects and DNS rebinding. Use safeOutboundRequest / safeOutboundJsonRequest from '@notify/application-generic' (or HttpClientService with enforceSsrfProtection: true) so the connection is pinned to a validated IP and every redirect is re-validated."
               }
             }
           }
@@ -213,22 +213,22 @@
               "level": "error",
               "options": {
                 "paths": {
-                  "@novu/*/**/*": "Please import only from the root package entry point. For example, use 'import { Client } from '@novu/api';' instead of 'import { Client } from '@novu/api/src';'",
+                  "@notify/*/**/*": "Please import only from the root package entry point. For example, use 'import { Client } from '@notify/api';' instead of 'import { Client } from '@notify/api/src';'",
                   "@nestjs/common": {
                     "importNames": ["Logger"],
-                    "message": "Please use the PinoLogger from @novu/application-generic instead"
+                    "message": "Please use the PinoLogger from @notify/application-generic instead"
                   },
-                  "@novu/application-generic": {
+                  "@notify/application-generic": {
                     "importNames": ["Logger", "validateUrlSsrf"],
-                    "message": "Logger: use PinoLogger from @novu/application-generic. validateUrlSsrf: use safeOutboundRequest / safeOutboundJsonRequest (or HttpClientService with enforceSsrfProtection: true) — see https://novu.atlassian.net/browse/NV-7560"
+                    "message": "Logger: use PinoLogger from @notify/application-generic. validateUrlSsrf: use safeOutboundRequest / safeOutboundJsonRequest (or HttpClientService with enforceSsrfProtection: true) — see https://novu.atlassian.net/browse/NV-7560"
                   },
-                  "@novu/shared/utils/ssrf-url-validation": {
+                  "@notify/shared/utils/ssrf-url-validation": {
                     "importNames": ["validateUrlSsrf"],
-                    "message": "validateUrlSsrf is a one-shot pre-flight check vulnerable to redirects and DNS rebinding. Use safeOutboundRequest / safeOutboundJsonRequest from '@novu/shared/utils/safe-outbound-http' (or HttpClientService with enforceSsrfProtection: true)."
+                    "message": "validateUrlSsrf is a one-shot pre-flight check vulnerable to redirects and DNS rebinding. Use safeOutboundRequest / safeOutboundJsonRequest from '@notify/shared/utils/safe-outbound-http' (or HttpClientService with enforceSsrfProtection: true)."
                   },
                   "svix": {
                     "importNames": ["Svix"],
-                    "message": "Please use the SvixClient from @novu/application-generic instead"
+                    "message": "Please use the SvixClient from @notify/application-generic instead"
                   },
                   "@nestjs/swagger": {
                     "importNames": [
@@ -279,11 +279,11 @@
                 "paths": {
                   "svix": {
                     "importNames": ["Svix"],
-                    "message": "Please use the SvixClient from @novu/application-generic instead"
+                    "message": "Please use the SvixClient from @notify/application-generic instead"
                   },
-                  "@novu/shared/utils/ssrf-url-validation": {
+                  "@notify/shared/utils/ssrf-url-validation": {
                     "importNames": ["validateUrlSsrf"],
-                    "message": "validateUrlSsrf is a one-shot pre-flight check vulnerable to redirects and DNS rebinding. Use safeOutboundRequest / safeOutboundJsonRequest from '@novu/shared/utils/safe-outbound-http' (or HttpClientService with enforceSsrfProtection: true)."
+                    "message": "validateUrlSsrf is a one-shot pre-flight check vulnerable to redirects and DNS rebinding. Use safeOutboundRequest / safeOutboundJsonRequest from '@notify/shared/utils/safe-outbound-http' (or HttpClientService with enforceSsrfProtection: true)."
                   }
                 }
               }

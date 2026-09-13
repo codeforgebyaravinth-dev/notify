@@ -1,10 +1,10 @@
 ---
-title: "Grafana Tool Integration with Novu"
+title: "Grafana Tool Integration with Notify"
 sidebarTitle: 'Grafana'
-description: "Send alerts to different Grafana IRM/OnCall stacks per subscriber from a single Novu workflow. Store each subscriber's incoming-webhook URL as a channel endpoint and create alert groups from a Tool step."
+description: "Send alerts to different Grafana IRM/OnCall stacks per subscriber from a single Notify workflow. Store each subscriber's incoming-webhook URL as a channel endpoint and create alert groups from a Tool step."
 ---
 
-Grafana in Novu is routed **per subscriber**. Each subscriber brings their own Grafana IRM/OnCall incoming-webhook (Formatted Webhook) URL, so one workflow trigger can create alert groups on different Grafana stacks and escalation chains for different recipients. The integration itself never stores a webhook URL. It acts as the anchor that per-subscriber [channel endpoints](/api-reference/channel-endpoints/create-a-channel-endpoint) hang off of.
+Grafana in Notify is routed **per subscriber**. Each subscriber brings their own Grafana IRM/OnCall incoming-webhook (Formatted Webhook) URL, so one workflow trigger can create alert groups on different Grafana stacks and escalation chains for different recipients. The integration itself never stores a webhook URL. It acts as the anchor that per-subscriber [channel endpoints](/api-reference/channel-endpoints/create-a-channel-endpoint) hang off of.
 
 <Note>
   There is no shared, environment-level Grafana webhook URL. If a subscriber has no Grafana endpoint registered, the Tool step is marked **skipped** for that subscriber; no alert is created and no error is raised.
@@ -13,7 +13,7 @@ Grafana in Novu is routed **per subscriber**. Each subscriber brings their own G
 ## Prerequisites
 
 - A [Grafana Cloud](https://grafana.com/products/cloud/) stack with IRM/OnCall (or a self-hosted Grafana OnCall install) and permission to add integrations
-- Access to the [Novu dashboard](https://dashboard.novu.co)
+- Access to the [Notify dashboard](https://dashboard.novu.co)
 
 ## Get a Formatted Webhook URL
 
@@ -29,7 +29,7 @@ Every subscriber routes to their own Grafana OnCall integration, so each subscri
   </Step>
 
   <Step title="Copy the webhook URL">
-    Grafana generates a unique webhook URL such as `https://<stack>.grafana.net/integrations/v1/formatted_webhook/<token>/`. Copy it. This is the URL Novu will store for the subscriber.
+    Grafana generates a unique webhook URL such as `https://<stack>.grafana.net/integrations/v1/formatted_webhook/<token>/`. Copy it. This is the URL Notify will store for the subscriber.
   </Step>
 </Steps>
 
@@ -39,11 +39,11 @@ Every subscriber routes to their own Grafana OnCall integration, so each subscri
 
 If the integration is configured to **require a Grafana service account bearer token**, mint a token for a service account with alert-ingestion permission and store it alongside the URL as `authToken` (see below).
 
-## Add Grafana in Novu
+## Add Grafana in Notify
 
 <Steps>
   <Step title="Open the Integrations Store">
-    In the Novu dashboard, click **Integrations Store** in the sidebar.
+    In the Notify dashboard, click **Integrations Store** in the sidebar.
   </Step>
 
   <Step title="Add Grafana">
@@ -57,17 +57,17 @@ If the integration is configured to **require a Grafana service account bearer t
 
 ## Store a subscriber's webhook URL
 
-Register each subscriber's webhook URL as a **channel endpoint** on the Grafana integration. Novu encrypts the URL (and the optional `authToken`) at rest on `ChannelEndpoint.endpoint` and returns the wire shape `{ url, authToken? }` on reads.
+Register each subscriber's webhook URL as a **channel endpoint** on the Grafana integration. Notify encrypts the URL (and the optional `authToken`) at rest on `ChannelEndpoint.endpoint` and returns the wire shape `{ url, authToken? }` on reads.
 
 <Warning>
-  Registering an endpoint requires your Novu secret key. Always call the channel-endpoints API from your server, never from a browser or mobile client. A typical flow is: your app UI sends the webhook URL to **your** backend, and your backend forwards it to Novu.
+  Registering an endpoint requires your Notify secret key. Always call the channel-endpoints API from your server, never from a browser or mobile client. A typical flow is: your app UI sends the webhook URL to **your** backend, and your backend forwards it to Notify.
 </Warning>
 
 ```mermaid
 sequenceDiagram
   participant Browser
   participant CustomerBackend as Customer backend
-  participant NovuAPI as Novu API
+  participant NovuAPI as Notify API
   participant GrafanaAPI as Grafana IRM/OnCall webhook
   Browser->>CustomerBackend: webhook URL (over HTTPS)
   CustomerBackend->>NovuAPI: POST /v1/channel-endpoints (secret key)
@@ -80,14 +80,14 @@ sequenceDiagram
 
 ### Create the endpoint
 
-Send the webhook URL as a `grafana_oncall_integration` endpoint. Set `createSubscriberIfMissing: true` so this call also provisions the Novu subscriber the first time an end user connects Grafana, with no separate identify call required.
+Send the webhook URL as a `grafana_oncall_integration` endpoint. Set `createSubscriberIfMissing: true` so this call also provisions the Notify subscriber the first time an end user connects Grafana, with no separate identify call required.
 
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({ secretKey: '<NOVU_SECRET_KEY>' });
+const notify = new Notify({ secretKey: '<NOVU_SECRET_KEY>' });
 
 await novu.channelEndpoints.create({
   type: 'grafana_oncall_integration',
@@ -103,9 +103,9 @@ await novu.channelEndpoints.create({
   <Tab title="Python">
 ```python
 import os
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.channel_endpoints.create(create_channel_endpoint_request_body={
         "type": "grafana_oncall_integration",
         "integration_identifier": "grafana",
@@ -142,10 +142,10 @@ _, err := s.ChannelEndpoints.Create(context.Background(), components.CreateGrafa
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 
 $sdk->channelEndpoints->create(
     createChannelEndpointRequestBody: new Components\CreateGrafanaOnCallIntegrationEndpointDto(
@@ -162,8 +162,8 @@ $sdk->channelEndpoints->create(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
 
@@ -183,10 +183,10 @@ await sdk.ChannelEndpoints.CreateAsync(
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 
 novu.channelEndpoints().create()
     .body(CreateGrafanaOnCallIntegrationEndpointDto.builder()
@@ -226,7 +226,7 @@ curl -L -X POST 'https://api.novu.co/v1/channel-endpoints' \
 | `type` | `"grafana_oncall_integration"` | Discriminator for the endpoint variant. |
 | `integrationIdentifier` | `string` | Identifier of the Grafana integration created in the Integrations Store. |
 | `subscriberId` | `string` | The subscriber to alert when a workflow selects this endpoint. |
-| `createSubscriberIfMissing` | `boolean` | Optional. When `true`, Novu creates the subscriber on the fly if it does not exist yet. Existing subscribers are never modified. Defaults to `false`. |
+| `createSubscriberIfMissing` | `boolean` | Optional. When `true`, Notify creates the subscriber on the fly if it does not exist yet. Existing subscribers are never modified. Defaults to `false`. |
 | `endpoint.url` | `string` | The HTTPS Formatted Webhook URL from Grafana, ending in `/integrations/v1/formatted_webhook/<token>/`. Stored encrypted. |
 | `endpoint.authToken` | `string` | Optional. A Grafana service account bearer token, required when the integration enforces authenticated ingestion. Stored encrypted and sent as `Authorization: Bearer <token>`. |
 
@@ -247,7 +247,7 @@ curl -L -X PATCH 'https://api.novu.co/v1/channel-endpoints/<ENDPOINT_IDENTIFIER>
 
 ### Reading and disconnecting
 
-Reads return the full wire shape (including the webhook URL), so you can display connection status. Mask it in your UI (the Novu dashboard shows only the last four characters).
+Reads return the full wire shape (including the webhook URL), so you can display connection status. Mask it in your UI (the Notify dashboard shows only the last four characters).
 
 ```bash
 curl -L 'https://api.novu.co/v1/channel-endpoints?subscriberId=<SUBSCRIBER_ID>&integrationIdentifier=grafana' \
@@ -275,16 +275,16 @@ Once a subscriber has a Grafana endpoint, add a **Tool** step with Grafana to yo
   </Step>
 
   <Step title="Trigger the workflow">
-    Send a trigger for a subscriber who has connected Grafana. Novu resolves that subscriber's webhook URL and creates an alert group on their Grafana stack.
+    Send a trigger for a subscriber who has connected Grafana. Notify resolves that subscriber's webhook URL and creates an alert group on their Grafana stack.
   </Step>
 </Steps>
 
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({ secretKey: '<NOVU_SECRET_KEY>' });
+const notify = new Notify({ secretKey: '<NOVU_SECRET_KEY>' });
 
 await novu.trigger({
   workflowId: 'order-failed',
@@ -300,9 +300,9 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="order-failed",
         to={"subscriber_id": "<SUBSCRIBER_ID>"},
@@ -339,10 +339,10 @@ _, err := s.Trigger(context.Background(), components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 
 $sdk->trigger(
     triggerEventRequestDto: new Components\TriggerEventRequestDto(
@@ -358,8 +358,8 @@ $sdk->trigger(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
 
@@ -377,10 +377,10 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto()
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 
 novu.trigger()
     .body(TriggerEventRequestDto.builder()
@@ -423,11 +423,11 @@ curl --location 'https://api.novu.co/v1/events/trigger' \
 | `image_url` | Not sent | `image_url` step override. |
 | Extra keys | Passed through top-level in the JSON body, available to Grafana alert templates. | Step overrides. |
 
-The deterministic `alert_uid` means Novu retries for the same step group into the same Grafana alert instead of creating duplicates.
+The deterministic `alert_uid` means Notify retries for the same step group into the same Grafana alert instead of creating duplicates.
 
 ## What happens without an endpoint
 
-If a workflow triggers for a subscriber who has **no** Grafana endpoint on the target integration, Novu marks the step as **skipped** in the Activity feed for that subscriber and does not create an alert. Other subscribers on the same trigger are unaffected. Each is routed to their own Grafana stack.
+If a workflow triggers for a subscriber who has **no** Grafana endpoint on the target integration, Notify marks the step as **skipped** in the Activity feed for that subscriber and does not create an alert. Other subscribers on the same trigger are unaffected. Each is routed to their own Grafana stack.
 
 ## Related
 

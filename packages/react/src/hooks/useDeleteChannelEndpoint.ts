@@ -1,4 +1,4 @@
-import type { NovuError } from '@novu/js';
+import type { NovuError } from '@notify/js';
 import { useCallback, useRef, useState } from 'react';
 import { useNovu } from './NovuProvider';
 

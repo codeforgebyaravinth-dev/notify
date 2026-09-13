@@ -1,4 +1,4 @@
-import type { IUserEntity } from '@novu/shared';
+import type { IUserEntity } from '@notify/shared';
 import { AnalyticsBrowser } from '@segment/analytics-next';
 import * as Sentry from '@sentry/react';
 import * as mixpanel from 'mixpanel-browser';

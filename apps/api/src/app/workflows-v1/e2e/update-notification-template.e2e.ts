@@ -1,4 +1,4 @@
-import { ChangeRepository } from '@novu/dal';
+import { ChangeRepository } from '@notify/dal';
 import {
   EmailBlockTypeEnum,
   FieldLogicalOperatorEnum,
@@ -8,8 +8,8 @@ import {
   INotificationTemplateStep,
   IUpdateNotificationTemplateDto,
   StepTypeEnum,
-} from '@novu/shared';
-import { NotificationTemplateService, UserSession } from '@novu/testing';
+} from '@notify/shared';
+import { NotificationTemplateService, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { CreateWorkflowRequestDto, UpdateWorkflowRequestDto } from '../dtos';
 import { WorkflowResponse } from '../dtos/workflow-response.dto';

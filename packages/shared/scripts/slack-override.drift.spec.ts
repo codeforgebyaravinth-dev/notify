@@ -12,7 +12,7 @@ import {
 } from './generate-slack-override-schema';
 import { NON_OVERRIDABLE_SLACK_KEYS } from './slack-override.type';
 
-const REGENERATE_HINT = 'Run `pnpm --filter @novu/shared generate:slack-schema` and commit the result.';
+const REGENERATE_HINT = 'Run `pnpm --filter @notify/shared generate:slack-schema` and commit the result.';
 const DRIFT_ENV_VAR = 'NOVU_TEST_SLACK_SCHEMA_DRIFT';
 const sharedRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -23,7 +23,7 @@ const sharedRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
  */
 const isDriftCheckEnabled = process.env.CI === 'true' || process.env[DRIFT_ENV_VAR] === 'true';
 
-const SKIP_HINT = `run \`${DRIFT_ENV_VAR}=true pnpm --filter @novu/shared test\` to check this locally`;
+const SKIP_HINT = `run \`${DRIFT_ENV_VAR}=true pnpm --filter @notify/shared test\` to check this locally`;
 
 let regeneratedSchemas: ReturnType<typeof buildSlackOverrideSchemas> | undefined;
 

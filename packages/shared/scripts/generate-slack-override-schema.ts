@@ -10,7 +10,7 @@ const scriptDir = dirname(fileURLToPath(import.meta.url));
 const outputDir = join(scriptDir, '../src/consts/providers/provider-overrides/slack');
 
 const ROOT_TYPE = 'SlackOverride';
-const GENERATE_COMMAND = 'pnpm --filter @novu/shared generate:slack-schema';
+const GENERATE_COMMAND = 'pnpm --filter @notify/shared generate:slack-schema';
 
 const KNOWN_BLOCK_REF = '#/definitions/KnownBlock';
 

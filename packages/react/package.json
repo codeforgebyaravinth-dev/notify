@@ -1,5 +1,5 @@
 {
-  "name": "@novu/react",
+  "name": "@notify/react",
   "version": "3.18.2",
   "repository": {
     "type": "git",
@@ -129,7 +129,7 @@
     }
   },
   "dependencies": {
-    "@novu/js": "workspace:*"
+    "@notify/js": "workspace:*"
   },
   "nx": {
     "tags": [

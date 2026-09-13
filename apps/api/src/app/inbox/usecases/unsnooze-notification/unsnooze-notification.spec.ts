@@ -1,7 +1,7 @@
 import { NotFoundException } from '@nestjs/common';
-import { CreateExecutionDetails, CreateExecutionDetailsCommand, PinoLogger } from '@novu/application-generic';
-import { JobEntity, JobRepository, MessageEntity, MessageRepository } from '@novu/dal';
-import { ChannelTypeEnum, JobStatusEnum, SeverityLevelEnum } from '@novu/shared';
+import { CreateExecutionDetails, CreateExecutionDetailsCommand, PinoLogger } from '@notify/application-generic';
+import { JobEntity, JobRepository, MessageEntity, MessageRepository } from '@notify/dal';
+import { ChannelTypeEnum, JobStatusEnum, SeverityLevelEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { GetSubscriber } from '../../../subscribers/usecases/get-subscriber';

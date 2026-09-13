@@ -34,4 +34,4 @@ jobs:
       - name: Run agent evals
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: pnpm --filter @novu/agent-evals eval src/suites/agent-onboarding
+        run: pnpm --filter @notify/agent-evals eval src/suites/agent-onboarding

@@ -1,5 +1,5 @@
 import { useOrganization, useUser } from '@clerk/react';
-import type { IEnvironment } from '@novu/shared';
+import type { IEnvironment } from '@notify/shared';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { AnimatedPage } from '@/components/onboarding/animated-page';
 import { OnboardingLoader } from '@/components/onboarding/onboarding-loader';

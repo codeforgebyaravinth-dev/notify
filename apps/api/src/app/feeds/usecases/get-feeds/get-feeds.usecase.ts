@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { FeedEntity, FeedRepository } from '@novu/dal';
+import { FeedEntity, FeedRepository } from '@notify/dal';
 import { GetFeedsCommand } from './get-feeds.command';
 
 @Injectable()

@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { DirectionEnum } from '@novu/shared';
+import { DirectionEnum } from '@notify/shared';
 import { Transform } from 'class-transformer';
 import { IsOptional, IsString, Max } from 'class-validator';
 

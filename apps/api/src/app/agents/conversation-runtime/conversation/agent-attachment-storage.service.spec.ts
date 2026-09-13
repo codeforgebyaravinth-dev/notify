@@ -1,4 +1,4 @@
-import type { StorageService } from '@novu/application-generic';
+import type { StorageService } from '@notify/application-generic';
 import { expect } from 'chai';
 import type { Attachment } from 'chat';
 import sinon from 'sinon';

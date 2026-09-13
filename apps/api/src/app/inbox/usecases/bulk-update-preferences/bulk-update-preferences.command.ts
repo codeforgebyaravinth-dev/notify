@@ -1,7 +1,7 @@
 // apps/api/src/app/inbox/usecases/bulk-update-preferences/bulk-update-preferences.command.ts
 
-import { IsValidContextPayload } from '@novu/application-generic';
-import { ContextPayload } from '@novu/shared';
+import { IsValidContextPayload } from '@notify/application-generic';
+import { ContextPayload } from '@notify/shared';
 import { Type } from 'class-transformer';
 import { IsArray, IsDefined, IsOptional } from 'class-validator';
 

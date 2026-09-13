@@ -5,7 +5,7 @@ import {
   CreateExecutionDetailsCommand,
   DetailEnum,
   FeatureFlagsService,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   EnvironmentEntity,
   JobEntity,
@@ -14,7 +14,7 @@ import {
   MessageRepository,
   OrganizationEntity,
   UserEntity,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   DigestTypeEnum,
   ExecutionDetailsSourceEnum,
@@ -22,7 +22,7 @@ import {
   FeatureFlagsKeysEnum,
   IDigestRegularMetadata,
   StepTypeEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { PlatformException } from '../../../../shared/utils';
 import { SendMessageCommand } from '../send-message.command';
 import { SendMessageResult, SendMessageStatus, SendMessageType } from '../send-message-type.usecase';

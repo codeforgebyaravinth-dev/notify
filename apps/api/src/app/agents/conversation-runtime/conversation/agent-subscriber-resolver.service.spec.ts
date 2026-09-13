@@ -1,4 +1,4 @@
-import { AGENT_PLATFORM_PROVISION_SOURCE, AGENT_PROVISION_DATA_KEYS } from '@novu/shared';
+import { AGENT_PLATFORM_PROVISION_SOURCE, AGENT_PROVISION_DATA_KEYS } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { AgentPlatformEnum } from '../../shared/enums/agent-platform.enum';

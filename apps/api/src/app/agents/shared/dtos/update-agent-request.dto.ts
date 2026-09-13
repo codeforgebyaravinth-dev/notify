@@ -1,5 +1,5 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { AGENT_NAME_MAX_LENGTH } from '@novu/shared';
+import { AGENT_NAME_MAX_LENGTH } from '@notify/shared';
 import { Transform, Type } from 'class-transformer';
 import { IsBoolean, IsOptional, IsString, IsUrl, MaxLength, ValidateNested } from 'class-validator';
 

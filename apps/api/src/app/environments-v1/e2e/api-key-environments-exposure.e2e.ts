@@ -1,5 +1,5 @@
-import { ApiServiceLevelEnum, EnvironmentEnum, NOVU_ENCRYPTION_SUB_MASK } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { ApiServiceLevelEnum, EnvironmentEnum, NOVU_ENCRYPTION_SUB_MASK } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 /**

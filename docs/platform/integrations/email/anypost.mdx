@@ -1,14 +1,14 @@
 ---
 title: 'Anypost'
-description: "Configure the Anypost email provider in Novu to send transactional and marketing notifications with API keys, sender domains, and tracking."
+description: "Configure the Anypost email provider in Notify to send transactional and marketing notifications with API keys, sender domains, and tracking."
 ---
 
 
-You can use the [Anypost](https://anypost.com/) provider to send transactional emails to your customers using the Novu Platform with a single API to create multi-channel experiences.
+You can use the [Anypost](https://anypost.com/) provider to send transactional emails to your customers using the Notify Platform with a single API to create multi-channel experiences.
 
 ## Getting Started
 
-To use the Anypost provider in the email channel, you will need to create an Anypost account and add your API key to the Anypost integration on the Novu platform.
+To use the Anypost provider in the email channel, you will need to create an Anypost account and add your API key to the Anypost integration on the Notify platform.
 
 ## Generating an API Key
 
@@ -17,7 +17,7 @@ To generate a new API key in Anypost, you can follow these steps:
 - [Sign up](https://anypost.com/) or log in to your Anypost account.
 - Open **Settings**, then **API Keys**.
 - Click **Create API Key**, give it a name, and choose its scope.
-  - A `send_only` key is enough to send email. A `full` key is required if you want Novu to automatically configure the inbound webhook for [activity tracking](/platform/integrations/email/activity-tracking/manual-configuration/anypost).
+  - A `send_only` key is enough to send email. A `full` key is required if you want Notify to automatically configure the inbound webhook for [activity tracking](/platform/integrations/email/activity-tracking/manual-configuration/anypost).
 - Copy the generated API key.
 
 ## Authenticating your Sender Identity
@@ -26,9 +26,9 @@ Before you can send emails, you will need to verify the domain you send from.
 
 Anypost verifies your sender identity through [domain authentication](https://anypost.com/docs/domains). Add your domain under **Domains** in the dashboard and publish the DNS records it provides (SPF, DKIM, and the tracking record).
 
-## Creating an Anypost integration with Novu
+## Creating an Anypost integration with Notify
 
-- Visit the [Integrations](https://dashboard.novu.co/integrations?utm_campaign=docs-anypost) page on Novu.
+- Visit the [Integrations](https://dashboard.novu.co/integrations?utm_campaign=docs-anypost) page on Notify.
 - Click on Add a Provider.
 - Select Anypost service.
 - Enter your Anypost API Key.
@@ -36,7 +36,7 @@ Anypost verifies your sender identity through [domain authentication](https://an
 - Fill in the `Sender's name`.
 - Click on the `Disabled` button and mark it as `Active`.
 - Click on the **Update** button.
-- You should now be able to send notifications using Anypost in Novu.
+- You should now be able to send notifications using Anypost in Notify.
 
 ## Next Steps
 

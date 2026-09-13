@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { PinoLogger, SsrfBlockedError, safeOutboundJsonRequest, safeOutboundRequest } from '@novu/application-generic';
+import { PinoLogger, SsrfBlockedError, safeOutboundJsonRequest, safeOutboundRequest } from '@notify/application-generic';
 import {
   DEFAULT_MCP_TOKEN_ENDPOINT_AUTH_METHOD,
   MCP_TOKEN_ENDPOINT_AUTH_METHODS,
   type McpTokenEndpointAuthMethod,
-} from '@novu/shared';
+} from '@notify/shared';
 import { LRUCache } from 'lru-cache';
 import { isAcceptableIssuerMatch } from './mcp-oauth-issuer-match';
 
@@ -121,10 +121,10 @@ export interface AuthorizationServerMetadata {
 /**
  * Re-export of the canonical `token_endpoint_auth_method` union, kept here so
  * existing API-service imports continue to resolve. The source of truth lives
- * in `@novu/shared` because the DAL entity and the runtime providers also
+ * in `@notify/shared` because the DAL entity and the runtime providers also
  * need it.
  */
-export type { McpTokenEndpointAuthMethod as SupportedTokenEndpointAuthMethod } from '@novu/shared';
+export type { McpTokenEndpointAuthMethod as SupportedTokenEndpointAuthMethod } from '@notify/shared';
 
 /**
  * Priority order Novu uses when an AS advertises multiple methods. Mirrors

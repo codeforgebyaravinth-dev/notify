@@ -1,5 +1,5 @@
-import { BaseCommand } from '@novu/application-generic';
-import { MessageEntity } from '@novu/dal';
+import { BaseCommand } from '@notify/application-generic';
+import { MessageEntity } from '@notify/dal';
 import { IsArray, IsDefined, IsOptional, IsString } from 'class-validator';
 
 export class ExternalServicesRouteCommand extends BaseCommand {

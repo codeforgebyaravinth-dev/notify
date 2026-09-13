@@ -1,4 +1,4 @@
-import { ChannelTypeEnum, FeatureFlagsKeysEnum } from '@novu/shared';
+import { ChannelTypeEnum, FeatureFlagsKeysEnum } from '@notify/shared';
 import { PopoverPortal } from '@radix-ui/react-popover';
 import React, { ReactNode, useState } from 'react';
 import { RiAddLine } from 'react-icons/ri';

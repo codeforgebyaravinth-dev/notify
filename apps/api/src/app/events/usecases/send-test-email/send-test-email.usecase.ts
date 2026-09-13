@@ -10,9 +10,9 @@ import {
   PreviewStepCommand,
   SelectIntegration,
   SelectIntegrationCommand,
-} from '@novu/application-generic';
-import { IntegrationEntity, OrganizationRepository } from '@novu/dal';
-import { ChannelTypeEnum, EmailProviderIdEnum, IEmailOptions, ResourceOriginEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { IntegrationEntity, OrganizationRepository } from '@notify/dal';
+import { ChannelTypeEnum, EmailProviderIdEnum, IEmailOptions, ResourceOriginEnum } from '@notify/shared';
 import { addBreadcrumb } from '@sentry/node';
 import { SendTestEmailCommand } from './send-test-email.command';
 

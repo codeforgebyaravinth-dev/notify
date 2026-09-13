@@ -1,6 +1,6 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { ApiContextPayload, IsValidContextPayload } from '@novu/application-generic';
-import { ConnectionMode, ContextPayload } from '@novu/shared';
+import { ApiContextPayload, IsValidContextPayload } from '@notify/application-generic';
+import { ConnectionMode, ContextPayload } from '@notify/shared';
 import { IsArray, IsBoolean, IsDefined, IsIn, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 import { SLACK_DEFAULT_OAUTH_SCOPES } from '../usecases/generate-chat-oath-url/generate-slack-oath-url/generate-slack-oauth-url.usecase';
 import { WEBEX_DEFAULT_OAUTH_SCOPES } from '../usecases/generate-chat-oath-url/generate-webex-oath-url/generate-webex-oauth-url.usecase';

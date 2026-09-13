@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { DomainRouteTypeEnum } from '@novu/shared';
+import { DomainRouteTypeEnum } from '@notify/shared';
 
 export class DomainRouteResponseDto {
   @ApiProperty()

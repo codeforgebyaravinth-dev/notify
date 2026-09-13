@@ -11,8 +11,8 @@ import {
   mapLayoutToResponseDto,
   PinoLogger,
   UpsertControlValuesUseCase,
-} from '@novu/application-generic';
-import { ControlValuesRepository, JsonSchemaTypeEnum, LayoutRepository } from '@novu/dal';
+} from '@notify/application-generic';
+import { ControlValuesRepository, JsonSchemaTypeEnum, LayoutRepository } from '@notify/dal';
 import {
   ChannelTypeEnum,
   ContentIssueEnum,
@@ -22,7 +22,7 @@ import {
   ResourceOriginEnum,
   ResourceTypeEnum,
   slugify,
-} from '@novu/shared';
+} from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { CreateLayoutUseCase, UpdateLayoutUseCase } from '../../../layouts-v1/usecases';
@@ -35,7 +35,7 @@ const isStringifiedMailyJSONContentStub = sinon.stub();
 
 // Mock modules using require to ensure proper stubbing
 sinon
-  .stub(require('@novu/application-generic'), 'isStringifiedMailyJSONContent')
+  .stub(require('@notify/application-generic'), 'isStringifiedMailyJSONContent')
   .callsFake(isStringifiedMailyJSONContentStub);
 
 function setupTranslationMocks(moduleRef: sinon.SinonStubbedInstance<ModuleRef>): sinon.SinonStub {

@@ -20,7 +20,7 @@ export const tabsTriggerVariants = () =>
     'after:nt-transition-opacity after:nt-duration-200',
     'data-[state=active]:after:nt-border-b-2 data-[state=active]:after:nt-border-primary data-[state=active]:after:nt-opacity-100',
     'data-[state=active]:nt-text-foreground after:nt-border-b-transparent after:nt-opacity-0',
-    'focus-visible:nt-outline-none focus-visible:nt-rounded-lg focus-visible:nt-ring-2 focus-visible:nt-ring-ring focus-visible:nt-ring-offset-2'
+    'focus-visible:nt-outline-none focus-visible:nt-nt-rounded-none focus-visible:nt-ring-2 focus-visible:nt-ring-ring focus-visible:nt-ring-offset-2'
   );
 
 export const TabsTrigger = (props: TabsTriggerProps) => {

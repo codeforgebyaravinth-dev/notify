@@ -1,6 +1,6 @@
 # Email Templates
 
-`@novu/framework` lets you render emails with libraries you already know — React Email, Vue Email, Svelte Email — by returning the rendered HTML string from your `step.email` resolver.
+`@notify/framework` lets you render emails with libraries you already know — React Email, Vue Email, Svelte Email — by returning the rendered HTML string from your `step.email` resolver.
 
 ## Why use a component library?
 
@@ -55,7 +55,7 @@ export function renderWelcome(name: string) {
 ### Use in a workflow
 
 ```typescript
-import { workflow } from "@novu/framework";
+import { workflow } from "@notify/framework";
 import { z } from "zod";
 import { renderWelcome } from "./emails/welcome";
 
@@ -163,7 +163,7 @@ export function renderEmail(props: { name: string }) {
 
 ```typescript
 import { renderEmail } from "../emails/sample-email";
-import { workflow } from "@novu/framework";
+import { workflow } from "@notify/framework";
 
 workflow("welcome", async ({ step }) => {
   await step.email("send-email", async (inputs) => ({
@@ -222,7 +222,7 @@ defineProps<{ name: string }>();
 ### Use in a workflow
 
 ```typescript
-import { workflow } from "@novu/framework";
+import { workflow } from "@notify/framework";
 import { renderEmail } from "./emails/welcome";
 import { z } from "zod";
 
@@ -285,7 +285,7 @@ export function renderEmail(name: string) {
 ### Use in a workflow
 
 ```typescript
-import { workflow } from "@novu/framework";
+import { workflow } from "@notify/framework";
 import { renderEmail } from "./emails/welcome";
 import { z } from "zod";
 

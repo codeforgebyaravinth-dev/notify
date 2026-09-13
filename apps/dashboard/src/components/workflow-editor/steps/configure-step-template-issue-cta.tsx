@@ -1,4 +1,4 @@
-import { RuntimeIssue, StepResponseDto } from '@novu/shared';
+import { RuntimeIssue, StepResponseDto } from '@notify/shared';
 import { PropsWithChildren } from 'react';
 import { RiArrowRightUpLine } from 'react-icons/ri';
 import { Link } from 'react-router-dom';

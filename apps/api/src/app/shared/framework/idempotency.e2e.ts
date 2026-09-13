@@ -1,5 +1,5 @@
-import { CacheService, HttpResponseHeaderKeysEnum } from '@novu/application-generic';
-import { UserSession } from '@novu/testing';
+import { CacheService, HttpResponseHeaderKeysEnum } from '@notify/application-generic';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import {
   IdempotenceTestingResponse,

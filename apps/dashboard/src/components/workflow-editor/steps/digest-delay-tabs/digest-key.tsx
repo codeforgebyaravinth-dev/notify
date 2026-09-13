@@ -1,4 +1,4 @@
-import { EnvironmentTypeEnum, ResourceOriginEnum } from '@novu/shared';
+import { EnvironmentTypeEnum, ResourceOriginEnum } from '@notify/shared';
 import { X } from 'lucide-react';
 import { useMemo } from 'react';
 import { useFormContext } from 'react-hook-form';

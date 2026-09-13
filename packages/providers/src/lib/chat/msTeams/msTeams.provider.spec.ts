@@ -1,4 +1,4 @@
-import { CardElement, ENDPOINT_TYPES } from '@novu/stateless';
+import { CardElement, ENDPOINT_TYPES } from '@notify/stateless';
 import { v4 as uuidv4 } from 'uuid';
 import { describe, expect, test, vi } from 'vitest';
 import { axiosSpy } from '../../../utils/test/spy-axios';

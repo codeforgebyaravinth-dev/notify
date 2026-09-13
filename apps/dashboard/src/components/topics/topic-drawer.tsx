@@ -1,4 +1,4 @@
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { motion } from 'motion/react';
 import { forwardRef, useEffect, useRef, useState } from 'react';
 import { RiDiscussLine } from 'react-icons/ri';

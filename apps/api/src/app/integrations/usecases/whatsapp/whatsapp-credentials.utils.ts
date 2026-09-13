@@ -1,5 +1,5 @@
 import { randomUUID } from 'node:crypto';
-import { ChatProviderIdEnum, type ICredentials } from '@novu/shared';
+import { ChatProviderIdEnum, type ICredentials } from '@notify/shared';
 
 /**
  * Novu's Meta Tech Provider credentials for Embedded Signup.

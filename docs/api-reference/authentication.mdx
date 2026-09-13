@@ -1,9 +1,9 @@
 ---
 title: 'Authentication'
-description: "Authenticate REST API requests to Novu with your secret key, manage environment credentials, rotate keys, and follow security best practices."
+description: "Authenticate REST API requests to Notify with your secret key, manage environment credentials, rotate keys, and follow security best practices."
 ---
 
-The Novu REST API uses API key authentication. Every server-side request must include your environment's secret key in the `Authorization` header.
+The Notify REST API uses API key authentication. Every server-side request must include your environment's secret key in the `Authorization` header.
 
 <Note>
   The REST API and server-side SDKs are intended for server-side applications only. Using them in client-side code causes Cross-Origin Resource Sharing (CORS) errors and exposes your secret key.
@@ -29,9 +29,9 @@ curl -X GET https://api.novu.co/v1/subscribers \
 When using a server-side SDK, pass your secret key during initialization:
 
 ```javascript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({
+const notify = new Notify({
   secretKey: process.env.NOVU_SECRET_KEY,
 });
 ```
@@ -46,7 +46,7 @@ To send authenticated requests in Postman, import the [official Postman collecti
 
 ## Credential types
 
-Each Novu environment has two credentials. Use the right one for the context:
+Each Notify environment has two credentials. Use the right one for the context:
 
 | Credential | Visibility | Used for |
 | --- | --- | --- |
@@ -55,11 +55,11 @@ Each Novu environment has two credentials. Use the right one for the context:
 
 The secret key grants full administrative access to your environment. Never expose it in frontend code, public repositories, or browser network requests.
 
-The application identifier is safe to use in client-side code. It identifies your application within Novu but does not authorize API requests on its own.
+The application identifier is safe to use in client-side code. It identifies your application within Notify but does not authorize API requests on its own.
 
 ## Find your API keys
 
-1. Log in to the [Novu Dashboard](https://dashboard.novu.co).
+1. Log in to the [Notify Dashboard](https://dashboard.novu.co).
 2. Go to **Developer** → **API Keys**.
 3. Select the environment you want to use (Development, Production, or a custom environment).
 
@@ -83,7 +83,7 @@ When you regenerate a secret key in the dashboard, the previous key is invalidat
 
 ## API base URLs
 
-Use the base URL that matches your Novu Cloud region:
+Use the base URL that matches your Notify Cloud region:
 
 | Region | Base URL |
 | --- | --- |
@@ -98,11 +98,11 @@ When using the EU region, also configure the WebSocket hostname for real-time In
 | **EU** | `wss://eu.socket.novu.co` |
 
 <Warning>
-  Your account and its API keys are bound to the region you chose at signup. A US secret key will not authenticate against `https://eu.api.novu.co` (and vice versa) - you cannot switch regions by swapping the base URL. To change region, contact [sales@novu.co](mailto:sales@novu.co); see [Data Residency](/platform/additional-resources/security#data-residency) for details.
+  Your account and its API keys are bound to the region you chose at signup. A US secret key will not authenticate against `https://eu.api.novu.co` (and vice versa) - you cannot switch regions by swapping the base URL. To change region, contact [sales@notify.co](mailto:sales@notify.co); see [Data Residency](/platform/additional-resources/security#data-residency) for details.
 </Warning>
 
 <Note>
-  Self-hosted deployments use your own API hostname. See [Self Hosting Novu](/community/self-hosting-novu/overview) for configuration details.
+  Self-hosted deployments use your own API hostname. See [Self Hosting Notify](/community/self-hosting-notify/overview) for configuration details.
 </Note>
 
 ## Security best practices

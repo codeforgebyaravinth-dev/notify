@@ -1,4 +1,4 @@
-import type { SentMessageInfo } from '@novu/framework/internal';
+import type { SentMessageInfo } from '@notify/framework/internal';
 import { WebClient } from '@slack/web-api';
 import type {
   ChannelAndBlocks,

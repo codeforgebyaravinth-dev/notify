@@ -1,7 +1,7 @@
 import { Controller, Get, Param, Query } from '@nestjs/common';
 import { ApiExcludeEndpoint, ApiOperation, ApiQuery, ApiTags } from '@nestjs/swagger';
-import { RequirePermissions } from '@novu/application-generic';
-import { ChannelTypeEnum, PermissionsEnum, SeverityLevelEnum, UserSessionData } from '@novu/shared';
+import { RequirePermissions } from '@notify/application-generic';
+import { ChannelTypeEnum, PermissionsEnum, SeverityLevelEnum, UserSessionData } from '@notify/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ExternalApiAccessible, OAuthAccessible } from '../auth/framework/external-api.decorator';
 import { ApiCommonResponses, ApiOkResponse, ApiResponse } from '../shared/framework/response.decorator';

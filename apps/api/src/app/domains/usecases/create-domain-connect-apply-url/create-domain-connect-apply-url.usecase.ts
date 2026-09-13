@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { FeatureFlagsService } from '@novu/application-generic';
-import { DomainRepository } from '@novu/dal';
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsService } from '@notify/application-generic';
+import { DomainRepository } from '@notify/dal';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { DomainConnectApplyUrlResponseDto } from '../../dtos/domain-connect-apply-url.dto';
 import { DomainConnectDiscoveryService } from '../../services/domain-connect-discovery.service';
 import {

@@ -1,4 +1,4 @@
-import { EnvironmentCommand } from '@novu/application-generic';
+import { EnvironmentCommand } from '@notify/application-generic';
 import { IsDefined } from 'class-validator';
 
 import { WebhookTypes } from '../../interfaces/webhook.interface';

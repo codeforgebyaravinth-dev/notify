@@ -1,5 +1,5 @@
-import { TenantRepository } from '@novu/dal';
-import { UserSession } from '@novu/testing';
+import { TenantRepository } from '@notify/dal';
+import { UserSession } from '@notify/testing';
 import axios from 'axios';
 import type { AxiosResponse } from 'axios';
 import { expect } from 'chai';

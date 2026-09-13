@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { InstrumentUsecase, LayoutDtoV0, LayoutResponseDto, mapLayoutToResponseDto } from '@novu/application-generic';
-import { LayoutEntity, LayoutRepository } from '@novu/dal';
+import { InstrumentUsecase, LayoutDtoV0, LayoutResponseDto, mapLayoutToResponseDto } from '@notify/application-generic';
+import { LayoutEntity, LayoutRepository } from '@notify/dal';
 import { ListLayoutResponseDto } from '../../dtos';
 import { ListLayoutsCommand } from './list-layouts.command';
 

@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { SubscriberResponseDto } from '@novu/application-generic';
+import { SubscriberResponseDto } from '@notify/application-generic';
 import { IsOptional, IsString } from 'class-validator';
 import { CursorPaginationQueryDto } from './cursor-pagination-query.dto';
 

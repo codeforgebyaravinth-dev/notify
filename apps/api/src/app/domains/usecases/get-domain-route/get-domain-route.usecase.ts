@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { DomainRepository, DomainRouteRepository } from '@novu/dal';
+import { DomainRepository, DomainRouteRepository } from '@notify/dal';
 import { DomainRouteResponseDto } from '../../dtos/domain-route-response.dto';
 import { toDomainRouteResponse } from '../../mappers/domain-route-response.mapper';
 import { resolveDomainName } from '../domain-route.utils';

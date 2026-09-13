@@ -1,4 +1,4 @@
-import { ChannelTypeEnum } from '@novu/shared';
+import { ChannelTypeEnum } from '@notify/shared';
 
 export type TableIntegration = {
   integrationId: string;

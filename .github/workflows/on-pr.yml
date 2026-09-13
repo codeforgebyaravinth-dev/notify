@@ -152,7 +152,7 @@ jobs:
           fi
 
   test_unit_providers:
-    name: Unit test @novu/providers
+    name: Unit test @notify/providers
     runs-on: blacksmith-4vcpu-ubuntu-2404
     needs: [get-affected]
     if: ${{ fromJson(needs.get-affected.outputs.test-providers)[0] }}
@@ -199,7 +199,7 @@ jobs:
           NX_NO_CLOUD: ${{ secrets.NX_CLOUD_ACCESS_TOKEN == '' && 'true' || 'false' }}
         with:
           targets: build
-          projects: "@novu/api"
+          projects: "@notify/api"
 
       - name: Run Lint, Build, Test
         uses: mansagroup/nrwl-nx-action@a531870269e0c1eeb7af6247c4a206c31cae82cc # v3
@@ -257,7 +257,7 @@ jobs:
       - uses: ./.github/actions/setup-project
         with:
           # Don't run redis and etc... for other unit tests
-          slim: ${{ !contains(matrix.projectName, '@novu/api-service') && !contains(matrix.projectName, '@novu/worker') && !contains(matrix.projectName, '@novu/ws') && !contains(matrix.projectName, '@novu/inbound-mail')}}
+          slim: ${{ !contains(matrix.projectName, '@notify/api-service') && !contains(matrix.projectName, '@notify/worker') && !contains(matrix.projectName, '@notify/ws') && !contains(matrix.projectName, '@notify/inbound-mail')}}
 
       - uses: ./.github/actions/setup-redis-cluster
       - uses: mansagroup/nrwl-nx-action@a531870269e0c1eeb7af6247c4a206c31cae82cc # v3
@@ -266,7 +266,7 @@ jobs:
           NX_NO_CLOUD: ${{ secrets.NX_CLOUD_ACCESS_TOKEN == '' && 'true' || 'false' }}
         with:
           targets: build
-          projects: "@novu/api"
+          projects: "@notify/api"
           args: ""
 
       - uses: mansagroup/nrwl-nx-action@a531870269e0c1eeb7af6247c4a206c31cae82cc # v3
@@ -421,7 +421,7 @@ jobs:
   #test_e2e_dashboard:
   #  name: E2E test Dashboard app
   #  needs: [get-affected]
-  #  if: ${{ contains(fromJson(needs.get-affected.outputs.test-e2e), '@novu/dashboard') }}
+  #  if: ${{ contains(fromJson(needs.get-affected.outputs.test-e2e), '@notify/dashboard') }}
   #  uses: ./.github/workflows/reusable-dashboard-e2e.yml
   #  secrets: inherit
   #  with:
@@ -433,5 +433,5 @@ jobs:
   #   uses: ./.github/workflows/reusable-widget-e2e.yml
   #   with:
   #     ee: true
-  #   if: ${{ contains(fromJson(needs.get-affected.outputs.test-unit), '@novu/ws') }}
+  #   if: ${{ contains(fromJson(needs.get-affected.outputs.test-unit), '@notify/ws') }}
   #   secrets: inherit

@@ -2,7 +2,7 @@ import {
   ConversationActivityEntity,
   ConversationActivitySenderTypeEnum,
   ConversationActivityTypeEnum,
-} from '@novu/dal';
+} from '@notify/dal';
 import { expect } from 'chai';
 import {
   findOrphanedApprovedToolApprovalRequests,

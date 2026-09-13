@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { FeatureFlagsService, NotificationPayloadService } from '@novu/application-generic';
-import { MessageEntity, MessageRepository, OrganizationEntity, SubscriberEntity } from '@novu/dal';
-import { ActorTypeEnum, ChannelTypeEnum, FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsService, NotificationPayloadService } from '@notify/application-generic';
+import { MessageEntity, MessageRepository, OrganizationEntity, SubscriberEntity } from '@notify/dal';
+import { ActorTypeEnum, ChannelTypeEnum, FeatureFlagsKeysEnum } from '@notify/shared';
 import { GetSubscriber, GetSubscriberCommand } from '../../../subscribers/usecases/get-subscriber';
 import { GetMessagesCommand } from './get-messages.command';
 

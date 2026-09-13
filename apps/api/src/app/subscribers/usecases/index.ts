@@ -4,7 +4,7 @@ import {
   GetWorkflowByIdsUseCase,
   UpdateSubscriber,
   UpdateSubscriberChannel,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import { UpdatePreferences } from '../../inbox/usecases/update-preferences/update-preferences.usecase';
 import { CheckIntegration } from '../../integrations/usecases/check-integration/check-integration.usecase';
 import { CheckIntegrationEMail } from '../../integrations/usecases/check-integration/check-integration-email.usecase';

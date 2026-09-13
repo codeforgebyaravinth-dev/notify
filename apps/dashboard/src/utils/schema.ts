@@ -1,4 +1,4 @@
-import { JSONSchemaDefinition, JSONSchemaDto, UiSchema } from '@novu/shared';
+import { JSONSchemaDefinition, JSONSchemaDto, UiSchema } from '@notify/shared';
 import * as z from 'zod';
 import { capitalize } from './string';
 

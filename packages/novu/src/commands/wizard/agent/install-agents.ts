@@ -56,12 +56,12 @@ export function installWizardAgents(input: InstallWizardAgentsInput): InstalledW
   fs.mkdirSync(dir, { recursive: true });
 
   /**
-   * `@novu/framework` is a per-workspace signal — the user only needs
+   * `@notify/framework` is a per-workspace signal — the user only needs
    * one application workspace declaring it for the code-first path to
    * apply. Walk every detected target so monorepos with the package in
    * `apps/api` (but not the root) still take the right branch.
    */
-  const hasNovuFramework = project.topology.targets.some((target) => target.installedDeps.has('@novu/framework'));
+  const hasNovuFramework = project.topology.targets.some((target) => target.installedDeps.has('@notify/framework'));
   const installed: InstalledWizardAgent[] = [];
 
   for (const branch of WIZARD_AGENT_BRANCHES) {

@@ -1,4 +1,4 @@
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { ArrowRight } from 'lucide-react';
 import { type ComponentProps, useCallback, useId, useMemo } from 'react';
 import { Link } from 'react-router-dom';

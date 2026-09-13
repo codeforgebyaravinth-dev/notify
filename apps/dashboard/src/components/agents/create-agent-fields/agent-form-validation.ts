@@ -4,7 +4,7 @@ import {
   AgentRuntimeProviderIdEnum,
   SLUG_IDENTIFIER_REGEX,
   slugIdentifierFormatMessage,
-} from '@novu/shared';
+} from '@notify/shared';
 import type { CreateAgentForm, CreateAgentFormErrors } from './types';
 
 export function validateManagedCredentialFields(fields: {

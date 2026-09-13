@@ -1,4 +1,4 @@
-import { BaseCommand } from '@novu/application-generic';
+import { BaseCommand } from '@notify/application-generic';
 import { IsArray, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 export abstract class EnvironmentCommand extends BaseCommand {

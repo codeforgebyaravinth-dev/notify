@@ -1,4 +1,4 @@
-import { StepCreateDto, StepTypeEnum, WorkflowCreationSourceEnum } from '@novu/shared';
+import { StepCreateDto, StepTypeEnum, WorkflowCreationSourceEnum } from '@notify/shared';
 import { useEffect, useMemo, useState } from 'react';
 import { IWorkflowSuggestion } from '@/components/template-store/types';
 import { extractApiItems } from '@/utils/api-response-normalizer';

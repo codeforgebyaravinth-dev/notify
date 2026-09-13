@@ -1,5 +1,5 @@
 {
-  "name": "@novu/dal",
+  "name": "@notify/dal",
   "sourceRoot": "libs/dal/src",
   "projectType": "library",
   "targets": {

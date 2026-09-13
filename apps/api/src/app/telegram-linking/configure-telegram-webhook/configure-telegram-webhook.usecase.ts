@@ -6,9 +6,9 @@ import {
   NotFoundException,
   UnprocessableEntityException,
 } from '@nestjs/common';
-import { decryptCredentials, encryptSecret } from '@novu/application-generic';
-import { IntegrationRepository } from '@novu/dal';
-import { ChatProviderIdEnum } from '@novu/shared';
+import { decryptCredentials, encryptSecret } from '@notify/application-generic';
+import { IntegrationRepository } from '@notify/dal';
+import { ChatProviderIdEnum } from '@notify/shared';
 import Axios from 'axios';
 
 import { TelegramAgentLinkResolver } from '../telegram-agent-link.resolver';

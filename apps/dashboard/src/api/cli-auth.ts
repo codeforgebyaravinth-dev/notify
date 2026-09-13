@@ -1,4 +1,4 @@
-import type { ApproveCliDeviceSessionRequest } from '@novu/shared';
+import type { ApproveCliDeviceSessionRequest } from '@notify/shared';
 import { post } from './api.client';
 
 export async function approveCliDeviceSession(

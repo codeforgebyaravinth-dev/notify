@@ -5,10 +5,10 @@ import {
   InMemoryLRUCacheService,
   InMemoryLRUCacheStore,
   PinoLogger,
-} from '@novu/application-generic';
-import { PostActionEnum, type Workflow } from '@novu/framework/internal';
-import { Client, NovuHandler, NovuRequestHandler } from '@novu/framework/nest';
-import { EnvironmentTypeEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { PostActionEnum, type Workflow } from '@notify/framework/internal';
+import { Client, NovuHandler, NovuRequestHandler } from '@notify/framework/nest';
+import { EnvironmentTypeEnum } from '@notify/shared';
 import type { Request, Response } from 'express';
 import { ConstructFrameworkWorkflow, ConstructFrameworkWorkflowCommand } from './usecases/construct-framework-workflow';
 

@@ -1,5 +1,5 @@
-import { MessageFilter } from '@novu/application-generic';
-import { ChannelTypeEnum, ICredentialsDto, IntegrationKindEnum } from '@novu/shared';
+import { MessageFilter } from '@notify/application-generic';
+import { ChannelTypeEnum, ICredentialsDto, IntegrationKindEnum } from '@notify/shared';
 import { IsArray, IsDefined, IsEnum, IsObject, IsOptional, IsString, ValidateNested } from 'class-validator';
 
 import { EnvironmentCommand } from '../../../shared/commands/project.command';

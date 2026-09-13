@@ -16,9 +16,9 @@ describe('detectLangChainWiring', () => {
     writeFile(
       dir,
       'app/novu/agents/support-agent.tsx',
-      "import { agent } from '@novu/framework/langchain';\nexport const supportAgent = agent('x', {});"
+      "import { agent } from '@notify/framework/langchain';\nexport const supportAgent = agent('x', {});"
     );
-    writeFile(dir, 'app/api/novu/route.ts', "import { serve } from '@novu/framework/next';");
+    writeFile(dir, 'app/api/novu/route.ts', "import { serve } from '@notify/framework/next';");
     expect(detectLangChainWiring(dir)).toEqual({
       hasLangChainImport: true,
       hasBridgeRoute: true,
@@ -28,7 +28,7 @@ describe('detectLangChainWiring', () => {
 
   it('is not wired without langchain import', () => {
     const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'novu-langchain-wire-'));
-    writeFile(dir, 'app/api/novu/route.ts', "import { serve } from '@novu/framework/next';");
+    writeFile(dir, 'app/api/novu/route.ts', "import { serve } from '@notify/framework/next';");
     expect(detectLangChainWiring(dir).isWired).toBe(false);
   });
 
@@ -37,9 +37,9 @@ describe('detectLangChainWiring', () => {
     writeFile(
       dir,
       'app/novu/agents/support-agent.tsx',
-      "import { agent } from '@novu/framework/ai-sdk';\nexport const supportAgent = agent('x', {});"
+      "import { agent } from '@notify/framework/ai-sdk';\nexport const supportAgent = agent('x', {});"
     );
-    writeFile(dir, 'app/api/novu/route.ts', "import { serve } from '@novu/framework/next';");
+    writeFile(dir, 'app/api/novu/route.ts', "import { serve } from '@notify/framework/next';");
     expect(detectLangChainWiring(dir).hasLangChainImport).toBe(false);
     expect(detectLangChainWiring(dir).isWired).toBe(false);
   });

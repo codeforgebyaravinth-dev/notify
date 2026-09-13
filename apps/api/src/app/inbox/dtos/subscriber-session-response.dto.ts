@@ -1,4 +1,4 @@
-import { Schedule, SeverityLevelEnum } from '@novu/shared';
+import { Schedule, SeverityLevelEnum } from '@notify/shared';
 
 type SeverityCounts = {
   [SeverityLevelEnum.HIGH]: number;

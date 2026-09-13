@@ -1,4 +1,4 @@
-import { ApiServiceLevelEnum, FeatureNameEnum, type GetSubscriptionDto, getFeatureForTierAsNumber } from '@novu/shared';
+import { ApiServiceLevelEnum, FeatureNameEnum, type GetSubscriptionDto, getFeatureForTierAsNumber } from '@notify/shared';
 import { subMilliseconds } from 'date-fns';
 import { IS_SELF_HOSTED } from '../config';
 

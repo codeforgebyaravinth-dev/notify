@@ -11,7 +11,7 @@ import {
   PreviewPayloadProcessorService,
   PreviewStep,
   UpsertControlValuesUseCase,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import { AuthModule } from '../auth/auth.module';
 import { LayoutsV1Module } from '../layouts-v1/layouts-v1.module';
 import { SharedModule } from '../shared/shared.module';

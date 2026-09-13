@@ -1,6 +1,6 @@
-import { EnvironmentRepository, IntegrationRepository } from '@novu/dal';
-import { ChannelTypeEnum, EmailProviderIdEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { EnvironmentRepository, IntegrationRepository } from '@notify/dal';
+import { ChannelTypeEnum, EmailProviderIdEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Auto Configure Integration - /integrations/:integrationId/auto-configure (POST) #novu-v2', () => {

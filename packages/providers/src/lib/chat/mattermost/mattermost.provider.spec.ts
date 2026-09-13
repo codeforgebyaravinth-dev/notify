@@ -1,4 +1,4 @@
-import { ENDPOINT_TYPES } from '@novu/stateless';
+import { ENDPOINT_TYPES } from '@notify/stateless';
 import { expect, test } from 'vitest';
 import { safeOutboundJsonSpy } from '../../../utils/test/spy-safe-outbound';
 import { MattermostProvider } from './mattermost.provider';

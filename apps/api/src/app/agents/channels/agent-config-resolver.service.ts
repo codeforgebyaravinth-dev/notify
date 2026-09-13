@@ -4,7 +4,7 @@ import {
   decryptCredentials,
   PinoLogger,
   RotatingConnectionTokenService,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   AgentIntegrationEntity,
   AgentIntegrationRepository,
@@ -15,8 +15,8 @@ import {
   ICredentialsEntity,
   IntegrationEntity,
   IntegrationRepository,
-} from '@novu/dal';
-import { type AgentAnalyticsSource, AgentSubscriberAccessEnum, EmailProviderIdEnum } from '@novu/shared';
+} from '@notify/dal';
+import { type AgentAnalyticsSource, AgentSubscriberAccessEnum, EmailProviderIdEnum } from '@notify/shared';
 import axios from 'axios';
 import type { WellKnownEmoji } from 'chat';
 import { isKeylessOrganization } from '../../keyless/keyless-organization.helpers';

@@ -1,9 +1,9 @@
 ---
 title: 'Java'
-description: "Connect a Java application to Novu with the official server SDK to trigger workflows, manage subscribers, and send notifications from JVM code."
+description: "Connect a Java application to Notify with the official server SDK to trigger workflows, manage subscribers, and send notifications from JVM code."
 ---
 
-Novu's Java SDK provides simple, yet comprehensive notification management, and delivery capabilities through multiple channels that you can implement using code that integrates seamlessly with your Java application.
+Notify's Java SDK provides simple, yet comprehensive notification management, and delivery capabilities through multiple channels that you can implement using code that integrates seamlessly with your Java application.
 
 [Explore the source code on GitHub.](https://github.com/novuhq/novu-java)
 
@@ -16,7 +16,7 @@ Maven users:
 ```xml
 <dependency>
     <groupId>co.novu</groupId>
-    <artifactId>novu-java</artifactId>
+    <artifactId>notify-java</artifactId>
     <version>LATEST</version>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Sync your project, and you should have the artifacts downloaded.
 ```java
 package hello.world;
 
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 import co.novu.models.errors.*;
 import co.novu.models.operations.EventsControllerTriggerResponse;
@@ -49,7 +49,7 @@ public class Application {
 
     public static void main(String[] args) throws PayloadValidationExceptionDto, ErrorDto, ValidationErrorDto, Exception {
 
-        Novu sdk = Novu.builder()
+        Notify sdk = Notify.builder()
                 .secretKey("YOUR_SECRET_KEY_HERE")
             .build();
 
@@ -80,7 +80,7 @@ public class Application {
 ```java
 package hello.world;
 
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 import co.novu.models.errors.*;
 import co.novu.models.operations.EventsControllerTriggerResponse;
@@ -91,7 +91,7 @@ public class Application {
 
     public static void main(String[] args) throws PayloadValidationExceptionDto, ErrorDto, ValidationErrorDto, Exception {
 
-        Novu sdk = Novu.builder()
+        Notify sdk = Notify.builder()
                 .serverUrl("https://eu.api.novu.co")
                 .secretKey("YOUR_SECRET_KEY_HERE")
             .build();

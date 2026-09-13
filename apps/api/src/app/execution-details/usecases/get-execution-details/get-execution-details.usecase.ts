@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { buildSubscriberKey, CachedResponse } from '@novu/application-generic';
-import { ExecutionDetailsEntity, ExecutionDetailsRepository, SubscriberEntity, SubscriberRepository } from '@novu/dal';
+import { buildSubscriberKey, CachedResponse } from '@notify/application-generic';
+import { ExecutionDetailsEntity, ExecutionDetailsRepository, SubscriberEntity, SubscriberRepository } from '@notify/dal';
 import { GetExecutionDetailsCommand } from './get-execution-details.command';
 
 @Injectable()

@@ -1,6 +1,6 @@
 # Deployment
 
-`@novu/framework` operates in a **GitOps model** — your workflows live in source control, and a sync step pushes them to Novu Cloud after each merge.
+`@notify/framework` operates in a **GitOps model** — your workflows live in source control, and a sync step pushes them to Novu Cloud after each merge.
 
 ## The flow
 

@@ -1,4 +1,4 @@
-import { IProviderConfig } from '@novu/shared';
+import { IProviderConfig } from '@notify/shared';
 import { RiArrowLeftSLine } from 'react-icons/ri';
 import { SheetHeader, SheetTitle } from '@/components/primitives/sheet';
 import { CompactButton } from '../../primitives/button-compact';

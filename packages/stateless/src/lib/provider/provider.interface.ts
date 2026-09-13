@@ -121,8 +121,8 @@ export interface IChatOptions {
  * Cross-platform card content (Rich Chat), rendered natively per provider at delivery
  * (Slack Block Kit, MS Teams Adaptive Cards) and degraded to markdown text elsewhere.
  *
- * Structural superset of the dashboard `@novu/shared` CardElement (v1 subset). Duplicated
- * here because `@novu/stateless` has no dependency on `@novu/shared`. Code-first `step.chat`
+ * Structural superset of the dashboard `@notify/shared` CardElement (v1 subset). Duplicated
+ * here because `@notify/stateless` has no dependency on `@notify/shared`. Code-first `step.chat`
  * may emit the full Chat SDK kit (section/fields/table + interactive button/select/radio_select);
  * the dashboard Maily editor still authors the v1 subset only.
  */

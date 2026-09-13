@@ -44,7 +44,7 @@ export const PreferencesRow = (props: {
       <div
         class={style({
           key: 'workflowContainer',
-          className: 'nt-p-1 nt-bg-neutral-alpha-25 nt-rounded-lg nt-border nt-border-neutral-alpha-50',
+          className: 'nt-p-1 nt-bg-neutral-alpha-25 nt-nt-rounded-none nt-border nt-border-neutral-alpha-50',
           context: {
             preference: props.preference,
           } satisfies Parameters<InboxAppearanceCallback['workflowContainer']>[0],
@@ -170,7 +170,7 @@ export const PreferencesRow = (props: {
             class={style({
               key: 'channelsContainer',
               className:
-                'nt-flex nt-bg-background nt-border nt-border-neutral-alpha-200 nt-rounded-lg nt-p-2 nt-flex-col nt-gap-1 nt-overflow-hidden',
+                'nt-flex nt-bg-background nt-border nt-border-neutral-alpha-200 nt-nt-rounded-none nt-p-2 nt-flex-col nt-gap-1 nt-overflow-hidden',
               context: { preference: props.preference } satisfies Parameters<
                 InboxAppearanceCallback['channelsContainer']
               >[0],

@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { FeatureFlagsService, InstrumentUsecase } from '@novu/application-generic';
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsService, InstrumentUsecase } from '@notify/application-generic';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import type { WhatsAppEmbeddedSignupAvailabilityResponseDto } from '../../dtos/whatsapp-embedded-signup-availability.dto';
 import { getNovuWhatsAppPlatformConfig } from './whatsapp-credentials.utils';
 import { WhatsAppEmbeddedSignupAvailabilityCommand } from './whatsapp-embedded-signup-availability.command';

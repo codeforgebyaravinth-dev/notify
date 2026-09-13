@@ -1,4 +1,4 @@
-import { ChannelTypeEnum, GeneratePreviewResponseDto, PushRenderOutput } from '@novu/shared';
+import { ChannelTypeEnum, GeneratePreviewResponseDto, PushRenderOutput } from '@notify/shared';
 import { HTMLMotionProps, motion } from 'motion/react';
 import { HTMLAttributes } from 'react';
 import { Skeleton } from '@/components/primitives/skeleton';

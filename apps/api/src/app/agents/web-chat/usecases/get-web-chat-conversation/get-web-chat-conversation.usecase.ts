@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { AgentRepository, ConversationParticipantTypeEnum, ConversationRepository } from '@novu/dal';
+import { AgentRepository, ConversationParticipantTypeEnum, ConversationRepository } from '@notify/dal';
 import { AgentPlatformEnum } from '../../../shared/enums/agent-platform.enum';
 import type { WebChatConversationMetadataDto } from '../../dtos/web-chat-conversation.dto';
 import { GetWebChatConversationCommand } from './get-web-chat-conversation.command';

@@ -32,7 +32,7 @@ function resolveFrameworkVersion(): string {
   const pkg = resolveCliPackageJson();
   if (!pkg) return 'latest';
 
-  const ver = pkg.dependencies?.['@novu/framework'];
+  const ver = pkg.dependencies?.['@notify/framework'];
   if (!ver || ver.startsWith('workspace:')) return 'latest';
 
   return ver;
@@ -302,7 +302,7 @@ export const installTemplate = async ({
   };
 
   if (isAgentTemplate) {
-    baseDependencies['@novu/framework'] = resolveFrameworkVersion();
+    baseDependencies['@notify/framework'] = resolveFrameworkVersion();
   }
 
   if (isAiSdkTemplate || isLangChainTemplate) {
@@ -312,13 +312,13 @@ export const installTemplate = async ({
 
   if (isChatSdkTemplate) {
     baseDependencies.chat = '4.31.0';
-    baseDependencies['@novu/chat-sdk-adapter'] = 'latest';
+    baseDependencies['@notify/chat-sdk-adapter'] = 'latest';
     baseDependencies['@chat-adapter/state-memory'] = '4.31.0';
   }
 
   if (!isAgentTemplate && !isChatSdkTemplate) {
-    baseDependencies['@novu/framework'] = resolveFrameworkVersion();
-    baseDependencies['@novu/nextjs'] = '^2.5.0';
+    baseDependencies['@notify/framework'] = resolveFrameworkVersion();
+    baseDependencies['@notify/nextjs'] = '^2.5.0';
   }
 
   const scripts: Record<string, string> = {
@@ -399,7 +399,7 @@ export const installTemplate = async ({
   }
 
   if (template === TemplateTypeEnum.APP_AGENT_AI_SDK) {
-    // chat (transitive via @novu/framework) peers ai@^6 for its own AI helpers.
+    // chat (transitive via @notify/framework) peers ai@^6 for its own AI helpers.
     // Framework only uses chat for card components; ai-sdk scaffold installs ai@7.
     packageJson.pnpm = {
       peerDependencyRules: {

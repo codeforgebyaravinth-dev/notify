@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { PinoLogger, StorageService } from '@novu/application-generic';
+import { PinoLogger, StorageService } from '@notify/application-generic';
 import type { Attachment } from 'chat';
 import { AgentPlatformEnum } from '../../shared/enums/agent-platform.enum';
 import { captureAgentWarning } from '../../shared/errors/capture-agent-sentry';

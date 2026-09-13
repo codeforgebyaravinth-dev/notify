@@ -6,9 +6,9 @@ import {
   shortId,
   slugifyOrRandom,
   throwPlanLimitExceeded,
-} from '@novu/application-generic';
-import { AgentRepository } from '@novu/dal';
-import { AGENT_NAME_MAX_LENGTH, AgentSubscriberAccessEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { AgentRepository } from '@notify/dal';
+import { AGENT_NAME_MAX_LENGTH, AgentSubscriberAccessEnum } from '@notify/shared';
 import { KeylessAbuseGuardService } from '../../../../keyless/keyless-abuse-guard.service';
 import { trackAgentCreated } from '../../../shared/analytics/agent-analytics';
 import type { AgentResponseDto, AgentRuntimeConfigResponseDto } from '../../../shared/dtos';

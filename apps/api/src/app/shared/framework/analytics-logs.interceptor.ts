@@ -7,8 +7,8 @@ import {
   SetMetadata,
 } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
-import { PinoLogger, RequestLog, RequestLogRepository } from '@novu/application-generic';
-import { UserSessionData } from '@novu/shared';
+import { PinoLogger, RequestLog, RequestLogRepository } from '@notify/application-generic';
+import { UserSessionData } from '@notify/shared';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { TriggerEventResponseDto } from '../../events/dtos/trigger-event-response.dto';

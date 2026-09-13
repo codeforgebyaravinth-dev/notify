@@ -1,11 +1,11 @@
 ---
 title: 'Setup the Subscription'
-description: "Integrate and render the Novu Subscription component in your React app to let users manage notification channel and workflow preferences."
+description: "Integrate and render the Notify Subscription component in your React app to let users manage notification channel and workflow preferences."
 ---
 
 
 <Note>
-  Subscription is avialable from v3.12.0 for the `@novu/nextjs`, `@novu/react` and `@novu/js` packages.
+  Subscription is avialable from v3.12.0 for the `@notify/nextjs`, `@notify/react` and `@notify/js` packages.
 </Note>
 
 This quickstart shows how to render the subscription UI in your app. The subscription UI lets users subscribe to topics, define conditions, and manage how they receive notifications.
@@ -14,34 +14,34 @@ This quickstart shows how to render the subscription UI in your app. The subscri
   To learn how to render custom UI for the Subscription preferences, refer to the [Headless hooks documentation](/platform/subscription/headless-hooks).
 </Note>
 
-The [`<Subscription />`](/platform/subscription/quickstart) component is designed to work within an existing Novu environment and uses the same provider and session context as the Inbox component.
+The [`<Subscription />`](/platform/subscription/quickstart) component is designed to work within an existing Notify environment and uses the same provider and session context as the Inbox component.
 
 <Steps>
   <Step>
     ### Create a topic
 
-    Subscriptions are managed at the topic level. You can create a topic manually in the Novu Dashboard or via the API.
+    Subscriptions are managed at the topic level. You can create a topic manually in the Notify Dashboard or via the API.
     
-    However, you don't have to create it beforehand. If the topic key you provide to the component does not exist, Novu will automatically create it for you.
+    However, you don't have to create it beforehand. If the topic key you provide to the component does not exist, Notify will automatically create it for you.
 
     Topics can represent any category of notifications. To learn more, see the [Topics documentation](/platform/concepts/topics).
   </Step>
 
   <Step>
-    ### Install `@novu/nextjs`
+    ### Install `@notify/nextjs`
 
-    Ensure you have the latest version of the `@novu/nextjs` package installed in your project.
+    Ensure you have the latest version of the `@notify/nextjs` package installed in your project.
 
     ```bash
-    npm install @novu/nextjs
+    npm install @notify/nextjs
     ```
 
   </Step>
 
   <Step>
-    ### Initialize the Novu client
+    ### Initialize the Notify client
 
-    Wrap your app or the specific section where the subscription component would live with the `<NovuProvider>`. Configure the provider with your `applicationIdentifier` and the current user's `subscriberId`.
+    Wrap your app or the specific section where the subscription component would live with the `<NotifyProvider>`. Configure the provider with your `applicationIdentifier` and the current user's `subscriberId`.
 
     ```tsx
 
@@ -52,9 +52,9 @@ The [`<Subscription />`](/platform/subscription/quickstart) component is designe
 
     function App() {
       return (
-        <NovuProvider {...NOVU_CONFIG}>
+        <NotifyProvider {...NOVU_CONFIG}>
           {/* Application content */}
-        </NovuProvider>
+        </NotifyProvider>
       );
     }
     ```
@@ -76,12 +76,12 @@ The [`<Subscription />`](/platform/subscription/quickstart) component is designe
 
     function App() {
       return (
-        <NovuProvider {...NOVU_CONFIG}>
+        <NotifyProvider {...NOVU_CONFIG}>
           <Subscription
             topicKey="project-123"
             identifier="project-updates"
           />
-        </NovuProvider>
+        </NotifyProvider>
       );
     }
     ```
@@ -93,7 +93,7 @@ The [`<Subscription />`](/platform/subscription/quickstart) component is designe
 
 <Columns cols={2}>
   <Card title="Manage topic subscriptions" icon="list-checks" href="/platform/subscription/manage-topic-subscriptions">
-    Create subscriptions via API, @novu/js, or @novu/react, including payload-based JSON Logic conditions.
+    Create subscriptions via API, @notify/js, or @notify/react, including payload-based JSON Logic conditions.
   </Card>
   <Card title="Customize the UI" icon="blocks" href="/platform/subscription/customize-and-configure">
     Customize and configure the Subscription component appearance and behavior.

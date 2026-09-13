@@ -1,5 +1,5 @@
-import { SmsProviderIdEnum } from '@novu/shared';
-import { ChannelTypeEnum, ISendMessageSuccessResponse, ISmsOptions, ISmsProvider } from '@novu/stateless';
+import { SmsProviderIdEnum } from '@notify/shared';
+import { ChannelTypeEnum, ISendMessageSuccessResponse, ISmsOptions, ISmsProvider } from '@notify/stateless';
 import { Auth } from '@vonage/auth';
 import { Vonage } from '@vonage/server-sdk';
 import { BaseProvider, CasingEnum } from '../../../base.provider';

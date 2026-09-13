@@ -1,8 +1,8 @@
-import { Novu } from '@novu/api';
-import { SubscriberResponseDto } from '@novu/api/models/components';
-import { NotificationTemplateEntity } from '@novu/dal';
-import { StepTypeEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { Novu } from '@notify/api';
+import { SubscriberResponseDto } from '@notify/api/models/components';
+import { NotificationTemplateEntity } from '@notify/dal';
+import { StepTypeEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { randomBytes } from 'crypto';
 import { expectSdkExceptionGeneric, initNovuClassSdk } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';

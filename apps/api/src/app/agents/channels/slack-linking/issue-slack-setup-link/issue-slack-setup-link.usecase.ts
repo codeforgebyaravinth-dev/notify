@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
-import { AgentIntegrationRepository, AgentRepository, IntegrationRepository } from '@novu/dal';
-import { ChatProviderIdEnum } from '@novu/shared';
+import { AgentIntegrationRepository, AgentRepository, IntegrationRepository } from '@notify/dal';
+import { ChatProviderIdEnum } from '@notify/shared';
 
 import { resolveDashboardBaseUrl } from '../../../../shared/helpers';
 import { TelegramMobileLinkTokenService } from '../../../../telegram-linking/telegram-mobile-link-token.service';

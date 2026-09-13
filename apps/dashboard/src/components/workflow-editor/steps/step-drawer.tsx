@@ -1,4 +1,4 @@
-import { StepTypeEnum } from '@novu/shared';
+import { StepTypeEnum } from '@notify/shared';
 import { motion } from 'motion/react';
 import { useCallback, useId } from 'react';
 import { useNavigate } from 'react-router-dom';

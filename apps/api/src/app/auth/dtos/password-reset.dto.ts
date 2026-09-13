@@ -1,4 +1,4 @@
-import { passwordConstraints } from '@novu/shared';
+import { passwordConstraints } from '@notify/shared';
 import { IsDefined, IsEmail, IsUUID, Matches, MaxLength, MinLength } from 'class-validator';
 
 export class PasswordResetBodyDto {

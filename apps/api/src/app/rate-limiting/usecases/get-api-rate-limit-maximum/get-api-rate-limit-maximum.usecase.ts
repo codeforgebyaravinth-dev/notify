@@ -5,8 +5,8 @@ import {
   Instrument,
   InstrumentUsecase,
   PinoLogger,
-} from '@novu/application-generic';
-import { CommunityOrganizationRepository, EnvironmentRepository } from '@novu/dal';
+} from '@notify/application-generic';
+import { CommunityOrganizationRepository, EnvironmentRepository } from '@notify/dal';
 import {
   ApiRateLimitCategoryEnum,
   ApiRateLimitCategoryToFeatureName,
@@ -14,7 +14,7 @@ import {
   ApiServiceLevelEnum,
   getFeatureForTierAsNumber,
   IApiRateLimitServiceMaximum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { GetApiRateLimitMaximumCommand } from './get-api-rate-limit-maximum.command';
 import { CUSTOM_API_SERVICE_LEVEL, GetApiRateLimitMaximumDto } from './get-api-rate-limit-maximum.dto';
 

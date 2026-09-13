@@ -1,4 +1,4 @@
-import { IEnvironment, StepTypeEnum } from '@novu/shared';
+import { IEnvironment, StepTypeEnum } from '@notify/shared';
 import { delV2, getV2 } from './api.client';
 
 export const getStepResolversCount = async ({

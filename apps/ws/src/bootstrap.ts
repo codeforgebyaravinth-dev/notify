@@ -1,6 +1,6 @@
 import './instrument';
 import { NestFactory } from '@nestjs/core';
-import { BullMqService, getErrorInterceptor, Logger } from '@novu/application-generic';
+import { BullMqService, getErrorInterceptor, Logger } from '@notify/application-generic';
 import helmet from 'helmet';
 import { AppModule } from './app.module';
 import { CONTEXT_PATH, validateEnv } from './config';

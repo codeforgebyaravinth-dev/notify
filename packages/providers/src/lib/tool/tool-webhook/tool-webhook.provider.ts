@@ -1,11 +1,11 @@
 import crypto from 'node:crypto';
-import { ToolProviderIdEnum } from '@novu/shared';
-import { safeOutboundJsonRequest } from '@novu/shared/utils/safe-outbound-http';
+import { ToolProviderIdEnum } from '@notify/shared';
+import { safeOutboundJsonRequest } from '@notify/shared/utils/safe-outbound-http';
 import {
   assertSafeOutboundUrl,
   normalizeOutboundHttpUrl,
   SsrfBlockedError,
-} from '@novu/shared/utils/ssrf-url-validation';
+} from '@notify/shared/utils/ssrf-url-validation';
 import {
   ChannelTypeEnum,
   ENDPOINT_TYPES,
@@ -14,7 +14,7 @@ import {
   IToolProvider,
   isChannelDataOfType,
   ToolWebhookData,
-} from '@novu/stateless';
+} from '@notify/stateless';
 import { deepMerge } from '../../../utils/deepmerge.utils';
 import { WithPassthrough } from '../../../utils/types';
 

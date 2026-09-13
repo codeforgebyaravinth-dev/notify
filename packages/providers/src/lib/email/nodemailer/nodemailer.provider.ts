@@ -1,5 +1,5 @@
-import { EmailProviderIdEnum } from '@novu/shared';
-import { resolveSafeSmtpPinnedTarget, SmtpOutboundTlsOptions } from '@novu/shared/utils/validate-smtp-outbound-target';
+import { EmailProviderIdEnum } from '@notify/shared';
+import { resolveSafeSmtpPinnedTarget, SmtpOutboundTlsOptions } from '@notify/shared/utils/validate-smtp-outbound-target';
 import {
   ChannelTypeEnum,
   CheckIntegrationResponseEnum,
@@ -7,7 +7,7 @@ import {
   IEmailOptions,
   IEmailProvider,
   ISendMessageSuccessResponse,
-} from '@novu/stateless';
+} from '@notify/stateless';
 import nodemailer, { SendMailOptions, Transporter } from 'nodemailer';
 import DKIM from 'nodemailer/lib/dkim';
 import SMTPTransport from 'nodemailer/lib/smtp-transport';

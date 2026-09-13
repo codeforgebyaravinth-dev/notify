@@ -5,7 +5,7 @@ import type {
   Schedule,
   SeverityLevelEnum,
   TagsFilter,
-} from '@novu/shared';
+} from '@notify/shared';
 import type { RulesLogic } from 'json-logic-js';
 
 export type NotificationFilter = {

@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { StepFilterDto } from '@novu/application-generic';
+import { StepFilterDto } from '@notify/application-generic';
 import {
   DaysEnum,
   DigestTypeEnum,
@@ -16,7 +16,7 @@ import {
   SeverityLevelEnum,
   StepTypeEnum,
   TriggerTypeEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { IsArray, IsEnum, IsNumber, IsOptional, IsString } from 'class-validator';
 
 export class DigestTimedConfigDto {

@@ -16,8 +16,8 @@ import {
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiExcludeController, ApiOperation, ApiQuery } from '@nestjs/swagger';
-import { AnalyticsService } from '@novu/application-generic';
-import { BaseRepository, MessageEntity } from '@novu/dal';
+import { AnalyticsService } from '@notify/application-generic';
+import { BaseRepository, MessageEntity } from '@notify/dal';
 import {
   ButtonTypeEnum,
   IPreferenceChannels,
@@ -26,7 +26,7 @@ import {
   PreferenceLevelEnum,
   TriggerTypeEnum,
   WorkflowCriticalityEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { UpdatePreferencesCommand } from '../inbox/usecases/update-preferences/update-preferences.command';
 import { UpdatePreferences } from '../inbox/usecases/update-preferences/update-preferences.usecase';
 import { ExcludeFromIdempotency } from '../shared/framework/exclude-from-idempotency';

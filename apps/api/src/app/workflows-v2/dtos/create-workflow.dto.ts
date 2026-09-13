@@ -12,14 +12,14 @@ import {
   ThrottleControlDto,
   ToolControlDto,
   WorkflowCommonsFields,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   SeverityLevelEnum,
   SLUG_IDENTIFIER_REGEX,
   StepTypeEnum,
   slugIdentifierFormatMessage,
   WorkflowCreationSourceEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { Type } from 'class-transformer';
 import { IsArray, IsEnum, IsOptional, IsString, Matches, ValidateNested } from 'class-validator';
 import {

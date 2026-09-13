@@ -1,4 +1,4 @@
-import type { GetSubscriptionDto } from '@novu/shared';
+import type { GetSubscriptionDto } from '@notify/shared';
 import { useQuery } from '@tanstack/react-query';
 import { differenceInDays, isSameDay } from 'date-fns';
 import { useMemo } from 'react';

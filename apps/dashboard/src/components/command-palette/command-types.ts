@@ -1,4 +1,4 @@
-import type { StepResponseDto, WorkflowResponseDto } from '@novu/shared';
+import type { StepResponseDto, WorkflowResponseDto } from '@notify/shared';
 import { ReactNode } from 'react';
 
 export type CommandCategory =

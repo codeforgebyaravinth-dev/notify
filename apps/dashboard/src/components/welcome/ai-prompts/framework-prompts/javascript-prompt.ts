@@ -1,6 +1,6 @@
 import { PromptConfig, replaceConfigVariables } from './types';
 
-const KITCHEN_SINK_INBOX_SNIPPET = `import { NovuUI } from '@novu/js/ui';
+const KITCHEN_SINK_INBOX_SNIPPET = `import { NovuUI } from '@notify/js/ui';
 
 const novu = new NovuUI({
   options: {
@@ -72,19 +72,19 @@ Potential common places where the inbox could be integrated in the UI:
 ## Implementation Checklist
 
 ### Step 1: Package Installation
-**Objective**: Install the required @novu/js package using the project's package manager
+**Objective**: Install the required @notify/js package using the project's package manager
 
 **Actions**:
 1. Detect the project's package manager (pnpm, yarn, npm, bun)
-2. Install @novu/js using the appropriate command:
+2. Install @notify/js using the appropriate command:
 \`\`\`bash
-npm install @novu/js
+npm install @notify/js
 # or
-yarn add @novu/js
+yarn add @notify/js
 # or
-pnpm add @novu/js
+pnpm add @notify/js
 # or
-bun add @novu/js
+bun add @notify/js
 \`\`\`
 
 **Verification**:
@@ -119,7 +119,7 @@ NOVU_SUBSCRIBER_ID=YOUR_SUBSCRIBER_ID
 4. Manage DOM ready state
 
 \`\`\`javascript
-import { Novu } from '@novu/js';
+import { Novu } from '@notify/js';
 
 class NovuManager {
   constructor() {

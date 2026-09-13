@@ -7,9 +7,9 @@ import {
   LogDecorator,
   SelectIntegration,
   SelectIntegrationCommand,
-} from '@novu/application-generic';
-import { EnvironmentRepository } from '@novu/dal';
-import { ChannelTypeEnum, InAppProviderIdEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { EnvironmentRepository } from '@notify/dal';
+import { ChannelTypeEnum, InAppProviderIdEnum } from '@notify/shared';
 import { AuthService } from '../../../auth/services/auth.service';
 import { isHmacValidForAnyKey } from '../../../shared/helpers/is-valid-hmac';
 

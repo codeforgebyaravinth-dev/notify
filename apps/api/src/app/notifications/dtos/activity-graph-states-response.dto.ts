@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { ChannelTypeEnum } from '@novu/shared';
+import { ChannelTypeEnum } from '@notify/shared';
 
 export class ActivityGraphStatesResponse {
   @ApiProperty()

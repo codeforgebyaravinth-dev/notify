@@ -1,8 +1,8 @@
 import { promises as dnsPromises, type MxRecord } from 'node:dns';
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { PinoLogger } from '@novu/application-generic';
-import { DomainRepository } from '@novu/dal';
-import { DomainStatusEnum } from '@novu/shared';
+import { PinoLogger } from '@notify/application-generic';
+import { DomainRepository } from '@notify/dal';
+import { DomainStatusEnum } from '@notify/shared';
 
 import { DomainResponseDto } from '../../dtos/domain-response.dto';
 import { toDomainResponse } from '../../mappers/domain-response.mapper';

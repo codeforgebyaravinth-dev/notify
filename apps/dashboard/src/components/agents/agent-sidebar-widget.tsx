@@ -1,4 +1,4 @@
-import { AGENT_NAME_MAX_LENGTH, MAX_DESCRIPTION_LENGTH, PermissionsEnum } from '@novu/shared';
+import { AGENT_NAME_MAX_LENGTH, MAX_DESCRIPTION_LENGTH, PermissionsEnum } from '@notify/shared';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { formatDistanceToNow } from 'date-fns';
 import { AnimatePresence, motion } from 'motion/react';

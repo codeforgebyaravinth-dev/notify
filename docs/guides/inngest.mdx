@@ -1,10 +1,10 @@
 ---
 title: 'Inngest'
-description: "Integrate Inngest with Novu to trigger notification workflows from background jobs and durable functions. Covers setup, event sending, and best practices."
+description: "Integrate Inngest with Notify to trigger notification workflows from background jobs and durable functions. Covers setup, event sending, and best practices."
 ---
 
 
-## Why Use Novu with Inngest?
+## Why Use Notify with Inngest?
 
 By combining these tools, you can:
 - **Trigger Smart Notifications**: Send notifications across multiple channels (email, SMS, push, in-app) based on complex event triggers
@@ -15,8 +15,8 @@ By combining these tools, you can:
 ## What You'll Learn
 
 This guide teaches you how to:
-- Configure Novu and Inngest in your project
-- Manage notification subscribers via Novu's API
+- Configure Notify and Inngest in your project
+- Manage notification subscribers via Notify's API
 - Create event-driven notification workflows with Inngest
 - Use dynamic data to personalize your notifications
 
@@ -28,9 +28,9 @@ This guide teaches you how to:
 
 <Steps>
   <Step>
-    Install Novu's SDK in our project:
+    Install Notify's SDK in our project:
     ```bash
-    npm i @novu/api
+    npm i @notify/api
     ```
   </Step>
 
@@ -41,14 +41,14 @@ This guide teaches you how to:
     </Note>
 
     
-    Import Novu's SDK and provide the credentials to initialize the Novu instance.
+    Import Notify's SDK and provide the credentials to initialize the Notify instance.
     
     <Tabs>
       <Tab title="Node.js">
     ```typescript
-    import { Novu } from '@novu/api';
+    import { Notify } from '@notify/api';
 
-    const novu = new Novu({
+    const notify = new Notify({
       secretKey: process.env.NOVU_SECRET_KEY,
     });
     ```
@@ -56,9 +56,9 @@ This guide teaches you how to:
       <Tab title="Python">
     ```python
     import os
-    from novu_py import Novu
+    from novu_py import Notify
 
-    novu = Novu(secret_key=os.getenv("NOVU_SECRET_KEY", ""))
+    notify = Notify(secret_key=os.getenv("NOVU_SECRET_KEY", ""))
     ```
       </Tab>
       <Tab title="Go">
@@ -68,37 +68,37 @@ This guide teaches you how to:
         "os"
     )
 
-    novu := novugo.New(novugo.WithSecurity(os.Getenv("NOVU_SECRET_KEY")))
+    notify := novugo.New(novugo.WithSecurity(os.Getenv("NOVU_SECRET_KEY")))
     ```
       </Tab>
       <Tab title="PHP">
     ```php
-    use novu;
+    use notify;
 
-    $novu = novu\Novu::builder()
+    $notify = notify\Notify::builder()
         ->setSecurity(getenv('NOVU_SECRET_KEY'))
         ->build();
     ```
       </Tab>
       <Tab title=".NET">
     ```csharp
-    using Novu;
+    using Notify;
 
-    var novu = new NovuSDK(secretKey: Environment.GetEnvironmentVariable("NOVU_SECRET_KEY")!);
+    var notify = new NovuSDK(secretKey: Environment.GetEnvironmentVariable("NOVU_SECRET_KEY")!);
     ```
       </Tab>
       <Tab title="Java">
     ```java
-    import co.novu.Novu;
+    import co.novu.Notify;
 
-    Novu novu = Novu.builder()
+    Notify novu = Notify.builder()
         .secretKey(System.getenv("NOVU_SECRET_KEY"))
         .build();
     ```
       </Tab>
     </Tabs>
     
-    For the sake of this guide, we will create a new dedicated functions for 2 common Novu actions:
+    For the sake of this guide, we will create a new dedicated functions for 2 common Notify actions:
     
     - Trigger Notification Workflow
     - Add New Subscriber
@@ -107,33 +107,33 @@ This guide teaches you how to:
 
 ## Trigger Notification Workflow from an Inngest function
 
-You can trigger Novu notification workflows directly from your Ingest function. This allows you to send notifications based on events or completions within your background jobs.
+You can trigger Notify notification workflows directly from your Ingest function. This allows you to send notifications based on events or completions within your background jobs.
 
-To trigger a Novu workflow, you'll use the Novu Node.js SDK within your Inngest's `createFunction` method.
+To trigger a Notify workflow, you'll use the Notify Node.js SDK within your Inngest's `createFunction` method.
 
 ### Core Requirements
 
-When calling Novu's `trigger` method, you must provide the following information:
+When calling Notify's `trigger` method, you must provide the following information:
 
 1. `workflowId` **(string):** This identifies the specific notification workflow you want to execute.
-    - **Note:** Ensure this workflow ID corresponds to an existing, active workflow in your Novu dashboard.
+    - **Note:** Ensure this workflow ID corresponds to an existing, active workflow in your Notify dashboard.
 2. `to` **(object):** This object specifies the recipient of the notification. At a minimum, it requires:
     - `subscriberId` **(string):** A unique identifier for the notification recipient within your system (e.g., a user ID).
     
-    **Note:** If a subscriber with this `subscriberId` doesn't already exist in Novu, Novu will automatically create one when the workflow is triggered. You can also pass other identifiers like `email`, `phone`, etc., within the `to` object, depending on your workflow steps.
+    **Note:** If a subscriber with this `subscriberId` doesn't already exist in Notify, Notify will automatically create one when the workflow is triggered. You can also pass other identifiers like `email`, `phone`, etc., within the `to` object, depending on your workflow steps.
     
 
 ### Basic Trigger Example
 
-Here's a simple Inngest function that triggers a Novu workflow when the function is being invoked. It assumes the function invoke receives a `userId` and `email` in its payload.
+Here's a simple Inngest function that triggers a Notify workflow when the function is being invoked. It assumes the function invoke receives a `userId` and `email` in its payload.
 
 <Tabs>
   <Tab title="Node.js">
 ```typescript
 import { inngest } from "./client";
-import { Novu } from "@novu/api";
+import { Notify } from "@notify/api";
 
-const novu = new Novu({ secretKey: process.env.NOVU_SECRET_KEY });
+const notify = new Notify({ secretKey: process.env.NOVU_SECRET_KEY });
 
 export const sendNotification = inngest.createFunction(
   { id: "send-notification" },
@@ -159,9 +159,9 @@ export const sendNotification = inngest.createFunction(
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="welcome-email",
         to={"subscriber_id": user_id, "email": email},
@@ -236,7 +236,7 @@ Often, you'll want your notifications to include dynamic data related to the eve
 
 This is done using the `payload` property in the `novu.trigger` call.
 
-The `payload` is an object containing key-value pairs that you can reference within your Novu notification templates using Handlebars syntax (e.g., `{{ name }}`, `{{ order.id }}`).
+The `payload` is an object containing key-value pairs that you can reference within your Notify notification templates using Handlebars syntax (e.g., `{{ name }}`, `{{ order.id }}`).
 
 **Use Case Example:**
 
@@ -249,15 +249,15 @@ To achieve this, you would pass the `userName` and `functionName` in the `payloa
 
 ### Trigger Example with Payload
 
-Let's modify the previous function to accept more data (like a user's `name`) in its own payload and pass relevant parts to the Novu `trigger` payload.
+Let's modify the previous function to accept more data (like a user's `name`) in its own payload and pass relevant parts to the Notify `trigger` payload.
 
 <Tabs>
   <Tab title="Node.js">
 ```typescript
 import { inngest } from "./client";
-import { Novu } from "@novu/api";
+import { Notify } from "@notify/api";
 
-const novu = new Novu({ secretKey: process.env.NOVU_SECRET_KEY });
+const notify = new Notify({ secretKey: process.env.NOVU_SECRET_KEY });
 
 export const sendNotification = inngest.createFunction(
   { id: "send-notification" },
@@ -288,9 +288,9 @@ export const sendNotification = inngest.createFunction(
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="inbox-test",
         to={"subscriber_id": user_id, "email": email},
@@ -378,37 +378,37 @@ curl -X POST 'https://api.novu.co/v1/events/trigger' \
   </Tab>
 </Tabs>
 
-## Add a New Subscriber to Novu
+## Add a New Subscriber to Notify
 
-Before sending notifications, Novu needs to know *who* to notify. That's where subscribers come in. A **subscriber** in Novu represents a user (or entity) that can receive notifications through one or more channels (in-app, email, SMS, etc.).
+Before sending notifications, Notify needs to know *who* to notify. That's where subscribers come in. A **subscriber** in Notify represents a user (or entity) that can receive notifications through one or more channels (in-app, email, SMS, etc.).
 
-You can create a new subscriber programmatically from a Inngest's task using Novu's SDK.
+You can create a new subscriber programmatically from a Inngest's task using Notify's SDK.
 
 ---
 
 ### When Should You Create Subscribers?
 
-Create or update a subscriber in Novu when:
+Create or update a subscriber in Notify when:
 
 - A new user signs up or is added to your system
 - A user becomes eligible to receive notifications
 - You want to ensure subscriber metadata (name, phone, etc.) is up-to-date
 
 <Note>
-  If you trigger a workflow with a `subscriberId` that doesn't exist, Novu will auto-create the subscriber. However, doing it explicitly ensures full control over subscriber data.
+  If you trigger a workflow with a `subscriberId` that doesn't exist, Notify will auto-create the subscriber. However, doing it explicitly ensures full control over subscriber data.
 </Note>
 
 ### Create a Subscriber in a Task
 
-Below is a task that creates a Novu subscriber using a Inngest task. It also supports optional fields like `phone` and `avatar`.
+Below is a task that creates a Notify subscriber using a Inngest task. It also supports optional fields like `phone` and `avatar`.
 
 <Tabs>
   <Tab title="Node.js">
 ```typescript
 import { inngest } from "./client";
-import { Novu } from "@novu/api";
+import { Notify } from "@notify/api";
 
-const novu = new Novu({ secretKey: process.env.NOVU_SECRET_KEY });
+const notify = new Notify({ secretKey: process.env.NOVU_SECRET_KEY });
 
 export const createSubscriber = inngest.createFunction(
   { id: "create-subscriber" },
@@ -437,9 +437,9 @@ export const createSubscriber = inngest.createFunction(
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.subscribers.create(
         create_subscriber_request_dto=novu_py.CreateSubscriberRequestDto(
             subscriber_id=user_id,
@@ -541,12 +541,12 @@ This example assumes:
 1. You have an event named `video/uploaded` that is being sent to Inngest when a user uploads a video.
 2. This event's `data` payload includes at least `videoUrl`, `videoId`, `userId`, `email`, and `userName`.
 3. You have external services/functions mocked or implemented: `deepgram.transcribe`, `llm.createCompletion`, `createSummaryPrompt`, and `db.videoSummaries.upsert`.
-4. You have a Novu account, API Key (`NOVU_SECRET_KEY` environment variable), and a Novu workflow created with the ID `video-processed-notification`. 
+4. You have a Notify account, API Key (`NOVU_SECRET_KEY` environment variable), and a Notify workflow created with the ID `video-processed-notification`. 
 This workflow should expect variables like `userName`, `videoId`, and potentially `summarySnippet` in its payload.
 
 ```typescript
 import { Inngest } from "inngest";
-import { Novu } from "@novu/api";
+import { Notify } from "@notify/api";
 
 // --- Mock/Placeholder External Services ---
 // Replace these with your actual implementations
@@ -588,9 +588,9 @@ const db = {
 export const inngest = new Inngest({ id: "video-processing-app" });
 // --- End Inngest Client Setup ---
 
-// --- Novu Client Setup ---
-const novu = new Novu({ secretKey: process.env.NOVU_SECRET_KEY });
-// --- End Novu Client Setup ---
+// --- Notify Client Setup ---
+const notify = new Notify({ secretKey: process.env.NOVU_SECRET_KEY });
+// --- End Notify Client Setup ---
 
 // --- Combined Inngest Function ---
 export const processVideoAndNotify = inngest.createFunction(
@@ -659,7 +659,7 @@ export const processVideoAndNotify = inngest.createFunction(
       }
     });
 
-    // --- Step 4: Send Completion Notification via Novu ---
+    // --- Step 4: Send Completion Notification via Notify ---
     // This step runs only after the previous steps have succeeded.
     await step.run("send-completion-notification", async () => {
       if (!novuApiKey) {
@@ -667,7 +667,7 @@ export const processVideoAndNotify = inngest.createFunction(
         return { skipped: true, reason: "NOVU_SECRET_KEY not set" };
       }
 
-      console.log(`Attempting to send Novu notification for videoId: ${videoId} to user: ${userId}`);
+      console.log(`Attempting to send Notify notification for videoId: ${videoId} to user: ${userId}`);
 
       const novuPayload = {
         userName: userName,
@@ -682,15 +682,15 @@ export const processVideoAndNotify = inngest.createFunction(
           payload: novuPayload,
         });
 
-        console.log(`Novu workflow 'video-processed-notification' triggered successfully for videoId: ${videoId}`, triggerResult);
+        console.log(`Notify workflow 'video-processed-notification' triggered successfully for videoId: ${videoId}`, triggerResult);
         return { success: true, novuPayload: novuPayload, triggerResult };
 
       } catch (error: unknown) {
-        const errorMessage = error instanceof Error ? error.message : 'Unknown error triggering Novu';
-        console.error(`Failed to trigger Novu workflow for videoId: ${videoId}: ${errorMessage}`, error);
+        const errorMessage = error instanceof Error ? error.message : 'Unknown error triggering Notify';
+        console.error(`Failed to trigger Notify workflow for videoId: ${videoId}: ${errorMessage}`, error);
         // Decide if notification failure should cause the step to fail and retry
         // For notifications, often you might want to log the error but not fail the whole function
-        // throw new Error(`Novu trigger failed: ${errorMessage}`); // Uncomment to make it retry
+        // throw new Error(`Notify trigger failed: ${errorMessage}`); // Uncomment to make it retry
          return { success: false, error: errorMessage }; // Log and continue
       }
     });
@@ -739,7 +739,7 @@ handleVideoUpload({
 */
 ```
 
-The Novu trigger call inside the implementation example maps to these SDK equivalents:
+The Notify trigger call inside the implementation example maps to these SDK equivalents:
 
 <Tabs>
   <Tab title="Node.js">
@@ -784,7 +784,7 @@ _, err := s.Trigger(ctx, components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-$novu->trigger(triggerEventRequestDto: new Components\TriggerEventRequestDto(
+$notify->trigger(triggerEventRequestDto: new Components\TriggerEventRequestDto(
     workflowId: 'video-processed-notification',
     to: new Components\SubscriberPayloadDto(subscriberId: $userId, email: $email),
     payload: [
@@ -834,7 +834,7 @@ curl -X POST 'https://api.novu.co/v1/events/trigger' \
 
 ### Template Usage Example
 
-Once you've added custom fields (like `firstName`, `userName`, or `phone`) to a subscriber, you can use them in Novu templates using Handlebars:
+Once you've added custom fields (like `firstName`, `userName`, or `phone`) to a subscriber, you can use them in Notify templates using Handlebars:
 
 - Hi `{{subsciber.firstName}}`, welcome!
 - We'll reach you at `{{subsciber.phone}}` if needed.
@@ -844,7 +844,7 @@ Once you've added custom fields (like `firstName`, `userName`, or `phone`) to a 
 
 ### Best Practices
 
-- Store your Novu `subscriberId` as part of your user model - so you always have a reference.
+- Store your Notify `subscriberId` as part of your user model - so you always have a reference.
 - Create/update subscribers proactively when user data changes (e.g., phone number updates).
 - Use `data` to store additional info like roles, tags for more personalized notifications.
 

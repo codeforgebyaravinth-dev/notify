@@ -1,4 +1,4 @@
-import { EnvironmentTypeEnum, LayoutResponseDto, PermissionsEnum, ResourceOriginEnum } from '@novu/shared';
+import { EnvironmentTypeEnum, LayoutResponseDto, PermissionsEnum, ResourceOriginEnum } from '@notify/shared';
 import { ComponentProps, useState } from 'react';
 import { RiDeleteBin2Line, RiFileCopyLine, RiLayout5Line, RiMore2Fill } from 'react-icons/ri';
 import { useNavigate } from 'react-router-dom';

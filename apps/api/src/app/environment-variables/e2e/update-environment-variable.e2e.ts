@@ -1,7 +1,7 @@
-import { Novu } from '@novu/api';
-import { EnvironmentRepository, EnvironmentVariableRepository } from '@novu/dal';
-import { SECRET_MASK } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { Novu } from '@notify/api';
+import { EnvironmentRepository, EnvironmentVariableRepository } from '@notify/dal';
+import { SECRET_MASK } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { expectSdkExceptionGeneric, initNovuClassSdkInternalAuth } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';
 

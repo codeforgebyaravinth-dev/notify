@@ -1,4 +1,4 @@
-import { MemberRoleEnum, PermissionsEnum } from '@novu/shared';
+import { MemberRoleEnum, PermissionsEnum } from '@notify/shared';
 import { AnimatePresence, motion } from 'motion/react';
 import { useCallback, useEffect, useId, useState } from 'react';
 import {

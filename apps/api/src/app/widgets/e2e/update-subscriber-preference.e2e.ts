@@ -1,6 +1,6 @@
-import { NotificationTemplateEntity, SubscriberRepository } from '@novu/dal';
-import { ChannelTypeEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { NotificationTemplateEntity, SubscriberRepository } from '@notify/dal';
+import { ChannelTypeEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import axios from 'axios';
 import { expect } from 'chai';
 import { UpdateSubscriberPreferenceRequestDto } from '../dtos/update-subscriber-preference-request.dto';

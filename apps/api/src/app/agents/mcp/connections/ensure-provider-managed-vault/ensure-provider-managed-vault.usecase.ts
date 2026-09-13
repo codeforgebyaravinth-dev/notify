@@ -11,7 +11,7 @@ import {
   FeatureFlagsService,
   PinoLogger,
   resolveAgentRuntime,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   AgentMcpServerRepository,
   AgentRepository,
@@ -19,7 +19,7 @@ import {
   IntegrationRepository,
   McpConnectionRepository,
   SubscriberRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   AgentRuntimeProviderIdEnum,
   buildClaudePlatformVaultUrl,
@@ -28,7 +28,7 @@ import {
   McpConnectionAuthModeEnum,
   McpConnectionScopeEnum,
   McpConnectionStatusEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 
 import { EnableAgentMcpServerCommand } from '../../enablement/enable-agent-mcp-server/enable-agent-mcp-server.command';
 import { EnableAgentMcpServer } from '../../enablement/enable-agent-mcp-server/enable-agent-mcp-server.usecase';

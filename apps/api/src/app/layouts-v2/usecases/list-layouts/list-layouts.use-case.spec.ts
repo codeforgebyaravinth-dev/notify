@@ -1,5 +1,5 @@
-import { LayoutEntity, LayoutRepository } from '@novu/dal';
-import { ChannelTypeEnum, DirectionEnum, ResourceOriginEnum, ResourceTypeEnum } from '@novu/shared';
+import { LayoutEntity, LayoutRepository } from '@notify/dal';
+import { ChannelTypeEnum, DirectionEnum, ResourceOriginEnum, ResourceTypeEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { ListLayoutsCommand } from './list-layouts.command';

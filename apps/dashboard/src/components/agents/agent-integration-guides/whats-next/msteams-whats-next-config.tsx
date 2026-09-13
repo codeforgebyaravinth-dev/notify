@@ -5,7 +5,7 @@ import { MsTeamsDistribution } from './msteams-distribution';
 import type { ChannelWhatsNextConfig, WhatsNextConfigContext } from './whats-next-types';
 
 const TEAMS_ADMIN_CENTER_URL = 'https://admin.teams.microsoft.com/';
-const MSTEAMS_REACT_PACKAGE = '@novu/react';
+const MSTEAMS_REACT_PACKAGE = '@notify/react';
 
 function escapeJsxAttributeValue(value: string): string {
   return value.replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -37,12 +37,12 @@ function buildMsTeamsConnectSnippet(
 }
 
 function buildMsTeamsPrompt(integrationIdentifier: string, agentName: string, applicationIdentifier: string): string {
-  return `Add the Novu MsTeamsConnectButton from @novu/react to my app so each of my end users can connect "${agentName}" to their own Microsoft Teams.
+  return `Add the Novu MsTeamsConnectButton from @notify/react to my app so each of my end users can connect "${agentName}" to their own Microsoft Teams.
 
 Context: I'm already signed in to the Novu dashboard and the "${agentName}" MS Teams integration already exists. This is purely a frontend code integration - do NOT run the Novu CLI, the agent-onboarding flow, or keyless mode.
 
 Requirements:
-- Install @novu/react with my project's package manager.
+- Install @notify/react with my project's package manager.
 - Render <MsTeamsConnectButton /> inside a <NovuProvider> configured for the currently signed-in end user.
 - Use applicationIdentifier="${applicationIdentifier}" and integrationIdentifier="${integrationIdentifier}" with connectionMode="subscriber". Store applicationIdentifier in an environment variable rather than hardcoding it.
 - In subscriber mode each user gets their own connection, so pass the authenticated user's id as subscriberId; source it from my app's existing auth, don't hardcode it. autoLinkUser defaults to true in subscriber mode, so the per-user link is created automatically after admin consent.
@@ -114,7 +114,7 @@ export function buildMsTeamsWhatsNextConfig({
       {
         title: 'Add MS Teams connect button to your application',
         description:
-          'MsTeamsConnectButton is a pre-built UI component in the @novu/react SDK that connects an agent to a user\u2019s Microsoft Teams.',
+          'MsTeamsConnectButton is a pre-built UI component in the @notify/react SDK that connects an agent to a user\u2019s Microsoft Teams.',
         fullWidthContent: (
           <div className="pt-3">
             <CodeBlock code={connectSnippet} language="tsx" title="main.tsx" />

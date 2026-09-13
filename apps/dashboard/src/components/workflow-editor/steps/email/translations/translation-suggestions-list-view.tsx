@@ -1,4 +1,4 @@
-import { DEFAULT_LOCALE } from '@novu/shared';
+import { DEFAULT_LOCALE } from '@notify/shared';
 import React, { useImperativeHandle, useMemo, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { VariableList, VariableListRef } from '@/components/variable/variable-list';

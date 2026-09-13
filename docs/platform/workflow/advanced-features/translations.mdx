@@ -1,18 +1,18 @@
 ---
 title: 'Translations'
-description: "Translate Novu workflow step content into multiple languages with translation keys, locales, and per-subscriber locale resolution at trigger time."
+description: "Translate Notify workflow step content into multiple languages with translation keys, locales, and per-subscriber locale resolution at trigger time."
 ---
 
-Novu supports multi-language translations for workflows, allowing notifications to dynamically adapt to each of your subscriber's preferred language. You can enable, configure, and manage translations across your notification workflows from the Novu dashboard.
+Notify supports multi-language translations for workflows, allowing notifications to dynamically adapt to each of your subscriber's preferred language. You can enable, configure, and manage translations across your notification workflows from the Notify dashboard.
 
 <Note>
   The translations feature is in `beta` and available on `Team` and `Enterprise` [plans](https://novu.co/pricing).
 </Note>
 
-Each workflow can support multiple locales. Novu automatically selects the correct translation based on the subscriber’s locale.
+Each workflow can support multiple locales. Notify automatically selects the correct translation based on the subscriber’s locale.
 
 <Warning>
-  Novu currently supports locale codes in `language_REGION` format only, for example, `en_US`, `fr_FR`. Language-only locale codes such as `en` are not supported.
+  Notify currently supports locale codes in `language_REGION` format only, for example, `en_US`, `fr_FR`. Language-only locale codes such as `en` are not supported.
 </Warning>
 
 Benefits:
@@ -20,7 +20,7 @@ Benefits:
 - Customize content per workflow or layout
 - Improve communication across geographies
 
-Manage translations from the [translation page](https://dashboard.novu.co/translations) in the Novu dashboard. Set a default language and add target languages as needed.
+Manage translations from the [translation page](https://dashboard.novu.co/translations) in the Notify dashboard. Set a default language and add target languages as needed.
 
 ![Translation page](/images/platform/workflow/translations/translations-page.png)
 
@@ -61,7 +61,7 @@ Each locale supports JSON-based translation files. For example, the `en_US.json`
 ```json
 {
   "in-app": {
-    "title": "Welcome to Novu!",
+    "title": "Welcome to Notify!",
     "message": "Hi {{subscriber.firstName}}, let's get started!"
   },
   "email": {
@@ -77,7 +77,7 @@ You can update translations by editing the JSON files in the editor on the trans
 
 ## Exporting and importing translations
 
-If you prefer to create/update translations in a JSON file outside the Novu dashboard, you can do so by exporting and importing them.
+If you prefer to create/update translations in a JSON file outside the Notify dashboard, you can do so by exporting and importing them.
 
 ### How to export translations
 
@@ -97,7 +97,7 @@ If you prefer to create/update translations in a JSON file outside the Novu dash
   ![Import translations](/images/workflows/translations/import-translations.png)
 
 <Note>
-  Translation files must be named using the `language_REGION.json` format, for example, `en_US.json`, `fr_FR.json`. Novu detects the locale automatically using the file name.
+  Translation files must be named using the `language_REGION.json` format, for example, `en_US.json`, `fr_FR.json`. Notify detects the locale automatically using the file name.
 </Note>
 
 Translation changes in default locale such as `en_US` will mark other locales as *Outdated, needs update*
@@ -169,50 +169,50 @@ Translations feature in layouts works the same as in email steps. You can use `{
 
 ## Manage translations via CLI
 
-The Novu CLI can download translation files from Novu Cloud to your machine, or upload local JSON files back to your workspace. This is useful for version control, bulk edits, and CI workflows.
+The Notify CLI can download translation files from Notify Cloud to your machine, or upload local JSON files back to your workspace. This is useful for version control, bulk edits, and CI workflows.
 
-Use `npx novu` (or a globally installed `novu` binary) with your Novu secret key and API URL to pull or push translations.
+Use `npx notify` (or a globally installed `notify` binary) with your Notify secret key and API URL to pull or push translations.
 
 ### Pull translations
 
-`novu translations pull` downloads all translation files from Novu Cloud into a local directory (default: `./translations`).
+`notify translations pull` downloads all translation files from Notify Cloud into a local directory (default: `./translations`).
 
 ```bash
 # Pull to the default directory (./translations)
-npx novu translations pull -s YOUR_SECRET_KEY
+npx notify translations pull -s YOUR_SECRET_KEY
 
 # Pull to a custom directory
-npx novu translations pull -s YOUR_SECRET_KEY -d ./my-translations
+npx notify translations pull -s YOUR_SECRET_KEY -d ./my-translations
 
 # Use the EU API endpoint
-npx novu translations pull -s YOUR_SECRET_KEY -a https://eu.api.novu.co
+npx notify translations pull -s YOUR_SECRET_KEY -a https://eu.api.novu.co
 ```
 
 | Option | Description |
 | --- | --- |
-| `-s, --secret-key <key>` | Your Novu secret key (required unless set via env) |
-| `-a, --api-url <url>` | Novu API base URL (default: `https://api.novu.co`) |
+| `-s, --secret-key <key>` | Your Notify secret key (required unless set via env) |
+| `-a, --api-url <url>` | Notify API base URL (default: `https://api.novu.co`) |
 | `-d, --directory <path>` | Output directory (default: `./translations`) |
 
 ### Push translations
 
-`novu translations push` uploads translation JSON files from a local directory to Novu Cloud (default directory: `./translations`).
+`notify translations push` uploads translation JSON files from a local directory to Notify Cloud (default directory: `./translations`).
 
 ```bash
 # Push from the default directory (./translations)
-npx novu translations push -s YOUR_SECRET_KEY
+npx notify translations push -s YOUR_SECRET_KEY
 
 # Push from a custom directory
-npx novu translations push -s YOUR_SECRET_KEY -d ./my-translations
+npx notify translations push -s YOUR_SECRET_KEY -d ./my-translations
 
 # Use the EU API endpoint
-npx novu translations push -s YOUR_SECRET_KEY -a https://eu.api.novu.co
+npx notify translations push -s YOUR_SECRET_KEY -a https://eu.api.novu.co
 ```
 
 | Option | Description |
 | --- | --- |
-| `-s, --secret-key <key>` | Your Novu secret key (required unless set via env) |
-| `-a, --api-url <url>` | Novu API base URL (default: `https://api.novu.co`) |
+| `-s, --secret-key <key>` | Your Notify secret key (required unless set via env) |
+| `-a, --api-url <url>` | Notify API base URL (default: `https://api.novu.co`) |
 | `-d, --directory <path>` | Directory containing locale JSON files (default: `./translations`) |
 
 ### File layout and format
@@ -250,18 +250,18 @@ You can avoid repeating flags by setting:
 export NOVU_SECRET_KEY="your_secret_key_here"
 export NOVU_API_URL="https://api.novu.co"   # or https://eu.api.novu.co for EU
 
-npx novu translations pull
-npx novu translations push
+npx notify translations pull
+npx notify translations push
 ```
 
 ### Tips
 
 - Back up or commit existing translations before running **push**, so you can recover from mistakes.
 - Validate JSON locally (for example with your editor or `jq`) before pushing.
-- Run **pull** once to confirm the on-disk layout matches what Novu expects before automating in CI.
+- Run **pull** once to confirm the on-disk layout matches what Notify expects before automating in CI.
 
 <Warning>
-  Never commit Novu secret keys. Use environment variables or your CI provider’s secrets store for `NOVU_SECRET_KEY`.
+  Never commit Notify secret keys. Use environment variables or your CI provider’s secrets store for `NOVU_SECRET_KEY`.
 </Warning>
 
 ## Best practices
@@ -270,7 +270,7 @@ npx novu translations push
 - Avoid hardcoded language in the content editor.
 - Use variables and translation keys consistently.
 - Set subscriber locale properly to deliver notifications in the correct language.
-- Ensure subscriber locales are mapped to a supported `language_REGION` format before sending them to Novu.
+- Ensure subscriber locales are mapped to a supported `language_REGION` format before sending them to Notify.
 
 ## Frequently asked questions
 
@@ -280,6 +280,6 @@ Here are some frequently asked questions about translations.
   <Accordion title="Is translation resolved when the notification is fetched, or when it is sent?">
     Translation is resolved when the channel step executes, using the subscriber's locale at that moment (not at trigger time, and not when the Inbox loads the message). For delayed or digest workflows, a locale update before the channel step runs is reflected in that notification.
 
-    Once the step has executed, the translated in-app notification content is stored with the message. Novu does not re-translate existing in-app notifications when they are fetched. Historical messages keep the locale they were created with.
+    Once the step has executed, the translated in-app notification content is stored with the message. Notify does not re-translate existing in-app notifications when they are fetched. Historical messages keep the locale they were created with.
   </Accordion>
 </AccordionGroup>

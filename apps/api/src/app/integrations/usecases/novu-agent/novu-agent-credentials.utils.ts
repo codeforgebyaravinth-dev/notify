@@ -1,4 +1,4 @@
-import { EmailProviderIdEnum, type ICredentials } from '@novu/shared';
+import { EmailProviderIdEnum, type ICredentials } from '@notify/shared';
 
 /**
  * The NovuAgent integration owns a handful of routing-control fields that the

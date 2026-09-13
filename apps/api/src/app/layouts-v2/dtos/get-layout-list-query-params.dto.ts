@@ -1,5 +1,5 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { LayoutResponseDto } from '@novu/application-generic';
+import { LayoutResponseDto } from '@notify/application-generic';
 import { IsOptional, IsString } from 'class-validator';
 import { LimitOffsetPaginationQueryDto } from '../../shared/dtos/limit-offset-pagination.dto';
 

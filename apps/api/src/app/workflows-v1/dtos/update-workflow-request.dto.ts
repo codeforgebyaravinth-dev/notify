@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { CustomDataType, IPreferenceChannels, IUpdateWorkflowDto } from '@novu/shared';
+import { CustomDataType, IPreferenceChannels, IUpdateWorkflowDto } from '@notify/shared';
 import { IsArray, IsMongoId, IsOptional, IsString, MaxLength, ValidateNested } from 'class-validator';
 import { NotificationStepDto } from '../../shared/dtos/notification-step-dto';
 import { SubscriberPreferenceChannels } from '../../shared/dtos/preference-channels';

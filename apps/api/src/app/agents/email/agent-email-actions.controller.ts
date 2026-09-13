@@ -1,6 +1,6 @@
 import { Body, Controller, Get, HttpStatus, Post, Query, Res } from '@nestjs/common';
 import { ApiExcludeController } from '@nestjs/swagger';
-import { PinoLogger } from '@novu/application-generic';
+import { PinoLogger } from '@notify/application-generic';
 import { Response } from 'express';
 import { AgentActionPreDispatchError, InboundDispatcher } from '../conversation-runtime/ingress/inbound.dispatcher';
 import { captureAgentException, captureAgentWarning } from '../shared/errors/capture-agent-sentry';

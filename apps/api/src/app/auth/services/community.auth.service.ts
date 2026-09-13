@@ -14,7 +14,7 @@ import {
   CachedResponse,
   IAuthService,
   Instrument,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 
 import {
   EnvironmentEntity,
@@ -26,7 +26,7 @@ import {
   SubscriberRepository,
   UserEntity,
   UserRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   ALL_PERMISSIONS,
   ApiAuthSchemeEnum,
@@ -36,7 +36,7 @@ import {
   MemberRoleEnum,
   normalizeEmail,
   UserSessionData,
-} from '@novu/shared';
+} from '@notify/shared';
 import { createHash } from 'crypto';
 import { CreateUserCommand } from '../../user/usecases/create-user/create-user.command';
 import { CreateUser } from '../../user/usecases/create-user/create-user.usecase';

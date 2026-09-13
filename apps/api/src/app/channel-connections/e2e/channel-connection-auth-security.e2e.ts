@@ -1,6 +1,6 @@
-import { Novu } from '@novu/api';
-import { ChannelConnectionRepository } from '@novu/dal';
-import { UserSession } from '@novu/testing';
+import { Novu } from '@notify/api';
+import { ChannelConnectionRepository } from '@notify/dal';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { createConnection, createSlackIntegration, setupChannelTests } from './helpers/channel-helpers';
 

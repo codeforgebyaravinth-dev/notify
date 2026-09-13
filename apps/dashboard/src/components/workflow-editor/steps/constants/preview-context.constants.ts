@@ -1,4 +1,4 @@
-import { StepTypeEnum } from '@novu/shared';
+import { StepTypeEnum } from '@notify/shared';
 import { IconType } from 'react-icons';
 import {
   RiCellphoneFill,

@@ -16,16 +16,16 @@ import {
   PreviewStep,
   PreviewStepCommand,
   resolveEnvironmentVariables,
-} from '@novu/application-generic';
-import { EnvironmentRepository, EnvironmentVariableRepository, JsonSchemaTypeEnum } from '@novu/dal';
-import { ContextResolved } from '@novu/framework/internal';
+} from '@notify/application-generic';
+import { EnvironmentRepository, EnvironmentVariableRepository, JsonSchemaTypeEnum } from '@notify/dal';
+import { ContextResolved } from '@notify/framework/internal';
 import {
   ChannelTypeEnum,
   EnvironmentSystemVariables,
   LAYOUT_PREVIEW_EMAIL_STEP,
   LAYOUT_PREVIEW_WORKFLOW_ID,
   ResourceOriginEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { GenerateLayoutPreviewResponseDto } from '../../dtos/generate-layout-preview-response.dto';
 import { PreviewLayoutCommand } from './preview-layout.command';
 import { enhanceBodyForPreview } from './preview-utils';

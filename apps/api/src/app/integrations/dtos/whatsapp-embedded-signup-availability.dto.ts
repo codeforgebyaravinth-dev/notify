@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { WhatsAppEmbeddedSignupUnavailableReason } from '@novu/shared';
+import { WhatsAppEmbeddedSignupUnavailableReason } from '@notify/shared';
 
 export type { WhatsAppEmbeddedSignupUnavailableReason };
 

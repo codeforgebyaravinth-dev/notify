@@ -1,7 +1,7 @@
 import { BadRequestException, ConflictException, Injectable } from '@nestjs/common';
-import { InstrumentUsecase } from '@novu/application-generic';
-import { ErrorCodesEnum, TopicRepository } from '@novu/dal';
-import { VALID_ID_REGEX } from '@novu/shared';
+import { InstrumentUsecase } from '@notify/application-generic';
+import { ErrorCodesEnum, TopicRepository } from '@notify/dal';
+import { VALID_ID_REGEX } from '@notify/shared';
 import { TopicResponseDto } from '../../dtos/topic-response.dto';
 import { mapTopicEntityToDto } from '../list-topics/map-topic-entity-to.dto';
 import { UpsertTopicCommand } from './upsert-topic.command';

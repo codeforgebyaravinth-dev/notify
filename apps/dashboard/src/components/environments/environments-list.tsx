@@ -4,7 +4,7 @@ import {
   type IEnvironment,
   PermissionsEnum,
   PROTECTED_ENVIRONMENTS,
-} from '@novu/shared';
+} from '@notify/shared';
 import { useMemo, useState } from 'react';
 import { RiDeleteBin2Line, RiInformation2Line, RiMore2Fill } from 'react-icons/ri';
 import { useEnvironment } from '@/context/environment/hooks';

@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { PinoLogger } from '@novu/application-generic';
-import { EnvironmentRepository } from '@novu/dal';
+import { PinoLogger } from '@notify/application-generic';
+import { EnvironmentRepository } from '@notify/dal';
 import { AgentEventEnum } from '../../shared/enums/agent-event.enum';
 import { captureAgentWarning } from '../../shared/errors/capture-agent-sentry';
 import { AgentConversationService } from '../conversation/agent-conversation.service';

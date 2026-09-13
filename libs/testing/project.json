@@ -1,5 +1,5 @@
 {
-  "name": "@novu/testing",
+  "name": "@notify/testing",
   "sourceRoot": "libs/testing/src",
   "projectType": "library",
   "targets": {

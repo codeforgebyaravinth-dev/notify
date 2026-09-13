@@ -1,5 +1,5 @@
-import { BaseCommand } from '@novu/application-generic';
-import { JobEntity } from '@novu/dal';
+import { BaseCommand } from '@notify/application-generic';
+import { JobEntity } from '@notify/dal';
 import { IsDefined } from 'class-validator';
 
 export class DigestEventsCommand extends BaseCommand {

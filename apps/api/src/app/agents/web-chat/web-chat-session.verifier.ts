@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import type { WebChatSession } from '@novu/chat-adapter-web';
-import type { ISubscriberJwt } from '@novu/shared';
+import type { WebChatSession } from '@notify/chat-adapter-web';
+import type { ISubscriberJwt } from '@notify/shared';
 import jwt from 'jsonwebtoken';
 import { AuthService } from '../../auth/services/auth.service';
 
 /**
  * Inbox subscriber JWT verification for web-chat POST ingress.
- * Injected into `@novu/chat-adapter-web` as `verifySession` (NV-8448);
+ * Injected into `@notify/chat-adapter-web` as `verifySession` (NV-8448);
  * NV-8442 `agentHash` joins this hook later.
  */
 @Injectable()

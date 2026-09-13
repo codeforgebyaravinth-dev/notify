@@ -14,9 +14,9 @@ describe('app-agent-langchain template', () => {
     const source = fs.readFileSync(agentFile, 'utf8');
     const activeImports = source.split('// Wire your LLM')[0] ?? source;
 
-    expect(source).toContain("from '@novu/framework/langchain'");
+    expect(source).toContain("from '@notify/framework/langchain'");
     expect(source).not.toMatch(/import\s*\{[^}]*\bagent\b[^}]*\}\s*from\s*'@novu\/framework'/);
-    expect(source).not.toContain("from '@novu/framework/ai-sdk'");
+    expect(source).not.toContain("from '@notify/framework/ai-sdk'");
     expect(source).toContain("import { tool } from '@langchain/core/tools'");
     expect(source).toContain(
       "import { searchNovuDocsIndex, searchNovuDocsInputSchema } from './tools/search-novu-docs'"

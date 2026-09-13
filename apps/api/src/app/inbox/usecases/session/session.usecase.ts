@@ -22,7 +22,7 @@ import {
   shortId,
   UpsertControlValuesCommand,
   UpsertControlValuesUseCase,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   CommunityOrganizationRepository,
   CommunityUserRepository,
@@ -35,7 +35,7 @@ import {
   NotificationTemplateRepository,
   PreferencesRepository,
   SubscriberEntity,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   ApiServiceLevelEnum,
   ChannelTypeEnum,
@@ -54,7 +54,7 @@ import {
   ResourceTypeEnum,
   Schedule,
   StepTypeEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { createHash } from 'crypto';
 import { AuthService } from '../../../auth/services/auth.service';
 import { EnvironmentResponseDto } from '../../../environments-v1/dtos/environment-response.dto';

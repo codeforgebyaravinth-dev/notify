@@ -1,4 +1,4 @@
-import { checkNotificationMatchesFilter, isSameFilter, Notification, NotificationFilter, NovuError } from '@novu/js';
+import { checkNotificationMatchesFilter, isSameFilter, Notification, NotificationFilter, NovuError } from '@notify/js';
 import { useCallback, useEffect, useState } from 'react';
 import { useDataRef } from './internal/useDataRef';
 import { useWebSocketEvent } from './internal/useWebsocketEvent';

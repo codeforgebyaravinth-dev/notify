@@ -1,4 +1,4 @@
-import { CreateLayoutDto, LayoutResponseDto } from '@novu/shared';
+import { CreateLayoutDto, LayoutResponseDto } from '@notify/shared';
 import { UseMutationOptions, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useState } from 'react';
 

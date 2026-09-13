@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { RESOURCE_LIMIT_SOURCES, type ResourceLimitSource } from '@novu/shared';
+import { RESOURCE_LIMIT_SOURCES, type ResourceLimitSource } from '@notify/shared';
 
 /**
  * Usage of a plan-limited Connect resource (agents, active channels) in the

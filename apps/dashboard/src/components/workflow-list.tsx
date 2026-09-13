@@ -1,4 +1,4 @@
-import { DirectionEnum, ListWorkflowResponse } from '@novu/shared';
+import { DirectionEnum, ListWorkflowResponse } from '@notify/shared';
 import { RiMore2Fill } from 'react-icons/ri';
 import { useSearchParams } from 'react-router-dom';
 import { Skeleton } from '@/components/primitives/skeleton';

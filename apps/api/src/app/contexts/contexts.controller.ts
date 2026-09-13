@@ -13,8 +13,8 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
-import { RequirePermissions } from '@novu/application-generic';
-import { ApiRateLimitCategoryEnum, ContextType, PermissionsEnum, UserSessionData } from '@novu/shared';
+import { RequirePermissions } from '@notify/application-generic';
+import { ApiRateLimitCategoryEnum, ContextType, PermissionsEnum, UserSessionData } from '@notify/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import { ThrottlerCategory } from '../rate-limiting/guards';

@@ -1,10 +1,10 @@
-import { Novu } from '@novu/api';
-import { NovuCore } from '@novu/api/core';
-import { triggerBulk } from '@novu/api/funcs/triggerBulk';
-import { TriggerEventRequestDto } from '@novu/api/models/components';
-import { MessageRepository, NotificationRepository, NotificationTemplateEntity, SubscriberEntity } from '@novu/dal';
-import { ChannelTypeEnum, StepTypeEnum } from '@novu/shared';
-import { SubscribersService, UserSession } from '@novu/testing';
+import { Novu } from '@notify/api';
+import { NovuCore } from '@notify/api/core';
+import { triggerBulk } from '@notify/api/funcs/triggerBulk';
+import { TriggerEventRequestDto } from '@notify/api/models/components';
+import { MessageRepository, NotificationRepository, NotificationTemplateEntity, SubscriberEntity } from '@notify/dal';
+import { ChannelTypeEnum, StepTypeEnum } from '@notify/shared';
+import { SubscribersService, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { z } from 'zod';
 import {

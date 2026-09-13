@@ -4,7 +4,7 @@ import {
   ConversationActivationReasonEnum,
   type ConversationBillingState,
   classifyActivationReason,
-} from '@novu/dal';
+} from '@notify/dal';
 import { expect } from 'chai';
 
 /**

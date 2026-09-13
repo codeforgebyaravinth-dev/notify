@@ -1,6 +1,6 @@
 const KITCHEN_SINK_INBOX_SNIPPET = `import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { NotificationCenter } from '@novu/react-native';
+import { NotificationCenter } from '@notify/react-native';
 import Config from 'react-native-config';
 
 export default function NotificationInbox() {
@@ -124,19 +124,19 @@ Potential common places where the inbox could be integrated in the UI:
 ## Implementation Checklist
 
 ### Step 1: Package Installation
-**Objective**: Install the required @novu/react-native package using the project's package manager
+**Objective**: Install the required @notify/react-native package using the project's package manager
 
 **Actions**:
 1. Detect the project's package manager (pnpm, yarn, npm, bun)
-2. Install @novu/react-native and dependencies:
+2. Install @notify/react-native and dependencies:
 \`\`\`bash
-npm install @novu/react-native react-native-config
+npm install @notify/react-native react-native-config
 # or
-yarn add @novu/react-native react-native-config
+yarn add @notify/react-native react-native-config
 # or
-pnpm add @novu/react-native react-native-config
+pnpm add @notify/react-native react-native-config
 # or
-bun add @novu/react-native react-native-config
+bun add @notify/react-native react-native-config
 \`\`\`
 
 **Verification**:
@@ -172,7 +172,7 @@ NOVU_SUBSCRIBER_ID=YOUR_SUBSCRIBER_ID
 
 \`\`\`typescript
 import React from 'react';
-import { NovuProvider } from '@novu/react-native';
+import { NovuProvider } from '@notify/react-native';
 import Config from 'react-native-config';
 
 export default function App() {

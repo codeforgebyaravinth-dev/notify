@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
-import { buildZip, createHash, encryptCredentials, PinoLogger } from '@novu/application-generic';
-import { AgentIntegrationRepository, EnvironmentRepository, IntegrationRepository } from '@novu/dal';
+import { buildZip, createHash, encryptCredentials, PinoLogger } from '@notify/application-generic';
+import { AgentIntegrationRepository, EnvironmentRepository, IntegrationRepository } from '@notify/dal';
 import axios, { AxiosError } from 'axios';
 import { buildAgentApiRootUrl } from '../../../agents/shared/util/agent-api-root-url';
 import { areHexDigestsEqual } from '../../../shared/helpers/timing-safe-equal';

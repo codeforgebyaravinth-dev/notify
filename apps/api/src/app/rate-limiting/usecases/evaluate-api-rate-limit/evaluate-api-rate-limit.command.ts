@@ -1,5 +1,5 @@
-import { BaseCommand } from '@novu/application-generic';
-import { ApiRateLimitCategoryEnum, ApiRateLimitCostEnum } from '@novu/shared';
+import { BaseCommand } from '@notify/application-generic';
+import { ApiRateLimitCategoryEnum, ApiRateLimitCostEnum } from '@notify/shared';
 import { IsBoolean, IsDefined, IsEnum, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 export class EvaluateApiRateLimitCommand extends BaseCommand {

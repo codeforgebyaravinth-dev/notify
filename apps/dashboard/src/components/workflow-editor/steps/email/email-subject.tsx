@@ -1,4 +1,4 @@
-import { EnvironmentTypeEnum } from '@novu/shared';
+import { EnvironmentTypeEnum } from '@notify/shared';
 import { useFormContext } from 'react-hook-form';
 import { FormControl, FormField, FormItem, FormMessage } from '@/components/primitives/form/form';
 import { ControlInput } from '@/components/workflow-editor/control-input';

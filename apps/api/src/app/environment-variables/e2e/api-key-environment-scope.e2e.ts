@@ -1,5 +1,5 @@
-import { EnvironmentRepository } from '@novu/dal';
-import { UserSession } from '@novu/testing';
+import { EnvironmentRepository } from '@notify/dal';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Environment Variables API key environment scope - /environment-variables #novu-v2', () => {

@@ -14,7 +14,7 @@ import type {
   SubscriptionPreference,
   TopicSubscription,
   UpdateSubscriptionArgs,
-} from '@novu/js';
+} from '@notify/js';
 
 export type {
   ChannelPreference,

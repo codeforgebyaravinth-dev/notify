@@ -1,9 +1,9 @@
 ---
 title: 'Telegram'
-description: "Use the Telegram provider in Novu for chat notifications and two-way agent conversations. Create a bot, store the token, and route messages through workflows."
+description: "Use the Telegram provider in Notify for chat notifications and two-way agent conversations. Create a bot, store the token, and route messages through workflows."
 ---
 
-The Telegram chat integration lets your application send messages to subscribers through a Telegram bot. Each subscriber connects their Telegram chat to Novu once; after that, Novu can deliver workflow notifications or agent replies to that chat.
+The Telegram chat integration lets your application send messages to subscribers through a Telegram bot. Each subscriber connects their Telegram chat to Notify once; after that, Notify can deliver workflow notifications or agent replies to that chat.
 
 <Note>
   Check out the [agents](/agents) documentation to build conversational agents on Telegram. Users message your bot in Telegram and your agent replies in the same chat.
@@ -13,11 +13,11 @@ The Telegram chat integration lets your application send messages to subscribers
 
 - A [Telegram](https://telegram.org/) account
 - Access to [@BotFather](https://t.me/botfather) to create a bot and obtain its token
-- Access to the [Novu dashboard](https://dashboard.novu.co)
+- Access to the [Notify dashboard](https://dashboard.novu.co)
 
 ## Create a Telegram bot
 
-Every Telegram integration uses one bot. Create it with BotFather before adding the provider in Novu.
+Every Telegram integration uses one bot. Create it with BotFather before adding the provider in Notify.
 
 <Steps>
   <Step title="Open BotFather">
@@ -35,19 +35,19 @@ Every Telegram integration uses one bot. Create it with BotFather before adding 
     1234567890:AAFdT8_…
     ```
 
-    Copy the full message - Novu can extract the token automatically when you paste it into the dashboard.
+    Copy the full message - Notify can extract the token automatically when you paste it into the dashboard.
   </Step>
 </Steps>
 
 <Warning>
-  Treat the bot token like a password. Store it only in Novu or on your server. Never embed it in client-side code.
+  Treat the bot token like a password. Store it only in Notify or on your server. Never embed it in client-side code.
 </Warning>
 
-## Configure Telegram in Novu
+## Configure Telegram in Notify
 
 <Steps>
   <Step title="Open the Integrations Store">
-    In the Novu dashboard, click **Integrations Store** in the sidebar.
+    In the Notify dashboard, click **Integrations Store** in the sidebar.
   </Step>
 
   <Step title="Add Telegram">
@@ -69,11 +69,11 @@ If you add Telegram to an [agent](/agents), the dashboard also walks you through
 
 ## Connect a subscriber's Telegram chat
 
-Before Novu can deliver messages, each subscriber must connect their Telegram chat.
+Before Notify can deliver messages, each subscriber must connect their Telegram chat.
 
 ### Connection link (recommended)
 
-Novu gives you a link that opens your bot in Telegram. When the subscriber taps **Start**, their chat is linked to their Novu subscriber profile.
+Notify gives you a link that opens your bot in Telegram. When the subscriber taps **Start**, their chat is linked to their Notify subscriber profile.
 
 <Note>
   The connection link flow works for any Telegram integration, whether or not it is attached to an agent. If you only need one-way workflow notifications and already know a subscriber's Telegram chat ID, you can register it with the [channel endpoints API](/api-reference/channel-endpoints/create-a-channel-endpoint) instead.
@@ -86,9 +86,9 @@ Request a connection URL from your server when the subscriber chooses to connect
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({ secretKey: '<NOVU_SECRET_KEY>' });
+const notify = new Notify({ secretKey: '<NOVU_SECRET_KEY>' });
 
 const response = await novu.integrations.linkChannelEndpoint({
   integrationIdentifier: 'telegram',
@@ -99,9 +99,9 @@ const response = await novu.integrations.linkChannelEndpoint({
   <Tab title="Python">
 ```python
 import os
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     response = novu.integrations.link_channel_endpoint(link_channel_endpoint_request_dto={
         "integration_identifier": "telegram",
         "subscriber_id": "<SUBSCRIBER_ID>",
@@ -128,10 +128,10 @@ res, err := s.Integrations.LinkChannelEndpoint(context.Background(), components.
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 $response = $sdk->integrations->linkChannelEndpoint(
     linkChannelEndpointRequestDto: new Components\LinkChannelEndpointRequestDto(
         integrationIdentifier: 'telegram',
@@ -142,8 +142,8 @@ $response = $sdk->integrations->linkChannelEndpoint(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
 var response = await sdk.Integrations.LinkChannelEndpointAsync(
@@ -155,10 +155,10 @@ var response = await sdk.Integrations.LinkChannelEndpointAsync(
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 var response = novu.integrations().linkChannelEndpoint()
     .body(LinkChannelEndpointRequestDto.builder()
         .integrationIdentifier("telegram")
@@ -182,16 +182,16 @@ curl -L -X POST 'https://api.novu.co/v1/integrations/channel-endpoints/link' \
 
 Open the returned `url` in a new tab or show it as a button in your UI. Generate a fresh link each time the subscriber starts the flow - links expire after a short time.
 
-#### From your app with `@novu/react`
+#### From your app with `@notify/react`
 
-Use `TelegramConnectButton` inside `NovuProvider`. It opens Telegram for the subscriber and confirms when the chat is connected. This works for any Telegram integration - the integration does not need to be attached to an agent.
+Use `TelegramConnectButton` inside `NotifyProvider`. It opens Telegram for the subscriber and confirms when the chat is connected. This works for any Telegram integration - the integration does not need to be attached to an agent.
 
 ```tsx
-import { NovuProvider, TelegramConnectButton } from '@novu/react';
+import { NotifyProvider, TelegramConnectButton } from '@notify/react';
 
 function ConnectTelegram() {
   return (
-    <NovuProvider subscriberId="user-123" applicationIdentifier="your-app-id">
+    <NotifyProvider subscriberId="user-123" applicationIdentifier="your-app-id">
       <TelegramConnectButton
         integrationIdentifier="telegram"
         connectLabel="Connect Telegram"
@@ -200,7 +200,7 @@ function ConnectTelegram() {
           console.log('Telegram connected');
         }}
       />
-    </NovuProvider>
+    </NotifyProvider>
   );
 }
 ```
@@ -213,7 +213,7 @@ Once subscribers have connected Telegram, add a **Chat** step to a workflow and 
 
 <Steps>
   <Step title="Add a Chat step">
-    In the Novu dashboard, open your workflow, add a step, and select **Chat** as the channel.
+    In the Notify dashboard, open your workflow, add a step, and select **Chat** as the channel.
   </Step>
 
   <Step title="Write the message body">
@@ -228,9 +228,9 @@ Once subscribers have connected Telegram, add a **Chat** step to a workflow and 
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({ secretKey: "<NOVU_SECRET_KEY>" });
+const notify = new Notify({ secretKey: "<NOVU_SECRET_KEY>" });
 
 await novu.trigger({
   workflowId: "order-shipped",
@@ -246,9 +246,9 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="order-shipped",
         to={"subscriber_id": "user-123"},
@@ -285,10 +285,10 @@ res, err := s.Trigger(context.Background(), components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 
 $sdk->trigger(
     triggerEventRequestDto: new Components\TriggerEventRequestDto(
@@ -304,8 +304,8 @@ $sdk->trigger(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
 
@@ -321,10 +321,10 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto() {
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 
 novu.trigger()
     .body(TriggerEventRequestDto.builder()
@@ -357,14 +357,14 @@ curl --location 'https://api.novu.co/v1/events/trigger' \
   </Tab>
 </Tabs>
 
-Novu finds the subscriber's linked Telegram chat, renders the message, and sends it through your bot. Verify delivery in **Activity** or in Telegram.
+Notify finds the subscriber's linked Telegram chat, renders the message, and sends it through your bot. Verify delivery in **Activity** or in Telegram.
 
 ## Using Telegram with agents
 
 Telegram is a supported [agent provider](/agents/get-started/agents-and-providers). Connect your bot to an agent so users can message the bot and get replies in the same chat - without building Telegram integrations yourself.
 
 <Card title="Build agents on Telegram" icon="bot" href="/agents">
-  Learn how Novu agents work, including managed and custom code agents.
+  Learn how Notify agents work, including managed and custom code agents.
 </Card>
 
 ### What you get
@@ -381,11 +381,11 @@ See [agent conversations](/agents/conversations#supported-platforms) for capabil
 
 <Steps>
   <Step title="Create or open an agent">
-    In the Novu dashboard, go to **Agents** and create an agent or open an existing one.
+    In the Notify dashboard, go to **Agents** and create an agent or open an existing one.
   </Step>
 
   <Step title="Add Telegram as a provider">
-    Add **Telegram** as a provider. Novu creates the integration and links it to your agent.
+    Add **Telegram** as a provider. Notify creates the integration and links it to your agent.
   </Step>
 
   <Step title="Save the bot token">
@@ -404,7 +404,7 @@ See [agent conversations](/agents/conversations#supported-platforms) for capabil
 You can also use the CLI:
 
 ```bash
-npx novu@latest connect
+npx notify@latest connect
 ```
 
 Select your agent and Telegram when prompted. The CLI guides you through bot setup, token entry, and a test message.
@@ -420,7 +420,7 @@ After a chat is connected, messages to your bot are handled by your agent. Repli
 | Use case | What happens |
 | --- | --- |
 | **Agent conversation** | The user messages your bot and your agent replies in the same chat. |
-| **Workflow notification** | You trigger a workflow with a Chat step and Novu sends a one-way message to the subscriber's linked chat. |
+| **Workflow notification** | You trigger a workflow with a Chat step and Notify sends a one-way message to the subscriber's linked chat. |
 
 Both can use the same bot and the same connected chat. Your agent can handle back-and-forth conversations while workflows send updates such as order confirmations to the same subscriber.
 

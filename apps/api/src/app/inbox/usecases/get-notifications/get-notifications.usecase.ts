@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { AnalyticsService, buildFeedKey, CachedQuery } from '@novu/application-generic';
-import { ChannelTypeEnum, MessageRepository } from '@novu/dal';
-import { normalizeTagGroups } from '@novu/shared';
+import { AnalyticsService, buildFeedKey, CachedQuery } from '@notify/application-generic';
+import { ChannelTypeEnum, MessageRepository } from '@notify/dal';
+import { normalizeTagGroups } from '@notify/shared';
 
 import { GetSubscriber } from '../../../subscribers/usecases/get-subscriber';
 import type { GetNotificationsResponseDto } from '../../dtos/get-notifications-response.dto';

@@ -1,9 +1,9 @@
 ---
 title: 'Multi-tenancy'
-description: "Learn how to implement multi-tenant notifications in Novu using contexts to isolate Inbox feeds, scope preferences, and personalize workflow content per tenant."
+description: "Learn how to implement multi-tenant notifications in Notify using contexts to isolate Inbox feeds, scope preferences, and personalize workflow content per tenant."
 ---
 
-Multi-tenancy is a common requirement for applications that serve multiple organizations, workspaces, or customers from a single Novu project. Tenants are also commonly called workspaces or organizations.
+Multi-tenancy is a common requirement for applications that serve multiple organizations, workspaces, or customers from a single Notify project. Tenants are also commonly called workspaces or organizations.
 
 Typical multi-tenancy goals include:
 
@@ -11,15 +11,15 @@ Typical multi-tenancy goals include:
 - Scoping notification preferences per tenant
 - Adjusting notification content and branding per tenant
 
-Novu supports multi-tenancy through [contexts](/platform/concepts/contexts). Use a `tenant` context to define tenant boundaries instead of duplicating subscribers, prefixing subscriber IDs, or maintaining separate workflows per tenant.
+Notify supports multi-tenancy through [contexts](/platform/concepts/contexts). Use a `tenant` context to define tenant boundaries instead of duplicating subscribers, prefixing subscriber IDs, or maintaining separate workflows per tenant.
 
 <Note>
   New to contexts? Start with [Contexts](/platform/concepts/contexts) to understand how context scoping, persistence, and Inbox filtering work.
 </Note>
 
-## How multi-tenancy works in Novu
+## How multi-tenancy works in Notify
 
-Multi-tenancy in Novu is built on top of contexts. A `tenant` context identifies which organization a notification belongs to.
+Multi-tenancy in Notify is built on top of contexts. A `tenant` context identifies which organization a notification belongs to.
 
 When you trigger a workflow with a tenant context:
 
@@ -48,7 +48,7 @@ When you initialize the Inbox with the same tenant context, the subscriber sees 
     };
     ```
 
-    Contexts are auto-created on first use. Manage them from the **Contexts** section in the Novu dashboard or through the [Contexts API](/api-reference/contexts/context-schema).
+    Contexts are auto-created on first use. Manage them from the **Contexts** section in the Notify dashboard or through the [Contexts API](/api-reference/contexts/context-schema).
   </Step>
 
   <Step title="Trigger workflows with a tenant context">
@@ -57,9 +57,9 @@ When you initialize the Inbox with the same tenant context, the subscriber sees 
     <Tabs>
       <Tab title="Node.js">
 ```ts
-import { Novu } from "@novu/api";
+import { Notify } from "@notify/api";
 
-const novu = new Novu({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
+const notify = new Notify({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
 
 await novu.trigger({
   workflowId: "invoice-paid",
@@ -81,9 +81,9 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="invoice-paid",
         to={"subscriber_id": "user-123"},
@@ -132,10 +132,10 @@ s.Trigger(context.Background(), components.TriggerEventRequestDto{
       </Tab>
       <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()
+$sdk = notify\Notify::builder()
     ->setSecurity('<YOUR_SECRET_KEY_HERE>')
     ->build();
 
@@ -159,8 +159,8 @@ $sdk->trigger(
       </Tab>
       <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new NovuSDK(secretKey: "<YOUR_SECRET_KEY_HERE>");
@@ -187,11 +187,11 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto() {
       </Tab>
       <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 import java.util.Map;
 
-Novu novu = Novu.builder()
+Notify novu = Notify.builder()
     .secretKey("<YOUR_SECRET_KEY_HERE>")
     .build();
 
@@ -243,7 +243,7 @@ curl -L -g -X POST 'https://api.novu.co/v1/events/trigger' \
     Pass the same tenant context to the Inbox so each subscriber sees only notifications for their active tenant.
 
     ```tsx
-    import { Inbox } from "@novu/react";
+    import { Inbox } from "@notify/react";
 
     function TenantInbox({ userId, tenant }) {
       return (
@@ -261,7 +261,7 @@ curl -L -g -X POST 'https://api.novu.co/v1/events/trigger' \
     }
     ```
 
-    When a subscriber switches tenants, re-render the Inbox with the new context. Novu refetches notifications and reconnects the WebSocket scope.
+    When a subscriber switches tenants, re-render the Inbox with the new context. Notify refetches notifications and reconnects the WebSocket scope.
 
     <Note>
       Secure tenant context in production with `contextHash`. See [Inbox with context](/platform/inbox/configuration/inbox-with-context).
@@ -296,7 +296,7 @@ Each subscriber gets a separate Inbox feed and preference configuration per tena
 
 <AccordionGroup>
   <Accordion title="Can I use a different delivery provider for each tenant?">
-    Currently, Novu does not support using a different delivery provider per tenant. Contact support@novu.co if this is required for your use case.
+    Currently, Notify does not support using a different delivery provider per tenant. Contact support@notify.co if this is required for your use case.
   </Accordion>
 
   <Accordion title="Can subscribers manage different preferences per tenant?">
@@ -312,7 +312,7 @@ Each subscriber gets a separate Inbox feed and preference configuration per tena
 
 <CardGroup cols={2}>
   <Card title="Contexts" icon="layers" href="/platform/concepts/contexts">
-    Learn what contexts are and how they work across Novu.
+    Learn what contexts are and how they work across Notify.
   </Card>
   <Card title="Multi-tenancy in the Inbox" icon="inbox" href="/platform/inbox/advanced-features/multi-tenancy">
     End-to-end Inbox setup for multi-tenant applications.

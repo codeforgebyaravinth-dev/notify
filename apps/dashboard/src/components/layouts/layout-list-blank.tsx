@@ -1,4 +1,4 @@
-import { ApiServiceLevelEnum } from '@novu/shared';
+import { ApiServiceLevelEnum } from '@notify/shared';
 import { RiAddCircleLine, RiInformation2Line } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import { IS_CLOUD } from '@/config';

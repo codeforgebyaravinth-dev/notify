@@ -36,7 +36,7 @@ export const AGENT_REPLY_BODY_EXAMPLES = {
   cardReply: {
     summary: 'Interactive card reply',
     description:
-      'Send a Chat SDK card (buttons, text, links). Build cards with `@novu/framework` helpers or an equivalent JSON tree.',
+      'Send a Chat SDK card (buttons, text, links). Build cards with `@notify/framework` helpers or an equivalent JSON tree.',
     value: {
       conversationId: '64f5a1c2e8b7a3d9f0c1b2a3',
       integrationIdentifier: 'slack-support',

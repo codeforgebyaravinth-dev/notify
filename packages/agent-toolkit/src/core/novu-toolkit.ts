@@ -1,4 +1,4 @@
-import { Novu } from '@novu/api';
+import { Novu } from '@notify/api';
 import { builtInTools, createWorkflowTools } from '../tools/index.js';
 import type { NovuToolDefinition, NovuToolkitConfig } from './types.js';
 

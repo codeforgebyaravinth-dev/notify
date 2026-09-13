@@ -5,7 +5,7 @@ import {
   IEnvironment,
   PermissionsEnum,
   WorkflowListResponseDto,
-} from '@novu/shared';
+} from '@notify/shared';
 import { FilesIcon } from 'lucide-react';
 import { ComponentProps, useState } from 'react';
 import { CgBolt } from 'react-icons/cg';

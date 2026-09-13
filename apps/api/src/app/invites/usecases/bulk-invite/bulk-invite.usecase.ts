@@ -1,6 +1,6 @@
 import { Injectable, Scope } from '@nestjs/common';
-import { PinoLogger } from '@novu/application-generic';
-import { MemberRoleEnum } from '@novu/shared';
+import { PinoLogger } from '@notify/application-generic';
+import { MemberRoleEnum } from '@notify/shared';
 import { captureException } from '@sentry/node';
 import { InviteMemberCommand } from '../invite-member/invite-member.command';
 import { InviteMember } from '../invite-member/invite-member.usecase';

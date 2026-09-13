@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { decryptCredentials, InstrumentUsecase, PinoLogger } from '@novu/application-generic';
-import { AgentIntegrationRepository, AgentRepository, IntegrationRepository } from '@novu/dal';
-import { ChatProviderIdEnum } from '@novu/shared';
+import { decryptCredentials, InstrumentUsecase, PinoLogger } from '@notify/application-generic';
+import { AgentIntegrationRepository, AgentRepository, IntegrationRepository } from '@notify/dal';
+import { ChatProviderIdEnum } from '@notify/shared';
 import {
   resolveWhatsAppAppId,
   resolveWhatsAppAppSecret,

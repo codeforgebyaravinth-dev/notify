@@ -1,8 +1,8 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { decryptChannelEndpoint, InstrumentUsecase } from '@novu/application-generic';
-import type { EnforceEnvOrOrgIds } from '@novu/dal';
-import { ChannelEndpointDBModel, ChannelEndpointEntity, ChannelEndpointRepository } from '@novu/dal';
-import { DirectionEnum } from '@novu/shared';
+import { decryptChannelEndpoint, InstrumentUsecase } from '@notify/application-generic';
+import type { EnforceEnvOrOrgIds } from '@notify/dal';
+import { ChannelEndpointDBModel, ChannelEndpointEntity, ChannelEndpointRepository } from '@notify/dal';
+import { DirectionEnum } from '@notify/shared';
 import { FilterQuery } from 'mongoose';
 import { ListChannelEndpointsCommand } from './list-channel-endpoints.command';
 

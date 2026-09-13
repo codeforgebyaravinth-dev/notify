@@ -4,9 +4,9 @@ import {
   FeatureFlagsService,
   InMemoryLRUCacheService,
   InMemoryLRUCacheStore,
-} from '@novu/application-generic';
-import { EnvironmentRepository, IApiKey } from '@novu/dal';
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { EnvironmentRepository, IApiKey } from '@notify/dal';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { createHash } from 'crypto';
 import { DeleteApiKeyCommand } from './delete-api-key.command';
 

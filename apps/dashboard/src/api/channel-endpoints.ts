@@ -1,4 +1,4 @@
-import type { ChannelEndpointByType, ChannelEndpointType, IEnvironment } from '@novu/shared';
+import type { ChannelEndpointByType, ChannelEndpointType, IEnvironment } from '@notify/shared';
 import { del, get, patch, post } from './api.client';
 
 export type ChannelEndpointPayload = ChannelEndpointByType[ChannelEndpointType];

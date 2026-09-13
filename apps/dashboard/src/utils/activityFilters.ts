@@ -1,4 +1,4 @@
-import { ApiServiceLevelEnum, FeatureNameEnum, type GetSubscriptionDto, getFeatureForTierAsNumber } from '@novu/shared';
+import { ApiServiceLevelEnum, FeatureNameEnum, type GetSubscriptionDto, getFeatureForTierAsNumber } from '@notify/shared';
 import { IS_SELF_HOSTED } from '../config';
 
 type OrganizationLike = { createdAt: Date };

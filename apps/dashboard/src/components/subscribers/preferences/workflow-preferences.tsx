@@ -1,5 +1,5 @@
-import { PatchPreferenceChannelsDto, SubscriberWorkflowPreferenceDto } from '@novu/api/models/components';
-import { ChannelTypeEnum } from '@novu/shared';
+import { PatchPreferenceChannelsDto, SubscriberWorkflowPreferenceDto } from '@notify/api/models/components';
+import { ChannelTypeEnum } from '@notify/shared';
 import { motion } from 'motion/react';
 import { useMemo, useState } from 'react';
 import { RiContractUpDownLine, RiExpandUpDownLine } from 'react-icons/ri';

@@ -1,4 +1,4 @@
-import { ChatProviderIdEnum, FeatureFlagsKeysEnum } from '@novu/shared';
+import { ChatProviderIdEnum, FeatureFlagsKeysEnum } from '@notify/shared';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { RiArrowRightUpLine, RiCheckLine, RiKey2Line } from 'react-icons/ri';
 import type { AgentResponse } from '@/api/agents';

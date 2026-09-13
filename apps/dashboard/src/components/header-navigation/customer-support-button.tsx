@@ -1,4 +1,4 @@
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { RiQuestionFill } from 'react-icons/ri';
 import { useFeatureFlag } from '@/hooks/use-feature-flag';
 import { usePlainChat } from '@/hooks/use-plain-chat';

@@ -5,7 +5,7 @@ import {
   Notification,
   NotificationFilter,
   NovuError,
-} from '@novu/js';
+} from '@notify/js';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useDataRef } from './internal/useDataRef';
 import { useWebSocketEvent } from './internal/useWebsocketEvent';

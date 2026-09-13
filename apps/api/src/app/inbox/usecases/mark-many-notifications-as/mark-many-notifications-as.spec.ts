@@ -7,9 +7,9 @@ import {
   SendWebhookMessage,
   TraceLogRepository,
   WebSocketsQueueService,
-} from '@novu/application-generic';
-import { ChannelTypeEnum, EnvironmentRepository, MessageRepository } from '@novu/dal';
-import { ChannelCTATypeEnum, WebSocketEventEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { ChannelTypeEnum, EnvironmentRepository, MessageRepository } from '@notify/dal';
+import { ChannelCTATypeEnum, WebSocketEventEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { GetSubscriber } from '../../../subscribers/usecases/get-subscriber';

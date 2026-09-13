@@ -1,4 +1,4 @@
-import { ChatProviderIdEnum, EmailProviderIdEnum } from '@novu/shared';
+import { ChatProviderIdEnum, EmailProviderIdEnum } from '@notify/shared';
 import { AgentPlatformEnum } from '../enums/agent-platform.enum';
 
 const PROVIDER_TO_PLATFORM: Partial<Record<string, AgentPlatformEnum>> = {

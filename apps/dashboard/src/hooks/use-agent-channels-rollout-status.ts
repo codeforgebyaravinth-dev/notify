@@ -1,4 +1,4 @@
-import { ChatProviderIdEnum, EmailProviderIdEnum, FeatureFlagsKeysEnum } from '@novu/shared';
+import { ChatProviderIdEnum, EmailProviderIdEnum, FeatureFlagsKeysEnum } from '@notify/shared';
 import { useQueries } from '@tanstack/react-query';
 import { useMemo } from 'react';
 import type { AgentIntegrationLink } from '@/api/agents';

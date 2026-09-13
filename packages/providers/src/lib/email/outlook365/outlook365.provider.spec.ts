@@ -1,4 +1,4 @@
-import { CheckIntegrationResponseEnum, ICheckIntegrationResponse } from '@novu/stateless';
+import { CheckIntegrationResponseEnum, ICheckIntegrationResponse } from '@notify/stateless';
 import nodemailer from 'nodemailer';
 import { expect, test, vi } from 'vitest';
 import { Outlook365Provider } from './outlook365.provider';

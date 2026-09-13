@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { CalculateDemoClaudeQuota, CalculateDemoClaudeQuotaCommand } from '@novu/application-generic';
-import { AgentRepository } from '@novu/dal';
+import { CalculateDemoClaudeQuota, CalculateDemoClaudeQuotaCommand } from '@notify/application-generic';
+import { AgentRepository } from '@notify/dal';
 import { GetAgentDemoQuotaCommand } from './get-agent-demo-quota.command';
 
 export interface AgentDemoQuotaResponseDto {

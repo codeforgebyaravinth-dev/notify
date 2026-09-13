@@ -1,13 +1,13 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
-import { InstrumentUsecase } from '@novu/application-generic';
+import { InstrumentUsecase } from '@notify/application-generic';
 import {
   SubscriberRepository,
   TopicEntity,
   TopicRepository,
   TopicSubscribersEntity,
   TopicSubscribersRepository,
-} from '@novu/dal';
-import { DirectionEnum, EnvironmentId } from '@novu/shared';
+} from '@notify/dal';
+import { DirectionEnum, EnvironmentId } from '@notify/shared';
 import { ListTopicSubscriptionsResponseDto } from '../../dtos/list-topic-subscriptions-response.dto';
 import { TopicSubscriptionResponseDto } from '../../dtos/topic-subscription-response.dto';
 import { mapTopicSubscriptionsToDto } from '../list-topics/map-topic-entity-to.dto';

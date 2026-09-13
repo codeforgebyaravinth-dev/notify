@@ -254,7 +254,7 @@ function isScalarValue(value: unknown): value is DataFilterScalar {
  *
  * Mirrors `packages/shared/src/utils/data-filter.ts#normalizeFieldValue` but
  * inlined here because `packages/js` is intentionally not allowed to depend on
- * `@novu/shared` (bundle size / publish footprint).
+ * `@notify/shared` (bundle size / publish footprint).
  *
  * Returns `null` if the value is structurally invalid so callers can decide
  * whether to treat the notification as a non-match.
@@ -380,7 +380,7 @@ function checkDataEntries(
  *   - `{ and: [{ or: Scalar[] }, ...] }` (AND of OR-groups)
  *   - 1 level of nested objects whose sub-keys follow the same rules
  *
- * Mirrors the server-side semantics from `@novu/shared#checkDataFilterMatches`
+ * Mirrors the server-side semantics from `@notify/shared#checkDataFilterMatches`
  * so realtime, cache, and counts stay consistent.
  */
 export function checkNotificationDataFilter(

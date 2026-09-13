@@ -1,5 +1,5 @@
 {
-  "name": "@novu/api-service",
+  "name": "@notify/api-service",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "tags": ["type:app"],
   "sourceRoot": "apps/api/src",

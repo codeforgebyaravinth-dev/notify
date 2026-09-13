@@ -1,4 +1,4 @@
-import { ChatProviderIdEnum, type ICredentials } from '@novu/shared';
+import { ChatProviderIdEnum, type ICredentials } from '@notify/shared';
 
 interface WhatsNextStampParams {
   providerId: string;

@@ -1,5 +1,5 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { PinoLogger, shortId } from '@novu/application-generic';
+import { PinoLogger, shortId } from '@notify/application-generic';
 import {
   ConversationActivityEntity,
   ConversationActivityRepository,
@@ -12,8 +12,8 @@ import {
   ConversationRepository,
   ConversationStatusEnum,
   isDuplicateKeyError,
-} from '@novu/dal';
-import type { TriggerRecipientsPayload } from '@novu/shared';
+} from '@notify/dal';
+import type { TriggerRecipientsPayload } from '@notify/shared';
 import { ConversationEventSequenceService } from './conversation-event-sequence.service';
 
 export const INBOUND_ATTACHMENT_ONLY_PREVIEW = '[Attachment]';

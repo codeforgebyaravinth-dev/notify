@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { ChangeEntity, ChangeRepository } from '@novu/dal';
+import { ChangeEntity, ChangeRepository } from '@notify/dal';
 import { ApplyChange, ApplyChangeCommand } from '../apply-change';
 import { BulkApplyChangeCommand } from './bulk-apply-change.command';
 

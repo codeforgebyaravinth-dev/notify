@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { SLUG_IDENTIFIER_REGEX, slugIdentifierFormatMessage } from '@novu/shared';
+import { SLUG_IDENTIFIER_REGEX, slugIdentifierFormatMessage } from '@notify/shared';
 import { IsArray, IsBoolean, IsOptional, IsString, Matches } from 'class-validator';
 
 export class DuplicateWorkflowDto {

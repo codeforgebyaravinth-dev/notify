@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { LayoutResponseDto } from '@novu/application-generic';
+import { LayoutResponseDto } from '@notify/application-generic';
 import { Type } from 'class-transformer';
 import { IsArray, IsNumber, ValidateNested } from 'class-validator';
 

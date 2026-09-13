@@ -1,5 +1,5 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { WorkflowCriticalityEnum } from '@novu/shared';
+import { WorkflowCriticalityEnum } from '@notify/shared';
 import { Transform } from 'class-transformer';
 import { IsArray, IsEnum, IsOptional, IsString } from 'class-validator';
 

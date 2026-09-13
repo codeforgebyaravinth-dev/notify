@@ -4,7 +4,7 @@ import {
   InboundMailRequestLogger,
   InboundMailTenantResolver,
   InboundParseQueueService,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import { expect } from 'chai';
 import sinon from 'sinon';
 

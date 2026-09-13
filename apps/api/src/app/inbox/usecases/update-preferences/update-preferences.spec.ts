@@ -4,9 +4,9 @@ import {
   GetWorkflowByIdsUseCase,
   SendWebhookMessage,
   UpsertPreferences,
-} from '@novu/application-generic';
-import { PreferencesRepository, SubscriberRepository, TopicSubscribersRepository } from '@novu/dal';
-import { PreferenceLevelEnum, SeverityLevelEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { PreferencesRepository, SubscriberRepository, TopicSubscribersRepository } from '@notify/dal';
+import { PreferenceLevelEnum, SeverityLevelEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import {

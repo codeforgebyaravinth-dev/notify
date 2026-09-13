@@ -1,7 +1,7 @@
 import { ModuleRef } from '@nestjs/core';
-import { CreateExecutionDetails, DetailEnum, GetLayoutUseCaseV0, PinoLogger } from '@novu/application-generic';
-import { ControlValuesRepository, JobEntity, JobRepository } from '@novu/dal';
-import { JSONContent as MailyJSONContent } from '@novu/maily-render';
+import { CreateExecutionDetails, DetailEnum, GetLayoutUseCaseV0, PinoLogger } from '@notify/application-generic';
+import { ControlValuesRepository, JobEntity, JobRepository } from '@notify/dal';
+import { JSONContent as MailyJSONContent } from '@notify/maily-render';
 import {
   ControlValuesLevelEnum,
   ExecutionDetailsSourceEnum,
@@ -9,7 +9,7 @@ import {
   JobStatusEnum,
   LAYOUT_CONTENT_VARIABLE,
   StepTypeEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { GetOrganizationSettings } from '../../../organization/usecases/get-organization-settings/get-organization-settings.usecase';
@@ -22,7 +22,7 @@ import { FullPayloadForRender } from './render-command';
  * Returns the translation stub for further customization if needed
  */
 function setupTranslationMocks(moduleRef: sinon.SinonStubbedInstance<ModuleRef>): sinon.SinonStub {
-  const eeTranslation = require('@novu/ee-translation');
+  const eeTranslation = require('@notify/ee-translation');
   if (!eeTranslation) {
     throw new Error('ee-translation does not exist');
   }

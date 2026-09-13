@@ -1,4 +1,4 @@
-import { PermissionsEnum } from '@novu/shared';
+import { PermissionsEnum } from '@notify/shared';
 import { useCallback } from 'react';
 import {
   RiBarChartBoxLine,

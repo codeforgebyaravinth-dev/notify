@@ -6,14 +6,14 @@ import {
   GetPreferences,
   Instrument,
   InstrumentUsecase,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   NotificationTemplateEntity,
   NotificationTemplateRepository,
   SubscriberEntity,
   SubscriberRepository,
-} from '@novu/dal';
-import { ChannelTypeEnum, IPreferenceChannels, Schedule } from '@novu/shared';
+} from '@notify/dal';
+import { ChannelTypeEnum, IPreferenceChannels, Schedule } from '@notify/shared';
 import { GetSubscriberGlobalPreferenceCommand } from './get-subscriber-global-preference.command';
 
 @Injectable()

@@ -1,6 +1,6 @@
-import { IntegrationRepository } from '@novu/dal';
-import { ChannelTypeEnum } from '@novu/stateless';
-import { UserSession } from '@novu/testing';
+import { IntegrationRepository } from '@notify/dal';
+import { ChannelTypeEnum } from '@notify/stateless';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { encryptOldCredentialsMigration } from './encrypt-credentials-migration';
 

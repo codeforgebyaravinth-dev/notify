@@ -1,6 +1,6 @@
-import { NotificationTemplateRepository, TenantRepository } from '@novu/dal';
-import { ICreateWorkflowOverrideRequestDto, IUpdateWorkflowOverrideRequestDto } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { NotificationTemplateRepository, TenantRepository } from '@notify/dal';
+import { ICreateWorkflowOverrideRequestDto, IUpdateWorkflowOverrideRequestDto } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Update Workflow Override - /workflow-overrides/workflows/:workflowId/tenants/:tenantIdentifier (PUT) #novu-v0', () => {

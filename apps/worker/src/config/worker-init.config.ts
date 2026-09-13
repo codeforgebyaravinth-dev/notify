@@ -1,6 +1,6 @@
 import { Provider } from '@nestjs/common';
 
-import { JobTopicNameEnum } from '@novu/shared';
+import { JobTopicNameEnum } from '@notify/shared';
 
 import { StandardWorker, WorkflowWorker } from '../app/workflow/services';
 import { SubscriberProcessWorker } from '../app/workflow/services/subscriber-process.worker';

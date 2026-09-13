@@ -1,4 +1,4 @@
-import type { IEnvironment, UpdateExternalOrganizationDto } from '@novu/shared';
+import type { IEnvironment, UpdateExternalOrganizationDto } from '@notify/shared';
 import { get, patch, post } from './api.client';
 
 export type GetOrganizationSettingsDto = {

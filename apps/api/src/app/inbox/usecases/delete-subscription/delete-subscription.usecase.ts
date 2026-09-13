@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { FeatureFlagsService, InstrumentUsecase } from '@novu/application-generic';
-import { PreferencesRepository, TopicRepository, TopicSubscribersRepository } from '@novu/dal';
-import { FeatureFlagsKeysEnum, PreferencesTypeEnum } from '@novu/shared';
+import { FeatureFlagsService, InstrumentUsecase } from '@notify/application-generic';
+import { PreferencesRepository, TopicRepository, TopicSubscribersRepository } from '@notify/dal';
+import { FeatureFlagsKeysEnum, PreferencesTypeEnum } from '@notify/shared';
 import { stripContextFromIdentifier } from '../../../subscriptions/utils/subscriptions';
 import { DeleteTopicSubscriptionCommand } from './delete-subscription.command';
 

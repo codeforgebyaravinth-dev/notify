@@ -1,4 +1,4 @@
-import { ChannelTypeEnum, isPreferenceChannelVisibleInUi } from '@novu/shared';
+import { ChannelTypeEnum, isPreferenceChannelVisibleInUi } from '@notify/shared';
 
 export const CHANNEL_TYPE_TO_STRING: Record<ChannelTypeEnum, string> = {
   [ChannelTypeEnum.IN_APP]: 'In-App',

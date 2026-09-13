@@ -13,7 +13,7 @@ const Checkbox = <T extends ValidComponent = 'div'>(props: PolymorphicProps<T, C
   return (
     <CheckboxPrimitive.Root class={cn('nt-items-top nt-group nt-relative nt-flex', local.class)} {...others}>
       <CheckboxPrimitive.Input class="nt-peer" id={local.id} />
-      <CheckboxPrimitive.Control class="nt-size-4 nt-shrink-0 nt-rounded-sm nt-border nt-border-primary nt-ring-offset-background data-[disabled]:nt-cursor-not-allowed data-[disabled]:nt-opacity-50 peer-focus-visible:nt-outline-none peer-focus-visible:nt-ring-2 peer-focus-visible:ntring-ring peer-focus-visible:nt-ring-offset-2 data-[checked]:nt-border-none data-[indeterminate]:nt-border-none data-[checked]:nt-bg-primary data-[indeterminate]:nt-bg-primary data-[checked]:nt-text-primary-foreground data-[indeterminate]:nt-text-primary-foreground">
+      <CheckboxPrimitive.Control class="nt-size-4 nt-shrink-0 nt-nt-rounded-none nt-border nt-border-primary nt-ring-offset-background data-[disabled]:nt-cursor-not-allowed data-[disabled]:nt-opacity-50 peer-focus-visible:nt-outline-none peer-focus-visible:nt-ring-2 peer-focus-visible:ntring-ring peer-focus-visible:nt-ring-offset-2 data-[checked]:nt-border-none data-[indeterminate]:nt-border-none data-[checked]:nt-bg-gradient-to-r nt-from-purple-600 nt-to-red-500 data-[indeterminate]:nt-bg-gradient-to-r nt-from-purple-600 nt-to-red-500 data-[checked]:nt-text-white data-[indeterminate]:nt-text-white">
         <CheckboxPrimitive.Indicator>
           <Switch>
             <Match when={!others.indeterminate}>

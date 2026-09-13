@@ -1,6 +1,6 @@
 // noinspection ExceptionCaughtLocallyJS
 
-import { BaseCommand, CommandValidationException } from '@novu/application-generic';
+import { BaseCommand, CommandValidationException } from '@notify/application-generic';
 import { expect } from 'chai';
 import { IsNotEmpty } from './chat-oauth-callback.command';
 

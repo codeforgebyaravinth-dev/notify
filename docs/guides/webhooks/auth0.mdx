@@ -1,29 +1,29 @@
 ---
-title: 'Auth0 Webhook Integration with Novu'
+title: 'Auth0 Webhook Integration with Notify'
 sidebarTitle: 'Auth0'
-description: "Trigger Novu notification workflows from Auth0 events such as password reset, signup, and login alerts by forwarding webhooks to your Novu workflows."
+description: "Trigger Notify notification workflows from Auth0 events such as password reset, signup, and login alerts by forwarding webhooks to your Notify workflows."
 ---
 
 
-Trigger Novu notification workflows when Auth0 events occur by receiving Auth0 log stream or webhook events in your backend and calling the Novu Trigger API.
+Trigger Notify notification workflows when Auth0 events occur by receiving Auth0 log stream or webhook events in your backend and calling the Notify Trigger API.
 
-## How does the Auth0 and Novu integration work?
+## How does the Auth0 and Notify integration work?
 
 1. Auth0 emits an event (for example, password reset requested or successful signup).
 2. Your backend receives the event via an Auth0 log stream or Actions webhook.
-3. Your handler verifies the event and calls Novu's [Trigger event](/api-reference/events/trigger-event) API.
-4. Novu delivers the notification through your configured workflow channels.
+3. Your handler verifies the event and calls Notify's [Trigger event](/api-reference/events/trigger-event) API.
+4. Notify delivers the notification through your configured workflow channels.
 
 ## Prerequisites
 
 - An Auth0 tenant with log streams or Actions configured
-- A Novu account with a workflow for each auth event
+- A Notify account with a workflow for each auth event
 - A backend endpoint to receive Auth0 events
 
-## How do I trigger a Novu workflow from Auth0?
+## How do I trigger a Notify workflow from Auth0?
 
 <Steps>
-  <Step title="Create auth workflows in Novu">
+  <Step title="Create auth workflows in Notify">
     Create workflows for events such as `password-reset`, `welcome-email`, and `new-device-login`. Add email and optional in-app steps.
   </Step>
 
@@ -31,15 +31,15 @@ Trigger Novu notification workflows when Auth0 events occur by receiving Auth0 l
     Set up an Auth0 log stream or Action that POSTs to your backend when target events occur. See [Auth0 log streams](https://auth0.com/docs/customize/log-streams) documentation.
   </Step>
 
-  <Step title="Handle the webhook and trigger Novu">
-    Verify the Auth0 event, then trigger the matching Novu workflow:
+  <Step title="Handle the webhook and trigger Notify">
+    Verify the Auth0 event, then trigger the matching Notify workflow:
 
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({ secretKey: process.env.NOVU_SECRET_KEY });
+const notify = new Notify({ secretKey: process.env.NOVU_SECRET_KEY });
 
 export async function handleAuth0Event(event: Auth0LogEvent) {
   if (event.type === 's' && event.description === 'Success Signup') {
@@ -56,11 +56,11 @@ export async function handleAuth0Event(event: Auth0LogEvent) {
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
 def handle_auth0_event(event):
     if event["type"] == "s" and event["description"] == "Success Signup":
-        with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+        with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
             novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
                 workflow_id="welcome-email",
                 to={"subscriber_id": event["user_id"], "email": event["user_name"]},
@@ -99,13 +99,13 @@ func handleAuth0Event(event Auth0LogEvent) error {
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
 function handleAuth0Event(array $event): void
 {
     if ($event['type'] === 's' && $event['description'] === 'Success Signup') {
-        $sdk = novu\Novu::builder()
+        $sdk = notify\Notify::builder()
             ->setSecurity('<YOUR_SECRET_KEY_HERE>')
             ->build();
 
@@ -127,8 +127,8 @@ function handleAuth0Event(array $event): void
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 
 async Task HandleAuth0Event(Auth0LogEvent auth0Event)
@@ -153,13 +153,13 @@ async Task HandleAuth0Event(Auth0LogEvent auth0Event)
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 import java.util.Map;
 
 void handleAuth0Event(Auth0LogEvent event) {
     if ("s".equals(event.getType()) && "Success Signup".equals(event.getDescription())) {
-        Novu novu = Novu.builder()
+        Notify novu = Notify.builder()
             .secretKey("<YOUR_SECRET_KEY_HERE>")
             .build();
 
@@ -207,6 +207,6 @@ curl -X POST 'https://api.novu.co/v1/events/trigger' \
     Auth0 Actions give you inline control during the auth flow. Log streams are better for post-event processing such as security alerts and analytics-driven notifications.
   </Accordion>
   <Accordion title="Where should I verify Auth0 webhook signatures?">
-    Always verify signatures in your backend before triggering Novu workflows. Never expose your Novu secret key in client-side Auth0 Actions.
+    Always verify signatures in your backend before triggering Notify workflows. Never expose your Notify secret key in client-side Auth0 Actions.
   </Accordion>
 </AccordionGroup>

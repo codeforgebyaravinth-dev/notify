@@ -4,9 +4,9 @@ import {
   CreateExecutionDetailsCommand,
   DetailEnum,
   InstrumentUsecase,
-} from '@novu/application-generic';
-import { MessageRepository } from '@novu/dal';
-import { ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { MessageRepository } from '@notify/dal';
+import { ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum } from '@notify/shared';
 import { SendMessageCommand } from './send-message.command';
 import { SendMessageResult, SendMessageStatus, SendMessageType } from './send-message-type.usecase';
 

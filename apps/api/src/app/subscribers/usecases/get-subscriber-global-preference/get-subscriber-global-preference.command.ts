@@ -1,4 +1,4 @@
-import { NotificationTemplateEntity, PreferencesEntity, SubscriberEntity } from '@novu/dal';
+import { NotificationTemplateEntity, PreferencesEntity, SubscriberEntity } from '@notify/dal';
 import { IsBoolean, IsDefined, IsOptional } from 'class-validator';
 import { EnvironmentWithSubscriber } from '../../../shared/commands/project.command';
 

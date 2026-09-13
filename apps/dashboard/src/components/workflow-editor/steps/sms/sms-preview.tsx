@@ -1,4 +1,4 @@
-import { ChannelTypeEnum, type GeneratePreviewResponseDto, SmsRenderOutput } from '@novu/shared';
+import { ChannelTypeEnum, type GeneratePreviewResponseDto, SmsRenderOutput } from '@notify/shared';
 import { ReactNode } from 'react';
 import { SmsPhone } from '@/components/workflow-editor/steps/sms/sms-phone';
 

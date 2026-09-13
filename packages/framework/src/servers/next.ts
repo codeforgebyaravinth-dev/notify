@@ -13,12 +13,12 @@ import { getResponse } from '../utils';
  *
  * Example:
  *
- * import { serve, Client, type Workflow } from '@novu/framework/next';
+ * import { serve, Client, type Workflow } from '@notify/framework/next';
  *
  * instead of
  *
- * import { serve } from '@novu/framework/next';
- * import { Client, type Workflow } from '@novu/framework';
+ * import { serve } from '@notify/framework/next';
+ * import { Client, type Workflow } from '@notify/framework';
  */
 export * from '../index';
 export const frameworkName: SupportedFrameworkName = 'next';
@@ -84,7 +84,7 @@ const isNext12ApiResponse = (val: unknown): val is NextApiResponse => {
  *
  * @example Next.js <=12 or the pages router can export the handler directly
  * ```ts
- * import { serve } from "@novu/framework/next";
+ * import { serve } from "@notify/framework/next";
  * import { myWorkflow } from "./src/novu/workflows"; // Your workflows
  *
  * export default serve({ workflows: [myWorkflow] });
@@ -92,7 +92,7 @@ const isNext12ApiResponse = (val: unknown): val is NextApiResponse => {
  *
  * @example Next.js >=13 with the `app` dir must export individual methods
  * ```ts
- * import { serve } from "@novu/framework/next";
+ * import { serve } from "@notify/framework/next";
  * import { myWorkflow } from "./src/novu/workflows";
  *
  * export const { GET, POST, OPTIONS } = serve({ workflows: [myWorkflow] });

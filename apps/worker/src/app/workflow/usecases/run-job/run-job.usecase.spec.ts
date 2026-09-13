@@ -4,9 +4,9 @@ import {
   StorageService,
   WEBHOOK_FILTER_REQUEST_FAILED_DATA,
   WorkflowRunStatusEnum,
-} from '@novu/application-generic';
-import { JobEntity, JobStatusEnum } from '@novu/dal';
-import { StepTypeEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { JobEntity, JobStatusEnum } from '@notify/dal';
+import { StepTypeEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { PartialNotificationEntity } from '../add-job/add-job.command';

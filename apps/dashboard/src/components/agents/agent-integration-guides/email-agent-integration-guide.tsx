@@ -1,4 +1,4 @@
-import { EmailProviderIdEnum, FeatureFlagsKeysEnum, type IIntegration } from '@novu/shared';
+import { EmailProviderIdEnum, FeatureFlagsKeysEnum, type IIntegration } from '@notify/shared';
 import { type ReactNode, useMemo } from 'react';
 import type { AgentIntegrationLink, AgentResponse } from '@/api/agents';
 import { ConnectionConfetti } from '@/components/agents/connection-confetti';

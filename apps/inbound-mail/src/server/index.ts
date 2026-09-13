@@ -1,6 +1,6 @@
 import fs from 'node:fs';
-import { BullMqService, buildEnvelopeRequestSource } from '@novu/application-generic';
-import { ObservabilityBackgroundTransactionEnum } from '@novu/shared';
+import { BullMqService, buildEnvelopeRequestSource } from '@notify/application-generic';
+import { ObservabilityBackgroundTransactionEnum } from '@notify/shared';
 import Promise from 'bluebird';
 import dns from 'dns';
 import events from 'events';

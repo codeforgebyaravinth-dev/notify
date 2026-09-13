@@ -1,4 +1,4 @@
-import { UserSession } from '@novu/testing';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Delete Notification Group - /notification-groups/:id (DELETE) #novu-v0', async () => {

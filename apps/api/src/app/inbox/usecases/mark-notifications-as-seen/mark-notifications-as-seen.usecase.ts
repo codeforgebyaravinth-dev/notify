@@ -12,15 +12,15 @@ import {
   SendWebhookMessage,
   StepType,
   WebSocketsQueueService,
-} from '@novu/application-generic';
-import { EnvironmentEntity, EnvironmentRepository, MessageEntity, MessageRepository } from '@novu/dal';
+} from '@notify/application-generic';
+import { EnvironmentEntity, EnvironmentRepository, MessageEntity, MessageRepository } from '@notify/dal';
 import {
   DeliveryLifecycleStatusEnum,
   normalizeTagGroups,
   WebhookEventEnum,
   WebhookObjectTypeEnum,
   WebSocketEventEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 
 import { GetSubscriber } from '../../../subscribers/usecases/get-subscriber';
 import { AnalyticsEventsEnum } from '../../utils';

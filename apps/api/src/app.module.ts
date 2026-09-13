@@ -3,10 +3,10 @@ import { ForwardReference } from '@nestjs/common/interfaces/modules/forward-refe
 import { Type } from '@nestjs/common/interfaces/type.interface';
 import { APP_GUARD, APP_INTERCEPTOR } from '@nestjs/core';
 import { ApiExcludeController } from '@nestjs/swagger';
-import { cacheService, TracingModule } from '@novu/application-generic';
-import { Client, NovuModule } from '@novu/framework/nest';
-import { usageLimitsWorkflow, usageReportWorkflow } from '@novu/notifications';
-import { isClerkEnabled } from '@novu/shared';
+import { cacheService, TracingModule } from '@notify/application-generic';
+import { Client, NovuModule } from '@notify/framework/nest';
+import { usageLimitsWorkflow, usageReportWorkflow } from '@notify/notifications';
+import { isClerkEnabled } from '@notify/shared';
 import { SentryModule } from '@sentry/nestjs/setup';
 import packageJson from '../package.json';
 import { ActivityModule } from './app/activity/activity.module';
@@ -71,33 +71,33 @@ import { WorkflowModule } from './app/workflows-v2/workflow.module';
 const enterpriseImports = (): Array<Type | DynamicModule | Promise<DynamicModule> | ForwardReference> => {
   const modules: Array<Type | DynamicModule | Promise<DynamicModule> | ForwardReference> = [];
   if (process.env.NOVU_ENTERPRISE === 'true' || process.env.CI_EE_TEST === 'true') {
-    if (require('@novu/ee-translation')?.EnterpriseTranslationModule) {
-      modules.push(require('@novu/ee-translation')?.EnterpriseTranslationModule);
-      modules.push(require('@novu/ee-translation')?.TranslationModule);
+    if (require('@notify/ee-translation')?.EnterpriseTranslationModule) {
+      modules.push(require('@notify/ee-translation')?.EnterpriseTranslationModule);
+      modules.push(require('@notify/ee-translation')?.TranslationModule);
     }
 
-    if (require('@novu/ee-billing')?.BillingModule) {
-      modules.push(require('@novu/ee-billing')?.BillingModule.forRoot());
+    if (require('@notify/ee-billing')?.BillingModule) {
+      modules.push(require('@notify/ee-billing')?.BillingModule.forRoot());
     }
 
-    if (require('@novu/ee-api')?.InboundWebhooksModule) {
-      modules.push(require('@novu/ee-api')?.InboundWebhooksModule);
+    if (require('@notify/ee-api')?.InboundWebhooksModule) {
+      modules.push(require('@notify/ee-api')?.InboundWebhooksModule);
     }
 
-    if (require('@novu/ee-ai')?.AiModule) {
-      modules.push(require('@novu/ee-ai')?.AiModule);
+    if (require('@notify/ee-ai')?.AiModule) {
+      modules.push(require('@notify/ee-ai')?.AiModule);
     }
 
     // LLM Gateway controllers parked for this PR — keeping the code so we
     // can re-enable later by uncommenting this block.
-    // if (require('@novu/ee-ai')?.LlmGatewayModule) {
-    //   modules.push(require('@novu/ee-ai')?.LlmGatewayModule);
+    // if (require('@notify/ee-ai')?.LlmGatewayModule) {
+    //   modules.push(require('@notify/ee-ai')?.LlmGatewayModule);
     // }
 
-    if (require('@novu/ee-api')?.ConversationsModule) {
+    if (require('@notify/ee-api')?.ConversationsModule) {
       modules.push({
         module: class ConversationsModuleHost {},
-        imports: [SharedModule, require('@novu/ee-api').ConversationsModule],
+        imports: [SharedModule, require('@notify/ee-api').ConversationsModule],
       });
     }
 
@@ -110,11 +110,11 @@ const enterpriseImports = (): Array<Type | DynamicModule | Promise<DynamicModule
 
 const enterpriseQuotaThrottlerInterceptor =
   (process.env.NOVU_ENTERPRISE === 'true' || process.env.CI_EE_TEST === 'true') &&
-  require('@novu/ee-billing')?.QuotaThrottlerInterceptor
+  require('@notify/ee-billing')?.QuotaThrottlerInterceptor
     ? [
         {
           provide: APP_INTERCEPTOR,
-          useClass: require('@novu/ee-billing')?.QuotaThrottlerInterceptor,
+          useClass: require('@notify/ee-billing')?.QuotaThrottlerInterceptor,
         },
       ]
     : [];

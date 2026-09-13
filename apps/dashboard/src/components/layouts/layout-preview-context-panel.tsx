@@ -1,4 +1,4 @@
-import { ISubscriberResponseDto } from '@novu/shared';
+import { ISubscriberResponseDto } from '@notify/shared';
 import { JSONSchema7 } from 'json-schema';
 import { useCallback, useMemo } from 'react';
 

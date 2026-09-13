@@ -1,14 +1,14 @@
 import { Test } from '@nestjs/testing';
-import { CacheService, MockCacheService } from '@novu/application-generic';
-import { CommunityOrganizationRepository, EnvironmentRepository } from '@novu/dal';
+import { CacheService, MockCacheService } from '@notify/application-generic';
+import { CommunityOrganizationRepository, EnvironmentRepository } from '@notify/dal';
 import {
   ApiRateLimitCategoryEnum,
   ApiRateLimitCategoryToFeatureName,
   ApiServiceLevelEnum,
   FeatureFlagsKeysEnum,
   getFeatureForTierAsNumber,
-} from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { SharedModule } from '../../../shared/shared.module';

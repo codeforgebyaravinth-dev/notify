@@ -1,7 +1,7 @@
 import { ClerkClient } from '@clerk/backend';
-import { CommunityUserRepository } from '@novu/dal';
-import { EEUserRepository } from '@novu/ee-auth';
-import { NewDashboardOptInStatusEnum } from '@novu/shared';
+import { CommunityUserRepository } from '@notify/dal';
+import { EEUserRepository } from '@notify/ee-auth';
+import { NewDashboardOptInStatusEnum } from '@notify/shared';
 
 export class UserService {
   private userRepository: EEUserRepository;

@@ -66,11 +66,11 @@ export interface LangChainInvokeResult {
   messages: BaseMessage[];
 }
 
-/** Anything a `@novu/framework/langchain` handler may return for automatic delivery. */
+/** Anything a `@notify/framework/langchain` handler may return for automatic delivery. */
 export type LangChainResult = LangChainAgentConfig | LangChainInvokeResult | BaseMessage;
 
 /**
- * Handlers for `@novu/framework/langchain` agents.
+ * Handlers for `@notify/framework/langchain` agents.
  *
  * Extends {@link AgentHandlers}: same events and config (`toolApproval`, etc.),
  * but `onMessage` and `onToolApproval` may return a {@link LangChainResult} for

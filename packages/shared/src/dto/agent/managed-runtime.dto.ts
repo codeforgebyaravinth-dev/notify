@@ -67,7 +67,7 @@ export type AgentMcpServerDto = {
 
 /**
  * Scope tier for an MCP OAuth connection. Mirrors `McpConnectionEntity.scope`
- * in `@novu/dal`. Only `subscriber` is implemented in v1; the remaining tiers
+ * in `@notify/dal`. Only `subscriber` is implemented in v1; the remaining tiers
  * are reserved for future shared-token flows.
  */
 export enum McpConnectionScopeEnum {

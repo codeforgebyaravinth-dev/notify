@@ -1,6 +1,6 @@
 // Use pagination primitives from the dashboard project
 
-import { DirectionEnum, PermissionsEnum } from '@novu/shared';
+import { DirectionEnum, PermissionsEnum } from '@notify/shared';
 import { HTMLAttributes, useEffect } from 'react';
 import { RiAddCircleLine } from 'react-icons/ri';
 import { PermissionButton } from '@/components/primitives/permission-button';

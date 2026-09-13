@@ -1,8 +1,8 @@
 ---
 name: add-channel-connect-button
 description: >-
-  Build a new channel Connect button (e.g. WhatsApp, Discord, LINE) in @novu/js
-  and @novu/react following the existing SlackConnectButton, MsTeamsConnectButton,
+  Build a new channel Connect button (e.g. WhatsApp, Discord, LINE) in @notify/js
+  and @notify/react following the existing SlackConnectButton, MsTeamsConnectButton,
   and TelegramConnectButton pattern. Use when adding connect/disconnect UI for a
   new chat channel/provider to the SDK — covering the SolidJS core component, the
   React wrapper, the channelConnections (OAuth) vs channelEndpoints (deep-link)
@@ -84,7 +84,7 @@ Every connect button implements the same state machine — keep it identical:
 
 - The **core is SolidJS, not React**: signals over hooks, `<Show>` over ternaries, read props lazily (`() => props.x`), cleanup via `onCleanup`. The React layer is just a mounting shim.
 - The `name` in `mountComponent({ name: '<Channel>ConnectButton' })` **must** equal the key in `novuComponents` and be listed in `CHANNEL_COMPONENTS`, or it renders through the wrong path.
-- `<Channel>ConnectButtonProps` is defined in the core and imported by React from `@novu/js/ui` — do not redefine it.
+- `<Channel>ConnectButtonProps` is defined in the core and imported by React from `@notify/js/ui` — do not redefine it.
 - Novu conventions: lowercase-dashed dirs, named exports, blank line before every `return`, no nested ternaries.
 - These packages are published — new exports are a **minor** bump; keep prop changes additive/backward-compatible.
 

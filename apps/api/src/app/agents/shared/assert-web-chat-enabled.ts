@@ -1,6 +1,6 @@
 import { NotFoundException } from '@nestjs/common';
-import { FeatureFlagsService } from '@novu/application-generic';
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsService } from '@notify/application-generic';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 
 /**
  * Gates subscriber web-chat HTTP (`/v1/web-chat/*`) on `IS_AGENT_WEB_CHAT_ENABLED`.

@@ -1,4 +1,4 @@
-import { AGENT_IDENTIFIER_MAX_LENGTH, AGENT_NAME_MAX_LENGTH, slugify } from '@novu/shared';
+import { AGENT_IDENTIFIER_MAX_LENGTH, AGENT_NAME_MAX_LENGTH, slugify } from '@notify/shared';
 import { useId } from 'react';
 import { RiInformation2Line } from 'react-icons/ri';
 import { Input } from '@/components/primitives/input';

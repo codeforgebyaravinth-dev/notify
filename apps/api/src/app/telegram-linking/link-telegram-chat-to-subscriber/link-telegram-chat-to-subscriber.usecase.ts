@@ -1,13 +1,13 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { InstrumentUsecase, PinoLogger } from '@novu/application-generic';
+import { InstrumentUsecase, PinoLogger } from '@notify/application-generic';
 import {
   AgentIntegrationRepository,
   AgentRepository,
   ChannelEndpointRepository,
   IntegrationRepository,
   SubscriberRepository,
-} from '@novu/dal';
-import { ChatProviderIdEnum, ENDPOINT_TYPES } from '@novu/shared';
+} from '@notify/dal';
+import { ChatProviderIdEnum, ENDPOINT_TYPES } from '@notify/shared';
 import { CreateChannelEndpointCommand } from '../../channel-endpoints/usecases/create-channel-endpoint/create-channel-endpoint.command';
 import { CreateChannelEndpoint } from '../../channel-endpoints/usecases/create-channel-endpoint/create-channel-endpoint.usecase';
 import { isTelegramLinkScope, type TelegramLinkScope } from '../telegram-link-scope';

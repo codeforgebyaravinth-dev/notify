@@ -1,4 +1,4 @@
-import { GetContextResponseDto } from '@novu/api/models/components';
+import { GetContextResponseDto } from '@notify/api/models/components';
 import { UseMutationOptions, useMutation, useQueryClient } from '@tanstack/react-query';
 import { createContext } from '@/api/contexts';
 import { requireEnvironment, useEnvironment } from '@/context/environment/hooks';

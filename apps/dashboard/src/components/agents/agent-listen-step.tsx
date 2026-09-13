@@ -1,4 +1,4 @@
-import { type IIntegration } from '@novu/shared';
+import { type IIntegration } from '@notify/shared';
 import type { AgentIntegrationLink } from '@/api/agents';
 import { ProviderCards } from './provider-cards';
 import { SetupStep } from './setup-guide-primitives';

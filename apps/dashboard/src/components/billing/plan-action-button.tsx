@@ -1,4 +1,4 @@
-import { ApiServiceLevelEnum, FeatureNameEnum, getFeatureForTierAsNumber, PermissionsEnum } from '@novu/shared';
+import { ApiServiceLevelEnum, FeatureNameEnum, getFeatureForTierAsNumber, PermissionsEnum } from '@notify/shared';
 import { RiArrowRightSLine } from 'react-icons/ri';
 import { useBillingPortal } from '../../hooks/use-billing-portal';
 import { useCheckoutSession } from '../../hooks/use-checkout-session';

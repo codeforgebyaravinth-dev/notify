@@ -5,7 +5,7 @@ import {
   hasCompleteManagedCredentials,
   isAnthropicAwsProvider,
   type ManagedCredentialFields,
-} from '@novu/shared';
+} from '@notify/shared';
 
 import type { VerifyManagedCredentialsBody } from '@/api/agents';
 

@@ -5,8 +5,8 @@ import {
   MetricsService,
   QueueBaseService,
   WorkerOptions,
-} from '@novu/application-generic';
-import { CronExpressionEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { CronExpressionEnum } from '@notify/shared';
 
 const nr = require('newrelic');
 

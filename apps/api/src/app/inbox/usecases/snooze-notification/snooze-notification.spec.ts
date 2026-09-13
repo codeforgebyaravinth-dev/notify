@@ -5,7 +5,7 @@ import {
   CreateExecutionDetailsCommand,
   PinoLogger,
   StandardQueueService,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   CommunityOrganizationRepository,
   JobEntity,
@@ -14,8 +14,8 @@ import {
   MessageRepository,
   NotificationRepository,
   OrganizationEntity,
-} from '@novu/dal';
-import { ApiServiceLevelEnum, ChannelTypeEnum, JobStatusEnum, SeverityLevelEnum } from '@novu/shared';
+} from '@notify/dal';
+import { ApiServiceLevelEnum, ChannelTypeEnum, JobStatusEnum, SeverityLevelEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { GetSubscriber } from '../../../subscribers/usecases/get-subscriber';

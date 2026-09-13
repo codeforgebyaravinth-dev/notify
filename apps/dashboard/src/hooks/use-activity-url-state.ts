@@ -1,4 +1,4 @@
-import { ChannelTypeEnum, SeverityLevelEnum } from '@novu/shared';
+import { ChannelTypeEnum, SeverityLevelEnum } from '@notify/shared';
 import { useCallback, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { ActivityFilters } from '@/api/activity';

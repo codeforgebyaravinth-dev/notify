@@ -1,7 +1,7 @@
 import { HttpException, HttpStatus } from '@nestjs/common';
-import { CacheService, FeatureFlagsService } from '@novu/application-generic';
-import { AgentRepository } from '@novu/dal';
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { CacheService, FeatureFlagsService } from '@notify/application-generic';
+import { AgentRepository } from '@notify/dal';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 

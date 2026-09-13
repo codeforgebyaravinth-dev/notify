@@ -1,5 +1,5 @@
-import { JobRepository } from '@novu/dal';
-import { UserSession } from '@novu/testing';
+import { JobRepository } from '@notify/dal';
+import { UserSession } from '@notify/testing';
 import axios, { AxiosResponse } from 'axios';
 import { expect } from 'chai';
 import getPort from 'get-port';

@@ -1,7 +1,7 @@
 ---
-title: "Zulip Chat Integration with Novu"
+title: "Zulip Chat Integration with Notify"
 sidebarTitle: 'Zulip'
-description: "Connect Zulip to Novu to send chat notifications through workflows. Create a bot in Zulip, generate the webhook URL, and store credentials for stream delivery."
+description: "Connect Zulip to Notify to send chat notifications through workflows. Create a bot in Zulip, generate the webhook URL, and store credentials for stream delivery."
 ---
 
 Zulip does not need any API Key or client ID to push messages in it. All it needs is the webhook URL of the channel you want to send messages to. That itself acts as the credential.
@@ -34,17 +34,17 @@ The URL generated above will be the target channel of a subscriber that you want
 
 1. Copy the URL that you generated above
 
-2. Update the subscriber credentials with this URL using the Zulip provider id. You can do this step by using the `@novu/api` library, as shown below:
+2. Update the subscriber credentials with this URL using the Zulip provider id. You can do this step by using the `@notify/api` library, as shown below:
 
 ## Update credential webhookUrl
 
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
-import { ChatOrPushProviderEnum } from "@novu/api/models/components";
+import { Notify } from '@notify/api';
+import { ChatOrPushProviderEnum } from "@notify/api/models/components";
 
-const novu = new Novu({ secretKey: "<NOVU_SECRET_KEY>" });
+const notify = new Notify({ secretKey: "<NOVU_SECRET_KEY>" });
 
 await novu.subscribers.credentials.update(
   {
@@ -60,9 +60,9 @@ await novu.subscribers.credentials.update(
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.subscribers.credentials.update(
         subscriber_id="subscriberId",
         update_subscriber_channel_request_dto={
@@ -96,10 +96,10 @@ res, err := s.Subscribers.Credentials.Update(context.Background(), "subscriberId
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 
 $sdk->subscribersCredentials->update(
     subscriberId: 'subscriberId',
@@ -115,8 +115,8 @@ $sdk->subscribersCredentials->update(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
@@ -134,11 +134,11 @@ await sdk.Subscribers.Credentials.UpdateAsync(
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 import java.util.List;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 
 novu.subscribers().credentials().update()
     .subscriberId("subscriberId")
@@ -168,8 +168,8 @@ curl -L -X PUT 'https://api.novu.co/v1/subscribers/<SUBSCRIBER_ID>/credentials' 
   </Tab>
 </Tabs>
 
-- `subscriberId` is a custom identifier used when identifying your users within the Novu platform.
+- `subscriberId` is a custom identifier used when identifying your users within the Notify platform.
 - `providerId` is a unique provider identifier. We recommend using our ChatOrPushProviderEnum to specify the provider.
-- The third parameter is the credentials object, in this case, we use the `webhookUrl` property to specify the Zulip channel webhook URL or by calling the `Update Subscriber Credentials` endpoint on Novu API. Check endpoint details [here](/api-reference/subscribers/update-provider-credentials).
+- The third parameter is the credentials object, in this case, we use the `webhookUrl` property to specify the Zulip channel webhook URL or by calling the `Update Subscriber Credentials` endpoint on Notify API. Check endpoint details [here](/api-reference/subscribers/update-provider-credentials).
 
-3. You are all set up and ready to send your first chat message via our `@novu/api package or directly using the REST API.
+3. You are all set up and ready to send your first chat message via our `@notify/api package or directly using the REST API.

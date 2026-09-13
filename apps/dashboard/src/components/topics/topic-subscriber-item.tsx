@@ -1,4 +1,4 @@
-import { ISubscriber } from '@novu/shared';
+import { ISubscriber } from '@notify/shared';
 import { format } from 'date-fns';
 import { motion } from 'motion/react';
 import { useState } from 'react';

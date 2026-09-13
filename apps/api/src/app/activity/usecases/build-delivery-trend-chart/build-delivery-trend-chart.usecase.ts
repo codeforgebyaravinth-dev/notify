@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { DeliveryTrendCountsRepository, InstrumentUsecase, PinoLogger } from '@novu/application-generic';
+import { DeliveryTrendCountsRepository, InstrumentUsecase, PinoLogger } from '@notify/application-generic';
 import { ChartDataPointDto } from '../../dtos/get-charts.response.dto';
 import { BuildDeliveryTrendChartCommand } from './build-delivery-trend-chart.command';
 

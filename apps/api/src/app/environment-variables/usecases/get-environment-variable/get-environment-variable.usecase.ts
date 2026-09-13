@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { EnvironmentVariableRepository } from '@novu/dal';
+import { EnvironmentVariableRepository } from '@notify/dal';
 import { EnvironmentVariableResponseDto } from '../../dtos/environment-variable-response.dto';
 import { toEnvironmentVariableResponseDto } from '../get-environment-variables/get-environment-variables.usecase';
 import { GetEnvironmentVariableCommand } from './get-environment-variable.command';

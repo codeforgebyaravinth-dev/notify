@@ -1,5 +1,5 @@
-import { DalService } from '@novu/dal';
-import { wsTestServer } from '@novu/testing';
+import { DalService } from '@notify/dal';
+import { wsTestServer } from '@notify/testing';
 
 import { bootstrap } from '../src/bootstrap';
 

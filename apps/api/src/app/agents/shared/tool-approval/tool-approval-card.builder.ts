@@ -1,4 +1,4 @@
-import { getMcpIconUrl, MCP_ICON_DEFAULT_ID, resolveMcpCatalogIdByName } from '@novu/shared';
+import { getMcpIconUrl, MCP_ICON_DEFAULT_ID, resolveMcpCatalogIdByName } from '@notify/shared';
 import type { Block } from '@slack/types';
 import type { ActionsElement, ButtonElement, CardChild, CardElement, DividerElement } from 'chat';
 import type { SlackNativeDelivery } from '../../conversation-runtime/egress/slack-native-delivery';

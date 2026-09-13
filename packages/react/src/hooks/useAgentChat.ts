@@ -1,4 +1,4 @@
-import type { AgentMessage, LoadConversationResult, NovuError, SendMessageResult } from '@novu/js';
+import type { AgentMessage, LoadConversationResult, NovuError, SendMessageResult } from '@notify/js';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useDataRef } from './internal/useDataRef';
 import { useNovu } from './NovuProvider';

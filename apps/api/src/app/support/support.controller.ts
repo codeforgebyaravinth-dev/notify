@@ -1,9 +1,9 @@
 import { Body, Controller, Post, UseGuards } from '@nestjs/common';
 import { ApiExcludeController } from '@nestjs/swagger';
-import { Novu } from '@novu/api';
-import { PinoLogger, UserSession } from '@novu/application-generic';
-import { OrganizationRepository } from '@novu/dal';
-import { UserSessionData } from '@novu/shared';
+import { Novu } from '@notify/api';
+import { PinoLogger, UserSession } from '@notify/application-generic';
+import { OrganizationRepository } from '@notify/dal';
+import { UserSessionData } from '@notify/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { AgentsEarlyAccessDto } from './dtos/agents-early-access.dto';
 import { CreateSupportThreadDto } from './dtos/create-thread.dto';

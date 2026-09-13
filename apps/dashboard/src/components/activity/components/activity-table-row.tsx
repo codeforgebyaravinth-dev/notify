@@ -1,4 +1,4 @@
-import type { ISubscriber } from '@novu/shared';
+import type { ISubscriber } from '@notify/shared';
 import { TableCell, TableRow } from '@/components/primitives/table';
 import { formatDateSimple } from '@/utils/format-date';
 import { cn } from '@/utils/ui';

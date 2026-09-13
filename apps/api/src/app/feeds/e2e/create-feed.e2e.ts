@@ -1,6 +1,6 @@
-import { FeedRepository } from '@novu/dal';
-import { StepTypeEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { FeedRepository } from '@notify/dal';
+import { StepTypeEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { CreateWorkflowRequestDto, UpdateWorkflowRequestDto } from '../../workflows-v1/dtos';
 

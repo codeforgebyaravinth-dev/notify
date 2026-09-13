@@ -1,4 +1,4 @@
-import { BaseCommand } from '@novu/application-generic';
+import { BaseCommand } from '@notify/application-generic';
 import { IsDefined } from 'class-validator';
 import { EnvironmentCommand } from '../../../shared/commands/project.command';
 

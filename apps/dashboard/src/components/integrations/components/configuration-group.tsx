@@ -1,4 +1,4 @@
-import { ConfigConfigurationGroup, FeatureFlagsKeysEnum, IIntegration, IProviderConfig } from '@novu/shared';
+import { ConfigConfigurationGroup, FeatureFlagsKeysEnum, IIntegration, IProviderConfig } from '@notify/shared';
 import { Control } from 'react-hook-form';
 import { useFeatureFlag } from '@/hooks/use-feature-flag';
 import { IntegrationFormData } from '../types';

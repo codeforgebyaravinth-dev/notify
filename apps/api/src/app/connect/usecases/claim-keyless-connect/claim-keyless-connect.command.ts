@@ -1,5 +1,5 @@
 import { IsNotEmpty, IsString } from 'class-validator';
-import { AuthenticatedCommand } from '@novu/application-generic';
+import { AuthenticatedCommand } from '@notify/application-generic';
 
 export class ClaimKeylessConnectCommand extends AuthenticatedCommand {
   @IsString()

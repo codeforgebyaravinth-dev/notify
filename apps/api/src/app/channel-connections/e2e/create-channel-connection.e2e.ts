@@ -1,6 +1,6 @@
-import { Novu } from '@novu/api';
-import { CreateChannelConnectionRequestDto } from '@novu/api/models/components';
-import { UserSession } from '@novu/testing';
+import { Novu } from '@notify/api';
+import { CreateChannelConnectionRequestDto } from '@notify/api/models/components';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { expectSdkExceptionGeneric } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';
 import { createSlackIntegration, createSubscribersService, setupChannelTests } from './helpers/channel-helpers';

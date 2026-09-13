@@ -9,7 +9,7 @@ import {
   UpsertPreferences,
   UpsertUserWorkflowPreferencesCommand,
   UpsertWorkflowPreferencesCommand,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   ChangeRepository,
   EnvironmentRepository,
@@ -19,14 +19,14 @@ import {
   NotificationStepEntity,
   NotificationTemplateEntity,
   NotificationTemplateRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   buildWorkflowPreferencesFromPreferenceChannels,
   ChangeEntityTypeEnum,
   DEFAULT_WORKFLOW_PREFERENCES,
   IPreferenceChannels,
   PreferencesTypeEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { ApplyChange, ApplyChangeCommand } from '../apply-change';
 import { PromoteTypeChangeCommand } from '../promote-type-change.command';
 import { INotificationTemplateChangeService } from '../shared';

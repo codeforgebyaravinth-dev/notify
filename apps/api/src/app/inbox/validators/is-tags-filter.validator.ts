@@ -1,4 +1,4 @@
-import { normalizeTagGroups } from '@novu/shared';
+import { normalizeTagGroups } from '@notify/shared';
 import {
   registerDecorator,
   ValidationArguments,

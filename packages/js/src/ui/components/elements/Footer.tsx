@@ -78,8 +78,7 @@ export const Footer = (props: { name?: string }) => {
               class="nt-z-10 nt-flex nt-items-center nt-gap-1 nt-justify-center"
             >
               <span class="nt-text-xs">{props.name ? `${props.name} by` : 'Inbox by'}</span>
-              <Novu class="nt-size-2.5" />
-              <span class="nt-text-xs">Novu</span>
+              <span class="nt-text-xs">Notify</span>
             </a>
           </Show>
         </div>

@@ -1,12 +1,12 @@
 import { BadRequestException, ConflictException, Injectable, NotFoundException } from '@nestjs/common';
-import { encryptCredentials, PinoLogger } from '@novu/application-generic';
-import { AgentIntegrationRepository, IntegrationRepository } from '@novu/dal';
+import { encryptCredentials, PinoLogger } from '@notify/application-generic';
+import { AgentIntegrationRepository, IntegrationRepository } from '@notify/dal';
 import {
   ChatProviderIdEnum,
   SLACK_AGENT_BOT_EVENTS,
   SLACK_AGENT_DEFAULT_DESCRIPTION,
   SLACK_AGENT_OAUTH_SCOPES,
-} from '@novu/shared';
+} from '@notify/shared';
 import axios, { AxiosError } from 'axios';
 import { CHAT_OAUTH_CALLBACK_PATH } from '../generate-chat-oath-url/chat-oauth.constants';
 import { SlackQuickSetupCommand } from './slack-quick-setup.command';

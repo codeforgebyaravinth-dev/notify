@@ -1,6 +1,6 @@
 import { ApiExtraModels, ApiProperty, getSchemaPath } from '@nestjs/swagger';
-import { ApiContextPayload, IsValidContextPayload } from '@novu/application-generic';
-import { ContextPayload } from '@novu/shared';
+import { ApiContextPayload, IsValidContextPayload } from '@notify/application-generic';
+import { ContextPayload } from '@notify/shared';
 import { Type } from 'class-transformer';
 import { ArrayMaxSize, ArrayMinSize, IsArray, IsOptional, IsString, ValidateNested } from 'class-validator';
 import {

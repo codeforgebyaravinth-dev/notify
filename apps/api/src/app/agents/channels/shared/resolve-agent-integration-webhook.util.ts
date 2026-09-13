@@ -1,5 +1,5 @@
 import { NotFoundException } from '@nestjs/common';
-import { AgentIntegrationRepository, AgentRepository, IntegrationEntity, IntegrationRepository } from '@novu/dal';
+import { AgentIntegrationRepository, AgentRepository, IntegrationEntity, IntegrationRepository } from '@notify/dal';
 
 export interface ResolvedAgentIntegrationWebhook {
   agent: { _id: string; identifier: string };

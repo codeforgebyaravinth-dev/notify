@@ -1,4 +1,4 @@
-import { IEnvironment } from '@novu/shared';
+import { IEnvironment } from '@notify/shared';
 import { cva } from 'class-variance-authority';
 import { RiTerminalFill } from 'react-icons/ri';
 import { cn } from '@/utils/ui';

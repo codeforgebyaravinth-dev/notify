@@ -1,7 +1,7 @@
 import { forwardRef, Inject, Injectable } from '@nestjs/common';
-import { PinoLogger } from '@novu/application-generic';
-import { AgentMcpServerRepository, McpConnectionRepository, SubscriberRepository } from '@novu/dal';
-import { MCP_SERVERS, McpConnectionStatusEnum } from '@novu/shared';
+import { PinoLogger } from '@notify/application-generic';
+import { AgentMcpServerRepository, McpConnectionRepository, SubscriberRepository } from '@notify/dal';
+import { MCP_SERVERS, McpConnectionStatusEnum } from '@notify/shared';
 import { HandleAgentReplyCommand } from '../../conversation-runtime/reply/handle-agent-reply/handle-agent-reply.command';
 import { HandleAgentReply } from '../../conversation-runtime/reply/handle-agent-reply/handle-agent-reply.usecase';
 import { McpConnectRedirectService } from '../../mcp/connections/mcp-connect-redirect.service';

@@ -1,4 +1,4 @@
-import { IActivity } from '@novu/shared';
+import { IActivity } from '@notify/shared';
 import { motion } from 'motion/react';
 import { useRef, useState } from 'react';
 import { RiCloseFill, RiFullscreenLine } from 'react-icons/ri';

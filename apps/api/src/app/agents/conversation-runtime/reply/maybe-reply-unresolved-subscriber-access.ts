@@ -1,5 +1,5 @@
-import type { PinoLogger } from '@novu/application-generic';
-import { AgentSubscriberAccessEnum } from '@novu/shared';
+import type { PinoLogger } from '@notify/application-generic';
+import { AgentSubscriberAccessEnum } from '@notify/shared';
 import { AgentEventEnum } from '../../shared/enums/agent-event.enum';
 import { AgentPlatformEnum } from '../../shared/enums/agent-platform.enum';
 import type { AgentConversationService } from '../conversation/agent-conversation.service';

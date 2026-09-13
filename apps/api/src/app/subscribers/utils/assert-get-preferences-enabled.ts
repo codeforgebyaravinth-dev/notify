@@ -1,6 +1,6 @@
 import { ServiceUnavailableException } from '@nestjs/common';
-import { FeatureFlagsService } from '@novu/application-generic';
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsService } from '@notify/application-generic';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 
 export async function assertGetPreferencesEnabled(
   featureFlagsService: FeatureFlagsService,

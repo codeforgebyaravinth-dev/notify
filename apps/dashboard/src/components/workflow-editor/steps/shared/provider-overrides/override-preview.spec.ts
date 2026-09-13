@@ -1,4 +1,4 @@
-import { ChatProviderIdEnum, ToolProviderIdEnum } from '@novu/shared';
+import { ChatProviderIdEnum, ToolProviderIdEnum } from '@notify/shared';
 import { describe, expect, it } from 'vitest';
 import { resolveOverrideForPreview } from './override-preview';
 

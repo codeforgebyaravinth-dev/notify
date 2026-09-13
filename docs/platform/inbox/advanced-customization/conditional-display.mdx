@@ -1,6 +1,6 @@
 ---
 title: 'Conditional Display'
-description: "Apply conditional display logic to notifications in the Novu Inbox component to show or hide items based on subscriber, workflow, or payload data."
+description: "Apply conditional display logic to notifications in the Notify Inbox component to show or hide items based on subscriber, workflow, or payload data."
 ---
 
 The Inbox component supports conditional display of notifications using the `renderNotification` prop. This function receives the full `notification` object and returns a custom React element.
@@ -12,7 +12,7 @@ You can use worklow data such as tags, identifiers, data object or notfication s
 You can conditionally display customized notification based on [workflow tags](/platform/concepts/workflows#workflow-tags). These tags are defined in your workflow and are accessible via `notification.tags` property.
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 
 export default function CustomInbox() {
   
@@ -48,7 +48,7 @@ export default function CustomInbox() {
 Each workflow has a [name and a unique identifier](/platform/concepts/workflows#workflow-identifier), accessible through `notification.workflow.name` and `notification.workflow.identifier`, respectively. Either property can be used to conditionally render notifications.
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 export default function CutomInbox() {
   
   return (
@@ -92,7 +92,7 @@ export default function CutomInbox() {
 You can also use values from the notification [data object](/platform/inbox/configuration/data-object) to render notifications conditionally. These values are accessible via `notification.data` and typically contain custom payload fields.
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 export default function CutomInbox() {
   
   return (
@@ -127,7 +127,7 @@ export default function CutomInbox() {
 You can access the severity field on each notification object. This enables conditional rendering in custom UIs.
 
 ```tsx
-import { Inbox, SeverityLevelEnum } from '@novu/react';
+import { Inbox, SeverityLevelEnum } from '@notify/react';
 export default function CutomInbox() {
  
   return (

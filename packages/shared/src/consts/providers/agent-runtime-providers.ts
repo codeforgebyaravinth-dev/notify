@@ -25,7 +25,7 @@ export type AgentRuntimeCapabilities = {
    * API and Novu's blob may be empty.
    *
    * Optional so adding it to `AgentRuntimeCapabilities` is non-breaking
-   * for external consumers of `@novu/shared`; treat `undefined` as `false`
+   * for external consumers of `@notify/shared`; treat `undefined` as `false`
    * (use `capabilities.tokenVault ?? false` on the read path).
    */
   tokenVault?: boolean;

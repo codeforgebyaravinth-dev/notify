@@ -24,6 +24,13 @@ export type {
 export type { EventHandler, Events, SocketEventNames } from './event-emitter';
 export { NOTIFICATION_COUNT_SYNC_EVENTS } from './notifications/count-sync-events';
 export { Novu } from './novu';
+export { 
+  initializeNotify, 
+  getNotify, 
+  getNotifications, 
+  getUnreadCount, 
+  onNotification 
+} from './notify-singleton';
 export type {
   PreferenceFilter,
   WorkflowFilter,

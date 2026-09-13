@@ -187,9 +187,9 @@ async function installDependencies(framework: IFramework, packageManager: IPacka
 
   // Always install latest version of Novu packages
   if (framework.framework === FRAMEWORKS.NEXTJS) {
-    packagesToInstall.push('@novu/nextjs@latest');
+    packagesToInstall.push('@notify/nextjs@latest');
   } else {
-    packagesToInstall.push('@novu/react@latest');
+    packagesToInstall.push('@notify/react@latest');
   }
 
   if (packagesToInstall.length > 0) {

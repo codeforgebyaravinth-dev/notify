@@ -1,5 +1,5 @@
-import { workflow } from '@novu/framework';
-import { StepTypeEnum } from '@novu/shared';
+import { workflow } from '@notify/framework';
+import { StepTypeEnum } from '@notify/shared';
 import { expect } from '@playwright/test';
 import { InAppStepEditor } from './page-object-models/in-app-step-editor';
 import { StepConfigSidebar } from './page-object-models/step-config-sidebar';

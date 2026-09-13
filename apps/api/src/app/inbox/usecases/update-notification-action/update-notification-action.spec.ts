@@ -1,7 +1,7 @@
 import { BadRequestException, NotFoundException } from '@nestjs/common';
-import { AnalyticsService, buildFeedKey, InvalidateCacheService } from '@novu/application-generic';
-import { ChannelTypeEnum, MessageRepository } from '@novu/dal';
-import { ButtonTypeEnum, ChannelCTATypeEnum, MessageActionStatusEnum } from '@novu/shared';
+import { AnalyticsService, buildFeedKey, InvalidateCacheService } from '@notify/application-generic';
+import { ChannelTypeEnum, MessageRepository } from '@notify/dal';
+import { ButtonTypeEnum, ChannelCTATypeEnum, MessageActionStatusEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 

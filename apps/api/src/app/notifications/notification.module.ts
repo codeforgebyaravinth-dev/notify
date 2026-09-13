@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { CommunityOrganizationRepository } from '@novu/dal';
+import { CommunityOrganizationRepository } from '@notify/dal';
 import { AuthModule } from '../auth/auth.module';
 import { SharedModule } from '../shared/shared.module';
 import { NotificationsController } from './notification.controller';

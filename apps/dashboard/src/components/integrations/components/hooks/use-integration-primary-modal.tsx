@@ -1,4 +1,4 @@
-import { CHANNELS_WITH_PRIMARY, ChannelTypeEnum, IIntegration } from '@novu/shared';
+import { CHANNELS_WITH_PRIMARY, ChannelTypeEnum, IIntegration } from '@notify/shared';
 import { UseMutateAsyncFunction } from '@tanstack/react-query';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';

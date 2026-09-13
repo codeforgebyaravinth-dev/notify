@@ -1,4 +1,4 @@
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { useLDClient } from 'launchdarkly-react-client-sdk';
 import { useEffect, useState } from 'react';
 import { IS_EU } from '@/config';

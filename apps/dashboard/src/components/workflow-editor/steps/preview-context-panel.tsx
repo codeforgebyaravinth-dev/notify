@@ -1,4 +1,4 @@
-import { DEFAULT_LOCALE, ISubscriberResponseDto } from '@novu/shared';
+import { DEFAULT_LOCALE, ISubscriberResponseDto } from '@notify/shared';
 import { JSONSchema7 } from 'json-schema';
 
 import { useCallback, useEffect, useMemo, useRef } from 'react';

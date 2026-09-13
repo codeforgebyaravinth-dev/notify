@@ -1,5 +1,5 @@
-import { EnvironmentWithUserCommand, JSONSchemaDto } from '@novu/application-generic';
-import { ResourceOriginEnum } from '@novu/shared';
+import { EnvironmentWithUserCommand, JSONSchemaDto } from '@notify/application-generic';
+import { ResourceOriginEnum } from '@notify/shared';
 import { IsDefined, IsEnum, IsObject, IsOptional } from 'class-validator';
 
 export class BuildLayoutIssuesCommand extends EnvironmentWithUserCommand {

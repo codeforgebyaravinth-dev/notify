@@ -1,15 +1,15 @@
 ---
 title: 'Notification event'
-description: "Understand the Novu notification lifecycle and the key entities - workflows, triggers, subscribers, jobs, and messages - that make up a notification."
+description: "Understand the Notify notification lifecycle and the key entities - workflows, triggers, subscribers, jobs, and messages - that make up a notification."
 ---
 
-In Novu, notifications are the core building blocks of your product’s communication experience. When your user receives a message via an in-app alert, an email, or a push notification, what they’re seeing is the final output of a notification.
+In Notify, notifications are the core building blocks of your product’s communication experience. When your user receives a message via an in-app alert, an email, or a push notification, what they’re seeing is the final output of a notification.
 
 Notifications represent the complete journey of a message triggered by an event in your application and delivered to a specific user across one or more channels. They encapsulate all the execution logic and delivery metadata in a single traceable unit.
 
 ## Notification lifecycle
 
-A notification doesn't exist in isolation, it’s the result of a sequence of interconnected entities working together. Here’s how it works in Novu:
+A notification doesn't exist in isolation, it’s the result of a sequence of interconnected entities working together. Here’s how it works in Notify:
 
 <img
   src="/images/concepts/notifications/notification-life-cycle.png"
@@ -19,7 +19,7 @@ A notification doesn't exist in isolation, it’s the result of a sequence of in
 
 ### Event
 
-Something meaningful happens in your application, such as a user signing up, a password reset being requested, or a comment being posted. You emit this event to Novu using the [Event Trigger API](/api-reference/events/trigger-event).
+Something meaningful happens in your application, such as a user signing up, a password reset being requested, or a comment being posted. You emit this event to Notify using the [Event Trigger API](/api-reference/events/trigger-event).
 
 Each event contains:
 - A name that maps to a specific workflow (user_signed_up)
@@ -27,11 +27,11 @@ Each event contains:
 - One or more subscribers
 - Optional overrides or metadata
 
-This is how your application tells Novu, “It’s time to send something.”
+This is how your application tells Notify, “It’s time to send something.”
 
 ### Workflow
 
-Novu matches the incoming event to a predefined workflow. This workflow is your logic for determining:
+Notify matches the incoming event to a predefined workflow. This workflow is your logic for determining:
 - What channels to use (email, in-app, SMS, etc.)
 - What message templates to render
 - When and how messages should be sent
@@ -44,7 +44,7 @@ The workflow is where message personalization, conditional logic, and multi-chan
 
 ### Notification
 
-Once the workflow starts executing, Novu creates a notification for each subscriber involved. This notification acts as the central entity tracking everything that happens - every job, message, and delivery status. It includes:
+Once the workflow starts executing, Notify creates a notification for each subscriber involved. This notification acts as the central entity tracking everything that happens - every job, message, and delivery status. It includes:
 
 - The subscriber details
 - The workflow (template) used
@@ -76,7 +76,7 @@ Messages are live entities, tracked in real-time, with full visibility into:
 
 ## Notification structure
 
-A notification in Novu is more than just a message, it’s a full record of what happened from the moment an event was triggered to when one or more messages were delivered or failed to deliver.
+A notification in Notify is more than just a message, it’s a full record of what happened from the moment an event was triggered to when one or more messages were delivered or failed to deliver.
 
 Each notification encapsulates a set of properties that describe its creation, context, execution, and result. These properties are essential for debugging, analytics, and tracking user communications.
 
@@ -92,10 +92,10 @@ Each notification encapsulates a set of properties that describe its creation, c
 | `messages`      | The individual messages generated for each channel. Contains delivery status, content, and provider response.                               |
 | `status`        | The current execution state of the notification (`pending`, `completed`, `failed`, and so on).                                                   |
 
-These fields are accessible via the [Notifications API](/api-reference/notifications/list-all-events) and are also displayed in the Novu dashboard’s [Activity Feed](https://dashboard.novu.co/activity-feed) for visual traceability.
+These fields are accessible via the [Notifications API](/api-reference/notifications/list-all-events) and are also displayed in the Notify dashboard’s [Activity Feed](https://dashboard.novu.co/activity-feed) for visual traceability.
 
 ## Frequently asked questions
-These are some of the most frequently asked questions about notifications in Novu.
+These are some of the most frequently asked questions about notifications in Notify.
 
 <AccordionGroup>
   <Accordion title="What is the difference between a notification and an event?">

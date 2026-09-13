@@ -1,4 +1,4 @@
-import { EnvironmentWithUserCommand } from '@novu/application-generic';
+import { EnvironmentWithUserCommand } from '@notify/application-generic';
 import { IsNotEmpty, IsString } from 'class-validator';
 
 export class DeleteTenantCommand extends EnvironmentWithUserCommand {

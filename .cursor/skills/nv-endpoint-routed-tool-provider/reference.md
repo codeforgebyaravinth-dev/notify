@@ -164,7 +164,7 @@ the template):
 Register under the `Tool` group in `docs/docs.json`, then point the provider's
 `docReference` in `packages/shared/.../channels/tool.ts` at
 `https://docs.novu.co/platform/integrations/tool/<provider>${UTM_CAMPAIGN_QUERY_PARAM}`
-and rebuild `@novu/shared`.
+and rebuild `@notify/shared`.
 
 ## 9. Playground trio (`playground/nextjs`)
 

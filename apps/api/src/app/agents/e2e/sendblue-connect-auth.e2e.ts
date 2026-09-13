@@ -6,10 +6,10 @@
  * the keyless/secret-key `novu connect` flow. Sendblue's HTTP API is faked by
  * the in-process stub so we exercise the real usecases without the vendor API.
  */
-import { encryptCredentials } from '@novu/application-generic';
-import { AgentIntegrationRepository, IntegrationRepository, SubscriberRepository } from '@novu/dal';
-import { ChannelTypeEnum, ChatProviderIdEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { encryptCredentials } from '@notify/application-generic';
+import { AgentIntegrationRepository, IntegrationRepository, SubscriberRepository } from '@notify/dal';
+import { ChannelTypeEnum, ChatProviderIdEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { type SendblueApiStub, startSendblueApiStub } from './helpers/sendblue-api-stub';
 

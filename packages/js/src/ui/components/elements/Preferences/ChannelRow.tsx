@@ -59,7 +59,7 @@ export const ChannelRow = (props: ChannelRowProps) => {
         <div
           class={style({
             key: 'channelIconContainer',
-            className: 'nt-p-1 nt-rounded-md nt-bg-neutral-alpha-25 nt-text-foreground-alpha-300',
+            className: 'nt-p-1 nt-nt-rounded-none nt-bg-neutral-alpha-25 nt-text-foreground-alpha-300',
             context: { preference: props.preference, preferenceGroup: props.preferenceGroup } satisfies Parameters<
               InboxAppearanceCallback['channelIconContainer']
             >[0],

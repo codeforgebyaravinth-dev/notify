@@ -1,27 +1,27 @@
 ---
-title: 'User Notification Preferences with Novu'
+title: 'User Notification Preferences with Notify'
 sidebarTitle: 'Preferences'
-description: "Let subscribers manage notification preferences per workflow and channel using the Novu Inbox component and the preferences API for user-facing settings."
+description: "Let subscribers manage notification preferences per workflow and channel using the Notify Inbox component and the preferences API for user-facing settings."
 ---
 
 
-Let subscribers control how they receive notifications using Novu's built-in preference management. The Inbox component includes a preferences UI, and the REST API lets you read and update preferences programmatically.
+Let subscribers control how they receive notifications using Notify's built-in preference management. The Inbox component includes a preferences UI, and the REST API lets you read and update preferences programmatically.
 
-## How do subscriber preferences work in Novu?
+## How do subscriber preferences work in Notify?
 
 Each subscriber has preferences at two levels:
 
 - **Global channel preferences** - opt in or out of email, SMS, push, in-app, and chat globally
 - **Workflow-level preferences** - opt in or out of specific workflows
 
-When you trigger a workflow, Novu checks preferences before delivering each channel step.
+When you trigger a workflow, Notify checks preferences before delivering each channel step.
 
 ## How do I expose preferences in the Inbox?
 
-The Novu Inbox includes a built-in preferences modal. Enable it in your Inbox configuration:
+The Notify Inbox includes a built-in preferences modal. Enable it in your Inbox configuration:
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 
 <Inbox
   applicationIdentifier="YOUR_APPLICATION_IDENTIFIER"
@@ -60,6 +60,6 @@ curl -X PATCH https://api.novu.co/v2/subscribers/user_123/preferences \
     Yes. Workflow-level preferences let subscribers disable individual workflows while staying subscribed to others such as security alerts.
   </Accordion>
   <Accordion title="Do preferences apply to topic broadcasts?">
-    Yes. When triggering a workflow to a topic, Novu respects each subscriber's preferences before delivering messages.
+    Yes. When triggering a workflow to a topic, Notify respects each subscriber's preferences before delivering messages.
   </Accordion>
 </AccordionGroup>

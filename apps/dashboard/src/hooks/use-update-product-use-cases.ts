@@ -1,5 +1,5 @@
 import { useOrganization } from '@clerk/react';
-import type { ProductUseCases } from '@novu/shared';
+import type { ProductUseCases } from '@notify/shared';
 import { useMutation } from '@tanstack/react-query';
 import { updateExternalOrganization } from '@/api/organization';
 

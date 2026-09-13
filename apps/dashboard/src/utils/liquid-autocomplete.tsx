@@ -5,7 +5,7 @@ import {
   CompletionSource,
   startCompletion,
 } from '@codemirror/autocomplete';
-import { TRANSLATION_NAMESPACE_SEPARATOR } from '@novu/shared';
+import { TRANSLATION_NAMESPACE_SEPARATOR } from '@notify/shared';
 import { EditorView } from '@uiw/react-codemirror';
 import React from 'react';
 import { createRoot } from 'react-dom/client';

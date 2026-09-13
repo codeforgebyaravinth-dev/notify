@@ -1,5 +1,5 @@
 {
-  "name": "@novu/react-native",
+  "name": "@notify/react-native",
   "version": "3.18.2",
   "repository": "https://github.com/novuhq/novu",
   "description": "Novu's React Native SDK for building custom inbox notification experiences",
@@ -49,7 +49,7 @@
     "react": ">=17"
   },
   "dependencies": {
-    "@novu/react": "workspace:*"
+    "@notify/react": "workspace:*"
   },
   "nx": {
     "tags": [

@@ -1,4 +1,4 @@
-import { ISmsOptions } from '@novu/stateless';
+import { ISmsOptions } from '@notify/stateless';
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 import { axiosSpy } from '../../../utils/test/spy-axios';
 import { ISmsmodeApiResponse, SmsmodeSmsProvider } from './smsmode.provider';

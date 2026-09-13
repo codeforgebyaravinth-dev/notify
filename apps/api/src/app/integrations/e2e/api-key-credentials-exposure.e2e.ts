@@ -1,6 +1,6 @@
-import { IntegrationRepository } from '@novu/dal';
-import { ChannelTypeEnum, EmailProviderIdEnum, SmsProviderIdEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { IntegrationRepository } from '@notify/dal';
+import { ChannelTypeEnum, EmailProviderIdEnum, SmsProviderIdEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 /**
@@ -27,7 +27,7 @@ describe('Integration credentials exposure to API-key auth - /integrations #novu
 
       expect(body.data.length).to.be.greaterThan(0);
       for (const integration of body.data) {
-        // Older `@novu/api` SDKs declare `credentials` as a required object in
+        // Older `@notify/api` SDKs declare `credentials` as a required object in
         // their zod schema. Returning `{}` keeps those clients working without
         // exposing any actual credential values to API-key callers.
         expect(integration.credentials).to.deep.equal({});

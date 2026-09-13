@@ -6,9 +6,9 @@ import {
   CachedQuery,
   CachedResponse,
   InstrumentUsecase,
-} from '@novu/application-generic';
-import { MessageRepository, SubscriberEntity, SubscriberRepository } from '@novu/dal';
-import { ActorTypeEnum, ChannelTypeEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { MessageRepository, SubscriberEntity, SubscriberRepository } from '@notify/dal';
+import { ActorTypeEnum, ChannelTypeEnum } from '@notify/shared';
 import { FeedResponseDto } from '../../dtos/feeds-response.dto';
 import { GetNotificationsFeedCommand } from './get-notifications-feed.command';
 

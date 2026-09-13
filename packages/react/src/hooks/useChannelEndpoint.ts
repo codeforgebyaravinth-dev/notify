@@ -1,4 +1,4 @@
-import type { ChannelEndpointResponse, NovuError } from '@novu/js';
+import type { ChannelEndpointResponse, NovuError } from '@notify/js';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useNovu } from './NovuProvider';
 

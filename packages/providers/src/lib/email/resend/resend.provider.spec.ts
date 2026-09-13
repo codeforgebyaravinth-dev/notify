@@ -1,4 +1,4 @@
-import { IEmailOptions } from '@novu/stateless';
+import { IEmailOptions } from '@notify/stateless';
 import { expect, test, vi } from 'vitest';
 import { ResendEmailProvider } from './resend.provider';
 

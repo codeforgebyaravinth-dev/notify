@@ -1,12 +1,12 @@
 ---
-title: '@novu/js'
-description: "Complete API reference for the @novu/js browser SDK, covering the Novu client, notification streams, preferences, counts, and session management."
+title: '@notify/js'
+description: "Complete API reference for the @notify/js browser SDK, covering the Notify client, notification streams, preferences, counts, and session management."
 ---
 
 
-## Novu
+## Notify
 
-The Novu client provides methods to interact with notifications, preferences, and real-time events.
+The Notify client provides methods to interact with notifications, preferences, and real-time events.
 
 ### Constructor Options
 
@@ -30,9 +30,9 @@ The Novu client provides methods to interact with notifications, preferences, an
 <Tabs>
   <Tab title="US">
     ```typescript
-    import { Novu } from "@novu/js";
+    import { Notify } from "@notify/js";
 
-    const novu = new Novu({
+    const notify = new Notify({
       subscriberId: "SUBSCRIBER_ID",
       applicationIdentifier: "APPLICATION_IDENTIFIER",
     });
@@ -40,9 +40,9 @@ The Novu client provides methods to interact with notifications, preferences, an
   </Tab>
   <Tab title="EU">
     ```typescript
-    import { Novu } from "@novu/js";
+    import { Notify } from "@notify/js";
 
-    const novu = new Novu({
+    const notify = new Notify({
       subscriberId: "SUBSCRIBER_ID",
       applicationIdentifier: "APPLICATION_IDENTIFIER",
       apiUrl: "https://eu.api.novu.co",
@@ -53,9 +53,9 @@ The Novu client provides methods to interact with notifications, preferences, an
   <Tab title="Using Context">
   <Note> Learn how Context is used to filter Inbox notifications in the [Inbox with Context](/platform/inbox/configuration/inbox-with-context) guide. </Note>
   ```tsx
-  import { Novu } from '@novu/js';
+  import { Notify } from '@notify/js';
 
-  const novu = new Novu({
+  const notify = new Notify({
     applicationIdentifier: 'YOUR_APP_ID',
     subscriberId: 'user-123',
     context: {
@@ -76,9 +76,9 @@ The Novu client provides methods to interact with notifications, preferences, an
   </Tab>
   <Tab title="HMAC Encryption">
     ```typescript
-    import { Novu } from "@novu/js";
+    import { Notify } from "@notify/js";
 
-    const novu = new Novu({
+    const notify = new Notify({
       subscriberId: "SUBSCRIBER_ID",
       applicationIdentifier: "APPLICATION_IDENTIFIER",
       subscriberHash: "SUBSCRIBER_HASH_HMAC_ENCRYPTION",
@@ -109,7 +109,7 @@ Fetches a list of notifications based on provided filters.
 
 
 ```typescript
-import { SeverityLevelEnum } from '@novu/js';
+import { SeverityLevelEnum } from '@notify/js';
 import dayjs from "dayjs";
 
 const now = dayjs();
@@ -483,7 +483,7 @@ The `preferences.schedule` submodule lets you fetch and update a subscriber’s 
 Fetches the subscriber’s schedule.
 
 ```tsx
-const novu = new Novu(...);
+const notify = new Notify(...);
 
 const { data: { schedule } } = await novu.preferences.schedule.get();
 ```
@@ -493,7 +493,7 @@ const { data: { schedule } } = await novu.preferences.schedule.get();
 Updates the subscriber’s schedule. You can update the entire weekly schedule or only specific days.
 
 ```tsx
-const novu = new Novu(...);
+const notify = new Notify(...);
 
 // Update schedule via preferences
 const { data: { schedule } } = await novu.preferences.schedule.update({
@@ -522,7 +522,7 @@ A `Schedule` instance is returned when fetching or updating a schedule.
 
 ## Events
 
-The Novu client provides real-time event handling through WebSocket connections.
+The Notify client provides real-time event handling through WebSocket connections.
 
 ### Available Events
 

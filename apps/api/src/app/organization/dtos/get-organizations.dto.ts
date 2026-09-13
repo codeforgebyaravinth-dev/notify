@@ -1,3 +1,3 @@
-import { OrganizationEntity } from '@novu/dal';
+import { OrganizationEntity } from '@notify/dal';
 
 export type IGetOrganizationsDto = OrganizationEntity[];

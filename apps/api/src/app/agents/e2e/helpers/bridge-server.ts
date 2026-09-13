@@ -1,7 +1,7 @@
 /**
  * In-process bridge server for agent e2e tests.
  *
- * Spins up `@novu/framework/express`'s `serve()` handler with a real `agent()`
+ * Spins up `@notify/framework/express`'s `serve()` handler with a real `agent()`
  * registration so the API's `BridgeExecutorService` can fire genuine HTTP calls
  * into a configurable `onMessage` / `onAction` / `onResolve` flow. Exposed as a
  * helper so tests can vary handler behavior per-scenario without rebuilding the
@@ -23,7 +23,7 @@
  */
 
 import http from 'node:http';
-import { agent, Client, serve } from '@novu/framework/express';
+import { agent, Client, serve } from '@notify/framework/express';
 import express from 'express';
 import getPort from 'get-port';
 

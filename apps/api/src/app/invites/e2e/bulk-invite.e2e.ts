@@ -1,6 +1,6 @@
-import { CommunityMemberRepository } from '@novu/dal';
-import { IBulkInviteResponse, MemberRoleEnum, MemberStatusEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { CommunityMemberRepository } from '@notify/dal';
+import { IBulkInviteResponse, MemberRoleEnum, MemberStatusEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Bulk invite members - /invites/bulk (POST) #novu-v0-os', async () => {

@@ -1,6 +1,6 @@
-import { CommunityMemberRepository } from '@novu/dal';
-import { MemberRoleEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { CommunityMemberRepository } from '@notify/dal';
+import { MemberRoleEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Get members - /organization/members (GET) #novu-v0-os', async () => {

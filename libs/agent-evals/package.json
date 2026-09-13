@@ -1,5 +1,5 @@
 {
-  "name": "@novu/agent-evals",
+  "name": "@notify/agent-evals",
   "version": "0.1.0",
   "private": true,
   "description": "Behavioral eval harness for Novu coding-agent playbooks (suite-based).",
@@ -12,7 +12,7 @@
     "check:fix": "biome check --write ."
   },
   "dependencies": {
-    "@novu/shared": "workspace:*",
+    "@notify/shared": "workspace:*",
     "@ai-sdk/anthropic": "^3.0.10",
     "ai": "6.0.50",
     "dotenv": "^16.6.1",

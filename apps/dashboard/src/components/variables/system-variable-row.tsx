@@ -1,4 +1,4 @@
-import { IEnvironment } from '@novu/shared';
+import { IEnvironment } from '@notify/shared';
 import React, { useState } from 'react';
 import { RiArrowDownSLine, RiArrowRightSLine, RiCheckLine, RiCornerDownRightLine, RiLockLine } from 'react-icons/ri';
 import { Badge } from '@/components/primitives/badge';

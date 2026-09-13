@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { TenantRepository } from '@novu/dal';
+import { TenantRepository } from '@notify/dal';
 import { GetTenantsCommand } from './get-tenants.command';
 
 @Injectable()

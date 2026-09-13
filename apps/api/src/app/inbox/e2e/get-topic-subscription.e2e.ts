@@ -1,6 +1,6 @@
-import { PreferencesRepository } from '@novu/dal';
-import { PreferencesTypeEnum, StepTypeEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { PreferencesRepository } from '@notify/dal';
+import { PreferencesTypeEnum, StepTypeEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { CreateTopicSubscriptionRequestDto } from '../dtos/create-topic-subscription-request.dto';
 

@@ -1,4 +1,4 @@
-import { EnvironmentWithUserCommand } from '@novu/application-generic';
+import { EnvironmentWithUserCommand } from '@notify/application-generic';
 
 export class StoreControlValuesCommand extends EnvironmentWithUserCommand {
   stepId: string;

@@ -3,7 +3,7 @@ title: 'Customize Notification Items'
 description: "Learn how to use render props in the Inbox component to customize the subject, body, avatar, default and custom actions, or the entire notification item."
 ---
 
-Novu exposes render props to customize parts of the default Inbox notification item - subject, body, avatar, default/custom actions, or the entire notification.
+Notify exposes render props to customize parts of the default Inbox notification item - subject, body, avatar, default/custom actions, or the entire notification.
 
 ![Notification items](/images/inbox/notification-item.png)
 
@@ -16,9 +16,9 @@ Use the `renderSubject` prop to provide a custom component for the notification'
 ![Customize notification subject](/images/inbox/custom-notification-subject.png)
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
  
-function NovuInbox() {
+function NotifyInbox() {
   return (
     <Inbox
       applicationIdentifier="YOUR_APPLICATION_IDENTIFIER"
@@ -30,7 +30,7 @@ function NovuInbox() {
   );
 }
 
-export default NovuInbox;
+export default NotifyInbox;
 ```
 
 ## Customize notification body
@@ -40,9 +40,9 @@ Use `renderBody` if you want to keep the default Inbox UI and only change how th
 ![Customize notification body](/images/inbox/custom-notification-body.png)
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
  
-function NovuInbox() {
+function NotifyInbox() {
   return (
     <Inbox
       applicationIdentifier="YOUR_APPLICATION_IDENTIFIER"
@@ -56,7 +56,7 @@ function NovuInbox() {
   );
 }
 
-export default NovuInbox;
+export default NotifyInbox;
 ```
 
 ## Customize notification avatar
@@ -66,9 +66,9 @@ Use the `renderAvatar` prop to replace the default notification avatar with your
 ![Customize the notification avatar](/images/inbox/customize-notification-avatar.png)
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
  
-function NovuInbox() {
+function NotifyInbox() {
   return (
     <Inbox
       applicationIdentifier="YOUR_APPLICATION_IDENTIFIER"
@@ -82,12 +82,12 @@ function NovuInbox() {
   );
 }
 
-export default NovuInbox;
+export default NotifyInbox;
 ```
 
 ## Customize notification actions
 
-Novu provides render props to customize actions:
+Notify provides render props to customize actions:
 
 ### Default actions
 
@@ -96,10 +96,10 @@ Use the `renderDefaultActions` prop to override the default action buttons for n
 ![Customize the default actions](/images/inbox/customize-default-actions.png)
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 import { Archive, Check } from 'lucide-react';
  
-function NovuInbox() {
+function NotifyInbox() {
   return (
     <Inbox
       applicationIdentifier="YOUR_APPLICATION_IDENTIFIER"
@@ -124,7 +124,7 @@ function NovuInbox() {
   );
 }
 
-export default NovuInbox;
+export default NotifyInbox;
 ```
 
 ### Custom actions
@@ -134,9 +134,9 @@ Use the `renderCustomActions` prop to override the primary and secondary actions
 ![Customize the custom actions](/images/inbox/customize-custom-actions.png)
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
  
-function NovuInbox() {
+function NotifyInbox() {
 
   const primaryButtonStyle = {
     border: 'none',
@@ -187,7 +187,7 @@ function NovuInbox() {
   );
 }
 
-export default NovuInbox;
+export default NotifyInbox;
 ```
 
 ## Customize the entire notification item
@@ -201,9 +201,9 @@ Use the `renderNotification` prop to customize the entire notification item in t
 ![Customize entire notification item](/images/inbox/custom-notification.png)
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
  
-function NovuInbox() {
+function NotifyInbox() {
   return (
     <Inbox
       applicationIdentifier="YOUR_APPLICATION_IDENTIFIER"
@@ -218,5 +218,5 @@ function NovuInbox() {
   );
 }
 
-export default NovuInbox;
+export default NotifyInbox;
 ```

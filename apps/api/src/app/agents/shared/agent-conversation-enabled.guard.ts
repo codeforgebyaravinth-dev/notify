@@ -1,6 +1,6 @@
 import { CanActivate, ExecutionContext, Injectable, NotFoundException } from '@nestjs/common';
-import { FeatureFlagsService } from '@novu/application-generic';
-import { FeatureFlagsKeysEnum, UserSessionData } from '@novu/shared';
+import { FeatureFlagsService } from '@notify/application-generic';
+import { FeatureFlagsKeysEnum, UserSessionData } from '@notify/shared';
 
 @Injectable()
 export class AgentConversationEnabledGuard implements CanActivate {

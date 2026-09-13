@@ -1,5 +1,5 @@
 {
-  "name": "@novu/nextjs",
+  "name": "@notify/nextjs",
   "sourceRoot": "packages/nextjs/src",
   "projectType": "library",
   "targets": {

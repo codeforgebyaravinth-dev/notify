@@ -27,8 +27,8 @@ import {
   OtelSpan,
   PinoLogger,
   RequirePermissions,
-} from '@novu/application-generic';
-import { CommunityOrganizationRepository, IntegrationRepository } from '@novu/dal';
+} from '@notify/application-generic';
+import { CommunityOrganizationRepository, IntegrationRepository } from '@notify/dal';
 import {
   ApiAuthSchemeEnum,
   ApiServiceLevelEnum,
@@ -39,7 +39,7 @@ import {
   getFeatureForTierAsBoolean,
   PermissionsEnum,
   UserSessionData,
-} from '@novu/shared';
+} from '@notify/shared';
 import { Response } from 'express';
 import { ConfigureTelegramWebhookResponseDto } from '../agents/shared/dtos/configure-telegram-webhook-response.dto';
 import { IssueTelegramMobileLinkResponseDto } from '../agents/shared/dtos/issue-telegram-mobile-link-response.dto';

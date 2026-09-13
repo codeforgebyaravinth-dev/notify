@@ -1,4 +1,4 @@
-import { CredentialsKeyEnum, type ICredentials } from '@novu/shared';
+import { CredentialsKeyEnum, type ICredentials } from '@notify/shared';
 import { useQuery } from '@tanstack/react-query';
 import { RiSmartphoneLine, RiWhatsappFill } from 'react-icons/ri';
 import QRCode from 'react-qr-code';

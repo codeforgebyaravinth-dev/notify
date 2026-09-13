@@ -8,7 +8,7 @@ import {
   encryptCredentials,
   PinoLogger,
   resolveAgentRuntime,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   DalException,
   EnvironmentRepository,
@@ -16,7 +16,7 @@ import {
   IntegrationQuery,
   IntegrationRepository,
   OrganizationRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   AgentRuntimeProviderIdEnum,
   CHANNELS_WITH_PRIMARY,
@@ -30,7 +30,7 @@ import {
   PushProviderIdEnum,
   slugify,
   ApiServiceLevelEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import shortid from 'shortid';
 import { validateOutboundIntegrationCredentials } from '../../utils/validate-outbound-integration-credentials';
 import { CheckIntegrationCommand } from '../check-integration/check-integration.command';

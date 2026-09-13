@@ -1,4 +1,4 @@
-import { ApiServiceLevelEnum, FeatureFlagsKeysEnum, GetSubscriptionDto, PermissionsEnum } from '@novu/shared';
+import { ApiServiceLevelEnum, FeatureFlagsKeysEnum, GetSubscriptionDto, PermissionsEnum } from '@notify/shared';
 import { SVGProps } from 'react';
 import {
   RiBarChartBoxLine,

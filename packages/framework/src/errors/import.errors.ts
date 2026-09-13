@@ -8,7 +8,7 @@ export class MissingDependencyError extends ServerError {
   constructor(usageReason: string, missingDependencies: string[]) {
     const pronoun = missingDependencies.length === 1 ? 'it' : 'them';
     super(
-      `Tried to use a ${usageReason} in @novu/framework without ${missingDependencies.join(
+      `Tried to use a ${usageReason} in @notify/framework without ${missingDependencies.join(
         ', '
       )} installed. Please install ${pronoun} by running \`npm install ${missingDependencies.join(' ')}\`.`
     );

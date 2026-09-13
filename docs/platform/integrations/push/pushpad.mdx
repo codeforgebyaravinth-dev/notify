@@ -1,16 +1,16 @@
 ---
-title: "Pushpad Push Integration with Novu"
+title: "Pushpad Push Integration with Notify"
 sidebarTitle: 'Pushpad'
-description: "Connect Pushpad to Novu to send web push notifications through workflows. Store your Pushpad project ID and auth token in the Novu dashboard for delivery."
+description: "Connect Pushpad to Notify to send web push notifications through workflows. Store your Pushpad project ID and auth token in the Notify dashboard for delivery."
 ---
 
-This guide walks you through the entire process of configuring and using [Pushpad](https://pushpad.xyz) with Novu, from getting your credentials to sending your first notification.
+This guide walks you through the entire process of configuring and using [Pushpad](https://pushpad.xyz) with Notify, from getting your credentials to sending your first notification.
 
 [Pushpad](https://pushpad.xyz) is a web push service that supports sending notifications to all major browsers via FCM, Mozilla autopush, Windows Push Notification Services, and APNS, with just one simple API.
 
-## Configure Pushpad with Novu
+## Configure Pushpad with Notify
 
-Before you can send notifications, you need to connect your Pushpad project to Novu by getting your credentials and adding them to your integration settings.
+Before you can send notifications, you need to connect your Pushpad project to Notify by getting your credentials and adding them to your integration settings.
 
 ### Step 1: Get your Pushpad credentials
 
@@ -29,7 +29,7 @@ To configure the Pushpad integration, you need:
   </Step>
 
 <Step title="Record the Project ID">
-    Click **Settings** on the project page and record the **Project ID**. You need it to connect to Novu.
+    Click **Settings** on the project page and record the **Project ID**. You need it to connect to Notify.
     ![Project ID](/images/channels-and-providers/push/pushpad/project-id.png)
   </Step>
 
@@ -47,22 +47,22 @@ To configure the Pushpad integration, you need:
   </Step>
 
 <Step title="Copy the token">
-    Copy the generated token. You need it to connect to Novu.
+    Copy the generated token. You need it to connect to Notify.
     ![Generate access token](/images/channels-and-providers/push/pushpad/access-token.png)
   </Step>
 </Steps>
 
-### Step 2: Connect Pushpad to Novu
+### Step 2: Connect Pushpad to Notify
 
-Add these credentials to your Pushpad integration in the Novu dashboard.
+Add these credentials to your Pushpad integration in the Notify dashboard.
 
 <Steps>
-  <Step title="Log in to the Novu dashboard">
-    Open the [Novu Dashboard](https://dashboard.novu.co).
+  <Step title="Log in to the Notify dashboard">
+    Open the [Notify Dashboard](https://dashboard.novu.co).
   </Step>
 
 <Step title="Open Integration Store">
-    On the Novu dashboard, navigate to the **Integration Store**.
+    On the Notify dashboard, navigate to the **Integration Store**.
   </Step>
 
 <Step title="Connect a provider">
@@ -78,7 +78,7 @@ Add these credentials to your Pushpad integration in the Novu dashboard.
 
 <Step title="Paste credentials">
     In the Pushpad integration form, paste your access token and project ID from [Step 1](/platform/integrations/push/pushpad#step-1-get-your-pushpad-credentials) into the corresponding fields.
-    ![Pushpad Integration in Novu](/images/channels-and-providers/push/pushpad/pushpad-integration.png)
+    ![Pushpad Integration in Notify](/images/channels-and-providers/push/pushpad/pushpad-integration.png)
   </Step>
 
 <Step title="Create the integration">
@@ -86,7 +86,7 @@ Add these credentials to your Pushpad integration in the Novu dashboard.
   </Step>
 </Steps>
 
-## Using Pushpad with Novu
+## Using Pushpad with Notify
 
 Once your integration is configured, in other to send push notification using the PushPad provider, you must do the following:
 
@@ -94,17 +94,17 @@ Once your integration is configured, in other to send push notification using th
 
 After [setting up the Pushpad SDK](https://pushpad.xyz/docs/pushpad_pro_getting_started) on your website, you must [assign a user ID (uid)](https://pushpad.xyz/docs/identifying_users) to your users' push subscriptions.
 
-This `uid` is the identifier Novu uses to target a specific browser. For example, if you use `pushpad('uid', 'user123')`, then `user123` is the ID you must register in Novu.
+This `uid` is the identifier Notify uses to target a specific browser. For example, if you use `pushpad('uid', 'user123')`, then `user123` is the ID you must register in Notify.
 
 You can do this by making an API call to [update the subscriber's credentials](/api-reference/subscribers/update-provider-credentials).
 
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
-import { ChatOrPushProviderEnum } from "@novu/api/models/components";
+import { Notify } from '@notify/api';
+import { ChatOrPushProviderEnum } from "@notify/api/models/components";
 
-const novu = new Novu({
+const notify = new Notify({
   secretKey: "<NOVU_SECRET_KEY>",
   // Required if using EU region
   // serverURL: "https://eu.api.novu.co",
@@ -124,9 +124,9 @@ await novu.subscribers.credentials.update(
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.subscribers.credentials.update(
         subscriber_id="subscriberId",
         update_subscriber_channel_request_dto={
@@ -160,10 +160,10 @@ res, err := s.Subscribers.Credentials.Update(context.Background(), "subscriberId
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 
 $sdk->subscribersCredentials->update(
     subscriberId: 'subscriberId',
@@ -179,8 +179,8 @@ $sdk->subscribersCredentials->update(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
@@ -198,11 +198,11 @@ await sdk.Subscribers.Credentials.UpdateAsync(
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 import java.util.List;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 
 novu.subscribers().credentials().update()
     .subscriberId("subscriberId")
@@ -239,16 +239,16 @@ curl -L -X PUT 'https://api.novu.co/v1/subscribers/<SUBSCRIBER_ID>/credentials' 
 
 ### Step 2: Send a notification
 
-Now you're ready to send a push notification. [Create a workflow with a Push step](/platform/workflow/create-a-workflow) and then trigger it. Novu sends the notification to the `uid`s associated with the subscriber.
+Now you're ready to send a push notification. [Create a workflow with a Push step](/platform/workflow/create-a-workflow) and then trigger it. Notify sends the notification to the `uid`s associated with the subscriber.
 
-The example below demonstrates a simple trigger using Novu’s SDK.
+The example below demonstrates a simple trigger using Notify’s SDK.
 
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({
+const notify = new Notify({
   secretKey: "<NOVU_SECRET_KEY>",
   // Required if using EU region
   // serverURL: "https://eu.api.novu.co",
@@ -267,9 +267,9 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="workflowId",
         to={"subscriber_id": "subscriberId"},
@@ -300,10 +300,10 @@ res, err := s.Trigger(context.Background(), components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 
 $sdk->trigger(
     triggerEventRequestDto: new Components\TriggerEventRequestDto(
@@ -316,8 +316,8 @@ $sdk->trigger(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
 
@@ -329,10 +329,10 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto() {
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 
 novu.trigger()
     .body(TriggerEventRequestDto.builder()

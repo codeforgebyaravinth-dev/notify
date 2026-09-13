@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { PreviewPayloadDto } from '@novu/application-generic';
+import { PreviewPayloadDto } from '@notify/application-generic';
 import { Type } from 'class-transformer';
 import { IsNumber, IsObject, IsOptional, IsString, ValidateIf, ValidateNested } from 'class-validator';
 

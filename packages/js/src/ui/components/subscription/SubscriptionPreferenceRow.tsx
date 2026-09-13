@@ -25,7 +25,7 @@ export const SubscriptionPreferenceRow = (props: {
     <div
       class={style({
         key: 'subscriptionPreferenceRow',
-        className: 'nt-flex nt-items-center nt-justify-between nt-p-2 nt-rounded-lg nt-gap-2',
+        className: 'nt-flex nt-items-center nt-justify-between nt-p-2 nt-nt-rounded-none nt-gap-2',
         context: { preference: props.preference } satisfies Parameters<
           SubscriptionAppearanceCallback['subscriptionPreferenceRow']
         >[0],

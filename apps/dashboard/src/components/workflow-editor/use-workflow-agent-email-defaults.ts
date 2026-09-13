@@ -1,4 +1,4 @@
-import { ChannelTypeEnum, EmailProviderIdEnum, type WorkflowAgentConfig } from '@novu/shared';
+import { ChannelTypeEnum, EmailProviderIdEnum, type WorkflowAgentConfig } from '@notify/shared';
 import { useQuery } from '@tanstack/react-query';
 import { useMemo } from 'react';
 import { getAgentIntegrationsQueryKey, listAgentIntegrations } from '@/api/agents';

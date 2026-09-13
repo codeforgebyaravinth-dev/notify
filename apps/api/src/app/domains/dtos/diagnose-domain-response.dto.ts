@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { DomainDiagnosticCheckStatusEnum, DomainDiagnosticCodeEnum, DomainDiagnosticSeverityEnum } from '@novu/shared';
+import { DomainDiagnosticCheckStatusEnum, DomainDiagnosticCodeEnum, DomainDiagnosticSeverityEnum } from '@notify/shared';
 
 export class DomainDiagnosticCheckDto {
   @ApiProperty({ enum: DomainDiagnosticCodeEnum })

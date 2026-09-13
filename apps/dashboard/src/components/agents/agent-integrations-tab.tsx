@@ -1,4 +1,4 @@
-import { ChannelTypeEnum, type IIntegration, providers as novuProviders, PermissionsEnum } from '@novu/shared';
+import { ChannelTypeEnum, type IIntegration, providers as novuProviders, PermissionsEnum } from '@notify/shared';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { type ReactNode, useEffect } from 'react';
 import { RiAddLine, RiArrowRightSLine, RiErrorWarningFill } from 'react-icons/ri';

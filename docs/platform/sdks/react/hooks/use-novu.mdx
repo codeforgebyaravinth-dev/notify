@@ -1,26 +1,26 @@
 ---
-title: "useNovu"
-description: "Use the useNovu hook to access the Novu client instance inside your React components for actions like marking notifications as read."
+title: "useNotify"
+description: "Use the useNotify hook to access the Notify client instance inside your React components for actions like marking notifications as read."
 ---
 
 
-The `useNovu` hook provides direct access to the [Novu client instance](/platform/inbox/headless-mode) from anywhere in your application. This hook must be used within a component that is wrapped by the `NovuProvider`.
+The `useNotify` hook provides direct access to the [Notify client instance](/platform/inbox/headless-mode) from anywhere in your application. This hook must be used within a component that is wrapped by the `NotifyProvider`.
 
 ## Return Value
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `novu` | `Novu` | The Novu client instance that provides access to all Novu API methods |
+| `notify` | `Notify` | The Notify client instance that provides access to all Notify API methods |
 
 ## Example usage
 
-Here's how to use the `useNovu` hook to interact with the Novu client:
+Here's how to use the `useNotify` hook to interact with the Notify client:
 
 ```tsx
-import { useNovu } from "@novu/react";
+import { useNotify } from "@notify/react";
 
 function NotificationActions() {
-  const novu = useNovu();
+  const notify = useNotify();
 
   const markAllAsRead = async () => {
     try {
@@ -61,14 +61,14 @@ function NotificationActions() {
 
 ### Managing individual notifications
 
-The Novu client provides methods for managing individual notifications:
+The Notify client provides methods for managing individual notifications:
 
 ```tsx
-import type { Notification as INotification } from "@novu/react";
-import { useNovu } from "@novu/react";
+import type { Notification as INotification } from "@notify/react";
+import { useNotify } from "@notify/react";
 
 function NotificationItem({ notification }: { notification: INotification }) {
-  const novu = useNovu();
+  const notify = useNotify();
 
   const markAsRead = async () => {
     try {
@@ -134,10 +134,10 @@ function NotificationItem({ notification }: { notification: INotification }) {
 Workflow's channel preferences can be updated using `novu.preferences.update` method.
 
 ```tsx
-import { useNovu } from '@novu/react';
+import { useNotify } from '@notify/react';
 
 function UpdateSinglePreferences() {
-  const { novu } = useNovu();
+  const { notify } = useNotify();
 
   const updatePreferences = async () => {
     await novu.preferences.update({
@@ -158,10 +158,10 @@ function UpdateSinglePreferences() {
 Using `novu.preferences.bulkUpdate` multiple workflow's channel preferences can be updated at once.
 
 ```tsx
-import { useNovu } from "@novu/react";
+import { useNotify } from "@notify/react";
 
 function UpdateMultiplePreferences() {
-  const novu = useNovu();
+  const notify = useNotify();
 
   const updateBulkPreferences = async () => {
     try {
@@ -194,15 +194,15 @@ function UpdateMultiplePreferences() {
 
 ### Listening to real-time events
 
-The Novu client allows you to listen for real-time events:
+The Notify client allows you to listen for real-time events:
 
 ```tsx
-import { useNovu } from "@novu/react";
+import { useNotify } from "@notify/react";
 import { useEffect } from "react";
-import type { Notification as INotification } from "@novu/react";
+import type { Notification as INotification } from "@notify/react";
 
 function NotificationListener() {
-  const novu = useNovu();
+  const notify = useNotify();
 
   useEffect(() => {
     // Handler for new notifications
@@ -230,12 +230,12 @@ function NotificationListener() {
       novu.off("notifications.notification_received", handleNewNotification);
       novu.off("notifications.unread_count_changed", handleUnreadCountChanged);
     };
-  }, [novu]);
+  }, [notify]);
 
   return null; // This component doesn't render anything
 }
 ```
 
 <Note>
-  The Novu client instance provides access to all the functionality available in the [Headless API](/platform/sdks/javascript). For a complete list of methods and events, refer to the API documentation.
+  The Notify client instance provides access to all the functionality available in the [Headless API](/platform/sdks/javascript). For a complete list of methods and events, refer to the API documentation.
 </Note>

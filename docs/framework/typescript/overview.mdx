@@ -1,10 +1,10 @@
 ---
-title: 'Novu Framework TypeScript SDK Overview'
-description: "Learn how to use Novu's TypeScript SDK to build type-safe notification workflows with advanced features like payload validation and step controls."
+title: 'Notify Framework TypeScript SDK Overview'
+description: "Learn how to use Notify's TypeScript SDK to build type-safe notification workflows with advanced features like payload validation and step controls."
 sidebarTitle: Overview
 ---
 
-Although you can trigger Novu workflows from any programming language using our Rest API SDKs.
+Although you can trigger Notify workflows from any programming language using our Rest API SDKs.
 
 We believe that the best way to build your notification strategy is to treat your templates and workflows as your Notification Design System.
 Building reusable components to be consumed and embedded by your non-technical peers in any combination.
@@ -12,15 +12,15 @@ Building reusable components to be consumed and embedded by your non-technical p
 Typescript SDKs enable the creation of stunning channel content like E-mails using modern technologies like React/Vue/etc...
 Treating your emails as a front-end concern opens up a world of possibilities to reuse design tokens, components, and even entire templates across your applications for consistent branding and a cohesive user experience.
 
-Novu Framework was built and optimized with extreme focus on Developer Experience.
-Our `@novu/framework` SDK is written in Typescript, and we recommend using Typescript for your own projects as well.
+Notify Framework was built and optimized with extreme focus on Developer Experience.
+Our `@notify/framework` SDK is written in Typescript, and we recommend using Typescript for your own projects as well.
 
 ## Type-safe workflow payloads
 
 When defining a [workflow payload](/framework/payload) schema, our SDK will automatically infer it to a Typescript interface.
 
 ```tsx
-import { workflow } from '@novu/framework';
+import { workflow } from '@notify/framework';
 
 const myWorkflow = workflow(
   'new-signup',
@@ -54,5 +54,5 @@ Build and define type safe controls to expose no-code editing capabilities to yo
 - [Steps](/framework/typescript/steps)
 
 <Note>
-  The `@novu/framework` SDK is compatible with Node.js version 20.0.0 and above.
+  The `@notify/framework` SDK is compatible with Node.js version 20.0.0 and above.
 </Note>

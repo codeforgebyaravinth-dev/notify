@@ -1,6 +1,6 @@
 import { Controller, Get, Inject } from '@nestjs/common';
 import { HealthCheck, HealthCheckResult, HealthCheckService } from '@nestjs/terminus';
-import { DalServiceHealthIndicator, IHealthIndicator } from '@novu/application-generic';
+import { DalServiceHealthIndicator, IHealthIndicator } from '@notify/application-generic';
 
 import { version } from '../../package.json';
 import { WSServerHealthIndicator } from '../socket/services';

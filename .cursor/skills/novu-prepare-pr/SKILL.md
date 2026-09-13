@@ -69,7 +69,7 @@ Pick the smallest check that proves the change:
 
 | Change type            | Command                                                                           |
 | ---------------------- | --------------------------------------------------------------------------------- |
-| API / libs type errors | `pnpm --filter @novu/api-service build`                                           |
+| API / libs type errors | `pnpm --filter @notify/api-service build`                                           |
 | Shared libs            | `pnpm build` (only if `packages/` or `enterprise/` touched)                       |
 | New/changed e2e        | Load [run-api-e2e-tests](../run-api-e2e-tests/SKILL.md) and run the specific file |
 

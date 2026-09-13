@@ -1,6 +1,6 @@
 import { Test } from '@nestjs/testing';
-import { OrganizationRepository } from '@novu/dal';
-import { UserSession } from '@novu/testing';
+import { OrganizationRepository } from '@notify/dal';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { assert, restore, stub } from 'sinon';
 

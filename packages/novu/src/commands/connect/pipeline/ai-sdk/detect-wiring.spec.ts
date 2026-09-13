@@ -16,9 +16,9 @@ describe('detectAiSdkWiring', () => {
     writeFile(
       dir,
       'app/novu/agents/support-agent.tsx',
-      "import { agent } from '@novu/framework/ai-sdk';\nexport const supportAgent = agent('x', {});"
+      "import { agent } from '@notify/framework/ai-sdk';\nexport const supportAgent = agent('x', {});"
     );
-    writeFile(dir, 'app/api/novu/route.ts', "import { serve } from '@novu/framework/next';");
+    writeFile(dir, 'app/api/novu/route.ts', "import { serve } from '@notify/framework/next';");
     expect(detectAiSdkWiring(dir)).toEqual({
       hasAiSdkImport: true,
       hasBridgeRoute: true,
@@ -28,7 +28,7 @@ describe('detectAiSdkWiring', () => {
 
   it('is not wired without ai-sdk import', () => {
     const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'novu-ai-sdk-wire-'));
-    writeFile(dir, 'app/api/novu/route.ts', "import { serve } from '@novu/framework/next';");
+    writeFile(dir, 'app/api/novu/route.ts', "import { serve } from '@notify/framework/next';");
     expect(detectAiSdkWiring(dir).isWired).toBe(false);
   });
 });

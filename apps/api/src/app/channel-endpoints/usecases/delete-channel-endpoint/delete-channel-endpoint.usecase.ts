@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { InstrumentUsecase } from '@novu/application-generic';
-import { ChannelEndpointRepository } from '@novu/dal';
+import { InstrumentUsecase } from '@notify/application-generic';
+import { ChannelEndpointRepository } from '@notify/dal';
 import { DeleteChannelEndpointCommand } from './delete-channel-endpoint.command';
 
 @Injectable()

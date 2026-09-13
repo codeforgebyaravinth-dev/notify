@@ -1,4 +1,4 @@
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { motion } from 'motion/react';
 import { useState } from 'react';
 import { TopicSubscription } from '@/api/topics';

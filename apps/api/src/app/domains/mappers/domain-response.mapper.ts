@@ -1,4 +1,4 @@
-import { DomainEntity } from '@novu/dal';
+import { DomainEntity } from '@notify/dal';
 import { DomainResponseDto } from '../dtos/domain-response.dto';
 
 export function toDomainResponse(domain: DomainEntity): DomainResponseDto {

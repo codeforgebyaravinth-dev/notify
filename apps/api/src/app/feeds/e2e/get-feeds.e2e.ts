@@ -1,4 +1,4 @@
-import { UserSession } from '@novu/testing';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Get Feeds - /feeds (GET) #novu-v0', async () => {

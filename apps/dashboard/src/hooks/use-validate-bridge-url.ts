@@ -1,4 +1,4 @@
-import type { IValidateBridgeUrlResponse } from '@novu/shared';
+import type { IValidateBridgeUrlResponse } from '@notify/shared';
 import { UseMutationOptions, useMutation } from '@tanstack/react-query';
 import { validateBridgeUrl } from '@/api/bridge';
 import { useEnvironment } from '@/context/environment/hooks';

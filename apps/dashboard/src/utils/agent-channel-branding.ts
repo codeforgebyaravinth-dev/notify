@@ -1,4 +1,4 @@
-import { ChatProviderIdEnum } from '@novu/shared';
+import { ChatProviderIdEnum } from '@notify/shared';
 import { getProviderSquareIconFileName } from './provider-square-icon';
 
 // User-facing agent surfaces (the channel carousel, the onboarding personalize step) brand the

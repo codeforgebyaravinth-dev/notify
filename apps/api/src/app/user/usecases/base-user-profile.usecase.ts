@@ -1,4 +1,4 @@
-import type { UserEntity } from '@novu/dal';
+import type { UserEntity } from '@notify/dal';
 import { UserResponseDto } from '../dtos/user-response.dto';
 
 export class BaseUserProfileUsecase {

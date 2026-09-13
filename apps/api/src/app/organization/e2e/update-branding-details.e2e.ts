@@ -1,4 +1,4 @@
-import { processTestAgentExpectedStatusCode, UserSession } from '@novu/testing';
+import { processTestAgentExpectedStatusCode, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Update Branding Details - /organizations/branding (PUT) #novu-v0-os', () => {

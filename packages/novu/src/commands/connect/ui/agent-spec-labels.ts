@@ -4,7 +4,7 @@ import {
   MANAGED_AGENT_IDENTIFIER_MAX_LENGTH,
   MCP_SERVERS,
   slugify,
-} from '@novu/shared';
+} from '@notify/shared';
 import type { GeneratedAgentSpec } from '../api/agents';
 
 const TOOL_LABELS = new Map(CLAUDE_BUILTIN_TOOLS.map((tool) => [tool.type, tool.name]));

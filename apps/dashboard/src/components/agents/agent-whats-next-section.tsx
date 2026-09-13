@@ -1,4 +1,4 @@
-import { FeatureFlagsKeysEnum, type IIntegration, providers as novuProviders } from '@novu/shared';
+import { FeatureFlagsKeysEnum, type IIntegration, providers as novuProviders } from '@notify/shared';
 import { useQuery } from '@tanstack/react-query';
 import { CircleDashed } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';

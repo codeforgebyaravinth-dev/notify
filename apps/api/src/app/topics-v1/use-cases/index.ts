@@ -1,4 +1,4 @@
-import { GetTopicSubscribersUseCase } from '@novu/application-generic';
+import { GetTopicSubscribersUseCase } from '@notify/application-generic';
 import { AddSubscribersUseCase } from './add-subscribers';
 import { CreateTopicUseCase } from './create-topic';
 import { DeleteTopicUseCase } from './delete-topic/delete-topic.use-case';

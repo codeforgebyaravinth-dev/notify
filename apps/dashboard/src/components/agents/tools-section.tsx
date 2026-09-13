@@ -1,4 +1,4 @@
-import { CLAUDE_BUILTIN_TOOLS, type ClaudeBuiltinTool } from '@novu/shared';
+import { CLAUDE_BUILTIN_TOOLS, type ClaudeBuiltinTool } from '@notify/shared';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { useMemo } from 'react';
 import { RiArrowRightUpLine } from 'react-icons/ri';

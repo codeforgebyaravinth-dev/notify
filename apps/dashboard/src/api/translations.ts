@@ -5,8 +5,8 @@ import {
   TranslationGroupDto,
   TranslationResponseDto,
   UploadTranslationsResponseDto,
-} from '@novu/api/models/components';
-import { IEnvironment } from '@novu/shared';
+} from '@notify/api/models/components';
+import { IEnvironment } from '@notify/shared';
 import { delV2, getV2, postV2 } from './api.client';
 
 // Shared resource type from SDK

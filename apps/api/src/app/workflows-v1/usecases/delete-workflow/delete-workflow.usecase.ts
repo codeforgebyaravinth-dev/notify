@@ -9,7 +9,7 @@ import {
   InstrumentUsecase,
   PinoLogger,
   SendWebhookMessage,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   ClientSession,
   ControlValuesRepository,
@@ -17,8 +17,8 @@ import {
   MessageTemplateRepository,
   NotificationTemplateEntity,
   NotificationTemplateRepository,
-} from '@novu/dal';
-import { PreferencesTypeEnum, WebhookEventEnum, WebhookObjectTypeEnum } from '@novu/shared';
+} from '@notify/dal';
+import { PreferencesTypeEnum, WebhookEventEnum, WebhookObjectTypeEnum } from '@notify/shared';
 import { DeleteWorkflowCommand } from './delete-workflow.command';
 
 @Injectable()
@@ -130,7 +130,7 @@ export class DeleteWorkflowUseCase {
     }
 
     try {
-      const deleteTranslationGroup = this.moduleRef.get(require('@novu/ee-translation')?.DeleteTranslationGroup, {
+      const deleteTranslationGroup = this.moduleRef.get(require('@notify/ee-translation')?.DeleteTranslationGroup, {
         strict: false,
       });
 

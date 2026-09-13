@@ -1,12 +1,12 @@
-import { DetailEnum } from '@novu/application-generic';
+import { DetailEnum } from '@notify/application-generic';
 import {
   ExecutionDetailsRepository,
   JobRepository,
   MessageRepository,
   NotificationTemplateRepository,
   SubscriberEntity,
-} from '@novu/dal';
-import { workflow } from '@novu/framework';
+} from '@notify/dal';
+import { workflow } from '@notify/framework';
 import {
   ChannelTypeEnum,
   CreateWorkflowDto,
@@ -16,9 +16,9 @@ import {
   StepTypeEnum,
   WorkflowCreationSourceEnum,
   WorkflowResponseDto,
-} from '@novu/shared';
+} from '@notify/shared';
 
-import { SubscribersService, UserSession } from '@novu/testing';
+import { SubscribersService, UserSession } from '@notify/testing';
 import axios from 'axios';
 import { expect } from 'chai';
 import getPort from 'get-port';

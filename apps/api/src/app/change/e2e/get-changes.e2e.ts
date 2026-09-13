@@ -1,12 +1,12 @@
-import { ChangeRepository } from '@novu/dal';
+import { ChangeRepository } from '@notify/dal';
 import {
   EmailBlockTypeEnum,
   FieldLogicalOperatorEnum,
   FieldOperatorEnum,
   FilterPartTypeEnum,
   StepTypeEnum,
-} from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { CreateWorkflowRequestDto, UpdateWorkflowRequestDto } from '../../workflows-v1/dtos';
 

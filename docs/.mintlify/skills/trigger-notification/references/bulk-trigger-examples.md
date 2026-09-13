@@ -5,7 +5,7 @@
 Send up to 100 events in a single request:
 
 ```typescript
-import { Novu } from "@novu/api";
+import { Novu } from "@notify/api";
 
 const novu = new Novu({
   secretKey: process.env.NOVU_SECRET_KEY,

@@ -1,7 +1,7 @@
 import { forwardRef, Inject, Injectable, NotFoundException } from '@nestjs/common';
-import { PinoLogger } from '@novu/application-generic';
-import { ChangeRepository, EnvironmentRepository } from '@novu/dal';
-import { ChangeEntityTypeEnum } from '@novu/shared';
+import { PinoLogger } from '@notify/application-generic';
+import { ChangeRepository, EnvironmentRepository } from '@notify/dal';
+import { ChangeEntityTypeEnum } from '@notify/shared';
 import { applyDiff, rdiffResult } from 'recursive-diff';
 import { PromoteFeedChange } from '../promote-feed-change/promote-feed-change';
 import { PromoteLayoutChange } from '../promote-layout-change';

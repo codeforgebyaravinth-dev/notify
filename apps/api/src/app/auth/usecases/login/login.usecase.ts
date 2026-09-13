@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable, UnauthorizedException } from '@nestjs/common';
-import { AnalyticsService } from '@novu/application-generic';
-import { OrganizationRepository, UserEntity, UserRepository } from '@novu/dal';
-import { normalizeEmail } from '@novu/shared';
+import { AnalyticsService } from '@notify/application-generic';
+import { OrganizationRepository, UserEntity, UserRepository } from '@notify/dal';
+import { normalizeEmail } from '@notify/shared';
 import bcrypt from 'bcrypt';
 import { differenceInMinutes, parseISO } from 'date-fns';
 import { AuthService } from '../../services/auth.service';

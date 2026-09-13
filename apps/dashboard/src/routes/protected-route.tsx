@@ -1,5 +1,5 @@
 import { RedirectToSignIn, Show, useAuth } from '@clerk/react';
-import { MemberRoleEnum, PermissionsEnum } from '@novu/shared';
+import { MemberRoleEnum, PermissionsEnum } from '@notify/shared';
 import { ReactNode } from 'react';
 import { EnvironmentProvider } from '@/context/environment/environment-provider';
 import { PermissionProtectedRoute } from './permission-protected-route';

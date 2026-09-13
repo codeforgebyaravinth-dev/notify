@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import type { AgentEvent } from '@novu/agent-event-protocol';
-import { PinoLogger } from '@novu/application-generic';
-import { AgentMcpServerRepository, McpConnectionRepository, SubscriberRepository } from '@novu/dal';
-import { McpConnectionStatusEnum } from '@novu/shared';
+import type { AgentEvent } from '@notify/agent-event-protocol';
+import { PinoLogger } from '@notify/application-generic';
+import { AgentMcpServerRepository, McpConnectionRepository, SubscriberRepository } from '@notify/dal';
+import { McpConnectionStatusEnum } from '@notify/shared';
 import { listOAuthMcps } from '../managed-runtime/tool-connect/list-oauth-mcps.helper';
 import { findOAuthMcpByServerName } from '../managed-runtime/tool-connect/oauth-mcp.types';
 import type { AgentEventContext } from './agent-event-sink.service';

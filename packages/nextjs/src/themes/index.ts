@@ -1,3 +1,3 @@
 'use client';
 
-export * from '@novu/react/themes';
+export * from '@notify/react/themes';

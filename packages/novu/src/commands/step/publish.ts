@@ -368,7 +368,7 @@ function assertTemplateRequiresWorkflowAndStep(
   }
 }
 
-const FRAMEWORK_PACKAGE = '@novu/framework';
+const FRAMEWORK_PACKAGE = '@notify/framework';
 
 async function installFrameworkPackageIfNeeded(rootDir: string): Promise<void> {
   if (isPackageInstalled(FRAMEWORK_PACKAGE, rootDir)) {

@@ -5,8 +5,8 @@ import type {
   AgentFileRef,
   AgentMessageContent,
   AgentSignal,
-} from '@novu/agent-event-protocol';
-import type { Signal, ToolResult } from '@novu/framework/internal';
+} from '@notify/agent-event-protocol';
+import type { Signal, ToolResult } from '@notify/framework/internal';
 import type { ActionRequired, Response as ThalamusResponse } from '@novu/thalamus';
 import type { EditPayloadDto, ReplyContentDto } from './dtos/agent-reply-payload.dto';
 

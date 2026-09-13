@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable, NotFoundException, Scope } from '@nestjs/common';
-import { AgentIntegrationRepository, DalException, IntegrationRepository } from '@novu/dal';
-import { CHANNELS_WITH_PRIMARY } from '@novu/shared';
+import { AgentIntegrationRepository, DalException, IntegrationRepository } from '@notify/dal';
+import { CHANNELS_WITH_PRIMARY } from '@notify/shared';
 
 import { assertIntegrationEnvironmentScope } from '../../utils/assert-integration-environment-scope';
 import { RemoveIntegrationCommand } from './remove-integration.command';

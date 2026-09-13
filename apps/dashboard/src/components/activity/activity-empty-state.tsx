@@ -1,4 +1,4 @@
-import { PermissionsEnum } from '@novu/shared';
+import { PermissionsEnum } from '@notify/shared';
 import { AnimatePresence, motion } from 'motion/react';
 import { useMemo } from 'react';
 import { RiCloseCircleLine, RiPlayCircleLine } from 'react-icons/ri';

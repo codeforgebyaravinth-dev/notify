@@ -1,5 +1,5 @@
 import { useAuth, useClerk, useOrganization, useOrganizationList } from '@clerk/react';
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 
 type OrganizationMembershipLike = {
   id: string;

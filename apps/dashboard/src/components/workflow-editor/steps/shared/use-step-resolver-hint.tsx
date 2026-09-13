@@ -1,4 +1,4 @@
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { ExternalLink } from '@/components/shared/external-link';
 import { useStepEditor } from '@/components/workflow-editor/steps/context/step-editor-context';
 import { useFeatureFlag } from '@/hooks/use-feature-flag';

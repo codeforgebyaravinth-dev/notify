@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { ChannelFactory, GetDecryptedIntegrations, PinoLogger } from '@novu/application-generic';
-import { IntegrationRepository } from '@novu/dal';
+import { ChannelFactory, GetDecryptedIntegrations, PinoLogger } from '@notify/application-generic';
+import { IntegrationRepository } from '@notify/dal';
 import { AutoConfigureIntegrationResponseDto } from '../../dtos/auto-configure-integration-response.dto';
 import { assertIntegrationEnvironmentScope } from '../../utils/assert-integration-environment-scope';
 import { AutoConfigureIntegrationCommand } from './auto-configure-integration.command';

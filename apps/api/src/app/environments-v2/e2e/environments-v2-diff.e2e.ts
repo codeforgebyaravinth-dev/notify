@@ -1,9 +1,9 @@
-import { Novu } from '@novu/api';
-import { CreateWorkflowDto, WorkflowCreationSourceEnum } from '@novu/api/models/components';
-import { LayoutCreationSourceEnum } from '@novu/application-generic';
-import { EnvironmentRepository, LocalizationResourceEnum } from '@novu/dal';
-import { ApiServiceLevelEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { Novu } from '@notify/api';
+import { CreateWorkflowDto, WorkflowCreationSourceEnum } from '@notify/api/models/components';
+import { LayoutCreationSourceEnum } from '@notify/application-generic';
+import { EnvironmentRepository, LocalizationResourceEnum } from '@notify/dal';
+import { ApiServiceLevelEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { initNovuClassSdkInternalAuth } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';
 

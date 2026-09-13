@@ -1,7 +1,7 @@
 import { ServiceUnavailableException } from '@nestjs/common';
-import { FeatureFlagsService, InMemoryLRUCacheService } from '@novu/application-generic';
-import { NotificationTemplateRepository, PreferencesRepository, SubscriberRepository } from '@novu/dal';
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsService, InMemoryLRUCacheService } from '@notify/application-generic';
+import { NotificationTemplateRepository, PreferencesRepository, SubscriberRepository } from '@notify/dal';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { GetSubscriberGlobalPreference } from '../../../subscribers/usecases/get-subscriber-global-preference';

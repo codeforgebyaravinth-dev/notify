@@ -1,4 +1,4 @@
-import { SmsProviderIdEnum } from '@novu/shared';
+import { SmsProviderIdEnum } from '@notify/shared';
 import {
   ChannelTypeEnum,
   ISendMessageSuccessResponse,
@@ -6,7 +6,7 @@ import {
   ISmsOptions,
   ISmsProvider,
   SmsEventStatusEnum,
-} from '@novu/stateless';
+} from '@notify/stateless';
 import { SDK } from '@ringcentral/sdk';
 import Platform from '@ringcentral/sdk/lib/platform/Platform';
 import { BaseProvider, CasingEnum } from '../../../base.provider';

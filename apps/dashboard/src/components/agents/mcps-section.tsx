@@ -1,4 +1,4 @@
-import { FeatureFlagsKeysEnum, MCP_SERVERS, McpConnectionAuthModeEnum, type McpServer } from '@novu/shared';
+import { FeatureFlagsKeysEnum, MCP_SERVERS, McpConnectionAuthModeEnum, type McpServer } from '@notify/shared';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { useMemo, useState } from 'react';
 import { RiAddLine, RiArrowRightUpLine, RiCloseLine, RiLoader4Line } from 'react-icons/ri';

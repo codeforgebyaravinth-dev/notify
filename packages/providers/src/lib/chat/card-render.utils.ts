@@ -5,7 +5,7 @@ import {
   CardElementChild,
   ChatRenderValidationLevelEnum,
   IChatRenderValidation,
-} from '@novu/stateless';
+} from '@notify/stateless';
 
 /**
  * Standard-markdown fallback for chat providers without a native card serializer

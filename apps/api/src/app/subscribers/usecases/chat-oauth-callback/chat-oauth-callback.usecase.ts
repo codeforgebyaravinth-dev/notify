@@ -5,7 +5,7 @@ import {
   decryptCredentials,
   FeatureFlagsService,
   PinoLogger,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   ChannelTypeEnum,
   CommunityOrganizationRepository,
@@ -13,8 +13,8 @@ import {
   EnvironmentRepository,
   IntegrationEntity,
   IntegrationRepository,
-} from '@novu/dal';
-import { ChatProviderIdEnum, ENDPOINT_TYPES, ICredentialsDto } from '@novu/shared';
+} from '@notify/dal';
+import { ChatProviderIdEnum, ENDPOINT_TYPES, ICredentialsDto } from '@notify/shared';
 import axios from 'axios';
 import { CreateChannelEndpointCommand } from '../../../channel-endpoints/usecases/create-channel-endpoint/create-channel-endpoint.command';
 import { CreateChannelEndpoint } from '../../../channel-endpoints/usecases/create-channel-endpoint/create-channel-endpoint.usecase';

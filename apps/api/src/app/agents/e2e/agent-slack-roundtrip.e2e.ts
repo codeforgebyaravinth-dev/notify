@@ -8,7 +8,7 @@
  *  1. starts an in-process Slack Web API mock (`emulate.dev/slack`) on a free
  *     port and patches `@slack/web-api`'s `WebClient` so every Slack call from
  *     the production adapter is routed at it;
- *  2. starts an in-process bridge SDK server (`@novu/framework/express`) so the
+ *  2. starts an in-process bridge SDK server (`@notify/framework/express`) so the
  *     inbound webhook actually triggers a real bridge HTTP roundtrip into a
  *     test-controlled `onMessage` handler (no `BridgeExecutorService` stub on
  *     the contract surface — only the internal `resolvePublicAddresses`
@@ -22,9 +22,9 @@
  * setup couldn't provide.
  */
 
-import { AgentRepository, ConversationActivitySenderTypeEnum, ConversationActivityTypeEnum } from '@novu/dal';
-import { Actions, Button, Card, CardText } from '@novu/framework/express';
-import { testServer } from '@novu/testing';
+import { AgentRepository, ConversationActivitySenderTypeEnum, ConversationActivityTypeEnum } from '@notify/dal';
+import { Actions, Button, Card, CardText } from '@notify/framework/express';
+import { testServer } from '@notify/testing';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { ChatInstanceRegistry } from '../conversation-runtime/ingress/chat-instance.registry';

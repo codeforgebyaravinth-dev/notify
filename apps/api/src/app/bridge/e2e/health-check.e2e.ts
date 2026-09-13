@@ -1,6 +1,6 @@
-import { SubscriberEntity } from '@novu/dal';
-import { workflow } from '@novu/framework';
-import { SubscribersService, UserSession } from '@novu/testing';
+import { SubscriberEntity } from '@notify/dal';
+import { workflow } from '@notify/framework';
+import { SubscribersService, UserSession } from '@notify/testing';
 import axios from 'axios';
 import { expect } from 'chai';
 import getPort from 'get-port';

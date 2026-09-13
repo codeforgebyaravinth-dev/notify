@@ -1,4 +1,4 @@
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { useParams } from 'react-router-dom';
 import { CreateWorkflowModal } from '@/components/create-workflow-modal';
 import { useFeatureFlag } from '@/hooks/use-feature-flag';

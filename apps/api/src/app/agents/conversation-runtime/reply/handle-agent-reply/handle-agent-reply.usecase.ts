@@ -1,15 +1,15 @@
 import { randomUUID } from 'node:crypto';
 import { BadRequestException, ForbiddenException, Injectable, NotFoundException } from '@nestjs/common';
-import { AnalyticsService, PinoLogger } from '@novu/application-generic';
+import { AnalyticsService, PinoLogger } from '@notify/application-generic';
 import {
   AgentRepository,
   ConversationChannel,
   ConversationEntity,
   ConversationParticipantTypeEnum,
   SubscriberRepository,
-} from '@novu/dal';
-import type { SentMessageInfo, ToolResult, TriggerSignal } from '@novu/framework/internal';
-import { AddressingTypeEnum, type TriggerRecipientsPayload, TriggerRequestCategoryEnum } from '@novu/shared';
+} from '@notify/dal';
+import type { SentMessageInfo, ToolResult, TriggerSignal } from '@notify/framework/internal';
+import { AddressingTypeEnum, type TriggerRecipientsPayload, TriggerRequestCategoryEnum } from '@notify/shared';
 import { ParseEventRequest, ParseEventRequestMulticastCommand } from '../../../../events/usecases/parse-event-request';
 import { AgentConfigResolver, ResolvedAgentConfig } from '../../../channels/agent-config-resolver.service';
 import { trackAgentReplyProcessed } from '../../../shared/analytics/agent-analytics';

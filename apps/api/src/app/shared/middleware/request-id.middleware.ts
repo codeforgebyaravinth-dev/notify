@@ -1,5 +1,5 @@
 import { Injectable, NestMiddleware } from '@nestjs/common';
-import { generateObjectId } from '@novu/application-generic';
+import { generateObjectId } from '@notify/application-generic';
 import { NextFunction, Request, Response } from 'express';
 
 export interface RequestWithReqId extends Request {

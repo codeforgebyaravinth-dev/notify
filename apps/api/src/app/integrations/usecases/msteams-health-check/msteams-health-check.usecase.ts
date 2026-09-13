@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { GetDecryptedIntegrations, MsTeamsTokenService, PinoLogger } from '@novu/application-generic';
-import { IntegrationEntity, IntegrationRepository } from '@novu/dal';
-import { ChatProviderIdEnum } from '@novu/shared';
+import { GetDecryptedIntegrations, MsTeamsTokenService, PinoLogger } from '@notify/application-generic';
+import { IntegrationEntity, IntegrationRepository } from '@notify/dal';
+import { ChatProviderIdEnum } from '@notify/shared';
 import axios from 'axios';
 import { MsTeamsHealthCheckCommand } from './msteams-health-check.command';
 

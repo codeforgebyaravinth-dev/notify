@@ -1,4 +1,4 @@
-import { EnvironmentCommand } from '@novu/application-generic';
+import { EnvironmentCommand } from '@notify/application-generic';
 import { IsArray, IsNumber, IsOptional, IsString } from 'class-validator';
 
 export class GetRequestsCommand extends EnvironmentCommand {

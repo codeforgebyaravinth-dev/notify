@@ -63,7 +63,7 @@ describe('Novu', () => {
         body: JSON.stringify({ applicationIdentifier, subscriber: { subscriberId } }),
         headers: {
           'Novu-API-Version': '2024-06-26',
-          'Novu-Client-Version': '@novu/js@test',
+          'Novu-Client-Version': '@notify/js@test',
           'Content-Type': 'application/json',
         },
       });
@@ -74,7 +74,7 @@ describe('Novu', () => {
         body: undefined,
         headers: {
           'Novu-API-Version': '2024-06-26',
-          'Novu-Client-Version': '@novu/js@test',
+          'Novu-Client-Version': '@notify/js@test',
           'Content-Type': 'application/json',
           Authorization: 'Bearer cafebabe',
         },

@@ -4,7 +4,7 @@ import {
   CardElementChild,
   ChatRenderValidationLevelEnum,
   IChatRenderValidation,
-} from '@novu/stateless';
+} from '@notify/stateless';
 import {
   CardValidator,
   convertText,

@@ -1,4 +1,4 @@
-import { DalService } from '@novu/dal';
+import { DalService } from '@notify/dal';
 
 const dalService = new DalService();
 

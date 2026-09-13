@@ -1,4 +1,4 @@
-import { ConnectChatProps } from '@novu/js/ui';
+import { ConnectChatProps } from '@notify/js/ui';
 import { useCallback } from 'react';
 import { useNovuUI } from '../../context/NovuUIContext';
 import { Mounter } from '../Mounter';

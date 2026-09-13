@@ -1,4 +1,4 @@
-import { DirectionEnum, PermissionsEnum } from '@novu/shared';
+import { DirectionEnum, PermissionsEnum } from '@notify/shared';
 import { HTMLAttributes, useEffect, useState } from 'react';
 import { RiUserSharedLine } from 'react-icons/ri';
 import { PermissionButton } from '@/components/primitives/permission-button';

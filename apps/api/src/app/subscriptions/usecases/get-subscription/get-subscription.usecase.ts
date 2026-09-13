@@ -4,7 +4,7 @@ import {
   GetPreferences,
   GetPreferencesCommand,
   InstrumentUsecase,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   BaseRepository,
   NotificationTemplateRepository,
@@ -12,8 +12,8 @@ import {
   PreferencesRepository,
   TopicSubscribersEntity,
   TopicSubscribersRepository,
-} from '@novu/dal';
-import { FeatureFlagsKeysEnum, PreferencesTypeEnum } from '@novu/shared';
+} from '@notify/dal';
+import { FeatureFlagsKeysEnum, PreferencesTypeEnum } from '@notify/shared';
 import { SubscriptionDetailsResponseDto } from '../../../shared/dtos/subscription-details-response.dto';
 import {
   mapTopicSubscriptionToDto,

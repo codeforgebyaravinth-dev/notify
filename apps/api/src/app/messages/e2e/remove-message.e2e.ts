@@ -1,7 +1,7 @@
-import { Novu } from '@novu/api';
-import { MessageRepository, NotificationTemplateEntity, SubscriberEntity } from '@novu/dal';
-import { ChannelTypeEnum } from '@novu/shared';
-import { SubscribersService, UserSession } from '@novu/testing';
+import { Novu } from '@notify/api';
+import { MessageRepository, NotificationTemplateEntity, SubscriberEntity } from '@notify/dal';
+import { ChannelTypeEnum } from '@notify/shared';
+import { SubscribersService, UserSession } from '@notify/testing';
 import axios from 'axios';
 import { expect } from 'chai';
 import { initNovuClassSdk } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';

@@ -1,4 +1,4 @@
-import { StripeBillingIntervalEnum } from '@novu/shared';
+import { StripeBillingIntervalEnum } from '@notify/shared';
 import { Tabs, TabsList, TabsTrigger } from '@/components/primitives/tabs';
 import { Badge } from '../primitives/badge';
 

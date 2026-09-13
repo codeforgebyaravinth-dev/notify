@@ -4,7 +4,7 @@ import {
   mapSubscribersToJobs,
   splitByRecipientType,
   validateSubscriberDefine,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 
 import {
   ISubscribersDefine,
@@ -12,7 +12,7 @@ import {
   SubscriberSourceEnum,
   TriggerRecipientSubscriber,
   TriggerRecipientsTypeEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { expect } from 'chai';
 
 describe('TriggerMulticast Spec', () => {

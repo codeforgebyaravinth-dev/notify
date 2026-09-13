@@ -2,7 +2,7 @@ import {
   ConversationActivityEntity,
   ConversationActivitySenderTypeEnum,
   ConversationActivityTypeEnum,
-} from '@novu/dal';
+} from '@notify/dal';
 
 /**
  * Scans a conversation's activity ledger (newest-first, as returned by

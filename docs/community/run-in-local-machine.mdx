@@ -1,6 +1,6 @@
 ---
-title: 'Run Novu in local machine'
-description: 'Prerequisites and steps to run Novu in local machine. Learn how to set up Novu on your local environment for testing and development.'
+title: 'Run Notify in local machine'
+description: 'Prerequisites and steps to run Notify in local machine. Learn how to set up Notify on your local environment for testing and development.'
 ---
 
 
@@ -16,7 +16,7 @@ description: 'Prerequisites and steps to run Novu in local machine. Learn how to
 - **(Optional)** LocalStack (required only for S3-related modules)
 
 <Note>
-  We recommend having at least 8GB of RAM to run Novu on a local machine as Novu has multiple
+  We recommend having at least 8GB of RAM to run Notify on a local machine as Notify has multiple
   services running together with external services like Redis, MongoDB, and more.
 </Note>
 
@@ -27,16 +27,16 @@ After installing Node.js and pnpm, clone and set up your forked version of the p
 <Steps>
   <Step title="Clone the repository">
     <Tabs>
-      <Tab title="Novu Org">
+      <Tab title="Notify Org">
     ```shell
     git clone https://github.com/novuhq/novu.git
-    cd novu
+    cd notify
     ```
       </Tab>
       <Tab title="Forked Repo">
     ```shell
     git clone https://github.com/{YOUR_GITHUB_USER_NAME}/novu.git
-    cd novu
+    cd notify
     ```
       </Tab>
     </Tabs>
@@ -88,12 +88,12 @@ The recommended `pnpm dev:portless` command starts the Dashboard, API, Worker, a
 - **start:shared** - Shared client and API library in watch mode
 
 <Note>
-  The legacy Widget and `@novu/notification-center` apps have been removed. Use the [Inbox component](/platform/inbox) (`@novu/react`) instead.
+  The legacy Widget and `@notify/notification-center` apps have been removed. Use the [Inbox component](/platform/inbox) (`@notify/react`) instead.
 </Note>
 
 ## Set up your environment variables
 
-If you used `npm run setup:project` or Jarvis, default `.env` files are created automatically. To test certain parts of Novu or run it in production mode, you may need to change some values. These are the main environment variables:
+If you used `npm run setup:project` or Jarvis, default `.env` files are created automatically. To test certain parts of Notify or run it in production mode, you may need to change some values. These are the main environment variables:
 
 <AccordionGroup>
   <Accordion title="API Backend">
@@ -157,10 +157,10 @@ You can also run them directly:
 
 ```shell
 npm run start:worker:test
-pnpm --filter @novu/api-service test:e2e:novu-v2
+pnpm --filter @notify/api-service test:e2e:notify-v2
 ```
 
-The tests create a new instance of Novu and a test database, then remove the test database when finished.
+The tests create a new instance of Notify and a test database, then remove the test database when finished.
 
 ### Dashboard
 
@@ -204,7 +204,7 @@ npm run test:providers
 
 ## Local environment setup script (beta)
 
-Jarvis includes a **Development environment setup** option that runs [this script](https://github.com/novuhq/novu/blob/next/scripts/dev-environment-setup.sh). It tries to install OS dependencies needed to run Novu locally before `npm run setup:project`. You still need `git` and Node.js installed beforehand.
+Jarvis includes a **Development environment setup** option that runs [this script](https://github.com/novuhq/novu/blob/next/scripts/dev-environment-setup.sh). It tries to install OS dependencies needed to run Notify locally before `npm run setup:project`. You still need `git` and Node.js installed beforehand.
 
 The script can also be run directly:
 
@@ -218,7 +218,7 @@ On supported platforms it can:
 - Install or update common OS dependencies (macOS only for some steps)
 - Install NVM, Node.js v22.23.0, pnpm, and Docker
 - Install MongoDB and Redis (macOS via Homebrew)
-- Optionally clone the Novu repository
+- Optionally clone the Notify repository
 
 <Warning>
   This script has been tested most thoroughly on macOS. Linux support is limited.

@@ -8,9 +8,9 @@ import {
   isAgentSharedInboxEnabled,
   MailFactory,
   PinoLogger,
-} from '@novu/application-generic';
-import { IntegrationEntity, IntegrationRepository, MessageRepository } from '@novu/dal';
-import { ChannelTypeEnum, EmailProviderIdEnum, type IEmailOptions } from '@novu/shared';
+} from '@notify/application-generic';
+import { IntegrationEntity, IntegrationRepository, MessageRepository } from '@notify/dal';
+import { ChannelTypeEnum, EmailProviderIdEnum, type IEmailOptions } from '@notify/shared';
 import type { ResolvedAgentConfig } from '../channels/agent-config-resolver.service';
 import { captureAgentWarning } from '../shared/errors/capture-agent-sentry';
 import { toDeliveryError } from '../shared/util/delivery-error.util';

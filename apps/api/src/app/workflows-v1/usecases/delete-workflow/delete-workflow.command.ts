@@ -1,4 +1,4 @@
-import { EnvironmentWithUserCommand } from '@novu/application-generic';
+import { EnvironmentWithUserCommand } from '@notify/application-generic';
 import { Exclude } from 'class-transformer';
 import { IsDefined, IsOptional, IsString } from 'class-validator';
 import { ClientSession } from 'mongoose';

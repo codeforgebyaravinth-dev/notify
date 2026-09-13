@@ -1,4 +1,4 @@
-import { ConfigConfigurationGroup, IProviderConfig } from '@novu/shared';
+import { ConfigConfigurationGroup, IProviderConfig } from '@notify/shared';
 import { AnimatePresence, motion } from 'motion/react';
 import { CopyButton } from '@/components/primitives/copy-button';
 import { FormLabel } from '@/components/primitives/form/form';

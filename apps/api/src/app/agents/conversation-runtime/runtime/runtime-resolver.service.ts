@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import type { AgentEntity } from '@novu/dal';
+import type { AgentEntity } from '@notify/dal';
 import { ManagedRuntime } from '../../managed-runtime/managed.runtime';
 import type { AgentRuntime } from './agent-runtime.port';
 import { BridgeRuntime } from './bridge.runtime';

@@ -4,7 +4,7 @@ import {
   emailProviders as emailProviderConfigs,
   type IEnvironment,
   type IIntegration,
-} from '@novu/shared';
+} from '@notify/shared';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { type AgentResponse, getAgentIntegrationsQueryKey, setAgentInboxSharedDisabled } from '@/api/agents';

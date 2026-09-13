@@ -3,8 +3,8 @@
 import '../../src/config';
 
 import { NestFactory } from '@nestjs/core';
-import { EnvironmentRepository, IntegrationRepository, OrganizationRepository } from '@novu/dal';
-import { EmailProviderIdEnum, SmsProviderIdEnum } from '@novu/shared';
+import { EnvironmentRepository, IntegrationRepository, OrganizationRepository } from '@notify/dal';
+import { EmailProviderIdEnum, SmsProviderIdEnum } from '@notify/shared';
 
 import { AppModule } from '../../src/app.module';
 

@@ -10,7 +10,7 @@ import {
   Logger,
   PinoLogger,
   RequestLogRepository,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 
 import bodyParser from 'body-parser';
 import helmet from 'helmet';

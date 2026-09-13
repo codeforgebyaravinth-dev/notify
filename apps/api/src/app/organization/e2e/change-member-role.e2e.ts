@@ -1,6 +1,6 @@
-import { CommunityMemberRepository } from '@novu/dal';
-import { MemberRoleEnum, MemberStatusEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { CommunityMemberRepository } from '@notify/dal';
+import { MemberRoleEnum, MemberStatusEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { describe } from 'mocha';
 

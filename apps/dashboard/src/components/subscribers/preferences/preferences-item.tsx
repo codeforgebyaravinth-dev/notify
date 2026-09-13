@@ -1,4 +1,4 @@
-import { ChannelTypeEnum } from '@novu/shared';
+import { ChannelTypeEnum } from '@notify/shared';
 import { STEP_TYPE_TO_ICON } from '@/components/icons/utils';
 import { Step } from '@/components/primitives/step';
 import { Switch } from '@/components/primitives/switch';

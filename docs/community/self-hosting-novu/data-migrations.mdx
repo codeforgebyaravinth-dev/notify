@@ -1,23 +1,23 @@
 ---
 title: 'Data Migrations'
-description: "Run database data migrations for self-hosted Novu deployments to keep MongoDB and Postgres schemas in sync with the latest platform release."
+description: "Run database data migrations for self-hosted Notify deployments to keep MongoDB and Postgres schemas in sync with the latest platform release."
 ---
 
-On occasion, Novu may introduce features that require changes to the database schema or data. This usually happens when
+On occasion, Notify may introduce features that require changes to the database schema or data. This usually happens when
 a feature has a hard dependency on some data being available on a database entity. You can use migrations to make these
 changes to your database.
 
-## How to Run Novu Migrations (Manual Process)
+## How to Run Notify Migrations (Manual Process)
 
-Novu does **not automatically run database migrations** when deploying new versions. If you're self-hosting or managing
+Notify does **not automatically run database migrations** when deploying new versions. If you're self-hosting or managing
 deployments outside a CI/CD pipeline, follow these steps to safely run migrations against your MongoDB database.
 
-For Novu Cloud, the Novu team have a custom deployment service that runs migrations on AWS and is triggered by our team.
+For Notify Cloud, the Notify team have a custom deployment service that runs migrations on AWS and is triggered by our team.
 By policy any changes are backward compatible and non schema migrations is needed for any deployment. So any migration
 can be run after the service was already deployed unless specified otherwise. Those migrations are usually for cleanup
 purposes, and schema alignment.
 
-For Novu Self-Hosting, each migration can be run locally against your Mongodb using known connection strings that have
+For Notify Self-Hosting, each migration can be run locally against your Mongodb using known connection strings that have
 credentials. Your connection may require further access via a tunnel. A script has been added at the bottom that help
 manages the complexity of versions across connections strings. Manually add and run `run-migrations.sh` script from
 `apps/api` folder.
@@ -30,7 +30,7 @@ manages the complexity of versions across connections strings. Manually add and 
 are not shipped with the images
 - Requires **valid MongoDB credentials** and **network access**.
 - Typically run **during deployment** of new application versions.
-- **Novu does not use a versioning or idempotent migration strategy.**
+- **Notify does not use a versioning or idempotent migration strategy.**
 See [Versioning Note](#migration-versioning-and-idempotency) below.
 - Migrations once added to source code do not change (by policy)
 - Refer to the table of releases to know which to run when
@@ -56,12 +56,12 @@ Migrations are dependent on the underlying code (eg repositories) and matches th
 
 ## Migration Release Map
 
-This table maps each migration script to the likely Novu release version, based on the date the script was added and the
+This table maps each migration script to the likely Notify release version, based on the date the script was added and the
 closest following release tag.
 
 | **Release Version**                                              | **Release Date** | **Migrations Introduced**                                                                                                                                                                                                                                                                                                                                                        |
 |------------------------------------------------------------------|------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [`v0.17.2`](https://github.com/novuhq/novu/releases/tag/v0.17.2) | 2023-08-13       | `novu-integrations` *(Integration Store)*                                                                                                                                                                                                                                                                                                                                        |
+| [`v0.17.2`](https://github.com/novuhq/novu/releases/tag/v0.17.2) | 2023-08-13       | `notify-integrations` *(Integration Store)*                                                                                                                                                                                                                                                                                                                                        |
 | [`v0.18.0`](https://github.com/novuhq/novu/releases/tag/v0.18.0) | 2023-08-14       | `changes-migration` *(Change Promotion)* <br/> `encrypt-credentials` *(Secure Credentials)* <br/> `expire-at` *(Database TTL)* <br/> `fcm-credentials` *(Secure Credentials)* <br/> `in-app-integration` *(In-App Integration)* <br/> `normalize-users-email` *(Organization Invite Fix)* <br/> `secure-to-boolean` *(Secure Flag Fix)* <br/> `seen-read-support` *(Seen/Read Support)* |
 | [`v0.21.0`](https://github.com/novuhq/novu/releases/tag/v0.19.0) | 2023-09-01       | `integration-scheme-update` *(Multi-Provider)* <br/> `layout-identifier-update` *(Add layout identifier)*                                                                                                                                                                                                                                                                         |
 | [`v0.23.0`](https://github.com/novuhq/novu/releases/tag/v0.23.0) | 2024-02-02       | `encrypt-api-keys` *(API keys encryption)*                                                                                                                                                                                                                                                                                                                                       |
@@ -76,7 +76,7 @@ closest following release tag.
 |--------------------------------------------------------------|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
 | [v0.23](https://github.com/novuhq/novu/releases/tag/v0.23.0) | API keys encryption     | `./encrypt-api-keys/encrypt-api-keys-migration.ts`                                                                                        |
 | [v0.18](https://github.com/novuhq/novu/releases/tag/v0.18.0) | Multi-Provider          | `./integration-scheme-update/add-primary-priority-migration.ts`<br/>`./integration-scheme-update/add-integration-identifier-migration.ts` |
-|                                                              | Integration Store       | `./novu-integrations/novu-integrations.migration.ts`                                                                                      |
+|                                                              | Integration Store       | `./novu-integrations/notify-integrations.migration.ts`                                                                                      |
 | [v0.16](https://github.com/novuhq/novu/releases/tag/v0.16.0) | In-App Integration      | `./in-app-integration/in-app-integration.migration.ts`                                                                                    |
 |                                                              | Secure Flag Fix         | `./secure-to-boolean/secure-to-boolean-migration.ts`                                                                                      |
 | [v0.15](https://github.com/novuhq/novu/releases/tag/v0.15.0) | Database TTL            | `./expire-at/expire-at.migration.ts`                                                                                                      |
@@ -101,12 +101,12 @@ currently the assumption is that migrations should only affect the MongoDB colle
 or launch a Docker container: `docker run -p 6379:6379 redis`)
 
 <Steps>
-  <Step title="Clone the Novu Repository">
+  <Step title="Clone the Notify Repository">
     Ensure you’re using the same version as the one you’re deploying:
 
     ```bash
     git clone https://github.com/novuhq/novu.git
-    cd novu
+    cd notify
 
     git checkout <your-version-tag>  # e.g. v0.24.0
     npm run clean
@@ -178,7 +178,7 @@ After completing migrations:
 
 ## Migration Versioning and Idempotency
 
-Novu **does not implement a versioning system** or record migration history in the database. This means:
+Notify **does not implement a versioning system** or record migration history in the database. This means:
 
 - Migrations **must be manually tracked**.
 - There is **no built-in idempotency** for running the migration, so running a script twice may cause duplicate data or
@@ -223,7 +223,7 @@ chmod +x run-migrations.sh
 ###############################################################################
 # 📦 NOVU MIGRATION RUNNER - POSIX SH EDITION (macOS Compatible)
 #
-# This script runs one or more database migration scripts for the Novu project.
+# This script runs one or more database migration scripts for the Notify project.
 # It supports:
 #   - Selecting a version interactively or via argument
 #   - Providing a custom MongoDB connection string
@@ -278,7 +278,7 @@ done
 # Define versions and associated keys
 # versions must match suffix
 VERSIONS="v0.17.2 v0.18.0 v0.21.0 v0.23.0 v0.24.0 v2.0.0 v2.0.1 Future"
-MIGRATION_MAP_v0_17_2="novu-integrations"
+MIGRATION_MAP_v0_17_2="notify-integrations"
 MIGRATION_MAP_v0_18_0="changes-migration encrypt-credentials expire-at fcm-credentials in-app-integration normalize-users-email secure-to-boolean seen-read-support"
 MIGRATION_MAP_v0_21_0="integration-scheme-update layout-identifier-update"
 MIGRATION_MAP_v0_23_0="encrypt-api-keys"
@@ -296,14 +296,14 @@ get_migration_path() {
     changes-migration) echo "changes-migration.ts" ;;
     seen-read-support) echo "seen-read-support/seen-read-support.migration.ts" ;;
     in-app-integration) echo "in-app-integration/in-app-integration.migration.ts" ;;
-    novu-integrations) echo "novu-integrations/novu-integrations.migration.ts" ;;
+    notify-integrations) echo "notify-integrations/notify-integrations.migration.ts" ;;
     expire-at) echo "expire-at/expire-at.migration.ts" ;;
     secure-to-boolean) echo "secure-to-boolean/secure-to-boolean-migration.ts" ;;
     encrypt-api-keys) echo "encrypt-api-keys/encrypt-api-keys-migration.ts" ;;
     encrypt-credentials) echo "encrypt-credentials/encrypt-credentials-migration.ts" ;;
     topic-subscriber-normalize) echo "topic-subscriber-normalize/topic-subscriber-normalize.migration.ts" ;;
     subscriber-preferences-level) echo "subscriber-preferences-level/subscriber-preferences-level.migration.ts" ;;
-    integration-scheme-update) echo "integration-scheme-update/add-primary-priority-migration.ts integration-scheme-update/update-primary-for-disabled-novu-integrations.ts integration-scheme-update/add-integration-identifier-migration.ts" ;;
+    integration-scheme-update) echo "integration-scheme-update/add-primary-priority-migration.ts integration-scheme-update/update-primary-for-disabled-notify-integrations.ts integration-scheme-update/add-integration-identifier-migration.ts" ;;
     normalize-users-email) echo "normalize-users-email/normalize-users-email.migration.ts" ;;
     subscribers) echo "subscribers/remove-duplicated-subscribers/remove-duplicated-subscribers.migration.ts" ;;
     preference-centralization) echo "preference-centralization/preference-centralization-migration.ts" ;;
@@ -384,7 +384,7 @@ for file in *; do
   echo "$(git log --diff-filter=A --follow --format=%ad --date=short -- $file | head -1) $file"
 done | sort
 
-2023-07-31 novu-integrations
+2023-07-31 notify-integrations
 2023-08-01 changes-migration.ts
 2023-08-01 encrypt-credentials
 ...
@@ -420,7 +420,7 @@ find . -type f -name "*.ts" ! -name "*.spec.ts"
 ./changes-migration.ts
 ./seen-read-support/seen-read-support.migration.ts
 ./in-app-integration/in-app-integration.migration.ts
-./novu-integrations/novu-integrations.migration.ts
+./novu-integrations/notify-integrations.migration.ts
 ./expire-at/expire-at.migration.ts
 ./secure-to-boolean/secure-to-boolean-migration.ts
 ./encrypt-api-keys/encrypt-api-keys-migration.ts
@@ -428,7 +428,7 @@ find . -type f -name "*.ts" ! -name "*.spec.ts"
 ./topic-subscriber-normalize/topic-subscriber-normalize.migration.ts
 ./subscriber-preferences-level/subscriber-preferences-level.migration.ts
 ./integration-scheme-update/add-primary-priority-migration.ts
-./integration-scheme-update/update-primary-for-disabled-novu-integrations.ts
+./integration-scheme-update/update-primary-for-disabled-notify-integrations.ts
 ./integration-scheme-update/add-integration-identifier-migration.ts
 ./normalize-users-email/normalize-users-email.migration.ts
 ```

@@ -1,4 +1,4 @@
-import type { AgentEventEnvelope } from '@novu/agent-event-protocol';
+import type { AgentEventEnvelope } from '@notify/agent-event-protocol';
 import { HttpClient } from './http-client';
 
 // TODO(NV-8553): rename path to `/agent-chat/conversations` when platform rename lands

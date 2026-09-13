@@ -1,5 +1,5 @@
-import { PushProviderIdEnum } from '@novu/shared';
-import { ChannelTypeEnum, IPushOptions, IPushProvider, ISendMessageSuccessResponse } from '@novu/stateless';
+import { PushProviderIdEnum } from '@notify/shared';
+import { ChannelTypeEnum, IPushOptions, IPushProvider, ISendMessageSuccessResponse } from '@notify/stateless';
 import axios, { AxiosInstance } from 'axios';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
 import { resolveSafePusherBeamsBaseUrl } from '../../../utils/safe-pusher-beams-url';

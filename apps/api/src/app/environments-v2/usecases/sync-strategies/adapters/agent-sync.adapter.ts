@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { AgentEntity } from '@novu/dal';
+import { AgentEntity } from '@notify/dal';
 
 import {
   SyncAgentToEnvironment,

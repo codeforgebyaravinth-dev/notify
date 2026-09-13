@@ -1,5 +1,5 @@
-import { NovuError, TopicSubscription } from '@novu/js';
-import { buildSubscriptionIdentifier } from '@novu/js/internal';
+import { NovuError, TopicSubscription } from '@notify/js';
+import { buildSubscriptionIdentifier } from '@notify/js/internal';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useNovu } from './NovuProvider';
 

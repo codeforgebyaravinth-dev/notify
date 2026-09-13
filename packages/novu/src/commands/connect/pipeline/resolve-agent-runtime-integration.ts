@@ -3,7 +3,7 @@ import {
   buildManagedIntegrationCredentials,
   hasCompleteManagedCredentials,
   type ManagedCredentialFields,
-} from '@novu/shared';
+} from '@notify/shared';
 import type { ConnectApiClient } from '../api/client';
 import { NovuApiError } from '../api/client';
 import { findActiveDemoAgentIntegration } from '../api/demo-agent-integration';

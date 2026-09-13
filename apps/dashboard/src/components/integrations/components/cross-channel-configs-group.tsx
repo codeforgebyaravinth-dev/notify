@@ -1,4 +1,4 @@
-import { ConfigConfigurationGroup } from '@novu/shared';
+import { ConfigConfigurationGroup } from '@notify/shared';
 import { Control } from 'react-hook-form';
 import { IntegrationFormData } from '../types';
 import { CredentialSection } from './credential-section';

@@ -1,4 +1,4 @@
-import { IEmailBlock, MessageTemplateContentType } from '@novu/shared';
+import { IEmailBlock, MessageTemplateContentType } from '@notify/shared';
 import { IsBoolean, IsDefined, IsOptional, IsString } from 'class-validator';
 
 export class TestSendEmailRequestDto {

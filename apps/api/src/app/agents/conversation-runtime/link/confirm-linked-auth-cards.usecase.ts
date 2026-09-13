@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import { InstrumentUsecase, PinoLogger } from '@novu/application-generic';
+import { InstrumentUsecase, PinoLogger } from '@notify/application-generic';
 import {
   ConversationActivityRepository,
   ConversationChannel,
   ConversationEntity,
   ConversationRepository,
-} from '@novu/dal';
-import { AGENT_AUTH_METADATA_KEYS } from '@novu/shared';
+} from '@notify/dal';
+import { AGENT_AUTH_METADATA_KEYS } from '@notify/shared';
 import type { CardElement } from 'chat';
 import { AgentConfigResolver } from '../../channels/agent-config-resolver.service';
 import { AgentConversationService } from '../conversation/agent-conversation.service';

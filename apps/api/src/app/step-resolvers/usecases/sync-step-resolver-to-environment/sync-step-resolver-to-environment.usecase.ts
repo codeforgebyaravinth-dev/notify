@@ -5,8 +5,8 @@ import {
   isStepResolverSupportedType,
   ResourceValidatorService,
   stepTypeToControlSchema,
-} from '@novu/application-generic';
-import { ClientSession, MessageTemplateRepository } from '@novu/dal';
+} from '@notify/application-generic';
+import { ClientSession, MessageTemplateRepository } from '@notify/dal';
 import {
   StepResolverSourceData,
   StepResolverTargetData,

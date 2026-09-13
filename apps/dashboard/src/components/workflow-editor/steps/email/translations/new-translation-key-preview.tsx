@@ -1,4 +1,4 @@
-import { DEFAULT_LOCALE } from '@novu/shared';
+import { DEFAULT_LOCALE } from '@notify/shared';
 import { Badge } from '@/components/primitives/badge';
 import { VariablePreview } from '@/components/variable/components/variable-preview';
 

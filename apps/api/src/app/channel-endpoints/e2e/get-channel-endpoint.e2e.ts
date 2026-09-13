@@ -1,7 +1,7 @@
-import { Novu } from '@novu/api';
-import { CreateSlackChannelEndpointDto } from '@novu/api/models/components';
-import { ENDPOINT_TYPES } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { Novu } from '@notify/api';
+import { CreateSlackChannelEndpointDto } from '@notify/api/models/components';
+import { ENDPOINT_TYPES } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import {
   createSlackIntegration,

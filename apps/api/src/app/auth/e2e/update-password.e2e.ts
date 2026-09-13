@@ -1,5 +1,5 @@
-import { UserSessionData } from '@novu/shared';
-import { TEST_USER_PASSWORD, UserSession } from '@novu/testing';
+import { UserSessionData } from '@notify/shared';
+import { TEST_USER_PASSWORD, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import jwt from 'jsonwebtoken';
 

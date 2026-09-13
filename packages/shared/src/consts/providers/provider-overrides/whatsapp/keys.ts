@@ -32,4 +32,4 @@ export const NON_OVERRIDABLE_WHATSAPP_KEYS = ['messaging_product', 'to'] as cons
 export const WHATSAPP_PRIMARY_CONTENT_KEY = 'text.body';
 
 /** Package subpath the full generated WhatsApp schema ships behind. */
-export const WHATSAPP_OVERRIDE_SCHEMA_SUBPATH = '@novu/shared/provider-overrides/whatsapp';
+export const WHATSAPP_OVERRIDE_SCHEMA_SUBPATH = '@notify/shared/provider-overrides/whatsapp';

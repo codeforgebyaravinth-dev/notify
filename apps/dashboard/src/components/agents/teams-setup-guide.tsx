@@ -1,5 +1,5 @@
-import { MsTeamsConnectButton, MsTeamsLinkUser, useNovu } from '@novu/react';
-import { ChatProviderIdEnum, FeatureFlagsKeysEnum } from '@novu/shared';
+import { MsTeamsConnectButton, MsTeamsLinkUser, useNovu } from '@notify/react';
+import { ChatProviderIdEnum, FeatureFlagsKeysEnum } from '@notify/shared';
 import { useQueryClient } from '@tanstack/react-query';
 import { Download } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';

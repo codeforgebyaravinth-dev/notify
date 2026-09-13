@@ -1,5 +1,5 @@
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
-import { EnvironmentRepository } from '@novu/dal';
+import { EnvironmentRepository } from '@notify/dal';
 import { createHash, randomBytes } from 'crypto';
 
 const API_KEY_GENERATION_MAX_RETRIES = 3;

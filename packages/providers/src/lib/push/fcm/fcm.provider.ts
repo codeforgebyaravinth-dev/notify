@@ -1,5 +1,5 @@
-import { PushProviderIdEnum } from '@novu/shared';
-import { ChannelTypeEnum, IPushOptions, IPushProvider, ISendMessageSuccessResponse } from '@novu/stateless';
+import { PushProviderIdEnum } from '@notify/shared';
+import { ChannelTypeEnum, IPushOptions, IPushProvider, ISendMessageSuccessResponse } from '@notify/stateless';
 import crypto from 'crypto';
 import { cert, deleteApp, getApp, initializeApp } from 'firebase-admin/app';
 import { getMessaging, Messaging, MulticastMessage, TopicMessage } from 'firebase-admin/messaging';

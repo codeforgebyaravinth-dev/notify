@@ -1,4 +1,4 @@
-import { IEnvironment } from '@novu/shared';
+import { IEnvironment } from '@notify/shared';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import {
   createEnvironment,

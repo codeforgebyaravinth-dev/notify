@@ -126,7 +126,7 @@ function renderTopologySection(project: ProjectContext, installResult?: InstallP
       lines.push(`  - Pre-existing Novu packages: ${target.installedNovuPackages.map((p) => `\`${p}\``).join(', ')}`);
     }
     if (target.hasFrameworkRoute && target.frameworkRoutePath) {
-      lines.push(`  - Existing @novu/framework route: \`${target.frameworkRoutePath}\``);
+      lines.push(`  - Existing @notify/framework route: \`${target.frameworkRoutePath}\``);
     }
     if (installResult && installOutcome) {
       if (installOutcome.packagesInstalled.length > 0) {
@@ -227,7 +227,7 @@ function renderSteps(goal: WizardGoal, installResult?: InstallPackagesResult): s
       '  - business use case from `package.json` (`name`, `description`), top of `README.md`, top-level routes (`app/**/page.tsx`, `pages/**/*.tsx`, `src/routes/**`);',
       '  - brand tokens from `tailwind.config.{ts,js}` (`theme.extend.colors`, `fontFamily`, `borderRadius`), CSS variables in `app/globals.css` / `src/index.css`, `components.json`, logo assets in `public/`;',
       '  - auth provider in use (Clerk, Better Auth, NextAuth, Supabase) — drives `subscriberId`;',
-      '  - the workflow path: when `@novu/framework` is already installed in any application workspace, treat it as **code-first**; otherwise the workflow subagent will use the no-code MCP path. Do NOT install `@novu/framework` here — the wizard CLI made that decision before this turn.',
+      '  - the workflow path: when `@notify/framework` is already installed in any application workspace, treat it as **code-first**; otherwise the workflow subagent will use the no-code MCP path. Do NOT install `@notify/framework` here — the wizard CLI made that decision before this turn.',
       '  Findings are INTERNAL CONTEXT — do NOT echo them back to the user. You forward them to the subagents in STEP 4.',
       installLine,
     ].join('\n')
@@ -241,7 +241,7 @@ function renderSteps(goal: WizardGoal, installResult?: InstallPackagesResult): s
       '  For each `Task` call, set:',
       `    - \`subagent_type\`: one of \`${describeSubagentBranch('inbox')}\` / \`${describeSubagentBranch('workflows')}\` / \`${describeSubagentBranch('subscribers')}\`.`,
       '    - `description`: a short human-readable label (also contains the wizard branch label).',
-      '    - `prompt`: a SHORT message (3-6 lines) carrying ONLY the per-run dynamic context you gathered in STEP 2 that the subagent cannot rederive — for the Inbox branch, the brand-styling cues you saw (theme tokens, shadcn registry); for the Workflows branch, the business-domain summary (product description, top-level routes) and the resolved workflow path (`code-first` if `@novu/framework` is installed, otherwise `no-code`); for the Subscribers branch, the detected auth-provider name. Do NOT repeat the project context, environment, installed-skills list, branch domain, or JSON contract — those are already in the agent file.',
+      '    - `prompt`: a SHORT message (3-6 lines) carrying ONLY the per-run dynamic context you gathered in STEP 2 that the subagent cannot rederive — for the Inbox branch, the brand-styling cues you saw (theme tokens, shadcn registry); for the Workflows branch, the business-domain summary (product description, top-level routes) and the resolved workflow path (`code-first` if `@notify/framework` is installed, otherwise `no-code`); for the Subscribers branch, the detected auth-provider name. Do NOT repeat the project context, environment, installed-skills list, branch domain, or JSON contract — those are already in the agent file.',
       '',
       '  Branches to dispatch in this run:',
       ...renderBranchesToDispatch({ wantsInbox, wantsWorkflows, wantsSubscribers }),

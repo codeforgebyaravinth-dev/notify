@@ -1,6 +1,6 @@
 import { ForbiddenException } from '@nestjs/common';
-import { FeatureFlagsService } from '@novu/application-generic';
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsService } from '@notify/application-generic';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 
 /**
  * Per-org rollout gate for `authMode === 'provider-managed'` MCP entries.

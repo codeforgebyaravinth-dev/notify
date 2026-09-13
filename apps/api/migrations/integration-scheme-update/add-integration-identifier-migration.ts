@@ -1,7 +1,7 @@
 // June 27th, 2023
 
-import { EnvironmentRepository, IntegrationEntity, IntegrationRepository } from '@novu/dal';
-import { providers, slugify } from '@novu/shared';
+import { EnvironmentRepository, IntegrationEntity, IntegrationRepository } from '@notify/dal';
+import { providers, slugify } from '@notify/shared';
 import shortid from 'shortid';
 
 export const ENVIRONMENT_NAME_TO_SHORT_NAME = { Development: 'dev', Production: 'prod', undefined: '' };

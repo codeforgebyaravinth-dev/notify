@@ -1,5 +1,5 @@
 import { createVerify, generateKeyPairSync } from 'node:crypto';
-import type { DomainEntity } from '@novu/dal';
+import type { DomainEntity } from '@notify/dal';
 import { expect } from 'chai';
 import {
   areProviderSettingsUrlsAllowed,

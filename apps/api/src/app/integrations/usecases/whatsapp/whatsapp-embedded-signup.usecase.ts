@@ -1,7 +1,7 @@
 import { BadRequestException, ForbiddenException, Injectable } from '@nestjs/common';
-import { decryptCredentials, FeatureFlagsService, InstrumentUsecase, PinoLogger } from '@novu/application-generic';
-import { AgentIntegrationRepository, AgentRepository, IntegrationRepository } from '@novu/dal';
-import { FeatureFlagsKeysEnum, type ICredentials } from '@novu/shared';
+import { decryptCredentials, FeatureFlagsService, InstrumentUsecase, PinoLogger } from '@notify/application-generic';
+import { AgentIntegrationRepository, AgentRepository, IntegrationRepository } from '@notify/dal';
+import { FeatureFlagsKeysEnum, type ICredentials } from '@notify/shared';
 import { ConfigureWhatsAppWebhookCommand } from '../../../agents/channels/whatsapp/configure-whatsapp-webhook/configure-whatsapp-webhook.command';
 import { ConfigureWhatsAppWebhook } from '../../../agents/channels/whatsapp/configure-whatsapp-webhook/configure-whatsapp-webhook.usecase';
 import type { WhatsAppEmbeddedSignupResponseDto } from '../../dtos/whatsapp-embedded-signup.dto';

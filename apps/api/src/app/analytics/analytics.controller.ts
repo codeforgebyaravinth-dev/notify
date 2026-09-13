@@ -1,8 +1,8 @@
 import { Body, Controller, HttpCode, HttpStatus, Post } from '@nestjs/common';
 import { ApiExcludeController } from '@nestjs/swagger';
 import { SkipThrottle } from '@nestjs/throttler';
-import { AnalyticsService, ExternalApiAccessible, SkipPermissionsCheck, UserSession } from '@novu/application-generic';
-import { UserSessionData } from '@novu/shared';
+import { AnalyticsService, ExternalApiAccessible, SkipPermissionsCheck, UserSession } from '@notify/application-generic';
+import { UserSessionData } from '@notify/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 
 @Controller({

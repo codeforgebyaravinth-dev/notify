@@ -4,7 +4,7 @@ import {
   FeatureFlagsService,
   InstrumentUsecase,
   PinoLogger,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   BaseRepository,
   ContextRepository,
@@ -19,7 +19,7 @@ import {
   TopicRepository,
   TopicSubscribersEntity,
   TopicSubscribersRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   ContextPayload,
   FeatureFlagsKeysEnum,
@@ -27,7 +27,7 @@ import {
   SeverityLevelEnum,
   TOPIC_SUBSCRIPTION_IDENTIFIER_MAX_LENGTH,
   VALID_ID_REGEX,
-} from '@novu/shared';
+} from '@notify/shared';
 import { RulesLogic } from 'json-logic-js';
 import _ from 'lodash';
 import { GroupPreferenceFilterDto } from '../../../shared/dtos/subscriptions/create-subscriptions.dto';

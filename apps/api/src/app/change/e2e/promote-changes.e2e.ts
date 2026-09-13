@@ -6,7 +6,7 @@ import {
   MessageTemplateRepository,
   NotificationGroupRepository,
   NotificationTemplateRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   ChangeEntityTypeEnum,
   ChannelCTATypeEnum,
@@ -16,8 +16,8 @@ import {
   FilterPartTypeEnum,
   StepTypeEnum,
   TemplateVariableTypeEnum,
-} from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { CreateWorkflowRequestDto, UpdateWorkflowRequestDto } from '../../workflows-v1/dtos';
 

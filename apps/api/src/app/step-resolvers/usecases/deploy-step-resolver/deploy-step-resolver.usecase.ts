@@ -13,15 +13,15 @@ import {
   PinoLogger,
   ResourceValidatorService,
   reconcileStepResolverControlValues,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   ClientSession,
   ControlValuesEntity,
   ControlValuesRepository,
   MessageTemplateRepository,
   NotificationTemplateRepository,
-} from '@novu/dal';
-import { ControlValuesLevelEnum, FeatureFlagsKeysEnum, StepTypeEnum, UNLIMITED_VALUE } from '@novu/shared';
+} from '@notify/dal';
+import { ControlValuesLevelEnum, FeatureFlagsKeysEnum, StepTypeEnum, UNLIMITED_VALUE } from '@notify/shared';
 import { DeployStepResolverResponseDto, SkippedStepDto } from '../../dtos';
 import { CloudflareStepResolverDeployService } from '../../services/cloudflare-step-resolver-deploy.service';
 import { generateStepResolverWorkerId } from '../../utils/generate-step-resolver-worker-id';

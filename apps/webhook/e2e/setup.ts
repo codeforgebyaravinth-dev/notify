@@ -1,5 +1,5 @@
-import { DalService } from '@novu/dal';
-import { testServer } from '@novu/testing';
+import { DalService } from '@notify/dal';
+import { testServer } from '@notify/testing';
 import sinon from 'sinon';
 import { bootstrap } from '../src/bootstrap';
 

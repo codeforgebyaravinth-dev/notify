@@ -1,6 +1,6 @@
-import { Novu } from '@novu/js';
-import type { NovuUIOptions as JsNovuUIOptions } from '@novu/js/ui';
-import { NovuUI as NovuUIClass } from '@novu/js/ui';
+import { Novu } from '@notify/js';
+import type { NovuUIOptions as JsNovuUIOptions } from '@notify/js/ui';
+import { NovuUI as NovuUIClass } from '@notify/js/ui';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { NovuUIProvider } from '../context/NovuUIContext';
 import { useRenderer } from '../context/RendererContext';

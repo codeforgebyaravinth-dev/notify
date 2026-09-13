@@ -56,7 +56,7 @@ function computePackageRequirement(projectDir: string): BridgeRequirement {
     return {
       id: 'package',
       status: 'ok',
-      detail: '@novu/framework and ai installed',
+      detail: '@notify/framework and ai installed',
     };
   }
 
@@ -67,7 +67,7 @@ function computePackageRequirement(projectDir: string): BridgeRequirement {
       id: 'package',
       status: 'manual',
       detail:
-        `Incompatible ai version (${status.declaredVersion}). @novu/framework requires ai ^7.0.0. ` +
+        `Incompatible ai version (${status.declaredVersion}). @notify/framework requires ai ^7.0.0. ` +
         `Run: ${upgradeCommand} — then update your agent for v7.`,
     };
   }
@@ -142,7 +142,7 @@ function computeCodeWiringRequirement(projectDir: string): BridgeRequirement {
 
   const parts: string[] = [];
   if (!wiring.hasAiSdkImport) {
-    parts.push('@novu/framework/ai-sdk import not found');
+    parts.push('@notify/framework/ai-sdk import not found');
   }
   if (!wiring.hasBridgeRoute) {
     parts.push('bridge route app/api/novu/route.ts not found');

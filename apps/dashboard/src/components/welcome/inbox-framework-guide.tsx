@@ -1,4 +1,4 @@
-import { IEnvironment } from '@novu/shared';
+import { IEnvironment } from '@notify/shared';
 import { motion } from 'motion/react';
 import { useCallback, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';

@@ -1,4 +1,4 @@
-import { WorkflowResponseDto } from '@novu/shared';
+import { WorkflowResponseDto } from '@notify/shared';
 import React, { forwardRef, useCallback, useEffect, useState } from 'react';
 import { RiCheckboxCircleFill } from 'react-icons/ri';
 import { ActivityError } from '@/components/activity/activity-error';

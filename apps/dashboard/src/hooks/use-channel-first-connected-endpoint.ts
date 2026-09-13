@@ -1,4 +1,4 @@
-import { ENDPOINT_TYPES, type IEnvironment } from '@novu/shared';
+import { ENDPOINT_TYPES, type IEnvironment } from '@notify/shared';
 import { type Query, useQuery } from '@tanstack/react-query';
 import {
   type ChannelEndpointDto,

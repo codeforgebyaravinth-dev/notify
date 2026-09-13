@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { MessageActionStatusEnum } from '@novu/shared';
+import { MessageActionStatusEnum } from '@notify/shared';
 import { IsDefined, IsOptional, IsString } from 'class-validator';
 
 export class MarkMessageActionAsSeenDto {

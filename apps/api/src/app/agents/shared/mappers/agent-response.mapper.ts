@@ -3,15 +3,15 @@ import {
   getSharedAgentDomain,
   isAgentSharedInboxEnabled,
   isValidAgentEmailSlugPrefix,
-} from '@novu/application-generic';
-import type { AgentEntity, AgentIntegrationEntity, IntegrationEntity } from '@novu/dal';
+} from '@notify/application-generic';
+import type { AgentEntity, AgentIntegrationEntity, IntegrationEntity } from '@notify/dal';
 import {
   AgentRuntimeProviderIdEnum,
   buildClaudePlatformAgentConsoleUrl,
   EmailProviderIdEnum,
   isClaudePlatformConsoleProvider,
   slugify,
-} from '@novu/shared';
+} from '@notify/shared';
 
 import type { AgentIntegrationResponseDto, AgentIntegrationSummaryDto, AgentResponseDto } from '../dtos';
 import type { AgentMcpServerDto, AgentRuntimeConfigResponseDto, AgentToolDto } from '../dtos/agent-runtime-config.dto';

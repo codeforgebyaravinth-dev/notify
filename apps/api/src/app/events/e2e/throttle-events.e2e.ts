@@ -1,8 +1,8 @@
-import { Novu } from '@novu/api';
-import { CreateWorkflowDto, WorkflowCreationSourceEnum } from '@novu/api/models/components';
-import { JobRepository, JobStatusEnum, MessageRepository, SubscriberEntity } from '@novu/dal';
-import { StepTypeEnum } from '@novu/shared';
-import { SubscribersService, UserSession } from '@novu/testing';
+import { Novu } from '@notify/api';
+import { CreateWorkflowDto, WorkflowCreationSourceEnum } from '@notify/api/models/components';
+import { JobRepository, JobStatusEnum, MessageRepository, SubscriberEntity } from '@notify/dal';
+import { StepTypeEnum } from '@notify/shared';
+import { SubscribersService, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { initNovuClassSdk } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';
 import { pollForJobStatusChange } from './utils/poll-for-job-status-change.util';

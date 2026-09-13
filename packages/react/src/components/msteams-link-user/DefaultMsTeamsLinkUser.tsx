@@ -1,4 +1,4 @@
-import { MsTeamsLinkUserProps } from '@novu/js/ui';
+import { MsTeamsLinkUserProps } from '@notify/js/ui';
 import { useCallback } from 'react';
 import { useNovuUI } from '../../context/NovuUIContext';
 import { Mounter } from '../Mounter';

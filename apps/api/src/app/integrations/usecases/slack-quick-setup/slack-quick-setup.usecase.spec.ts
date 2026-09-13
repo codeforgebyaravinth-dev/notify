@@ -1,4 +1,4 @@
-import { ChatProviderIdEnum } from '@novu/shared';
+import { ChatProviderIdEnum } from '@notify/shared';
 import axios from 'axios';
 import { expect } from 'chai';
 import sinon from 'sinon';

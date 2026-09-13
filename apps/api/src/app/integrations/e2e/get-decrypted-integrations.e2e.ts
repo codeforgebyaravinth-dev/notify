@@ -1,6 +1,6 @@
-import { IntegrationRepository } from '@novu/dal';
-import { ChannelTypeEnum, EmailProviderIdEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { IntegrationRepository } from '@notify/dal';
+import { ChannelTypeEnum, EmailProviderIdEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Get Decrypted Integrations - /integrations (GET) #novu-v2', () => {

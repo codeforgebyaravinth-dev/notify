@@ -1,5 +1,5 @@
-import { PushProviderIdEnum } from '@novu/shared';
-import { ChannelTypeEnum, IPushOptions, IPushProvider, ISendMessageSuccessResponse } from '@novu/stateless';
+import { PushProviderIdEnum } from '@notify/shared';
+import { ChannelTypeEnum, IPushOptions, IPushProvider, ISendMessageSuccessResponse } from '@notify/stateless';
 import { FcmPushProvider } from '../push/fcm/fcm.provider';
 import { WithPassthrough } from '../../utils/types';
 

@@ -43,7 +43,7 @@ export interface NovuAdapterConfig {
 }
 
 // ---------------------------------------------------------------------------
-// Bridge wire contract (mirrors @novu/framework AgentBridgeRequest)
+// Bridge wire contract (mirrors @notify/framework AgentBridgeRequest)
 // ---------------------------------------------------------------------------
 
 export enum AgentEvent {
@@ -148,7 +148,7 @@ export interface AgentPlatformContext {
   email?: AgentEmailContext;
 }
 
-/** Workflow trigger recipient (mirrors @novu/shared TriggerRecipientsPayload). */
+/** Workflow trigger recipient (mirrors @notify/shared TriggerRecipientsPayload). */
 export type TriggerRecipientSubscriber = string | { subscriberId: string };
 
 export type TriggerRecipientTopic = { type: string; topicKey: string };
@@ -178,7 +178,7 @@ export interface AgentBridgeRequest {
 }
 
 // ---------------------------------------------------------------------------
-// Reply wire contract (mirrors @novu/framework AgentReplyPayload)
+// Reply wire contract (mirrors @notify/framework AgentReplyPayload)
 // ---------------------------------------------------------------------------
 
 export interface ReplyFileRef {

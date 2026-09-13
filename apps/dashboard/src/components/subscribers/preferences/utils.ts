@@ -1,4 +1,4 @@
-import { WeeklySchedule } from '@novu/shared';
+import { WeeklySchedule } from '@notify/shared';
 
 export const weekDays: Array<keyof WeeklySchedule> = [
   'monday',

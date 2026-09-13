@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { GetPreferences } from '@novu/application-generic';
-import { ContextRepository } from '@novu/dal';
+import { GetPreferences } from '@notify/application-generic';
+import { ContextRepository } from '@notify/dal';
 import { SharedModule } from '../shared/shared.module';
 import { USE_CASES } from './usecases';
 

@@ -1,7 +1,7 @@
-import { createContextHash, createHash } from '@novu/application-generic';
-import { ContextRepository, IntegrationRepository, SubscriberRepository } from '@novu/dal';
-import { ChannelTypeEnum, ContextPayload, InAppProviderIdEnum, SeverityLevelEnum, StepTypeEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { createContextHash, createHash } from '@notify/application-generic';
+import { ContextRepository, IntegrationRepository, SubscriberRepository } from '@notify/dal';
+import { ChannelTypeEnum, ContextPayload, InAppProviderIdEnum, SeverityLevelEnum, StepTypeEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { randomBytes } from 'crypto';
 import { initNovuClassSdk } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';

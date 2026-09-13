@@ -1,4 +1,4 @@
-import { ApiServiceLevelEnum, FeatureNameEnum, getFeatureForTierAsBoolean, type IIntegration } from '@novu/shared';
+import { ApiServiceLevelEnum, FeatureNameEnum, getFeatureForTierAsBoolean, type IIntegration } from '@notify/shared';
 import { type ReactNode, useEffect, useRef, useState } from 'react';
 import { RiAddLine, RiCloseLine } from 'react-icons/ri';
 import { useSearchParams } from 'react-router-dom';

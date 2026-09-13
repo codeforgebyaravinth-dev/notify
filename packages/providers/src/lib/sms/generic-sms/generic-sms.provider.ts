@@ -1,11 +1,11 @@
-import { isOutboundSsrfProtectionEnabled, SmsProviderIdEnum } from '@novu/shared';
-import { safeOutboundJsonRequest } from '@novu/shared/utils/safe-outbound-http';
+import { isOutboundSsrfProtectionEnabled, SmsProviderIdEnum } from '@notify/shared';
+import { safeOutboundJsonRequest } from '@notify/shared/utils/safe-outbound-http';
 import {
   assertSafeOutboundUrl,
   normalizeOutboundHttpUrl,
   SsrfBlockedError,
-} from '@novu/shared/utils/ssrf-url-validation';
-import { ChannelTypeEnum, ISendMessageSuccessResponse, ISmsOptions, ISmsProvider } from '@novu/stateless';
+} from '@notify/shared/utils/ssrf-url-validation';
+import { ChannelTypeEnum, ISendMessageSuccessResponse, ISmsOptions, ISmsProvider } from '@notify/stateless';
 
 import axios, { AxiosInstance } from 'axios';
 import { BaseProvider, CasingEnum } from '../../../base.provider';

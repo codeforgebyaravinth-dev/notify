@@ -1,4 +1,4 @@
-import { parseMarkdownIntoTokens } from '@novu/js/internal';
+import { parseMarkdownIntoTokens } from '@notify/js/internal';
 import { HTMLAttributes, ReactNode, useMemo } from 'react';
 
 import { InboxArrowDown } from '@/components/icons/inbox-arrow-down';

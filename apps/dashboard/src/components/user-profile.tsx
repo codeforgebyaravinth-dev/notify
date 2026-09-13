@@ -1,5 +1,5 @@
 import { UserButton, useOrganization } from '@clerk/react';
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { useMemo } from 'react';
 import { RiSignpostFill } from 'react-icons/ri';
 import { useFeatureFlag } from '@/hooks/use-feature-flag';

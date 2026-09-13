@@ -1,4 +1,4 @@
-import { ProductUseCasesEnum } from '@novu/shared';
+import { ProductUseCasesEnum } from '@notify/shared';
 import { Bot, ChevronDown, Mail, MessageCircle, MoreHorizontal, Settings, Smartphone } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useState } from 'react';

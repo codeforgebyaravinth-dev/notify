@@ -1,5 +1,5 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { LayoutEntity, LayoutRepository } from '@novu/dal';
+import { LayoutEntity, LayoutRepository } from '@notify/dal';
 
 import { PromoteTypeChangeCommand } from '../promote-type-change.command';
 

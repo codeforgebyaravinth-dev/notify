@@ -190,7 +190,7 @@ export * from './discord-connect-button/DiscordConnectButton';
 `src/components/<channel>-connect-button/Default<Channel>ConnectButton.tsx` (copy Telegram's):
 
 ```tsx
-import { DiscordConnectButtonProps } from '@novu/js/ui';
+import { DiscordConnectButtonProps } from '@notify/js/ui';
 import { useCallback } from 'react';
 import { useNovuUI } from '../../context/NovuUIContext';
 import { Mounter } from '../Mounter';

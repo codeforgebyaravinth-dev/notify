@@ -1,7 +1,7 @@
-import { buildDefaultSubscriptionIdentifier } from '@novu/application-generic';
-import { IntegrationRepository, PreferencesRepository, TopicSubscribersRepository } from '@novu/dal';
-import { ChannelTypeEnum, ContextPayload, InAppProviderIdEnum, StepTypeEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { buildDefaultSubscriptionIdentifier } from '@notify/application-generic';
+import { IntegrationRepository, PreferencesRepository, TopicSubscribersRepository } from '@notify/dal';
+import { ChannelTypeEnum, ContextPayload, InAppProviderIdEnum, StepTypeEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { CreateTopicSubscriptionRequestDto } from '../dtos/create-topic-subscription-request.dto';
 import { UpdatePreferencesRequestDto } from '../dtos/update-preferences-request.dto';
@@ -28,10 +28,10 @@ describe('Context-aware topic subscriptions - /inbox/topics (with context) #novu
     // Wrap testAgent to include Novu-Client-Version header for context-aware behavior
     const agent = session.testAgent;
     session.testAgent = {
-      get: (url: string) => agent.get(url).set('Novu-Client-Version', '@novu/js@3.13.0'),
-      post: (url: string) => agent.post(url).set('Novu-Client-Version', '@novu/js@3.13.0'),
-      patch: (url: string) => agent.patch(url).set('Novu-Client-Version', '@novu/js@3.13.0'),
-      delete: (url: string) => agent.delete(url).set('Novu-Client-Version', '@novu/js@3.13.0'),
+      get: (url: string) => agent.get(url).set('Novu-Client-Version', '@notify/js@3.13.0'),
+      post: (url: string) => agent.post(url).set('Novu-Client-Version', '@notify/js@3.13.0'),
+      patch: (url: string) => agent.patch(url).set('Novu-Client-Version', '@notify/js@3.13.0'),
+      delete: (url: string) => agent.delete(url).set('Novu-Client-Version', '@notify/js@3.13.0'),
     } as any;
 
     await setIntegrationConfig(session.environment._id, session.environment._organizationId);

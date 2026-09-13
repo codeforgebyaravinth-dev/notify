@@ -1,5 +1,5 @@
-import type { IActivity } from '@novu/shared';
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import type { IActivity } from '@notify/shared';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { useQuery } from '@tanstack/react-query';
 import { getNotification, getWorkflowRun } from '@/api/activity';
 import { useEnvironment } from '@/context/environment/hooks';

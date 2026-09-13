@@ -1,5 +1,5 @@
 import { ApiExtraModels, ApiProperty, ApiPropertyOptional, getSchemaPath } from '@nestjs/swagger';
-import type { TriggerRecipientsPayload } from '@novu/shared';
+import type { TriggerRecipientsPayload } from '@notify/shared';
 import type { CardElement } from 'chat';
 import { Type } from 'class-transformer';
 import {
@@ -16,7 +16,7 @@ import {
   ValidatorConstraintInterface,
 } from 'class-validator';
 
-export type { FileRef } from '@novu/framework';
+export type { FileRef } from '@notify/framework';
 
 const SIGNAL_TYPES = ['metadata', 'trigger'] as const;
 const METADATA_ACTIONS = ['set', 'delete', 'clear'] as const;
@@ -267,7 +267,7 @@ export class MarkdownReplyContentDto {
 export class CardReplyContentDto {
   @ApiProperty({
     description:
-      'Interactive card as a Chat SDK element tree (`type: "card"`). Prefer building with `@novu/framework` Card helpers when using TypeScript.',
+      'Interactive card as a Chat SDK element tree (`type: "card"`). Prefer building with `@notify/framework` Card helpers when using TypeScript.',
     type: 'object',
     additionalProperties: true,
     example: {

@@ -18,10 +18,10 @@ export interface InstallTarget {
   workspaceName: string | null;
   classification: WorkspaceClassification;
   installedDeps: Set<string>;
-  /** Subset of `installedDeps` that are Novu-published (`@novu/*` or `novu`). */
+  /** Subset of `installedDeps` that are Novu-published (`@notify/*` or `novu`). */
   installedNovuPackages: string[];
   /**
-   * True when an existing Novu `@novu/framework` route is detected in this
+   * True when an existing Novu `@notify/framework` route is detected in this
    * workspace (e.g. `app/api/novu/route.ts` for Next.js App Router or
    * `pages/api/novu.ts` for Pages Router). The agent prompt uses this to
    * avoid re-creating the route in code-first runs.
@@ -116,7 +116,7 @@ function buildTopology(
       ...Object.keys(ws.pkg.dependencies ?? {}),
       ...Object.keys(ws.pkg.devDependencies ?? {}),
     ]);
-    const installedNovuPackages = Array.from(installedDeps).filter((dep) => dep.startsWith('@novu/') || dep === 'novu');
+    const installedNovuPackages = Array.from(installedDeps).filter((dep) => dep.startsWith('@notify/') || dep === 'novu');
     const route = detectFrameworkRoute(ws.cwd);
 
     targets.push({

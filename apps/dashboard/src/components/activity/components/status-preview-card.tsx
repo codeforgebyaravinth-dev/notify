@@ -1,4 +1,4 @@
-import { IActivityJob, JobStatusEnum, StepTypeEnum } from '@novu/shared';
+import { IActivityJob, JobStatusEnum, StepTypeEnum } from '@notify/shared';
 import { format } from 'date-fns';
 import { RiCheckLine, RiCloseCircleLine, RiLoader4Line, RiPauseLine, RiStopLine } from 'react-icons/ri';
 import { STEP_TYPE_TO_ICON } from '@/components/icons/utils';

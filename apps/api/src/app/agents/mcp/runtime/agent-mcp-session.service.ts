@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { type IAgentRuntimeProvider, PinoLogger } from '@novu/application-generic';
-import { AgentMcpServerEntity, AgentMcpServerRepository, McpConnectionRepository } from '@novu/dal';
-import { MCP_SERVERS, McpConnectionScopeEnum, McpConnectionStatusEnum } from '@novu/shared';
+import { type IAgentRuntimeProvider, PinoLogger } from '@notify/application-generic';
+import { AgentMcpServerEntity, AgentMcpServerRepository, McpConnectionRepository } from '@notify/dal';
+import { MCP_SERVERS, McpConnectionScopeEnum, McpConnectionStatusEnum } from '@notify/shared';
 
 @Injectable()
 export class AgentMcpSessionService {

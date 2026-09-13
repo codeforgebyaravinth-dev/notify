@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { EnvironmentEntity, EnvironmentRepository, LayoutRepository, NotificationGroupRepository } from '@novu/dal';
+import { EnvironmentEntity, EnvironmentRepository, LayoutRepository, NotificationGroupRepository } from '@notify/dal';
 import { createHash } from 'crypto';
 
 export class EnvironmentService {

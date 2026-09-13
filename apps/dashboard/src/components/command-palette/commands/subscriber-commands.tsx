@@ -1,4 +1,4 @@
-import { PermissionsEnum } from '@novu/shared';
+import { PermissionsEnum } from '@notify/shared';
 import { RiDiscussLine, RiUserAddLine } from 'react-icons/ri';
 import { useNavigate } from 'react-router-dom';
 import { useHasPermission } from '@/hooks/use-has-permission';

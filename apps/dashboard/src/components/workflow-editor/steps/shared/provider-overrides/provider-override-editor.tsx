@@ -1,4 +1,4 @@
-import { type ContentOverrideProviderId, getProviderPrimaryContentKey, setAtPath } from '@novu/shared';
+import { type ContentOverrideProviderId, getProviderPrimaryContentKey, setAtPath } from '@notify/shared';
 import { Braces } from 'lucide-react';
 import { type ReactNode, useCallback, useEffect, useMemo, useState } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';

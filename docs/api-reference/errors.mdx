@@ -1,9 +1,9 @@
 ---
 title: 'Errors'
-description: "Understand Novu API error responses, HTTP status codes, validation error payloads, and how to debug and recover from failed API requests."
+description: "Understand Notify API error responses, HTTP status codes, validation error payloads, and how to debug and recover from failed API requests."
 ---
 
-The Novu API uses conventional HTTP status codes to indicate the success or failure of a request. Codes in the `2xx` range indicate success. Codes in the `4xx` range indicate a request that failed given the information provided (for example, a required parameter was missing or validation failed). Codes in the `5xx` range indicate an error on Novu's servers and are rare.
+The Notify API uses conventional HTTP status codes to indicate the success or failure of a request. Codes in the `2xx` range indicate success. Codes in the `4xx` range indicate a request that failed given the information provided (for example, a required parameter was missing or validation failed). Codes in the `5xx` range indicate an error on Notify's servers and are rare.
 
 Every error response shares a consistent JSON shape, so you can handle errors the same way across all endpoints.
 
@@ -21,7 +21,7 @@ Every error response shares a consistent JSON shape, so you can handle errors th
 | `413` Payload Too Large | Body too large | The request body exceeds the limit. See [Payload Limits](/api-reference/payload-limits). |
 | `422` Unprocessable Entity | Validation error | The request body failed field-level validation. |
 | `429` Too Many Requests | Rate limited | You exceeded the rate limit. See [Rate Limiting](/api-reference/rate-limiting). |
-| `500` Server Error | Internal error | Something went wrong on Novu's end. Retry, then contact support with the `errorId`. |
+| `500` Server Error | Internal error | Something went wrong on Notify's end. Retry, then contact support with the `errorId`. |
 
 ## Error response shape
 
@@ -107,7 +107,7 @@ When an event payload does not match a workflow's payload schema, the API return
 
 ## Server errors
 
-`500` responses include an `errorId` that uniquely identifies the failure in Novu's monitoring systems:
+`500` responses include an `errorId` that uniquely identifies the failure in Notify's monitoring systems:
 
 ```json
 {
@@ -119,24 +119,24 @@ When an event payload does not match a workflow's payload schema, the API return
 }
 ```
 
-When contacting [support](mailto:support@novu.co), include the `errorId` so the team can locate the exact request.
+When contacting [support](mailto:support@notify.co), include the `errorId` so the team can locate the exact request.
 
 ## Debugging requests
 
-Beyond the error body, Novu gives you several ways to trace a request:
+Beyond the error body, Notify gives you several ways to trace a request:
 
 - **`errorId`** - Returned on `500` responses. Share it with support to pinpoint the failed request.
 - **`transactionId`** - Returned by [Trigger event](/api-reference/events/trigger-event), [Bulk trigger event](/api-reference/events/bulk-trigger-event), and [Broadcast event](/api-reference/events/broadcast-event-to-all). Use it to [cancel a triggered event](/api-reference/events/cancel-triggered-event) or to look up the resulting notification.
-- **Activity Feed** - The [Activity Feed](https://dashboard.novu.co/activities) in the Novu Dashboard shows every triggered workflow with per-step logs, including whether a delivery failed and why. See [Common errors](/platform/additional-resources/errors) for workflow delivery errors.
+- **Activity Feed** - The [Activity Feed](https://dashboard.novu.co/activities) in the Notify Dashboard shows every triggered workflow with per-step logs, including whether a delivery failed and why. See [Common errors](/platform/additional-resources/errors) for workflow delivery errors.
 
 ## Handling errors
 
 The server-side SDKs throw a typed error you can inspect. Check the `statusCode` to branch your logic, and read `message` or `errors` for details:
 
 ```javascript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({ secretKey: process.env.NOVU_SECRET_KEY });
+const notify = new Notify({ secretKey: process.env.NOVU_SECRET_KEY });
 
 try {
   await novu.trigger({

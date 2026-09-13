@@ -1,4 +1,4 @@
-import type { AllAppearance, AllElements, Variables } from '@novu/js/ui';
+import type { AllAppearance, AllElements, Variables } from '@notify/js/ui';
 import type {
   BellProps,
   InboxContentProps,
@@ -10,7 +10,7 @@ import type {
   SubscriptionProps,
   UseNotificationsProps,
   UseNotificationsResult,
-} from '@novu/react';
+} from '@notify/react';
 
 export type InboxProps = Omit<InboxPropsInternal, 'children'>;
 export type { BellProps, InboxContentProps, NotificationProps };

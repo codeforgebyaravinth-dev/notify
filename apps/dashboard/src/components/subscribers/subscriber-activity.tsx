@@ -1,5 +1,5 @@
 import { useOrganization } from '@clerk/react';
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { AnimatePresence } from 'motion/react';
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';

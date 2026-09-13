@@ -1,4 +1,4 @@
-import { CardElement, ChatRenderValidationLevelEnum, IChatRenderValidation } from '@novu/stateless';
+import { CardElement, ChatRenderValidationLevelEnum, IChatRenderValidation } from '@notify/stateless';
 import {
   CardValidator,
   InlineNode,

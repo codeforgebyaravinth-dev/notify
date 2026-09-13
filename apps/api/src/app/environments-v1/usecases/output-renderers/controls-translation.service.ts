@@ -1,8 +1,8 @@
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
-import { LayoutDto, PinoLogger } from '@novu/application-generic';
-import { LocalizationResourceEnum, NotificationTemplateEntity, OrganizationEntity } from '@novu/dal';
-import { createLiquidEngine } from '@novu/framework/internal';
+import { LayoutDto, PinoLogger } from '@notify/application-generic';
+import { LocalizationResourceEnum, NotificationTemplateEntity, OrganizationEntity } from '@notify/dal';
+import { createLiquidEngine } from '@notify/framework/internal';
 import { FullPayloadForRender } from './render-command';
 
 type TranslationContext = {
@@ -279,9 +279,9 @@ export class ControlsTranslationService {
 
   private getTranslationModule() {
     try {
-      const translationModule = require('@novu/ee-translation')?.Translate;
+      const translationModule = require('@notify/ee-translation')?.Translate;
       if (!translationModule) {
-        throw new Error('Translation module (@novu/ee-translation) not found or Translate class not exported');
+        throw new Error('Translation module (@notify/ee-translation) not found or Translate class not exported');
       }
 
       return this.moduleRef.get(translationModule, { strict: false });

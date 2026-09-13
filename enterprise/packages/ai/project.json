@@ -1,5 +1,5 @@
 {
-  "name": "@novu/ee-ai",
+  "name": "@notify/ee-ai",
   "sourceRoot": "enterprise/packages/ai/src",
   "projectType": "library",
   "targets": {

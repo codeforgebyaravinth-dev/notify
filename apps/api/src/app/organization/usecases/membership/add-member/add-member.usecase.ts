@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { MemberRepository } from '@novu/dal';
-import { MemberStatusEnum } from '@novu/shared';
+import { MemberRepository } from '@notify/dal';
+import { MemberStatusEnum } from '@notify/shared';
 import { AddMemberCommand } from './add-member.command';
 
 @Injectable()

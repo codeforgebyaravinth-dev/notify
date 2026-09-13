@@ -12,8 +12,8 @@ import {
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiExcludeController } from '@nestjs/swagger';
-import { FeatureFlagsService } from '@novu/application-generic';
-import { DirectionEnum } from '@novu/shared';
+import { FeatureFlagsService } from '@notify/application-generic';
+import { DirectionEnum } from '@notify/shared';
 import { Request as ExpressRequest, Response as ExpressResponse } from 'express';
 import {
   SubscriberSession,

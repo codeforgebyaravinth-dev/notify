@@ -1,4 +1,4 @@
-import { IProviderConfig } from '@novu/shared';
+import { IProviderConfig } from '@notify/shared';
 import { useNavigate } from 'react-router-dom';
 import { Badge } from '@/components/primitives/badge';
 import { InlineToast } from '@/components/primitives/inline-toast';

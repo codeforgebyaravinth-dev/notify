@@ -1,4 +1,4 @@
-import { UserSession } from '@novu/testing';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { LayoutDto } from '../dtos';
 import { createLayout } from './helpers';

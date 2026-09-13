@@ -1,5 +1,5 @@
-import { createContextHash, createHash, decryptApiKey } from '@novu/application-generic';
-import { ContextPayload } from '@novu/shared';
+import { createContextHash, createHash, decryptApiKey } from '@notify/application-generic';
+import { ContextPayload } from '@notify/shared';
 import { areHexDigestsEqual } from './timing-safe-equal';
 
 export function isHmacValid(secretKey: string, subscriberId: string, hmacHash: string | undefined) {

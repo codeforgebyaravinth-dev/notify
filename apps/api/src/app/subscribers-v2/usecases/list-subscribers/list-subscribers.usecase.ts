@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { InstrumentUsecase } from '@novu/application-generic';
-import { BaseRepository, SubscriberRepository } from '@novu/dal';
+import { InstrumentUsecase } from '@notify/application-generic';
+import { BaseRepository, SubscriberRepository } from '@notify/dal';
 import { DirectionEnum } from '../../../shared/dtos/base-responses';
 import { ListSubscribersResponseDto } from '../../dtos/list-subscribers-response.dto';
 import { ListSubscribersCommand } from './list-subscribers.command';

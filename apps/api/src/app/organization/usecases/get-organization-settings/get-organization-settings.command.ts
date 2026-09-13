@@ -1,5 +1,5 @@
-import { BaseCommand } from '@novu/application-generic';
-import { OrganizationEntity } from '@novu/dal';
+import { BaseCommand } from '@notify/application-generic';
+import { OrganizationEntity } from '@notify/dal';
 import { IsNotEmpty, IsOptional } from 'class-validator';
 
 export class GetOrganizationSettingsCommand extends BaseCommand {

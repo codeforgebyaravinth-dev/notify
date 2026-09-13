@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { StepResponseDto, WorkflowResponseDto } from '@novu/application-generic';
+import { StepResponseDto, WorkflowResponseDto } from '@notify/application-generic';
 import { INormalizedStep, INormalizedWorkflow } from '../types/workflow-sync.types';
 
 @Injectable()

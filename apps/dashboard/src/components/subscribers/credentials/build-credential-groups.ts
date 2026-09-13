@@ -1,6 +1,6 @@
-import { SubscriberResponseDto } from '@novu/api/models/components';
-import type { ChannelEndpointType, IIntegration } from '@novu/shared';
-import { ChannelTypeEnum, ChatProviderIdEnum, providers } from '@novu/shared';
+import { SubscriberResponseDto } from '@notify/api/models/components';
+import type { ChannelEndpointType, IIntegration } from '@notify/shared';
+import { ChannelTypeEnum, ChatProviderIdEnum, providers } from '@notify/shared';
 import type { ChannelConnectionDto } from '@/api/channel-connections';
 import type { ChannelEndpointDto, ChannelEndpointPayload } from '@/api/channel-endpoints';
 import {

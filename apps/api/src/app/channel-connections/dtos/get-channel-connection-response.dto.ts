@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { ChannelTypeEnum, ProvidersIdEnum, ProvidersIdEnumConst } from '@novu/shared';
+import { ChannelTypeEnum, ProvidersIdEnum, ProvidersIdEnumConst } from '@notify/shared';
 import { AuthDto, WorkspaceDto } from './shared.dto';
 
 export class GetChannelConnectionResponseDto {

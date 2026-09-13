@@ -16,18 +16,18 @@ Add an in-app notification center to your web application. The Inbox component p
 
 | Package | Use For |
 | --- | --- |
-| `@novu/react` | React 18/19 applications |
-| `@novu/nextjs` | Next.js (App Router + Pages Router) |
-| `@novu/js` | Vanilla JavaScript / non-React frameworks |
+| `@notify/react` | React 18/19 applications |
+| `@notify/nextjs` | Next.js (App Router + Pages Router) |
+| `@notify/js` | Vanilla JavaScript / non-React frameworks |
 
 ## React Quick Start
 
 ```bash
-npm install @novu/react
+npm install @notify/react
 ```
 
 ```tsx
-import { Inbox } from "@novu/react";
+import { Inbox } from "@notify/react";
 
 function App() {
   return (
@@ -45,7 +45,7 @@ This renders a bell icon with unread count. Clicking it opens a popover with the
 ## Next.js
 
 ```bash
-npm install @novu/nextjs
+npm install @notify/nextjs
 ```
 
 ### App Router
@@ -54,7 +54,7 @@ npm install @novu/nextjs
 // components/NotificationInbox.tsx
 "use client";
 
-import { Inbox } from "@novu/nextjs";
+import { Inbox } from "@notify/nextjs";
 
 export function NotificationInbox() {
   return (
@@ -72,7 +72,7 @@ export function NotificationInbox() {
 ### Pages Router
 
 ```tsx
-import { Inbox } from "@novu/nextjs";
+import { Inbox } from "@notify/nextjs";
 
 export default function NotificationsPage() {
   return (
@@ -97,7 +97,7 @@ The `<Inbox>` component is composable. When you pass children, it acts as a cont
 | `<Preferences />` | Standalone preferences panel |
 
 ```tsx
-import { Inbox, Bell, Notifications, Preferences } from "@novu/react";
+import { Inbox, Bell, Notifications, Preferences } from "@notify/react";
 
 function App() {
   return (
@@ -134,8 +134,8 @@ Styles are auto-injected into `<head>` (or the shadow root if rendered inside a 
 ### Dark mode (and other base themes)
 
 ```tsx
-import { Inbox } from "@novu/react";
-import { dark } from "@novu/react/themes";
+import { Inbox } from "@notify/react";
+import { dark } from "@notify/react/themes";
 
 <Inbox
   applicationIdentifier="YOUR_NOVU_APP_ID"
@@ -365,7 +365,7 @@ See [Personalization Reference](./references/personalization.md) for full render
 Group notifications into tabs by **tags**, **severity**, or **`data` properties**:
 
 ```tsx
-import { Inbox, SeverityLevelEnum } from "@novu/react";
+import { Inbox, SeverityLevelEnum } from "@notify/react";
 
 <Inbox
   applicationIdentifier="YOUR_NOVU_APP_ID"
@@ -505,7 +505,7 @@ declare global {
 Mount the notification feed inside any popover, drawer, or page layout. Use `<Bell />` (or your own trigger) plus `<Notifications />` or `<InboxContent />`:
 
 ```tsx
-import { Inbox, InboxContent, Bell } from "@novu/react";
+import { Inbox, InboxContent, Bell } from "@notify/react";
 import { Popover, PopoverTrigger, PopoverContent } from "@radix-ui/react-popover";
 
 <Inbox
@@ -598,7 +598,7 @@ If you also pass a `context`, generate a `contextHash` (see [Multi-Tenancy](#mul
 3. **The Inbox only shows notifications from workflows with an `inApp` step** — if your workflow doesn't include `step.inApp()`, nothing appears.
 4. **`"use client"` is required in Next.js App Router** — the Inbox component is client-side only.
 5. **Real-time updates are automatic** — the Inbox uses WebSockets internally. No additional setup needed.
-6. **`@novu/react` vs `@novu/nextjs`** — use `@novu/nextjs` for Next.js apps (handles SSR edge cases), `@novu/react` for all other React apps.
+6. **`@notify/react` vs `@notify/nextjs`** — use `@notify/nextjs` for Next.js apps (handles SSR edge cases), `@notify/react` for all other React apps.
 7. **`variables` override `baseTheme`** — when both are set in `appearance`, variables win. Set variables in dark/light themes intentionally.
 8. **Element callbacks return strings** — `(context) => string` returns class names, not style objects. For style objects use a static value.
 9. **Context filtering is exact-match** — passing `context={{}}` to the Inbox hides any notification triggered with a non-empty context, and vice-versa.

@@ -1,4 +1,4 @@
-import { processTestAgentExpectedStatusCode, UserSession } from '@novu/testing';
+import { processTestAgentExpectedStatusCode, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Update user name and profile picture - /users/profile (PUT) #novu-v0-os', async () => {

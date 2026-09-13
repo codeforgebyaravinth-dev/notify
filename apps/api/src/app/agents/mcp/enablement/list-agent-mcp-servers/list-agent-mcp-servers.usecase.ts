@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { AgentMcpServerRepository, AgentRepository } from '@novu/dal';
+import { AgentMcpServerRepository, AgentRepository } from '@notify/dal';
 
 import { ListAgentMcpServersResponseDto } from '../../../shared/dtos/mcp-server.dto';
 import { toEnablementResponse } from '../enable-agent-mcp-server/enable-agent-mcp-server.usecase';

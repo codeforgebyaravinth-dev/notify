@@ -1,5 +1,5 @@
 {
-  "name": "@novu/framework",
+  "name": "@notify/framework",
   "sourceRoot": "packages/framework/src",
   "projectType": "library",
   "targets": {

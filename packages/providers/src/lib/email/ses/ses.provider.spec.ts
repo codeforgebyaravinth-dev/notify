@@ -1,5 +1,5 @@
 import { SESv2Client } from '@aws-sdk/client-sesv2';
-import { EmailEventStatusEnum } from '@novu/stateless';
+import { EmailEventStatusEnum } from '@notify/stateless';
 import { describe, expect, test, vi } from 'vitest';
 import { SESEmailProvider } from './ses.provider';
 

@@ -1,4 +1,4 @@
-import { CLI_DEVICE_SESSION_NAME_NOVU_CONNECT } from '@novu/shared';
+import { CLI_DEVICE_SESSION_NAME_NOVU_CONNECT } from '@notify/shared';
 import open from 'open';
 import { CONNECT_EVENTS } from '../analytics/events';
 import {

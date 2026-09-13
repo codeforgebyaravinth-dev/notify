@@ -1,13 +1,13 @@
 ---
 title: 'Glossary'
-description: "Definitions of key Novu terms and concepts, including workflows, subscribers, topics, tenants, layouts, environments, and the Novu bridge, in one place."
+description: "Definitions of key Notify terms and concepts, including workflows, subscribers, topics, tenants, layouts, environments, and the Notify bridge, in one place."
 ---
 
 ## Introduction
 
-This glossary defines the key terms and concepts used across Novu documentation, the Dashboard, and the API. Terms are grouped by topic and listed alphabetically within each section.
+This glossary defines the key terms and concepts used across Notify documentation, the Dashboard, and the API. Terms are grouped by topic and listed alphabetically within each section.
 
-For deeper guides, see the [Core Concepts](/platform/concepts/notification-event) pages. If you need help with a term not listed here, reach out to our [support team](https://novu.co/support) or join the [Novu community](https://discord.gg/novu).
+For deeper guides, see the [Core Concepts](/platform/concepts/notification-event) pages. If you need help with a term not listed here, reach out to our [support team](https://novu.co/support) or join the [Notify community](https://discord.gg/novu).
 
 ## Core lifecycle
 
@@ -15,7 +15,7 @@ For deeper guides, see the [Core Concepts](/platform/concepts/notification-event
 
 An API request (typically to [`POST /v1/events/trigger`](/api-reference/events/trigger-event)) that starts a [workflow](#workflow) for one or more recipients. A trigger includes a `workflowId`, a `to` field (subscriber, topic, or broadcast target), and optional `payload`, `context`, `actor`, and `overrides`.
 
-Novu bills one event per subscriber resolved from the trigger, even if a notification is later filtered by [preferences](#preference) or [step conditions](#step-conditions). See [Trigger](/platform/concepts/trigger) and [Notification event](/platform/concepts/notification-event).
+Notify bills one event per subscriber resolved from the trigger, even if a notification is later filtered by [preferences](#preference) or [step conditions](#step-conditions). See [Trigger](/platform/concepts/trigger) and [Notification event](/platform/concepts/notification-event).
 
 ### Job
 
@@ -66,13 +66,13 @@ A topic-level, condition-based opt-in layer. Subscribers on a [topic](#topic) ca
 
 ### Topic
 
-A named group of [subscribers](#subscriber) used to fan out a [workflow](#workflow) with a single trigger. The topic is referenced by its immutable `topicKey` in the trigger `to` field. Novu creates one billed [event](#event--trigger) per topic subscriber. See [Topics](/platform/concepts/topics).
+A named group of [subscribers](#subscriber) used to fan out a [workflow](#workflow) with a single trigger. The topic is referenced by its immutable `topicKey` in the trigger `to` field. Notify creates one billed [event](#event--trigger) per topic subscriber. See [Topics](/platform/concepts/topics).
 
 ## Delivery
 
 ### Channel
 
-A communication medium used to deliver notifications: in-app ([Inbox](#inbox)), email, SMS, push, or chat. Channel steps require valid subscriber channel data and an active [integration](#integration), except for in-app, which is handled internally by Novu.
+A communication medium used to deliver notifications: in-app ([Inbox](#inbox)), email, SMS, push, or chat. Channel steps require valid subscriber channel data and an active [integration](#integration), except for in-app, which is handled internally by Notify.
 
 ### Credential
 
@@ -80,7 +80,7 @@ Encrypted authentication and configuration values stored on an [integration](#in
 
 ### Inbox
 
-Novu's in-app notification UI and client SDK component (`<Inbox />`). The Inbox delivers `in_app` [channel](#channel) [messages](#message), unread counts, [preferences](#preference), tabs, snooze, and delivery schedules. It is not a third-party [provider](#provider). See [Inbox](/platform/inbox).
+Notify's in-app notification UI and client SDK component (`<Inbox />`). The Inbox delivers `in_app` [channel](#channel) [messages](#message), unread counts, [preferences](#preference), tabs, snooze, and delivery schedules. It is not a third-party [provider](#provider). See [Inbox](/platform/inbox).
 
 ### Integration
 
@@ -98,7 +98,7 @@ A third-party service responsible for delivering notifications on a [channel](#c
 
 ### Controls
 
-Dashboard-editable fields defined by JSON Schema or Zod in [Novu Framework](#novu-framework) workflows. Controls let non-technical users change step content, styling, or behavior without code changes. Controls are distinct from trigger [payload](#payload).
+Dashboard-editable fields defined by JSON Schema or Zod in [Notify Framework](#notify-framework) workflows. Controls let non-technical users change step content, styling, or behavior without code changes. Controls are distinct from trigger [payload](#payload).
 
 ### Delay step
 
@@ -128,7 +128,7 @@ A [workflow](#workflow) marked as critical whose channel [preferences](#preferen
 
 ### Preference
 
-Rules that control whether notifications are sent on a [channel](#channel). Novu supports workflow channel preferences, subscriber global preferences, subscriber per-workflow preferences, and subscription-scoped preferences. See [Preferences](/platform/concepts/preferences).
+Rules that control whether notifications are sent on a [channel](#channel). Notify supports workflow channel preferences, subscriber global preferences, subscriber per-workflow preferences, and subscription-scoped preferences. See [Preferences](/platform/concepts/preferences).
 
 ### Trigger overrides
 
@@ -142,17 +142,17 @@ Multi-dimensional metadata passed at trigger time as `{ type: id | { id, data } 
 
 ### Tenant
 
-A logical organization, workspace, or customer boundary within your application. In Novu, implement multi-tenancy with a `tenant` [context](#context) rather than prefixing subscriber IDs. See [Multi-tenancy](/platform/concepts/tenants).
+A logical organization, workspace, or customer boundary within your application. In Notify, implement multi-tenancy with a `tenant` [context](#context) rather than prefixing subscriber IDs. See [Multi-tenancy](/platform/concepts/tenants).
 
 ## Environments and account
 
 ### Application identifier
 
-The public, environment-scoped key used by client SDKs and the [Inbox](#inbox) to connect to Novu. Safe to expose in frontend code. Each environment has its own application identifier.
+The public, environment-scoped key used by client SDKs and the [Inbox](#inbox) to connect to Notify. Safe to expose in frontend code. Each environment has its own application identifier.
 
 ### Environment
 
-An isolated scope for workflows, subscribers, integrations, and other Novu data. By default, Novu provides Development and Production environments. Team and Enterprise plans also support custom environments such as staging or QA.
+An isolated scope for workflows, subscribers, integrations, and other Notify data. By default, Notify provides Development and Production environments. Team and Enterprise plans also support custom environments such as staging or QA.
 
 Environment-specific resources (not shared between environments):
 
@@ -173,7 +173,7 @@ See [Environments](/platform/developer/environments).
 
 ### Organization
 
-The top-level Novu account that owns environments, workflows, and team access. Managed through the Novu Dashboard.
+The top-level Notify account that owns environments, workflows, and team access. Managed through the Notify Dashboard.
 
 ### Publish
 
@@ -181,7 +181,7 @@ The process of promoting changes to [workflows](#workflow), [layouts](#layout), 
 
 ### Team member
 
-A person with access to the Novu Dashboard to manage workflows, integrations, and settings. Team members have roles within an [organization](#organization). They are not the same as [subscribers](#subscriber), who receive notifications.
+A person with access to the Notify Dashboard to manage workflows, integrations, and settings. Team members have roles within an [organization](#organization). They are not the same as [subscribers](#subscriber), who receive notifications.
 
 ## Observability
 
@@ -201,11 +201,11 @@ A single execution of a [workflow](#workflow) for one [subscriber](#subscriber),
 
 ### ACI (Agent Communication Infrastructure)
 
-Novu's two-way agent messaging layer across channels such as Slack, Teams, WhatsApp, email, and Telegram. ACI handles inbound channel events, conversation history, and delivery - separate from the [agent brain](#agent-brain) that decides how an agent responds. See [What is ACI](/agents/get-started/what-is-aci) and [Inbound Email](/platform/inbound-email/overview).
+Notify's two-way agent messaging layer across channels such as Slack, Teams, WhatsApp, email, and Telegram. ACI handles inbound channel events, conversation history, and delivery - separate from the [agent brain](#agent-brain) that decides how an agent responds. See [What is ACI](/agents/get-started/what-is-aci) and [Inbound Email](/platform/inbound-email/overview).
 
 ### Inbound Email
 
-Novu feature for receiving mail on verified domains and routing messages to [agents](#aci-agent-communication-infrastructure) or [webhook](/platform/developer/webhooks/webhooks) endpoints via [`email.received`](/platform/developer/webhooks/event-types#email-events). Not the same as [Email Activity Tracking](/platform/integrations/email/activity-tracking) (outbound provider delivery events). See [Inbound Email](/platform/inbound-email/overview).
+Notify feature for receiving mail on verified domains and routing messages to [agents](#aci-agent-communication-infrastructure) or [webhook](/platform/developer/webhooks/webhooks) endpoints via [`email.received`](/platform/developer/webhooks/event-types#email-events). Not the same as [Email Activity Tracking](/platform/integrations/email/activity-tracking) (outbound provider delivery events). See [Inbound Email](/platform/inbound-email/overview).
 
 ### Agent brain
 
@@ -213,11 +213,11 @@ The system that decides how an agent responds. It can be powered by an LLM, cust
 
 ### Bridge / Bridge endpoint
 
-An HTTP endpoint in your application that Novu Cloud calls for [Novu Framework](#novu-framework) workflow discovery, preview, and execution. Dashboard-built workflows use Novu's shared bridge endpoint instead.
+An HTTP endpoint in your application that Notify Cloud calls for [Notify Framework](#notify-framework) workflow discovery, preview, and execution. Dashboard-built workflows use Notify's shared bridge endpoint instead.
 
-### Novu Framework
+### Notify Framework
 
-The code-first SDK (`@novu/framework`) for defining [workflows](#workflow) in TypeScript with typed [payload](#payload) and [controls](#controls) schemas. See [Novu Framework](/framework/introduction).
+The code-first SDK (`@notify/framework`) for defining [workflows](#workflow) in TypeScript with typed [payload](#payload) and [controls](#controls) schemas. See [Notify Framework](/framework/introduction).
 
 ## Legacy terms
 

@@ -6,16 +6,16 @@ import {
   InstrumentUsecase,
   MsTeamsTokenService,
   RotatingConnectionTokenService,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   ChannelConnectionEntity,
   ChannelConnectionRepository,
   ChannelEndpointEntity,
   ChannelEndpointRepository,
   IntegrationRepository,
-} from '@novu/dal';
-import { ProvidersIdEnum } from '@novu/shared';
-import { ChannelData, ENDPOINT_TYPES, ENDPOINT_TYPES_REQUIRING_TOKEN } from '@novu/stateless';
+} from '@notify/dal';
+import { ProvidersIdEnum } from '@notify/shared';
+import { ChannelData, ENDPOINT_TYPES, ENDPOINT_TYPES_REQUIRING_TOKEN } from '@notify/stateless';
 import { ResolveChannelEndpointsCommand } from './resolve-channel-endpoints.command';
 
 type EndpointStoredSecretConfig = {

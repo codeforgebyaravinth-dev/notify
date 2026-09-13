@@ -7,7 +7,7 @@ import {
   TenantRepository,
   WorkflowOverrideEntity,
   WorkflowOverrideRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import { UpdateWorkflowOverrideResponseDto } from '../../dtos/update-workflow-override-response.dto';
 import { UpdateWorkflowOverrideCommand } from './update-workflow-override.command';
 

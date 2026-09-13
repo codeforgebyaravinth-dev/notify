@@ -1,6 +1,6 @@
 import { tool, type Tool } from 'ai';
 import type { ZodTypeAny } from 'zod';
-import type { Novu } from '@novu/api';
+import type { Novu } from '@notify/api';
 import type { NovuToolDefinition, NovuToolkitConfig } from '../core/types.js';
 
 export function novuToolToAiSdkTool(

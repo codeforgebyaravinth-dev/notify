@@ -4,9 +4,9 @@ import {
   createHash,
   FeatureFlagsService,
   PinoLogger,
-} from '@novu/application-generic';
-import { CommunityOrganizationRepository, EnvironmentRepository, IntegrationRepository } from '@novu/dal';
-import { ChatProviderIdEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { CommunityOrganizationRepository, EnvironmentRepository, IntegrationRepository } from '@notify/dal';
+import { ChatProviderIdEnum } from '@notify/shared';
 import axios from 'axios';
 import { expect } from 'chai';
 import sinon from 'sinon';

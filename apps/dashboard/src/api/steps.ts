@@ -1,4 +1,4 @@
-import type { GeneratePreviewRequestDto, GeneratePreviewResponseDto, IEnvironment } from '@novu/shared';
+import type { GeneratePreviewRequestDto, GeneratePreviewResponseDto, IEnvironment } from '@notify/shared';
 import { postV2 } from './api.client';
 
 export type TestHttpEndpointResponse = {

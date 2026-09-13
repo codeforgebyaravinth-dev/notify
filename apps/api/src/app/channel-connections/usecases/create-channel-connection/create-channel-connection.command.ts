@@ -1,5 +1,5 @@
-import { IsValidContextPayload } from '@novu/application-generic';
-import { ConnectionMode, ContextPayload } from '@novu/shared';
+import { IsValidContextPayload } from '@notify/application-generic';
+import { ConnectionMode, ContextPayload } from '@notify/shared';
 import { Type } from 'class-transformer';
 import { IsArray, IsDefined, IsIn, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { EnvironmentCommand } from '../../../shared/commands/project.command';

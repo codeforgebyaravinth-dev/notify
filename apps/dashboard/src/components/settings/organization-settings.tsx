@@ -1,7 +1,7 @@
 /** biome-ignore-all lint/correctness/useUniqueElementIds: expected */
 import { OrganizationProfile, useAuth, useOrganization } from '@clerk/react';
 import type { ClerkAppearanceTheme, OrganizationResource } from '@clerk/shared/types';
-import { MemberRoleEnum, PermissionsEnum } from '@novu/shared';
+import { MemberRoleEnum, PermissionsEnum } from '@notify/shared';
 import { useEffect, useState } from 'react';
 import { RiInformation2Line } from 'react-icons/ri';
 import { Tooltip, TooltipContent, TooltipPortal, TooltipTrigger } from '@/components/primitives/tooltip';

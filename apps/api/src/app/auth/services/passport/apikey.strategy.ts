@@ -5,8 +5,8 @@ import {
   HttpRequestHeaderKeysEnum,
   InMemoryLRUCacheService,
   InMemoryLRUCacheStore,
-} from '@novu/application-generic';
-import { ApiAuthSchemeEnum, FeatureFlagsKeysEnum, UserSessionData } from '@novu/shared';
+} from '@notify/application-generic';
+import { ApiAuthSchemeEnum, FeatureFlagsKeysEnum, UserSessionData } from '@notify/shared';
 import { createHash } from 'crypto';
 import { HeaderAPIKeyStrategy } from 'passport-headerapikey';
 import { AuthService } from '../auth.service';

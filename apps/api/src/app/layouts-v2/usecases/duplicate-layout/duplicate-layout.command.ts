@@ -1,4 +1,4 @@
-import { EnvironmentWithUserCommand } from '@novu/application-generic';
+import { EnvironmentWithUserCommand } from '@notify/application-generic';
 import { Type } from 'class-transformer';
 import { IsDefined, IsString, ValidateNested } from 'class-validator';
 import { DuplicateLayoutDto } from '../../dtos';

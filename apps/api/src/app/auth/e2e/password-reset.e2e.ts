@@ -1,6 +1,6 @@
-import { CommunityUserRepository } from '@novu/dal';
-import { PasswordResetFlowEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { CommunityUserRepository } from '@notify/dal';
+import { PasswordResetFlowEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { subDays, subMinutes } from 'date-fns';
 import { SinonStubbedMember, stub } from 'sinon';

@@ -1,6 +1,6 @@
 import { BadRequestException } from '@nestjs/common';
-import { isRegularDigest } from '@novu/application-generic';
-import { JobEntity } from '@novu/dal';
+import { isRegularDigest } from '@notify/application-generic';
+import { JobEntity } from '@notify/dal';
 import {
   DaysEnum,
   DigestTypeEnum,
@@ -13,7 +13,7 @@ import {
   OrdinalEnum,
   OrdinalValueEnum,
   StepTypeEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 
 const validateAmountAndUnit = (digest: IDigestBaseMetadata) => {
   if (!digest?.amount) {

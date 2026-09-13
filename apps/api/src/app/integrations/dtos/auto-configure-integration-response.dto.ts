@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { IntegrationResponseDto } from '@novu/application-generic';
+import { IntegrationResponseDto } from '@notify/application-generic';
 
 export class AutoConfigureIntegrationResponseDto {
   @ApiProperty({

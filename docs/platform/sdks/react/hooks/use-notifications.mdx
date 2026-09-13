@@ -1,6 +1,6 @@
 ---
 title: "useNotifications"
-description: "API reference for the useNotifications hook: return types, notification data models, and pagination controls in the Novu React SDK."
+description: "API reference for the useNotifications hook: return types, notification data models, and pagination controls in the Notify React SDK."
 ---
 
 The `useNotifications` hook provides a way to fetch and manage notifications in your application. It includes support for pagination, filtering, and real-time updates.
@@ -19,7 +19,7 @@ The `useNotifications` hook provides a way to fetch and manage notifications in 
 | `createdGte` | `number` |  |
 | `createdLte` | `number` |  |
 | `limit` | `number` |  |
-| `realtime` | `boolean` | When `false`, disables the WebSocket subscription that auto-injects newly received notifications into the list. Built-in mutations like `readAll`, `seenAll`, `archiveAll`, and `archiveAllRead` continue to update local state. Use this when you want to drive new-notification updates yourself (e.g. via your own `novu.on('notifications.notification_received', ...)` handler combined with `refetch()`). When set, this prop takes precedence over the `realtime` config on `<NovuProvider />`. When omitted, the provider value (default `true`) is used. |
+| `realtime` | `boolean` | When `false`, disables the WebSocket subscription that auto-injects newly received notifications into the list. Built-in mutations like `readAll`, `seenAll`, `archiveAll`, and `archiveAllRead` continue to update local state. Use this when you want to drive new-notification updates yourself (e.g. via your own `novu.on('notifications.notification_received', ...)` handler combined with `refetch()`). When set, this prop takes precedence over the `realtime` config on `<NotifyProvider />`. When omitted, the provider value (default `true`) is used. |
 | `onSuccess` | `(data: Notification[]) => void` |  |
 | `onError` | `(error: NovuError) => void` |  |
 
@@ -41,7 +41,7 @@ The `useNotifications` hook provides a way to fetch and manage notifications in 
 
 ## Notification Type
 
-The Notification type from @novu/react includes many properties. Here are the most commonly used ones:
+The Notification type from @notify/react includes many properties. Here are the most commonly used ones:
 
 | Property | Type | Description |
 | --- | --- | --- |
@@ -89,7 +89,7 @@ The Notification type from @novu/react includes many properties. Here are the mo
 Here's how to use the `useNotifications` hook to fetch and display notifications:
 
 ```tsx
-import { useNotifications } from "@novu/react";
+import { useNotifications } from "@notify/react";
 
 function NotificationsList() {
   const { notifications, hasMore, isLoading, error, fetchMore } =
@@ -129,7 +129,7 @@ You can filter notifications by various properties:
 
 - `read` - Filter notifications by read status
 - `seen` - Filter notifications by seen status
-- `tags` - Filter notifications by tags. If multiple tags are provided, Novu evaluates them using `OR` logic, meaning a notification is included if it contains at least one of the specified tags.
+- `tags` - Filter notifications by tags. If multiple tags are provided, Notify evaluates them using `OR` logic, meaning a notification is included if it contains at least one of the specified tags.
 - `data` - Filter notifications by data attributes (key-value pairs).
 - `severity` - Filter notifications by severity
 - `limit` - Fetch notifications per page
@@ -137,7 +137,7 @@ You can filter notifications by various properties:
 - `createdLte` - Fetch notifications created before the given date (in milliseconds)
 
 ```tsx
-import { useNotifications } from "@novu/react";
+import { useNotifications } from "@notify/react";
 import dayjs from "dayjs";
 
 const now = dayjs();
@@ -182,7 +182,7 @@ You can implement infinite scroll using the `fetchMore` function:
 
 ```tsx
 import { useEffect, useRef } from "react";
-import { useNotifications } from "@novu/react";
+import { useNotifications } from "@notify/react";
 
 function InfiniteNotificationsList() {
   const { notifications, hasMore, isLoading, fetchMore } = useNotifications();
@@ -226,7 +226,7 @@ function InfiniteNotificationsList() {
 The hook provides several actions to manage notifications:
 
 ```tsx
-import { useNotifications } from "@novu/react";
+import { useNotifications } from "@notify/react";
 
 function NotificationManager() {
   const { notifications, readAll, seenAll, archiveAll, archiveAllRead, isLoading } =

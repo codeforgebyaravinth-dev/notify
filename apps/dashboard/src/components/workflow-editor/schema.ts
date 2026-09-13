@@ -9,7 +9,7 @@ import {
   SLUG_IDENTIFIER_REGEX,
   slugIdentifierFormatMessage,
   VALID_ID_REGEX,
-} from '@novu/shared';
+} from '@notify/shared';
 import * as z from 'zod';
 
 export const workflowSchema = z.object({

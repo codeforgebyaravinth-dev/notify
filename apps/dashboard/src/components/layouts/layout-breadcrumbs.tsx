@@ -1,4 +1,4 @@
-import { LayoutResponseDto } from '@novu/shared';
+import { LayoutResponseDto } from '@notify/shared';
 import React from 'react';
 import { RiArrowLeftSLine, RiLayout5Line } from 'react-icons/ri';
 import { useNavigate } from 'react-router-dom';

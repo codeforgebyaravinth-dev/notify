@@ -1,4 +1,4 @@
-import { FeatureFlagsKeysEnum, PermissionsEnum } from '@novu/shared';
+import { FeatureFlagsKeysEnum, PermissionsEnum } from '@notify/shared';
 import { format } from 'date-fns';
 import { motion } from 'motion/react';
 import { RiDeleteBin2Line, RiDiscussLine, RiMindMap, RiMore2Fill, RiPulseFill } from 'react-icons/ri';

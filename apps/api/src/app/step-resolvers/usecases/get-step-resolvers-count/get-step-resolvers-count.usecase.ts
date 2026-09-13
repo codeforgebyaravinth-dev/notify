@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { InstrumentUsecase } from '@novu/application-generic';
-import { MessageTemplateRepository } from '@novu/dal';
+import { InstrumentUsecase } from '@notify/application-generic';
+import { MessageTemplateRepository } from '@notify/dal';
 
 @Injectable()
 export class GetStepResolversCountUsecase {

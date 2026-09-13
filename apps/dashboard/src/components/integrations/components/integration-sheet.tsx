@@ -1,4 +1,4 @@
-import { IProviderConfig } from '@novu/shared';
+import { IProviderConfig } from '@notify/shared';
 import { ReactNode } from 'react';
 import { Sheet, SheetContent } from '@/components/primitives/sheet';
 import { IntegrationSheetHeader } from './integration-sheet-header';

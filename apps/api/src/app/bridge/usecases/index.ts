@@ -1,4 +1,4 @@
-import { PreviewStep } from '@novu/application-generic';
+import { PreviewStep } from '@notify/application-generic';
 import { BuildVirtualWorkflows } from './build-virtual-workflows';
 import { DiscoverVirtualWorkflows } from './discover-virtual-workflows';
 import { GetBridgeStatus } from './get-bridge-status';

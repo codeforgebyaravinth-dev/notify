@@ -1,5 +1,5 @@
 import { ConflictException } from '@nestjs/common';
-import { TopicRepository, TopicSubscribersRepository } from '@novu/dal';
+import { TopicRepository, TopicSubscribersRepository } from '@notify/dal';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { SearchByExternalSubscriberIds } from '../../../subscribers/usecases';

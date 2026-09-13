@@ -1,5 +1,5 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { TopicEntity, TopicRepository } from '@novu/dal';
+import { TopicEntity, TopicRepository } from '@notify/dal';
 import { TopicDto } from '../../dtos/topic.dto';
 import { ExternalSubscriberId } from '../../types';
 import { FilterTopicsCommand } from './filter-topics.command';

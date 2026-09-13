@@ -1,4 +1,4 @@
-import { DirectionEnum } from '@novu/shared';
+import { DirectionEnum } from '@notify/shared';
 import { IsBoolean, IsEnum, IsIn, IsInt, IsOptional, IsString, Max, Min } from 'class-validator';
 
 import { EnvironmentWithSubscriber } from '../../../../shared/commands/project.command';

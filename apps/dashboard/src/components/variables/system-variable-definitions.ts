@@ -1,4 +1,4 @@
-import { EnvironmentSystemVariables, IEnvironment } from '@novu/shared';
+import { EnvironmentSystemVariables, IEnvironment } from '@notify/shared';
 
 export type SystemVariableDefinition = {
   /** Typed as a template literal to catch drift when new fields are added to EnvironmentSystemVariables. */

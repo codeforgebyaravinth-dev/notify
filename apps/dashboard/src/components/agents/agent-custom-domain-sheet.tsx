@@ -1,4 +1,4 @@
-import { DomainStatusEnum, FeatureFlagsKeysEnum, type ResourceLimitSource } from '@novu/shared';
+import { DomainStatusEnum, FeatureFlagsKeysEnum, type ResourceLimitSource } from '@notify/shared';
 import { type ReactNode, useEffect, useId, useMemo, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { RiAddLine, RiArrowLeftSLine, RiArrowRightSLine, RiCheckboxCircleFill, RiRefreshLine } from 'react-icons/ri';

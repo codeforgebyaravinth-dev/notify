@@ -1,8 +1,8 @@
 import { BadRequestException, forwardRef, Inject, Injectable } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
-import { PinoLogger } from '@novu/application-generic';
-import { ChangeRepository } from '@novu/dal';
-import { ChangeEntityTypeEnum } from '@novu/shared';
+import { PinoLogger } from '@notify/application-generic';
+import { ChangeRepository } from '@notify/dal';
+import { ChangeEntityTypeEnum } from '@notify/shared';
 import { ApplyChange, ApplyChangeCommand } from '../apply-change';
 import { PromoteTypeChangeCommand } from '../promote-type-change.command';
 
@@ -20,10 +20,10 @@ export class PromoteTranslationChange {
   async execute(command: PromoteTypeChangeCommand) {
     try {
       if (process.env.NOVU_ENTERPRISE === 'true' || process.env.CI_EE_TEST === 'true') {
-        if (!require('@novu/ee-translation')?.PromoteTranslationChange) {
+        if (!require('@notify/ee-translation')?.PromoteTranslationChange) {
           throw new BadRequestException('Translation module is not loaded');
         }
-        const usecase = this.moduleRef.get(require('@novu/ee-translation')?.PromoteTranslationChange, {
+        const usecase = this.moduleRef.get(require('@notify/ee-translation')?.PromoteTranslationChange, {
           strict: false,
         });
         await usecase.execute(command, this.applyGroupChange.bind(this));

@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { OrganizationRepository } from '@novu/dal';
+import { OrganizationRepository } from '@notify/dal';
 import { UpdateBrandingDetailsCommand } from './update-branding-details.command';
 
 @Injectable()

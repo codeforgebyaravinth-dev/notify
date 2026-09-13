@@ -1,4 +1,4 @@
-import { EmailProviderIdEnum, IEmailOptions } from '@novu/shared';
+import { EmailProviderIdEnum, IEmailOptions } from '@notify/shared';
 import {
   ChannelTypeEnum,
   CheckIntegrationResponseEnum,
@@ -8,7 +8,7 @@ import {
   IEmailEventBody,
   IEmailProvider,
   ISendMessageSuccessResponse,
-} from '@novu/stateless';
+} from '@notify/stateless';
 import { Client } from '@sendgrid/client';
 // cspell:disable-next-line
 import { EventWebhook } from '@sendgrid/eventwebhook';

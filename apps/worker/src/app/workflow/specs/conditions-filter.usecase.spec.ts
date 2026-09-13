@@ -1,11 +1,11 @@
-import { CompileTemplate, ConditionsFilter, ConditionsFilterCommand } from '@novu/application-generic';
+import { CompileTemplate, ConditionsFilter, ConditionsFilterCommand } from '@notify/application-generic';
 
-// The top-level @novu/application-generic re-exports helpers via Object.defineProperty
+// The top-level @notify/application-generic re-exports helpers via Object.defineProperty
 // getters, which sinon cannot replace. Stub the underlying source module instead — the
 // re-export getter delegates to it so backend code picks up the stub.
-const ssrfUrlValidationModule = require('@novu/application-generic/build/main/utils/ssrf-url-validation');
+const ssrfUrlValidationModule = require('@notify/application-generic/build/main/utils/ssrf-url-validation');
 
-import { JobEntity, MessageTemplateEntity, NotificationStepEntity } from '@novu/dal';
+import { JobEntity, MessageTemplateEntity, NotificationStepEntity } from '@notify/dal';
 import {
   BuilderGroupValues,
   FILTER_TO_LABEL,
@@ -15,7 +15,7 @@ import {
   FilterPartTypeEnum,
   StepTypeEnum,
   TimeOperatorEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { expect } from 'chai';
 import { Duration, sub } from 'date-fns';
 import sinon from 'sinon';

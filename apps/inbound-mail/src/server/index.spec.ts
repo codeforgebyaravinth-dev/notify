@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import net from 'node:net';
 import path from 'node:path';
-import { InboundParseQueueService } from '@novu/application-generic';
+import { InboundParseQueueService } from '@notify/application-generic';
 import { expect } from 'chai';
 import sinon from 'sinon';
 

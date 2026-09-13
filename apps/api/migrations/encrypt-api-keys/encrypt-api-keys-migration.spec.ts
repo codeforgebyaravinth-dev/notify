@@ -1,8 +1,8 @@
 import { faker } from '@faker-js/faker';
-import { decryptApiKey } from '@novu/application-generic';
-import { EnvironmentRepository } from '@novu/dal';
-import { ChannelTypeEnum } from '@novu/stateless';
-import { UserSession } from '@novu/testing';
+import { decryptApiKey } from '@notify/application-generic';
+import { EnvironmentRepository } from '@notify/dal';
+import { ChannelTypeEnum } from '@notify/stateless';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { createHash } from 'crypto';
 

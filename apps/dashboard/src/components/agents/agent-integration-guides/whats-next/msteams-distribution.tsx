@@ -146,7 +146,7 @@ export function MsTeamsDistribution({ appId, agentName }: { appId?: string; agen
         <StepItem index={5} title="Users connect from your app">
           <p className="text-label-xs font-normal leading-4 text-text-soft">
             Once the app is available and consented in a tenant, that tenant's users connect from your app (the{' '}
-            <code className="bg-bg-weak text-text-strong rounded px-1 py-0.5 font-code text-[11px]">@novu/react</code>{' '}
+            <code className="bg-bg-weak text-text-strong rounded px-1 py-0.5 font-code text-[11px]">@notify/react</code>{' '}
             button below) and the bot installs for them automatically.
           </p>
           <HandoffNote>

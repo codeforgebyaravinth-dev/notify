@@ -1,5 +1,5 @@
-import { TranslationGroupDto } from '@novu/api/models/components';
-import { EnvironmentTypeEnum, PermissionsEnum } from '@novu/shared';
+import { TranslationGroupDto } from '@notify/api/models/components';
+import { EnvironmentTypeEnum, PermissionsEnum } from '@notify/shared';
 import { forwardRef, useCallback, useImperativeHandle, useState } from 'react';
 import { InlineToast } from '@/components/primitives/inline-toast';
 import { PermissionButton } from '@/components/primitives/permission-button';

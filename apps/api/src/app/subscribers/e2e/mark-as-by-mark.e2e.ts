@@ -1,13 +1,13 @@
-import { Novu } from '@novu/api';
+import { Novu } from '@notify/api';
 import {
   MessageEntity,
   MessageRepository,
   NotificationTemplateEntity,
   SubscriberEntity,
   SubscriberRepository,
-} from '@novu/dal';
-import { ChannelTypeEnum, MessagesStatusEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/dal';
+import { ChannelTypeEnum, MessagesStatusEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import axios from 'axios';
 import { expect } from 'chai';
 import {

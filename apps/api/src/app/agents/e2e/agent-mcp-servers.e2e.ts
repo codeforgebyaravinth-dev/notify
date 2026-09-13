@@ -1,18 +1,18 @@
-import * as SsrfModule from '@novu/application-generic/build/main/utils/ssrf-url-validation';
+import * as SsrfModule from '@notify/application-generic/build/main/utils/ssrf-url-validation';
 import {
   AgentMcpServerRepository,
   IntegrationRepository,
   McpConnectionRepository,
   SubscriberRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   AgentRuntimeProviderIdEnum,
   IntegrationKindEnum,
   McpConnectionAuthModeEnum,
   McpConnectionScopeEnum,
   McpConnectionStatusEnum,
-} from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import sinon from 'sinon';
 

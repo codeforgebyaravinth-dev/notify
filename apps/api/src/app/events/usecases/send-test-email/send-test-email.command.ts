@@ -1,5 +1,5 @@
-import { EnvironmentWithUserCommand } from '@novu/application-generic';
-import { IEmailBlock } from '@novu/shared';
+import { EnvironmentWithUserCommand } from '@notify/application-generic';
+import { IEmailBlock } from '@notify/shared';
 import { IsBoolean, IsDefined, IsOptional, IsString } from 'class-validator';
 
 export class SendTestEmailCommand extends EnvironmentWithUserCommand {

@@ -5,7 +5,7 @@ import {
   AgentRuntime,
   SLUG_IDENTIFIER_REGEX,
   slugIdentifierFormatMessage,
-} from '@novu/shared';
+} from '@notify/shared';
 import { Transform, Type } from 'class-transformer';
 import {
   IsBoolean,

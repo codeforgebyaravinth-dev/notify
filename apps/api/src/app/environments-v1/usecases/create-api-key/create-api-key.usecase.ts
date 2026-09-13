@@ -1,7 +1,7 @@
 import { BadRequestException, ForbiddenException, Injectable, NotFoundException } from '@nestjs/common';
-import { decryptApiKey, encryptApiKey, FeatureFlagsService } from '@novu/application-generic';
-import { EnvironmentRepository } from '@novu/dal';
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { decryptApiKey, encryptApiKey, FeatureFlagsService } from '@notify/application-generic';
+import { EnvironmentRepository } from '@notify/dal';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { createHash } from 'crypto';
 import { ApiKeyDto } from '../../dtos/api-key.dto';
 import { GenerateUniqueApiKey } from '../generate-unique-api-key/generate-unique-api-key.usecase';

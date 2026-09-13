@@ -1,6 +1,6 @@
 import { BadRequestException, ForbiddenException, Injectable, NotFoundException } from '@nestjs/common';
-import { EnvironmentRepository, IntegrationRepository } from '@novu/dal';
-import { EnvironmentEnum, PROTECTED_ENVIRONMENTS } from '@novu/shared';
+import { EnvironmentRepository, IntegrationRepository } from '@notify/dal';
+import { EnvironmentEnum, PROTECTED_ENVIRONMENTS } from '@notify/shared';
 import { RemoveIntegrationCommand } from '../../../integrations/usecases/remove-integration/remove-integration.command';
 import { RemoveIntegration } from '../../../integrations/usecases/remove-integration/remove-integration.usecase';
 import { DeleteEnvironmentCommand } from './delete-environment.command';

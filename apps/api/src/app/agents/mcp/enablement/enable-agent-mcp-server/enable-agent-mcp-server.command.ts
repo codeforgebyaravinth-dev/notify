@@ -1,4 +1,4 @@
-import { McpConnectionScopeEnum } from '@novu/shared';
+import { McpConnectionScopeEnum } from '@notify/shared';
 import { IsEnum, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 import { EnvironmentWithUserCommand } from '../../../../shared/commands/project.command';

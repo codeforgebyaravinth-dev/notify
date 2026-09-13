@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ThrottlerModule } from '@nestjs/throttler';
-import { CommunityOrganizationRepository } from '@novu/dal';
+import { CommunityOrganizationRepository } from '@notify/dal';
 import { SharedModule } from '../shared/shared.module';
 import { ApiRateLimitInterceptor } from './guards';
 import { USE_CASES } from './usecases';

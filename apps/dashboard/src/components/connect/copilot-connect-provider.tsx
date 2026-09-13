@@ -1,5 +1,5 @@
 import { useUser } from '@clerk/react';
-import { NovuProvider } from '@novu/react';
+import { NovuProvider } from '@notify/react';
 import { useQuery } from '@tanstack/react-query';
 import { type ComponentProps, type ReactNode, useMemo } from 'react';
 import { getNovuInboxContext } from '@/api/novu-context';

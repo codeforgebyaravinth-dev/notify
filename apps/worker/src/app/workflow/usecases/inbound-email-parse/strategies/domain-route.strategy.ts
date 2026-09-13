@@ -5,15 +5,15 @@ import {
   isAgentSharedInboxEnabled,
   PinoLogger,
   parseAgentSharedInboxLocalPart,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   AgentIntegrationRepository,
   AgentRepository,
   DomainRepository,
   DomainRouteRepository,
   IntegrationRepository,
-} from '@novu/dal';
-import { DomainRouteTypeEnum, DomainStatusEnum } from '@novu/shared';
+} from '@notify/dal';
+import { DomainRouteTypeEnum, DomainStatusEnum } from '@notify/shared';
 import { InboundEmailParseCommand } from '../inbound-email-parse.command';
 import {
   getDeliveryFailureDiagnostics,

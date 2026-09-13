@@ -4,9 +4,9 @@ import {
   CreateChangeCommand,
   computeWorkflowStatus,
   InvalidateCacheService,
-} from '@novu/application-generic';
-import { ChangeRepository, NotificationTemplateEntity, NotificationTemplateRepository } from '@novu/dal';
-import { ChangeEntityTypeEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { ChangeRepository, NotificationTemplateEntity, NotificationTemplateRepository } from '@notify/dal';
+import { ChangeEntityTypeEnum } from '@notify/shared';
 
 import { ChangeTemplateActiveStatusCommand } from './change-template-active-status.command';
 

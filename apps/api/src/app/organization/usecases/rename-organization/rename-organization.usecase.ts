@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { OrganizationRepository } from '@novu/dal';
+import { OrganizationRepository } from '@notify/dal';
 import { RenameOrganizationCommand } from './rename-organization-command';
 
 @Injectable()

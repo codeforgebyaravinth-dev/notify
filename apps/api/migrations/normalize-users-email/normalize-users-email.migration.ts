@@ -1,9 +1,9 @@
 import '../../src/config';
 
 import { NestFactory } from '@nestjs/core';
-import { MemberRepository, SubscriberRepository, UserRepository } from '@novu/dal';
+import { MemberRepository, SubscriberRepository, UserRepository } from '@notify/dal';
 
-import { normalizeEmail } from '@novu/shared';
+import { normalizeEmail } from '@notify/shared';
 import { AppModule } from '../../src/app.module';
 
 export async function run() {

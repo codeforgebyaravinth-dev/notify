@@ -1,16 +1,16 @@
 ---
-title: 'Deploy workflows with the Novu CLI'
+title: 'Deploy workflows with the Notify CLI'
 sidebarTitle: 'CLI'
-description: 'Use the Novu CLI sync command to push Framework workflows to Novu Cloud, connect a bridge endpoint, and understand sync output messages.'
+description: 'Use the Notify CLI sync command to push Framework workflows to Notify Cloud, connect a bridge endpoint, and understand sync output messages.'
 ---
 
 
-The Novu CLI provides a mechanism for you to synchronize your workflows into Novu Cloud so that non-technical Novu users can control the workflow and Step-level controls and enable your workflows to be triggered via Novu API.
+The Notify CLI provides a mechanism for you to synchronize your workflows into Notify Cloud so that non-technical Notify users can control the workflow and Step-level controls and enable your workflows to be triggered via Notify API.
 
 <Tabs>
   <Tab title="US Region">
 ```bash
-npx novu@latest sync \
+npx notify@latest sync \
   --bridge-url <YOUR_DEPLOYED_URL_WITH_BRIDGE_ENDPOINT> \
   --secret-key <NOVU_SECRET_KEY> \
   --api-url https://api.novu.co
@@ -18,7 +18,7 @@ npx novu@latest sync \
   </Tab>
   <Tab title="EU Region">
 ```bash
-npx novu@latest sync \
+npx notify@latest sync \
   --bridge-url <YOUR_DEPLOYED_URL_WITH_BRIDGE_ENDPOINT> \
   --secret-key <NOVU_SECRET_KEY> \
   --api-url https://eu.api.novu.co
@@ -26,9 +26,9 @@ npx novu@latest sync \
   </Tab>
 </Tabs>
 
-- If your application api server is running at URL **https://api.domain.com** and **/api/novu** endpoint is serving Novu workflows created using Novu Framework, then `<YOUR_DEPLOYED_URL>`in above command will be `https://api.domain.com/api/novu`
+- If your application api server is running at URL **https://api.domain.com** and **/api/notify** endpoint is serving Notify workflows created using Notify Framework, then `<YOUR_DEPLOYED_URL>`in above command will be `https://api.domain.com/api/novu`
 
-- If your application is running on your local machine during local development (`npx novu dev`), the tunnel URL can be used as `<YOUR_DEPLOYED_URL>`. The tunnel URL follows the format of `https://<UUID>.novu.sh/api/novu`, and example is `https://041e553c-0dbf-47e0-8ffa-c4536f390145.novu.sh/api/novu`. In this example `041e553c-0dbf-47e0-8ffa-c4536f390145` is the unique tunnel identifier which is generated for each Novu user when starting a tunnel via `npx novu@latest dev`. The tunnel identifier is persisted to your local machine to guarantee the same tunnel URL each time you invoke `npx novu@latest dev`.
+- If your application is running on your local machine during local development (`npx notify dev`), the tunnel URL can be used as `<YOUR_DEPLOYED_URL>`. The tunnel URL follows the format of `https://<UUID>.novu.sh/api/novu`, and example is `https://041e553c-0dbf-47e0-8ffa-c4536f390145.novu.sh/api/novu`. In this example `041e553c-0dbf-47e0-8ffa-c4536f390145` is the unique tunnel identifier which is generated for each Notify user when starting a tunnel via `npx notify@latest dev`. The tunnel identifier is persisted to your local machine to guarantee the same tunnel URL each time you invoke `npx notify@latest dev`.
 
 ## Understanding sync output
 
@@ -48,7 +48,7 @@ This is an informational notice, not an error. It only indicates that your bridg
 
 ## View your synced bridge URL
 
-After a successful sync, the bridge URL is stored on the environment you synced to. In the Novu Dashboard, open that environment and click the glowing status orb in the top-right navigation bar to view or update the **Bridge Endpoint URL**.
+After a successful sync, the bridge URL is stored on the environment you synced to. In the Notify Dashboard, open that environment and click the glowing status orb in the top-right navigation bar to view or update the **Bridge Endpoint URL**.
 
 <Frame caption="The glowing orb in the Dashboard header shows the bridge URL for the selected environment.">
   ![Bridge Endpoint URL popover in the Dashboard header](/images/framework/bridge-endpoint-url-dashboard.png)

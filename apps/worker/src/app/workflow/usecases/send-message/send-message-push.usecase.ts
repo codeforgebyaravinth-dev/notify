@@ -18,7 +18,7 @@ import {
   SelectVariant,
   SendWebhookMessage,
   BillingService,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   IntegrationEntity,
   JobEntity,
@@ -26,8 +26,8 @@ import {
   MessageRepository,
   SubscriberEntity,
   SubscriberRepository,
-} from '@novu/dal';
-import { PushOutput } from '@novu/framework/internal';
+} from '@notify/dal';
+import { PushOutput } from '@notify/framework/internal';
 import {
   ChannelTypeEnum,
   DeliveryLifecycleDetail,
@@ -43,8 +43,8 @@ import {
   TriggerOverrides,
   WebhookEventEnum,
   WebhookObjectTypeEnum,
-} from '@novu/shared';
-import { IPushOptions } from '@novu/stateless';
+} from '@notify/shared';
+import { IPushOptions } from '@notify/stateless';
 import { addBreadcrumb } from '@sentry/node';
 import { merge } from 'lodash';
 import { PlatformException } from '../../../shared/utils';

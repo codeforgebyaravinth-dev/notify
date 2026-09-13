@@ -1,4 +1,4 @@
-import type { CardElement } from '@novu/shared';
+import type { CardElement } from '@notify/shared';
 import type { ReactNode } from 'react';
 
 export type ChatShellVariant = 'default' | 'mini';

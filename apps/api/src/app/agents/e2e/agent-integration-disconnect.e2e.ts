@@ -5,15 +5,15 @@
  * old URL must NOT re-create the link via tryHealMissingAgentIntegrationLink —
  * the heal only applies to never-linked (mid-setup orphan) integrations.
  */
-import { encryptCredentials } from '@novu/application-generic';
+import { encryptCredentials } from '@notify/application-generic';
 import {
   AgentIntegrationRepository,
   AgentRepository,
   ChannelConnectionRepository,
   IntegrationRepository,
-} from '@novu/dal';
-import { ChannelTypeEnum, ChatProviderIdEnum } from '@novu/shared';
-import { testServer } from '@novu/testing';
+} from '@notify/dal';
+import { ChannelTypeEnum, ChatProviderIdEnum } from '@notify/shared';
+import { testServer } from '@notify/testing';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { ChatInstanceRegistry } from '../conversation-runtime/ingress/chat-instance.registry';

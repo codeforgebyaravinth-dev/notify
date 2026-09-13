@@ -1,4 +1,4 @@
-import type { AgentAnalyticsSource, AgentRuntime } from '@novu/shared';
+import type { AgentAnalyticsSource, AgentRuntime } from '@notify/shared';
 import { Type } from 'class-transformer';
 import {
   IsBoolean,

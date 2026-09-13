@@ -17,8 +17,8 @@ import {
   UpsertPreferences,
   UpsertUserWorkflowPreferencesCommand,
   UserSession,
-} from '@novu/application-generic';
-import { PreferencesTypeEnum, UserSessionData } from '@novu/shared';
+} from '@notify/application-generic';
+import { PreferencesTypeEnum, UserSessionData } from '@notify/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { UpsertPreferencesDto } from './dtos/upsert-preferences.dto';
 

@@ -1,4 +1,4 @@
-import { getProviderOverrideConfig } from '@novu/shared';
+import { getProviderOverrideConfig } from '@notify/shared';
 import { InlineToast } from '@/components/primitives/inline-toast';
 import { getProviderDocReference } from './content-source';
 

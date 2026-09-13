@@ -1,4 +1,4 @@
-import { Client, serve } from '@novu/framework/express';
+import { Client, serve } from '@notify/framework/express';
 import express from 'express';
 import http from 'http';
 

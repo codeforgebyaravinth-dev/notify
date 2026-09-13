@@ -37,7 +37,7 @@ import {
   TriggerMulticast,
   VerifyPayload,
   WorkflowInMemoryProviderService,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   AgentIntegrationRepository,
   AgentRepository,
@@ -53,8 +53,8 @@ import {
   IntegrationRepository,
   JobRepository,
   PreferencesRepository,
-} from '@novu/dal';
-import { JobTopicNameEnum } from '@novu/shared';
+} from '@notify/dal';
+import { JobTopicNameEnum } from '@notify/shared';
 import { ACTIVE_WORKERS, workersToProcess } from '../../config/worker-init.config';
 import { SharedModule } from '../shared/shared.module';
 import {
@@ -97,15 +97,15 @@ const enterpriseImports = (): Array<Type | DynamicModule | Promise<DynamicModule
   try {
     if (process.env.NOVU_ENTERPRISE === 'true' || process.env.CI_EE_TEST === 'true') {
       Logger.log('Importing enterprise modules', 'EnterpriseImport');
-      if (require('@novu/ee-translation')?.EnterpriseTranslationModuleWithoutControllers) {
+      if (require('@notify/ee-translation')?.EnterpriseTranslationModuleWithoutControllers) {
         Logger.log('Importing enterprise translations module', 'EnterpriseImport');
-        modules.push(require('@novu/ee-translation')?.EnterpriseTranslationModuleWithoutControllers);
+        modules.push(require('@notify/ee-translation')?.EnterpriseTranslationModuleWithoutControllers);
       }
 
-      if (require('@novu/ee-billing')?.BillingModule) {
+      if (require('@notify/ee-billing')?.BillingModule) {
         Logger.log('Importing enterprise billing module', 'EnterpriseImport');
         const activeWorkers = workersToProcess.length ? workersToProcess : Object.values(JobTopicNameEnum);
-        modules.push(require('@novu/ee-billing')?.BillingModule.forRoot(activeWorkers));
+        modules.push(require('@notify/ee-billing')?.BillingModule.forRoot(activeWorkers));
       }
     }
   } catch (e) {

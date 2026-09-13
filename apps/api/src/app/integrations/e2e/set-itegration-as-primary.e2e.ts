@@ -1,12 +1,12 @@
-import { EnvironmentRepository, IntegrationEntity, IntegrationRepository } from '@novu/dal';
+import { EnvironmentRepository, IntegrationEntity, IntegrationRepository } from '@notify/dal';
 import {
   ChannelTypeEnum,
   ChatProviderIdEnum,
   EmailProviderIdEnum,
   InAppProviderIdEnum,
   PushProviderIdEnum,
-} from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Set Integration As Primary - /integrations/:integrationId/set-primary (POST) #novu-v2', () => {

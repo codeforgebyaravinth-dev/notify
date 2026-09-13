@@ -1,4 +1,4 @@
-import type { SubscriptionButtonWrapperProps } from '@novu/js/ui';
+import type { SubscriptionButtonWrapperProps } from '@notify/js/ui';
 import React from 'react';
 import { useNovuUI } from '../../context/NovuUIContext';
 import { Mounter } from '../Mounter';

@@ -5,7 +5,7 @@ import {
   IDigestTimedMetadata,
   JobStatusEnum,
   StepTypeEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { format } from 'date-fns';
 import { ChevronDown, Info, Route } from 'lucide-react';
 import { useState } from 'react';

@@ -5,7 +5,7 @@ import {
   MCP_SERVERS,
   McpConnectionAuthModeEnum,
   type McpServer,
-} from '@novu/shared';
+} from '@notify/shared';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { RiAddLine, RiArrowRightUpLine, RiCloseLine, RiLoader4Line, RiSearchLine } from 'react-icons/ri';

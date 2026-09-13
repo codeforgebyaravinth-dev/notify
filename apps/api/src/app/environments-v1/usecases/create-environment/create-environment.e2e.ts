@@ -1,6 +1,6 @@
-import { EnvironmentRepository } from '@novu/dal';
-import { ApiServiceLevelEnum, EnvironmentTypeEnum, FeatureFlagsKeysEnum, NOVU_ENCRYPTION_SUB_MASK } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { EnvironmentRepository } from '@notify/dal';
+import { ApiServiceLevelEnum, EnvironmentTypeEnum, FeatureFlagsKeysEnum, NOVU_ENCRYPTION_SUB_MASK } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 async function createEnv(name: string, session) {

@@ -1,11 +1,11 @@
 import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
-import type { UploadSkillFile, UploadSkillInput } from '@novu/application-generic';
-import { AgentRuntimeBadRequestError, encryptCredentials } from '@novu/application-generic';
-import { IntegrationRepository } from '@novu/dal';
-import { AgentRuntimeProviderIdEnum, IntegrationKindEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import type { UploadSkillFile, UploadSkillInput } from '@notify/application-generic';
+import { AgentRuntimeBadRequestError, encryptCredentials } from '@notify/application-generic';
+import { IntegrationRepository } from '@notify/dal';
+import { AgentRuntimeProviderIdEnum, IntegrationKindEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { create as createTar } from 'tar';

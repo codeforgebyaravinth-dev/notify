@@ -4,7 +4,7 @@ import {
   IIntegration,
   IntegrationKindEnum,
   type WhatsAppSignupLinkStatus,
-} from '@novu/shared';
+} from '@notify/shared';
 
 export type { WhatsAppSignupLinkStatus };
 

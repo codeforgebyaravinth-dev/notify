@@ -1,4 +1,4 @@
-import { BlockItem } from '@novu/maily-core/blocks';
+import { BlockItem } from '@notify/maily-core/blocks';
 import { CodeXmlIcon } from 'lucide-react';
 import { useTelemetry } from '@/hooks/use-telemetry';
 import { TelemetryEvent } from '@/utils/telemetry';

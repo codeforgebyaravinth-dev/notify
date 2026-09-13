@@ -4,7 +4,7 @@ import {
   FeatureNameEnum,
   type GetSubscriptionDto,
   getFeatureForTierAsNumber,
-} from '@novu/shared';
+} from '@notify/shared';
 import { useEffect, useMemo, useState } from 'react';
 import { IS_CLOUD, IS_SELF_HOSTED } from '../../../config';
 import { useNumericFeatureFlag } from '../../../hooks/use-feature-flag';

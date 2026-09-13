@@ -1,6 +1,6 @@
 # Schema Validation
 
-`@novu/framework` accepts three kinds of schemas for both `payloadSchema` (workflow level) and `controlSchema` (step level):
+`@notify/framework` accepts three kinds of schemas for both `payloadSchema` (workflow level) and `controlSchema` (step level):
 
 | Schema | Best for | Type inference |
 | --- | --- | --- |
@@ -23,7 +23,7 @@ npm install zod
 ### Workflow Payload
 
 ```typescript
-import { workflow } from "@novu/framework";
+import { workflow } from "@notify/framework";
 import { z } from "zod";
 
 export const commentWorkflow = workflow(
@@ -239,7 +239,7 @@ npm install class-validator class-validator-jsonschema reflect-metadata
 ### Define DTOs
 
 ```typescript
-import { workflow } from "@novu/framework";
+import { workflow } from "@notify/framework";
 import {
   IsString,
   IsBoolean,

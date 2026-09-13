@@ -1,5 +1,5 @@
 import { ConflictException, Injectable } from '@nestjs/common';
-import { TopicSubscribersEntity, TopicSubscribersRepository } from '@novu/dal';
+import { TopicSubscribersEntity, TopicSubscribersRepository } from '@notify/dal';
 import { EnvironmentId, OrganizationId, TopicId } from '../../types';
 import { RemoveSubscribersCommand } from './remove-subscribers.command';
 

@@ -1,5 +1,5 @@
-import { GetSubscriberPreferencesDto } from '@novu/api/models/components';
-import { ChannelTypeEnum, FeatureFlagsKeysEnum } from '@novu/shared';
+import { GetSubscriberPreferencesDto } from '@notify/api/models/components';
+import { ChannelTypeEnum, FeatureFlagsKeysEnum } from '@notify/shared';
 import { motion } from 'motion/react';
 import { useMemo } from 'react';
 import { RiLoader4Line, RiQuestionLine } from 'react-icons/ri';

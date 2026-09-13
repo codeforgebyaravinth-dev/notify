@@ -1,4 +1,4 @@
-import { ApiServiceLevelEnum, FeatureNameEnum, getFeatureForTierAsBoolean, ResourceOriginEnum } from '@novu/shared';
+import { ApiServiceLevelEnum, FeatureNameEnum, getFeatureForTierAsBoolean, ResourceOriginEnum } from '@notify/shared';
 import { HTMLAttributes } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Separator } from '@/components/primitives/separator';

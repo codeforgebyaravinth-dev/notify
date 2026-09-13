@@ -1,4 +1,4 @@
-import type { WorkflowResponseDto } from '@novu/shared';
+import type { WorkflowResponseDto } from '@notify/shared';
 import { useMemo } from 'react';
 import { getWorkflow } from '@/api/workflows';
 import { useEnvironment } from '@/context/environment/hooks';

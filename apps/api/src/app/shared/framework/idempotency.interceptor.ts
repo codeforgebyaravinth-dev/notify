@@ -17,8 +17,8 @@ import {
   HttpResponseHeaderKeysEnum,
   Instrument,
   PinoLogger,
-} from '@novu/application-generic';
-import { ApiAuthSchemeEnum, FeatureFlagsKeysEnum, UserSessionData } from '@novu/shared';
+} from '@notify/application-generic';
+import { ApiAuthSchemeEnum, FeatureFlagsKeysEnum, UserSessionData } from '@notify/shared';
 import { createHash } from 'crypto';
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';

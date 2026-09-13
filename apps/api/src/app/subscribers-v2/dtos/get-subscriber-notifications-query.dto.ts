@@ -1,5 +1,5 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { SeverityLevelEnum, type TagsFilter } from '@novu/shared';
+import { SeverityLevelEnum, type TagsFilter } from '@notify/shared';
 import { Transform } from 'class-transformer';
 import { IsArray, IsBoolean, IsInt, IsOptional, IsString } from 'class-validator';
 import { parseTagsQueryValue } from '../../inbox/utils/parse-tags-query';

@@ -1,4 +1,4 @@
-import type { UploadSkillFile } from '@novu/application-generic';
+import type { UploadSkillFile } from '@notify/application-generic';
 
 import { parseSkillNameFromFrontmatter } from './github-skill-bundle';
 

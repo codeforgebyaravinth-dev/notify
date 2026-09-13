@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { FeatureFlagsService, PinoLogger } from '@novu/application-generic';
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsService, PinoLogger } from '@notify/application-generic';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { type SessionEventContext, type StreamCallbacks, type StreamPart } from '@novu/thalamus';
 import { AgentEventContext, AgentEventSink } from '../shared/agent-event-sink.service';
 import { AgentPlatformEnum } from '../shared/enums/agent-platform.enum';

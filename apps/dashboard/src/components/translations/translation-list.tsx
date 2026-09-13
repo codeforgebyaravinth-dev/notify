@@ -1,5 +1,5 @@
-import { TranslationGroupDto } from '@novu/api/models/components';
-import { ApiServiceLevelEnum, DEFAULT_LOCALE, FeatureNameEnum, getFeatureForTierAsBoolean } from '@novu/shared';
+import { TranslationGroupDto } from '@notify/api/models/components';
+import { ApiServiceLevelEnum, DEFAULT_LOCALE, FeatureNameEnum, getFeatureForTierAsBoolean } from '@notify/shared';
 import { HTMLAttributes } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { TranslationsFilter } from '@/api/translations';

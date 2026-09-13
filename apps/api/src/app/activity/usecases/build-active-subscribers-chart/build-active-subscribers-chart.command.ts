@@ -1,4 +1,4 @@
-import { EnvironmentCommand } from '@novu/application-generic';
+import { EnvironmentCommand } from '@notify/application-generic';
 import { IsArray, IsDate, IsDefined, IsOptional, IsString } from 'class-validator';
 
 export class BuildActiveSubscribersChartCommand extends EnvironmentCommand {

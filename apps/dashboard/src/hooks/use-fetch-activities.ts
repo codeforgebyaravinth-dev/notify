@@ -1,4 +1,4 @@
-import { FeatureFlagsKeysEnum, IActivity } from '@novu/shared';
+import { FeatureFlagsKeysEnum, IActivity } from '@notify/shared';
 import { useQuery } from '@tanstack/react-query';
 
 import { ActivityFilters, getActivityList, getWorkflowRunsList } from '@/api/activity';

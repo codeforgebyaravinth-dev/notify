@@ -5,12 +5,12 @@ import { describe, expect, it } from 'vitest';
 import { resolveLangChainPackageStatus, resolveLangChainPackagesToInstall } from './package-install';
 
 describe('resolveLangChainPackagesToInstall', () => {
-  it('suggests @novu/framework, langchain and @langchain/core when all are missing', () => {
+  it('suggests @notify/framework, langchain and @langchain/core when all are missing', () => {
     const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'novu-langchain-pkg-'));
     fs.writeFileSync(path.join(dir, 'package.json'), JSON.stringify({ name: 'x', dependencies: {} }));
 
     expect(resolveLangChainPackagesToInstall(dir)).toEqual([
-      '@novu/framework',
+      '@notify/framework',
       'langchain@^1.0.0',
       '@langchain/core@^1.0.0',
     ]);
@@ -20,7 +20,7 @@ describe('resolveLangChainPackagesToInstall', () => {
     const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'novu-langchain-pkg-'));
     fs.writeFileSync(
       path.join(dir, 'package.json'),
-      JSON.stringify({ name: 'x', dependencies: { '@novu/framework': 'latest' } })
+      JSON.stringify({ name: 'x', dependencies: { '@notify/framework': 'latest' } })
     );
 
     expect(resolveLangChainPackagesToInstall(dir)).toEqual(['langchain@^1.0.0', '@langchain/core@^1.0.0']);
@@ -33,7 +33,7 @@ describe('resolveLangChainPackagesToInstall', () => {
       JSON.stringify({
         name: 'x',
         dependencies: {
-          '@novu/framework': 'latest',
+          '@notify/framework': 'latest',
           langchain: '^1.0.0',
           '@langchain/core': '^1.0.0',
         },

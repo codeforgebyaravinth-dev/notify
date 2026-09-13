@@ -1,7 +1,7 @@
 ---
-title: "Mattermost Chat Integration with Novu"
+title: "Mattermost Chat Integration with Notify"
 sidebarTitle: 'Mattermost'
-description: "Connect Mattermost to Novu to send chat notifications through workflows. Configure incoming webhooks in Mattermost and store credentials in the Novu dashboard."
+description: "Connect Mattermost to Notify to send chat notifications through workflows. Configure incoming webhooks in Mattermost and store credentials in the Notify dashboard."
 ---
 
 When using Mattermost, you will have to store the integration credentials within the subscriber entity. Mattermost supports two ways to do this:
@@ -22,10 +22,10 @@ Once you have the webhook URL, you can store it in the subscriber entity in your
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
-import { ChatOrPushProviderEnum } from "@novu/api/models/components";
+import { Notify } from '@notify/api';
+import { ChatOrPushProviderEnum } from "@notify/api/models/components";
 
-const novu = new Novu({ secretKey: "<NOVU_SECRET_KEY>" });
+const notify = new Notify({ secretKey: "<NOVU_SECRET_KEY>" });
 
 await novu.subscribers.credentials.update(
   {
@@ -41,9 +41,9 @@ await novu.subscribers.credentials.update(
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.subscribers.credentials.update(
         subscriber_id="subscriberId",
         update_subscriber_channel_request_dto={
@@ -77,10 +77,10 @@ res, err := s.Subscribers.Credentials.Update(context.Background(), "subscriberId
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 
 $sdk->subscribersCredentials->update(
     subscriberId: 'subscriberId',
@@ -96,8 +96,8 @@ $sdk->subscribersCredentials->update(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
@@ -115,11 +115,11 @@ await sdk.Subscribers.Credentials.UpdateAsync(
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 import java.util.List;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 
 novu.subscribers().credentials().update()
     .subscriberId("subscriberId")
@@ -151,14 +151,14 @@ curl -L -X PUT 'https://api.novu.co/v1/subscribers/<SUBSCRIBER_ID>/credentials' 
 
 ## SDK trigger example
 
-Send a notification to mattermost using the subscriber ID and workflow ID via `@novu/api` sdk
+Send a notification to mattermost using the subscriber ID and workflow ID via `@notify/api` sdk
 
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({ secretKey: "<NOVU_SECRET_KEY>" });
+const notify = new Notify({ secretKey: "<NOVU_SECRET_KEY>" });
 
 await novu.trigger({
   workflowId: "workflowId",
@@ -173,9 +173,9 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="workflowId",
         to={"subscriber_id": "subscriberId"},
@@ -210,10 +210,10 @@ res, err := s.Trigger(context.Background(), components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 
 $sdk->trigger(
     triggerEventRequestDto: new Components\TriggerEventRequestDto(
@@ -228,8 +228,8 @@ $sdk->trigger(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
 
@@ -244,10 +244,10 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto() {
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 
 novu.trigger()
     .body(TriggerEventRequestDto.builder()

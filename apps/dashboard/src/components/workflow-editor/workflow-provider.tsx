@@ -1,4 +1,4 @@
-import { PatchWorkflowDto, StepCreateDto, StepResponseDto, UpdateWorkflowDto, WorkflowResponseDto } from '@novu/shared';
+import { PatchWorkflowDto, StepCreateDto, StepResponseDto, UpdateWorkflowDto, WorkflowResponseDto } from '@notify/shared';
 import { Cross2Icon } from '@radix-ui/react-icons';
 import { QueryObserverResult, RefetchOptions } from '@tanstack/react-query';
 import { CheckCircleIcon } from 'lucide-react';

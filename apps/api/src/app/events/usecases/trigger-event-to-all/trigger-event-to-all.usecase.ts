@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { AddressingTypeEnum, TriggerRequestCategoryEnum } from '@novu/shared';
+import { AddressingTypeEnum, TriggerRequestCategoryEnum } from '@notify/shared';
 import { ParseEventRequest, ParseEventRequestBroadcastCommand } from '../parse-event-request';
 import { TriggerEventToAllCommand } from './trigger-event-to-all.command';
 

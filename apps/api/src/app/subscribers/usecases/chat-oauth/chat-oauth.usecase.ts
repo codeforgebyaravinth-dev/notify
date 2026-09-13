@@ -1,12 +1,12 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
-import { FeatureFlagsService, PinoLogger } from '@novu/application-generic';
+import { FeatureFlagsService, PinoLogger } from '@notify/application-generic';
 import {
   CommunityOrganizationRepository,
   EnvironmentRepository,
   IntegrationEntity,
   IntegrationRepository,
-} from '@novu/dal';
-import { ChannelTypeEnum } from '@novu/stateless';
+} from '@notify/dal';
+import { ChannelTypeEnum } from '@notify/stateless';
 
 import { isHmacValidForAnyKey } from '../../../shared/helpers/is-valid-hmac';
 import { ChatOauthCommand } from './chat-oauth.command';

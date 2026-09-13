@@ -8,9 +8,9 @@ import {
   PinoLogger,
   StepRunRepository,
   StepType,
-} from '@novu/application-generic';
-import { JobEntity, JobRepository, JobStatusEnum } from '@novu/dal';
-import { DeliveryLifecycleDetail, DeliveryLifecycleStatusEnum, StepTypeEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { JobEntity, JobRepository, JobStatusEnum } from '@notify/dal';
+import { DeliveryLifecycleDetail, DeliveryLifecycleStatusEnum, StepTypeEnum } from '@notify/shared';
 
 import { CancelDelayedCommand } from './cancel-delayed.command';
 

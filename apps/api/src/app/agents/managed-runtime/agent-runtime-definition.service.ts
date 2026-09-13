@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { PinoLogger, resolveAgentRuntime } from '@novu/application-generic';
-import { type AgentEntity, AgentRepository, IntegrationRepository } from '@novu/dal';
-import { AGENT_MANAGED_DEFINITION_VERSION } from '@novu/shared';
+import { PinoLogger, resolveAgentRuntime } from '@notify/application-generic';
+import { type AgentEntity, AgentRepository, IntegrationRepository } from '@notify/dal';
+import { AGENT_MANAGED_DEFINITION_VERSION } from '@notify/shared';
 
 export type AgentRuntimeDefinitionReconcileParams = {
   agentId: string;

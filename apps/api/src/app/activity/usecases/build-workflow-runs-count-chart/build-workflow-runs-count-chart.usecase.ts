@@ -8,8 +8,8 @@ import {
   WorkflowRunCountRepository,
   WorkflowRunRepository,
   WorkflowRunStatusEnum,
-} from '@novu/application-generic';
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { WorkflowRunsCountDataPointDto } from '../../dtos/get-charts.response.dto';
 import { WorkflowRunStatusDtoEnum } from '../../dtos/shared.dto';
 import { BuildWorkflowRunsCountChartCommand } from './build-workflow-runs-count-chart.command';

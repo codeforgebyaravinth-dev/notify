@@ -1,4 +1,4 @@
-import { BaseCommand } from '@novu/application-generic';
+import { BaseCommand } from '@notify/application-generic';
 import { IsArray, IsDefined, IsOptional, IsString } from 'class-validator';
 import { PlainCustomer, PlainTenant, PlainThread } from '../dtos/plain-card.dto';
 

@@ -107,7 +107,7 @@ must build before the next (see Build order below).
 - [ ] `send-message-tool.usecase.ts`: add the provider id to `ENDPOINT_ROUTED_TOOL_PROVIDERS`; verify SKIPPED + execution detail on missing endpoint (+ spec for the predicate)
 
 **E. Surface (dashboard, docs, playground)**
-- [ ] Provider const in `packages/shared/src/consts/providers/channels/tool.ts` with `docReference` → `https://docs.novu.co/platform/integrations/tool/<provider>` (rebuild `@novu/shared` after)
+- [ ] Provider const in `packages/shared/src/consts/providers/channels/tool.ts` with `docReference` → `https://docs.novu.co/platform/integrations/tool/<provider>` (rebuild `@notify/shared` after)
 - [ ] Docs guide `docs/platform/integrations/tool/<provider>.mdx` + register in the `Tool` group of `docs/docs.json` — see [reference.md](reference.md) for the required page structure
 - [ ] Playground demo under `playground/nextjs` mirroring the PagerDuty trio: `src/lib/<provider>-endpoint-connect.ts`, `src/pages/api/<provider>-endpoint.ts`, `src/components/<provider>-end-user-connect.tsx` + Clerk-gated page + SideNav entry
 
@@ -132,13 +132,13 @@ alert deduplication before assuming parity with PagerDuty.
 ```bash
 # types flow stateless → providers → application-generic; skipping a step
 # yields phantom TS errors (missing channelData on IToolOptions, etc.)
-pnpm --filter @novu/shared build
-pnpm --filter @novu/stateless build
-pnpm --filter @novu/providers build
-pnpm --filter @novu/application-generic build
+pnpm --filter @notify/shared build
+pnpm --filter @notify/stateless build
+pnpm --filter @notify/providers build
+pnpm --filter @notify/application-generic build
 
 # provider unit tests
-CI=true pnpm --filter @novu/providers exec vitest run src/lib/tool/<provider>
+CI=true pnpm --filter @notify/providers exec vitest run src/lib/tool/<provider>
 
 # channel-endpoints e2e (from apps/api)
 pnpm exec cross-env NODE_ENV=test CI_EE_TEST=true CLERK_ENABLED=true \
@@ -156,7 +156,7 @@ pnpm exec cross-env NODE_ENV=test CI_EE_TEST=true CLERK_ENABLED=true \
   endpoints do not create connections).
 - **Worker/app-generic specs need `STORE_ENCRYPTION_KEY`** (32 chars) in the
   env or `encryptChannelEndpoint` throws a Buffer TypeError.
-- **`@novu/api` SDK lags**: until the OpenAPI regen runs, the internal SDK's
+- **`@notify/api` SDK lags**: until the OpenAPI regen runs, the internal SDK's
   create-endpoint union won't include the new DTO — playground/demo code calls
   the raw REST endpoint (`novuFetch` pattern) and swaps to the SDK later.
   Never edit `libs/internal-sdk` by hand.

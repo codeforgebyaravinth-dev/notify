@@ -1,5 +1,5 @@
-import { PreferenceLevelEnum, StepTypeEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { PreferenceLevelEnum, StepTypeEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { SubscriptionResponseDto } from '../../shared/dtos/subscriptions/create-subscriptions-response.dto';
 import { CreateTopicSubscriptionRequestDto } from '../dtos/create-topic-subscription-request.dto';

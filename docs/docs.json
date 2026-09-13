@@ -1,12 +1,12 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "luma",
-  "name": "Novu",
+  "name": "Notify",
   "description": "The open-source notification infrastructure for agents and products. Send, receive, and track notifications across channels.",
   "colors": {
-    "primary": "#0e121b",
-    "light": "#FFFFFF",
-    "dark": "#FFFFFF"
+    "primary": "#9333ea",
+    "light": "#a855f7",
+    "dark": "#a855f7"
   },
   "background": {},
   "favicon": "/favicon.svg",
@@ -14,9 +14,9 @@
     "library": "lucide"
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg",
-    "href": "https://docs.novu.co"
+    "light": "/images/notify_logo.jpg",
+    "dark": "/images/notify_logo.jpg",
+    "href": "https://notify.co"
   },
   "seo": {
     "indexing": "all",
@@ -48,11 +48,11 @@
             "boost": 3,
             "pages": [
               "platform",
-              "platform/what-is-novu",
-              "platform/how-novu-works",
+              "platform/what-is-notify",
+              "platform/how-notify-works",
               {
-                "group": "Novu for your team",
-                "pages": ["platform/novu-for/developers", "platform/novu-for/product"]
+                "group": "Notify for your team",
+                "pages": ["platform/notify-for/developers", "platform/notify-for/product"]
               },
               {
                 "group": "Core Concepts",
@@ -322,17 +322,17 @@
             "pages": [
               "platform/sdks",
               {
-                "group": "@novu/react",
+                "group": "@notify/react",
                 "pages": [
                   "platform/sdks/react",
                   {
                     "group": "Hooks",
                     "pages": [
-                      "platform/sdks/react/hooks/novu-provider",
+                      "platform/sdks/react/hooks/notify-provider",
                       "platform/sdks/react/hooks/subscription",
                       "platform/sdks/react/hooks/use-counts",
                       "platform/sdks/react/hooks/use-notifications",
-                      "platform/sdks/react/hooks/use-novu",
+                      "platform/sdks/react/hooks/use-notify",
                       "platform/sdks/react/hooks/use-preferences",
                       "platform/sdks/react/hooks/use-schedule"
                     ]
@@ -342,15 +342,15 @@
               },
               "platform/sdks/javascript",
               {
-                "group": "@novu/react-native",
+                "group": "@notify/react-native",
                 "root": "platform/sdks/react-native",
                 "pages": [
                   "platform/sdks/react-native",
                   {
                     "group": "Hooks",
                     "pages": [
-                      "platform/sdks/react-native/hooks/novu-provider",
-                      "platform/sdks/react-native/hooks/use-novu",
+                      "platform/sdks/react-native/hooks/notify-provider",
+                      "platform/sdks/react-native/hooks/use-notify",
                       "platform/sdks/react-native/hooks/use-notifications",
                       "platform/sdks/react-native/hooks/use-counts",
                       "platform/sdks/react-native/hooks/use-preferences",
@@ -923,12 +923,12 @@
                 "icon": "blocks"
               },
               {
-                "group": "Migrate to Novu",
+                "group": "Migrate to Notify",
                 "pages": [
-                  "guides/migrate-from-courier-to-novu",
-                  "guides/migrate-from-knock-to-novu",
-                  "guides/migrate-from-magicbell-to-novu",
-                  "guides/migrate-from-in-house-to-novu"
+                  "guides/migrate-from-courier-to-notify",
+                  "guides/migrate-from-knock-to-notify",
+                  "guides/migrate-from-magicbell-to-notify",
+                  "guides/migrate-from-in-house-to-notify"
                 ],
                 "icon": "arrow-right-left"
               }
@@ -1049,21 +1049,21 @@
                 "pages": [
                   "community",
                   {
-                    "group": "Self Hosting Novu",
+                    "group": "Self Hosting Notify",
                     "boost": 1,
                     "pages": [
-                      "community/self-hosting-novu/overview",
-                      "community/self-hosting-novu/deploy-with-docker",
-                      "community/self-hosting-novu/telemetry",
-                      "community/self-hosting-novu/data-migrations",
-                      "community/self-hosting-novu/v0-to-v2-migration"
+                      "community/self-hosting-notify/overview",
+                      "community/self-hosting-notify/deploy-with-docker",
+                      "community/self-hosting-notify/telemetry",
+                      "community/self-hosting-notify/data-migrations",
+                      "community/self-hosting-notify/v0-to-v2-migration"
                     ]
                   },
                   "community/get-involved",
                   "community/code-of-conduct",
                   "community/roadmap",
                   "community/changelog",
-                  "community/self-hosted-and-novu-cloud",
+                  "community/self-hosted-and-notify-cloud",
                   "community/run-in-local-machine",
                   "community/add-a-new-provider"
                 ]
@@ -1101,23 +1101,23 @@
         "header": "Comparison",
         "items": [
           {
-            "label": "Novu vs Courier",
+            "label": "Notify vs Courier",
             "href": "https://novu.co/comparison/courier/"
           },
           {
-            "label": "Novu vs Knock",
+            "label": "Notify vs Knock",
             "href": "https://novu.co/comparison/knock/"
           },
           {
-            "label": "Novu vs MagicBell",
+            "label": "Notify vs MagicBell",
             "href": "https://novu.co/comparison/magicbell/"
           },
           {
-            "label": "Novu vs SuprSend",
+            "label": "Notify vs SuprSend",
             "href": "https://novu.co/comparison/suprsend/"
           },
           {
-            "label": "Novu vs In-house",
+            "label": "Notify vs In-house",
             "href": "https://novu.co/comparison/building-in-house/"
           }
         ]
@@ -1127,7 +1127,7 @@
         "items": [
           {
             "label": "Contact Support",
-            "href": "mailto:support@novu.co"
+            "href": "mailto:support@notify.co"
           },
           {
             "label": "Changelog",
@@ -1246,7 +1246,7 @@
     },
     {
       "source": "/platform/inbox/react/hooks",
-      "destination": "/platform/sdks/react/hooks/novu-provider",
+      "destination": "/platform/sdks/react/hooks/notify-provider",
       "permanent": true
     },
     {
@@ -1476,7 +1476,7 @@
     },
     {
       "source": "/community/project-differences",
-      "destination": "/community/self-hosted-and-novu-cloud",
+      "destination": "/community/self-hosted-and-notify-cloud",
       "permanent": true
     },
     {

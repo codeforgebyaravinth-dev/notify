@@ -1,4 +1,4 @@
-import { FeatureFlagsKeysEnum, StepCreateDto } from '@novu/shared';
+import { FeatureFlagsKeysEnum, StepCreateDto } from '@notify/shared';
 import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useMemo, useState } from 'react';
 import { RiArrowLeftSLine, RiSparklingFill } from 'react-icons/ri';

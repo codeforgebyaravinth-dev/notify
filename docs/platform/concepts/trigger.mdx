@@ -1,6 +1,6 @@
 ---
 title: 'Trigger'
-description: "Understand how Novu processes a trigger event from initial API request to fan-out, digest, delay, and channel delivery inside a workflow run."
+description: "Understand how Notify processes a trigger event from initial API request to fan-out, digest, delay, and channel delivery inside a workflow run."
 ---
 
 ## Trigger Request
@@ -50,13 +50,13 @@ Jobs play a crucial role in the trigger event lifecycle. They are created based 
 
 <AccordionGroup>
   <Accordion title="What is an event?">
-    An event is a request (for instance, an API call to [/v1/events/trigger](/api-reference/events/trigger-event)) that starts off an action in the Novu Workflow Engine. Events can make many different types of actions, including digests, delays, and sending notifications to various channels, as well as filters and user preference checks.
+    An event is a request (for instance, an API call to [/v1/events/trigger](/api-reference/events/trigger-event)) that starts off an action in the Notify Workflow Engine. Events can make many different types of actions, including digests, delays, and sending notifications to various channels, as well as filters and user preference checks.
   </Accordion>
 
   <Accordion title="How events are billed?">
     If a workflow is triggered to a [subscriber](/platform/concepts/subscribers), then it is billed as 1 event (one workflow run). If workflow is triggered to a group of 15 subscribers, then it is billed as 15 events.
 
-    If a workflow is triggered to a [topic](/platform/concepts/topics), Novu fans out to matching [topic subscriptions](/platform/subscription/manage-topic-subscriptions). You are billed for **one workflow run per subscriber whose subscription passes** Context matching and JSON Logic conditions, not for every subscriber on the topic. A topic with 100 subscriptions where only 20 pass creates **20** billable workflow runs. See [Billing and workflow runs](/platform/subscription/manage-topic-subscriptions#billing-and-workflow-runs).
+    If a workflow is triggered to a [topic](/platform/concepts/topics), Notify fans out to matching [topic subscriptions](/platform/subscription/manage-topic-subscriptions). You are billed for **one workflow run per subscriber whose subscription passes** Context matching and JSON Logic conditions, not for every subscriber on the topic. A topic with 100 subscriptions where only 20 pass creates **20** billable workflow runs. See [Billing and workflow runs](/platform/subscription/manage-topic-subscriptions#billing-and-workflow-runs).
   </Accordion>
 
   <Accordion title="If notifications were filtered out, are they still billed?">

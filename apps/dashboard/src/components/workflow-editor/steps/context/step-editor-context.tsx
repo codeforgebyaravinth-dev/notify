@@ -4,7 +4,7 @@ import {
   ResourceOriginEnum,
   StepResponseDto,
   WorkflowResponseDto,
-} from '@novu/shared';
+} from '@notify/shared';
 import { createContext, ReactNode, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { useLocation } from 'react-router-dom';

@@ -5,7 +5,7 @@ Topics let you send notifications to groups of subscribers. Create a topic, add 
 ## Create a Topic and Add Subscribers
 
 ```typescript
-import { Novu } from "@novu/api";
+import { Novu } from "@notify/api";
 
 const novu = new Novu({
   secretKey: process.env.NOVU_SECRET_KEY,

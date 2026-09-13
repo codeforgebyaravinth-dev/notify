@@ -1,4 +1,4 @@
-import { AgentRuntimeProviderIdEnum, providers as novuProviders } from '@novu/shared';
+import { AgentRuntimeProviderIdEnum, providers as novuProviders } from '@notify/shared';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import ReactConfetti from 'react-confetti';
 import { createPortal } from 'react-dom';

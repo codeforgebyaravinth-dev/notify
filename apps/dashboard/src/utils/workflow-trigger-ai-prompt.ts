@@ -52,7 +52,7 @@ const generatePromptSections = (config: WorkflowTriggerPromptConfig) => {
   // Language-specific implementation mapping
   const languageImplementations: Record<PromptLanguage, Array<{ language: string; code: string }>> = {
     nodejs: [
-      { language: 'Node.js (with @novu/api)', code: snippets.nodejs },
+      { language: 'Node.js (with @notify/api)', code: snippets.nodejs },
       { language: 'cURL (direct HTTP call)', code: snippets.curl },
     ],
     python: [
@@ -176,7 +176,7 @@ Identify where this workflow should be triggered based on business logic:
           objective: 'Install the appropriate Novu SDK or HTTP client',
           actions: `1. Detect the project's tech stack and package manager
 2. Choose the appropriate integration method:
-   - **Node.js**: Install @novu/api package
+   - **Node.js**: Install @notify/api package
    - **Python**: Install novu-py package  
    - **PHP**: Install novuhq/novu package
    - **Go**: Use github.com/novuhq/novu-go

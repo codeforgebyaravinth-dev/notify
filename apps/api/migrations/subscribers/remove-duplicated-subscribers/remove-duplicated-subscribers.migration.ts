@@ -1,7 +1,7 @@
 import '../../../src/config';
 import { NestFactory } from '@nestjs/core';
-import { SubscriberRepository } from '@novu/dal';
-import { IChannelSettings, ISubscriber } from '@novu/shared';
+import { SubscriberRepository } from '@notify/dal';
+import { IChannelSettings, ISubscriber } from '@notify/shared';
 import { AppModule } from '../../../src/app.module';
 
 export async function removeDuplicatedSubscribers() {

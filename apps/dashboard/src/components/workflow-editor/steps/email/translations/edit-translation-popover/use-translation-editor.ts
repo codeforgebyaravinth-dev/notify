@@ -1,4 +1,4 @@
-import { TranslationResponseDto } from '@novu/api/models/components';
+import { TranslationResponseDto } from '@notify/api/models/components';
 import { UseMutationResult } from '@tanstack/react-query';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { UpdateTranslationValueParams } from '@/hooks/use-update-translation-value';

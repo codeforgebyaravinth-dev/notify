@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { AgentIntegrationRepository, AgentRepository, IntegrationRepository } from '@novu/dal';
-import { ChatProviderIdEnum } from '@novu/shared';
+import { AgentIntegrationRepository, AgentRepository, IntegrationRepository } from '@notify/dal';
+import { ChatProviderIdEnum } from '@notify/shared';
 
 const WEB_CHAT_UNAVAILABLE_MESSAGE = 'This agent is not available on web chat';
 

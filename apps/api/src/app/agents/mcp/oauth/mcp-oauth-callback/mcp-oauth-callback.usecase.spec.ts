@@ -1,4 +1,4 @@
-import type { McpConnectionOAuthClient } from '@novu/dal';
+import type { McpConnectionOAuthClient } from '@notify/dal';
 import { expect } from 'chai';
 
 import {

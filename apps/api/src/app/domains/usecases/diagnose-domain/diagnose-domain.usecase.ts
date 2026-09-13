@@ -1,7 +1,7 @@
 import { promises as dnsPromises, type MxRecord } from 'node:dns';
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { DomainRepository } from '@novu/dal';
-import { DomainDiagnosticCheckStatusEnum, DomainDiagnosticCodeEnum, DomainDiagnosticSeverityEnum } from '@novu/shared';
+import { DomainRepository } from '@notify/dal';
+import { DomainDiagnosticCheckStatusEnum, DomainDiagnosticCodeEnum, DomainDiagnosticSeverityEnum } from '@notify/shared';
 
 import { DiagnoseDomainResponseDto } from '../../dtos/diagnose-domain-response.dto';
 import {

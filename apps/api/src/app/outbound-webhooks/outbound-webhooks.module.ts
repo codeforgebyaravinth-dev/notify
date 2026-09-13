@@ -1,5 +1,5 @@
 import { DynamicModule, Module } from '@nestjs/common';
-import { SendWebhookMessage, SvixProviderService } from '@novu/application-generic';
+import { SendWebhookMessage, SvixProviderService } from '@notify/application-generic';
 import { NoopSendWebhookMessage } from '../inbox/usecases/noop-send-webhook-message.usecase';
 import { SharedModule } from '../shared/shared.module';
 import { OutboundWebhooksController } from './outbound-webhooks.controller';

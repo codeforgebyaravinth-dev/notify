@@ -1,4 +1,4 @@
-import { JobEntity, JobRepository, JobStatusEnum } from '@novu/dal';
+import { JobEntity, JobRepository, JobStatusEnum } from '@notify/dal';
 import { sleep } from './sleep.util';
 
 type EnforceEnvOrOrgIds = { _environmentId: string } | { _organizationId: string };

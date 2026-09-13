@@ -62,13 +62,13 @@ describe('detectProject', () => {
   });
 
   it('exposes installed Novu packages and existing framework route on the target', () => {
-    writePackageJson({ '@novu/api': '1.0.0', '@novu/framework': '1.0.0', next: '14.0.0' });
+    writePackageJson({ '@notify/api': '1.0.0', '@notify/framework': '1.0.0', next: '14.0.0' });
     writeFile('app/api/novu/route.ts', "export const POST = () => new Response('ok');");
 
     const project = detectProject(tempDir);
     expect(project.topology.targets).toHaveLength(1);
     const target = project.topology.targets[0];
-    expect(target.installedNovuPackages.slice().sort()).toEqual(['@novu/api', '@novu/framework']);
+    expect(target.installedNovuPackages.slice().sort()).toEqual(['@notify/api', '@notify/framework']);
     expect(target.hasFrameworkRoute).toBe(true);
     expect(target.frameworkRoutePath).toBe('app/api/novu/route.ts');
   });
@@ -93,7 +93,7 @@ describe('detectProject', () => {
       'apps/web/package.json',
       JSON.stringify({
         name: '@acme/web',
-        dependencies: { next: '14.0.0', react: '18.0.0', '@novu/nextjs': '0.0.0' },
+        dependencies: { next: '14.0.0', react: '18.0.0', '@notify/nextjs': '0.0.0' },
         devDependencies: { typescript: '5.0.0' },
       })
     );
@@ -103,7 +103,7 @@ describe('detectProject', () => {
       'apps/api/package.json',
       JSON.stringify({
         name: '@acme/api',
-        dependencies: { hono: '4.0.0', '@novu/api': '0.0.0' },
+        dependencies: { hono: '4.0.0', '@notify/api': '0.0.0' },
         devDependencies: { typescript: '5.0.0' },
       })
     );
@@ -119,13 +119,13 @@ describe('detectProject', () => {
     const web = project.topology.targets.find((t) => t.workspaceName === '@acme/web')!;
     expect(web.classification.role).toBe('fullstack');
     expect(web.classification.framework).toBe('nextjs-app');
-    expect(web.installedNovuPackages).toContain('@novu/nextjs');
+    expect(web.installedNovuPackages).toContain('@notify/nextjs');
 
     const api = project.topology.targets.find((t) => t.workspaceName === '@acme/api')!;
     expect(api.classification.role).toBe('api');
     expect(api.classification.framework).toBe('hono');
     expect(api.classification.isReactBased).toBe(false);
-    expect(api.installedNovuPackages).toContain('@novu/api');
+    expect(api.installedNovuPackages).toContain('@notify/api');
 
     const skippedRoles = project.topology.workspaces
       .filter((ws) => ws.workspaceName === '@acme/ui')

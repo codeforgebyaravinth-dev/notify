@@ -1,14 +1,14 @@
 ---
-title: "MS Teams Chat Integration with Novu"
+title: "MS Teams Chat Integration with Notify"
 sidebarTitle: "MS Teams"
-description: "Connect Microsoft Teams to Novu to send chat notifications through workflows. Create an incoming webhook in Teams and store the URL as a Novu credential."
+description: "Connect Microsoft Teams to Notify to send chat notifications through workflows. Create an incoming webhook in Teams and store the URL as a Notify credential."
 ---
 
-The Novu Microsoft Teams integration enables you to send notifications to Teams channels and direct messages (DMs) across different customer workspaces using a single multi-tenant bot.
+The Notify Microsoft Teams integration enables you to send notifications to Teams channels and direct messages (DMs) across different customer workspaces using a single multi-tenant bot.
 
 You create and host a Microsoft Teams bot in your Azure environment, and your customers then approve the app (via Admin Consent) and install it in their Teams tenants.
 
-Once a customer connects their workspace, Novu establishes a secure channel connection using your bot's credentials. You then map specific destinations, whether the destinations involve public channels or individual users to channel endpoints, allowing Novu to route notifications dynamically to the correct tenant and conversation context.
+Once a customer connects their workspace, Notify establishes a secure channel connection using your bot's credentials. You then map specific destinations, whether the destinations involve public channels or individual users to channel endpoints, allowing Notify to route notifications dynamically to the correct tenant and conversation context.
 
 <Note>
   Check out the [agents](/agents) documentation for more information on how to build agents using Microsoft Teams.
@@ -19,11 +19,11 @@ Once a customer connects their workspace, Novu establishes a secure channel conn
 - Access to [Azure Portal](https://portal.azure.com/) with App Registration permissions.
 - Access to [Microsoft Teams Developer Portal](https://dev.teams.microsoft.com/home)
 - Administrator privileges for granting API permissions
-- Access to [Novu dashboard](https://dashboard.novu.co)
+- Access to [Notify dashboard](https://dashboard.novu.co)
 
 ## Azure and Teams configuration
 
-Before you can configure Novu, you must create the infrastructure that hosts your bot. This involves two distinct portals:
+Before you can configure Notify, you must create the infrastructure that hosts your bot. This involves two distinct portals:
 - **Azure portal**: To create the identity (App Registration) and infrastructure (Bot Service).
 - **Teams Developer Portal**: To create the app package that your customers can install.
 
@@ -59,7 +59,7 @@ First, create a multi-tenant identity for your bot.
   </Step>
 
 <Step title="Note the IDs">
-    After creating the app, note the Application (client) ID and Directory (tenant) ID. You need these values to configure Microsoft Teams in Novu.
+    After creating the app, note the Application (client) ID and Directory (tenant) ID. You need these values to configure Microsoft Teams in Notify.
   </Step>
 </Steps>
 
@@ -87,15 +87,15 @@ First, create a multi-tenant identity for your bot.
   </Step>
 
 <Step title="Copy the secret value">
-    Copy the value. This value becomes your `BOT_APP_SECRET`, and you’ll paste it into Novu. You can view the secret only once right after you create it, so save it before you leave the page.
+    Copy the value. This value becomes your `BOT_APP_SECRET`, and you’ll paste it into Notify. You can view the secret only once right after you create it, so save it before you leave the page.
   </Step>
 </Steps>
 
-### Add Novu’s redirect URI
+### Add Notify’s redirect URI
 
-When a tenant administrator accepts admin consent, Microsoft redirects the browser to Novu at this URL. Register it in **Azure** on your app registration during setup - before any organization connects Teams.
+When a tenant administrator accepts admin consent, Microsoft redirects the browser to Notify at this URL. Register it in **Azure** on your app registration during setup - before any organization connects Teams.
 
-This is not the optional **Redirect URL** on the Novu integration. That Novu field only controls where the administrator is sent in **your application** after Novu finishes processing the callback.
+This is not the optional **Redirect URL** on the Notify integration. That Notify field only controls where the administrator is sent in **your application** after Notify finishes processing the callback.
 
 <Steps>
   <Step title="Open Authentication">
@@ -103,7 +103,7 @@ This is not the optional **Redirect URL** on the Novu integration. That Novu fie
   </Step>
 
 <Step title="Add redirect URI">
-    Add the redirect URI shown in the Novu integration settings.
+    Add the redirect URI shown in the Notify integration settings.
   </Step>
 
 <Step title="Select Web platform">
@@ -111,7 +111,7 @@ This is not the optional **Redirect URL** on the Novu integration. That Novu fie
   </Step>
 
 <Step title="Set the redirect URI">
-    In the **Redirect URI** field, set the redirect URI to the Novu OAuth callback URL:
+    In the **Redirect URI** field, set the redirect URI to the Notify OAuth callback URL:
       - US region
       ```bash
       https://api.novu.co/v1/integrations/chat/oauth/callback
@@ -167,11 +167,11 @@ If you plan to link subscribers for direct messages via OAuth, also add this **D
 
 - `User.Read`
 
-Novu also requests `openid` and `profile` during the link-user OAuth flow; Azure includes these automatically for sign-in. Application permissions (above) cover tenant connect and channel messaging. Delegated `User.Read` is only needed for the separate link-user flow.
+Notify also requests `openid` and `profile` during the link-user OAuth flow; Azure includes these automatically for sign-in. Application permissions (above) cover tenant connect and channel messaging. Delegated `User.Read` is only needed for the separate link-user flow.
 
 <Steps>
   <Step title="Grant admin consent in your home tenant">
-    On the **API permissions** page, click **Grant admin consent for [your tenant]** and confirm. This applies the application permissions in the tenant where you registered the app. Each organization that connects Teams later grants consent separately through the Novu OAuth flow.
+    On the **API permissions** page, click **Grant admin consent for [your tenant]** and confirm. This applies the application permissions in the tenant where you registered the app. Each organization that connects Teams later grants consent separately through the Notify OAuth flow.
   </Step>
 </Steps>
 
@@ -345,13 +345,13 @@ Next, you must install the app into a specific Team or for a specific User.
 
 Follow the steps in the [Microsoft Teams documentation](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/deploy-and-publish/apps-upload#upload-your-app) to learn how to upload the just downloaded app package and also how to add the app to a specific location.
 
-## Configure the Teams (Bot) integration in Novu
+## Configure the Teams (Bot) integration in Notify
 
-Now that you’ve configured your Azure Bot, provide Novu with the credentials to integrate it.
+Now that you’ve configured your Azure Bot, provide Notify with the credentials to integrate it.
 
 <Steps>
-  <Step title="Log in to the Novu dashboard">
-    Open the [Novu Dashboard](https://dashboard.novu.co).
+  <Step title="Log in to the Notify dashboard">
+    Open the [Notify Dashboard](https://dashboard.novu.co).
   </Step>
 
 <Step title="Open Integrations Store">
@@ -370,8 +370,8 @@ Now that you’ve configured your Azure Bot, provide Novu with the credentials t
     - **Client ID**: Enter your `BOT_APP_ID`.
     - **Client Secret**: Enter your `BOT_APP_SECRET`.
     - **App Tenant ID**: Enter your `APP_TENANT_ID`. This value identifies the tenant where you registered the app.
-    - **Redirect URL** (Optional): Where the **tenant administrator** is sent in **your application** after Novu processes the OAuth callback. This is not the Azure redirect URI - see [Add Novu's redirect URI](#add-novus-redirect-uri).
-    ![Novu integration](/images/channels-and-providers/chat/msteams/novu-msteams-integration.png)
+    - **Redirect URL** (Optional): Where the **tenant administrator** is sent in **your application** after Notify processes the OAuth callback. This is not the Azure redirect URI - see [Add Notify's redirect URI](#add-novus-redirect-uri).
+    ![Notify integration](/images/channels-and-providers/chat/msteams/notify-msteams-integration.png)
   </Step>
 
 <Step title="Create the integration">
@@ -379,7 +379,7 @@ Now that you’ve configured your Azure Bot, provide Novu with the credentials t
   </Step>
 </Steps>
 
-From now on, Novu can send messages as your bot once an organization's tenant is connected and the app is installed in Teams.
+From now on, Notify can send messages as your bot once an organization's tenant is connected and the app is installed in Teams.
 
 <Note>
   **Try the Microsoft Teams integration with a demo app**
@@ -392,7 +392,7 @@ If you’ve completed the previous steps, you can test your bot configuration en
 Each organization you notify has its own Microsoft 365 tenant. Before you can send Teams messages on their behalf, a **tenant administrator** from that organization must grant your app a one-time **admin consent**. This authorizes your bot in their tenant using **application permissions** (app-only / client credentials).
 
 <Note>
-  **Tenant connect and user linking are separate steps.** Admin consent connects the organization's Microsoft 365 tenant. Linking a Novu **subscriber** for direct messages is a separate OAuth flow - see [Link a subscriber for direct messages](#link-a-subscriber-for-direct-messages).
+  **Tenant connect and user linking are separate steps.** Admin consent connects the organization's Microsoft 365 tenant. Linking a Notify **subscriber** for direct messages is a separate OAuth flow - see [Link a subscriber for direct messages](#link-a-subscriber-for-direct-messages).
 </Note>
 
 ### Generate a Connect Teams URL
@@ -406,9 +406,9 @@ Call this from **your backend** when someone starts the connect flow in your pro
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({ secretKey: "<NOVU_SECRET_KEY>" });
+const notify = new Notify({ secretKey: "<NOVU_SECRET_KEY>" });
 
 const response = await novu.integrations.generateConnectOAuthUrl({
   integrationIdentifier: 'ms-teams-bot',
@@ -423,9 +423,9 @@ const response = await novu.integrations.generateConnectOAuthUrl({
   <Tab title="Python">
 ```python
 import os
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     response = novu.integrations.generate_connect_o_auth_url(generate_connect_oauth_url_request_dto={
         "integration_identifier": "ms-teams-bot",
         "subscriber_id": "user-123",
@@ -460,10 +460,10 @@ res, err := s.Integrations.GenerateConnectOAuthURL(context.Background(), compone
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 $response = $sdk->integrations->generateConnectOAuthUrl(
     generateConnectOauthUrlRequestDto: new Components\GenerateConnectOauthUrlRequestDto(
         integrationIdentifier: 'ms-teams-bot',
@@ -478,8 +478,8 @@ $response = $sdk->integrations->generateConnectOAuthUrl(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
 var response = await sdk.Integrations.GenerateConnectOAuthUrlAsync(
@@ -495,10 +495,10 @@ var response = await sdk.Integrations.GenerateConnectOAuthUrlAsync(
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 var response = novu.integrations().generateConnectOAuthUrl()
     .body(GenerateConnectOauthUrlRequestDto.builder()
         .integrationIdentifier("ms-teams-bot")
@@ -526,14 +526,14 @@ curl -L -X POST 'https://api.novu.co/v1/integrations/channel-connections/oauth' 
   </Tab>
 </Tabs>
 
-Call `POST /v1/integrations/channel-connections/oauth` with the same body if you are not using the TypeScript SDK. Authenticate with your Novu **secret key**.
+Call `POST /v1/integrations/channel-connections/oauth` with the same body if you are not using the TypeScript SDK. Authenticate with your Notify **secret key**.
 
-Novu returns a URL pointing to Microsoft's administrator consent endpoint (`login.microsoftonline.com/organizations/v2.0/adminconsent`). It includes your Client ID, redirect URI, and the `https://graph.microsoft.com/.default` scope.
+Notify returns a URL pointing to Microsoft's administrator consent endpoint (`login.microsoftonline.com/organizations/v2.0/adminconsent`). It includes your Client ID, redirect URI, and the `https://graph.microsoft.com/.default` scope.
 
-For tenant-wide admin consent, set **`autoLinkUser: false`** (or omit `autoLinkUser` - the API treats omitted as `false`). Only when `autoLinkUser` is explicitly `true` does Novu chain a second OAuth flow after admin consent to link that subscriber for DMs.
+For tenant-wide admin consent, set **`autoLinkUser: false`** (or omit `autoLinkUser` - the API treats omitted as `false`). Only when `autoLinkUser` is explicitly `true` does Notify chain a second OAuth flow after admin consent to link that subscriber for DMs.
 
 <Note>
-  **`@novu/react` `MsTeamsConnectButton`** defaults `autoLinkUser` to `true` in subscriber mode. That is intended for in-app end-user connect flows. For server-side tenant admin consent (Java, REST, or `@novu/api`), pass `autoLinkUser: false` explicitly.
+  **`@notify/react` `MsTeamsConnectButton`** defaults `autoLinkUser` to `true` in subscriber mode. That is intended for in-app end-user connect flows. For server-side tenant admin consent (Java, REST, or `@notify/api`), pass `autoLinkUser: false` explicitly.
 </Note>
 
 ### Show it in your UI
@@ -546,7 +546,7 @@ window.open(response.url, '_blank');
 
 ### What the tenant administrator does
 
-The tenant administrator is someone at the **connecting organization** (not a Novu dashboard user). They grant consent in Microsoft - they do not need a Novu account.
+The tenant administrator is someone at the **connecting organization** (not a Notify dashboard user). They grant consent in Microsoft - they do not need a Notify account.
 
 <Steps>
   <Step title="Sign in to your product">
@@ -566,9 +566,9 @@ The tenant administrator is someone at the **connecting organization** (not a No
   </Step>
 </Steps>
 
-Microsoft redirects to Novu with `admin_consent=True` and the organization's `tenant` ID. Novu stores the tenant on a channel connection and the flow is complete. You do not handle the callback yourself.
+Microsoft redirects to Notify with `admin_consent=True` and the organization's `tenant` ID. Notify stores the tenant on a channel connection and the flow is complete. You do not handle the callback yourself.
 
-If you set an optional **Redirect URL** on the MS Teams integration in the Novu dashboard, the administrator is sent there after success; otherwise the consent window shows a success message and can be closed.
+If you set an optional **Redirect URL** on the MS Teams integration in the Notify dashboard, the administrator is sent there after success; otherwise the consent window shows a success message and can be closed.
 
 ### Install the app in Teams
 
@@ -581,9 +581,9 @@ For the bot to send messages, someone must install the app where notifications s
 
 The tenant administrator can install your app from the Teams app store or their org catalog, depending on how you published. If you requested the `TeamsAppInstallation.ReadWriteSelfForTeam.All` permission, your backend can programmatically install the app into a specific Team using the Microsoft Graph API.
 
-## Tell Novu where to send the messages
+## Tell Notify where to send the messages
 
-Decide where notifications should land in Teams, collect the required IDs, and register them as channel endpoints in Novu.
+Decide where notifications should land in Teams, collect the required IDs, and register them as channel endpoints in Notify.
 
 You can choose between two destination types:
   - **Channels**: Send a message to a specific channel within a Team.
@@ -591,7 +591,7 @@ You can choose between two destination types:
 
 ### Sending message to channels
 
-To send a notification to a specific channel, you must discover the Team ID and Channel ID from Microsoft, and then register them in Novu.
+To send a notification to a specific channel, you must discover the Team ID and Channel ID from Microsoft, and then register them in Notify.
 
 #### Find the Team and Channel IDs (Microsoft Graph)
 
@@ -609,7 +609,7 @@ client_id={BOT_APP_ID}
     &grant_type=client_credentials
     ```
 
-The `SUBSCRIBER_TENANT_ID` represents the customer's tenant ID, which Novu stored on the `ChannelConnection` object after completing the Admin Consent flow.
+The `SUBSCRIBER_TENANT_ID` represents the customer's tenant ID, which Notify stored on the `ChannelConnection` object after completing the Admin Consent flow.
 
 ```bash
     GET /v1/channel-connections
@@ -644,9 +644,9 @@ The `SUBSCRIBER_TENANT_ID` represents the customer's tenant ID, which Novu store
   </Step>
 </Steps>
 
-#### Register the channel endpoint (Novu)
+#### Register the channel endpoint (Notify)
 
-Once you have the IDs, create an `ms_teams_channel` endpoint in Novu. This maps a subscriber to that specific channel.
+Once you have the IDs, create an `ms_teams_channel` endpoint in Notify. This maps a subscriber to that specific channel.
 
 ```bash
 POST /v1/channel-endpoints
@@ -671,7 +671,7 @@ Content-Type: application/json
 }
 ```
 
-Novu stores this as `ChannelEndpoint<'ms_teams_channel'>`.
+Notify stores this as `ChannelEndpoint<'ms_teams_channel'>`.
 
 ### Send a direct message to a user
 
@@ -682,7 +682,7 @@ To send a direct message (DM), register an `ms_teams_user` channel endpoint for 
 Prerequisites:
 
 - Admin consent has already connected the organization's tenant (see above).
-- The subscriber exists in Novu.
+- The subscriber exists in Notify.
 - Application permission `TeamsAppInstallation.ReadWriteSelfForUser.All` and delegated `User.Read` are configured in Azure (see [Add Microsoft Graph app permissions](#add-microsoft-graph-app-permissions)).
 
 Run a **separate** OAuth flow - do not set `autoLinkUser: true` on `generateConnectOAuthUrl`. Use `generateLinkUserOAuthUrl` instead:
@@ -690,9 +690,9 @@ Run a **separate** OAuth flow - do not set `autoLinkUser: true` on `generateConn
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({ secretKey: "<NOVU_SECRET_KEY>" });
+const notify = new Notify({ secretKey: "<NOVU_SECRET_KEY>" });
 
 const response = await novu.integrations.generateLinkUserOAuthUrl({
   integrationIdentifier: 'ms-teams-bot',
@@ -707,9 +707,9 @@ const response = await novu.integrations.generateLinkUserOAuthUrl({
   <Tab title="Python">
 ```python
 import os
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     response = novu.integrations.generate_link_user_o_auth_url(generate_link_user_oauth_url_request_dto={
         "integration_identifier": "ms-teams-bot",
         "subscriber_id": "user-123",
@@ -744,10 +744,10 @@ res, err := s.Integrations.GenerateLinkUserOAuthURL(context.Background(), compon
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 $response = $sdk->integrations->generateLinkUserOAuthUrl(
     generateLinkUserOauthUrlRequestDto: new Components\GenerateLinkUserOauthUrlRequestDto(
         integrationIdentifier: 'ms-teams-bot',
@@ -762,8 +762,8 @@ $response = $sdk->integrations->generateLinkUserOAuthUrl(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
 var response = await sdk.Integrations.GenerateLinkUserOAuthUrlAsync(
@@ -779,10 +779,10 @@ var response = await sdk.Integrations.GenerateLinkUserOAuthUrlAsync(
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 var response = novu.integrations().generateLinkUserOAuthUrl()
     .body(GenerateLinkUserOauthUrlRequestDto.builder()
         .integrationIdentifier("ms-teams-bot")
@@ -812,7 +812,7 @@ curl -L -X POST 'https://api.novu.co/v1/integrations/channel-endpoints/oauth' \
 
 Call `POST /v1/integrations/channel-endpoints/oauth` with the same body when using the REST API.
 
-This opens a Microsoft sign-in flow with delegated scopes (`openid`, `profile`, `User.Read`). Novu reads the user's identity from the token, installs the bot for that user when possible, and creates an `ms_teams_user` channel endpoint.
+This opens a Microsoft sign-in flow with delegated scopes (`openid`, `profile`, `User.Read`). Notify reads the user's identity from the token, installs the bot for that user when possible, and creates an `ms_teams_user` channel endpoint.
 
 <Warning>
   The generated OAuth URL expires after <strong>5 minutes</strong>. Generate it when the subscriber is ready to sign in.
@@ -851,9 +851,9 @@ grant_type=client_credentials&
 
 From the returned members, take the member’s `id`; this value represents the Teams user ID (`29:...`) you’ll use as `userId`.
 
-#### Register the user endpoint (Novu)
+#### Register the user endpoint (Notify)
 
-Once you have the IDs, create the endpoint in Novu using the `ms_teams_user` type.
+Once you have the IDs, create the endpoint in Notify using the `ms_teams_user` type.
 
 ```bash
 POST /v1/channel-endpoints
@@ -877,7 +877,7 @@ Content-Type: application/json
 }
 ```
 
-Novu stores this as `ChannelEndpoint<'ms_teams_user'>`. From here, any workflow that resolves to this endpoint can send a DM from your bot to that user.
+Notify stores this as `ChannelEndpoint<'ms_teams_user'>`. From here, any workflow that resolves to this endpoint can send a DM from your bot to that user.
 
 ## Workflows for Teams (Webhook-style)
 
@@ -916,16 +916,16 @@ The setup begins inside the Microsoft Teams app. Instruct your users to follow t
   </Step>
 </Steps>
 
-### Register the webhook endpoint (Novu)
+### Register the webhook endpoint (Notify)
 
 Unlike the Bot integration, you don't use `ms_teams_channel` here. Instead, you treat this as a generic webhook endpoint. Your app should provide a form where the user can paste the URL they generated in the previous step.
 
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({ secretKey: "<NOVU_SECRET_KEY>" });
+const notify = new Notify({ secretKey: "<NOVU_SECRET_KEY>" });
 
 await novu.channelEndpoints.create({
   type: 'webhook',
@@ -940,9 +940,9 @@ await novu.channelEndpoints.create({
   <Tab title="Python">
 ```python
 import os
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.channel_endpoints.create(request_body={
         "type": "webhook",
         "identifier": "teams-workflow-alerts",
@@ -982,10 +982,10 @@ res, err := s.ChannelEndpoints.Create(context.Background(), operations.CreateCha
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 $sdk->channelEndpoints->create(
     requestBody: new Components\CreateWebhookEndpointDto(
         identifier: 'teams-workflow-alerts',
@@ -1002,8 +1002,8 @@ $sdk->channelEndpoints->create(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
 await sdk.ChannelEndpoints.CreateAsync(
@@ -1022,10 +1022,10 @@ await sdk.ChannelEndpoints.CreateAsync(
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 novu.channelEndpoints().create()
     .requestBody(CreateWebhookEndpointDto.builder()
         .identifier("teams-workflow-alerts")
@@ -1064,8 +1064,8 @@ curl -L -X POST 'https://api.novu.co/v1/channel-endpoints' \
 When you trigger a workflow that targets this subscriber:
 
 <Steps>
-  <Step title="Novu sends HTTP POST">
-    Novu sends a standard HTTP POST payload to the Teams Workflow URL.
+  <Step title="Notify sends HTTP POST">
+    Notify sends a standard HTTP POST payload to the Teams Workflow URL.
   </Step>
 
 <Step title="Workflows receives payload">
@@ -1081,7 +1081,7 @@ When you trigger a workflow that targets this subscriber:
 Microsoft Teams is a supported [agent provider](/agents/get-started/agents-and-providers). Connect your Teams bot to an agent so users can message the bot and get replies in the same chat - without building Bot Framework webhook handling yourself.
 
 <Card title="Build agents on Teams" icon="bot" href="/agents">
-  Learn how Novu agents work, including managed and custom code agents.
+  Learn how Notify agents work, including managed and custom code agents.
 </Card>
 
 ### What you get
@@ -1099,7 +1099,7 @@ See [agent conversations](/agents/conversations#supported-platforms) for capabil
 | Use case | What happens |
 | --- | --- |
 | **Agent conversation** | The user messages your bot and your agent replies in the same Teams chat. |
-| **Workflow notification** | You trigger a workflow with a Chat step and Novu sends a one-way message via your Teams integration or workflow webhook. |
+| **Workflow notification** | You trigger a workflow with a Chat step and Notify sends a one-way message via your Teams integration or workflow webhook. |
 
 ## Related
 

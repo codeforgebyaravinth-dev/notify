@@ -1,7 +1,7 @@
 import { Test } from '@nestjs/testing';
-import { CreateChange, CreateChangeCommand } from '@novu/application-generic';
-import { ChangeEntityTypeEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { CreateChange, CreateChangeCommand } from '@notify/application-generic';
+import { ChangeEntityTypeEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { SharedModule } from '../../../shared/shared.module';
 import { ChangeModule } from '../../change.module';

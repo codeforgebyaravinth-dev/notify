@@ -1,9 +1,9 @@
-import { safeOutboundJsonRequest } from '@novu/shared/utils/safe-outbound-http';
+import { safeOutboundJsonRequest } from '@notify/shared/utils/safe-outbound-http';
 import {
   assertSafeOutboundUrl,
   normalizeOutboundHttpUrl,
   SsrfBlockedError,
-} from '@novu/shared/utils/ssrf-url-validation';
+} from '@notify/shared/utils/ssrf-url-validation';
 
 const DEFAULT_BLOCKED_PREFIX = 'Chat webhook URL blocked';
 

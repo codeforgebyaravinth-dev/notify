@@ -1,6 +1,6 @@
 # Translations (i18n)
 
-`@novu/framework` workflows are code-first — content is rendered inside your bridge during workflow execution. That means **i18n lives in your application layer**: define translation keys in code (e.g. with [i18next](https://www.i18next.com/)) and resolve them inside step resolvers using `subscriber.locale`.
+`@notify/framework` workflows are code-first — content is rendered inside your bridge during workflow execution. That means **i18n lives in your application layer**: define translation keys in code (e.g. with [i18next](https://www.i18next.com/)) and resolve them inside step resolvers using `subscriber.locale`.
 
 > The Novu **Translation** system on the Dashboard is intended for **Dashboard-defined** workflows. Framework workflows use your own i18n stack instead.
 
@@ -52,7 +52,7 @@ export default i18n;
 ## Use in a workflow
 
 ```typescript
-import { workflow } from "@novu/framework";
+import { workflow } from "@notify/framework";
 import { z } from "zod";
 import i18n from "./translations";
 import { renderEmail } from "./emails/welcome";
@@ -203,7 +203,7 @@ export async function renderEmail(
 
 ```typescript
 // app/api/novu/route.ts
-import { serve } from "@novu/framework/next";
+import { serve } from "@notify/framework/next";
 import { localizedWorkflow } from "@/novu/workflows/welcome-localized";
 
 export const { GET, POST, OPTIONS } = serve({

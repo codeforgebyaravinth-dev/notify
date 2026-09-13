@@ -7,8 +7,8 @@ import {
   GetWorkflowByIdsUseCase,
   ResourceValidatorService,
   TierRestrictionsValidateUsecase,
-} from '@novu/application-generic';
-import { CommunityOrganizationRepository } from '@novu/dal';
+} from '@notify/application-generic';
+import { CommunityOrganizationRepository } from '@notify/dal';
 import { SharedModule } from '../shared/shared.module';
 import { CloudflareStepResolverDeployService } from './services/cloudflare-step-resolver-deploy.service';
 import { StepResolversController } from './step-resolvers.controller';

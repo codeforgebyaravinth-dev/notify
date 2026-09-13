@@ -1,4 +1,4 @@
-import { DEFAULT_LOCALE } from '@novu/shared';
+import { DEFAULT_LOCALE } from '@notify/shared';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { getTranslation, saveTranslation } from '@/api/translations';
 import { showErrorToast } from '@/components/primitives/sonner-helpers';

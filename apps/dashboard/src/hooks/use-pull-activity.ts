@@ -1,4 +1,4 @@
-import { JobStatusEnum } from '@novu/shared';
+import { JobStatusEnum } from '@notify/shared';
 import { useQueryClient } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
 import { ActivityResponse } from '@/api/activity';

@@ -1,8 +1,8 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { PinoLogger } from '@novu/application-generic';
-import { ConversationChannel } from '@novu/dal';
-import type { SentMessageInfo } from '@novu/framework/internal';
-import type { SlackAgentSuggestedPrompt } from '@novu/shared';
+import { PinoLogger } from '@notify/application-generic';
+import { ConversationChannel } from '@notify/dal';
+import type { SentMessageInfo } from '@notify/framework/internal';
+import type { SlackAgentSuggestedPrompt } from '@notify/shared';
 import type { Adapter, AdapterPostableMessage, CardElement, EmojiValue, PlanModel, Thread } from 'chat';
 import { AgentConfigResolver, ResolvedAgentConfig } from '../../channels/agent-config-resolver.service';
 import type { ReplyContentDto } from '../../shared/dtos/agent-reply-payload.dto';

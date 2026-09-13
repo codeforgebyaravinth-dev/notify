@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { UserEntity, UserRepository } from '@novu/dal';
+import { UserEntity, UserRepository } from '@notify/dal';
 import { CreateUserCommand } from './create-user.command';
 
 @Injectable()

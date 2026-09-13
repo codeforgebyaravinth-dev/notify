@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { GetLayoutCommand, GetLayoutUseCase, PinoLogger } from '@novu/application-generic';
-import { LayoutEntity } from '@novu/dal';
+import { GetLayoutCommand, GetLayoutUseCase, PinoLogger } from '@notify/application-generic';
+import { LayoutEntity } from '@notify/dal';
 import { diff } from 'deep-object-diff';
 import { LayoutNormalizer } from '../normalizers/layout.normalizer';
 import { ILayoutComparison, INormalizedLayout } from '../types/layout-sync.types';

@@ -1,9 +1,9 @@
 ---
 title: 'Manage contexts'
-description: "Create, update, retrieve, and delete workflow contexts in Novu through the dashboard or the REST API to power per-tenant and per-environment configuration."
+description: "Create, update, retrieve, and delete workflow contexts in Notify through the dashboard or the REST API to power per-tenant and per-environment configuration."
 ---
 
-Novu lets you manage contexts through the Novu dashboard, or the Novu API. This lets you create, view, update, and delete context entities to suit your application's needs.
+Notify lets you manage contexts through the Notify dashboard, or the Notify API. This lets you create, view, update, and delete context entities to suit your application's needs.
 
 <Warning>
   You can pass a maximum of five contexts per workflow trigger and the serialized `data` object for each context is limited to 64KB.
@@ -11,7 +11,7 @@ Novu lets you manage contexts through the Novu dashboard, or the Novu API. This 
 
 ## Context object schema
 
-When defining contexts, Novu supports multiple formats per key-value pair that let you store and reference metadata relevant to your workflows and templates.
+When defining contexts, Notify supports multiple formats per key-value pair that let you store and reference metadata relevant to your workflows and templates.
 
 Each context consists of:
 - A `type` (for example, tenant, app, or region).
@@ -23,9 +23,9 @@ Supported data formats include:
 <Tabs>
   <Tab title="Node.js">
 ```ts
-import { Novu } from "@novu/api"
+import { Notify } from "@notify/api"
 
-const novu = new Novu({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
+const notify = new Notify({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
 
 await novu.trigger({
   workflowId: "workflowId",
@@ -53,9 +53,9 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="workflowId",
         to={"subscriber_id": "user123"},
@@ -114,10 +114,10 @@ res, err := s.Trigger(context.Background(), components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()
+$sdk = notify\Notify::builder()
     ->setSecurity('<YOUR_SECRET_KEY_HERE>')
     ->build();
 
@@ -146,8 +146,8 @@ $sdk->trigger(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new NovuSDK(secretKey: "<YOUR_SECRET_KEY_HERE>");
@@ -177,11 +177,11 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto() {
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 import java.util.Map;
 
-Novu novu = Novu.builder()
+Notify novu = Notify.builder()
     .secretKey("<YOUR_SECRET_KEY_HERE>")
     .build();
 
@@ -239,19 +239,19 @@ curl -L -g -X POST 'https://api.novu.co/v1/events/trigger' \
 
 ## Create a Context
 
-You can create a new context via the Novu dashboard or API when you want to register reusable metadata. After creation, this context becomes available to all workflows and templates within your environment.
+You can create a new context via the Notify dashboard or API when you want to register reusable metadata. After creation, this context becomes available to all workflows and templates within your environment.
 
 ### Create a context via dashboard
 
 Use the dashboard to manually define contexts that represent key business entities.
 
 <Steps>
-  <Step title="Log in to the Novu dashboard">
-    Open the [Novu Dashboard](https://dashboard.novu.co).
+  <Step title="Log in to the Notify dashboard">
+    Open the [Notify Dashboard](https://dashboard.novu.co).
   </Step>
 
   <Step title="Open Contexts">
-    In the Novu dashboard sidebar, click **Contexts**.
+    In the Notify dashboard sidebar, click **Contexts**.
   </Step>
 
   <Step title="Create context">
@@ -272,14 +272,14 @@ Use the dashboard to manually define contexts that represent key business entiti
 
 ### Create a context via API
 
-Novu provides an API to create a context. If a context with the same `type:id` combination already exists, then the request will fail.
+Notify provides an API to create a context. If a context with the same `type:id` combination already exists, then the request will fail.
 
 <Tabs>
   <Tab title="Node.js">
 ```ts
-import { Novu } from "@novu/api"
+import { Notify } from "@notify/api"
 
-const novu = new Novu({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
+const notify = new Notify({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
 
 await novu.contexts.create({
   type: "tenant",
@@ -294,9 +294,9 @@ await novu.contexts.create({
   <Tab title="Python">
 ```python
 import os
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.contexts.create(create_context_request_dto={
         "type": "tenant",
         "id": "acme-corp",
@@ -331,10 +331,10 @@ res, err := s.Contexts.Create(context.Background(), components.CreateContextRequ
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()
+$sdk = notify\Notify::builder()
     ->setSecurity('<YOUR_SECRET_KEY_HERE>')
     ->build();
 
@@ -352,8 +352,8 @@ $sdk->contexts->create(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new NovuSDK(secretKey: "<YOUR_SECRET_KEY_HERE>");
@@ -370,11 +370,11 @@ await sdk.Contexts.CreateAsync(createContextRequestDto: new CreateContextRequest
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.CreateContextRequestDto;
 import java.util.Map;
 
-Novu novu = Novu.builder()
+Notify novu = Notify.builder()
     .secretKey("<YOUR_SECRET_KEY_HERE>")
     .build();
 
@@ -409,14 +409,14 @@ curl -L -g -X POST 'https://api.novu.co/v2/contexts' \
 
 ### Create a context via API (Just-in-time)
 
-Contexts can also be created automatically when you trigger a workflow that includes a new context object. If the specified `type:id` doesn't exist, then Novu automatically creates it before running the workflow.
+Contexts can also be created automatically when you trigger a workflow that includes a new context object. If the specified `type:id` doesn't exist, then Notify automatically creates it before running the workflow.
 
 <Tabs>
   <Tab title="Node.js">
 ```ts
-import { Novu } from "@novu/api"
+import { Notify } from "@notify/api"
 
-const novu = new Novu({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
+const notify = new Notify({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
 
 await novu.trigger({
   workflowId: "workflowId",
@@ -433,9 +433,9 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="workflowId",
         to={"subscriber_id": "user@example.com"},
@@ -476,10 +476,10 @@ res, err := s.Trigger(context.Background(), components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()
+$sdk = notify\Notify::builder()
     ->setSecurity('<YOUR_SECRET_KEY_HERE>')
     ->build();
 
@@ -498,8 +498,8 @@ $sdk->trigger(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new NovuSDK(secretKey: "<YOUR_SECRET_KEY_HERE>");
@@ -521,11 +521,11 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto() {
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 import java.util.Map;
 
-Novu novu = Novu.builder()
+Notify novu = Notify.builder()
     .secretKey("<YOUR_SECRET_KEY_HERE>")
     .build();
 
@@ -562,7 +562,7 @@ curl -L -g -X POST 'https://api.novu.co/v1/events/trigger' \
   </Tab>
 </Tabs>
 
-If a matching context already exists and you pass only a string identifier, Novu reuses it without changing stored `data`. If you pass a rich object with a `data` field, Novu replaces the stored `data` with the values from your trigger request. This upsert behavior applies to workflow triggers only.
+If a matching context already exists and you pass only a string identifier, Notify reuses it without changing stored `data`. If you pass a rich object with a `data` field, Notify replaces the stored `data` with the values from your trigger request. This upsert behavior applies to workflow triggers only.
 
 Inbox and other subscriber-facing APIs find or create contexts but do not update existing `data`.
 
@@ -573,12 +573,12 @@ You can update a context's data payload at any time. The context `type` and `id`
 #### Update a context via dashboard
 
 <Steps>
-  <Step title="Log in to the Novu dashboard">
-    Open the [Novu Dashboard](https://dashboard.novu.co).
+  <Step title="Log in to the Notify dashboard">
+    Open the [Notify Dashboard](https://dashboard.novu.co).
   </Step>
 
   <Step title="Open Contexts">
-    In the Novu dashboard sidebar, click **Contexts**.
+    In the Notify dashboard sidebar, click **Contexts**.
   </Step>
 
   <Step title="Select the context">
@@ -595,14 +595,14 @@ You can update a context's data payload at any time. The context `type` and `id`
 
 ### Update a context via API
 
-Novu provides an API to update an existing context. The `data` object is replaced entirely during updates (not merged). Include all fields you want to retain.
+Notify provides an API to update an existing context. The `data` object is replaced entirely during updates (not merged). Include all fields you want to retain.
 
 <Tabs>
   <Tab title="Node.js">
 ```ts
-import { Novu } from "@novu/api"
+import { Notify } from "@notify/api"
 
-const novu = new Novu({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
+const notify = new Notify({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
 
 await novu.contexts.update({
   type: "tenant",
@@ -619,9 +619,9 @@ await novu.contexts.update({
   <Tab title="Python">
 ```python
 import os
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.contexts.update(
         type_="tenant",
         id="acme-corp",
@@ -656,10 +656,10 @@ res, err := s.Contexts.Update(context.Background(), "acme-corp", "tenant", compo
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()
+$sdk = notify\Notify::builder()
     ->setSecurity('<YOUR_SECRET_KEY_HERE>')
     ->build();
 
@@ -677,8 +677,8 @@ $sdk->contexts->update(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new NovuSDK(secretKey: "<YOUR_SECRET_KEY_HERE>");
@@ -697,11 +697,11 @@ await sdk.Contexts.UpdateAsync(
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.UpdateContextRequestDto;
 import java.util.Map;
 
-Novu novu = Novu.builder()
+Notify novu = Notify.builder()
     .secretKey("<YOUR_SECRET_KEY_HERE>")
     .build();
 
@@ -739,12 +739,12 @@ You can retrieve a context to verify its data, confirm its creation, or inspect 
 ### Retrieve a context via dashboard
 
 <Steps>
-  <Step title="Log in to the Novu dashboard">
-    Open the [Novu Dashboard](https://dashboard.novu.co).
+  <Step title="Log in to the Notify dashboard">
+    Open the [Notify Dashboard](https://dashboard.novu.co).
   </Step>
 
   <Step title="Open Contexts">
-    In the Novu dashboard sidebar, click **Contexts**.
+    In the Notify dashboard sidebar, click **Contexts**.
   </Step>
 
   <Step title="View context details">
@@ -754,14 +754,14 @@ You can retrieve a context to verify its data, confirm its creation, or inspect 
 
 ### Retrieve a context via API
 
-Novu provides an API to retrieve a single, specific context by providing its `type` and `id` in the URL.
+Notify provides an API to retrieve a single, specific context by providing its `type` and `id` in the URL.
 
 <Tabs>
   <Tab title="Node.js">
 ```ts
-import { Novu } from "@novu/api"
+import { Notify } from "@notify/api"
 
-const novu = new Novu({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
+const notify = new Notify({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
 
 await novu.contexts.retrieve("tenant", "acme-corp");
 ```
@@ -769,9 +769,9 @@ await novu.contexts.retrieve("tenant", "acme-corp");
   <Tab title="Python">
 ```python
 import os
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.contexts.retrieve(type_="tenant", id="acme-corp")
 ```
   </Tab>
@@ -791,9 +791,9 @@ res, err := s.Contexts.Retrieve(context.Background(), "acme-corp", "tenant", nil
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
+use notify;
 
-$sdk = novu\Novu::builder()
+$sdk = notify\Notify::builder()
     ->setSecurity('<YOUR_SECRET_KEY_HERE>')
     ->build();
 
@@ -805,7 +805,7 @@ $sdk->contexts->retrieve(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
+using Notify;
 
 var sdk = new NovuSDK(secretKey: "<YOUR_SECRET_KEY_HERE>");
 
@@ -817,9 +817,9 @@ await sdk.Contexts.RetrieveAsync(
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 
-Novu novu = Novu.builder()
+Notify novu = Notify.builder()
     .secretKey("<YOUR_SECRET_KEY_HERE>")
     .build();
 
@@ -845,12 +845,12 @@ You can list all contexts in your environment or search for specific ones by con
 ### List or search for contexts via dashboard
 
 <Steps>
-  <Step title="Log in to the Novu dashboard">
-    Open the [Novu Dashboard](https://dashboard.novu.co).
+  <Step title="Log in to the Notify dashboard">
+    Open the [Notify Dashboard](https://dashboard.novu.co).
   </Step>
 
   <Step title="Open Contexts">
-    In the Novu dashboard sidebar, click **Contexts**.
+    In the Notify dashboard sidebar, click **Contexts**.
   </Step>
 
   <Step title="Search contexts">
@@ -860,14 +860,14 @@ You can list all contexts in your environment or search for specific ones by con
 
 ### List or search for contexts via API
 
-Novu provides an API that lists or searches available contexts. Use pagination and search parameters to retrieve subsets efficiently.
+Notify provides an API that lists or searches available contexts. Use pagination and search parameters to retrieve subsets efficiently.
 
 <Tabs>
   <Tab title="Node.js">
 ```ts
-import { Novu } from "@novu/api"
+import { Notify } from "@notify/api"
 
-const novu = new Novu({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
+const notify = new Notify({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
 
 await novu.contexts.list({ search: "acme" });
 ```
@@ -875,9 +875,9 @@ await novu.contexts.list({ search: "acme" });
   <Tab title="Python">
 ```python
 import os
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.contexts.list(request={"search": "acme"})
 ```
   </Tab>
@@ -901,10 +901,10 @@ res, err := s.Contexts.List(context.Background(), operations.ContextsControllerL
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Operations;
+use notify;
+use notify\Models\Operations;
 
-$sdk = novu\Novu::builder()
+$sdk = notify\Notify::builder()
     ->setSecurity('<YOUR_SECRET_KEY_HERE>')
     ->build();
 
@@ -917,8 +917,8 @@ $sdk->contexts->list(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Requests;
+using Notify;
+using Notify.Models.Requests;
 
 var sdk = new NovuSDK(secretKey: "<YOUR_SECRET_KEY_HERE>");
 
@@ -929,10 +929,10 @@ await sdk.Contexts.ListAsync(new ContextsControllerListContextsRequest() {
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.operations.ContextsControllerListContextsRequest;
 
-Novu novu = Novu.builder()
+Notify novu = Notify.builder()
     .secretKey("<YOUR_SECRET_KEY_HERE>")
     .build();
 
@@ -954,7 +954,7 @@ curl -L -g -X GET 'https://api.novu.co/v2/contexts?search=acme' \
 
 ## Delete a context
 
-Delete a context if it's no longer needed. This action permanently removes the context from your Novu environment. 
+Delete a context if it's no longer needed. This action permanently removes the context from your Notify environment. 
 
 <Warning>
   Deleting a context cannot be undone. Ensure the context is no longer required by any active or historical workflows you might need to analyze. 
@@ -963,12 +963,12 @@ Delete a context if it's no longer needed. This action permanently removes the c
 ### Delete a context via dashboard
 
 <Steps>
-  <Step title="Log in to the Novu dashboard">
-    Open the [Novu Dashboard](https://dashboard.novu.co).
+  <Step title="Log in to the Notify dashboard">
+    Open the [Notify Dashboard](https://dashboard.novu.co).
   </Step>
 
   <Step title="Open Contexts">
-    In the Novu dashboard sidebar, click **Contexts**.
+    In the Notify dashboard sidebar, click **Contexts**.
   </Step>
 
   <Step title="Select the context to remove">
@@ -988,14 +988,14 @@ Delete a context if it's no longer needed. This action permanently removes the c
 
 ### Delete a context via API
 
-Novu provides an API that you can use to delete a context. Once deleted, the context will no longer be available for use in new workflow executions.
+Notify provides an API that you can use to delete a context. Once deleted, the context will no longer be available for use in new workflow executions.
 
 <Tabs>
   <Tab title="Node.js">
 ```ts
-import { Novu } from "@novu/api"
+import { Notify } from "@notify/api"
 
-const novu = new Novu({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
+const notify = new Notify({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
 
 await novu.contexts.delete("tenant", "acme-corp");
 ```
@@ -1003,9 +1003,9 @@ await novu.contexts.delete("tenant", "acme-corp");
   <Tab title="Python">
 ```python
 import os
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.contexts.delete(type_="tenant", id="acme-corp")
 ```
   </Tab>
@@ -1025,9 +1025,9 @@ res, err := s.Contexts.Delete(context.Background(), "acme-corp", "tenant", nil)
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
+use notify;
 
-$sdk = novu\Novu::builder()
+$sdk = notify\Notify::builder()
     ->setSecurity('<YOUR_SECRET_KEY_HERE>')
     ->build();
 
@@ -1039,7 +1039,7 @@ $sdk->contexts->delete(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
+using Notify;
 
 var sdk = new NovuSDK(secretKey: "<YOUR_SECRET_KEY_HERE>");
 
@@ -1051,9 +1051,9 @@ await sdk.Contexts.DeleteAsync(
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 
-Novu novu = Novu.builder()
+Notify novu = Notify.builder()
     .secretKey("<YOUR_SECRET_KEY_HERE>")
     .build();
 

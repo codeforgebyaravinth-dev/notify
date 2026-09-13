@@ -5,9 +5,9 @@ import {
   getAgentRuntimeProvider,
   getNovuManagedClaudeApiKey,
   resolveAgentRuntime,
-} from '@novu/application-generic';
-import { AgentRepository, ConversationRepository, IntegrationRepository } from '@novu/dal';
-import { AGENT_MANAGED_DEFINITION_VERSION, AgentRuntimeProviderIdEnum, IntegrationKindEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { AgentRepository, ConversationRepository, IntegrationRepository } from '@notify/dal';
+import { AGENT_MANAGED_DEFINITION_VERSION, AgentRuntimeProviderIdEnum, IntegrationKindEnum } from '@notify/shared';
 import { MigrateAgentRuntimeCommand } from './migrate-agent-runtime.command';
 
 @Injectable()

@@ -5,7 +5,7 @@ import {
   type IIntegration,
   PermissionsEnum,
   slugify,
-} from '@novu/shared';
+} from '@notify/shared';
 import { keepPreviousData, useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { RiArrowRightSLine, RiRobot2Line } from 'react-icons/ri';

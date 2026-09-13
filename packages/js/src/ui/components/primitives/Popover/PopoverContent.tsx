@@ -8,7 +8,7 @@ import { usePopover } from './PopoverRoot';
 
 export const popoverContentVariants = cva(
   cn(
-    'nt-rounded-xl nt-bg-background',
+    'nt-nt-rounded-none nt-bg-background',
     'nt-shadow-popover nt-animate-in nt-slide-in-from-top-2 nt-fade-in nt-cursor-default nt-flex nt-flex-col nt-overflow-hidden nt-border nt-border-border nt-z-10'
   ),
   {

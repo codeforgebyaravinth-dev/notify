@@ -5,7 +5,7 @@ import {
   type IIntegration,
   providers as novuProviders,
   PROVIDER_ID_TO_CHANNEL_MAP,
-} from '@novu/shared';
+} from '@notify/shared';
 import { useMemo, useState } from 'react';
 import {
   RiAddLine,

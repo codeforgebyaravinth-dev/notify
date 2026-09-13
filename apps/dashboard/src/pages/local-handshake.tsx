@@ -1,4 +1,4 @@
-import { EnvironmentTypeEnum, FeatureFlagsKeysEnum, IEnvironment } from '@novu/shared';
+import { EnvironmentTypeEnum, FeatureFlagsKeysEnum, IEnvironment } from '@notify/shared';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { RiPlugLine, RiTerminalBoxLine } from 'react-icons/ri';
 import { Navigate, useNavigate, useSearchParams } from 'react-router-dom';

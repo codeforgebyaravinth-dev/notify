@@ -1,4 +1,4 @@
-import { SlackConnectButtonProps } from '@novu/js/ui';
+import { SlackConnectButtonProps } from '@notify/js/ui';
 import { useCallback } from 'react';
 import { useNovuUI } from '../../context/NovuUIContext';
 import { Mounter } from '../Mounter';

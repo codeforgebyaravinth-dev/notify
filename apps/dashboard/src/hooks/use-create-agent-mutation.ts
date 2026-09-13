@@ -4,7 +4,7 @@ import {
   CLAUDE_BUILTIN_TOOLS,
   type IIntegration,
   IntegrationKindEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useCallback, useState } from 'react';
 import { AGENTS_LIST_QUERY_KEY, type AgentResponse, type CreateAgentBody, createAgent } from '@/api/agents';

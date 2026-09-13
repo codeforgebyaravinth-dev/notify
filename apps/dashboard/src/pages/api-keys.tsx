@@ -1,4 +1,4 @@
-import { FeatureFlagsKeysEnum, IApiKey, PermissionsEnum } from '@novu/shared';
+import { FeatureFlagsKeysEnum, IApiKey, PermissionsEnum } from '@notify/shared';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { RiDeleteBin2Line, RiEyeLine, RiEyeOffLine, RiLoopRightFill } from 'react-icons/ri';

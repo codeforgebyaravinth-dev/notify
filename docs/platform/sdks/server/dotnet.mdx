@@ -1,16 +1,16 @@
 ---
 title: '.NET'
-description: "Connect a .NET application to Novu with the official server SDK to trigger workflows, manage subscribers, and send notifications from C# code."
+description: "Connect a .NET application to Notify with the official server SDK to trigger workflows, manage subscribers, and send notifications from C# code."
 ---
 
-Novu's .NET SDK provides simple, yet comprehensive notification management, and delivery capabilities through multiple channels that you can implement using code that integrates seamlessly with your C#/.NET application.
+Notify's .NET SDK provides simple, yet comprehensive notification management, and delivery capabilities through multiple channels that you can implement using code that integrates seamlessly with your C#/.NET application.
 
 [Explore the source code on GitHub](https://github.com/novuhq/novu-csharp)
 
 ## Installation
 
 ```csharp
-dotnet add package Novu
+dotnet add package Notify
 ```
 
 ## Usage
@@ -18,8 +18,8 @@ dotnet add package Novu
 <Tabs>
   <Tab title="US Region">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new NovuSDK(secretKey: "YOUR_SECRET_KEY_HERE");
@@ -41,8 +41,8 @@ var res = await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequest
   </Tab>
   <Tab title="EU Region">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new NovuSDK(

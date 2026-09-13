@@ -1,10 +1,10 @@
 ---
 title: 'Personalize Content'
-description: 'Learn how to personalize notification content in Novu using template variables, context data, and LiquidJS filters across all channel template editors.'
+description: 'Learn how to personalize notification content in Notify using template variables, context data, and LiquidJS filters across all channel template editors.'
 ---
 
 
-Novu allows you to personalize notification content in all channel template editors using variables, conditional logic, and runtime data. This enables you to generate notifications that adapt to each subscriber and reflect the data available at the time a workflow is executed.
+Notify allows you to personalize notification content in all channel template editors using variables, conditional logic, and runtime data. This enables you to generate notifications that adapt to each subscriber and reflect the data available at the time a workflow is executed.
 
 ## Template variables
 
@@ -78,7 +78,7 @@ Hi {{ subscriber.firstName }},
 You've been upgraded to the {{ subscriber.data.plan }} plan.
  
 Thanks,
-The Novu Team
+The Notify Team
 ```
 
 <Note>
@@ -187,13 +187,13 @@ They exist to reduce template complexity and eliminate repetitive logic.
 
 ### Context variables
 
-Context variables come from context data. Once a context is created either through the Novu dashboard or API, its data becomes available in all channel template editors and can be referenced using the context namespace.
+Context variables come from context data. Once a context is created either through the Notify dashboard or API, its data becomes available in all channel template editors and can be referenced using the context namespace.
 
 ```liquid
 {{ context.* }}
 ```
 
-Context variables are typically used for tenant details, branding and configuration that should not live in the workflow payload or data shared amongst different entities in Novu.
+Context variables are typically used for tenant details, branding and configuration that should not live in the workflow payload or data shared amongst different entities in Notify.
 
 <Note>
   To learn how to create and manage context data, and how to use the context data in the template editor, refer to [Context](/platform/workflow/advanced-features/contexts).
@@ -201,7 +201,7 @@ Context variables are typically used for tenant details, branding and configurat
 
 ## Apply logic with LiquidJS
 
-All Novu template editors support [LiquidJS](https://liquidjs.com/index.html). This allows you to add logic and control flow to your notification content, including conditional rendering, iteration, and value transformation directly inside channel template editors.
+All Notify template editors support [LiquidJS](https://liquidjs.com/index.html). This allows you to add logic and control flow to your notification content, including conditional rendering, iteration, and value transformation directly inside channel template editors.
 
 <Note>
   Autocomplete suggestions are not available inside control statements like `{% if %}` or `{% for %}`.
@@ -241,7 +241,7 @@ Your workspace {{ payload.workspaceName | upcase }} has been successfully create
 
 ## Configure variables
 
-Novu provides a built-in variable configuration UI in the template editor that allows you to apply LiquidJS filters to variable output.
+Notify provides a built-in variable configuration UI in the template editor that allows you to apply LiquidJS filters to variable output.
 
 ![Configure variable](/images/workflows/add-notification-content/personalize-content/configure-variable.png)
 

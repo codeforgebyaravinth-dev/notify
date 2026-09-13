@@ -1,13 +1,13 @@
 ---
 title: 'Applying context'
-description: "Apply contexts in Novu workflows to personalize notification templates, control workflow logic, and customize per-tenant behavior in the Inbox."
+description: "Apply contexts in Notify workflows to personalize notification templates, control workflow logic, and customize per-tenant behavior in the Inbox."
 ---
 
 Contexts let you personalize how notifications are rendered and delivered by making contextual data available inside template editors, step conditions, and the [`<Inbox />`](/platform/inbox/configuration/inbox-with-context) component.
 
 ## How to use context
 
-Once a context is created either through the Novu dashboard or API, its data becomes available for use in your templates editors, step conditions, and for customizing the [`<Inbox />`](/platform/inbox/configuration/inbox-with-context) component.
+Once a context is created either through the Notify dashboard or API, its data becomes available for use in your templates editors, step conditions, and for customizing the [`<Inbox />`](/platform/inbox/configuration/inbox-with-context) component.
 
 ### Using context data in the template editor
 
@@ -57,13 +57,13 @@ To learn how contexts are structured or how to define them, refer to the [Managi
 
 ## Viewing and debugging contexts
 
-Once you start using contexts in your workflows, Novu provides full observability so you can monitor and debug your context usage after a workflow has been triggered.
+Once you start using contexts in your workflows, Notify provides full observability so you can monitor and debug your context usage after a workflow has been triggered.
 
 ### Searching for workflow runs
 
 You can filter your workflow runs to find all executions associated with a specific context.
 
-1. Navigate to the **Activity Feed** in your Novu dashboard.
+1. Navigate to the **Activity Feed** in your Notify dashboard.
 2. Select the **Workflow Runs** tab.
 3. In the search bar, click **Context** and enter the context `type` and `id` using the format `type:id`.
 
@@ -71,7 +71,7 @@ You can filter your workflow runs to find all executions associated with a speci
 
 ### Verifying the resolved context
 
-To confirm that Novu received and processed your context data correctly, you can inspect the API traces for a specific run.
+To confirm that Notify received and processed your context data correctly, you can inspect the API traces for a specific run.
 
 1. From the **Activity Feed**, select the relevant workflow run from the list in the **Requests** tab.
 2. In the workflow run details, go to the **API Traces** tab.

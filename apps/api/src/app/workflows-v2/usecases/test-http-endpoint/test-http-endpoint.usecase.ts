@@ -14,9 +14,9 @@ import {
   resolveHttpRequestBody,
   SsrfBlockedError,
   shouldIncludeBody,
-} from '@novu/application-generic';
-import { compileJsonControlValues, createLiquidEngine, repairJsonString } from '@novu/framework/internal';
-import { isOutboundSsrfProtectionEnabled } from '@novu/shared';
+} from '@notify/application-generic';
+import { compileJsonControlValues, createLiquidEngine, repairJsonString } from '@notify/framework/internal';
+import { isOutboundSsrfProtectionEnabled } from '@notify/shared';
 import { Liquid } from 'liquidjs';
 import { TestHttpEndpointResponseDto } from '../../dtos/test-http-endpoint.dto';
 import { TestHttpEndpointCommand } from './test-http-endpoint.command';

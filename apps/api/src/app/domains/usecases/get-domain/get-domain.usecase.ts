@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { DomainRepository } from '@novu/dal';
+import { DomainRepository } from '@notify/dal';
 import { DomainResponseDto } from '../../dtos/domain-response.dto';
 import { toDomainResponse } from '../../mappers/domain-response.mapper';
 import { buildExpectedDnsRecords } from '../../utils/dns-records';

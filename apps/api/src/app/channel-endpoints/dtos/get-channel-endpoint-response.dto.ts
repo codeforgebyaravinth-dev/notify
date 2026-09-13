@@ -5,7 +5,7 @@ import {
   ENDPOINT_TYPES,
   ProvidersIdEnum,
   ProvidersIdEnumConst,
-} from '@novu/shared';
+} from '@notify/shared';
 import {
   GrafanaOnCallIntegrationEndpointDto,
   LineUserEndpointDto,

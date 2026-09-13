@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { ChannelEndpointType, ENDPOINT_TYPES } from '@novu/shared';
+import { ChannelEndpointType, ENDPOINT_TYPES } from '@notify/shared';
 
 export class InboxChannelEndpointResponseDto {
   @ApiProperty({

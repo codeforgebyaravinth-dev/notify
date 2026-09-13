@@ -22,7 +22,7 @@ import {
   type WorkflowForTrace,
   WorkflowRunService,
   WorkflowRunStatusEnum,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   JobEntity,
   JobRepository,
@@ -32,14 +32,14 @@ import {
   NotificationTemplateRepository,
   RUNNING_CLAIM_RENEW_INTERVAL_MS,
   SubscriberRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   ExecutionDetailsSourceEnum,
   ExecutionDetailsStatusEnum,
   FeatureFlagsKeysEnum,
   Schedule,
   StepTypeEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { setUser } from '@sentry/node';
 import { differenceInMilliseconds } from 'date-fns';
 import { formatInTimeZone } from 'date-fns-tz';

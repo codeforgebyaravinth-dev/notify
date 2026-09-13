@@ -1,5 +1,5 @@
 {
-  "name": "@novu/nextjs",
+  "name": "@notify/nextjs",
   "version": "3.18.2",
   "repository": {
     "type": "git",
@@ -100,7 +100,7 @@
     }
   },
   "dependencies": {
-    "@novu/react": "workspace:*"
+    "@notify/react": "workspace:*"
   },
   "nx": {
     "tags": [

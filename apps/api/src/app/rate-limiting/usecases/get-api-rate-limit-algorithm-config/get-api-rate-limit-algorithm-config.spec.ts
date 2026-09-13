@@ -3,7 +3,7 @@ import {
   ApiRateLimitAlgorithmEnum,
   ApiRateLimitAlgorithmEnvVarFormat,
   DEFAULT_API_RATE_LIMIT_ALGORITHM_CONFIG,
-} from '@novu/shared';
+} from '@notify/shared';
 import { expect } from 'chai';
 import { GetApiRateLimitAlgorithmConfig } from './get-api-rate-limit-algorithm-config.usecase';
 

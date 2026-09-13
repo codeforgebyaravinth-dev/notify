@@ -1,4 +1,4 @@
-import { DuplicateLayoutDto, LayoutCreationSourceEnum } from '@novu/shared';
+import { DuplicateLayoutDto, LayoutCreationSourceEnum } from '@notify/shared';
 import { useState } from 'react';
 import { RiArrowRightSLine } from 'react-icons/ri';
 import { useNavigate } from 'react-router-dom';

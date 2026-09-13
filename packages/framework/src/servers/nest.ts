@@ -4,12 +4,12 @@
  *
  * Example:
  *
- * import { NovuModule, Client, type Workflow } from '@novu/framework/nest';
+ * import { NovuModule, Client, type Workflow } from '@notify/framework/nest';
  *
  * instead of
  *
- * import { NovuModule } from '@novu/framework/nest';
- * import { Client, type Workflow } from '@novu/framework';
+ * import { NovuModule } from '@notify/framework/nest';
+ * import { Client, type Workflow } from '@notify/framework';
  */
 export * from '../index';
 export * from './nest/nest.client';

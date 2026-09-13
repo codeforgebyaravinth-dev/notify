@@ -92,7 +92,7 @@ export const TimeSelect = (props: TimeSelectProps) => {
       <Dropdown.Content
         portal
         appearanceKey="timeSelect__dropdownContent"
-        class="-nt-mt-2 nt-rounded-md nt-min-w-[120px] nt-max-w-[120px] nt-max-h-[160px] nt-overflow-y-auto"
+        class="-nt-mt-2 nt-nt-rounded-none nt-min-w-[120px] nt-max-w-[120px] nt-max-h-[160px] nt-overflow-y-auto"
       >
         <For each={hours}>
           {(hour) => (

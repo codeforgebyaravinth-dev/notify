@@ -1,5 +1,5 @@
-import { AnalyticsService } from '@novu/application-generic';
-import { SubscriberRepository } from '@novu/dal';
+import { AnalyticsService } from '@notify/application-generic';
+import { SubscriberRepository } from '@notify/dal';
 import {
   ChannelTypeEnum,
   ISubscriberPreferenceResponse,
@@ -10,7 +10,7 @@ import {
   SeverityLevelEnum,
   TriggerTypeEnum,
   WorkflowCriticalityEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { GetSubscriberGlobalPreference } from '../../../subscribers/usecases/get-subscriber-global-preference';

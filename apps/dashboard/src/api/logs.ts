@@ -1,4 +1,4 @@
-import { IEnvironment } from '@novu/shared';
+import { IEnvironment } from '@notify/shared';
 import { RequestLog, RequestTraces } from '../types/logs';
 import { get } from './api.client';
 

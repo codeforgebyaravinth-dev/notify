@@ -1,4 +1,4 @@
-import { ConnectionMode } from '@novu/shared';
+import { ConnectionMode } from '@notify/shared';
 import { IsArray, IsDefined, IsIn, IsOptional, IsString } from 'class-validator';
 import { EnvironmentCommand } from '../../../shared/commands/project.command';
 

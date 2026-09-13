@@ -1,6 +1,6 @@
 import { forwardRef, Module } from '@nestjs/common';
 import { TerminusModule } from '@nestjs/terminus';
-import { CommunityOrganizationRepository } from '@novu/dal';
+import { CommunityOrganizationRepository } from '@notify/dal';
 import { AuthModule } from '../auth/auth.module';
 import { ChannelEndpointsModule } from '../channel-endpoints/channel-endpoints.module';
 import { OutboundWebhooksModule } from '../outbound-webhooks/outbound-webhooks.module';

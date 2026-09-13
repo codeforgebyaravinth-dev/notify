@@ -8,12 +8,12 @@ import { getResponse } from '../utils';
  *
  * Example:
  *
- * import { serve, Client, type Workflow } from '@novu/framework/remix';
+ * import { serve, Client, type Workflow } from '@notify/framework/remix';
  *
  * instead of
  *
- * import { serve } from '@novu/framework/remix';
- * import { Client, type Workflow } from '@novu/framework';
+ * import { serve } from '@notify/framework/remix';
+ * import { Client, type Workflow } from '@notify/framework';
  */
 export * from '../index';
 export const frameworkName: SupportedFrameworkName = 'remix';
@@ -30,7 +30,7 @@ export const frameworkName: SupportedFrameworkName = 'remix';
  *
  * @example
  * ```ts
- * import { serve } from "@novu/framework/remix";
+ * import { serve } from "@notify/framework/remix";
  * import { myWorkflow } from "./src/novu/workflows";
  *
  * const handler = serve({ workflows: [myWorkflow] });

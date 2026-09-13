@@ -1,4 +1,4 @@
-import { EnvironmentTypeEnum, type UiSchema } from '@novu/shared';
+import { EnvironmentTypeEnum, type UiSchema } from '@notify/shared';
 
 import { getComponentByType } from '@/components/workflow-editor/steps/component-utils';
 import { TabsSection } from '@/components/workflow-editor/steps/tabs-section';

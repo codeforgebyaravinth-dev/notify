@@ -1,4 +1,4 @@
-import { BaseCommand } from '@novu/application-generic';
+import { BaseCommand } from '@notify/application-generic';
 import { IsDefined, IsOptional, IsString } from 'class-validator';
 
 export class CreateSupportThreadCommand extends BaseCommand {

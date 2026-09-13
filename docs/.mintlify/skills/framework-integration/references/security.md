@@ -27,8 +27,8 @@ You don't write any verification code — `serve()` handles it.
 ### Override behavior
 
 ```typescript
-import { Client as NovuFrameworkClient } from "@novu/framework";
-import { serve } from "@novu/framework/next";
+import { Client as NovuFrameworkClient } from "@notify/framework";
+import { serve } from "@notify/framework/next";
 
 export const { GET, POST, OPTIONS } = serve({
   client: new NovuFrameworkClient({
@@ -76,8 +76,8 @@ The Framework reads these env vars by default (you can override with the `Client
 ### EU Region Setup
 
 ```typescript
-import { Client as NovuFrameworkClient } from "@novu/framework";
-import { serve } from "@novu/framework/next";
+import { Client as NovuFrameworkClient } from "@notify/framework";
+import { serve } from "@notify/framework/next";
 
 export const { GET, POST, OPTIONS } = serve({
   client: new NovuFrameworkClient({

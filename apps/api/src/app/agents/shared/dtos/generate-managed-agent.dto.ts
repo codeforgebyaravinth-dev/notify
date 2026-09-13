@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import type { AgentRuntime } from '@novu/shared';
+import type { AgentRuntime } from '@notify/shared';
 import { Type } from 'class-transformer';
 import {
   IsArray,

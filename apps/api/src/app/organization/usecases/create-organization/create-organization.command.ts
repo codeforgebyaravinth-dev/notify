@@ -1,4 +1,4 @@
-import { ApiServiceLevelEnum, JobTitleEnum } from '@novu/shared';
+import { ApiServiceLevelEnum, JobTitleEnum } from '@notify/shared';
 import { IsDefined, IsEnum, IsOptional, IsString } from 'class-validator';
 
 import { AuthenticatedCommand } from '../../../shared/commands/authenticated.command';

@@ -5,9 +5,9 @@ import {
   NotFoundException,
   UnauthorizedException,
 } from '@nestjs/common';
-import { encryptSecret, PinoLogger } from '@novu/application-generic';
-import { IntegrationRepository } from '@novu/dal';
-import { ChatProviderIdEnum } from '@novu/shared';
+import { encryptSecret, PinoLogger } from '@notify/application-generic';
+import { IntegrationRepository } from '@notify/dal';
+import { ChatProviderIdEnum } from '@notify/shared';
 import { ConfigureTelegramWebhookCommand } from '../configure-telegram-webhook/configure-telegram-webhook.command';
 import { ConfigureTelegramWebhook } from '../configure-telegram-webhook/configure-telegram-webhook.usecase';
 import { IssueTelegramSubscriberLinkCommand } from '../issue-telegram-subscriber-link/issue-telegram-subscriber-link.command';

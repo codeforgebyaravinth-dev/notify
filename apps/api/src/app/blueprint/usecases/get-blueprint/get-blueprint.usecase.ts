@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 
-import { NotificationTemplateEntity, NotificationTemplateRepository } from '@novu/dal';
+import { NotificationTemplateEntity, NotificationTemplateRepository } from '@notify/dal';
 import { GetBlueprintResponse } from '../../dtos/get-blueprint.response.dto';
 import { GetBlueprintCommand } from './get-blueprint.command';
 

@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
-import { buildVariablesKey, CachedResponse, PinoLogger } from '@novu/application-generic';
-import { SystemVariablesWithTypes } from '@novu/shared';
+import { buildVariablesKey, CachedResponse, PinoLogger } from '@notify/application-generic';
+import { SystemVariablesWithTypes } from '@notify/shared';
 import { TRANSLATIONS_SERVICE } from '../../../shared/constants';
 import { GetWorkflowVariablesCommand } from './get-workflow-variables.command';
 

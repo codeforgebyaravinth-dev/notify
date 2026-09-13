@@ -26,7 +26,7 @@ describe('computeLangChainRequirements', () => {
       path.join(dir, 'package.json'),
       JSON.stringify({
         dependencies: {
-          '@novu/framework': 'latest',
+          '@notify/framework': 'latest',
           langchain: '^1.0.0',
           '@langchain/core': '^1.0.0',
         },
@@ -39,10 +39,10 @@ describe('computeLangChainRequirements', () => {
     fs.mkdirSync(path.join(dir, 'app/novu/agents'), { recursive: true });
     fs.writeFileSync(
       path.join(dir, 'app/novu/agents/support-agent.tsx'),
-      "import { agent } from '@novu/framework/langchain';\nexport const supportAgent = agent('x', {});"
+      "import { agent } from '@notify/framework/langchain';\nexport const supportAgent = agent('x', {});"
     );
     fs.mkdirSync(path.join(dir, 'app/api/novu'), { recursive: true });
-    fs.writeFileSync(path.join(dir, 'app/api/novu/route.ts'), "import { serve } from '@novu/framework/next';");
+    fs.writeFileSync(path.join(dir, 'app/api/novu/route.ts'), "import { serve } from '@notify/framework/next';");
 
     const snapshot = computeLangChainRequirements({
       projectDir: dir,
@@ -78,7 +78,7 @@ describe('computeLangChainRequirements', () => {
       path.join(dir, 'package.json'),
       JSON.stringify({
         dependencies: {
-          '@novu/framework': 'latest',
+          '@notify/framework': 'latest',
           langchain: '^1.0.0',
           '@langchain/core': '^1.0.0',
           '@langchain/openai': '^1.0.0',
@@ -92,10 +92,10 @@ describe('computeLangChainRequirements', () => {
     fs.mkdirSync(path.join(dir, 'app/novu/agents'), { recursive: true });
     fs.writeFileSync(
       path.join(dir, 'app/novu/agents/support-agent.tsx'),
-      "import { agent } from '@novu/framework/langchain';\nexport const supportAgent = agent('x', {});"
+      "import { agent } from '@notify/framework/langchain';\nexport const supportAgent = agent('x', {});"
     );
     fs.mkdirSync(path.join(dir, 'app/api/novu'), { recursive: true });
-    fs.writeFileSync(path.join(dir, 'app/api/novu/route.ts'), "import { serve } from '@novu/framework/next';");
+    fs.writeFileSync(path.join(dir, 'app/api/novu/route.ts'), "import { serve } from '@notify/framework/next';");
 
     const snapshot = computeLangChainRequirements({
       projectDir: dir,

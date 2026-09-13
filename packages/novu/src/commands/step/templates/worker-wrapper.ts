@@ -16,8 +16,8 @@ function generateImports(steps: DiscoveredStep[], rootDir: string): string {
     .map((s, i) => `import stepHandler${i} from ${JSON.stringify(getImportPath(s.filePath, rootDir))};`)
     .join('\n');
 
-  return `import { validateData } from '@novu/framework/validators';
-import { actionStepSchemas, channelStepSchemas, providerSchemas } from '@novu/framework/step-resolver';\n${stepImports}`;
+  return `import { validateData } from '@notify/framework/validators';
+import { actionStepSchemas, channelStepSchemas, providerSchemas } from '@notify/framework/step-resolver';\n${stepImports}`;
 }
 
 function generateValidatorPrecompilation(steps: DiscoveredStep[]): string {

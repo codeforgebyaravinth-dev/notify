@@ -1,6 +1,6 @@
-import { BaseCommand } from '@novu/application-generic';
+import { BaseCommand } from '@notify/application-generic';
 
-import { JobTitleEnum, ProductUseCases, SignUpOriginEnum } from '@novu/shared';
+import { JobTitleEnum, ProductUseCases, SignUpOriginEnum } from '@notify/shared';
 import { IsBoolean, IsDefined, IsEmail, IsEnum, IsNotEmpty, IsOptional, IsString, MinLength } from 'class-validator';
 
 export class UserRegisterCommand extends BaseCommand {

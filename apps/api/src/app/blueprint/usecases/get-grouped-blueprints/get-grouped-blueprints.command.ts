@@ -1,3 +1,3 @@
-import { EnvironmentLevelCommand } from '@novu/application-generic';
+import { EnvironmentLevelCommand } from '@notify/application-generic';
 
 export class GetGroupedBlueprintsCommand extends EnvironmentLevelCommand {}

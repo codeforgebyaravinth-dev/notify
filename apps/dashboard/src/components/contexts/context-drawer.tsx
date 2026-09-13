@@ -1,4 +1,4 @@
-import { ContextId, ContextType, createContextKey } from '@novu/shared';
+import { ContextId, ContextType, createContextKey } from '@notify/shared';
 import React, { forwardRef, useState } from 'react';
 import { RiBuildingLine } from 'react-icons/ri';
 import { Sheet, SheetContent, SheetDescription, SheetTitle } from '@/components/primitives/sheet';

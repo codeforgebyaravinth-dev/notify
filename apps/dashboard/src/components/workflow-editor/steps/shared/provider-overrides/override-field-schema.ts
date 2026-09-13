@@ -1,4 +1,4 @@
-import { getProviderOverrideKeysOnlySchema, getProviderOverrideSchema } from '@novu/shared';
+import { getProviderOverrideKeysOnlySchema, getProviderOverrideSchema } from '@notify/shared';
 import { type ReactNode } from 'react';
 
 /**
@@ -32,7 +32,7 @@ export type OverrideFieldAnnotations = {
 
 export type AnnotateOverrideField = (key: string, fieldSchema: OverrideFieldSchema) => OverrideFieldAnnotations;
 
-/** Root schema for providers whose schema is small enough to live on the `@novu/shared` barrel. */
+/** Root schema for providers whose schema is small enough to live on the `@notify/shared` barrel. */
 export function getEagerRootSchema(providerId: string): OverrideFieldSchema | undefined {
   return getProviderOverrideSchema(providerId) as OverrideFieldSchema | undefined;
 }

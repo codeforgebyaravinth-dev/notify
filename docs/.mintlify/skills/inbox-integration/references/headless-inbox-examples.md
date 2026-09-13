@@ -1,17 +1,17 @@
 # Headless Inbox Examples
 
-Use `@novu/js` for vanilla JavaScript applications or when you want full control over the UI.
+Use `@notify/js` for vanilla JavaScript applications or when you want full control over the UI.
 
 ## Installation
 
 ```bash
-npm install @novu/js
+npm install @notify/js
 ```
 
 ## Initialize the Client
 
 ```typescript
-import { Novu } from "@novu/js";
+import { Novu } from "@notify/js";
 
 const novu = new Novu({
   applicationIdentifier: "YOUR_NOVU_APP_ID",
@@ -127,7 +127,7 @@ await novu.preferences.update({
 
 ## Real-Time Updates
 
-The `@novu/js` client automatically maintains a WebSocket connection for real-time notification updates. No additional configuration is needed.
+The `@notify/js` client automatically maintains a WebSocket connection for real-time notification updates. No additional configuration is needed.
 
 ## Vanilla JavaScript Example
 
@@ -136,7 +136,7 @@ The `@novu/js` client automatically maintains a WebSocket connection for real-ti
 <div id="notification-list"></div>
 
 <script type="module">
-  import { Novu } from "@novu/js";
+  import { Novu } from "@notify/js";
 
   const novu = new Novu({
     applicationIdentifier: "YOUR_NOVU_APP_ID",

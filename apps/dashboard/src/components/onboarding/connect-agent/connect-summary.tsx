@@ -1,4 +1,4 @@
-import type { IIntegration } from '@novu/shared';
+import type { IIntegration } from '@notify/shared';
 import { isDemoManagedClaudeIntegrationSelected } from '@/components/agents/connectors/claude-managed-integrations';
 import type { RuntimeType } from '@/components/agents/create-agent-fields';
 import { ClaudeIcon } from '@/components/icons/claude';

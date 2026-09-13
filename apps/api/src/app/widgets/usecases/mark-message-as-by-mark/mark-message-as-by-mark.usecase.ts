@@ -9,15 +9,15 @@ import {
   messageWebhookMapper,
   SendWebhookMessage,
   WebSocketsQueueService,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   EnvironmentRepository,
   MessageEntity,
   MessageRepository,
   SubscriberEntity,
   SubscriberRepository,
-} from '@novu/dal';
-import { MessagesStatusEnum, WebhookEventEnum, WebhookObjectTypeEnum } from '@novu/shared';
+} from '@notify/dal';
+import { MessagesStatusEnum, WebhookEventEnum, WebhookObjectTypeEnum } from '@notify/shared';
 import { mapMarkMessageToWebSocketEvent } from '../../../shared/helpers';
 import { MessageResponseDto } from '../../dtos/message-response.dto';
 import { MarkMessageAsByMarkCommand } from './mark-message-as-by-mark.command';

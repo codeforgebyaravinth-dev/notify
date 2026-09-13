@@ -1,4 +1,4 @@
-import { DelayTypeEnum, DigestTypeEnum, StepTypeEnum, TimeUnitEnum } from '@novu/shared';
+import { DelayTypeEnum, DigestTypeEnum, StepTypeEnum, TimeUnitEnum } from '@notify/shared';
 
 export const AUTOCOMPLETE_PASSWORD_MANAGERS_OFF = {
   autoComplete: 'off',

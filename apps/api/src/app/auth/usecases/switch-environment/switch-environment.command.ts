@@ -1,4 +1,4 @@
-import { OrganizationCommand } from '@novu/application-generic';
+import { OrganizationCommand } from '@notify/application-generic';
 import { IsNotEmpty } from 'class-validator';
 
 export class SwitchEnvironmentCommand extends OrganizationCommand {

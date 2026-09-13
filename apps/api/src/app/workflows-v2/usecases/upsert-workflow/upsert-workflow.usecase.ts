@@ -5,7 +5,7 @@ import {
   UpsertWorkflowCommand,
   UpsertWorkflowUseCase,
   WorkflowResponseDto,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 
 @Injectable()
 export class UpsertWorkflow {

@@ -1,5 +1,5 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { type TagsFilter } from '@novu/shared';
+import { type TagsFilter } from '@notify/shared';
 import { IsArray, IsOptional, IsString } from 'class-validator';
 import { IsTagsFilter } from '../../inbox/validators/is-tags-filter.validator';
 

@@ -1,6 +1,6 @@
 ---
 title: "Concepts"
-description: "Explore connectors, MCP servers, skills, system prompts, tools, and the conversation lifecycle that shape how a managed agent behaves in Novu."
+description: "Explore connectors, MCP servers, skills, system prompts, tools, and the conversation lifecycle that shape how a managed agent behaves in Notify."
 ---
 
 
@@ -8,7 +8,7 @@ This page covers the building blocks of a managed agent and how they fit togethe
 
 ## Connector
 
-A connector links your Novu agent to an AI platform. The platform receives each user message, reasons about it, uses built-in tools and any enabled MCP servers if needed, and returns a response that Novu delivers to the chat provider.
+A connector links your Notify agent to an AI platform. The platform receives each user message, reasons about it, uses built-in tools and any enabled MCP servers if needed, and returns a response that Notify delivers to the chat provider.
 
 ### Supported connectors
 
@@ -35,7 +35,7 @@ Quickstart: [Connect Claude managed agent](/agents/get-started/claude-managed).
 
 Quickstart: [Connect AWS Claude managed agent](/agents/get-started/aws-claude).
 
-If you want to try things out first, select **Try a demo agent** in `npx novu connect`. That path uses Novu demo credentials with a limited number of free conversations.
+If you want to try things out first, select **Try a demo agent** in `npx novu connect`. That path uses Notify demo credentials with a limited number of free conversations.
 
 ## System prompt
 
@@ -54,12 +54,12 @@ You set the system prompt in the dashboard when creating the agent, and you can 
 
 You can create a managed agent in two ways:
 
-- **Create from prompt**: describe what you want the agent to do in plain text, and Novu generates a system prompt for you. You can also pick from preset templates (Customer Support, Marketing, Sales, etc.) as a starting point.
+- **Create from prompt**: describe what you want the agent to do in plain text, and Notify generates a system prompt for you. You can also pick from preset templates (Customer Support, Marketing, Sales, etc.) as a starting point.
 - **Create manually**: write the system prompt yourself from scratch.
 
 ### Prompt templates
 
-Novu provides starter templates for common use cases like customer support, internal ops, and onboarding. Templates give you a working prompt you can customize.
+Notify provides starter templates for common use cases like customer support, internal ops, and onboarding. Templates give you a working prompt you can customize.
 
 ## Built-in tools
 
@@ -89,7 +89,7 @@ On top of the built-in tools, MCP (Model Context Protocol) servers give the agen
 ```mermaid
 sequenceDiagram
     participant Admin
-    participant Dashboard as Novu Dashboard
+    participant Dashboard as Notify Dashboard
     participant Connector as AI Connector
     participant McpServer as MCP Server
 
@@ -102,7 +102,7 @@ sequenceDiagram
 ```
 
 1. You enable an MCP server from the agent settings page in the dashboard.
-2. Novu syncs the configuration to the connector (Claude, AWS Bedrock, etc.).
+2. Notify syncs the configuration to the connector (Claude, AWS Bedrock, etc.).
 3. During a conversation, the connector platform decides when to call a tool based on the user's message and the system prompt.
 4. The tool result is included in the agent's reasoning before it responds.
 
@@ -123,26 +123,26 @@ The list of available servers is shown on the agent settings page in the dashboa
 
 Some MCP servers require OAuth authorization from the end user. When a subscriber first interacts with the agent through a tool that needs authorization, they receive a prompt to connect their account.
 
-Novu manages the OAuth flow:
+Notify manages the OAuth flow:
 
 ```mermaid
 sequenceDiagram
     participant User
     participant Agent as Managed Agent
-    participant Novu
+    participant Notify
     participant ExtService as External Service
 
     Agent->>User: Send authorization link
     User->>ExtService: Click link and authorize
-    ExtService->>Novu: OAuth callback with tokens
-    Novu->>Novu: Store tokens securely
+    ExtService->>Notify: OAuth callback with tokens
+    Notify->>Notify: Store tokens securely
     Note over Agent,ExtService: Subsequent turns
-    Novu->>ExtService: Pass tokens on tool calls
+    Notify->>ExtService: Pass tokens on tool calls
 ```
 
 1. The agent sends an authorization link to the user in the chat thread.
 2. The user clicks the link and authorizes access on the external service.
-3. Novu stores the tokens securely and passes them to the platform on each subsequent turn.
+3. Notify stores the tokens securely and passes them to the platform on each subsequent turn.
 
 Authorization is per subscriber, per MCP server. Once a user authorizes, the connection persists across conversations until they revoke it.
 
@@ -160,7 +160,7 @@ A skill is a SKILL.md file with structured instructions. It might describe how t
 
 You can add skills from the agent settings page in two ways:
 
-- **GitHub URL**: paste a public repository URL. Novu downloads the files and uploads them to the AI platform.
+- **GitHub URL**: paste a public repository URL. Notify downloads the files and uploads them to the AI platform.
 - **Inline content**: paste the SKILL.md text directly in the dashboard.
 
 The platform assigns each skill a stable ID. If you upload a skill with the same title again, it creates a new version automatically.
@@ -178,14 +178,14 @@ Managed agents follow this conversation lifecycle:
 ### What happens on each turn
 
 1. The user sends a message on a connected provider.
-2. Novu normalizes the event, resolves the subscriber, and loads conversation history.
+2. Notify normalizes the event, resolves the subscriber, and loads conversation history.
 3. The message and history are forwarded to the AI platform.
 4. The platform runs the model, uses built-in tools (bash, grep, web search, etc.) or MCP servers as needed, and returns a response.
-5. Novu delivers the response to the provider thread and records everything in the activity feed.
+5. Notify delivers the response to the provider thread and records everything in the activity feed.
 
 ### Plan cards and tool use
 
-When the agent calls a tool during a conversation, Novu shows a **plan card** in the chat thread. The plan card displays which tool the agent is about to use and its current status (thinking, running, complete). This gives users visibility into what the agent is doing before the final response appears.
+When the agent calls a tool during a conversation, Notify shows a **plan card** in the chat thread. The plan card displays which tool the agent is about to use and its current status (thinking, running, complete). This gives users visibility into what the agent is doing before the final response appears.
 
 For MCP tools that need user authorization, the plan card pauses and shows an authorization prompt. After the user authorizes, the agent continues from where it left off.
 

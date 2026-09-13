@@ -1,5 +1,5 @@
 import { createMemoryState } from '@chat-adapter/state-memory';
-import { createNovuAdapter, getNovuContext } from '@novu/chat-sdk-adapter';
+import { createNovuAdapter, getNovuContext } from '@notify/chat-sdk-adapter';
 import { type Adapter, Chat, type StateAdapter } from 'chat';
 
 export function registerHandlers(chat: Chat): void {

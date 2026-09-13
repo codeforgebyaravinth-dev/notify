@@ -1,4 +1,4 @@
-import { ChatProviderIdEnum } from '@novu/shared';
+import { ChatProviderIdEnum } from '@notify/shared';
 import {
   CardElement,
   ChannelData,
@@ -11,7 +11,7 @@ import {
   SlackChannelData,
   SlackUserData,
   WebhookData,
-} from '@novu/stateless';
+} from '@notify/stateless';
 import axios from 'axios';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
 import { esmImport } from '../../../utils/esm-import';

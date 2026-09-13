@@ -1,6 +1,6 @@
 import { PromptConfig, replaceConfigVariables } from './types';
 
-const KITCHEN_SINK_INBOX_SNIPPET = `import { Inbox } from '@novu/react';
+const KITCHEN_SINK_INBOX_SNIPPET = `import { Inbox } from '@notify/react';
 
 function NotificationInbox() {
   // Ensure the environment variable is available
@@ -115,19 +115,19 @@ Potential common places where the inbox could be integrated in the UI:
 ## Implementation Checklist
 
 ### Step 1: Package Installation
-**Objective**: Install the required @novu/react package using the project's package manager
+**Objective**: Install the required @notify/react package using the project's package manager
 
 **Actions**:
 1. Detect the project's package manager (pnpm, yarn, npm, bun)
-2. Install @novu/react using the appropriate command:
+2. Install @notify/react using the appropriate command:
 \`\`\`bash
-npm install @novu/react
+npm install @notify/react
 # or
-yarn add @novu/react
+yarn add @notify/react
 # or
-pnpm add @novu/react
+pnpm add @notify/react
 # or
-bun add @novu/react
+bun add @notify/react
 \`\`\`
 
 **Verification**:

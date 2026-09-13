@@ -150,7 +150,7 @@ export const ConnectChat = (props: ConnectChatProps) => {
               class={style({
                 key: 'connectChatMisconfiguredTooltip',
                 className:
-                  'nt-bg-foreground nt-p-2 nt-shadow-tooltip nt-rounded-lg nt-text-background nt-text-xs nt-max-w-[220px]',
+                  'nt-bg-gradient-to-r nt-from-purple-600 nt-to-red-500 nt-p-2 nt-shadow-tooltip nt-nt-rounded-none nt-text-background nt-text-xs nt-max-w-[220px]',
               })}
             >
               Missing context — provide a <code>context</code> prop on <code>ConnectChat</code> or{' '}

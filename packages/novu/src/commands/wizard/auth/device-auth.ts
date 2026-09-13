@@ -3,7 +3,7 @@ import {
   CLI_DEVICE_SESSION_NAME_NOVU_CONNECT,
   type CliDeviceSessionPollResponse,
   type CreateCliDeviceSessionResponse,
-} from '@novu/shared';
+} from '@notify/shared';
 import open from 'open';
 import ora from 'ora';
 import type { CloudRegionEnum } from '../../dev/enums';

@@ -11,7 +11,7 @@ import {
   isMatchingJsonSchema,
   PinoLogger,
   resolveStepControlSchemas,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   CommunityOrganizationRepository,
   EnvironmentRepository,
@@ -21,8 +21,8 @@ import {
   NotificationTemplateEntity,
   NotificationTemplateRepository,
   OrganizationEntity,
-} from '@novu/dal';
-import { workflow } from '@novu/framework/express';
+} from '@notify/dal';
+import { workflow } from '@notify/framework/express';
 import {
   ActionStep,
   ChannelStep,
@@ -32,7 +32,7 @@ import {
   Step,
   StepOutput,
   Workflow,
-} from '@novu/framework/internal';
+} from '@notify/framework/internal';
 import {
   type ContentOverrideProviderId,
   EnvironmentTypeEnum,
@@ -41,7 +41,7 @@ import {
   LAYOUT_PREVIEW_WORKFLOW_ID,
   StepTypeEnum,
   withProviderOverridesRuntimeSchema,
-} from '@novu/shared';
+} from '@notify/shared';
 import { AdditionalOperation, RulesLogic } from 'json-logic-js';
 import _ from 'lodash';
 import {

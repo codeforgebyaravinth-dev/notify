@@ -1,4 +1,4 @@
-import { DuplicateWorkflowDto } from '@novu/shared';
+import { DuplicateWorkflowDto } from '@notify/shared';
 import { useState } from 'react';
 import { RiArrowRightSLine } from 'react-icons/ri';
 import { useNavigate } from 'react-router-dom';

@@ -3,10 +3,10 @@ import type {
   EmailWebhookRouteContext,
   IEmailAlternative,
   NovuEmailAttachment,
-} from '@novu/shared';
+} from '@notify/shared';
 import type { Adapter } from 'chat';
 
-export type { EmailWebhookPayload, NovuEmailAttachment } from '@novu/shared';
+export type { EmailWebhookPayload, NovuEmailAttachment } from '@notify/shared';
 
 export interface NovuEmailAdapterConfig {
   senderName?: string;

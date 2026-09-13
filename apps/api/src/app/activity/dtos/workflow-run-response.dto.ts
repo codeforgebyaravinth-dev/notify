@@ -1,6 +1,6 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { StepRunStatus } from '@novu/application-generic';
-import { ExecutionDetailsStatusEnum } from '@novu/shared';
+import { StepRunStatus } from '@notify/application-generic';
+import { ExecutionDetailsStatusEnum } from '@notify/shared';
 import { Type } from 'class-transformer';
 import { IsDate, IsEnum, IsIn, IsObject, IsOptional, IsString } from 'class-validator';
 import { DigestMetadataDto } from '../../notifications/dtos/activities-response.dto';

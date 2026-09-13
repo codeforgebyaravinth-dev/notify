@@ -1,4 +1,4 @@
-import { Schedule } from '@novu/shared';
+import { Schedule } from '@notify/shared';
 import { expect } from 'chai';
 import { calculateNextAvailableTime, getDayOfWeek, isWithinSchedule } from './schedule-validator';
 

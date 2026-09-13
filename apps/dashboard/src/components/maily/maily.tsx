@@ -1,6 +1,6 @@
-import { Editor as MailyEditor, type MenuConfig } from '@novu/maily-core';
-import { BlockGroupItem } from '@novu/maily-core/blocks';
-import { Variable } from '@novu/maily-core/extensions';
+import { Editor as MailyEditor, type MenuConfig } from '@notify/maily-core';
+import { BlockGroupItem } from '@notify/maily-core/blocks';
+import { Variable } from '@notify/maily-core/extensions';
 import type { AnyExtension, Editor, NodeViewProps, Editor as TiptapEditor } from '@tiptap/core';
 import { Editor as TiptapEditorReact } from '@tiptap/react';
 import { ForwardRefExoticComponent, HTMLAttributes, useCallback, useMemo } from 'react';

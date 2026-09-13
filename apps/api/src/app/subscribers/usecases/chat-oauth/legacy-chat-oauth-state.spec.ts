@@ -1,6 +1,6 @@
 import { BadRequestException } from '@nestjs/common';
-import { encodeOAuthState } from '@novu/application-generic';
-import { ChatProviderIdEnum } from '@novu/shared';
+import { encodeOAuthState } from '@notify/application-generic';
+import { ChatProviderIdEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import {

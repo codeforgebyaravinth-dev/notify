@@ -1,4 +1,4 @@
-import { AiWorkflowToolsEnum } from '@novu/shared';
+import { AiWorkflowToolsEnum } from '@notify/shared';
 import { DynamicToolUIPart, UIMessage } from 'ai';
 
 export const hasKnownMessageParts = (message: UIMessage): boolean => {

@@ -7,7 +7,7 @@
   </a>
 </div>
 
-# @novu/api-service
+# @notify/api-service
 
 A RESTful API for accessing the Novu platform, built using [NestJS](https://nestjs.com/).
 

@@ -6,8 +6,8 @@ import {
   EnvironmentRepository,
   IntegrationRepository,
   OrganizationRepository,
-} from '@novu/dal';
-import { EmailProviderIdEnum, SmsProviderIdEnum, slugify } from '@novu/shared';
+} from '@notify/dal';
+import { EmailProviderIdEnum, SmsProviderIdEnum, slugify } from '@notify/shared';
 import shortid from 'shortid';
 import { AppModule } from '../../src/app.module';
 

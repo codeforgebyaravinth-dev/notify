@@ -1,5 +1,5 @@
-import { StandardNovuOptions } from '@novu/js';
-import { buildSubscriber } from '@novu/js/internal';
+import { StandardNovuOptions } from '@notify/js';
+import { buildSubscriber } from '@notify/js/internal';
 import React, { useMemo } from 'react';
 import { useNovuUI } from '../context/NovuUIContext';
 import { useRenderer } from '../context/RendererContext';

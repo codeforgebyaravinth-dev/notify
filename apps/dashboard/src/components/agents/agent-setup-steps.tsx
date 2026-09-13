@@ -4,7 +4,7 @@ import {
   EmailProviderIdEnum,
   FeatureFlagsKeysEnum,
   type IIntegration,
-} from '@novu/shared';
+} from '@notify/shared';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { AnimatePresence, motion } from 'motion/react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';

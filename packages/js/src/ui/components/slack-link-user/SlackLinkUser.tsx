@@ -244,7 +244,7 @@ export const SlackLinkUser = (props: SlackLinkUserProps) => {
                 class={style({
                   key: 'linkSlackUserButtonIcon',
                   className:
-                    'nt-inline-flex nt-items-center nt-justify-center nt-size-4 nt-shrink-0 nt-rounded-full nt-bg-white nt-shadow-[0_1px_2px_0_rgba(10,13,20,0.03)]',
+                    'nt-inline-flex nt-items-center nt-justify-center nt-size-4 nt-shrink-0 nt-nt-rounded-none nt-bg-white nt-shadow-[0_1px_2px_0_rgba(10,13,20,0.03)]',
                   iconKey: 'channelConnected',
                   context: { linked: true } satisfies Parameters<
                     SlackLinkUserAppearanceCallback['linkSlackUserButtonIcon']
@@ -255,7 +255,7 @@ export const SlackLinkUser = (props: SlackLinkUserProps) => {
                     class={style({
                       key: 'linkSlackUserButtonIcon',
                       className:
-                        'nt-inline-flex nt-items-center nt-justify-center nt-size-4 nt-shrink-0 nt-rounded-full nt-bg-white nt-shadow-[0_1px_2px_0_rgba(10,13,20,0.03)]',
+                        'nt-inline-flex nt-items-center nt-justify-center nt-size-4 nt-shrink-0 nt-nt-rounded-none nt-bg-white nt-shadow-[0_1px_2px_0_rgba(10,13,20,0.03)]',
                       iconKey: 'channelConnected',
                       context: { linked: true } satisfies Parameters<
                         SlackLinkUserAppearanceCallback['linkSlackUserButtonIcon']

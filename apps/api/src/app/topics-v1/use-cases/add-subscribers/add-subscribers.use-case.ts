@@ -1,13 +1,13 @@
 import { ConflictException, Injectable } from '@nestjs/common';
-import { buildDefaultSubscriptionIdentifier } from '@novu/application-generic';
+import { buildDefaultSubscriptionIdentifier } from '@notify/application-generic';
 import {
   CreateTopicSubscribersEntity,
   ErrorCodesEnum,
   TopicEntity,
   TopicRepository,
   TopicSubscribersRepository,
-} from '@novu/dal';
-import { SubscriberDto } from '@novu/shared';
+} from '@notify/dal';
+import { SubscriberDto } from '@notify/shared';
 import { SearchByExternalSubscriberIds, SearchByExternalSubscriberIdsCommand } from '../../../subscribers/usecases';
 import { ExternalSubscriberId } from '../../types';
 import { CreateTopicCommand, CreateTopicUseCase } from '../create-topic';

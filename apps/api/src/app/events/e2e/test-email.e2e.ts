@@ -1,6 +1,6 @@
-import { IntegrationRepository, MessageRepository } from '@novu/dal';
-import { ChannelTypeEnum, EmailProviderIdEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { IntegrationRepository, MessageRepository } from '@notify/dal';
+import { ChannelTypeEnum, EmailProviderIdEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 import { TestSendEmailRequestDto } from '../dtos';

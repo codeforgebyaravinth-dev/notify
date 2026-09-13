@@ -1,5 +1,5 @@
-import '@novu/maily-core/style.css';
-import { PermissionsEnum } from '@novu/shared';
+import '@notify/maily-core/style.css';
+import { PermissionsEnum } from '@notify/shared';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';

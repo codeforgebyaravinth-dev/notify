@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable, UnprocessableEntityException } from '@nestjs/common';
-import { encryptApiKey, FeatureFlagsService, SYSTEM_LIMITS } from '@novu/application-generic';
-import { EnvironmentEntity, EnvironmentRepository, NotificationGroupRepository } from '@novu/dal';
-import { EnvironmentEnum, EnvironmentTypeEnum, FeatureFlagsKeysEnum, PROTECTED_ENVIRONMENTS } from '@novu/shared';
+import { encryptApiKey, FeatureFlagsService, SYSTEM_LIMITS } from '@notify/application-generic';
+import { EnvironmentEntity, EnvironmentRepository, NotificationGroupRepository } from '@notify/dal';
+import { EnvironmentEnum, EnvironmentTypeEnum, FeatureFlagsKeysEnum, PROTECTED_ENVIRONMENTS } from '@notify/shared';
 import { createHash } from 'crypto';
 import { nanoid } from 'nanoid';
 import { CreateNovuIntegrationsCommand } from '../../../integrations/usecases/create-novu-integrations/create-novu-integrations.command';

@@ -1,4 +1,4 @@
-import { EnvironmentWithUserCommand } from '@novu/application-generic';
+import { EnvironmentWithUserCommand } from '@notify/application-generic';
 import { IsDefined, IsNumber, IsOptional } from 'class-validator';
 
 import { EventJobDto } from './event-job.dto';

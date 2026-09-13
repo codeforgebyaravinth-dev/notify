@@ -2,7 +2,7 @@ import {
   assertSafeOutboundUrl,
   normalizeOutboundHttpUrl,
   SsrfBlockedError,
-} from '@novu/shared/utils/ssrf-url-validation';
+} from '@notify/shared/utils/ssrf-url-validation';
 
 const DEFAULT_BLOCKED_PREFIX = 'Infobip base URL blocked';
 

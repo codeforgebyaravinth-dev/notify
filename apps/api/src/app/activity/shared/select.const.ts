@@ -1,4 +1,4 @@
-import { RequestLog, Trace } from '@novu/application-generic';
+import { RequestLog, Trace } from '@notify/application-generic';
 
 export const traceSelectColumns = [
   'id',

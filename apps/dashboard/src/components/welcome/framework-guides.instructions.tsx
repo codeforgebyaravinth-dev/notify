@@ -131,11 +131,11 @@ export const getFrameworks = (
     installSteps: stepsByMethod(
       installationMethod,
       [
-        commonInstallStep('@novu/nextjs'),
+        commonInstallStep('@notify/nextjs'),
         {
           title: 'Add the inbox code to your Next.js app',
           description: 'Inbox utilizes the Next.js router to enable navigation within your notifications.',
-          code: `import { Inbox } from '@novu/nextjs';
+          code: `import { Inbox } from '@notify/nextjs';
 
 function Novu() {
   return (
@@ -167,12 +167,12 @@ function Novu() {
     installSteps: stepsByMethod(
       installationMethod,
       [
-        commonInstallStep('@novu/react'),
+        commonInstallStep('@notify/react'),
         {
           title: 'Add the inbox code to your React app',
           description:
             'Inbox utilizes the routerPush prop and your preferred router to enable navigation within your notifications.',
-          code: `import { Inbox } from '@novu/react';
+          code: `import { Inbox } from '@notify/react';
 import { useNavigate } from 'react-router-dom';
 
 function Novu() {
@@ -208,11 +208,11 @@ function Novu() {
     installSteps: stepsByMethod(
       installationMethod,
       [
-        commonInstallStep('@novu/react'),
+        commonInstallStep('@notify/react'),
         {
           title: 'Add the inbox code to your Remix app',
           description: 'Inbox utilizes the routerPush prop to enable navigation within your notifications.',
-          code: `import { Inbox } from '@novu/react';
+          code: `import { Inbox } from '@notify/react';
 import { useNavigate } from '@remix-run/react';
 
 function Novu() {
@@ -248,11 +248,11 @@ function Novu() {
     installSteps: stepsByMethod(
       installationMethod,
       [
-        commonInstallStep('@novu/react-native'),
+        commonInstallStep('@notify/react-native'),
         {
           title: 'Add the inbox code to your React Native app',
           description: 'Implement the notification center in your React Native application.',
-          code: `import { NovuProvider } from '@novu/react-native';
+          code: `import { NovuProvider } from '@notify/react-native';
 import { YourCustomInbox } from './Inbox';
 
 function Layout() {
@@ -278,7 +278,7 @@ function Layout() {
   ActivityIndicator,
   RefreshControl,
 } from "react-native";
-import { useNotifications, Notification } from "@novu/react-native";
+import { useNotifications, Notification } from "@notify/react-native";
 
 export function YourCustomInbox() {
    const { notifications, isLoading, fetchMore, hasMore, refetch } = useNotifications();
@@ -348,13 +348,13 @@ export function YourCustomInbox() {
     installSteps: stepsByMethod(
       installationMethod,
       [
-        commonInstallStep('@novu/js'),
+        commonInstallStep('@notify/js'),
         {
           title: 'Add the inbox code to your Angular app',
           description: 'Currently, angular applications are supported with the Novu UI library.',
           code: `import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NovuUI } from '@novu/js/ui';
+import { NovuUI } from '@notify/js/ui';
 
 @Component({
   selector: 'app-root',
@@ -398,12 +398,12 @@ export class AppComponent implements AfterViewInit {
     installSteps: stepsByMethod(
       installationMethod,
       [
-        commonInstallStep('@novu/js'),
+        commonInstallStep('@notify/js'),
         {
           title: 'Add the inbox code to your JavaScript app',
           description:
             'You can use the Novu UI library to implement the notification center in your vanilla JavaScript application or any other non-supported framework like Vue.',
-          code: `import { NovuUI } from '@novu/js/ui';
+          code: `import { NovuUI } from '@notify/js/ui';
 
     const novu = new NovuUI({
     options: {

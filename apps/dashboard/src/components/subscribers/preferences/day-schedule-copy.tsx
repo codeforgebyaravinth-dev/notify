@@ -1,5 +1,5 @@
-import { ScheduleDto } from '@novu/api/models/components';
-import { Schedule, WeeklySchedule } from '@novu/shared';
+import { ScheduleDto } from '@notify/api/models/components';
+import { Schedule, WeeklySchedule } from '@notify/shared';
 import { useCallback, useMemo, useState } from 'react';
 import { RiFileCopyLine } from 'react-icons/ri';
 import { Button } from '@/components/primitives/button';

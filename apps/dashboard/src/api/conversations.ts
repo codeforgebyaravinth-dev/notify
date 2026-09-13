@@ -1,4 +1,4 @@
-import { getDateRangeInMs, type IEnvironment } from '@novu/shared';
+import { getDateRangeInMs, type IEnvironment } from '@notify/shared';
 import { get } from './api.client';
 
 export type ConversationFilters = {

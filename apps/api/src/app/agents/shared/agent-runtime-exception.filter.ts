@@ -11,7 +11,7 @@ import {
   AgentRuntimeTimeoutError,
   AgentRuntimeUnauthorizedError,
   PinoLogger,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import type { Response } from 'express';
 import { captureAgentException } from './errors/capture-agent-sentry';
 

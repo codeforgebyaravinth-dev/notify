@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException, UnprocessableEntityException } from '@nestjs/common';
-import { PinoLogger, resolveAgentRuntime } from '@novu/application-generic';
-import { AgentMcpServerEntity, AgentMcpServerRepository, AgentRepository, IntegrationRepository } from '@novu/dal';
-import { MCP_SERVERS, McpConnectionScopeEnum } from '@novu/shared';
+import { PinoLogger, resolveAgentRuntime } from '@notify/application-generic';
+import { AgentMcpServerEntity, AgentMcpServerRepository, AgentRepository, IntegrationRepository } from '@notify/dal';
+import { MCP_SERVERS, McpConnectionScopeEnum } from '@notify/shared';
 
 export type CatalogProjection = { externalId: string; name: string; url: string };
 

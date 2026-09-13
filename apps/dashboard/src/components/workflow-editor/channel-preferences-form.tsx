@@ -5,7 +5,7 @@ import {
   SeverityLevelEnum,
   WorkflowPreferences,
   WorkflowResponseDto,
-} from '@novu/shared';
+} from '@notify/shared';
 import { motion } from 'motion/react';
 import { useMemo } from 'react';
 import { useForm, useWatch } from 'react-hook-form';

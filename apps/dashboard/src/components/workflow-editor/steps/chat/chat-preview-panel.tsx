@@ -3,7 +3,7 @@ import {
   type ChatRenderOutput,
   FeatureFlagsKeysEnum,
   type GeneratePreviewResponseDto,
-} from '@novu/shared';
+} from '@notify/shared';
 import { Skeleton } from '@/components/primitives/skeleton';
 import { AnnotatedOverrideJson } from '@/components/workflow-editor/steps/shared/provider-overrides/annotated-override-json';
 import { DEFAULT_CONTENT_SOURCE } from '@/components/workflow-editor/steps/shared/provider-overrides/content-source';

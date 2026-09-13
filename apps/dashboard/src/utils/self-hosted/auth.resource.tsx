@@ -1,4 +1,4 @@
-import { MemberRoleEnum, PermissionsEnum } from '@novu/shared';
+import { MemberRoleEnum, PermissionsEnum } from '@notify/shared';
 import React from 'react';
 import { createContextHook } from '../context';
 import { DecodedJwt } from '.';

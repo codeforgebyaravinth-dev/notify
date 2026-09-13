@@ -5,7 +5,7 @@ import {
   InMemoryLRUCacheService,
   InMemoryLRUCacheStore,
   Instrument,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   NotificationTemplateEntity,
   NotificationTemplateRepository,
@@ -13,14 +13,14 @@ import {
   PreferencesRepository,
   SubscriberEntity,
   SubscriberRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   FeatureFlagsKeysEnum,
   ISubscriberPreferenceResponse,
   PreferencesTypeEnum,
   ShortIsPrefixEnum,
   WorkflowCriticalityEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import {
   GetSubscriberGlobalPreference,
   GetSubscriberGlobalPreferenceCommand,

@@ -1,8 +1,8 @@
 import { Test } from '@nestjs/testing';
-import { OAuthHandlerEnum, UpdateSubscriberChannel, UpdateSubscriberChannelCommand } from '@novu/application-generic';
-import { SubscriberRepository } from '@novu/dal';
-import { ChannelTypeEnum, ChatProviderIdEnum, PushProviderIdEnum } from '@novu/shared';
-import { SubscribersService, UserSession } from '@novu/testing';
+import { OAuthHandlerEnum, UpdateSubscriberChannel, UpdateSubscriberChannelCommand } from '@notify/application-generic';
+import { SubscriberRepository } from '@notify/dal';
+import { ChannelTypeEnum, ChatProviderIdEnum, PushProviderIdEnum } from '@notify/shared';
+import { SubscribersService, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { CheckIntegration } from '../../../integrations/usecases/check-integration/check-integration.usecase';
 import { CheckIntegrationEMail } from '../../../integrations/usecases/check-integration/check-integration-email.usecase';

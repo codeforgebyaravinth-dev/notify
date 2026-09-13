@@ -1,4 +1,4 @@
-import { ChatProviderIdEnum } from '@novu/shared';
+import { ChatProviderIdEnum } from '@notify/shared';
 
 export function resolveAgentProviderDisplayName(providerId: string): string {
   switch (providerId) {

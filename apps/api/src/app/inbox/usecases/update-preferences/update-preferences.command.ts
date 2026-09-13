@@ -1,5 +1,5 @@
-import { EnvironmentEntity, NotificationTemplateEntity, SubscriberEntity } from '@novu/dal';
-import { PreferenceLevelEnum, Schedule } from '@novu/shared';
+import { EnvironmentEntity, NotificationTemplateEntity, SubscriberEntity } from '@notify/dal';
+import { PreferenceLevelEnum, Schedule } from '@notify/shared';
 import { Type } from 'class-transformer';
 import {
   IsBoolean,

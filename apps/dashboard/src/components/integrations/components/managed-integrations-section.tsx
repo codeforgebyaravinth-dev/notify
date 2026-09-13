@@ -4,7 +4,7 @@ import {
   EmailProviderIdEnum,
   SmsProviderIdEnum,
   PushProviderIdEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { useMemo } from 'react';
 import { RiFlashlightLine, RiLockUnlockLine, RiCheckboxCircleFill } from 'react-icons/ri';
 import { useNavigate } from 'react-router-dom';

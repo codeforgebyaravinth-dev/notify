@@ -1,4 +1,4 @@
-import { EnvironmentWithUserObjectCommand } from '@novu/application-generic';
+import { EnvironmentWithUserObjectCommand } from '@notify/application-generic';
 import { IsDefined, IsNotEmpty, IsString } from 'class-validator';
 
 export class EnrichOrganizationBrandCommand extends EnvironmentWithUserObjectCommand {

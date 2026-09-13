@@ -1,6 +1,6 @@
-import { Novu } from '@novu/api';
-import { StepTypeEnum, UiComponentEnum, UiSchemaGroupEnum, WorkflowCreationSourceEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { Novu } from '@notify/api';
+import { StepTypeEnum, UiComponentEnum, UiSchemaGroupEnum, WorkflowCreationSourceEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { run } from './email-step-ui-schema-html-editor-migration';
 

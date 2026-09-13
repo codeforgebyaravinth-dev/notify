@@ -1,6 +1,6 @@
-import { Novu } from '@novu/api';
-import { UpdateChannelConnectionRequestDto } from '@novu/api/models/components';
-import { UserSession } from '@novu/testing';
+import { Novu } from '@notify/api';
+import { UpdateChannelConnectionRequestDto } from '@notify/api/models/components';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { expectSdkExceptionGeneric } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';
 import {

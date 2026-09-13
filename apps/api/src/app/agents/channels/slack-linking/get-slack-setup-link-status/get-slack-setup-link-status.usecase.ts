@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { AgentRepository, IntegrationRepository } from '@novu/dal';
-import { ChatProviderIdEnum } from '@novu/shared';
+import { AgentRepository, IntegrationRepository } from '@notify/dal';
+import { ChatProviderIdEnum } from '@notify/shared';
 
 import {
   InvalidTelegramMobileTokenError,

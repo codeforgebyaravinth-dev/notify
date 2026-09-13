@@ -1,4 +1,4 @@
-import { DEFAULT_LOCALE } from '@novu/shared';
+import { DEFAULT_LOCALE } from '@notify/shared';
 import { useMemo } from 'react';
 import { RiAlertFill, RiArrowRightSLine } from 'react-icons/ri';
 import { FlagCircle } from '@/components/flag-circle';

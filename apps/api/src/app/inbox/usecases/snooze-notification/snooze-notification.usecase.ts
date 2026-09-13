@@ -14,7 +14,7 @@ import {
   getEffectiveJobPayload,
   PinoLogger,
   StandardQueueService,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   CommunityOrganizationRepository,
   JobEntity,
@@ -23,7 +23,7 @@ import {
   MessageRepository,
   NotificationRepository,
   OrganizationEntity,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   ApiServiceLevelEnum,
   ChannelTypeEnum,
@@ -32,7 +32,7 @@ import {
   FeatureNameEnum,
   getFeatureForTierAsNumber,
   JobStatusEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { v4 as uuidv4 } from 'uuid';
 import { GetSubscriber } from '../../../subscribers/usecases/get-subscriber';
 import { InboxNotificationDto } from '../../dtos/inbox-notification.dto';

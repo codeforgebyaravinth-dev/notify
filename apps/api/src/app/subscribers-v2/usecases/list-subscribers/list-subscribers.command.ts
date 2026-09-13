@@ -1,5 +1,5 @@
-import { CursorBasedPaginatedCommand } from '@novu/application-generic';
-import { ISubscriber } from '@novu/shared';
+import { CursorBasedPaginatedCommand } from '@notify/application-generic';
+import { ISubscriber } from '@notify/shared';
 import { IsOptional, IsString } from 'class-validator';
 
 export class ListSubscribersCommand extends CursorBasedPaginatedCommand<ISubscriber, 'updatedAt' | '_id'> {

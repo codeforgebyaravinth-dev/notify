@@ -1,4 +1,4 @@
-import { DalService } from '@novu/dal';
+import { DalService } from '@notify/dal';
 
 (async function dropLogsCollection() {
   const dalService = new DalService();

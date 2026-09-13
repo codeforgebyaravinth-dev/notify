@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { EnvironmentTypeEnum } from '@novu/shared';
+import { EnvironmentTypeEnum } from '@notify/shared';
 import { ApiKeyDto } from './api-key.dto';
 
 export class EnvironmentResponseDto {

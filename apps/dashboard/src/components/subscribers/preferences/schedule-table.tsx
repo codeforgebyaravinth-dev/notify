@@ -1,4 +1,4 @@
-import { ScheduleDto, SubscriberGlobalPreferenceDto } from '@novu/api/models/components';
+import { ScheduleDto, SubscriberGlobalPreferenceDto } from '@notify/api/models/components';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/primitives/select';
 import { showErrorToast } from '@/components/primitives/sonner-helpers';
 import { Switch } from '@/components/primitives/switch';

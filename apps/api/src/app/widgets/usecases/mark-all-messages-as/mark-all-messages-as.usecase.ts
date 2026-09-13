@@ -7,9 +7,9 @@ import {
   messageWebhookMapper,
   SendWebhookMessage,
   WebSocketsQueueService,
-} from '@novu/application-generic';
-import { EnvironmentRepository, MessageRepository, SubscriberRepository } from '@novu/dal';
-import { ChannelTypeEnum, MessagesStatusEnum, WebhookEventEnum, WebhookObjectTypeEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { EnvironmentRepository, MessageRepository, SubscriberRepository } from '@notify/dal';
+import { ChannelTypeEnum, MessagesStatusEnum, WebhookEventEnum, WebhookObjectTypeEnum } from '@notify/shared';
 import { mapMarkMessageToWebSocketEvent } from '../../../shared/helpers';
 import { MarkAllMessagesAsCommand } from './mark-all-messages-as.command';
 

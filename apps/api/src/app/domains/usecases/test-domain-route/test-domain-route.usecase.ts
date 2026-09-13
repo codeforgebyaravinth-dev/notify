@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { InboundDomainRouteDelivery, type InboundDomainRouteMailInput } from '@novu/application-generic';
-import { DomainRepository, DomainRouteRepository } from '@novu/dal';
-import { DomainRouteTypeEnum } from '@novu/shared';
+import { InboundDomainRouteDelivery, type InboundDomainRouteMailInput } from '@notify/application-generic';
+import { DomainRepository, DomainRouteRepository } from '@notify/dal';
+import { DomainRouteTypeEnum } from '@notify/shared';
 import { nanoid } from 'nanoid';
 
 import { TestDomainRouteResponseDto } from '../../dtos/test-domain-route-response.dto';

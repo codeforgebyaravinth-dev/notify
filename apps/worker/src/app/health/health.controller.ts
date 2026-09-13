@@ -1,7 +1,7 @@
 import { Controller, Get, Inject } from '@nestjs/common';
 import { ApiExcludeController } from '@nestjs/swagger';
 import { HealthCheck, HealthCheckResult, HealthCheckService } from '@nestjs/terminus';
-import { DalServiceHealthIndicator, QueueHealthIndicator } from '@novu/application-generic';
+import { DalServiceHealthIndicator, QueueHealthIndicator } from '@notify/application-generic';
 
 import { version } from '../../../package.json';
 

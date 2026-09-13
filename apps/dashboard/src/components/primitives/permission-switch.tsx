@@ -1,4 +1,4 @@
-import { PermissionsEnum } from '@novu/shared';
+import { PermissionsEnum } from '@notify/shared';
 import { Switch } from '@/components/primitives/switch';
 import { useHasPermission } from '@/hooks/use-has-permission';
 import { Tooltip, TooltipContent, TooltipTrigger } from './tooltip';

@@ -1,5 +1,5 @@
-import { Novu } from '@novu/api';
-import { topicsList } from '@novu/api/funcs/topicsList';
+import { Novu } from '@notify/api';
+import { topicsList } from '@notify/api/funcs/topicsList';
 import { expect } from 'chai';
 import { expectSdkExceptionGeneric } from '../src/app/shared/helpers/e2e/sdk/e2e-sdk.helper';
 import { ErrorDto } from '../src/error-dto';

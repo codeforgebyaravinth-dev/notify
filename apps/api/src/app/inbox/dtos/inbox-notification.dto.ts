@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { ChannelTypeEnum, SeverityLevelEnum } from '@novu/shared';
+import { ChannelTypeEnum, SeverityLevelEnum } from '@notify/shared';
 
 export class InboxSubscriberResponseDto {
   @ApiProperty({ type: String, description: 'Unique identifier of the subscriber' })

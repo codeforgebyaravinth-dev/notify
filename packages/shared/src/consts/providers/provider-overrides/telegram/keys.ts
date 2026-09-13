@@ -35,4 +35,4 @@ export const NON_OVERRIDABLE_TELEGRAM_KEYS = ['chat_id'] as const;
 export const TELEGRAM_PRIMARY_CONTENT_KEY = 'text';
 
 /** Package subpath the full generated Telegram schema ships behind. */
-export const TELEGRAM_OVERRIDE_SCHEMA_SUBPATH = '@novu/shared/provider-overrides/telegram';
+export const TELEGRAM_OVERRIDE_SCHEMA_SUBPATH = '@notify/shared/provider-overrides/telegram';

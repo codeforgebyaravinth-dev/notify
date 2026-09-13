@@ -8,7 +8,7 @@ import {
   IInboundParseAttachment,
   IInboundParseDataDto,
   ITo,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import { Type } from 'class-transformer';
 import { IsArray, IsDefined, IsNumber, IsObject, IsOptional, IsString, ValidateNested } from 'class-validator';
 

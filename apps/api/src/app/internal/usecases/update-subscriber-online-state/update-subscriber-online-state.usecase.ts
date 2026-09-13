@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { PinoLogger } from '@novu/application-generic';
-import { SubscriberRepository } from '@novu/dal';
+import { PinoLogger } from '@notify/application-generic';
+import { SubscriberRepository } from '@notify/dal';
 import { UpdateSubscriberOnlineStateCommand } from './update-subscriber-online-state.command';
 
 @Injectable()

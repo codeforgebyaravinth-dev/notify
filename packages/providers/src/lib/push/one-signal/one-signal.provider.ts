@@ -1,6 +1,6 @@
-import { PushProviderIdEnum } from '@novu/shared';
+import { PushProviderIdEnum } from '@notify/shared';
 
-import { ChannelTypeEnum, IPushOptions, IPushProvider, ISendMessageSuccessResponse } from '@novu/stateless';
+import { ChannelTypeEnum, IPushOptions, IPushProvider, ISendMessageSuccessResponse } from '@notify/stateless';
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
 import { WithPassthrough } from '../../../utils/types';

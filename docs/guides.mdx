@@ -1,19 +1,19 @@
 ---
-title: 'Novu Integration Guides and Recipes'
-description: "Step-by-step Novu integration guides for Clerk, Stripe, Segment, Auth0, Supabase, and other services to add notifications to your product stack."
+title: 'Notify Integration Guides and Recipes'
+description: "Step-by-step Notify integration guides for Clerk, Stripe, Segment, Auth0, Supabase, and other services to add notifications to your product stack."
 sidebarTitle: Overview
 ---
 
 
 ## Integration Guides
 
-Novu provides various ways to integrate with external services to trigger notification workflows. Here are the main integration approaches:
+Notify provides various ways to integrate with external services to trigger notification workflows. Here are the main integration approaches:
 
 ## Use case guides
 
 <Columns cols={2}>
   <Card title="Transactional notifications" icon="send" href="/guides/use-cases/transactional-notifications">
-    Send order confirmations, payment alerts, and account notifications through Novu workflows.
+    Send order confirmations, payment alerts, and account notifications through Notify workflows.
   </Card>
   <Card title="Password reset alerts" icon="key" href="/guides/use-cases/password-reset-notifications">
     Build password reset and authentication alert workflows with email and in-app channels.
@@ -30,9 +30,9 @@ Novu provides various ways to integrate with external services to trigger notifi
 
 Webhooks enable real-time event-driven communication between applications, making integrations more efficient and responsive.  
 
-In Novu, webhooks trigger notification workflows whenever specific events occur in external applications. This ensures notifications are delivered exactly when they're needed, keeping users informed without delay.
+In Notify, webhooks trigger notification workflows whenever specific events occur in external applications. This ensures notifications are delivered exactly when they're needed, keeping users informed without delay.
 
-For example, when a user signs up via Clerk or completes a payment through Stripe, a webhook delivers the event payload to Novu, which then processes it and triggers the appropriate workflow.
+For example, when a user signs up via Clerk or completes a payment through Stripe, a webhook delivers the event payload to Notify, which then processes it and triggers the appropriate workflow.
 
 This allows for real-time notifications - whether it's a welcome email, payment confirmation SMS, or in-app alert - without the need for constant polling, ensuring efficiency and a seamless user experience.
 
@@ -44,7 +44,7 @@ This allows for real-time notifications - whether it's a welcome email, payment 
   </Card>
   <Card title="Auth0" icon="key" href="/guides/webhooks/auth0">
   <p>
-    Trigger Novu workflows from Auth0 signup, password reset, and security events.
+    Trigger Notify workflows from Auth0 signup, password reset, and security events.
   </p>
   </Card>
   <Card title="Stripe" icon="/images/icons/stripe.svg" href="/guides/webhooks/stripe">
@@ -56,7 +56,7 @@ This allows for real-time notifications - whether it's a welcome email, payment 
 
 ### Analytics & Data Platform Integrations
 
-Some integrations use different mechanisms than webhooks to send data to Novu. For example, analytics and data platforms often use custom destinations or functions to forward events.
+Some integrations use different mechanisms than webhooks to send data to Notify. For example, analytics and data platforms often use custom destinations or functions to forward events.
 
 <Columns cols={2}>
   <Card title="Segment" icon="activity" href="/guides/webhooks/segment">
@@ -68,7 +68,7 @@ Some integrations use different mechanisms than webhooks to send data to Novu. F
 
 ### Workflow Automation Platform Integrations
 
-Workflow automation platforms help orchestrate complex business processes and event-driven workflows. Integrating Novu with these platforms allows you to trigger notifications as part of your automated workflows.
+Workflow automation platforms help orchestrate complex business processes and event-driven workflows. Integrating Notify with these platforms allows you to trigger notifications as part of your automated workflows.
 
 <Columns cols={2}>
   <Card title="Inngest" href="/guides/inngest">

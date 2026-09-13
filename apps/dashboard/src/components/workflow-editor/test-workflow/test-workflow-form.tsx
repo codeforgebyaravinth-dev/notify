@@ -1,4 +1,4 @@
-import type { WorkflowResponseDto } from '@novu/shared';
+import type { WorkflowResponseDto } from '@notify/shared';
 import { loadLanguage } from '@uiw/codemirror-extensions-langs';
 import { useCallback, useMemo, useState } from 'react';
 import { useFormContext, useWatch } from 'react-hook-form';

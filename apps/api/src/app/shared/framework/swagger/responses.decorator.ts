@@ -1,7 +1,7 @@
 import { applyDecorators } from '@nestjs/common';
 import * as nestSwagger from '@nestjs/swagger';
 import { ApiResponseOptions } from '@nestjs/swagger';
-import type { ApiResponseDecoratorName } from '@novu/application-generic';
+import type { ApiResponseDecoratorName } from '@notify/application-generic';
 import { COMMON_RESPONSE_HEADERS, COMMON_RESPONSES } from '../constants';
 import { createReusableHeaders } from './headers.decorator';
 

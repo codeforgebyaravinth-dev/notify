@@ -1,4 +1,4 @@
-import { IPushOptions } from '@novu/stateless';
+import { IPushOptions } from '@notify/stateless';
 import axios from 'axios';
 import { beforeEach, describe, expect, Mocked, test, vi } from 'vitest';
 import { OneSignalPushProvider } from './one-signal.provider';

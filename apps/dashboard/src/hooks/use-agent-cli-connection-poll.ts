@@ -1,4 +1,4 @@
-import { DirectionEnum } from '@novu/shared';
+import { DirectionEnum } from '@notify/shared';
 import { useQuery } from '@tanstack/react-query';
 import { useEffect, useRef, useState } from 'react';
 import {

@@ -1,4 +1,4 @@
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { useQuery } from '@tanstack/react-query';
 import { getAgentDemoQuota, getAgentDemoQuotaQueryKey } from '@/api/agents';
 import { requireEnvironment, useEnvironment } from '@/context/environment/hooks';

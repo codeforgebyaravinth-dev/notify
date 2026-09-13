@@ -1,5 +1,5 @@
 import { ConflictException, Injectable, NotFoundException } from '@nestjs/common';
-import { encryptChannelConnectionAuth, InstrumentUsecase, shortId } from '@novu/application-generic';
+import { encryptChannelConnectionAuth, InstrumentUsecase, shortId } from '@notify/application-generic';
 import {
   ChannelConnectionEntity,
   ChannelConnectionRepository,
@@ -7,7 +7,7 @@ import {
   IntegrationEntity,
   IntegrationRepository,
   SubscriberRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import { validateAndNormalizeConnectionAuth, validateConnectionMode } from '../channel-connection.utils';
 import { assertSubscriberExists } from '../ensure-connect-dashboard-subscriber';
 import { CreateChannelConnectionCommand } from './create-channel-connection.command';

@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { decryptCredentials, InstrumentUsecase } from '@novu/application-generic';
-import { AgentRepository, IntegrationRepository } from '@novu/dal';
-import { ChatProviderIdEnum, type WhatsAppSignupLinkStatus } from '@novu/shared';
+import { decryptCredentials, InstrumentUsecase } from '@notify/application-generic';
+import { AgentRepository, IntegrationRepository } from '@notify/dal';
+import { ChatProviderIdEnum, type WhatsAppSignupLinkStatus } from '@notify/shared';
 
 import {
   InvalidWhatsAppSignupLinkTokenError,

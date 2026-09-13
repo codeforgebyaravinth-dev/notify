@@ -1,7 +1,7 @@
-import { encryptCredentials } from '@novu/application-generic';
-import { ChannelEndpointRepository, IntegrationRepository, SubscriberRepository } from '@novu/dal';
-import { ChannelTypeEnum, ChatProviderIdEnum, ENDPOINT_TYPES } from '@novu/shared';
-import { testServer, UserSession } from '@novu/testing';
+import { encryptCredentials } from '@notify/application-generic';
+import { ChannelEndpointRepository, IntegrationRepository, SubscriberRepository } from '@notify/dal';
+import { ChannelTypeEnum, ChatProviderIdEnum, ENDPOINT_TYPES } from '@notify/shared';
+import { testServer, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { startTelegramApiStub, type TelegramApiStub } from '../../agents/e2e/helpers/telegram-api-stub';
 import { integrationTelegramLinkScope } from '../../telegram-linking/telegram-link-scope';

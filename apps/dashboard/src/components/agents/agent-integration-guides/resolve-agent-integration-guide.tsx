@@ -1,4 +1,4 @@
-import { ChatProviderIdEnum, EmailProviderIdEnum, FeatureFlagsKeysEnum } from '@novu/shared';
+import { ChatProviderIdEnum, EmailProviderIdEnum, FeatureFlagsKeysEnum } from '@notify/shared';
 import { type ReactNode } from 'react';
 import type { AgentIntegrationLink, AgentResponse } from '@/api/agents';
 import { isAgentIntegrationConnected } from '@/components/agents/is-agent-integration-connected';

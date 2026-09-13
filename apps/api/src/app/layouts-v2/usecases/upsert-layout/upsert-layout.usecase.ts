@@ -14,15 +14,15 @@ import {
   PinoLogger,
   UpsertControlValuesCommand,
   UpsertControlValuesUseCase,
-} from '@novu/application-generic';
-import { ControlValuesRepository, LayoutRepository, LocalizationResourceEnum } from '@novu/dal';
+} from '@notify/application-generic';
+import { ControlValuesRepository, LayoutRepository, LocalizationResourceEnum } from '@notify/dal';
 import {
   ControlValuesLevelEnum,
   LayoutControlValuesDto,
   ResourceOriginEnum,
   ResourceTypeEnum,
   slugify,
-} from '@novu/shared';
+} from '@notify/shared';
 import {
   CreateLayoutCommand,
   CreateLayoutUseCase,

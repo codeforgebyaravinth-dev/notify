@@ -1,4 +1,4 @@
-import { FeatureFlagsKeysEnum, IEnvironment, WorkflowResponseDto } from '@novu/shared';
+import { FeatureFlagsKeysEnum, IEnvironment, WorkflowResponseDto } from '@notify/shared';
 import { useQuery } from '@tanstack/react-query';
 import { createContext, ReactNode, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';

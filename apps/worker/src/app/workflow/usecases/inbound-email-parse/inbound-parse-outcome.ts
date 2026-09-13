@@ -1,4 +1,4 @@
-import { generateObjectId } from '@novu/application-generic';
+import { generateObjectId } from '@notify/application-generic';
 
 /**
  * Which inbound-email resolution path produced the request log row. Maps to the

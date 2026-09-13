@@ -1,4 +1,4 @@
-import { ResourceOriginEnum } from '@novu/shared';
+import { ResourceOriginEnum } from '@notify/shared';
 import { HTMLAttributes, useCallback, useEffect, useRef } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { RiArrowDownSFill, RiEdit2Line } from 'react-icons/ri';

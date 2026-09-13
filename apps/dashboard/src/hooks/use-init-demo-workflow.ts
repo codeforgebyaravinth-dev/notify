@@ -1,4 +1,4 @@
-import { IEnvironment, StepTypeEnum, WorkflowCreationSourceEnum } from '@novu/shared';
+import { IEnvironment, StepTypeEnum, WorkflowCreationSourceEnum } from '@notify/shared';
 import { useEffect, useRef } from 'react';
 import { createWorkflow } from '../api/workflows';
 import { ONBOARDING_DEMO_WORKFLOW_ID } from '../config';

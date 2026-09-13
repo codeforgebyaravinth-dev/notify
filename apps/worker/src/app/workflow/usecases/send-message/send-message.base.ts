@@ -12,14 +12,14 @@ import {
   SelectVariant,
   SelectVariantCommand,
   BillingService,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   IntegrationEntity,
   JobEntity,
   MessageRepository,
   MessageTemplateEntity,
   SubscriberRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   ChannelTypeEnum,
   ChatProviderIdEnum,
@@ -31,7 +31,7 @@ import {
   providers,
   SmsProviderIdEnum,
   TriggerOverrides,
-} from '@novu/shared';
+} from '@notify/shared';
 import { format } from 'date-fns';
 import i18next from 'i18next';
 import { cloneDeep, mergeWith } from 'lodash';

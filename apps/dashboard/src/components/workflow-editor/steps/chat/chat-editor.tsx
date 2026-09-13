@@ -5,7 +5,7 @@ import {
   EnvironmentTypeEnum,
   FeatureFlagsKeysEnum,
   type UiSchema,
-} from '@novu/shared';
+} from '@notify/shared';
 import { type ReactNode, useCallback } from 'react';
 import { getComponentByType } from '@/components/workflow-editor/steps/component-utils';
 import {

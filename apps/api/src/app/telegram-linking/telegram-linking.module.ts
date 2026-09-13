@@ -4,14 +4,14 @@ import {
   CreateOrUpdateSubscriberUseCase,
   UpdateSubscriber,
   UpdateSubscriberChannel,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   AgentIntegrationRepository,
   AgentRepository,
   ChannelEndpointRepository,
   IntegrationRepository,
   SubscriberRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 
 import { ChannelEndpointsModule } from '../channel-endpoints/channel-endpoints.module';
 import { ConnectContextVerifier } from '../integrations/usecases/generate-chat-oath-url/connect-context-verifier.service';

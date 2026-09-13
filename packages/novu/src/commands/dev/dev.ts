@@ -1,5 +1,5 @@
 import { type ChildProcess, execSync, spawn } from 'node:child_process';
-import { NtfrTunnel } from '@novu/ntfr-client';
+import { NtfrTunnel } from '@notify/ntfr-client';
 import chalk from 'chalk';
 import open from 'open';
 import ora from 'ora';

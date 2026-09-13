@@ -1,14 +1,14 @@
 ---
-title: "Amazon SES Email Integration with Novu"
+title: "Amazon SES Email Integration with Notify"
 sidebarTitle: "Amazon SES"
-description: "Connect Amazon SES to Novu to send transactional emails through workflows. Configure IAM credentials, verified sender identities, and the SES region."
+description: "Connect Amazon SES to Notify to send transactional emails through workflows. Configure IAM credentials, verified sender identities, and the SES region."
 ---
 
-You can use the [Amazon SES](https://aws.amazon.com/ses/) provider to send transactional emails to your customers using the Novu Platform with a single API to create multi-channel experiences.
+You can use the [Amazon SES](https://aws.amazon.com/ses/) provider to send transactional emails to your customers using the Notify Platform with a single API to create multi-channel experiences.
 
 ## Getting Started
 
-To use the Amazon SES provider in the email channel, you will need to create an SES account and add your credentials to the Amazon SES integration on the Novu platform.
+To use the Amazon SES provider in the email channel, you will need to create an SES account and add your credentials to the Amazon SES integration on the Notify platform.
 
 ## Setting up SES in AWS?
 
@@ -24,9 +24,9 @@ To use the Amazon SES provider in the email channel, you will need to create an 
 - Verify the recipient email also by creating a new email identity type [only in sandbox mode].
 - Test if your SES is set up correctly using the test email feature.
 
-## Creating an SES integration with Novu
+## Creating an SES integration with Notify
 
-- Visit the [Integrations](https://dashboard.novu.co/integrations?utm_campaign=docs-integrations-ses) page on Novu.
+- Visit the [Integrations](https://dashboard.novu.co/integrations?utm_campaign=docs-integrations-ses) page on Notify.
 - Click on Add a Provider.
 - Select Amazon SES service.
 - Enter previously saved `ACCESS_KEY_ID` and `ACCESS_SECRET_KEY`.
@@ -34,17 +34,17 @@ To use the Amazon SES provider in the email channel, you will need to create an 
 - Enter `region` and `Sender name` also.
 
 <Note>
-  Example region format:- `us-east-1`. By default Novu uses `us-east-1` region.
+  Example region format:- `us-east-1`. By default Notify uses `us-east-1` region.
 </Note>
 
 - Click on the `Disabled` button and mark it as `Active`.
 - Click on the **Update** button.
-- You should now be able to send notifications using Amazon SES in Novu.
+- You should now be able to send notifications using Amazon SES in Notify.
 
 ## FAQs
 
 <AccordionGroup>
-  <Accordion title="Trigger from novu is successful but the subscriber is not receiving email">
+  <Accordion title="Trigger from notify is successful but the subscriber is not receiving email">
     Possible reasons:
     - Subscriber's email address is not verified in SES if SES account is in sandbox environment.
     - SES account daily sending limit has been reached if SES account is in sandbox environment.

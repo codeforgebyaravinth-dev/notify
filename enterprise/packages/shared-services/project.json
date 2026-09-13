@@ -1,5 +1,5 @@
 {
-  "name": "@novu/ee-shared-services",
+  "name": "@notify/ee-shared-services",
   "sourceRoot": "enterprise/packages/shared-services/src",
   "projectType": "library",
   "targets": {

@@ -1,26 +1,26 @@
 ---
-title: 'Transactional Notifications with Novu'
+title: 'Transactional Notifications with Notify'
 sidebarTitle: 'Transactional'
-description: "Send transactional notifications for orders, payments, shipments, and account events using Novu workflows, the REST API, and multi-channel delivery."
+description: "Send transactional notifications for orders, payments, shipments, and account events using Notify workflows, the REST API, and multi-channel delivery."
 ---
 
 
-Send transactional notifications through Novu by triggering a workflow when a business event occurs in your application. Novu delivers the message across in-app, email, SMS, push, or chat based on your workflow steps and the subscriber's contact details.
+Send transactional notifications through Notify by triggering a workflow when a business event occurs in your application. Notify delivers the message across in-app, email, SMS, push, or chat based on your workflow steps and the subscriber's contact details.
 
 Common transactional events include order confirmations, shipping updates, payment failures, and subscription renewals.
 
 ## How do I send a transactional notification?
 
-1. Create a [workflow](/platform/workflow/create-a-workflow) in the Novu Dashboard with the channels you need (for example, email + in-app).
+1. Create a [workflow](/platform/workflow/create-a-workflow) in the Notify Dashboard with the channels you need (for example, email + in-app).
 2. Register or upsert a [subscriber](/platform/concepts/subscribers) with the recipient's `subscriberId`, email, and phone.
 3. [Trigger the workflow](/api-reference/events/trigger-event) from your backend with the workflow identifier, `subscriberId`, and event payload.
 
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({ secretKey: process.env.NOVU_SECRET_KEY });
+const notify = new Notify({ secretKey: process.env.NOVU_SECRET_KEY });
 
 await novu.trigger({
   workflowId: 'order-shipped',
@@ -36,9 +36,9 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="order-shipped",
         to={"subscriber_id": "user_123"},
@@ -75,10 +75,10 @@ _, err := s.Trigger(context.Background(), components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()
+$sdk = notify\Notify::builder()
     ->setSecurity('<YOUR_SECRET_KEY_HERE>')
     ->build();
 
@@ -96,8 +96,8 @@ $sdk->trigger(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new NovuSDK(secretKey: "<YOUR_SECRET_KEY_HERE>");
@@ -116,11 +116,11 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto() {
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 import java.util.Map;
 
-Novu novu = Novu.builder()
+Notify novu = Notify.builder()
     .secretKey("<YOUR_SECRET_KEY_HERE>")
     .build();
 
@@ -174,7 +174,7 @@ curl -X POST 'https://api.novu.co/v1/events/trigger' \
 
 <AccordionGroup>
   <Accordion title="Do I need to create subscribers before sending notifications?">
-    No. You can pass subscriber details inline when triggering a workflow. Novu creates or updates the subscriber automatically if the `subscriberId` does not exist yet.
+    No. You can pass subscriber details inline when triggering a workflow. Notify creates or updates the subscriber automatically if the `subscriberId` does not exist yet.
   </Accordion>
   <Accordion title="Can I send transactional email through my existing ESP?">
     Yes. Connect providers such as SendGrid, Postmark, or Amazon SES in the [Integrations store](/platform/integrations) and use them in email workflow steps.

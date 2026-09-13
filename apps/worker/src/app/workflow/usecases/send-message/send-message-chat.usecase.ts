@@ -17,7 +17,7 @@ import {
   SendWebhookMessage,
   validateEndpointForType,
   BillingService,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   EnvironmentEntity,
   IntegrationEntity,
@@ -27,8 +27,8 @@ import {
   OrganizationEntity,
   SubscriberRepository,
   UserEntity,
-} from '@novu/dal';
-import { ChatOutput } from '@novu/framework/internal';
+} from '@notify/dal';
+import { ChatOutput } from '@notify/framework/internal';
 import {
   ChannelTypeEnum,
   ChatProviderIdEnum,
@@ -42,8 +42,8 @@ import {
   ProvidersIdEnum,
   WebhookEventEnum,
   WebhookObjectTypeEnum,
-} from '@novu/shared';
-import { CardElement, ChannelData, IChatRenderValidation, ISendMessageSuccessResponse } from '@novu/stateless';
+} from '@notify/shared';
+import { CardElement, ChannelData, IChatRenderValidation, ISendMessageSuccessResponse } from '@notify/stateless';
 import { addBreadcrumb } from '@sentry/node';
 import { PlatformException } from '../../../shared/utils';
 import { ResolveChannelEndpointsCommand } from './channel-endpoint-resolution/resolve-channel-endpoints.command';

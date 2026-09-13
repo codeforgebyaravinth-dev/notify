@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { DirectionEnum, PartnerTypeEnum } from '@novu/dal';
+import { DirectionEnum, PartnerTypeEnum } from '@notify/dal';
 import { IsArray, IsEnum, IsObject, IsString } from 'class-validator';
 import { UpdateBrandingDetailsDto } from './update-branding-details.dto';
 

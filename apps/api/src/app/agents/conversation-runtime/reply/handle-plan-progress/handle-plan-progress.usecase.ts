@@ -1,5 +1,5 @@
 import { ForbiddenException, Injectable, NotFoundException } from '@nestjs/common';
-import { PinoLogger, shortId } from '@novu/application-generic';
+import { PinoLogger, shortId } from '@notify/application-generic';
 import {
   AgentRepository,
   ConversationActivityEntity,
@@ -7,7 +7,7 @@ import {
   type ConversationChannel,
   ConversationEntity,
   ConversationRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import type { PlanModel, PlanTaskStatus } from 'chat';
 import { AgentConversationService } from '../../conversation/agent-conversation.service';
 import type { PlanProgressPhase, PlanTaskInput } from '../../egress/plan-phase';

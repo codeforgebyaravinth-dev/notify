@@ -1,12 +1,12 @@
 import crypto from 'node:crypto';
 import { setTimeout } from 'node:timers/promises';
-import { EmailProviderIdEnum, isOutboundSsrfProtectionEnabled } from '@novu/shared';
-import { safeOutboundJsonRequest } from '@novu/shared/utils/safe-outbound-http';
+import { EmailProviderIdEnum, isOutboundSsrfProtectionEnabled } from '@notify/shared';
+import { safeOutboundJsonRequest } from '@notify/shared/utils/safe-outbound-http';
 import {
   assertSafeOutboundUrl,
   normalizeOutboundHttpUrl,
   SsrfBlockedError,
-} from '@novu/shared/utils/ssrf-url-validation';
+} from '@notify/shared/utils/ssrf-url-validation';
 import {
   ChannelTypeEnum,
   CheckIntegrationResponseEnum,
@@ -14,7 +14,7 @@ import {
   IEmailOptions,
   IEmailProvider,
   ISendMessageSuccessResponse,
-} from '@novu/stateless';
+} from '@notify/stateless';
 import axios from 'axios';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
 import { WithPassthrough } from '../../../utils/types';

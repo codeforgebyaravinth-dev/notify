@@ -1,5 +1,5 @@
-import { ChatProviderIdEnum } from '@novu/shared';
-import { CardElement } from '@novu/stateless';
+import { ChatProviderIdEnum } from '@notify/shared';
+import { CardElement } from '@notify/stateless';
 import { describe, expect, test } from 'vitest';
 import { getChatCardValidator } from './card-validators';
 

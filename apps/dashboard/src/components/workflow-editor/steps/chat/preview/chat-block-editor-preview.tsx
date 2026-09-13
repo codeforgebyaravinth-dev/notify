@@ -3,7 +3,7 @@ import {
   type ChatRenderOutput,
   FeatureFlagsKeysEnum,
   type GeneratePreviewResponseDto,
-} from '@novu/shared';
+} from '@notify/shared';
 import { type ReactNode, useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';

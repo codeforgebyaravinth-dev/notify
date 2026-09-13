@@ -1,5 +1,5 @@
-export type * from '@novu/js';
-export { PreferenceLevel, SeverityLevelEnum, WorkflowCriticalityEnum } from '@novu/js';
+export type * from '@notify/js';
+export { PreferenceLevel, SeverityLevelEnum, WorkflowCriticalityEnum } from '@notify/js';
 
 export type {
   AllLocalization,
@@ -32,7 +32,7 @@ export type {
   SubscriptionTheme,
   Tab,
   Variables,
-} from '@novu/js/ui';
+} from '@notify/js/ui';
 export type {
   BellProps,
   InboxContentProps,
@@ -56,6 +56,7 @@ export {
   MsTeamsLinkUser,
   Notifications,
   NovuProvider,
+  NovuProvider as NotifyProvider,
   Preferences,
   SlackConnectButton,
   SlackLinkUser,
@@ -97,6 +98,7 @@ export {
   useDeleteChannelEndpoint,
   useNotifications,
   useNovu,
+  useNovu as useNotify,
   usePreferences,
   useRemoveSubscription,
   useSchedule,

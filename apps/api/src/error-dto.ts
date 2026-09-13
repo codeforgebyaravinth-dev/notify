@@ -1,5 +1,5 @@
 import { ApiExtraModels, ApiProperty, getSchemaPath } from '@nestjs/swagger'; // Ensure you have the correct import for ApiProperty
-import { ConstraintValidation } from '@novu/application-generic';
+import { ConstraintValidation } from '@notify/application-generic';
 
 export class ErrorDto {
   @ApiProperty({

@@ -8,7 +8,7 @@ import {
   InstrumentUsecase,
   PinoLogger,
   shortId,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   ChannelConnectionEntity,
   ChannelConnectionRepository,
@@ -18,7 +18,7 @@ import {
   IntegrationEntity,
   IntegrationRepository,
   SubscriberRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   ChannelEndpointByType,
   ChannelEndpointType,
@@ -26,7 +26,7 @@ import {
   ENDPOINT_TYPES,
   isToolWebhookDynamicRouting,
   ToolProviderIdEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { ConfirmLinkedAuthCardsCommand } from '../../../agents/conversation-runtime/link/confirm-linked-auth-cards.command';
 import { ConfirmLinkedAuthCards } from '../../../agents/conversation-runtime/link/confirm-linked-auth-cards.usecase';
 import { AgentPlatformEnum } from '../../../agents/shared/enums/agent-platform.enum';
@@ -37,7 +37,7 @@ const MONGO_DUPLICATE_KEY_CODE = 11000;
 /**
  * Labels for duplicate-key 409 messages on tool endpoint types that also skip
  * ChannelConnection resolution. Encryption field membership lives in
- * `encryptChannelEndpoint` (`@novu/application-generic`); keep this map in sync
+ * `encryptChannelEndpoint` (`@notify/application-generic`); keep this map in sync
  * when adding a new tool secret type.
  */
 const ENDPOINT_STORED_SECRET_LABELS: Partial<Record<ChannelEndpointType, string>> = {

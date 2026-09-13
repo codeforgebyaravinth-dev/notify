@@ -1,10 +1,10 @@
 ---
 title: 'Typescript'
-description: "Connect a Node.js or TypeScript application to Novu with the official server SDK to trigger workflows, manage subscribers, and send notifications."
+description: "Connect a Node.js or TypeScript application to Notify with the official server SDK to trigger workflows, manage subscribers, and send notifications."
 ---
 
 
-Novu's Typescript SDK provides simple, yet comprehensive notification management, and delivery capabilities through multiple channels that you can implement using code. It integrates seamlessly with your Node.js, Bun, Deno, and Cloudflare Workers applications.
+Notify's Typescript SDK provides simple, yet comprehensive notification management, and delivery capabilities through multiple channels that you can implement using code. It integrates seamlessly with your Node.js, Bun, Deno, and Cloudflare Workers applications.
 
 [Explore the source code on GitHub](https://github.com/novuhq/novu-ts)
 
@@ -14,21 +14,21 @@ Novu's Typescript SDK provides simple, yet comprehensive notification management
 <Tab title="NPM">
 
 ```bash
-npm add @novu/api
+npm add @notify/api
 ```
 
 </Tab>
 <Tab title="PNPM">
 
 ```bash
-pnpm add @novu/api
+pnpm add @notify/api
 ```
 
 </Tab>
 <Tab title="Yarn">
 
 ```bash
-yarn add @novu/api zod@^3
+yarn add @notify/api zod@^3
 
 ## Note that Yarn does not install peer dependencies automatically. You will need
 
@@ -40,7 +40,7 @@ yarn add @novu/api zod@^3
 <Tab title="Bun">
 
 ```bash
-bun add @novu/api
+bun add @notify/api
 ```
 
 </Tab>
@@ -52,9 +52,9 @@ bun add @novu/api
 <Tab title="US Region">
 
 ```typescript
-import { Novu } from "@novu/api";
+import { Notify } from "@notify/api";
 
-const novu = new Novu({ secretKey: "<YOUR_SECRET_KEY_HERE>", });
+const notify = new Notify({ secretKey: "<YOUR_SECRET_KEY_HERE>", });
 
 async function run() {
   const result = await novu.trigger({
@@ -74,7 +74,7 @@ async function run() {
     },
     overrides: {
       email: {
-        bcc: "no-reply@novu.co",
+        bcc: "no-reply@notify.co",
       },
     },
   });
@@ -87,9 +87,9 @@ run();
 <Tab title="EU Region">
 
 ```javascript
-import { Novu } from "@novu/api";
+import { Notify } from "@notify/api";
 
-const novu = new Novu({
+const notify = new Notify({
   secretKey: "<YOUR_SECRET_KEY_HERE>",
   serverURL: "https://eu.api.novu.co",
 });
@@ -112,7 +112,7 @@ async function run() {
     },
     overrides: {
       "email": {
-        "bcc": "no-reply@novu.co"
+        "bcc": "no-reply@notify.co"
       },
     },
   });
@@ -130,15 +130,15 @@ run();
 Point the SDK at your self-hosted API by passing `serverURL`. Do not append `/v1` - the SDK adds the API version automatically.
 
 ```javascript
-import { Novu } from "@novu/api";
+import { Notify } from "@notify/api";
 
-const novu = new Novu({
+const notify = new Notify({
   secretKey: "<YOUR_SECRET_KEY_HERE>",
-  serverURL: "https://your-novu-api-host", // e.g. http://localhost:3000
+  serverURL: "https://your-notify-api-host", // e.g. http://localhost:3000
 });
 ```
 
-If you use Novu Cloud (US default), omit `serverURL` entirely - the SDK points to `https://api.novu.co`.
+If you use Notify Cloud (US default), omit `serverURL` entirely - the SDK points to `https://api.novu.co`.
 
 </Tab>
 </Tabs>
@@ -148,8 +148,8 @@ If you use Novu Cloud (US default), omit `serverURL` entirely - the SDK points t
 To send custom headers, you can use the `HTTPClient` class. Read more on how to configure custom [http client](https://github.com/novuhq/novu-ts?tab=readme-ov-file#custom-http-client).
 
 ```typescript
-import { Novu } from "@novu/api";
-import { HTTPClient } from "@novu/api/lib/http";
+import { Notify } from "@notify/api";
+import { HTTPClient } from "@notify/api/lib/http";
 
 const httpClient = new HTTPClient();
 
@@ -160,7 +160,7 @@ httpClient.addHook("beforeRequest", (request) => {
   return nextRequest;
 });
 
-const novu = new Novu({
+const notify = new Notify({
   httpClient,
   secretKey: "SECRET_KEY_VALUE",
   serverURL: "https://eu.api.novu.co",

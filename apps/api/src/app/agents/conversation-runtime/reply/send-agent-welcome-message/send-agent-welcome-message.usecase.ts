@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { AnalyticsService, InstrumentUsecase, PinoLogger } from '@novu/application-generic';
+import { AnalyticsService, InstrumentUsecase, PinoLogger } from '@notify/application-generic';
 import {
   AgentRepository,
   ChannelConnectionRepository,
@@ -7,8 +7,8 @@ import {
   ConversationParticipantTypeEnum,
   IntegrationRepository,
   SubscriberRepository,
-} from '@novu/dal';
-import { SLACK_AGENT_WELCOME_SUGGESTED_PROMPTS, SLACK_AGENT_WELCOME_SUGGESTED_PROMPTS_TITLE } from '@novu/shared';
+} from '@notify/dal';
+import { SLACK_AGENT_WELCOME_SUGGESTED_PROMPTS, SLACK_AGENT_WELCOME_SUGGESTED_PROMPTS_TITLE } from '@notify/shared';
 import type { CardElement } from 'chat';
 import { ConnectClaimTokenService } from '../../../../connect/services/connect-claim-token.service';
 import { isKeylessOrganization } from '../../../../keyless/keyless-organization.helpers';

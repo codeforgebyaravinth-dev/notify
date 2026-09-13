@@ -1,5 +1,5 @@
 {
-  "name": "@novu/inbound-mail",
+  "name": "@notify/inbound-mail",
   "version": "3.19.0",
   "description": "",
   "author": "",
@@ -21,9 +21,9 @@
     "@aws-sdk/client-s3": "^3.996.0",
     "@aws-sdk/client-secrets-manager": "3.996.0",
     "@aws-sdk/s3-request-presigner": "^3.996.0",
-    "@novu/application-generic": "workspace:*",
-    "@novu/dal": "workspace:*",
-    "@novu/shared": "workspace:*",
+    "@notify/application-generic": "workspace:*",
+    "@notify/dal": "workspace:*",
+    "@notify/shared": "workspace:*",
     "@sentry/nestjs": "^10.63.0",
     "@sentry/node": "^10.63.0",
     "@sentry/profiling-node": "^10.63.0",
@@ -44,7 +44,7 @@
     "uuid": "^11.1.1"
   },
   "devDependencies": {
-    "@novu/testing": "workspace:*",
+    "@notify/testing": "workspace:*",
     "@types/chai": "^4.2.11",
     "@types/express": "^4.17.8",
     "@types/html-to-text": "^9.0.1",

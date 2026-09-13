@@ -1,4 +1,4 @@
-import { SeverityLevelEnum, WorkflowCriticalityEnum } from '@novu/shared';
+import { SeverityLevelEnum, WorkflowCriticalityEnum } from '@notify/shared';
 import { IsArray, IsEnum, IsOptional, IsString } from 'class-validator';
 import { IsEnumOrArray } from '../../shared/validators/is-enum-or-array';
 

@@ -1,4 +1,4 @@
-import type { AgentPlatformContext } from '@novu/framework';
+import type { AgentPlatformContext } from '@notify/framework';
 import { expect } from 'chai';
 import { AgentPlatformEnum } from '../../shared/enums/agent-platform.enum';
 import { buildAgentPlatformContext, buildEmailPlatformContext } from './build-platform-context.util';

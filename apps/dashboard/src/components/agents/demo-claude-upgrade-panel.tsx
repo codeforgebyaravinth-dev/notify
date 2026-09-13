@@ -1,4 +1,4 @@
-import { AgentRuntimeProviderIdEnum, type IIntegration, IntegrationKindEnum } from '@novu/shared';
+import { AgentRuntimeProviderIdEnum, type IIntegration, IntegrationKindEnum } from '@notify/shared';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { RiArrowRightSLine, RiArrowRightUpLine, RiCloseLine } from 'react-icons/ri';

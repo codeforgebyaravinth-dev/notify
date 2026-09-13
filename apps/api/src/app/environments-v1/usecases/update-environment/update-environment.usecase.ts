@@ -9,9 +9,9 @@ import {
   PinoLogger,
   resolvePublicAddresses,
   SsrfBlockedError,
-} from '@novu/application-generic';
-import { EnvironmentEntity, EnvironmentRepository } from '@novu/dal';
-import { EnvironmentEnum, PROTECTED_ENVIRONMENTS } from '@novu/shared';
+} from '@notify/application-generic';
+import { EnvironmentEntity, EnvironmentRepository } from '@notify/dal';
+import { EnvironmentEnum, PROTECTED_ENVIRONMENTS } from '@notify/shared';
 import { UpdateEnvironmentCommand } from './update-environment.command';
 
 @Injectable()

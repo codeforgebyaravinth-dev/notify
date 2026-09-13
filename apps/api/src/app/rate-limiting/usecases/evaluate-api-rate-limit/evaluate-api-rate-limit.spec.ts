@@ -6,8 +6,8 @@ import {
   ApiServiceLevelEnum,
   IApiRateLimitAlgorithm,
   IApiRateLimitCost,
-} from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { SharedModule } from '../../../shared/shared.module';

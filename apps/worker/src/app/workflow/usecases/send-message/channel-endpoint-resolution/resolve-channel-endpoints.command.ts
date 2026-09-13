@@ -1,5 +1,5 @@
-import { EnvironmentWithUserCommand } from '@novu/application-generic';
-import { ChannelTypeEnum } from '@novu/shared';
+import { EnvironmentWithUserCommand } from '@notify/application-generic';
+import { ChannelTypeEnum } from '@notify/shared';
 import { IsArray, IsDefined, IsEnum, IsOptional, IsString } from 'class-validator';
 
 export class ResolveChannelEndpointsCommand extends EnvironmentWithUserCommand {

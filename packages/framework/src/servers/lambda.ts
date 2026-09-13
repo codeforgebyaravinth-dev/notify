@@ -8,12 +8,12 @@ import { type Either, type SupportedFrameworkName } from '../types';
  *
  * Example:
  *
- * import { serve, Client, type Workflow } from '@novu/framework/lambda';
+ * import { serve, Client, type Workflow } from '@notify/framework/lambda';
  *
  * instead of
  *
- * import { serve } from '@novu/framework/lambda';
- * import { Client, type Workflow } from '@novu/framework';
+ * import { serve } from '@notify/framework/lambda';
+ * import { Client, type Workflow } from '@notify/framework';
  */
 export * from '../index';
 export const frameworkName: SupportedFrameworkName = 'lambda';
@@ -25,7 +25,7 @@ export const frameworkName: SupportedFrameworkName = 'lambda';
  * @example
  *
  * ```ts
- * import { serve } from "@novu/framework/lambda";
+ * import { serve } from "@notify/framework/lambda";
  * import { myWorkflow } from "./src/novu/workflows";
  *
  * export const handler = serve({ workflows: [myWorkflow] });

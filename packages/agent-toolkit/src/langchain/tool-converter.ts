@@ -1,5 +1,5 @@
 import { DynamicStructuredTool } from '@langchain/core/tools';
-import type { Novu } from '@novu/api';
+import type { Novu } from '@notify/api';
 import type { NovuToolDefinition, NovuToolkitConfig } from '../core/types.js';
 
 export function novuToolToLangchainTool(

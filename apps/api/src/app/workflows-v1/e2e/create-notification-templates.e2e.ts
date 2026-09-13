@@ -7,7 +7,7 @@ import {
   NotificationTemplateRepository,
   OrganizationRepository,
   SubscriberEntity,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   ChangeEntityTypeEnum,
   ChannelCTATypeEnum,
@@ -24,8 +24,8 @@ import {
   ResourceTypeEnum,
   StepTypeEnum,
   TriggerTypeEnum,
-} from '@novu/shared';
-import { SubscribersService, testServer, UserSession } from '@novu/testing';
+} from '@notify/shared';
+import { SubscribersService, testServer, UserSession } from '@notify/testing';
 import axios from 'axios';
 import { expect } from 'chai';
 import { isSameDay } from 'date-fns';

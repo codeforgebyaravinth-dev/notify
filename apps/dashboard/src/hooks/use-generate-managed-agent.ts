@@ -1,4 +1,4 @@
-import type { AgentRuntime } from '@novu/shared';
+import type { AgentRuntime } from '@notify/shared';
 import { useMutation } from '@tanstack/react-query';
 import { useCallback, useRef } from 'react';
 import { type GeneratedManagedAgent, generateManagedAgent } from '@/api/agents';

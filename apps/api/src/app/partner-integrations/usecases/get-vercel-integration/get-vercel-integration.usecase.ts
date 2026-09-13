@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { OrganizationRepository } from '@novu/dal';
+import { OrganizationRepository } from '@notify/dal';
 
 import { GetVercelIntegrationCommand } from './get-vercel-integration.command';
 

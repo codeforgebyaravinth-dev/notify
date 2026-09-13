@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { FeatureFlagsService, GetWorkflowByIdsCommand, GetWorkflowByIdsUseCase } from '@novu/application-generic';
-import { ContextRepository } from '@novu/dal';
-import { ContextPayload, FeatureFlagsKeysEnum, PreferenceLevelEnum, WorkflowCriticalityEnum } from '@novu/shared';
+import { FeatureFlagsService, GetWorkflowByIdsCommand, GetWorkflowByIdsUseCase } from '@notify/application-generic';
+import { ContextRepository } from '@notify/dal';
+import { ContextPayload, FeatureFlagsKeysEnum, PreferenceLevelEnum, WorkflowCriticalityEnum } from '@notify/shared';
 import { plainToInstance } from 'class-transformer';
 import { UpdatePreferencesCommand } from '../../../inbox/usecases/update-preferences/update-preferences.command';
 import { UpdatePreferences } from '../../../inbox/usecases/update-preferences/update-preferences.usecase';

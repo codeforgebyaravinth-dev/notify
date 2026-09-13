@@ -1,4 +1,4 @@
-import { AgentSubscriberAccessEnum } from '@novu/shared';
+import { AgentSubscriberAccessEnum } from '@notify/shared';
 import { expect } from 'chai';
 import { stub } from 'sinon';
 

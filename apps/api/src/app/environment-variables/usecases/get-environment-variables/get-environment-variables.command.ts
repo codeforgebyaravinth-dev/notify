@@ -1,4 +1,4 @@
-import { OrganizationLevelWithUserCommand } from '@novu/application-generic';
+import { OrganizationLevelWithUserCommand } from '@notify/application-generic';
 import { IsBoolean, IsOptional, IsString } from 'class-validator';
 
 export class GetEnvironmentVariablesCommand extends OrganizationLevelWithUserCommand {

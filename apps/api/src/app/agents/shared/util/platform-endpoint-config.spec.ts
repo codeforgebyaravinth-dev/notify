@@ -1,4 +1,4 @@
-import { AgentSubscriberAccessEnum } from '@novu/shared';
+import { AgentSubscriberAccessEnum } from '@notify/shared';
 import { expect } from 'chai';
 import { AgentPlatformEnum } from '../enums/agent-platform.enum';
 import { isOpenAccessIdentityPlatform, shouldAutoProvisionInbound } from './platform-endpoint-config';

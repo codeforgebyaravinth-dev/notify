@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { AgentEntitlementsService, decryptCredentials, PinoLogger } from '@novu/application-generic';
-import { AgentRepository, IntegrationRepository } from '@novu/dal';
+import { AgentEntitlementsService, decryptCredentials, PinoLogger } from '@notify/application-generic';
+import { AgentRepository, IntegrationRepository } from '@notify/dal';
 import type { AgentResponseDto, AgentRuntimeConfigResponseDto } from '../../../shared/dtos';
 import { type ManagedRuntimeHydration, toAgentResponse } from '../../../shared/mappers/agent-response.mapper';
 import { GetAgentRuntimeConfigCommand } from '../get-agent-runtime-config/get-agent-runtime-config.command';

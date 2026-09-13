@@ -1,4 +1,4 @@
-import { type IIntegration } from '@novu/shared';
+import { type IIntegration } from '@notify/shared';
 import { type ReactNode, useMemo, useState } from 'react';
 import { RiArrowRightSLine, RiCheckboxCircleFill, RiFileCodeLine } from 'react-icons/ri';
 import {

@@ -1,6 +1,6 @@
 import { Body, Controller, HttpCode, HttpStatus, Post } from '@nestjs/common';
 import { ApiExcludeController } from '@nestjs/swagger';
-import { UserSessionData } from '@novu/shared';
+import { UserSessionData } from '@notify/shared';
 import { RequireAuthentication } from '../../../auth/framework/auth.decorator';
 import { ExternalApiAccessible } from '../../../auth/framework/external-api.decorator';
 import { UserSession } from '../../../shared/framework/user.decorator';

@@ -1,5 +1,5 @@
 import { standardSchemaResolver } from '@hookform/resolvers/standard-schema';
-import { ContentIssueEnum, EnvironmentTypeEnum, type StepUpdateDto } from '@novu/shared';
+import { ContentIssueEnum, EnvironmentTypeEnum, type StepUpdateDto } from '@notify/shared';
 import { useEffect, useMemo } from 'react';
 import { useForm } from 'react-hook-form';
 import {

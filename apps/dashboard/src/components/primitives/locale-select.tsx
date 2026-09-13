@@ -1,4 +1,4 @@
-import { getAllLocales, getCommonLocales, getLocaleByIso } from '@novu/shared';
+import { getAllLocales, getCommonLocales, getLocaleByIso } from '@notify/shared';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { RiArrowDownSLine, RiCheckLine, RiErrorWarningFill } from 'react-icons/ri';
 import { cn } from '@/utils/ui';

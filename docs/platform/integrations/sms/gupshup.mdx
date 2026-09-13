@@ -1,23 +1,23 @@
 ---
-title: "Gupshup SMS Integration with Novu"
+title: "Gupshup SMS Integration with Notify"
 sidebarTitle: 'Gupshup'
-description: "Connect Gupshup SMS to Novu to send SMS notifications through workflows. Store your Gupshup user ID, password, and source in the Novu dashboard for delivery."
+description: "Connect Gupshup SMS to Notify to send SMS notifications through workflows. Store your Gupshup user ID, password, and source in the Notify dashboard for delivery."
 ---
 
-You can use the [Gupshup](https://www.gupshup.io/) provider to send SMS messages to your customers using the Novu Platform with a single API to create multi-channel experiences.
+You can use the [Gupshup](https://www.gupshup.io/) provider to send SMS messages to your customers using the Notify Platform with a single API to create multi-channel experiences.
 
 ## Getting Started
 
-To use the Gupshup provider in the SMS channel, the first step is to create a Gupshup account and add the Account User Id and Password to the Gupshup integration on the Novu platform.
+To use the Gupshup provider in the SMS channel, the first step is to create a Gupshup account and add the Account User Id and Password to the Gupshup integration on the Notify platform.
 
 ## What is User id and Password?
 
 - `User Id` : The account number provided by the Enterprise SMS GupShup.
 - `Password` : Password is provided by Gupshup for authentication of user id. The password must be the same as used to log on to the Enterprise SMS GupShup website.
 
-## Creating a gupshup integration with Novu
+## Creating a gupshup integration with Notify
 
-- Visit the [Integrations](https://dashboard.novu.co/integrations?utm_campaign=docs-sms-gupshup) page on Novu.
+- Visit the [Integrations](https://dashboard.novu.co/integrations?utm_campaign=docs-sms-gupshup) page on Notify.
 - Click the **Connect** button on the top right corner of the page.
 - Select SMS and locate **Gupshup** and click on the **Connect** button.
 - Choose environment from top right corner in which you want to create the integration.
@@ -27,11 +27,11 @@ To use the Gupshup provider in the SMS channel, the first step is to create a Gu
 - If you want to use this integration, then mark this integration as `primary` using **Primary Integration** toggle.
 - Click on the **Create Integration** button.
 
-Now it is possible to send SMS notifications using Gupshup in Novu.
+Now it is possible to send SMS notifications using Gupshup in Notify.
 
 ## Using Gupshup templateId
 
-Novu has its own SMS editor for writing SMS template. To use premade Gupshup templates, providers overrides can be used.
+Notify has its own SMS editor for writing SMS template. To use premade Gupshup templates, providers overrides can be used.
 
 <Note>
   Sending `customData` field in overrides to send Gupshup template will work
@@ -47,9 +47,9 @@ Novu has its own SMS editor for writing SMS template. To use premade Gupshup tem
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({ secretKey: "<NOVU_SECRET_KEY>" });
+const notify = new Notify({ secretKey: "<NOVU_SECRET_KEY>" });
 
 await novu.trigger({
   workflowId: "WORKFLOW_ID",
@@ -72,9 +72,9 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="WORKFLOW_ID",
         to={"subscriber_id": "SUBSCRIBER_ID"},
@@ -125,10 +125,10 @@ res, err := s.Trigger(context.Background(), components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 
 $sdk->trigger(
     triggerEventRequestDto: new Components\TriggerEventRequestDto(
@@ -151,8 +151,8 @@ $sdk->trigger(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
 
@@ -175,10 +175,10 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto() {
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 
 novu.trigger()
     .body(TriggerEventRequestDto.builder()

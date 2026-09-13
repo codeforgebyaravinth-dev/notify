@@ -3,7 +3,7 @@ import { installPackages } from '../../../init/helpers/install';
 import { detectPackageManager } from '../../../step/utils/package-manager';
 import { getDependencyVersion, hasDependency, readProjectPackageJson } from '../bridge/project-package';
 
-const FRAMEWORK_PACKAGE = '@novu/framework';
+const FRAMEWORK_PACKAGE = '@notify/framework';
 const AI_CORE_PACKAGE = 'ai';
 export const AI_SDK_V7_SPEC = `${AI_CORE_PACKAGE}@^7.0.0`;
 

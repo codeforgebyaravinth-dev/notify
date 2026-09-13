@@ -1,5 +1,5 @@
-import type { WorkflowResponseDto } from '@novu/shared';
-import { PermissionsEnum } from '@novu/shared';
+import type { WorkflowResponseDto } from '@notify/shared';
+import { PermissionsEnum } from '@notify/shared';
 import { useEffect, useState } from 'react';
 import {
   Sheet,
@@ -282,8 +282,8 @@ export function TestWorkflowInstructions({ isOpen, onClose, workflow, to, payloa
                 <TimelineContainer>
                   <InstructionStep
                     index={0}
-                    title="Install @novu/api package"
-                    code="npm install @novu/api"
+                    title="Install @notify/api package"
+                    code="npm install @notify/api"
                     codeTitle="Terminal"
                   >
                     Install the npm package to use with Novu and Node.js.

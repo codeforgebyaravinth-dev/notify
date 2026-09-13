@@ -1,5 +1,5 @@
-import { SmsProviderIdEnum } from '@novu/shared';
-import { ChannelTypeEnum, ISmsOptions, ISmsProvider, ISendMessageSuccessResponse, ISMSEventBody } from '@novu/stateless';
+import { SmsProviderIdEnum } from '@notify/shared';
+import { ChannelTypeEnum, ISmsOptions, ISmsProvider, ISendMessageSuccessResponse, ISMSEventBody } from '@notify/stateless';
 import { TelnyxSmsProvider } from '../sms/telnyx/telnyx.provider';
 import { WithPassthrough } from '../../utils/types';
 

@@ -1,16 +1,16 @@
 ---
 title: 'API keys'
-description: 'Find your Novu application identifier, secret key, and API hostnames, and rotate secret keys without downtime using rolling rotation.'
+description: 'Find your Notify application identifier, secret key, and API hostnames, and rotate secret keys without downtime using rolling rotation.'
 ---
 
-Novu provides a set of keys and hostnames that your application uses to authenticate requests, send events to the Novu API, and to interact with the [`<Inbox />`](/platform/inbox).
+Notify provides a set of keys and hostnames that your application uses to authenticate requests, send events to the Notify API, and to interact with the [`<Inbox />`](/platform/inbox).
 
-Your API keys are environment specific and allow Novu to tie all request to a particular Novu environment.
+Your API keys are environment specific and allow Notify to tie all request to a particular Notify environment.
 
 ## Finding your API keys
 
 Follow these steps to find your environment-specific API keys:
-1. Login to the Novu dashboard.
+1. Login to the Notify dashboard.
 2. On the developer section, click **API Keys** to find all your environment keys, whiich are:
       - Application Identifier
       - Secret Keys
@@ -19,7 +19,7 @@ Follow these steps to find your environment-specific API keys:
 
 ## Application identifier
 
-The Application Identifier is a unique identifier for your application within Novu. It is considered a public key and is safe to expose in client-side code.
+The Application Identifier is a unique identifier for your application within Notify. It is considered a public key and is safe to expose in client-side code.
 
 The application identifier is used to initialize the [`<Inbox />`](/platform/inbox) component.
 
@@ -51,10 +51,10 @@ The **Secret Keys** card on the API Keys page lists every active key with per-ke
 
 ## API URLs
 
-The following hostnames are used to connect to the Novu cloud platform.
+The following hostnames are used to connect to the Notify cloud platform.
 
 | **Endpoint**           | **URL**               | **Description**                                                                                                                          |
 | ---------------------- | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| **API Hostname**       | `https://api.novu.co` | The domain that your application sends API requests to. It identifies the Novu API server.                                               |
+| **API Hostname**       | `https://api.novu.co` | The domain that your application sends API requests to. It identifies the Notify API server.                                               |
 | **WebSocket Hostname** | `https://ws.novu.co`  | The domain used to establish a WebSocket connection. Similar to the API Hostname, but specifically for real-time, two-way communication. |
 

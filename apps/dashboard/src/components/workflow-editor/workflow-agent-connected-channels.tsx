@@ -1,4 +1,4 @@
-import { ChannelTypeEnum, providers as novuProviders } from '@novu/shared';
+import { ChannelTypeEnum, providers as novuProviders } from '@notify/shared';
 import { useQuery } from '@tanstack/react-query';
 import { useMemo } from 'react';
 import { RiErrorWarningFill } from 'react-icons/ri';

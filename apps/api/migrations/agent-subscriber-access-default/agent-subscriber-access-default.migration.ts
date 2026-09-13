@@ -1,7 +1,7 @@
 import '../../src/config';
 
-import { AgentRepository } from '@novu/dal';
-import { AgentSubscriberAccessEnum } from '@novu/shared';
+import { AgentRepository } from '@notify/dal';
+import { AgentSubscriberAccessEnum } from '@notify/shared';
 
 type UpdateManyFn = (
   filter: Record<string, unknown>,

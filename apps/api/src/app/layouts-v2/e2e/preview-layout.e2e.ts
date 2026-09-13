@@ -1,8 +1,8 @@
-import { Novu } from '@novu/api';
-import { CreateLayoutDto, LayoutCreationSourceEnum } from '@novu/application-generic';
-import { EnvironmentRepository, LayoutRepository } from '@novu/dal';
-import { ApiServiceLevelEnum, ChannelTypeEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { Novu } from '@notify/api';
+import { CreateLayoutDto, LayoutCreationSourceEnum } from '@notify/application-generic';
+import { EnvironmentRepository, LayoutRepository } from '@notify/dal';
+import { ApiServiceLevelEnum, ChannelTypeEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { initNovuClassSdkInternalAuth } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';
 

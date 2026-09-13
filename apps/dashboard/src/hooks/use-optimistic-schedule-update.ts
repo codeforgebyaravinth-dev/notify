@@ -1,4 +1,4 @@
-import { GetSubscriberPreferencesDto, ScheduleDto } from '@novu/api/models/components';
+import { GetSubscriberPreferencesDto, ScheduleDto } from '@notify/api/models/components';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { patchSubscriberPreferences } from '@/api/subscribers';
 import { useAuth } from '@/context/auth/hooks';

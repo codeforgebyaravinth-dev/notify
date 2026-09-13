@@ -5,7 +5,7 @@
 The Inbox component includes a built-in Preferences panel. Subscribers access it via the settings icon:
 
 ```tsx
-import { Inbox } from "@novu/react";
+import { Inbox } from "@notify/react";
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
 Render the Preferences panel independently:
 
 ```tsx
-import { Inbox, Preferences } from "@novu/react";
+import { Inbox, Preferences } from "@notify/react";
 
 function PreferencesPage() {
   return (
@@ -77,12 +77,12 @@ Group workflows in the Preferences panel:
 />
 ```
 
-## Custom Preferences UI with @novu/js
+## Custom Preferences UI with @notify/js
 
 Build a completely custom preferences interface:
 
 ```typescript
-import { Novu } from "@novu/js";
+import { Novu } from "@notify/js";
 
 const novu = new Novu({
   applicationIdentifier: "YOUR_NOVU_APP_ID",
@@ -117,7 +117,7 @@ preferences?.[1]?.update({
 // components/PreferencesPanel.tsx
 "use client";
 
-import { Inbox, Preferences } from "@novu/nextjs";
+import { Inbox, Preferences } from "@notify/nextjs";
 
 export function PreferencesPanel({
   subscriberId,

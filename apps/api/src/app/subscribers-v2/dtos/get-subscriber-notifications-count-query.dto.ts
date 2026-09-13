@@ -1,6 +1,6 @@
 import { BadRequestException } from '@nestjs/common';
 import { ApiProperty } from '@nestjs/swagger';
-import { SeverityLevelEnum, type TagsFilter } from '@novu/shared';
+import { SeverityLevelEnum, type TagsFilter } from '@notify/shared';
 import { plainToClass, Transform, Type } from 'class-transformer';
 import { ArrayMaxSize, IsArray, IsBoolean, IsDefined, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { NotificationFilter } from '../../inbox/utils/types';

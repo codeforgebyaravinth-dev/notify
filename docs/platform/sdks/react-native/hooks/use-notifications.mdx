@@ -37,7 +37,7 @@ type NotificationReturn = {
 Here's how to use the `useNotifications` hook to fetch and display notifications:
 
 ```tsx
-import { useNotifications } from '@novu/react-native';
+import { useNotifications } from '@notify/react-native';
 import { View, Text, ActivityIndicator, FlatList } from 'react-native';
 
 function NotificationsList() {
@@ -70,7 +70,7 @@ function NotificationsList() {
 You can implement pull-to-refresh using the `refetch` function:
 
 ```tsx
-import { useNotifications } from '@novu/react-native';
+import { useNotifications } from '@notify/react-native';
 import { RefreshControl, FlatList, View, Text, ActivityIndicator } from 'react-native';
 
 function RefreshableNotificationsList() {

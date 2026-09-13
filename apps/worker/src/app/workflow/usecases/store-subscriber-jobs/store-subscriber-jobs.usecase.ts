@@ -6,8 +6,8 @@ import {
   mapEventTypeToTitle,
   StepRunRepository,
   TraceLogRepository,
-} from '@novu/application-generic';
-import { DalException, JobEntity, JobRepository, JobStatusEnum } from '@novu/dal';
+} from '@notify/application-generic';
+import { DalException, JobEntity, JobRepository, JobStatusEnum } from '@notify/dal';
 import { PlatformException } from '../../../shared/utils';
 import { AddJob } from '../add-job';
 import { StoreSubscriberJobsCommand } from './store-subscriber-jobs.command';

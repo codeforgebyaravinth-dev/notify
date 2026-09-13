@@ -6,7 +6,7 @@ import {
   type IEnvironment,
   type IIntegration,
   type IProviderConfig,
-} from '@novu/shared';
+} from '@notify/shared';
 import {
   RiCheckboxCircleFill,
   RiCloseCircleFill,

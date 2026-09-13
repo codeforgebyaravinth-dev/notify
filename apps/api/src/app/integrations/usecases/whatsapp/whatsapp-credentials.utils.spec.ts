@@ -1,4 +1,4 @@
-import { ChatProviderIdEnum } from '@novu/shared';
+import { ChatProviderIdEnum } from '@notify/shared';
 import { expect } from 'chai';
 import { ensureWhatsAppManagedCredentials } from './whatsapp-credentials.utils';
 

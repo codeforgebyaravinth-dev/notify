@@ -1,4 +1,4 @@
-import { AiWorkflowToolsEnum } from '@novu/shared';
+import { AiWorkflowToolsEnum } from '@notify/shared';
 import { DynamicToolUIPart, UIMessage } from 'ai';
 import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useMemo, useRef, useState } from 'react';

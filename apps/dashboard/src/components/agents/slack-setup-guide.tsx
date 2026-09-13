@@ -1,11 +1,11 @@
-import { SlackConnectButton } from '@novu/react';
+import { SlackConnectButton } from '@notify/react';
 import {
   ChatProviderIdEnum,
   FeatureFlagsKeysEnum,
   SLACK_AGENT_BOT_EVENTS,
   SLACK_AGENT_DEFAULT_DESCRIPTION,
   SLACK_AGENT_OAUTH_SCOPES,
-} from '@novu/shared';
+} from '@notify/shared';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { AnimatePresence, motion } from 'motion/react';
 import { useCallback, useEffect, useMemo, useState } from 'react';

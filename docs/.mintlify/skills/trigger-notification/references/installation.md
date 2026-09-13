@@ -3,11 +3,11 @@
 ## Node.js / TypeScript
 
 ```bash
-npm install @novu/api
+npm install @notify/api
 # or
-pnpm add @novu/api
+pnpm add @notify/api
 # or
-yarn add @novu/api
+yarn add @notify/api
 ```
 
 ## Environment Variables
@@ -21,7 +21,7 @@ Get your API key from [dashboard.novu.co/api-keys](https://dashboard.novu.co/api
 ## Initialize the SDK
 
 ```typescript
-import { Novu } from "@novu/api";
+import { Novu } from "@notify/api";
 
 const novu = new Novu({
   secretKey: process.env.NOVU_SECRET_KEY,

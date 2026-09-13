@@ -1,4 +1,4 @@
-import { ContextPayload, ISubscriberResponseDto, SubscriberDto, WorkflowResponseDto } from '@novu/shared';
+import { ContextPayload, ISubscriberResponseDto, SubscriberDto, WorkflowResponseDto } from '@notify/shared';
 import { JSONSchema7 } from 'json-schema';
 
 export type PayloadData = Record<string, unknown>;

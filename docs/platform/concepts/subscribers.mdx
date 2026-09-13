@@ -1,14 +1,14 @@
 ---
-title: 'How do subscribers work in Novu?'
+title: 'How do subscribers work in Notify?'
 sidebarTitle: 'Subscribers'
-description: "Learn what a subscriber is in Novu, how they are identified by subscriberId, and how they fit into the notification system as recipients of workflow runs."
+description: "Learn what a subscriber is in Notify, how they are identified by subscriberId, and how they fit into the notification system as recipients of workflow runs."
 ---
 
-A subscriber is a notification recipient in Novu, identified by a unique `subscriberId`. Workflows are triggered for subscribers, and Novu applies channel routing, preferences, and personalization at the subscriber level.
+A subscriber is a notification recipient in Notify, identified by a unique `subscriberId`. Workflows are triggered for subscribers, and Notify applies channel routing, preferences, and personalization at the subscriber level.
 
-## How does Novu identify a subscriber?
+## How does Notify identify a subscriber?
 
-Each subscriber is uniquely identified in Novu by a `subscriberId`. This ID is defined by your application and serves as the reference point for all subscriber-related operations whether sending messages, retrieving preferences, or managing user data. 
+Each subscriber is uniquely identified in Notify by a `subscriberId`. This ID is defined by your application and serves as the reference point for all subscriber-related operations whether sending messages, retrieving preferences, or managing user data. 
 
 Unlike email addresses or phone numbers, which may change or be shared across users, the `subscriberId` must remain stable and unique within your system. It acts as the anchor that connects a subscriber’s profile, activity history, and delivery settings across all channels and workflows.
 
@@ -18,9 +18,9 @@ Unlike email addresses or phone numbers, which may change or be shared across us
 
 ## Subscriber metadata and profile structure
 
-A subscriber’s profile holds all relevant data Novu uses to personalize, deliver, and manage notifications. These fields can power dynamic content in your templates, define conditional logic in workflows, and control which channels a subscriber can receive notifications through.
+A subscriber’s profile holds all relevant data Notify uses to personalize, deliver, and manage notifications. These fields can power dynamic content in your templates, define conditional logic in workflows, and control which channels a subscriber can receive notifications through.
 
-All metadata tied to a subscriber is centralized and accessible via API or dashboard. This structure ensures that when notifications are triggered, Novu references the most up-to-date context for delivery and personalization.
+All metadata tied to a subscriber is centralized and accessible via API or dashboard. This structure ensures that when notifications are triggered, Notify references the most up-to-date context for delivery and personalization.
 
 These data includes:
 
@@ -34,11 +34,11 @@ Apart from the above fixed structured user data, any unstructured custom data su
 
 ### Channel specific credentials
 
-To deliver messages through push or chat-based channels, Novu also supports storing delivery credentials on the subscriber profile:
+To deliver messages through push or chat-based channels, Notify also supports storing delivery credentials on the subscriber profile:
 - `deviceTokens`: Used to target mobile devices via push notifications.
 - `webhookUrl`: Used by chat providers such as, Slack, Discord to reach the subscriber.
 
-These fields ensure Novu can deliver messages reliably to all supported destinations, even when the channel requires platform-specific configuration.
+These fields ensure Notify can deliver messages reliably to all supported destinations, even when the channel requires platform-specific configuration.
 
 <Note>
   Each subscriber channel is limited to a maximum of **100 device tokens**. Requests that exceed this limit will be rejected. See [Platform Limits](/platform/developer/limits) for details.
@@ -46,13 +46,13 @@ These fields ensure Novu can deliver messages reliably to all supported destinat
 
 Learn more about subscriber attributes and schema in the [Subscribers API](/api-reference/subscribers/subscriber-schema).
 
-## Subscriber creation in Novu
+## Subscriber creation in Notify
 
-Before you can send notifications, a subscriber must exist in Novu. Asides from manually creating a subscriber via the Novu dashboard, Novu supports multiple approaches to subscriber creation depending on your application’s architecture and user lifecycle.
+Before you can send notifications, a subscriber must exist in Notify. Asides from manually creating a subscriber via the Notify dashboard, Notify supports multiple approaches to subscriber creation depending on your application’s architecture and user lifecycle.
 
 ### Just in time
 
-Novu allows you to create a subscriber automatically at the moment a notification is triggered. If the subscriber doesn't already exist, Novu uses the information provided in the workflow trigger to create the subscriber on the fly. If the subscriber exists, Novu updates the stored data with the latest values.
+Notify allows you to create a subscriber automatically at the moment a notification is triggered. If the subscriber doesn't already exist, Notify uses the information provided in the workflow trigger to create the subscriber on the fly. If the subscriber exists, Notify updates the stored data with the latest values.
 
 This approach is useful when:
 - Your system does not store subscriber profiles ahead of time.
@@ -62,9 +62,9 @@ This approach is useful when:
 <Tabs>
   <Tab title="Node.js">
 ```ts
-import { Novu } from "@novu/api";
+import { Notify } from "@notify/api";
 
-const novu = new Novu({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
+const notify = new Notify({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
 
 await novu.trigger({
   to: {
@@ -82,9 +82,9 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="workflow_identifier",
         to={
@@ -123,10 +123,10 @@ res, err := s.Trigger(context.Background(), components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()
+$sdk = notify\Notify::builder()
     ->setSecurity('<YOUR_SECRET_KEY_HERE>')
     ->build();
 
@@ -146,8 +146,8 @@ $sdk->trigger(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 
 var sdk = new NovuSDK(secretKey: "<YOUR_SECRET_KEY_HERE>");
 
@@ -165,10 +165,10 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto() {
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 
-Novu novu = Novu.builder()
+Notify novu = Notify.builder()
     .secretKey("<YOUR_SECRET_KEY_HERE>")
     .build();
 
@@ -213,9 +213,9 @@ Alternatively, you can create and store subscriber profiles ahead of time - typi
 <Tabs>
   <Tab title="Node.js">
 ```ts
-import { Novu } from "@novu/api";
+import { Notify } from "@notify/api";
 
-const novu = new Novu({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
+const notify = new Notify({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
 
 await novu.subscribers.create({
   subscriberId: "subscriber_unique_identifier",
@@ -234,9 +234,9 @@ await novu.subscribers.create({
   <Tab title="Python">
 ```python
 import os
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.subscribers.create(create_subscriber_request_dto={
         "subscriber_id": "subscriber_unique_identifier",
         "first_name": "Albert",
@@ -279,10 +279,10 @@ res, err := s.Subscribers.Create(context.Background(), components.CreateSubscrib
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()
+$sdk = notify\Notify::builder()
     ->setSecurity('<YOUR_SECRET_KEY_HERE>')
     ->build();
 
@@ -304,8 +304,8 @@ $sdk->subscribers->create(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new NovuSDK(secretKey: "<YOUR_SECRET_KEY_HERE>");
@@ -326,12 +326,12 @@ await sdk.Subscribers.CreateAsync(createSubscriberRequestDto: new CreateSubscrib
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.CreateSubscriberRequestDto;
 import java.util.List;
 import java.util.Map;
 
-Novu novu = Novu.builder()
+Notify novu = Notify.builder()
     .secretKey("<YOUR_SECRET_KEY_HERE>")
     .build();
 
@@ -379,14 +379,14 @@ This is recommended when:
 
 ### Bulk Import
 
-For scenarios like data migration, syncing large lists, or preloading subscribers, Novu supports bulk creation. This is especially useful when integrating with existing systems or importing subscriber data from external sources. Bulk create method supports creating up to 500 subscribers at once.
+For scenarios like data migration, syncing large lists, or preloading subscribers, Notify supports bulk creation. This is especially useful when integrating with existing systems or importing subscriber data from external sources. Bulk create method supports creating up to 500 subscribers at once.
 
 <Tabs>
   <Tab title="Node.js">
 ```ts
-import { Novu } from "@novu/api";
+import { Notify } from "@notify/api";
 
-const novu = new Novu({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
+const notify = new Notify({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
 
 await novu.subscribers.createBulk({
   subscribers: [
@@ -411,9 +411,9 @@ await novu.subscribers.createBulk({
   <Tab title="Python">
 ```python
 import os
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.subscribers.create_bulk(bulk_subscriber_create_dto={
         "subscribers": [
             {
@@ -468,10 +468,10 @@ res, err := s.Subscribers.CreateBulk(context.Background(), components.BulkSubscr
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()
+$sdk = notify\Notify::builder()
     ->setSecurity('<YOUR_SECRET_KEY_HERE>')
     ->build();
 
@@ -499,8 +499,8 @@ $sdk->subscribers->createBulk(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new NovuSDK(secretKey: "<YOUR_SECRET_KEY_HERE>");
@@ -527,12 +527,12 @@ await sdk.Subscribers.CreateBulkAsync(bulkSubscriberCreateDto: new BulkSubscribe
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.BulkSubscriberCreateDto;
 import co.novu.models.components.CreateSubscriberRequestDto;
 import java.util.List;
 
-Novu novu = Novu.builder()
+Notify novu = Notify.builder()
     .secretKey("<YOUR_SECRET_KEY_HERE>")
     .build();
 
@@ -587,12 +587,12 @@ curl -L -g -X POST 'https://api.novu.co/v1/subscribers/bulk' \
 
 ## Where to manage subscriber data
 
-Subscriber data in Novu can be managed from the Novu dashboard or using the [Subscribers API](/api-reference/subscribers/subscriber-schema). Both offer full access to view, update, and organize subscriber profiles, but they serve different use cases depending on your requirements.
+Subscriber data in Notify can be managed from the Notify dashboard or using the [Subscribers API](/api-reference/subscribers/subscriber-schema). Both offer full access to view, update, and organize subscriber profiles, but they serve different use cases depending on your requirements.
 
 <Tabs>
   <Tab title="Dashboard">
 
-The Novu dashboard provides a visual interface for exploring and editing subscriber data. It’s useful for:
+The Notify dashboard provides a visual interface for exploring and editing subscriber data. It’s useful for:
 
 - Searching and filtering subscribers by ID, email, phone and name.
 - Inspecting user profiles, including structured fields, custom data, topic subscriptions and channel preferences.
@@ -603,7 +603,7 @@ This is ideal for non technical team members responsible for managing subscriber
   </Tab>
   <Tab title="API">
 
-For programmatic control, the Novu API offers endpoints to create, update, delete, and retrieve subscriber records at scale. It supports:
+For programmatic control, the Notify API offers endpoints to create, update, delete, and retrieve subscriber records at scale. It supports:
 
 - Automated onboarding or sync processes
 - Bulk operations such as imports or exports
@@ -616,7 +616,7 @@ Use the API when managing subscribers is part of your backend workflows or when 
 
 ## Subscriber preferences and personalization
 
-Novu allows each subscriber to define how they want to receive notifications. These preferences influence both the delivery channels and the types of messages a subscriber will receive.
+Notify allows each subscriber to define how they want to receive notifications. These preferences influence both the delivery channels and the types of messages a subscriber will receive.
 
 ### Global preferences
 
@@ -629,7 +629,7 @@ These global settings act as a default and are respected unless explicitly overr
 
 ### Subscriber workflow specific preferences
 
-In some cases, a subscriber may want to receive certain notifications but only through specific channels. Novu supports fine-grained overrides at the workflow level. This allows you to:
+In some cases, a subscriber may want to receive certain notifications but only through specific channels. Notify supports fine-grained overrides at the workflow level. This allows you to:
 
 - Adjust channel preferences per notification type
 - Honor granular user choices while maintaining global defaults
@@ -649,7 +649,7 @@ Subscriber preferences and metadata personalization ensure that each subscriber 
   <Card
     title="Create a subscriber API"
     href="/api-reference/subscribers/create-a-subscriber"
-    description="Create a new subscriber in Novu"
+    description="Create a new subscriber in Notify"
   />
   <Card
     title="Update a subscriber API"
@@ -659,7 +659,7 @@ Subscriber preferences and metadata personalization ensure that each subscriber 
   <Card
     title="Bulk create subscribers API"
     href="/api-reference/subscribers/bulk-create-subscribers"
-    description="Create bulk subscribers in Novu to migrate large number of users"
+    description="Create bulk subscribers in Notify to migrate large number of users"
   />
   <Card
     title="Retrieve subscriber subscriptions API"
@@ -679,7 +679,7 @@ Subscriber preferences and metadata personalization ensure that each subscriber 
 </Columns>
 
 ## Frequently asked questions
-These are some of the most frequently asked questions about subscribers in Novu.
+These are some of the most frequently asked questions about subscribers in Notify.
 
 <AccordionGroup>
   <Accordion title="Can two subscribers have the same email address?">
@@ -687,15 +687,15 @@ These are some of the most frequently asked questions about subscribers in Novu.
   </Accordion>
 
   <Accordion title="Do I have to use subscriberId as same as the system userId?">
-    No, you don't need to use the same subscriberId as the system userId. You can use any unique ID as subscriberId. Novu recommends using userId as subscriberId to avoid any confusion. Some of our customers use a pattern like `auth0|userId` as a value for `subscriberId`.
+    No, you don't need to use the same subscriberId as the system userId. You can use any unique ID as subscriberId. Notify recommends using userId as subscriberId to avoid any confusion. Some of our customers use a pattern like `auth0|userId` as a value for `subscriberId`.
   </Accordion>
 
   <Accordion title="Can a notification be sent without adding a subscriber?">
-    No, a notification cannot be sent without adding a subscriber. A subscriber is an entity to which notification messages are sent. You must add a subscriber to Novu before triggering the workflow.
+    No, a notification cannot be sent without adding a subscriber. A subscriber is an entity to which notification messages are sent. You must add a subscriber to Notify before triggering the workflow.
   </Accordion>
 
-  <Accordion title="How do I migrate millions of users to Novu?">
-    To migrate millions of users to Novu, use the [Bulk Create Subscribers](/api-reference/subscribers/bulk-create-subscribers) API endpoint. This endpoint allows you to create multiple subscribers in bulk.
+  <Accordion title="How do I migrate millions of users to Notify?">
+    To migrate millions of users to Notify, use the [Bulk Create Subscribers](/api-reference/subscribers/bulk-create-subscribers) API endpoint. This endpoint allows you to create multiple subscribers in bulk.
   </Accordion>
 
   <Accordion title="Can subscriber credentials for chat and push channels be added when creating a new subscriber?">
@@ -703,7 +703,7 @@ These are some of the most frequently asked questions about subscribers in Novu.
   </Accordion>
 
   <Accordion title="Should I create subscribers ahead of time or rely on just-in-time creation on trigger?">
-    For most apps, rely on **just-in-time (JIT) creation** when you trigger workflows. Novu upserts subscriber details on every trigger, so passing `to: { subscriberId, email, firstName, locale, timezone }` keeps profiles up to date without separate create or update calls.
+    For most apps, rely on **just-in-time (JIT) creation** when you trigger workflows. Notify upserts subscriber details on every trigger, so passing `to: { subscriberId, email, firstName, locale, timezone }` keeps profiles up to date without separate create or update calls.
 
     Create subscribers ahead of time when you need to manage preferences, enrich profiles, or inspect delivery readiness before any notification is sent - for example during onboarding or bulk migration. See [Just in time](/platform/concepts/subscribers#just-in-time) and [Ahead of trigger](/platform/concepts/subscribers#ahead-of-trigger) for both patterns.
   </Accordion>

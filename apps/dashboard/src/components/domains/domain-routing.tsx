@@ -1,4 +1,4 @@
-import { DomainRouteTypeEnum, FeatureFlagsKeysEnum } from '@novu/shared';
+import { DomainRouteTypeEnum, FeatureFlagsKeysEnum } from '@notify/shared';
 import { useQuery } from '@tanstack/react-query';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { Fragment, forwardRef, useEffect, useId, useImperativeHandle, useState } from 'react';

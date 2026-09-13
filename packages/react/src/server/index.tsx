@@ -27,7 +27,7 @@ import type { UseCountsProps, UseCountsResult } from '../hooks/useCounts';
  * Exporting all components from the components folder
  * as empty functions to fix build errors in SSR
  * This will be replaced with actual components
- * when we implement the SSR components in @novu/js/ui
+ * when we implement the SSR components in @notify/js/ui
  */
 export function Inbox(props: InboxProps) {
   return <ShadowRootDetector />;
@@ -165,8 +165,8 @@ export function useSubscriptions(_: UseSubscriptionsProps): UseSubscriptionsResu
   };
 }
 
-export type * from '@novu/js';
-export { PreferenceLevel, SeverityLevelEnum, WorkflowCriticalityEnum } from '@novu/js';
+export type * from '@notify/js';
+export { PreferenceLevel, SeverityLevelEnum, WorkflowCriticalityEnum } from '@notify/js';
 
 export type {
   AllLocalization,
@@ -198,7 +198,7 @@ export type {
   SubscriptionTheme,
   Tab,
   Variables,
-} from '@novu/js/ui';
+} from '@notify/js/ui';
 
 export type { BellProps, InboxContentProps, InboxProps, NotificationProps, NovuProviderProps } from '../components';
 

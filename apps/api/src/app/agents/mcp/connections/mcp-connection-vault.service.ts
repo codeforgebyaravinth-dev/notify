@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { type IAgentRuntimeProvider, PinoLogger } from '@novu/application-generic';
-import { AgentMcpServerRepository, McpConnectionEntity, McpConnectionRepository } from '@novu/dal';
-import { McpConnectionScopeEnum } from '@novu/shared';
+import { type IAgentRuntimeProvider, PinoLogger } from '@notify/application-generic';
+import { AgentMcpServerRepository, McpConnectionEntity, McpConnectionRepository } from '@notify/dal';
+import { McpConnectionScopeEnum } from '@notify/shared';
 
 @Injectable()
 export class McpConnectionVaultService {

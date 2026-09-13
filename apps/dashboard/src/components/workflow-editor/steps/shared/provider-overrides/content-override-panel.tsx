@@ -1,4 +1,4 @@
-import { type ContentOverrideProviderId } from '@novu/shared';
+import { type ContentOverrideProviderId } from '@notify/shared';
 import { Undo2 } from 'lucide-react';
 import { type ReactNode, useCallback, useEffect, useMemo, useState } from 'react';
 import { useFormContext } from 'react-hook-form';

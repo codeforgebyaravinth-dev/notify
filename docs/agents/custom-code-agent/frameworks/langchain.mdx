@@ -1,13 +1,13 @@
 ---
 title: "LangChain reference"
-description: "API reference for @novu/framework/langchain: agent configs, tools, approval gating, and custom invoke."
+description: "API reference for @notify/framework/langchain: agent configs, tools, approval gating, and custom invoke."
 sidebarTitle: LangChain
 ---
 
 
 Already connecting an agent? Start with [Connect LangChain to Slack](/agents/get-started/langchain). This page is the adapter API.
 
-`@novu/framework/langchain` lets you write agent handlers with [LangChain](https://docs.langchain.com/). Return a `LangChainAgentConfig` from `onMessage` and Novu runs `createAgent().invoke()` for you - including tool approval gating and resume from `ctx.history`.
+`@notify/framework/langchain` lets you write agent handlers with [LangChain](https://docs.langchain.com/). Return a `LangChainAgentConfig` from `onMessage` and Notify runs `createAgent().invoke()` for you - including tool approval gating and resume from `ctx.history`.
 
 ## Before you start
 
@@ -21,25 +21,25 @@ Install the framework, LangChain, and a model provider:
 
 <CodeGroup>
 ```bash title="OpenAI"
-npm install @novu/framework langchain @langchain/core @langchain/openai
+npm install @notify/framework langchain @langchain/core @langchain/openai
 ```
 ```bash title="Anthropic"
-npm install @novu/framework langchain @langchain/core @langchain/anthropic
+npm install @notify/framework langchain @langchain/core @langchain/anthropic
 ```
 ```bash title="Google"
-npm install @novu/framework langchain @langchain/core @langchain/google-genai
+npm install @notify/framework langchain @langchain/core @langchain/google-genai
 ```
 </CodeGroup>
 
-`@novu/framework`, `langchain`, and `@langchain/core` are required; pick one provider package. Examples on this page use OpenAI model strings - see the [LangChain integrations catalog](https://docs.langchain.com/oss/javascript/integrations/providers) for others.
+`@notify/framework`, `langchain`, and `@langchain/core` are required; pick one provider package. Examples on this page use OpenAI model strings - see the [LangChain integrations catalog](https://docs.langchain.com/oss/javascript/integrations/providers) for others.
 
 ## Minimal agent
 
-Import `agent` from `@novu/framework/langchain`, then return a `LangChainAgentConfig` from `onMessage`:
+Import `agent` from `@notify/framework/langchain`, then return a `LangChainAgentConfig` from `onMessage`:
 
 ```typescript
 import { tool } from '@langchain/core/tools';
-import { agent } from '@novu/framework/langchain';
+import { agent } from '@notify/framework/langchain';
 import { z } from 'zod';
 
 const lookupOrder = tool(
@@ -72,8 +72,8 @@ On the LangChain path, `onMessage` (and `onToolApproval`) can return a LangChain
 
 | Return | Behavior |
 | --- | --- |
-| `LangChainAgentConfig` | Novu runs `createAgent()` and delivers the final assistant text |
-| `{ messages: BaseMessage[] }` | Novu delivers the final assistant text from your pre-invoked agent or graph |
+| `LangChainAgentConfig` | Notify runs `createAgent()` and delivers the final assistant text |
+| `{ messages: BaseMessage[] }` | Notify delivers the final assistant text from your pre-invoked agent or graph |
 | `BaseMessage` | Delivered as a normal reply (assistant text extracted from the message) |
 | `string` / JSX `Card` | Delivered as a normal reply - see [Reply](/agents/custom-code-agent/building-blocks/reply) |
 | nothing | After you call `ctx.reply()` yourself |
@@ -112,29 +112,29 @@ const nextConfig = {
 export default nextConfig;
 ```
 
-`npx novu connect --runtime langchain` scaffolds this for you (and adds the provider package you selected).
+`npx notify connect --runtime langchain` scaffolds this for you (and adds the provider package you selected).
 
 ## `toLangChainMessages()`
 
 Convert `ctx.history` into LangChain `BaseMessage[]` when you invoke an agent or graph yourself:
 
 ```typescript
-import { toLangChainMessages } from '@novu/framework/langchain';
+import { toLangChainMessages } from '@notify/framework/langchain';
 
 const messages = toLangChainMessages(ctx.history);
 ```
 
 - `ctx.history` already includes the current inbound message - do not append the `message` argument on top of it.
-- Pass `system` only when you are **not** setting `system` on `LangChainAgentConfig` - Novu forwards that field to `createAgent({ prompt })` for you.
+- Pass `system` only when you are **not** setting `system` on `LangChainAgentConfig` - Notify forwards that field to `createAgent({ prompt })` for you.
 - Tool approval cycles in history are mapped automatically, so auto-resume (below) works.
 
 ## Invoke your own agent
 
-If you already run a LangChain agent or graph in your handler, return its messages and Novu delivers the final text - tool approval is **not** managed on this path:
+If you already run a LangChain agent or graph in your handler, return its messages and Notify delivers the final text - tool approval is **not** managed on this path:
 
 ```typescript
 import { createAgent } from 'langchain';
-import { agent, toLangChainMessages } from '@novu/framework/langchain';
+import { agent, toLangChainMessages } from '@notify/framework/langchain';
 
 const billingAgent = createAgent({ model: 'openai:gpt-4o', tools: [lookupOrder] });
 
@@ -153,11 +153,11 @@ To stream live updates in the thread, post a reply and update it with [`ReplyHan
 
 ## Automatic tool approval
 
-Set `needsApproval` on `LangChainAgentConfig`. When the model calls a gated tool, Novu posts the Approve / Deny card and pauses the turn. After the user decides, Novu re-runs `onMessage` - `toLangChainMessages(ctx.history)` replays the approval cycle so the agent continues with no extra code from you.
+Set `needsApproval` on `LangChainAgentConfig`. When the model calls a gated tool, Notify posts the Approve / Deny card and pauses the turn. After the user decides, Notify re-runs `onMessage` - `toLangChainMessages(ctx.history)` replays the approval cycle so the agent continues with no extra code from you.
 
 ```typescript
 import { tool } from '@langchain/core/tools';
-import { agent } from '@novu/framework/langchain';
+import { agent } from '@notify/framework/langchain';
 import { z } from 'zod';
 
 const issueRefund = tool(
@@ -183,7 +183,7 @@ Add `onToolApproval` when you need a hook after the click. See [Tool approval](/
 
 ## Turn failures and `onError`
 
-When Novu runs `createAgent().invoke()` for a returned `LangChainAgentConfig` and the invoke rejects - for example the provider errors or the model call fails - the failure propagates to the same dispatch boundary as a thrown handler error. The same applies when you `await` your own agent or graph in `onMessage` and the invoke throws before you return. Register `onError` on the agent to log, suppress user notification, send custom copy, or fall back to Novu's generic message.
+When Notify runs `createAgent().invoke()` for a returned `LangChainAgentConfig` and the invoke rejects - for example the provider errors or the model call fails - the failure propagates to the same dispatch boundary as a thrown handler error. The same applies when you `await` your own agent or graph in `onMessage` and the invoke throws before you return. Register `onError` on the agent to log, suppress user notification, send custom copy, or fall back to Notify's generic message.
 
 ```typescript
 export const supportAgent = agent('support-bot', {
@@ -195,7 +195,7 @@ export const supportAgent = agent('support-bot', {
 
   onError: async (error, ctx) => {
     console.error(error.message, error.cause);
-    // return nothing → generic user copy from Novu
+    // return nothing → generic user copy from Notify
     // return { suppress: true } → silent
     // return 'Custom apology' → your copy
   },
@@ -224,6 +224,6 @@ A gated tool waiting for user approval pauses the turn with an approval card - t
     The shared Approve / Deny primitive.
   </Card>
   <Card icon="code" href="/agents/custom-code-agent/frameworks/other" title="Other frameworks">
-    Wire handlers without a Novu runtime adapter.
+    Wire handlers without a Notify runtime adapter.
   </Card>
 </Columns>

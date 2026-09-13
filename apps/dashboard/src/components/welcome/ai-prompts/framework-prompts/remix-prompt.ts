@@ -1,7 +1,7 @@
 import { PromptConfig, replaceConfigVariables } from './types';
 
 const KITCHEN_SINK_INBOX_SNIPPET = `import { useLoaderData, Outlet } from '@remix-run/react';
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 import type { LoaderFunction } from '@remix-run/node';
 
 // Ensure the environment variables are available
@@ -120,19 +120,19 @@ Potential common places where the inbox could be integrated in the UI:
 ## Implementation Checklist
 
 ### Step 1: Package Installation
-**Objective**: Install the required @novu/react package using the project's package manager
+**Objective**: Install the required @notify/react package using the project's package manager
 
 **Actions**:
 1. Detect the project's package manager (pnpm, yarn, npm, bun)
-2. Install @novu/react using the appropriate command:
+2. Install @notify/react using the appropriate command:
 \`\`\`bash
-npm install @novu/react
+npm install @notify/react
 # or
-yarn add @novu/react
+yarn add @notify/react
 # or
-pnpm add @novu/react
+pnpm add @notify/react
 # or
-bun add @novu/react
+bun add @notify/react
 \`\`\`
 
 **Verification**:
@@ -166,7 +166,7 @@ NOVU_SUBSCRIBER_ID=YOUR_SUBSCRIBER_ID
 3. Set up proper hydration
 
 \`\`\`typescript
-import { NovuProvider } from '@novu/react';
+import { NovuProvider } from '@notify/react';
 import type { LoaderFunction } from '@remix-run/node';
 
 export const loader: LoaderFunction = async () => {

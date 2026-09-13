@@ -1,4 +1,4 @@
-import { NotificationTemplateEntity } from '@novu/dal';
+import { NotificationTemplateEntity } from '@notify/dal';
 import { Type } from 'class-transformer';
 import { IsArray, IsDefined, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { EnvironmentWithUserCommand } from '../../../shared/commands/project.command';

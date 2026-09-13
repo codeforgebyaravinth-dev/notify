@@ -11,13 +11,13 @@
   </a>
   <a href="https://news.ycombinator.com/item?id=38419513" target="_blank" rel="noopener noreferrer"
 ><img src="https://img.shields.io/badge/Hacker%20News-%231-%23FF6600" alt="Hacker News"></a>
-  <a href="https://www.npmjs.com/package/@novu/react" target="_blank" rel="noopener noreferrer"
+  <a href="https://www.npmjs.com/package/@notify/react" target="_blank" rel="noopener noreferrer"
 >
-    <img src="https://img.shields.io/npm/v/@novu/react" alt="NPM">
+    <img src="https://img.shields.io/npm/v/@notify/react" alt="NPM">
   </a>
-  <a href="https://www.npmjs.com/package/@novu/js" target="_blank" rel="noopener noreferrer"
+  <a href="https://www.npmjs.com/package/@notify/js" target="_blank" rel="noopener noreferrer"
 >
-    <img src="https://img.shields.io/npm/dm/@novu/js" alt="npm downloads">
+    <img src="https://img.shields.io/npm/dm/@notify/js" alt="npm downloads">
   </a>
 </p>
 

@@ -6,14 +6,14 @@ import {
   PayloadMergerService,
   PreviewPayloadProcessorService,
   PreviewStep,
-} from '@novu/application-generic';
-import { EnvironmentRepository, EnvironmentVariableRepository } from '@novu/dal';
+} from '@notify/application-generic';
+import { EnvironmentRepository, EnvironmentVariableRepository } from '@notify/dal';
 import {
   ChannelTypeEnum,
   LAYOUT_PREVIEW_EMAIL_STEP,
   LAYOUT_PREVIEW_WORKFLOW_ID,
   ResourceOriginEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { PreviewLayoutCommand } from './preview-layout.command';

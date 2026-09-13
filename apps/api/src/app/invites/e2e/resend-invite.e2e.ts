@@ -1,6 +1,6 @@
-import { CommunityMemberRepository, MemberEntity } from '@novu/dal';
-import { MemberStatusEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { CommunityMemberRepository, MemberEntity } from '@notify/dal';
+import { MemberStatusEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Resend invite - /invites/resend (POST) #novu-v0-os', async () => {

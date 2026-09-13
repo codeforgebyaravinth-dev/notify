@@ -5,7 +5,7 @@ description: >-
   "What's next" / "FOR YOUR USERS" developer-rollout guide plus its connected
   details page — in apps/dashboard, following the existing Slack, MS Teams, and
   Telegram pattern. Use when a connected agent integration needs a per-provider
-  "what's next" guide (recap + dev steps with @novu/react ConnectButton snippet),
+  "what's next" guide (recap + dev steps with @notify/react ConnectButton snippet),
   a <Channel>AgentConnectedDetails view, and the resolver/registry wiring under
   components/agents/agent-integration-guides.
 ---
@@ -14,7 +14,7 @@ description: >-
 
 Layer 2 = what a developer sees **after** their channel integration is connected: the
 **"What's next" / "FOR YOUR USERS"** guide that helps them roll the agent out to their own
-end users (install `@novu/react`, drop in the `<Channel>ConnectButton`), plus the connected
+end users (install `@notify/react`, drop in the `<Channel>ConnectButton`), plus the connected
 channel **details** page. Layer 1 (connecting the channel itself) is the separate
 `<channel>-setup-guide.tsx` — out of scope here.
 
@@ -45,9 +45,9 @@ that returns `{ recapSteps, devSteps }`. The shell and renderer never change.
 ## Step 0 — Prerequisites
 
 Before adding layer 2, confirm:
-- The channel has a `ChatProviderIdEnum` entry in `@novu/shared` (adding a brand-new provider id is `packages/providers` territory — ask first).
+- The channel has a `ChatProviderIdEnum` entry in `@notify/shared` (adding a brand-new provider id is `packages/providers` territory — ask first).
 - A layer-1 `<channel>-setup-guide.tsx` exists (the connect-the-channel flow).
-- A `<Channel>ConnectButton` exists in `@novu/react` (see the `add-channel-connect-button` skill) — the dev step embeds its snippet.
+- A `<Channel>ConnectButton` exists in `@notify/react` (see the `add-channel-connect-button` skill) — the dev step embeds its snippet.
 
 ## File checklist
 
@@ -72,7 +72,7 @@ Copy the nearest sibling: **Telegram** = simplest (endpoint/deep-link), **Slack*
 - `ctx` → `{ agent, integrationLink, credentials?, applicationIdentifier? }`.
 - Returns `{ recapSteps: WhatsNextStep[]; devSteps: WhatsNextStep[] }`.
 - **recapSteps** mirror the completed layer-1 setup steps (title + description only); the renderer collapses them behind "Show all N instructions".
-- **devSteps** are the new rollout steps. Convention: first dev step carries `sectionLabel: 'FOR YOUR USERS'` (or `'DISTRIBUTE YOUR BOT'` for org-level distribution), then **install `@novu/react`** (with a `PrebuiltPromptBanner` in `headerSlot`), then **add the `<Channel>ConnectButton` snippet** (`CodeBlock`).
+- **devSteps** are the new rollout steps. Convention: first dev step carries `sectionLabel: 'FOR YOUR USERS'` (or `'DISTRIBUTE YOUR BOT'` for org-level distribution), then **install `@notify/react`** (with a `PrebuiltPromptBanner` in `headerSlot`), then **add the `<Channel>ConnectButton` snippet** (`CodeBlock`).
 
 `WhatsNextStep` fields: `title`, `description`, `sectionLabel?`, `headerSlot?`, `rightContent?`, `extraContent?`, `fullWidthContent?`, `status?` (`'completed' | 'current' | 'upcoming'`).
 

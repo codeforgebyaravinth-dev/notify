@@ -1,5 +1,5 @@
-import { MessageEntity, MessageRepository } from '@novu/dal';
-import { WebSocketEventEnum } from '@novu/shared';
+import { MessageEntity, MessageRepository } from '@notify/dal';
+import { WebSocketEventEnum } from '@notify/shared';
 import { Types } from 'mongoose';
 import sinon from 'sinon';
 import { WSGateway } from '../../ws.gateway';

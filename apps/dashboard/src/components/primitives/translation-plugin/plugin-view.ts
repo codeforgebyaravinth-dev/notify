@@ -1,4 +1,4 @@
-import { TRANSLATION_KEY_SINGLE_REGEX } from '@novu/shared';
+import { TRANSLATION_KEY_SINGLE_REGEX } from '@notify/shared';
 import { Decoration, DecorationSet, EditorView, Range } from '@uiw/react-codemirror';
 import { MutableRefObject } from 'react';
 import { validateTranslationKey } from '@/hooks/use-translation-validation';

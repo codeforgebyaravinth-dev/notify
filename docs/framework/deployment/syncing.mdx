@@ -1,21 +1,21 @@
 ---
 title: 'Syncing'
-description: "Sync local workflow changes to the Novu Cloud Dashboard across development and production environments using the CLI or GitHub Action."
+description: "Sync local workflow changes to the Notify Cloud Dashboard across development and production environments using the CLI or GitHub Action."
 ---
 
-Novu operates in a multi environment setup, with the currently available environments:
+Notify operates in a multi environment setup, with the currently available environments:
 
-- **Local** - Running against your local machine, this is where you can create, edit, and preview workflows. Open it by running [`npx novu dev`](/framework/studio), which opens the Dashboard in Local mode connected to your running app through a tunnel.
+- **Local** - Running against your local machine, this is where you can create, edit, and preview workflows. Open it by running [`npx notify dev`](/framework/studio), which opens the Dashboard in Local mode connected to your running app through a tunnel.
 - **Development** - Acts as a Staging environment, where your non-technical peers can view and modify controls.
 - **Production** - For triggering workflows to your customers.
 
-## Sync changes to Novu Cloud
+## Sync changes to Notify Cloud
 
-Novu Framework operates in a GitOps model. This means that the source of truth for your workflows and configurations are located in your Git as Code.
+Notify Framework operates in a GitOps model. This means that the source of truth for your workflows and configurations are located in your Git as Code.
 
 The Local environment only reflects what runs on your machine - it has no publish action. To make workflows available in Development or Production, deploy your Bridge application and run the [sync command](/framework/deployment/cli) against the deployed server from your CLI or CI pipeline.
 
-The general workflow for pushing changes to Novu Cloud is as follows:
+The general workflow for pushing changes to Notify Cloud is as follows:
 
 ```mermaid
 flowchart TB
@@ -41,7 +41,7 @@ flowchart TB
 
 ## CI/CD Integrations
 
-Novu currently supports the following CI integrations:
+Notify currently supports the following CI integrations:
 
 - **GitHub Actions** - [Direct Integration](/framework/deployment/actions)
 - **GitLab CI** - Using our [CLI command](/framework/deployment/cli)

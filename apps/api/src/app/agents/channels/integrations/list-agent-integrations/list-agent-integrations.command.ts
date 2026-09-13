@@ -1,5 +1,5 @@
-import { CursorBasedPaginatedCommand } from '@novu/application-generic';
-import { AgentIntegrationEntity } from '@novu/dal';
+import { CursorBasedPaginatedCommand } from '@notify/application-generic';
+import { AgentIntegrationEntity } from '@notify/dal';
 import { IsMongoId, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 export class ListAgentIntegrationsCommand extends CursorBasedPaginatedCommand<

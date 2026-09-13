@@ -1,4 +1,4 @@
-import { DEFAULT_ARRAY_ELEMENTS } from '@novu/application-generic';
+import { DEFAULT_ARRAY_ELEMENTS } from '@notify/application-generic';
 
 export function fullCodeSnippet() {
   return {

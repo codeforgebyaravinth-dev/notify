@@ -1,4 +1,4 @@
-import { ChangeEntityTypeEnum } from '@novu/shared';
+import { ChangeEntityTypeEnum } from '@notify/shared';
 import { IsDefined, IsMongoId, IsString } from 'class-validator';
 import { EnvironmentWithUserCommand } from '../../../shared/commands/project.command';
 

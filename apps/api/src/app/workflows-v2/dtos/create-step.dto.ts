@@ -12,13 +12,13 @@ import {
   SmsControlDto,
   ThrottleControlDto,
   ToolControlDto,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   SLUG_IDENTIFIER_REGEX,
   type StepProviderOverrides,
   StepTypeEnum,
   slugIdentifierFormatMessage,
-} from '@novu/shared';
+} from '@notify/shared';
 import { IsEnum, IsObject, IsOptional, IsString, Matches } from 'class-validator';
 
 // Base DTO for common properties

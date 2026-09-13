@@ -1,4 +1,4 @@
-export type * from '@novu/react';
+export type * from '@notify/react';
 
 export {
   Bell,
@@ -23,4 +23,4 @@ export {
   useSubscriptions,
   useUpdateSubscription,
   WorkflowCriticalityEnum,
-} from '@novu/react/server';
+} from '@notify/react/server';

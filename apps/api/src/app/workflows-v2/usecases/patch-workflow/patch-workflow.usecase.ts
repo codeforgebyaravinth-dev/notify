@@ -12,9 +12,9 @@ import {
   SendWebhookMessage,
   WorkflowResponseDto,
   WorkflowWithPreferencesResponseDto,
-} from '@novu/application-generic';
-import { LocalizationResourceEnum, NotificationTemplateEntity, NotificationTemplateRepository } from '@novu/dal';
-import { UserSessionData, WebhookEventEnum, WebhookObjectTypeEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { LocalizationResourceEnum, NotificationTemplateEntity, NotificationTemplateRepository } from '@notify/dal';
+import { UserSessionData, WebhookEventEnum, WebhookObjectTypeEnum } from '@notify/shared';
 import { MANAGE_TRANSLATIONS } from '../../../shared/constants';
 import { PatchWorkflowCommand } from './patch-workflow.command';
 

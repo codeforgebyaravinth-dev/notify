@@ -1,5 +1,5 @@
 {
-  "name": "@novu/ee-shared-services",
+  "name": "@notify/ee-shared-services",
   "version": "2.0.5",
   "description": "Generic service used inside of Novu's different services - can not be depended on application-generic",
   "main": "build/main/index.js",
@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@handlebars/parser": "^2.1.0",
-    "@novu/shared": "workspace:*"
+    "@notify/shared": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
@@ -42,6 +42,6 @@
   },
   "peerDependencies": {
     "@nestjs/common": "11.1.27",
-    "@novu/dal": "workspace:*"
+    "@notify/dal": "workspace:*"
   }
 }

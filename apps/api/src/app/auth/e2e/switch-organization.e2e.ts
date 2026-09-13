@@ -1,6 +1,6 @@
-import { OrganizationEntity } from '@novu/dal';
-import { MemberRoleEnum, UserSessionData } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { OrganizationEntity } from '@notify/dal';
+import { MemberRoleEnum, UserSessionData } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import jwt from 'jsonwebtoken';
 

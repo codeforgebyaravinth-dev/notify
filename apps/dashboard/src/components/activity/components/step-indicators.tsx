@@ -1,4 +1,4 @@
-import { IActivityJob, JobStatusEnum, StepTypeEnum } from '@novu/shared';
+import { IActivityJob, JobStatusEnum, StepTypeEnum } from '@notify/shared';
 import { useEffect, useRef, useState } from 'react';
 import { STEP_TYPE_TO_ICON } from '@/components/icons/utils';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/primitives/popover';

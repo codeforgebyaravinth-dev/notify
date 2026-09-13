@@ -1,5 +1,5 @@
 {
-  "name": "@novu/ee-auth",
+  "name": "@notify/ee-auth",
   "sourceRoot": "enterprise/packages/auth/src",
   "projectType": "library",
   "targets": {

@@ -1,4 +1,4 @@
-import { Schedule, TimeRange } from '@novu/shared';
+import { Schedule, TimeRange } from '@notify/shared';
 import { addDays, isAfter, isBefore, isEqual, set } from 'date-fns';
 import { utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz';
 

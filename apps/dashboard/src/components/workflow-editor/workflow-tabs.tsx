@@ -7,7 +7,7 @@ import {
   PermissionsEnum,
   ResourceOriginEnum,
   StepTypeEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { FC, SVGProps, useCallback, useMemo, useState } from 'react';
 import { IconType } from 'react-icons/lib';
 import {

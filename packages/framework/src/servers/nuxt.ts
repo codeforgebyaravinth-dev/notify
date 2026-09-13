@@ -9,12 +9,12 @@ import { type SupportedFrameworkName } from '../types';
  *
  * Example:
  *
- * import { serve, Client, type Workflow } from '@novu/framework/nuxt';
+ * import { serve, Client, type Workflow } from '@notify/framework/nuxt';
  *
  * instead of
  *
- * import { serve } from '@novu/framework/nuxt';
- * import { Client, type Workflow } from '@novu/framework';
+ * import { serve } from '@notify/framework/nuxt';
+ * import { Client, type Workflow } from '@notify/framework';
  */
 export * from '../index';
 export const frameworkName: SupportedFrameworkName = 'nuxt';

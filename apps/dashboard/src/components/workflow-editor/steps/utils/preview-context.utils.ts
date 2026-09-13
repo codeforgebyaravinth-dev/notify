@@ -1,4 +1,4 @@
-import { DEFAULT_LOCALE, ISubscriberResponseDto, StepTypeEnum, WorkflowResponseDto } from '@novu/shared';
+import { DEFAULT_LOCALE, ISubscriberResponseDto, StepTypeEnum, WorkflowResponseDto } from '@notify/shared';
 import { DEFAULT_STEP_ICON, STEP_TYPE_ICONS } from '../constants/preview-context.constants';
 import { ParsedData, PreviewSubscriberData } from '../types/preview-context.types';
 

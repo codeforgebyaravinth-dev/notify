@@ -1,4 +1,4 @@
-import { ChannelTypeEnum, IPushEventBody } from '@novu/stateless';
+import { ChannelTypeEnum, IPushEventBody } from '@notify/stateless';
 import { BaseProvider } from '../../base.provider';
 
 export abstract class PushBaseProvider extends BaseProvider {

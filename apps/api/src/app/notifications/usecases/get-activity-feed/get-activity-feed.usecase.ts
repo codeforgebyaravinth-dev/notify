@@ -6,7 +6,7 @@ import {
   QueryBuilder,
   Trace,
   TraceLogRepository,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   CommunityOrganizationRepository,
   ExecutionDetailFeedItem,
@@ -14,7 +14,7 @@ import {
   NotificationRepository,
   OrganizationEntity,
   SubscriberRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   ApiServiceLevelEnum,
   ExecutionDetailsSourceEnum,
@@ -22,7 +22,7 @@ import {
   FeatureFlagsKeysEnum,
   FeatureNameEnum,
   getFeatureForTierAsNumber,
-} from '@novu/shared';
+} from '@notify/shared';
 import { subDays } from 'date-fns';
 import { ActivitiesResponseDto, ActivityNotificationResponseDto } from '../../dtos/activities-response.dto';
 import { GetActivityFeedCommand } from './get-activity-feed.command';

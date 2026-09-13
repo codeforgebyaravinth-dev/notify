@@ -5,7 +5,7 @@ A step condition decides whether a step **runs** or is **skipped**. Same semanti
 | Surface              | Syntax                                            |
 | -------------------- | ------------------------------------------------- |
 | Dashboard (no-code)  | [JSON-Logic](https://jsonlogic.com) on `step.condition` — `{ "==": [...] }` |
-| Framework (`@novu/framework`) | `skip: () => boolean \| Promise<boolean>` callback    |
+| Framework (`@notify/framework`) | `skip: () => boolean \| Promise<boolean>` callback    |
 
 > Dashboard semantics: condition evaluates to `true` ⇒ step **runs**.
 > Framework semantics: `skip` returns `true` ⇒ step **is skipped**.
@@ -89,7 +89,7 @@ Available `subscriber.*` properties:
 
 ## Framework Equivalents
 
-The same conditions in `@novu/framework`. Note that `skip` is the inverse of "run if true" — you return `true` to **skip**.
+The same conditions in `@notify/framework`. Note that `skip` is the inverse of "run if true" — you return `true` to **skip**.
 
 ### Subscriber is offline (run only if offline)
 

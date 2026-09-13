@@ -161,7 +161,7 @@ export async function init(program: IInitCommandOptions, anonymousId?: string): 
         {
           title: 'Chat SDK',
           value: 'chat-sdk',
-          description: 'Multi-channel chat bot with Chat SDK and @novu/chat-sdk-adapter',
+          description: 'Multi-channel chat bot with Chat SDK and @notify/chat-sdk-adapter',
         },
       ],
       initial: 0,

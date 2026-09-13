@@ -5,11 +5,11 @@ import {
   SYSTEM_LIMITS,
   UpdateSubscriberChannel,
   UpdateSubscriberChannelCommand,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 
-import { IntegrationRepository, SubscriberRepository } from '@novu/dal';
-import { ChannelTypeEnum, ChatProviderIdEnum, PushProviderIdEnum } from '@novu/shared';
-import { SubscribersService, UserSession } from '@novu/testing';
+import { IntegrationRepository, SubscriberRepository } from '@notify/dal';
+import { ChannelTypeEnum, ChatProviderIdEnum, PushProviderIdEnum } from '@notify/shared';
+import { SubscribersService, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 import { SharedModule } from '../../shared/shared.module';

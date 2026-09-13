@@ -89,7 +89,7 @@ docker_cli compose -f docker/local/docker-compose.agent.yml up -d
 wait_for_clickhouse
 
 log "Applying ClickHouse migrations"
-pnpm --filter @novu/api-service clickhouse:migrate:local
+pnpm --filter @notify/api-service clickhouse:migrate:local
 
 log "Seeding agent user/org (idempotent)"
 pnpm seed:agent

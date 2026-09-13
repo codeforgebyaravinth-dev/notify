@@ -1,5 +1,5 @@
 import { ApiExtraModels, ApiProperty, ApiPropertyOptional, getSchemaPath } from '@nestjs/swagger';
-import { TriggerRecipientsPayload } from '@novu/shared';
+import { TriggerRecipientsPayload } from '@notify/shared';
 import { IsDefined, IsObject, IsOptional, IsString } from 'class-validator';
 import { SubscriberPayloadDto } from '../../events/dtos/trigger-event-request.dto';
 

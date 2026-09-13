@@ -1,4 +1,4 @@
-import { ChannelConnectionEntity, ChannelEndpointEntity } from '@novu/dal';
+import { ChannelConnectionEntity, ChannelEndpointEntity } from '@notify/dal';
 import { InboxChannelConnectionResponseDto } from './inbox-channel-connection-response.dto';
 import { InboxChannelEndpointResponseDto } from './inbox-channel-endpoint-response.dto';
 

@@ -1,12 +1,12 @@
-import { PinoLogger } from '@novu/application-generic';
-import { CommunityOrganizationRepository, EnvironmentRepository, NotificationRepository } from '@novu/dal';
-import { ApiServiceLevelEnum, isClerkEnabled } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { PinoLogger } from '@notify/application-generic';
+import { CommunityOrganizationRepository, EnvironmentRepository, NotificationRepository } from '@notify/dal';
+import { ApiServiceLevelEnum, isClerkEnabled } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import sinon from 'sinon';
 
 describe('GetPlatformNotificationUsage #novu-v2', () => {
-  const eeBilling = require('@novu/ee-billing');
+  const eeBilling = require('@notify/ee-billing');
   if (!eeBilling) {
     throw new Error('ee-billing does not exist');
   }

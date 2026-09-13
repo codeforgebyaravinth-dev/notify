@@ -1,4 +1,4 @@
-import { DirectionEnum } from '@novu/shared';
+import { DirectionEnum } from '@notify/shared';
 import { useCallback, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getPersistedPageSize, usePersistedPageSize } from '@/hooks/use-persisted-page-size';

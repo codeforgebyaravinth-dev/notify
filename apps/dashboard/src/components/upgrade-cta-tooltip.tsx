@@ -1,4 +1,4 @@
-import { ApiServiceLevelEnum } from '@novu/shared';
+import { ApiServiceLevelEnum } from '@notify/shared';
 import { ReactNode } from 'react';
 import { RiArrowRightLine, RiFlashlightLine, RiLockLine } from 'react-icons/ri';
 import { useNavigate } from 'react-router-dom';

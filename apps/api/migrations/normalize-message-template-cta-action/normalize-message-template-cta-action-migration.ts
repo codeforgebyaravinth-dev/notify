@@ -1,4 +1,4 @@
-import { MessageTemplateRepository } from '@novu/dal';
+import { MessageTemplateRepository } from '@notify/dal';
 
 export async function normalizeMessageTemplateCtaAction() {
   console.log('start migration - normalize message template cta action');

@@ -1,5 +1,5 @@
-import { PaginatedListCommand } from '@novu/application-generic';
-import { StepTypeEnum, WorkflowStatusEnum } from '@novu/shared';
+import { PaginatedListCommand } from '@notify/application-generic';
+import { StepTypeEnum, WorkflowStatusEnum } from '@notify/shared';
 import { IsArray, IsEnum, IsOptional, IsString } from 'class-validator';
 
 export class ListWorkflowsCommand extends PaginatedListCommand {

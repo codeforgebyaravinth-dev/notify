@@ -1,5 +1,5 @@
-import { IsValidContextPayload } from '@novu/application-generic';
-import { ContextPayload, TriggerOverrides, TriggerRecipientSubscriber, TriggerTenantContext } from '@novu/shared';
+import { IsValidContextPayload } from '@notify/application-generic';
+import { ContextPayload, TriggerOverrides, TriggerRecipientSubscriber, TriggerTenantContext } from '@notify/shared';
 import { IsDefined, IsNotEmpty, IsObject, IsOptional, IsString, ValidateIf } from 'class-validator';
 
 import { EnvironmentWithUserCommand } from '../../../shared/commands/project.command';

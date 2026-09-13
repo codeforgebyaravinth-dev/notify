@@ -6,8 +6,8 @@ import {
   TopicRepository,
   TopicSubscribersEntity,
   TopicSubscribersRepository,
-} from '@novu/dal';
-import { PreferencesTypeEnum } from '@novu/shared';
+} from '@notify/dal';
+import { PreferencesTypeEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { DeleteTopicSubscriptionsCommand } from './delete-topic-subscriptions.command';

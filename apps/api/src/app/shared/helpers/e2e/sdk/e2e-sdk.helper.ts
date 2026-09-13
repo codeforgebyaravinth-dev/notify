@@ -1,10 +1,10 @@
-import { Novu } from '@novu/api';
-import { NovuCore } from '@novu/api/core';
-import { SDKOptions } from '@novu/api/lib/config';
-import { HTTPClient, HTTPClientOptions } from '@novu/api/lib/http';
-import { ErrorDto, SDKValidationError, ValidationErrorDto } from '@novu/api/models/errors';
-import { HttpRequestHeaderKeysEnum } from '@novu/application-generic';
-import { UserSession } from '@novu/testing';
+import { Novu } from '@notify/api';
+import { NovuCore } from '@notify/api/core';
+import { SDKOptions } from '@notify/api/lib/config';
+import { HTTPClient, HTTPClientOptions } from '@notify/api/lib/http';
+import { ErrorDto, SDKValidationError, ValidationErrorDto } from '@notify/api/models/errors';
+import { HttpRequestHeaderKeysEnum } from '@notify/application-generic';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 export function initNovuClassSdk(session: UserSession, shouldRetry: boolean = false): Novu {

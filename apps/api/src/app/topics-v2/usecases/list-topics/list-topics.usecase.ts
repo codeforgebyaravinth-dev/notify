@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { InstrumentUsecase } from '@novu/application-generic';
-import { TopicRepository } from '@novu/dal';
+import { InstrumentUsecase } from '@notify/application-generic';
+import { TopicRepository } from '@notify/dal';
 import { DirectionEnum } from '../../../shared/dtos/base-responses';
 import { ListTopicsResponseDto } from '../../dtos/list-topics-response.dto';
 import { ListTopicsCommand } from './list-topics.command';

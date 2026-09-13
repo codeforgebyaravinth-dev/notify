@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
-import { createHash, PinoLogger } from '@novu/application-generic';
-import { EnvironmentRepository, McpConnectionRepository } from '@novu/dal';
-import { buildClaudePlatformVaultUrl, McpConnectionStatusEnum } from '@novu/shared';
+import { createHash, PinoLogger } from '@notify/application-generic';
+import { EnvironmentRepository, McpConnectionRepository } from '@notify/dal';
+import { buildClaudePlatformVaultUrl, McpConnectionStatusEnum } from '@notify/shared';
 
 import { areHexDigestsEqual } from '../../../../shared/helpers/timing-safe-equal';
 import { ManagedAgentService } from '../../../managed-runtime/managed-agent.service';

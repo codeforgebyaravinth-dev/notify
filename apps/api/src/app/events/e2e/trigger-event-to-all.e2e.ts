@@ -5,8 +5,8 @@ import {
   SubscriberProcessQueueService,
   TriggerMulticast,
   TriggerMulticastCommand,
-} from '@novu/application-generic';
-import { NotificationTemplateEntity, SubscriberEntity } from '@novu/dal';
+} from '@notify/application-generic';
+import { NotificationTemplateEntity, SubscriberEntity } from '@notify/dal';
 import {
   ExternalSubscriberId,
   ISubscribersDefine,
@@ -17,8 +17,8 @@ import {
   TopicName,
   TriggerRecipients,
   TriggerRecipientsTypeEnum,
-} from '@novu/shared';
-import { SubscribersService, UserSession } from '@novu/testing';
+} from '@notify/shared';
+import { SubscribersService, UserSession } from '@notify/testing';
 import axios from 'axios';
 import { expect } from 'chai';
 import sinon from 'sinon';

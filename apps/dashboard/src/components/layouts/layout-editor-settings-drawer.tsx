@@ -1,7 +1,7 @@
 /** biome-ignore-all lint/correctness/useUniqueElementIds: working correctly */
 
 import { standardSchemaResolver } from '@hookform/resolvers/standard-schema';
-import { EnvironmentTypeEnum, PermissionsEnum, ResourceOriginEnum } from '@novu/shared';
+import { EnvironmentTypeEnum, PermissionsEnum, ResourceOriginEnum } from '@notify/shared';
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 import { formatDistanceToNow } from 'date-fns';
 import { forwardRef, useCallback, useEffect, useRef, useState } from 'react';

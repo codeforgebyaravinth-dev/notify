@@ -9,7 +9,7 @@ import {
   NotificationTemplateRepository,
   SubscriberRepository,
   TopicRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import { loadOrCreateMachineId } from '../utils/machine.utils';
 import { sendDataToNovuTrace } from '../utils/sendDataToNovuTrace.utils';
 

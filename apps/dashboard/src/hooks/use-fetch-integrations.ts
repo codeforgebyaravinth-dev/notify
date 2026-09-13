@@ -1,4 +1,4 @@
-import { IIntegration } from '@novu/shared';
+import { IIntegration } from '@notify/shared';
 import { useQuery } from '@tanstack/react-query';
 import { getIntegrations } from '@/api/integrations';
 import { useEnvironment } from '../context/environment/hooks';

@@ -33,4 +33,4 @@ export const NON_OVERRIDABLE_SLACK_KEYS = ['channel', 'token', 'as_user'] as con
 export const SLACK_PRIMARY_CONTENT_KEY = 'text';
 
 /** Package subpath the full generated Slack schema ships behind. */
-export const SLACK_OVERRIDE_SCHEMA_SUBPATH = '@novu/shared/provider-overrides/slack';
+export const SLACK_OVERRIDE_SCHEMA_SUBPATH = '@notify/shared/provider-overrides/slack';

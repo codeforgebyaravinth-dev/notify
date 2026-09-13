@@ -5,9 +5,9 @@ import {
   DetailEnum,
   InstrumentUsecase,
   PinoLogger,
-} from '@novu/application-generic';
-import { JobEntity, JobRepository } from '@novu/dal';
-import { ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { JobEntity, JobRepository } from '@notify/dal';
+import { ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum } from '@notify/shared';
 import { PlatformException, shouldHaltOnStepFailure } from '../../../shared/utils';
 import { QueueNextJob, QueueNextJobCommand } from '../queue-next-job';
 import { HandleLastFailedJobCommand } from './handle-last-failed-job.command';

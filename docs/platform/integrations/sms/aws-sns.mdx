@@ -1,14 +1,14 @@
 ---
-title: "AWS SNS SMS Integration with Novu"
+title: "AWS SNS SMS Integration with Notify"
 sidebarTitle: "AWS SNS"
-description: "Connect AWS SNS to Novu to send SMS notifications through workflows. Configure IAM credentials, sender ID, and the SNS region for reliable global SMS delivery."
+description: "Connect AWS SNS to Notify to send SMS notifications through workflows. Configure IAM credentials, sender ID, and the SNS region for reliable global SMS delivery."
 ---
 
-You can use the [AWS SNS](https://aws.amazon.com/sns/) provider to send transactional emails to your customers using the Novu Platform with a single API to create multi-channel experiences.
+You can use the [AWS SNS](https://aws.amazon.com/sns/) provider to send transactional emails to your customers using the Notify Platform with a single API to create multi-channel experiences.
 
 ## Getting Started
 
-To integrate AWS SNS on the Novu platform, you will need to have in AWS, an IAM user who has the `sns:Publish` permission.
+To integrate AWS SNS on the Notify platform, you will need to have in AWS, an IAM user who has the `sns:Publish` permission.
 
 ## Create User
 
@@ -18,14 +18,14 @@ To create a user, log in to AWS Console and follow these steps:
 - Create a new user with `sns:Publish` permission, or add `sns:Publish` permission to an existing user.
 - Add the `Access Key` credential to the user and copy the `Access key ID` and the `Secret access key`.
 
-For security reasons, it is suggested that you create a new User to use with Novu.
+For security reasons, it is suggested that you create a new User to use with Notify.
 
-## Create an AWS SNS integration with Novu
+## Create an AWS SNS integration with Notify
 
-- Visit the [Integrations](https://dashboard.novu.co/integrations?utm_campaign=docs-sms-sns) page on Novu.
+- Visit the [Integrations](https://dashboard.novu.co/integrations?utm_campaign=docs-sms-sns) page on Notify.
 - Click the "Add a provider" button.
 - Locate **Amazon SNS** and click on the **Connect** button.
 - Enter your `Access Key ID`, `Secret Access key`, and `AWS region`.
 - Click on the `Disabled` button and mark it as `Active`.
 - Click on the **Save** button.
-- You should now be able to send SMS notifications using **Amazon SNS** in Novu.
+- You should now be able to send SMS notifications using **Amazon SNS** in Notify.

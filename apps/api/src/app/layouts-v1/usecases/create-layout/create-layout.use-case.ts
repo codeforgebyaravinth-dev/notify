@@ -6,9 +6,9 @@ import {
   layoutControlSchema,
   layoutUiSchema,
   ResourceValidatorService,
-} from '@novu/application-generic';
-import { ControlSchemas, LayoutEntity, LayoutRepository } from '@novu/dal';
-import { isReservedVariableName, ResourceOriginEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { ControlSchemas, LayoutEntity, LayoutRepository } from '@notify/dal';
+import { isReservedVariableName, ResourceOriginEnum } from '@notify/shared';
 import { ChannelTypeEnum, ITemplateVariable, LayoutId } from '../../types';
 import { CreateLayoutChangeCommand, CreateLayoutChangeUseCase } from '../create-layout-change';
 import { SetDefaultLayoutCommand, SetDefaultLayoutUseCase } from '../set-default-layout';

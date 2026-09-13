@@ -1,5 +1,5 @@
 import type { IncomingHttpHeaders } from 'node:http';
-import * as safeOutboundHttp from '@novu/shared/utils/safe-outbound-http';
+import * as safeOutboundHttp from '@notify/shared/utils/safe-outbound-http';
 import { vi } from 'vitest';
 
 if (process.env.NODE_ENV !== 'test') {

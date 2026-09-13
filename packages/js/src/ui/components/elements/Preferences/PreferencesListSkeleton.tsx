@@ -56,7 +56,7 @@ export const PreferencesListSkeleton = (props: PreferencesListSkeletonProps) => 
               <Icon
                 class={style({
                   key: 'preferencesList__skeletonIcon',
-                  className: 'nt-size-8 nt-p-2 nt-rounded-lg nt-bg-neutral-alpha-100',
+                  className: 'nt-size-8 nt-p-2 nt-nt-rounded-none nt-bg-neutral-alpha-100',
                 })}
               />
               <div
@@ -67,11 +67,11 @@ export const PreferencesListSkeleton = (props: PreferencesListSkeletonProps) => 
               >
                 <SkeletonText
                   appearanceKey="notificationList__skeletonText"
-                  class="nt-h-2 nt-w-1/3 nt-bg-neutral-alpha-50 nt-rounded"
+                  class="nt-h-2 nt-w-1/3 nt-bg-neutral-alpha-50 nt-nt-rounded-none"
                 />
                 <SkeletonText
                   appearanceKey="preferencesList__skeletonText"
-                  class="nt-h-2 nt-w-2/3 nt-bg-neutral-alpha-50 nt-rounded"
+                  class="nt-h-2 nt-w-2/3 nt-bg-neutral-alpha-50 nt-nt-rounded-none"
                 />
               </div>
 

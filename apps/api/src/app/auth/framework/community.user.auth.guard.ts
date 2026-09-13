@@ -1,8 +1,8 @@
 import { ExecutionContext, Injectable, UnauthorizedException } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { AuthGuard, IAuthModuleOptions } from '@nestjs/passport';
-import { PinoLogger } from '@novu/application-generic';
-import { ApiAuthSchemeEnum, NONE_AUTH_SCHEME, PassportStrategyEnum } from '@novu/shared';
+import { PinoLogger } from '@notify/application-generic';
+import { ApiAuthSchemeEnum, NONE_AUTH_SCHEME, PassportStrategyEnum } from '@notify/shared';
 
 @Injectable()
 export class CommunityUserAuthGuard extends AuthGuard([PassportStrategyEnum.JWT, PassportStrategyEnum.HEADER_API_KEY]) {

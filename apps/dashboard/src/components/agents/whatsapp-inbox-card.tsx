@@ -1,4 +1,4 @@
-import { CredentialsKeyEnum, type IIntegration } from '@novu/shared';
+import { CredentialsKeyEnum, type IIntegration } from '@notify/shared';
 import { useQuery } from '@tanstack/react-query';
 import { useMemo } from 'react';
 import { type AgentResponse, validateWhatsAppToken } from '@/api/agents';

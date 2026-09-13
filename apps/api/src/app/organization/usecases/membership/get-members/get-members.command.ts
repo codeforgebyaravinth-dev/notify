@@ -1,4 +1,4 @@
-import { UserSessionData } from '@novu/shared';
+import { UserSessionData } from '@notify/shared';
 import { IsDefined } from 'class-validator';
 import { OrganizationCommand } from '../../../../shared/commands/organization.command';
 

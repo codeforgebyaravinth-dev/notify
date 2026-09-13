@@ -1,7 +1,7 @@
-import { Novu } from '@novu/api';
-import { SubscriberResponseDto } from '@novu/api/models/components';
-import { SubscriberRepository } from '@novu/dal';
-import { UserSession } from '@novu/testing';
+import { Novu } from '@notify/api';
+import { SubscriberResponseDto } from '@notify/api/models/components';
+import { SubscriberRepository } from '@notify/dal';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { randomBytes } from 'crypto';
 import { expectSdkExceptionGeneric, initNovuClassSdk } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';

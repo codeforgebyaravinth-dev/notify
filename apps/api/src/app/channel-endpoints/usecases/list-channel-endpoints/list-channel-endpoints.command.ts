@@ -1,6 +1,6 @@
-import { CursorBasedPaginatedCommand } from '@novu/application-generic';
-import { ChannelEndpointEntity } from '@novu/dal';
-import { ChannelTypeEnum, providerIdValues, ProvidersIdEnum } from '@novu/shared';
+import { CursorBasedPaginatedCommand } from '@notify/application-generic';
+import { ChannelEndpointEntity } from '@notify/dal';
+import { ChannelTypeEnum, providerIdValues, ProvidersIdEnum } from '@notify/shared';
 import { IsArray, IsEnum, IsIn, IsOptional, IsString } from 'class-validator';
 
 export class ListChannelEndpointsCommand extends CursorBasedPaginatedCommand<

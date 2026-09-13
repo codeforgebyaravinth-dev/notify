@@ -1,24 +1,24 @@
 ---
 title: 'SMS'
-description: "Integrate SMS providers with Novu to deliver text message notifications. Configure providers, set up workflows, and manage delivery."
+description: "Integrate SMS providers with Notify to deliver text message notifications. Configure providers, set up workflows, and manage delivery."
 ---
 
 The SMS channel delivers messages to your subscribers’ mobile devices through your configured SMS provider integrations.
 
 <Note>
-  **SMS is outbound-only in Novu.** You can send SMS through workflows, but Novu does not receive or route inbound SMS replies. For two-way messaging, use a supported [agent channel](/agents/get-started/agents-and-providers) (Slack, Teams, WhatsApp, Telegram, or email) or handle inbound SMS with your provider's webhooks directly.
+  **SMS is outbound-only in Notify.** You can send SMS through workflows, but Notify does not receive or route inbound SMS replies. For two-way messaging, use a supported [agent channel](/agents/get-started/agents-and-providers) (Slack, Teams, WhatsApp, Telegram, or email) or handle inbound SMS with your provider's webhooks directly.
 </Note>
 
-## How SMS delivery works in Novu
+## How SMS delivery works in Notify
 
-Here’s the typical flow for sending an SMS notification through Novu:
+Here’s the typical flow for sending an SMS notification through Notify:
 
 <Steps> 
 <Step> 
 
 ### Add an SMS provider
 
-Start by adding an SMS provider in the **Integration Store** on your Novu dashboard. You can connect one or more integrations for the different or the same providers.
+Start by adding an SMS provider in the **Integration Store** on your Notify dashboard. You can connect one or more integrations for the different or the same providers.
 
 To learn [how to add an SMS provider](/platform/integrations/sms#supported-providers), refer to the guide for that provider.
 
@@ -37,13 +37,13 @@ Within the SMS step editor, write the message body. The editor supports dynamic 
 <Step> 
 ### Store subscriber phone number
 
-Novu automatically sends the notification to the phone number stored on the subscriber's profile. You must ensure that this field is set for any subscriber who needs to receive SMS messages. You can store subscribers phone number using the Novu API, or SDK.
+Notify automatically sends the notification to the phone number stored on the subscriber's profile. You must ensure that this field is set for any subscriber who needs to receive SMS messages. You can store subscribers phone number using the Notify API, or SDK.
 </Step>
 <Step>
 ### Trigger the workflow
 
-[Trigger the workflow](/api-reference/events/trigger-event) from your application code by sending an event to Novu.
-Novu automatically:
+[Trigger the workflow](/api-reference/events/trigger-event) from your application code by sending an event to Notify.
+Notify automatically:
 - Resolves the subscriber.
 - Selects the correct provider.
 - Renders the SMS template.
@@ -85,9 +85,9 @@ You can override the SMS settings when triggerring a notification by passing the
 <Tabs>
   <Tab title="Node.js">
 ```javascript
-import { Novu } from '@novu/api';  
+import { Notify } from '@notify/api';  
 
-const novu = new Novu({
+const notify = new Notify({
   secretKey: "<NOVU_SECRET_KEY>",
   // Required if using EU region
   // serverURL: "https://eu.api.novu.co",
@@ -101,7 +101,7 @@ await novu.trigger({
   overrides: {
     sms: {
       to: '+123012345678',
-      from: 'Novu Team',
+      from: 'Notify Team',
       content: 'This SMS message is from overrides',
     },
   },
@@ -112,16 +112,16 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="workflowId",
         to={"subscriber_id": "subscriberId"},
         overrides={
             "sms": {
                 "to": "+123012345678",
-                "from": "Novu Team",
+                "from": "Notify Team",
                 "content": "This SMS message is from overrides",
             },
         },
@@ -148,7 +148,7 @@ _, err := s.Trigger(context.Background(), components.TriggerEventRequestDto{
     Overrides: map[string]map[string]any{
         "sms": {
             "to":      "+123012345678",
-            "from":    "Novu Team",
+            "from":    "Notify Team",
             "content": "This SMS message is from overrides",
         },
     },
@@ -157,10 +157,10 @@ _, err := s.Trigger(context.Background(), components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()
+$sdk = notify\Notify::builder()
     ->setSecurity('<NOVU_SECRET_KEY>')
     ->build();
 
@@ -171,7 +171,7 @@ $sdk->trigger(
         overrides: [
             'sms' => [
                 'to' => '+123012345678',
-                'from' => 'Novu Team',
+                'from' => 'Notify Team',
                 'content' => 'This SMS message is from overrides',
             ],
         ],
@@ -181,8 +181,8 @@ $sdk->trigger(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
@@ -195,7 +195,7 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto() {
     Overrides = new Overrides() {
         Sms = new Dictionary<string, object>() {
             { "to", "+123012345678" },
-            { "from", "Novu Team" },
+            { "from", "Notify Team" },
             { "content", "This SMS message is from overrides" },
         },
     },
@@ -204,11 +204,11 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto() {
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 import java.util.Map;
 
-Novu novu = Novu.builder()
+Notify novu = Notify.builder()
     .secretKey("<NOVU_SECRET_KEY>")
     .build();
 
@@ -221,7 +221,7 @@ novu.trigger()
         .overrides(TriggerEventRequestDtoOverrides.builder()
             .sms(Map.of(
                 "to", "+123012345678",
-                "from", "Novu Team",
+                "from", "Notify Team",
                 "content", "This SMS message is from overrides"))
             .build())
         .build())
@@ -242,7 +242,7 @@ curl -L -X POST 'https://api.novu.co/v1/events/trigger' \
     "overrides": {
         "sms": {
             "to": "+123012345678",
-            "from": "Novu Team",
+            "from": "Notify Team",
             "content": "This SMS message is from overrides"
         }
     }
@@ -253,16 +253,16 @@ curl -L -X POST 'https://api.novu.co/v1/events/trigger' \
 
 ## Target a specific provider
 
-By default, Novu uses your primary SMS provider. If you want to bypass this and force a specific, active integration for a trigger, then use the `integrationIdentifier`.
+By default, Notify uses your primary SMS provider. If you want to bypass this and force a specific, active integration for a trigger, then use the `integrationIdentifier`.
 
-This is useful if you have multiple active integrations for different purposes. For example, you might have one integration for transactional SMS and one for security SMS. You can find the `integrationIdentifier` in the **Integration Store** of the Novu dashboard.
+This is useful if you have multiple active integrations for different purposes. For example, you might have one integration for transactional SMS and one for security SMS. You can find the `integrationIdentifier` in the **Integration Store** of the Notify dashboard.
 
 <Tabs>
   <Tab title="Node.js">
 ```javascript
-import { Novu } from '@novu/api';  
+import { Notify } from '@notify/api';  
 
-const novu = new Novu({
+const notify = new Notify({
   secretKey: "<NOVU_SECRET_KEY>",
   // Required if using EU region
   // serverURL: "https://eu.api.novu.co",
@@ -283,9 +283,9 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="workflowId",
         to={"subscriber_id": "subscriberId"},
@@ -324,10 +324,10 @@ _, err := s.Trigger(context.Background(), components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()
+$sdk = notify\Notify::builder()
     ->setSecurity('<NOVU_SECRET_KEY>')
     ->build();
 
@@ -346,8 +346,8 @@ $sdk->trigger(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
@@ -367,11 +367,11 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto() {
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 import java.util.Map;
 
-Novu novu = Novu.builder()
+Notify novu = Notify.builder()
     .secretKey("<NOVU_SECRET_KEY>")
     .build();
 
@@ -411,45 +411,45 @@ curl -L -X POST 'https://api.novu.co/v1/events/trigger' \
 
 ## Supported providers
 
-Here are the SMS providers that are currently supported by Novu. Select any provider to see its detailed setup guide.
+Here are the SMS providers that are currently supported by Notify. Select any provider to see its detailed setup guide.
 
 <Columns cols={2}>
-<Card title="Twilio" href="/platform/integrations/sms/twilio"> Learn how to use the Twilio provider to send SMS notifications using Novu.</Card>
-<Card title="AWS SNS" href="/platform/integrations/sms/aws-sns"> Learn how to use the AWS SNS provider to send SMS notifications using Novu.</Card>
-<Card title="Infobip - SMS" href="/platform/integrations/sms/infobip"> Learn how to use the Infobip SMS provider to send SMS notifications using Novu.</Card>
-<Card title="Sinch" href="/platform/integrations/sms/sinch"> Learn how to use the Sinch provider to send SMS notifications using Novu.</Card>
-<Card title="Nexmo" href="/platform/integrations/sms/nexmo"> Learn how to use the Nexmo (Vonage) provider to send SMS notifications using Novu.</Card>
-<Card title="MessageBird" href="/platform/integrations/sms/messagebird"> Learn how to use the MessageBird provider to send SMS notifications using Novu.</Card>
-<Card title="Telnyx" href="/platform/integrations/sms/telnyx"> Learn how to use the Telnyx provider to send SMS notifications using Novu.</Card>
-<Card title="CM.com" href="/platform/integrations/sms/cm-com"> Learn how to use the CM.com provider to send SMS notifications using Novu.</Card>
-<Card title="Plivo" href="/platform/integrations/sms/plivo"> Learn how to use the Plivo provider to send SMS notifications using Novu.</Card>
-<Card title="Bandwidth" href="/platform/integrations/sms/bandwidth"> Learn how to use the Bandwidth provider to send SMS notifications using Novu.</Card>
-<Card title="RingCentral" href="/platform/integrations/sms/ring-central"> Learn how to use the RingCentral provider to send SMS notifications using Novu.</Card>
-<Card title="Azure SMS" href="/platform/integrations/sms/azure"> Learn how to use the Azure SMS provider to send SMS notifications using Novu.</Card>
-<Card title="Clicksend" href="/platform/integrations/sms/clicksend"> Learn how to use the Clicksend provider to send SMS notifications using Novu.</Card>
-<Card title="Brevo - SMS" href="/platform/integrations/sms/brevo"> Learn how to use the Brevo SMS provider to send SMS notifications using Novu.</Card>
-<Card title="Clickatell" href="/platform/integrations/sms/clickatell"> Learn how to use the Clickatell provider to send SMS notifications using Novu.</Card>
-<Card title="BulkSMS" href="/platform/integrations/sms/bulk-sms"> Learn how to use the BulkSMS provider to send SMS notifications using Novu.</Card>
-<Card title="SMS77" href="/platform/integrations/sms/sms77"> Learn how to use the SMS77 provider to send SMS notifications using Novu.</Card>
-<Card title="Africa's Talking" href="/platform/integrations/sms/africas-talking"> Learn how to use the Africa's Talking provider to send SMS notifications using Novu.</Card>
-<Card title="Unifonic" href="/platform/integrations/sms/unifonic"> Learn how to use the Unifonic provider to send SMS notifications using Novu.</Card>
-<Card title="Gupshup" href="/platform/integrations/sms/gupshup"> Learn how to use the Gupshup provider to send SMS notifications using Novu.</Card>
-<Card title="Termii" href="/platform/integrations/sms/termii"> Learn how to use the Termii provider to send SMS notifications using Novu.</Card>
-<Card title="Kudosity" href="/platform/integrations/sms/kudosity"> Learn how to use the Kudosity provider to send SMS notifications using Novu.</Card>
-<Card title="Sendchamp" href="/platform/integrations/sms/sendchamp"> Learn how to use the Sendchamp provider to send SMS notifications using Novu.</Card>
-<Card title="SimpleTexting" href="/platform/integrations/sms/simpletexting"> Learn how to use the SimpleTexting provider to send SMS notifications using Novu.</Card>
-<Card title="46elks" href="/platform/integrations/sms/46elks"> Learn how to use the 46elks provider to send SMS notifications using Novu.</Card>
-<Card title="Firetext" href="/platform/integrations/sms/firetext"> Learn how to use the Firetext provider to send SMS notifications using Novu.</Card>
-<Card title="SMS Central" href="/platform/integrations/sms/sms-central"> Learn how to use the SMS Central provider to send SMS notifications using Novu.</Card>
-<Card title="Kannel" href="/platform/integrations/sms/kannel"> Learn how to use the Kannel provider to send SMS notifications using Novu.</Card>
-<Card title="Maqsam" href="/platform/integrations/sms/maqsam"> Learn how to use the Maqsam provider to send SMS notifications using Novu.</Card>
-<Card title="Mobishastra" href="/platform/integrations/sms/mobishastra"> Learn how to use the Mobishastra provider to send SMS notifications using Novu.</Card>
-<Card title="Afro Message" href="/platform/integrations/sms/afro-message"> Learn how to use the Afro Message provider to send SMS notifications using Novu.</Card>
-<Card title="smsmode" href="/platform/integrations/sms/smsmode"> Learn how to use the smsmode provider to send SMS notifications using Novu.</Card>
-<Card title="iSend SMS" href="/platform/integrations/sms/isend-sms"> Learn how to use the iSend SMS provider to send SMS notifications using Novu.</Card>
-<Card title="iSendPro" href="/platform/integrations/sms/isendpro"> Learn how to use the iSendPro provider to send SMS notifications using Novu.</Card>
-<Card title="iMedia" href="/platform/integrations/sms/imedia"> Learn how to use the iMedia provider to send SMS notifications using Novu.</Card>
-<Card title="Eazy" href="/platform/integrations/sms/eazy"> Learn how to use the Eazy provider to send SMS notifications using Novu.</Card>
-<Card title="Ruach SMS" href="/platform/integrations/sms/ruach-sms"> Learn how to use the Ruach SMS provider to send SMS notifications using Novu.</Card>
-<Card title="SMS Webhook" href="/platform/integrations/sms/sms-webhook"> Learn how to send SMS through your own HTTP API using Novu.</Card>
+<Card title="Twilio" href="/platform/integrations/sms/twilio"> Learn how to use the Twilio provider to send SMS notifications using Notify.</Card>
+<Card title="AWS SNS" href="/platform/integrations/sms/aws-sns"> Learn how to use the AWS SNS provider to send SMS notifications using Notify.</Card>
+<Card title="Infobip - SMS" href="/platform/integrations/sms/infobip"> Learn how to use the Infobip SMS provider to send SMS notifications using Notify.</Card>
+<Card title="Sinch" href="/platform/integrations/sms/sinch"> Learn how to use the Sinch provider to send SMS notifications using Notify.</Card>
+<Card title="Nexmo" href="/platform/integrations/sms/nexmo"> Learn how to use the Nexmo (Vonage) provider to send SMS notifications using Notify.</Card>
+<Card title="MessageBird" href="/platform/integrations/sms/messagebird"> Learn how to use the MessageBird provider to send SMS notifications using Notify.</Card>
+<Card title="Telnyx" href="/platform/integrations/sms/telnyx"> Learn how to use the Telnyx provider to send SMS notifications using Notify.</Card>
+<Card title="CM.com" href="/platform/integrations/sms/cm-com"> Learn how to use the CM.com provider to send SMS notifications using Notify.</Card>
+<Card title="Plivo" href="/platform/integrations/sms/plivo"> Learn how to use the Plivo provider to send SMS notifications using Notify.</Card>
+<Card title="Bandwidth" href="/platform/integrations/sms/bandwidth"> Learn how to use the Bandwidth provider to send SMS notifications using Notify.</Card>
+<Card title="RingCentral" href="/platform/integrations/sms/ring-central"> Learn how to use the RingCentral provider to send SMS notifications using Notify.</Card>
+<Card title="Azure SMS" href="/platform/integrations/sms/azure"> Learn how to use the Azure SMS provider to send SMS notifications using Notify.</Card>
+<Card title="Clicksend" href="/platform/integrations/sms/clicksend"> Learn how to use the Clicksend provider to send SMS notifications using Notify.</Card>
+<Card title="Brevo - SMS" href="/platform/integrations/sms/brevo"> Learn how to use the Brevo SMS provider to send SMS notifications using Notify.</Card>
+<Card title="Clickatell" href="/platform/integrations/sms/clickatell"> Learn how to use the Clickatell provider to send SMS notifications using Notify.</Card>
+<Card title="BulkSMS" href="/platform/integrations/sms/bulk-sms"> Learn how to use the BulkSMS provider to send SMS notifications using Notify.</Card>
+<Card title="SMS77" href="/platform/integrations/sms/sms77"> Learn how to use the SMS77 provider to send SMS notifications using Notify.</Card>
+<Card title="Africa's Talking" href="/platform/integrations/sms/africas-talking"> Learn how to use the Africa's Talking provider to send SMS notifications using Notify.</Card>
+<Card title="Unifonic" href="/platform/integrations/sms/unifonic"> Learn how to use the Unifonic provider to send SMS notifications using Notify.</Card>
+<Card title="Gupshup" href="/platform/integrations/sms/gupshup"> Learn how to use the Gupshup provider to send SMS notifications using Notify.</Card>
+<Card title="Termii" href="/platform/integrations/sms/termii"> Learn how to use the Termii provider to send SMS notifications using Notify.</Card>
+<Card title="Kudosity" href="/platform/integrations/sms/kudosity"> Learn how to use the Kudosity provider to send SMS notifications using Notify.</Card>
+<Card title="Sendchamp" href="/platform/integrations/sms/sendchamp"> Learn how to use the Sendchamp provider to send SMS notifications using Notify.</Card>
+<Card title="SimpleTexting" href="/platform/integrations/sms/simpletexting"> Learn how to use the SimpleTexting provider to send SMS notifications using Notify.</Card>
+<Card title="46elks" href="/platform/integrations/sms/46elks"> Learn how to use the 46elks provider to send SMS notifications using Notify.</Card>
+<Card title="Firetext" href="/platform/integrations/sms/firetext"> Learn how to use the Firetext provider to send SMS notifications using Notify.</Card>
+<Card title="SMS Central" href="/platform/integrations/sms/sms-central"> Learn how to use the SMS Central provider to send SMS notifications using Notify.</Card>
+<Card title="Kannel" href="/platform/integrations/sms/kannel"> Learn how to use the Kannel provider to send SMS notifications using Notify.</Card>
+<Card title="Maqsam" href="/platform/integrations/sms/maqsam"> Learn how to use the Maqsam provider to send SMS notifications using Notify.</Card>
+<Card title="Mobishastra" href="/platform/integrations/sms/mobishastra"> Learn how to use the Mobishastra provider to send SMS notifications using Notify.</Card>
+<Card title="Afro Message" href="/platform/integrations/sms/afro-message"> Learn how to use the Afro Message provider to send SMS notifications using Notify.</Card>
+<Card title="smsmode" href="/platform/integrations/sms/smsmode"> Learn how to use the smsmode provider to send SMS notifications using Notify.</Card>
+<Card title="iSend SMS" href="/platform/integrations/sms/isend-sms"> Learn how to use the iSend SMS provider to send SMS notifications using Notify.</Card>
+<Card title="iSendPro" href="/platform/integrations/sms/isendpro"> Learn how to use the iSendPro provider to send SMS notifications using Notify.</Card>
+<Card title="iMedia" href="/platform/integrations/sms/imedia"> Learn how to use the iMedia provider to send SMS notifications using Notify.</Card>
+<Card title="Eazy" href="/platform/integrations/sms/eazy"> Learn how to use the Eazy provider to send SMS notifications using Notify.</Card>
+<Card title="Ruach SMS" href="/platform/integrations/sms/ruach-sms"> Learn how to use the Ruach SMS provider to send SMS notifications using Notify.</Card>
+<Card title="SMS Webhook" href="/platform/integrations/sms/sms-webhook"> Learn how to send SMS through your own HTTP API using Notify.</Card>
 </Columns>

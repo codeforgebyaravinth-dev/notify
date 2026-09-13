@@ -1,9 +1,9 @@
 import '../../src/config';
 
 import { NestFactory } from '@nestjs/core';
-import { PinoLogger } from '@novu/application-generic';
-import { PreferencesRepository } from '@novu/dal';
-import { PreferencesTypeEnum } from '@novu/shared';
+import { PinoLogger } from '@notify/application-generic';
+import { PreferencesRepository } from '@notify/dal';
+import { PreferencesTypeEnum } from '@notify/shared';
 import { Expression } from 'mongoose';
 import { AppModule } from '../../src/app.module';
 

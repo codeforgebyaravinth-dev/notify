@@ -1,5 +1,5 @@
 import { standardSchemaResolver } from '@hookform/resolvers/standard-schema';
-import { IEnvironment, SECRET_MASK } from '@novu/shared';
+import { IEnvironment, SECRET_MASK } from '@notify/shared';
 import { useId, useMemo } from 'react';
 import { useForm } from 'react-hook-form';
 import { RiInformationLine } from 'react-icons/ri';

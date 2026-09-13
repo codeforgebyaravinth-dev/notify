@@ -1,4 +1,4 @@
-import { GetSubscriptionDto } from '@novu/shared';
+import { GetSubscriptionDto } from '@notify/shared';
 import { ComponentType } from 'react';
 import { RiArrowRightDoubleLine, RiFlashlightFill, RiInformationFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';

@@ -1,6 +1,6 @@
-import { CommunityOrganizationRepository, EnvironmentRepository } from '@novu/dal';
-import { MemberRoleEnum, UserSessionData } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { CommunityOrganizationRepository, EnvironmentRepository } from '@notify/dal';
+import { MemberRoleEnum, UserSessionData } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import jwt from 'jsonwebtoken';
 

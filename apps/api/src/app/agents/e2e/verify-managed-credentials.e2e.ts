@@ -1,7 +1,7 @@
-import { AgentRuntimeUnauthorizedError } from '@novu/application-generic';
-import * as AnthropicProviderModule from '@novu/application-generic/build/main/agent-runtimes/anthropic/anthropic-agent-runtime.provider';
-import { AgentRuntimeProviderIdEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { AgentRuntimeUnauthorizedError } from '@notify/application-generic';
+import * as AnthropicProviderModule from '@notify/application-generic/build/main/agent-runtimes/anthropic/anthropic-agent-runtime.provider';
+import { AgentRuntimeProviderIdEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import sinon from 'sinon';
 

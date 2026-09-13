@@ -7,7 +7,7 @@ import {
   MAX_GENERATED_MCP_SERVERS,
   MAX_GENERATED_SKILLS,
   MCP_SERVERS,
-} from '@novu/shared';
+} from '@notify/shared';
 import { z } from 'zod';
 
 /**

@@ -1,4 +1,4 @@
-import { getTwilioSmsClientRegionConfig, SmsProviderIdEnum } from '@novu/shared';
+import { getTwilioSmsClientRegionConfig, SmsProviderIdEnum } from '@notify/shared';
 import {
   ChannelTypeEnum,
   ISendMessageSuccessResponse,
@@ -6,7 +6,7 @@ import {
   ISmsOptions,
   ISmsProvider,
   SmsEventStatusEnum,
-} from '@novu/stateless';
+} from '@notify/stateless';
 
 import { Twilio } from 'twilio';
 import { MessageListInstanceCreateOptions } from 'twilio/lib/rest/api/v2010/account/message';

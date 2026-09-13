@@ -1,5 +1,5 @@
 {
-  "name": "@novu/react",
+  "name": "@notify/react",
   "sourceRoot": "packages/react/src",
   "projectType": "library",
   "targets": {

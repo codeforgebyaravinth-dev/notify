@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { GetLayoutCommand, GetLayoutUseCase, InstrumentUsecase, PinoLogger } from '@novu/application-generic';
-import { ControlValuesRepository, NotificationTemplateRepository } from '@novu/dal';
-import { ControlValuesLevelEnum } from '@novu/shared';
+import { GetLayoutCommand, GetLayoutUseCase, InstrumentUsecase, PinoLogger } from '@notify/application-generic';
+import { ControlValuesRepository, NotificationTemplateRepository } from '@notify/dal';
+import { ControlValuesLevelEnum } from '@notify/shared';
 import { GetLayoutUsageResponseDto, WorkflowInfoDto } from '../../dtos';
 import { GetLayoutUsageCommand } from './get-layout-usage.command';
 

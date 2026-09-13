@@ -2,8 +2,8 @@ import {
   EnvironmentWithUserCommand,
   LayoutControlValuesDto,
   LayoutCreationSourceEnum,
-} from '@novu/application-generic';
-import { MAX_NAME_LENGTH } from '@novu/shared';
+} from '@notify/application-generic';
+import { MAX_NAME_LENGTH } from '@notify/shared';
 import { Type } from 'class-transformer';
 import { IsBoolean, IsEnum, IsNotEmpty, IsOptional, IsString, Length, ValidateNested } from 'class-validator';
 

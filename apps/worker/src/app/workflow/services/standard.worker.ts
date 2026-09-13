@@ -14,9 +14,9 @@ import {
   UnrecoverableError,
   WorkerOptions,
   WorkflowInMemoryProviderService,
-} from '@novu/application-generic';
-import { CommunityOrganizationRepository, JobRepository } from '@novu/dal';
-import { FeatureFlagsKeysEnum, JobStatusEnum, ObservabilityBackgroundTransactionEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { CommunityOrganizationRepository, JobRepository } from '@notify/dal';
+import { FeatureFlagsKeysEnum, JobStatusEnum, ObservabilityBackgroundTransactionEnum } from '@notify/shared';
 import {
   HandleLastFailedJob,
   HandleLastFailedJobCommand,

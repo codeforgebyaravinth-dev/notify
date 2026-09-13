@@ -1,4 +1,4 @@
-import type { AgentMessage } from '@novu/agent-event-protocol';
+import type { AgentMessage } from '@notify/agent-event-protocol';
 import { AgentChatService, InboxService } from '../api';
 import { BaseModule } from '../base-module';
 import { NovuEventEmitter } from '../event-emitter';

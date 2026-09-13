@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 
-import { EnvironmentEntity, EnvironmentRepository } from '@novu/dal';
+import { EnvironmentEntity, EnvironmentRepository } from '@notify/dal';
 import { EnvironmentResponseDto } from '../../dtos/environment-response.dto';
 import { GetEnvironmentCommand } from './get-environment.command';
 

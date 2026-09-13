@@ -1,4 +1,4 @@
-import { LayoutId } from '@novu/shared';
+import { LayoutId } from '@notify/shared';
 import { IsDefined, IsString } from 'class-validator';
 
 import { EnvironmentCommand } from '../../../shared/commands/project.command';

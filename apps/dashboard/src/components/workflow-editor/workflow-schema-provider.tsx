@@ -1,4 +1,4 @@
-import { type IEnvironment, type WorkflowResponseDto } from '@novu/shared';
+import { type IEnvironment, type WorkflowResponseDto } from '@notify/shared';
 import { createContext, ReactNode, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { useEnvironment } from '@/context/environment/hooks';

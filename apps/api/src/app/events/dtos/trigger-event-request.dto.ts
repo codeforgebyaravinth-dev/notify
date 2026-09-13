@@ -1,5 +1,5 @@
 import { ApiExtraModels, ApiHideProperty, ApiProperty, ApiPropertyOptional, getSchemaPath } from '@nestjs/swagger';
-import { ApiContextPayload, IsValidContextPayload } from '@novu/application-generic';
+import { ApiContextPayload, IsValidContextPayload } from '@notify/application-generic';
 import {
   ContextPayload,
   ProvidersIdEnum,
@@ -8,7 +8,7 @@ import {
   TriggerRecipientsPayload,
   TriggerRecipientsTypeEnum,
   TriggerTenantContext,
-} from '@novu/shared';
+} from '@notify/shared';
 import { Type } from 'class-transformer';
 import {
   ArrayMaxSize,

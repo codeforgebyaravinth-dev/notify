@@ -1,4 +1,4 @@
-import { ApiServiceLevelEnum, FeatureNameEnum, getFeatureForTierAsBoolean, PermissionsEnum } from '@novu/shared';
+import { ApiServiceLevelEnum, FeatureNameEnum, getFeatureForTierAsBoolean, PermissionsEnum } from '@notify/shared';
 import { useCallback, useEffect, useState } from 'react';
 import { RiAddCircleLine } from 'react-icons/ri';
 import { useNavigate } from 'react-router-dom';

@@ -4,7 +4,7 @@ import {
   FeatureNameEnum,
   getFeatureForTierAsBoolean,
   IEnvironment,
-} from '@novu/shared';
+} from '@notify/shared';
 import { UseMutationResult, UseQueryResult, useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { RiLoaderLine } from 'react-icons/ri';
 import { Navigate, useLocation, useNavigate, useParams } from 'react-router-dom';

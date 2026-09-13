@@ -1,13 +1,13 @@
 ---
 title: 'Customize Popover'
-description: "Display the Novu Inbox content outside the default popover and integrate it into your own custom popover, drawer, or full page layout."
+description: "Display the Notify Inbox content outside the default popover and integrate it into your own custom popover, drawer, or full page layout."
 ---
 
 The Inbox component provides a built-in popover triggered by its bell icon. In situations where you want more control over how and where notifications appear, you can display the notification feed directly or mount it inside your own custom popover, modal, or panel.
 
 ## Display the standalone notification feed
 
-You can render the notification feed directly into any part of your application, such as a dashboard panel or a dedicated notifications page. This is useful for situations where you don't need a popover trigger at all. Novu provides two components for this.
+You can render the notification feed directly into any part of your application, such as a dashboard panel or a dedicated notifications page. This is useful for situations where you don't need a popover trigger at all. Notify provides two components for this.
 
 Both components support the same customization props as the Inbox component, except for configuration options (like `applicationIdentifier`, `subscriber`, and `renderBell`).
 
@@ -18,7 +18,7 @@ The Notifications component renders the core notification experience, which incl
 ![notfications component](/images/inbox/notifications-component.png)
 
 ```tsx
-import { Inbox, Notifications } from '@novu/react';
+import { Inbox, Notifications } from '@notify/react';
 
 function NotificationFeed() {
   return (
@@ -41,7 +41,7 @@ The InboxContent component renders everything the Notifications component does, 
 ![notfications component](/images/inbox/inboxcontent-component.png)
 
 ```tsx
-import { Inbox, InboxContent } from '@novu/react';
+import { Inbox, InboxContent } from '@notify/react';
 
 function NotificationFeed() {
   return (
@@ -59,7 +59,7 @@ export default NotificationFeed;
 
 ## Building a custom popover
 
-Use the Notifications or InboxContent components inside your own popover to keep all of Novu’s notification functionality while integrating with any external UI library. Trigger the popover with the Bell component or your own custom trigger.
+Use the Notifications or InboxContent components inside your own popover to keep all of Notify’s notification functionality while integrating with any external UI library. Trigger the popover with the Bell component or your own custom trigger.
 
 <Tabs>
   <Tab title="Using Notifications">
@@ -121,9 +121,9 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import { Inbox, InboxContent } from "@novu/react";
+import { Inbox, InboxContent } from "@notify/react";
 
-export default function NovuInbox() {
+export default function NotifyInbox() {
   return (
     <div className="min-h-screen p-8">
       <Inbox
@@ -138,7 +138,7 @@ export default function NovuInbox() {
           </DrawerTrigger>
           <DrawerContent className="w-[300px]">
             <DrawerHeader>
-              <DrawerTitle>Novu Inbox</DrawerTitle>
+              <DrawerTitle>Notify Inbox</DrawerTitle>
             </DrawerHeader>
             <InboxContent />
           </DrawerContent>

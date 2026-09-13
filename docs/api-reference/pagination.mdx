@@ -1,9 +1,9 @@
 ---
 title: 'Pagination'
-description: 'Page through large Novu API list responses using cursor-based pagination with limit, after, and before query parameters and response metadata.'
+description: 'Page through large Notify API list responses using cursor-based pagination with limit, after, and before query parameters and response metadata.'
 ---
 
-List endpoints return results in pages so you can retrieve large collections efficiently. Novu uses **cursor-based pagination** as the standard for list endpoints. Pass an opaque cursor to walk forward or backward through results without skipping or duplicating items as your data changes.
+List endpoints return results in pages so you can retrieve large collections efficiently. Notify uses **cursor-based pagination** as the standard for list endpoints. Pass an opaque cursor to walk forward or backward through results without skipping or duplicating items as your data changes.
 
 A small number of legacy endpoints still use page-based pagination with `page` and `limit`. For new integrations, use the cursor-based endpoints listed below.
 
@@ -70,9 +70,9 @@ These endpoints use cursor pagination:
 This example walks every page of a cursor-based list with the TypeScript SDK until there are no more results:
 
 ```javascript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({ secretKey: process.env.NOVU_SECRET_KEY });
+const notify = new Notify({ secretKey: process.env.NOVU_SECRET_KEY });
 
 async function listAllSubscribers() {
   const all = [];

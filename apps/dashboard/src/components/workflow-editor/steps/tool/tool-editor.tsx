@@ -4,7 +4,7 @@ import {
   EnvironmentTypeEnum,
   ToolProviderIdEnum,
   type UiSchema,
-} from '@novu/shared';
+} from '@notify/shared';
 import { useCallback } from 'react';
 import { RiLightbulbLine } from 'react-icons/ri';
 import { getComponentByType } from '@/components/workflow-editor/steps/component-utils';

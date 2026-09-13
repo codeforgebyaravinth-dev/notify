@@ -1,5 +1,5 @@
-import { PinoLogger } from '@novu/application-generic';
-import { isBetterAuthEnabled, isClerkEnabled } from '@novu/shared';
+import { PinoLogger } from '@notify/application-generic';
+import { isBetterAuthEnabled, isClerkEnabled } from '@notify/shared';
 import { CreateOrganization } from './create-organization/create-organization.usecase';
 import { SyncExternalOrganization } from './create-organization/sync-external-organization/sync-external-organization.usecase';
 import { BrandRetrievalService } from './enrich-organization-brand/brand-retrieval.service';

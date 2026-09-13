@@ -7,4 +7,4 @@ export {
   TopicKey,
   TopicName,
   UserId,
-} from '@novu/shared';
+} from '@notify/shared';

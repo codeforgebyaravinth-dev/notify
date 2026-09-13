@@ -7,10 +7,10 @@ import {
   LoggerModule,
   QueuesModule,
   WebSocketsInMemoryProviderService,
-} from '@novu/application-generic';
-import { DalService, MessageRepository, NotificationRepository, SubscriberRepository } from '@novu/dal';
+} from '@notify/application-generic';
+import { DalService, MessageRepository, NotificationRepository, SubscriberRepository } from '@notify/dal';
 
-import { JobTopicNameEnum } from '@novu/shared';
+import { JobTopicNameEnum } from '@notify/shared';
 import packageJson from '../../package.json';
 import { SubscriberOnlineService } from './subscriber-online';
 

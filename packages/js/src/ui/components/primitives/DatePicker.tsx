@@ -153,7 +153,7 @@ export const DatePickerHeader = (props: DatePickerHeaderProps) => {
       class={style({
         key: local.appearanceKey || 'datePickerControl',
         className: cn(
-          'nt-flex nt-items-center nt-justify-between nt-gap-1.5 nt-h-7 nt-p-1 nt-mb-2 nt-rounded-lg nt-bg-background',
+          'nt-flex nt-items-center nt-justify-between nt-gap-1.5 nt-h-7 nt-p-1 nt-mb-2 nt-nt-rounded-none nt-bg-background',
           local.class
         ),
       })}
@@ -167,7 +167,7 @@ export const DatePickerHeader = (props: DatePickerHeaderProps) => {
           handlePrevMonth();
         }}
         disabled={isPrevDisabled()}
-        class="nt-flex nt-justify-center nt-items-center nt-gap-0.5 nt-w-5 nt-h-5 nt-p-0 nt-rounded-md nt-bg-background nt-shadow-[0px_1px_2px_0px_rgba(10,13,20,0.03)]"
+        class="nt-flex nt-justify-center nt-items-center nt-gap-0.5 nt-w-5 nt-h-5 nt-p-0 nt-nt-rounded-none nt-bg-background nt-shadow-[0px_1px_2px_0px_rgba(10,13,20,0.03)]"
       >
         <IconRendererWrapper
           iconKey="arrowLeft"
@@ -191,7 +191,7 @@ export const DatePickerHeader = (props: DatePickerHeaderProps) => {
           handleNextMonth();
         }}
         disabled={isNextDisabled()}
-        class="nt-flex nt-justify-center nt-items-center nt-gap-0.5 nt-w-5 nt-h-5 nt-p-0 nt-rounded-md nt-bg-background nt-shadow-[0px_1px_2px_0px_rgba(10,13,20,0.03)]"
+        class="nt-flex nt-justify-center nt-items-center nt-gap-0.5 nt-w-5 nt-h-5 nt-p-0 nt-nt-rounded-none nt-bg-background nt-shadow-[0px_1px_2px_0px_rgba(10,13,20,0.03)]"
       >
         <IconRendererWrapper
           iconKey="arrowRight"
@@ -262,8 +262,8 @@ export const DatePickerGridCell = (props: DatePickerGridCellProps) => {
         key: local.appearanceKey || 'datePickerGridCell',
         className: cn(
           'nt-p-0 nt-text-center nt-text-sm',
-          'nt-has-[[data-in-range]]:bg-accent nt-has-[[data-in-range]]:first-of-type:rounded-l-md nt-has-[[data-in-range]]:last-of-type:rounded-r-md',
-          'nt-has-[[data-range-end]]:rounded-r-md nt-has-[[data-range-start]]:rounded-l-md',
+          'nt-has-[[data-in-range]]:bg-accent nt-has-[[data-in-range]]:first-of-type:nt-rounded-none-md nt-has-[[data-in-range]]:last-of-type:nt-rounded-none-md',
+          'nt-has-[[data-range-end]]:nt-rounded-none-md nt-has-[[data-range-start]]:nt-rounded-none-md',
           'nt-has-[[data-outside-range][data-in-range]]:bg-accent/50',
           local.class
         ),
@@ -316,13 +316,13 @@ export const DatePickerGridCellTrigger = (props: DatePickerGridCellTriggerProps)
         setSelectedDate(local.date);
       }}
       class={cn(
-        'nt-size-8 nt-w-full nt-rounded-md nt-flex nt-items-center nt-justify-center',
+        'nt-size-8 nt-w-full nt-nt-rounded-none nt-flex nt-items-center nt-justify-center',
         {
           'nt-text-muted-foreground disabled:nt-opacity-20': !isCurrentMonth || isPastDate(),
           'nt-text-foreground-alpha-700': isCurrentMonth && !isPastDate() && !isFutureDate(),
         },
         {
-          'nt-bg-primary-alpha-300 hover:nt-bg-primary-alpha-400':
+          'nt-bg-gradient-to-r nt-from-purple-600 nt-to-red-500-alpha-300 hover:nt-bg-gradient-to-r nt-from-purple-600 nt-to-red-500-alpha-400':
             selectedDate()?.toDateString() === local.date.toDateString(),
         }
       )}

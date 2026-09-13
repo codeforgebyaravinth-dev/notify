@@ -1,7 +1,7 @@
-import * as ApplicationGeneric from '@novu/application-generic';
-import { AnalyticsService, encryptCredentials } from '@novu/application-generic';
-import { AgentRepository, ConversationRepository, IntegrationRepository } from '@novu/dal';
-import { AgentRuntimeProviderIdEnum, IntegrationKindEnum } from '@novu/shared';
+import * as ApplicationGeneric from '@notify/application-generic';
+import { AnalyticsService, encryptCredentials } from '@notify/application-generic';
+import { AgentRepository, ConversationRepository, IntegrationRepository } from '@notify/dal';
+import { AgentRuntimeProviderIdEnum, IntegrationKindEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 

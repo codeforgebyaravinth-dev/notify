@@ -1,5 +1,5 @@
 {
-  "name": "@novu/providers",
+  "name": "@notify/providers",
   "version": "2.6.6",
   "description": "Novu Provider Wrappers",
   "main": "dist/cjs/index.js",
@@ -42,8 +42,8 @@
     "@chat-adapter/teams": "4.33.0",
     "@infobip-api/sdk": "^0.3.2",
     "@mailchimp/mailchimp_transactional": "^1.0.59",
-    "@novu/shared": "workspace:*",
-    "@novu/stateless": "workspace:*",
+    "@notify/shared": "workspace:*",
+    "@notify/stateless": "workspace:*",
     "@parse/node-apn": "^5.2.3",
     "@plunk/node": "2.0.0",
     "@ringcentral/sdk": "^5.0.1",

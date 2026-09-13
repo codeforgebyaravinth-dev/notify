@@ -1,4 +1,4 @@
-import { EnvironmentTypeEnum } from '@novu/shared';
+import { EnvironmentTypeEnum } from '@notify/shared';
 import { useFormContext } from 'react-hook-form';
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/primitives/form/form';
 import { Switch } from '@/components/primitives/switch';

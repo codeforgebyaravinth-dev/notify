@@ -1,4 +1,4 @@
-import { EnvironmentCommand } from '@novu/application-generic';
+import { EnvironmentCommand } from '@notify/application-generic';
 import { Type } from 'class-transformer';
 import { ArrayMaxSize, ArrayNotEmpty, IsArray, ValidateNested } from 'class-validator';
 import { CreateSubscriberRequestDto } from '../../dtos';

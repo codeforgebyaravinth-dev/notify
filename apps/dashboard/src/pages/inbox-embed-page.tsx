@@ -1,4 +1,4 @@
-import { ChannelTypeEnum } from '@novu/shared';
+import { ChannelTypeEnum } from '@notify/shared';
 import { useEffect, useMemo } from 'react';
 import { RiArrowRightSLine, RiComputerLine } from 'react-icons/ri';
 import { useNavigate, useSearchParams } from 'react-router-dom';

@@ -1,4 +1,4 @@
-import { ApiServiceLevelEnum } from '@novu/shared';
+import { ApiServiceLevelEnum } from '@notify/shared';
 import { RiArrowRightSLine, RiBookMarkedLine, RiSparkling2Line } from 'react-icons/ri';
 import { Link, useNavigate } from 'react-router-dom';
 import { useEnvironment } from '@/context/environment/hooks';

@@ -8,14 +8,14 @@ import {
   UnauthorizedException,
 } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
-import { isAgentEmailEnabled, ProductFeature } from '@novu/application-generic';
-import { CommunityOrganizationRepository } from '@novu/dal';
+import { isAgentEmailEnabled, ProductFeature } from '@notify/application-generic';
+import { CommunityOrganizationRepository } from '@notify/dal';
 import {
   ApiServiceLevelEnum,
   ProductFeatureKeyEnum,
   productFeatureEnabledForServiceLevel,
   UserSessionData,
-} from '@novu/shared';
+} from '@notify/shared';
 import { Observable } from 'rxjs';
 
 @Injectable()

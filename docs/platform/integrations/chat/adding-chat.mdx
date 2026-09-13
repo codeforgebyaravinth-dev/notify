@@ -1,20 +1,20 @@
 ---
-title: "Adding Chat Channel Chat Integration with Novu"
+title: "Adding Chat Channel Chat Integration with Notify"
 sidebarTitle: "Adding Chat Channel"
-description: "Add a chat channel provider in Novu to send chat notifications through workflows. Walks through selecting a provider, storing credentials, and testing delivery."
+description: "Add a chat channel provider in Notify to send chat notifications through workflows. Walks through selecting a provider, storing credentials, and testing delivery."
 ---
 
 Chat channels allow you to deliver instant, contextual messages to your subscribers via their preferred chat platform and apps.
 
 <Steps>
-<Step title="Enable Chat Channel in Novu Dashboard">
+<Step title="Enable Chat Channel in Notify Dashboard">
 
 <Note>
   The Chat channel is not enabled by default. To use it, configure a provider like Slack, Discord,
   or others.
 </Note>
 
-- Go to the Novu Dashboard and click **"Integrations"** on the left sidebar
+- Go to the Notify Dashboard and click **"Integrations"** on the left sidebar
 - Click **"Add a provider"**
 - Locate the **Chat** channel and select the provider you want to use and click **"Next"**
 - Select for which environment you want to add the Provider
@@ -32,9 +32,9 @@ Chat channels allow you to deliver instant, contextual messages to your subscrib
 
 </Step>
 
-<Step title="Setup workflow with chat channel in Novu Dashboard">
+<Step title="Setup workflow with chat channel in Notify Dashboard">
 
-- Go to the Novu Dashboard and click **"Workflows"** on the left sidebar
+- Go to the Notify Dashboard and click **"Workflows"** on the left sidebar
 - Click the **"Add a Workflow"** button
 - Add a step and select **"Chat"** as the channel
 - Configure the Chat content:
@@ -46,7 +46,7 @@ Chat channels allow you to deliver instant, contextual messages to your subscrib
 
 <Step title="Add a workflow Trigger to your backend">
 
-Novu's server-side SDKs make integrating Novu's REST APIs straightforward, letting you focus on implementing workflows without dealing with repetitive code.
+Notify's server-side SDKs make integrating Notify's REST APIs straightforward, letting you focus on implementing workflows without dealing with repetitive code.
 
 <Card title="Server-side SDKs" icon="code" href="/platform/sdks/server" />
 
@@ -56,9 +56,9 @@ Novu's server-side SDKs make integrating Novu's REST APIs straightforward, letti
 
 Ensure your Chat configuration is working correctly by testing the setup.
 
-- Go to the Novu Dashboard, navigate to the **"Workflows"** section, and locate your configured workflow
+- Go to the Notify Dashboard, navigate to the **"Workflows"** section, and locate your configured workflow
 - Click **"Test Workflow"** and provide sample data, such as a phone number or dynamic variables
-- Verify delivery in the Novu Logs or your Chat provider's dashboard
+- Verify delivery in the Notify Logs or your Chat provider's dashboard
 
 </Step>
 </Steps>
@@ -67,7 +67,7 @@ Ensure your Chat configuration is working correctly by testing the setup.
 
 <Steps>
 <Step title="Add Chat Provider Integration">
-Add a chat provider integration to your Novu account from the integration store. Enter credentials if required and save the integration. Follow corresponding provider documentation to get the required credentials.
+Add a chat provider integration to your Notify account from the integration store. Enter credentials if required and save the integration. Follow corresponding provider documentation to get the required credentials.
 </Step>
 
 <Step title="Create Subscriber">

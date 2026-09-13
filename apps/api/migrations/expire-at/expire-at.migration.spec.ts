@@ -5,9 +5,9 @@ import {
   NotificationRepository,
   NotificationTemplateEntity,
   SubscriberRepository,
-} from '@novu/dal';
-import { StepTypeEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/dal';
+import { StepTypeEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { sendTrigger } from '../../src/app/events/e2e/trigger-event.e2e';
 import { createExpireAt, messagesSetExpireAt } from './expire-at.migration';

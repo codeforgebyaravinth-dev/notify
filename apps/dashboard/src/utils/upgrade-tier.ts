@@ -3,7 +3,7 @@ import {
   FeatureNameEnum,
   getFeatureForTierAsBoolean,
   getFeatureForTierAsText,
-} from '@novu/shared';
+} from '@notify/shared';
 import { IS_SELF_HOSTED } from '@/config';
 
 /**

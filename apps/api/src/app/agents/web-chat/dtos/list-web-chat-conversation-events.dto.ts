@@ -1,4 +1,4 @@
-import type { AgentEventEnvelope } from '@novu/agent-event-protocol';
+import type { AgentEventEnvelope } from '@notify/agent-event-protocol';
 import { Type } from 'class-transformer';
 import { IsInt, IsOptional, IsString, Max, Min } from 'class-validator';
 

@@ -1,6 +1,6 @@
 ---
 title: 'Webhooks'
-description: "Learn how Novu webhooks work, including event types, payload schemas, HMAC signature verification, retries, and how to configure endpoints in the dashboard."
+description: "Learn how Notify webhooks work, including event types, payload schemas, HMAC signature verification, retries, and how to configure endpoints in the dashboard."
 ---
 
 ## The Intro
@@ -11,7 +11,7 @@ At their core they are just a POST request to a pre-determined endpoint.
 The endpoint can be whatever you want, and you can just add them from the UI.
 You normally use one endpoint per service, and that endpoint listens to all of the event types.
 
-For example, if you receive webhooks from Novu, you can structure your URL like: `https://www.example.com/novu/webhook/`.
+For example, if you receive webhooks from Notify, you can structure your URL like: `https://www.example.com/novu/webhook/`.
 
 The way to indicate that a webhook has been processed is by returning a 2xx (status code 200-299) response to the webhook message within a reasonable time-frame (15s).
 
@@ -25,11 +25,11 @@ You can learn more about it in the signature verification section.
 
 The core value of webhooks is to notify users when events happen, so it's extremely important to understand what events are available and their payload schemas.
 
-Novu webhooks allow you to receive notifications when specific events occur in your Novu account. These events include workflow updates, subscriber changes, message delivery status updates, and inbound email received on your verified domains.
+Notify webhooks allow you to receive notifications when specific events occur in your Notify account. These events include workflow updates, subscriber changes, message delivery status updates, and inbound email received on your verified domains.
 
 ### Supported event types
 
-Novu supports the following webhook event types:
+Notify supports the following webhook event types:
 
 - **Email Events**: Inbound mail received on [Inbound Email](/platform/inbound-email/overview) webhook routes
 - **Workflow Events**: Events about workflow creation, updates, and deletions,
@@ -40,7 +40,7 @@ Each event includes detailed information about the affected resource and the cha
 
 #### Email Events
 
-- **email.received**: Triggered when Novu receives inbound mail matching an Inbound Email webhook route. See [Event types - Email events](/platform/developer/webhooks/event-types#email-events) for the payload schema and [Inbound Email](/platform/inbound-email/overview) for setup.
+- **email.received**: Triggered when Notify receives inbound mail matching an Inbound Email webhook route. See [Event types - Email events](/platform/developer/webhooks/event-types#email-events) for the payload schema and [Inbound Email](/platform/inbound-email/overview) for setup.
 
 #### Workflow Events
 
@@ -58,9 +58,9 @@ Each event includes detailed information about the affected resource and the cha
 - **messages.seen**: Triggered when a message is seen.
 - **messages.snoozed**: Triggered when a message is snoozed.
 - **messages.unsnoozed**: Triggered when a message is unsnoozed.
-- **messages.sent**: Triggered when Novu sends the message to the delivery provider.
+- **messages.sent**: Triggered when Notify sends the message to the delivery provider.
 - **messages.delivered**: Triggered when a message delivery provider acknowledged the message delivery to the end receiving client.
-- **messages.failed**: Triggered when Novu tried to send the message to the delivery provider and it got failed.
+- **messages.failed**: Triggered when Notify tried to send the message to the delivery provider and it got failed.
 
 #### Preference Events
 
@@ -70,7 +70,7 @@ Each event includes detailed information about the affected resource and the cha
 
 To start listening to messages, you will need to configure your endpoints.
 
-1. Go to the [Webhooks](https://dashboard.novu.co/webhooks) page in the Novu dashboard.
+1. Go to the [Webhooks](https://dashboard.novu.co/webhooks) page in the Notify dashboard.
 2. Click **Add Endpoint**.
 3. Enter the URL of your endpoint.
 4. Add description for this webhook endpoint.
@@ -90,9 +90,9 @@ After sending an example event, you can view the message payload, all of the mes
 
 ## Verifying signatures
 
-Webhook signatures let you verify that webhook messages are actually sent by Novu and not a malicious actor.
+Webhook signatures let you verify that webhook messages are actually sent by Notify and not a malicious actor.
 
-Verifying webhook signatures helps ensure payloads were sent by Novu and have not been tampered with. Here is an example using JavaScript:
+Verifying webhook signatures helps ensure payloads were sent by Notify and have not been tampered with. Here is an example using JavaScript:
 
 ```javascript
 import { Webhook } from "svix";
@@ -200,7 +200,7 @@ From there, you can click "Replay..." and choose to "Replay all failed messages 
   </Accordion>
 
   <Accordion title="What happens if my endpoint is unavailable?">
-    If your endpoint is unavailable, Novu will retry sending the webhook according to the retry schedule. If all attempts fail for 5 days, the endpoint will be disabled and you'll need to manually re-enable it.
+    If your endpoint is unavailable, Notify will retry sending the webhook according to the retry schedule. If all attempts fail for 5 days, the endpoint will be disabled and you'll need to manually re-enable it.
   </Accordion>
 
   <Accordion title="Can I filter webhooks by event type?">

@@ -8,8 +8,8 @@ import {
   PinoLogger,
   type ResolvedAgentRuntime,
   resolveAgentRuntime,
-} from '@novu/application-generic';
-import { AgentMcpServerRepository, AgentRepository, IntegrationRepository } from '@novu/dal';
+} from '@notify/application-generic';
+import { AgentMcpServerRepository, AgentRepository, IntegrationRepository } from '@notify/dal';
 import {
   AGENT_MANAGED_DEFINITION_VERSION,
   AgentRuntimeProviderIdEnum,
@@ -17,7 +17,7 @@ import {
   type ICredentialsDto,
   MCP_SERVERS,
   McpConnectionScopeEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import type { ClientSession } from 'mongoose';
 import { AgentMcpDefinitionService } from '../../../mcp/runtime/agent-mcp-definition.service';
 import { resolveMcpServersById, resolveProviderMcpServerIds } from '../../../mcp/shared/resolve-mcp-servers';

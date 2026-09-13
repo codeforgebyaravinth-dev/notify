@@ -1,7 +1,7 @@
 ---
-title: "Discord Chat Integration with Novu"
+title: "Discord Chat Integration with Notify"
 sidebarTitle: 'Discord'
-description: "Connect Discord to Novu to send chat notifications through workflows. Create a bot, generate the webhook URL, and store credentials for delivery to channels."
+description: "Connect Discord to Notify to send chat notifications through workflows. Create a bot, generate the webhook URL, and store credentials for delivery to channels."
 ---
 
 When using Discord, you will have to store the integration credentials within the subscriber entity. Discord supports two ways to do this:
@@ -9,25 +9,25 @@ When using Discord, you will have to store the integration credentials within th
 1. Using the **Discord Webhook** integration.
 2. Using the **Discord Bot** integration.
 
-Right now, Novu only supports the **Discord Webhook** integration. This approach has been because the easiest way to set it up is when you have a predefined destination for where the notifications should be sent. It's particularly useful for notifying a specific channel about updates.
+Right now, Notify only supports the **Discord Webhook** integration. This approach has been because the easiest way to set it up is when you have a predefined destination for where the notifications should be sent. It's particularly useful for notifying a specific channel about updates.
 
 **Quickstart:**
 
-To get started with using Novu's Discord Webhook integration, you need a 'webhook token'. Here's how you can generate the same for testing purposes:
+To get started with using Notify's Discord Webhook integration, you need a 'webhook token'. Here's how you can generate the same for testing purposes:
 
 1. Go to the channel you want to add the webhook to (you need to be an admin of the discord server).
 2. Right-click the channel and select "Edit Channel".
 3. Integrations -> Webhooks -> New Webhook
 4. Copy the webhook URL.
-5. After obtaining the webhook URL in the previous step, you need to store it within the subscriber entity. Doing this ensures that Novu knows where (in which discord channel) to send the notification to. Here's how to do it:
+5. After obtaining the webhook URL in the previous step, you need to store it within the subscriber entity. Doing this ensures that Notify knows where (in which discord channel) to send the notification to. Here's how to do it:
 
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
-import { ChatOrPushProviderEnum } from "@novu/api/models/components";
+import { Notify } from '@notify/api';
+import { ChatOrPushProviderEnum } from "@notify/api/models/components";
 
-const novu = new Novu({ secretKey: "<NOVU_SECRET_KEY>" });
+const notify = new Notify({ secretKey: "<NOVU_SECRET_KEY>" });
 
 await novu.subscribers.credentials.update(
   {
@@ -43,9 +43,9 @@ await novu.subscribers.credentials.update(
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.subscribers.credentials.update(
         subscriber_id="subscriberId",
         update_subscriber_channel_request_dto={
@@ -79,10 +79,10 @@ res, err := s.Subscribers.Credentials.Update(context.Background(), "subscriberId
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 
 $sdk->subscribersCredentials->update(
     subscriberId: 'subscriberId',
@@ -98,8 +98,8 @@ $sdk->subscribersCredentials->update(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
@@ -117,11 +117,11 @@ await sdk.Subscribers.Credentials.UpdateAsync(
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 import java.util.List;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 
 novu.subscribers().credentials().update()
     .subscriberId("subscriberId")
@@ -153,8 +153,8 @@ curl -L -X PUT 'https://api.novu.co/v1/subscribers/<SUBSCRIBER_ID>/credentials' 
 
 Checkout the [API reference](/api-reference/subscribers/update-provider-credentials) for more details.
 
-- `subscriberId` is a custom identifier used when identifying your users within the Novu platform.
+- `subscriberId` is a custom identifier used when identifying your users within the Notify platform.
 - `providerId` is a unique provider identifier. We recommend using our ChatOrPushProviderEnum to specify the provider.
 - The third parameter is the credentials object. In this case, we use the `webhookUrl` property to specify the webhook URL generated in the previous step.
 
-6. You are all set up and ready to send your first chat message via our `@novu/api` package or directly using the REST API in the channel you chose on your discord server.
+6. You are all set up and ready to send your first chat message via our `@notify/api` package or directly using the REST API in the channel you chose on your discord server.

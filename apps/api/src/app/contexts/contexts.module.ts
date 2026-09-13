@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { featureFlagsService } from '@novu/application-generic';
-import { ContextRepository } from '@novu/dal';
+import { featureFlagsService } from '@notify/application-generic';
+import { ContextRepository } from '@notify/dal';
 import { SharedModule } from '../shared/shared.module';
 import { ContextsController } from './contexts.controller';
 import { CreateContext } from './usecases/create-context/create-context.usecase';

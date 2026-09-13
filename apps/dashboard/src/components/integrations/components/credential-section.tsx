@@ -1,4 +1,4 @@
-import { CredentialsKeyEnum, IConfigCredential } from '@novu/shared';
+import { CredentialsKeyEnum, IConfigCredential } from '@notify/shared';
 import { ReactNode } from 'react';
 import { Control, ControllerFieldState, ControllerRenderProps } from 'react-hook-form';
 import { CopyButton } from '@/components/primitives/copy-button';

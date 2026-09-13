@@ -1,14 +1,14 @@
 import { BadRequestException } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
-import { AgentRepository, NotificationTemplateEntity, SubscriberRepository } from '@novu/dal';
+import { AgentRepository, NotificationTemplateEntity, SubscriberRepository } from '@notify/dal';
 import {
   AddressingTypeEnum,
   AgentSubscriberAccessEnum,
   TriggerRecipients,
   TriggerRequestCategoryEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 
-import { SubscribersService, UserSession } from '@novu/testing';
+import { SubscribersService, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { v4 as uuid } from 'uuid';
 import { SharedModule } from '../../../shared/shared.module';

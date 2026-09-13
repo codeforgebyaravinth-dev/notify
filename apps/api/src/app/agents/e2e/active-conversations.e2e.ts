@@ -1,7 +1,7 @@
-import { AgentEntitlementsService } from '@novu/application-generic';
-import { CommunityOrganizationRepository, ConversationActivationRepository, ConversationStatusEnum } from '@novu/dal';
-import { ApiServiceLevelEnum } from '@novu/shared';
-import { testServer } from '@novu/testing';
+import { AgentEntitlementsService } from '@notify/application-generic';
+import { CommunityOrganizationRepository, ConversationActivationRepository, ConversationStatusEnum } from '@notify/dal';
+import { ApiServiceLevelEnum } from '@notify/shared';
+import { testServer } from '@notify/testing';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { AgentConfigResolver } from '../channels/agent-config-resolver.service';

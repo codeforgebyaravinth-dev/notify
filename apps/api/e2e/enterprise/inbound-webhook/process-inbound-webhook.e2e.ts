@@ -1,5 +1,5 @@
-import { Novu } from '@novu/api';
-import { DetailEnum, QueryBuilder, Trace, TraceLogRepository } from '@novu/application-generic';
+import { Novu } from '@notify/api';
+import { DetailEnum, QueryBuilder, Trace, TraceLogRepository } from '@notify/application-generic';
 import {
   ExecutionDetailsRepository,
   IntegrationEntity,
@@ -8,10 +8,10 @@ import {
   MessageRepository,
   NotificationTemplateEntity,
   SubscriberRepository,
-} from '@novu/dal';
-import { ChannelTypeEnum, ExecutionDetailsSourceEnum, PushProviderIdEnum, StepTypeEnum } from '@novu/shared';
-import { PushEventStatusEnum } from '@novu/stateless';
-import { NotificationTemplateService, UserSession } from '@novu/testing';
+} from '@notify/dal';
+import { ChannelTypeEnum, ExecutionDetailsSourceEnum, PushProviderIdEnum, StepTypeEnum } from '@notify/shared';
+import { PushEventStatusEnum } from '@notify/stateless';
+import { NotificationTemplateService, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { initNovuClassSdk } from '../../../src/app/shared/helpers/e2e/sdk/e2e-sdk.helper';
 

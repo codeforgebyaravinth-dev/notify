@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { ApiContextPayload, IsValidContextPayload, parseSlugId } from '@novu/application-generic';
-import { ContextPayload } from '@novu/shared';
+import { ApiContextPayload, IsValidContextPayload, parseSlugId } from '@notify/application-generic';
+import { ContextPayload } from '@notify/shared';
 import { Transform, Type } from 'class-transformer';
 import { ArrayMaxSize, IsArray, IsDefined, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { PatchPreferenceChannelsDto } from './patch-subscriber-preferences.dto';

@@ -1,5 +1,5 @@
 {
-  "name": "@novu/step-resolver-worker",
+  "name": "@notify/step-resolver-worker",
   "version": "0.0.1",
   "private": true,
   "type": "module",

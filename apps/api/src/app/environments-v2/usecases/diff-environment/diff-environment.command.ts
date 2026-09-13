@@ -1,4 +1,4 @@
-import { EnvironmentWithUserObjectCommand } from '@novu/application-generic';
+import { EnvironmentWithUserObjectCommand } from '@notify/application-generic';
 import { IsOptional, IsString } from 'class-validator';
 
 export class DiffEnvironmentCommand extends EnvironmentWithUserObjectCommand {

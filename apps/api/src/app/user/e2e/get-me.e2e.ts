@@ -1,5 +1,5 @@
-import { CommunityUserRepository } from '@novu/dal';
-import { UserSession } from '@novu/testing';
+import { CommunityUserRepository } from '@notify/dal';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('User Profile #novu-v0-os', async () => {

@@ -1,12 +1,12 @@
-import { encryptCredentials } from '@novu/application-generic';
+import { encryptCredentials } from '@notify/application-generic';
 import {
   AgentIntegrationRepository,
   ChannelEndpointRepository,
   IntegrationRepository,
   SubscriberRepository,
-} from '@novu/dal';
-import { ChannelTypeEnum, ChatProviderIdEnum, ENDPOINT_TYPES } from '@novu/shared';
-import { testServer, UserSession } from '@novu/testing';
+} from '@notify/dal';
+import { ChannelTypeEnum, ChatProviderIdEnum, ENDPOINT_TYPES } from '@notify/shared';
+import { testServer, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { TelegramStartCodeService } from '../../telegram-linking/telegram-start-code.service';

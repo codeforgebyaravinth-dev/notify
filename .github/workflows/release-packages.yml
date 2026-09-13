@@ -11,17 +11,17 @@ on:
         description: "Packages to release (comma-separated)"
         required: true
         type: string
-        default: "@novu/js,@novu/react,@novu/nextjs,@novu/react-native"
+        default: "@notify/js,@notify/react,@notify/nextjs,@notify/react-native"
       version:
         description: "Version to release (e.g., v3.0.0)"
         required: true
         type: string
         default: "v3.0.0"
       previous_tag:
-        description: "Previous tag to generate changelog from (e.g., @novu/js@v3.4.0)"
+        description: "Previous tag to generate changelog from (e.g., @notify/js@v3.4.0)"
         required: true
         type: string
-        default: "@novu/js@v3.4.0"
+        default: "@notify/js@v3.4.0"
       release_type:
         description: "Type of release"
         required: true
@@ -200,13 +200,13 @@ jobs:
 
           if [ -z "$VERSION" ]; then
             echo "❌ ERROR: Failed to extract version from PR title"
-            echo "Expected format: '🚀 Release vX.Y.Z - @novu/package1,@novu/package2'"
+            echo "Expected format: '🚀 Release vX.Y.Z - @notify/package1,@notify/package2'"
             exit 1
           fi
 
           if [ -z "$PACKAGES" ]; then
             echo "❌ ERROR: Failed to extract packages from PR title"
-            echo "Expected format: '🚀 Release vX.Y.Z - @novu/package1,@novu/package2'"
+            echo "Expected format: '🚀 Release vX.Y.Z - @notify/package1,@notify/package2'"
             exit 1
           fi
 

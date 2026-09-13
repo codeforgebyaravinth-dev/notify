@@ -10,9 +10,9 @@ import {
   WebSocketsWorkerService,
   WorkerOptions,
   WorkflowInMemoryProviderService,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 
-import { ObservabilityBackgroundTransactionEnum } from '@novu/shared';
+import { ObservabilityBackgroundTransactionEnum } from '@notify/shared';
 import { ExternalServicesRoute, ExternalServicesRouteCommand } from '../usecases/external-services-route';
 
 const nr = require('newrelic');

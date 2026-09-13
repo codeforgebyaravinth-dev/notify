@@ -8,14 +8,14 @@ import {
   InvalidateCacheService,
   PlatformException,
   WebSocketsQueueService,
-} from '@novu/application-generic';
-import { JobRepository, MessageRepository } from '@novu/dal';
+} from '@notify/application-generic';
+import { JobRepository, MessageRepository } from '@notify/dal';
 import {
   ChannelTypeEnum,
   ExecutionDetailsSourceEnum,
   ExecutionDetailsStatusEnum,
   WebSocketEventEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { ProcessUnsnoozeJobCommand } from './process-unsnooze-job.command';
 
 @Injectable()

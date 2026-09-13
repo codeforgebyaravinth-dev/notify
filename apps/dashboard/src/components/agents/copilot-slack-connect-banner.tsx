@@ -1,4 +1,4 @@
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { useState } from 'react';
 import { RiCloseLine } from 'react-icons/ri';
 import { useCopilotConnectContext } from '@/components/connect/copilot-connect-context';

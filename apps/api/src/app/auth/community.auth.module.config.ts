@@ -1,9 +1,9 @@
 import { MiddlewareConsumer, ModuleMetadata, Provider, RequestMethod } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
-import { FeatureFlagsService, featureFlagsService } from '@novu/application-generic';
-import { CommunityMemberRepository, CommunityOrganizationRepository, CommunityUserRepository } from '@novu/dal';
-import { AuthProviderEnum, PassportStrategyEnum } from '@novu/shared';
+import { FeatureFlagsService, featureFlagsService } from '@notify/application-generic';
+import { CommunityMemberRepository, CommunityOrganizationRepository, CommunityUserRepository } from '@notify/dal';
+import { AuthProviderEnum, PassportStrategyEnum } from '@notify/shared';
 import passport from 'passport';
 import { EnvironmentsModuleV1 } from '../environments-v1/environments-v1.module';
 import { SharedModule } from '../shared/shared.module';

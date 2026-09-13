@@ -1,5 +1,5 @@
-import { LayoutDtoV0 } from '@novu/application-generic';
-import { UserSession } from '@novu/testing';
+import { LayoutDtoV0 } from '@notify/application-generic';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { LayoutIdentifier, LayoutName, TemplateVariableTypeEnum } from '../../types';
 

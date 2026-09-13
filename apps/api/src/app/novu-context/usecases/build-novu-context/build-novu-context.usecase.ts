@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { createContextHash, createHash } from '@novu/application-generic';
-import type { ContextPayload } from '@novu/shared';
+import { createContextHash, createHash } from '@notify/application-generic';
+import type { ContextPayload } from '@notify/shared';
 import { BuildNovuContextCommand } from './build-novu-context.command';
 
 /** Context key the dashboard connection is bound to (read back inbound as `ctx.context.tenant`). */

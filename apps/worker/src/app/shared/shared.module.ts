@@ -41,7 +41,7 @@ import {
   WorkflowRunRepository,
   WorkflowRunService,
   BillingService,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   AgentIntegrationRepository,
   ControlValuesRepository,
@@ -64,9 +64,9 @@ import {
   WorkflowOverrideRepository,
   OrganizationRepository,
   CommunityOrganizationRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 
-import { JobTopicNameEnum } from '@novu/shared';
+import { JobTopicNameEnum } from '@notify/shared';
 import packageJson from '../../../package.json';
 import { UNIQUE_WORKER_DEPENDENCIES } from '../../config/worker-init.config';
 import { ActiveJobsMetricService } from '../workflow/services';

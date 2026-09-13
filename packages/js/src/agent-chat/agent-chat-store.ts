@@ -4,7 +4,7 @@ import {
   appendUserMessage,
   applyEnvelopes,
   createInitialAgentConversationState,
-} from '@novu/agent-event-protocol';
+} from '@notify/agent-event-protocol';
 
 /**
  * Stable local identity for one conversation holder.

@@ -1,11 +1,11 @@
-import { GetNovuProviderCredentials } from '@novu/application-generic';
+import { GetNovuProviderCredentials } from '@notify/application-generic';
 import {
   ChannelConnectionRepository,
   ContextRepository,
   EnvironmentRepository,
   IntegrationRepository,
-} from '@novu/dal';
-import { ChatProviderIdEnum, ENDPOINT_TYPES } from '@novu/shared';
+} from '@notify/dal';
+import { ChatProviderIdEnum, ENDPOINT_TYPES } from '@notify/shared';
 import axios from 'axios';
 import { expect } from 'chai';
 import { createHmac } from 'crypto';

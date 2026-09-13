@@ -1,4 +1,4 @@
-import { ResourceOriginEnum, ResourceTypeEnum } from '@novu/shared';
+import { ResourceOriginEnum, ResourceTypeEnum } from '@notify/shared';
 import { IsBoolean, IsDefined, IsEnum, IsOptional, IsString } from 'class-validator';
 import { EnvironmentWithUserCommand } from '../../../shared/commands/project.command';
 import { LayoutDescription, LayoutId, LayoutIdentifier, LayoutName, LayoutVariables } from '../../types';

@@ -1,8 +1,8 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
-import { AnalyticsService, PinoLogger } from '@novu/application-generic';
-import { OrganizationEntity, OrganizationRepository } from '@novu/dal';
-import { ApiAuthSchemeEnum, MemberRoleEnum } from '@novu/shared';
+import { AnalyticsService, PinoLogger } from '@notify/application-generic';
+import { OrganizationEntity, OrganizationRepository } from '@notify/dal';
+import { ApiAuthSchemeEnum, MemberRoleEnum } from '@notify/shared';
 import { CreateEnvironmentCommand } from '../../../../environments-v1/usecases/create-environment/create-environment.command';
 import { CreateEnvironment } from '../../../../environments-v1/usecases/create-environment/create-environment.usecase';
 import { CreateNovuIntegrationsCommand } from '../../../../integrations/usecases/create-novu-integrations/create-novu-integrations.command';
@@ -13,7 +13,7 @@ import { GetOrganizationCommand } from '../../get-organization/get-organization.
 import { GetOrganization } from '../../get-organization/get-organization.usecase';
 import { SyncExternalOrganizationCommand } from './sync-external-organization.command';
 
-// TODO: eventually move to @novu/ee-auth
+// TODO: eventually move to @notify/ee-auth
 
 /**
  * This logic is closely related to the CreateOrganization use case.
@@ -185,10 +185,10 @@ export class SyncExternalOrganization {
   private async createCustomer(billingEmail: string, organizationId: string) {
     try {
       if (process.env.NOVU_ENTERPRISE === 'true' || process.env.CI_EE_TEST === 'true') {
-        if (!require('@novu/ee-billing')?.GetOrCreateCustomer) {
+        if (!require('@notify/ee-billing')?.GetOrCreateCustomer) {
           throw new BadRequestException('Billing module is not loaded');
         }
-        const usecase = this.moduleRef.get(require('@novu/ee-billing')?.GetOrCreateCustomer, {
+        const usecase = this.moduleRef.get(require('@notify/ee-billing')?.GetOrCreateCustomer, {
           strict: false,
         });
         await usecase.execute({

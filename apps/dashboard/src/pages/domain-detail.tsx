@@ -1,4 +1,4 @@
-import { DomainStatusEnum, FeatureFlagsKeysEnum, PermissionsEnum } from '@novu/shared';
+import { DomainStatusEnum, FeatureFlagsKeysEnum, PermissionsEnum } from '@notify/shared';
 import { formatDistanceToNow } from 'date-fns';
 import { motion, useReducedMotion } from 'motion/react';
 import { useEffect, useRef, useState } from 'react';

@@ -5,7 +5,7 @@ import {
   GetNovuProviderCredentials,
   GetNovuProviderCredentialsCommand,
   SLACK_OAUTH_ACCESS_URL,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   ChannelConnectionEntity,
   ChannelConnectionRepository,
@@ -15,8 +15,8 @@ import {
   ICredentialsEntity,
   IntegrationEntity,
   IntegrationRepository,
-} from '@novu/dal';
-import { ChatProviderIdEnum, ENDPOINT_TYPES } from '@novu/shared';
+} from '@notify/dal';
+import { ChatProviderIdEnum, ENDPOINT_TYPES } from '@notify/shared';
 import axios from 'axios';
 import { CreateChannelConnectionCommand } from '../../../../channel-connections/usecases/create-channel-connection/create-channel-connection.command';
 import { CreateChannelConnection } from '../../../../channel-connections/usecases/create-channel-connection/create-channel-connection.usecase';

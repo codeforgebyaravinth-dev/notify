@@ -1,4 +1,4 @@
-import { EnvironmentWithUserCommand } from '@novu/application-generic';
+import { EnvironmentWithUserCommand } from '@notify/application-generic';
 import { IsBoolean, IsOptional } from 'class-validator';
 
 export class GetIntegrationsCommand extends EnvironmentWithUserCommand {

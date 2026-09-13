@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { InstrumentUsecase, PinoLogger } from '@novu/application-generic';
+import { InstrumentUsecase, PinoLogger } from '@notify/application-generic';
 
 import {
   debugAccessToken,

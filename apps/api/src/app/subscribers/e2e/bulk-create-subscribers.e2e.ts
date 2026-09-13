@@ -1,6 +1,6 @@
-import { Novu } from '@novu/api';
-import { SubscriberEntity, SubscriberRepository } from '@novu/dal';
-import { SubscribersService, UserSession } from '@novu/testing';
+import { Novu } from '@notify/api';
+import { SubscriberEntity, SubscriberRepository } from '@notify/dal';
+import { SubscribersService, UserSession } from '@notify/testing';
 import axios from 'axios';
 import { expect } from 'chai';
 import { Types } from 'mongoose';

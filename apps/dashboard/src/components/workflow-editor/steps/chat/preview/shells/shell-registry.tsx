@@ -1,4 +1,4 @@
-import { ChatProviderIdEnum } from '@novu/shared';
+import { ChatProviderIdEnum } from '@notify/shared';
 import type { ComponentType } from 'react';
 
 import { DEFAULT_PREVIEW_PROVIDER_ID } from '../use-configured-chat-providers';

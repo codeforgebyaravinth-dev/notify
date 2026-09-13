@@ -5,8 +5,8 @@ import {
   PinoLogger,
   WorkflowRunCountRepository,
   WorkflowRunRepository,
-} from '@novu/application-generic';
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { WorkflowRunsTrendDataPointDto } from '../../dtos/get-charts.response.dto';
 import { BuildWorkflowRunsTrendChartCommand } from './build-workflow-runs-trend-chart.command';
 

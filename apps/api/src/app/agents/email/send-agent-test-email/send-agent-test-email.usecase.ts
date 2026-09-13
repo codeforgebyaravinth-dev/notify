@@ -6,9 +6,9 @@ import {
   InstrumentUsecase,
   isAgentSharedInboxEnabled,
   MailFactory,
-} from '@novu/application-generic';
-import { AgentIntegrationRepository, AgentRepository, IntegrationEntity, IntegrationRepository } from '@novu/dal';
-import { ChannelTypeEnum, EmailProviderIdEnum, IEmailOptions } from '@novu/shared';
+} from '@notify/application-generic';
+import { AgentIntegrationRepository, AgentRepository, IntegrationEntity, IntegrationRepository } from '@notify/dal';
+import { ChannelTypeEnum, EmailProviderIdEnum, IEmailOptions } from '@notify/shared';
 
 import { trackAgentTestEmailSent } from '../../shared/analytics/agent-analytics';
 import { SendAgentTestEmailCommand } from './send-agent-test-email.command';

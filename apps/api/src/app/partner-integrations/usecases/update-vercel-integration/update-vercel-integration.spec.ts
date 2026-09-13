@@ -1,9 +1,9 @@
 import { HttpService } from '@nestjs/axios';
 import { BadRequestException } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
-import { AnalyticsService, PinoLogger } from '@novu/application-generic';
-import { CommunityUserRepository, EnvironmentRepository, MemberRepository, OrganizationRepository } from '@novu/dal';
-import { UserSession } from '@novu/testing';
+import { AnalyticsService, PinoLogger } from '@notify/application-generic';
+import { CommunityUserRepository, EnvironmentRepository, MemberRepository, OrganizationRepository } from '@notify/dal';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { of } from 'rxjs';
 import { assert, restore, stub } from 'sinon';

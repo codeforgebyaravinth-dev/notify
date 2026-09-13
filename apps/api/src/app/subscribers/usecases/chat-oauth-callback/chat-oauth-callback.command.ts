@@ -1,5 +1,5 @@
-import { BaseCommand } from '@novu/application-generic';
-import { ChatProviderIdEnum } from '@novu/shared';
+import { BaseCommand } from '@notify/application-generic';
+import { ChatProviderIdEnum } from '@notify/shared';
 import {
   IsEnum,
   IsMongoId,

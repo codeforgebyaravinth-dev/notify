@@ -1,5 +1,5 @@
 import { INestApplication } from '@nestjs/common';
-import { HttpRequestHeaderKeysEnum } from '@novu/application-generic';
+import { HttpRequestHeaderKeysEnum } from '@notify/application-generic';
 
 const ALLOWED_ORIGINS_REGEX = new RegExp(process.env.FRONT_BASE_URL || '');
 

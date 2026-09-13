@@ -1,4 +1,4 @@
-import { RuntimeIssue } from '@novu/shared';
+import { RuntimeIssue } from '@notify/shared';
 import { AnimatePresence, motion } from 'motion/react';
 import { RiAlertFill, RiAlertLine, RiErrorWarningFill, RiErrorWarningLine, RiInformation2Line } from 'react-icons/ri';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/primitives/hover-card';

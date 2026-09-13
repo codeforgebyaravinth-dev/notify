@@ -1,4 +1,4 @@
-import { AGENT_RUNTIME_PROVIDERS, isClaudePlatformConsoleProvider } from '@novu/shared';
+import { AGENT_RUNTIME_PROVIDERS, isClaudePlatformConsoleProvider } from '@notify/shared';
 import { useMutation } from '@tanstack/react-query';
 import { useMemo, useState } from 'react';
 import { RiInformationFill, RiLoopRightLine } from 'react-icons/ri';

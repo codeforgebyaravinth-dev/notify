@@ -1,5 +1,5 @@
 import { NestFactory } from '@nestjs/core';
-import { buildDefaultSubscriptionIdentifier } from '@novu/application-generic';
+import { buildDefaultSubscriptionIdentifier } from '@notify/application-generic';
 import { expect } from 'chai';
 import { afterEach, beforeEach, describe, it } from 'mocha';
 import * as sinon from 'sinon';

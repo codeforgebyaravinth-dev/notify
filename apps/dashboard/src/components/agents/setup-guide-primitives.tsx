@@ -1,4 +1,4 @@
-import { providers as novuProviders } from '@novu/shared';
+import { providers as novuProviders } from '@notify/shared';
 import { useQueryClient } from '@tanstack/react-query';
 import { CheckCircle2, Loader } from 'lucide-react';
 import { type ReactNode, useEffect, useRef, useState } from 'react';

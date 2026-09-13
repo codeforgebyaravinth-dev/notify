@@ -6,7 +6,7 @@ import {
   LayoutResponseDto,
   ListLayoutsResponse,
   UpdateLayoutDto,
-} from '@novu/shared';
+} from '@notify/shared';
 import { delV2, getV2, postV2, putV2 } from './api.client';
 
 export type WorkflowInfo = {

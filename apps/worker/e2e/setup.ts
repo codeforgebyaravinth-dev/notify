@@ -1,6 +1,6 @@
-import { ClickHouseClient, ClickHouseService, createClickHouseClient, PinoLogger } from '@novu/application-generic';
-import { DalService } from '@novu/dal';
-import { testServer } from '@novu/testing';
+import { ClickHouseClient, ClickHouseService, createClickHouseClient, PinoLogger } from '@notify/application-generic';
+import { DalService } from '@notify/dal';
+import { testServer } from '@notify/testing';
 import sinon from 'sinon';
 import { bootstrap } from '../src/bootstrap';
 

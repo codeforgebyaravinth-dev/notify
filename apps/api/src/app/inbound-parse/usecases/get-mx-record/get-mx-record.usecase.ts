@@ -1,6 +1,6 @@
 import { type MxRecord, promises } from 'node:dns';
 import { BadRequestException, Injectable, Scope } from '@nestjs/common';
-import { EnvironmentEntity, EnvironmentRepository } from '@novu/dal';
+import { EnvironmentEntity, EnvironmentRepository } from '@notify/dal';
 import { getMailServerDomain } from '../../../domains/utils/dns-records';
 import { GetMxRecordResponseDto } from '../../dtos/get-mx-record.dto';
 import { GetMxRecordCommand } from './get-mx-record.command';

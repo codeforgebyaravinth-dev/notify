@@ -1,4 +1,4 @@
-import { EmailProviderIdEnum, FeatureFlagsKeysEnum } from '@novu/shared';
+import { EmailProviderIdEnum, FeatureFlagsKeysEnum } from '@notify/shared';
 import { useMemo, useState } from 'react';
 import { RiInformation2Line, RiKey2Line } from 'react-icons/ri';
 import { type AgentIntegrationLink, type AgentResponse } from '@/api/agents';

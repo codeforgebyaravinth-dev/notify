@@ -1,6 +1,6 @@
-import { encryptChannelConnectionAuth, encryptChannelEndpoint } from '@novu/application-generic';
-import { type ChannelEndpointByType, ChannelTypeEnum, ChatProviderIdEnum, ToolProviderIdEnum } from '@novu/shared';
-import { ENDPOINT_TYPES } from '@novu/stateless';
+import { encryptChannelConnectionAuth, encryptChannelEndpoint } from '@notify/application-generic';
+import { type ChannelEndpointByType, ChannelTypeEnum, ChatProviderIdEnum, ToolProviderIdEnum } from '@notify/shared';
+import { ENDPOINT_TYPES } from '@notify/stateless';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { ResolveChannelEndpoints } from './resolve-channel-endpoints.usecase';

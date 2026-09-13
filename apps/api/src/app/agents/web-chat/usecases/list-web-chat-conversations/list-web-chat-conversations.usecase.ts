@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { AgentRepository, ConversationEntity, ConversationRepository } from '@novu/dal';
-import { DirectionEnum } from '@novu/shared';
+import { AgentRepository, ConversationEntity, ConversationRepository } from '@notify/dal';
+import { DirectionEnum } from '@notify/shared';
 import { AgentPlatformEnum } from '../../../shared/enums/agent-platform.enum';
 import type {
   ListWebChatConversationsResponseDto,

@@ -5,7 +5,7 @@ import {
   type IUserEntity,
   type JobTitleEnum,
   type ProductUseCases,
-} from '@novu/shared';
+} from '@notify/shared';
 
 export const toUserEntity = (clerkUser: UserResource): IUserEntity => {
   /*

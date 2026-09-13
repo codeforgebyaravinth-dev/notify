@@ -9,12 +9,12 @@ import { getResponse } from '../utils';
  *
  * Example:
  *
- * import { serve, Client, type Workflow } from '@novu/framework/sveltekit';
+ * import { serve, Client, type Workflow } from '@notify/framework/sveltekit';
  *
  * instead of
  *
- * import { serve } from '@novu/framework/sveltekit';
- * import { Client, type Workflow } from '@novu/framework';
+ * import { serve } from '@notify/framework/sveltekit';
+ * import { Client, type Workflow } from '@notify/framework';
  */
 export * from '../index';
 export const frameworkName: SupportedFrameworkName = 'sveltekit';
@@ -26,7 +26,7 @@ export const frameworkName: SupportedFrameworkName = 'sveltekit';
  * @example
  * ```ts
  * // app/routes/api/novu/+server.ts
- * import { serve } from "@novu/framework/sveltekit";
+ * import { serve } from "@notify/framework/sveltekit";
  * import { myWorkflow } from "./src/novu/workflows"; // Your workflows
  *
  * const handler = serve({ workflows: [myWorkflow] });

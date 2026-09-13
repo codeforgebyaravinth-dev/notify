@@ -3,7 +3,7 @@ import {
   ConversationParticipantTypeEnum,
   ConversationRepository,
   ConversationStatusEnum,
-} from '@novu/dal';
+} from '@notify/dal';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import {

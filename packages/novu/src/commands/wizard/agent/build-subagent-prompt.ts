@@ -14,11 +14,11 @@ export interface BuildSubagentPromptInput {
   auth: ResolvedAuth;
   installedSkills: InstalledSkill[];
   /**
-   * Whether `@novu/framework` is in the target project's `package.json`.
+   * Whether `@notify/framework` is in the target project's `package.json`.
    * Drives Branch B's workflow path resolution (code-first vs no-code).
    * Branch A and C ignore this field. The flag is decided by the main
    * agent during its survey turn — the wizard never auto-installs
-   * `@novu/framework`; its presence is the explicit user signal for the
+   * `@notify/framework`; its presence is the explicit user signal for the
    * code-first path.
    */
   hasNovuFramework: boolean;
@@ -162,7 +162,7 @@ function renderProjectContext(input: BuildSubagentPromptInput): string {
       lines.push(`  - Pre-existing Novu packages: ${target.installedNovuPackages.map((p) => `\`${p}\``).join(', ')}`);
     }
     if (target.hasFrameworkRoute && target.frameworkRoutePath) {
-      lines.push(`  - Existing @novu/framework route: \`${target.frameworkRoutePath}\``);
+      lines.push(`  - Existing @notify/framework route: \`${target.frameworkRoutePath}\``);
     }
   }
 

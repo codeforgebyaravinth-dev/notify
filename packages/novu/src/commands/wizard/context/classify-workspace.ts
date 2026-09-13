@@ -16,15 +16,15 @@ export interface WorkspaceClassification {
   framework: ProjectFramework;
   /**
    * True when `react-native` / `expo` is present. The Inbox SDK picker
-   * in the install step keys off this to swap `@novu/react` for
-   * `@novu/react-native` (Inbox is a different package on RN).
+   * in the install step keys off this to swap `@notify/react` for
+   * `@notify/react-native` (Inbox is a different package on RN).
    */
   isReactNative: boolean;
   /**
    * True when `react` is in deps. The Inbox SDK picker keys off this to
-   * pick `@novu/react` for non-Next.js React workspaces (Remix,
+   * pick `@notify/react` for non-Next.js React workspaces (Remix,
    * RedwoodJS, Blitz, Astro+React, React+Vite) and fall back to
-   * `@novu/js` (the headless SDK) for non-React frameworks like Vue,
+   * `@notify/js` (the headless SDK) for non-React frameworks like Vue,
    * SvelteKit, Svelte, Nuxt, Solid, Angular.
    */
   isReactBased: boolean;
@@ -47,8 +47,8 @@ export interface ClassifyWorkspaceInput {
  * The output is intentionally narrow — we don't try to detect every
  * possible web/api framework. Any workspace whose deps don't match a
  * known UI or backend signal gets `library` and is skipped by the
- * install step. Libraries don't produce code that imports `@novu/react`
- * or `@novu/api`, so installing there would be wasted work.
+ * install step. Libraries don't produce code that imports `@notify/react`
+ * or `@notify/api`, so installing there would be wasted work.
  */
 export function classifyWorkspace(input: ClassifyWorkspaceInput): WorkspaceClassification {
   const { cwd, pkg } = input;

@@ -1,4 +1,4 @@
-import { MCP_SERVERS } from '@novu/shared';
+import { MCP_SERVERS } from '@notify/shared';
 import type { Variants } from 'motion/react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useMemo } from 'react';

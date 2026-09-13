@@ -7,8 +7,8 @@ import {
   TriggerEvent,
   WorkflowInMemoryProviderService,
   WorkflowQueueService,
-} from '@novu/application-generic';
-import { CommunityOrganizationRepository } from '@novu/dal';
+} from '@notify/application-generic';
+import { CommunityOrganizationRepository } from '@notify/dal';
 import { expect } from 'chai';
 import { setTimeout } from 'timers/promises';
 import { WorkflowModule } from '../workflow.module';

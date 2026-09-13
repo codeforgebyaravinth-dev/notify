@@ -5,7 +5,7 @@ import {
   NotFoundException,
   ServiceUnavailableException,
 } from '@nestjs/common';
-import { PinoLogger } from '@novu/application-generic';
+import { PinoLogger } from '@notify/application-generic';
 import {
   AgentIntegrationRepository,
   AgentMcpServerRepository,
@@ -19,8 +19,8 @@ import {
   IntegrationRepository,
   McpConnectionRepository,
   SubscriberRepository,
-} from '@novu/dal';
-import { ChannelTypeEnum, EnvironmentTypeEnum } from '@novu/shared';
+} from '@notify/dal';
+import { ChannelTypeEnum, EnvironmentTypeEnum } from '@notify/shared';
 import { KEYLESS_SUBSCRIBER_ID } from '../../../inbox/utils/keyless.constants';
 import {
   ConnectClaimTokenCacheUnavailableError,

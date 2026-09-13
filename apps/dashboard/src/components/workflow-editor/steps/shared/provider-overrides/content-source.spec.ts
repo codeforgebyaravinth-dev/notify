@@ -1,4 +1,4 @@
-import { ChannelTypeEnum, ChatProviderIdEnum, ContentIssueEnum, ToolProviderIdEnum } from '@novu/shared';
+import { ChannelTypeEnum, ChatProviderIdEnum, ContentIssueEnum, ToolProviderIdEnum } from '@notify/shared';
 import { describe, expect, it } from 'vitest';
 import {
   buildProviderOverrideOptions,

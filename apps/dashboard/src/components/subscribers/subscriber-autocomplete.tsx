@@ -1,4 +1,4 @@
-import { ISubscriberResponseDto } from '@novu/shared';
+import { ISubscriberResponseDto } from '@notify/shared';
 import { AnimatePresence, motion } from 'motion/react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { IconType } from 'react-icons';

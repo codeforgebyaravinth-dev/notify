@@ -1,7 +1,7 @@
 import { randomBytes } from 'node:crypto';
-import { Novu } from '@novu/api';
-import { ApiServiceLevelEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { Novu } from '@notify/api';
+import { ApiServiceLevelEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { expectSdkExceptionGeneric, initNovuClassSdkInternalAuth } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';
 

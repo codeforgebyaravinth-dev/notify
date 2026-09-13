@@ -1,6 +1,6 @@
-import { TOOL_PROVIDER_OVERRIDE_KEYS, ToolProviderIdEnum } from '@novu/shared';
-import * as safeOutboundHttp from '@novu/shared/utils/safe-outbound-http';
-import { ENDPOINT_TYPES, OpsgenieIntegrationData } from '@novu/stateless';
+import { TOOL_PROVIDER_OVERRIDE_KEYS, ToolProviderIdEnum } from '@notify/shared';
+import * as safeOutboundHttp from '@notify/shared/utils/safe-outbound-http';
+import { ENDPOINT_TYPES, OpsgenieIntegrationData } from '@notify/stateless';
 import { expect, test, vi } from 'vitest';
 import { OpsgenieProvider } from './opsgenie.provider';
 

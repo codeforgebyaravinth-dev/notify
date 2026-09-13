@@ -1,5 +1,5 @@
-import { decryptMcpConnectionOAuthClient } from '@novu/application-generic';
-import { type McpConnectionOAuthClient } from '@novu/dal';
+import { decryptMcpConnectionOAuthClient } from '@notify/application-generic';
+import { type McpConnectionOAuthClient } from '@notify/dal';
 
 /**
  * Decide whether to reuse the row's existing DCR-issued client. Returns the

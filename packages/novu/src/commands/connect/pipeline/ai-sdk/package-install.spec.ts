@@ -5,18 +5,18 @@ import { describe, expect, it } from 'vitest';
 import { resolveAiSdkPackageStatus, resolveAiSdkPackagesToInstall } from './package-install';
 
 describe('resolveAiSdkPackagesToInstall', () => {
-  it('suggests @novu/framework and ai when both are missing', () => {
+  it('suggests @notify/framework and ai when both are missing', () => {
     const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'novu-ai-sdk-pkg-'));
     fs.writeFileSync(path.join(dir, 'package.json'), JSON.stringify({ name: 'x', dependencies: {} }));
 
-    expect(resolveAiSdkPackagesToInstall(dir)).toEqual(['@novu/framework', 'ai@^7.0.0']);
+    expect(resolveAiSdkPackagesToInstall(dir)).toEqual(['@notify/framework', 'ai@^7.0.0']);
   });
 
   it('suggests only ai when framework is already installed', () => {
     const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'novu-ai-sdk-pkg-'));
     fs.writeFileSync(
       path.join(dir, 'package.json'),
-      JSON.stringify({ name: 'x', dependencies: { '@novu/framework': 'latest' } })
+      JSON.stringify({ name: 'x', dependencies: { '@notify/framework': 'latest' } })
     );
 
     expect(resolveAiSdkPackagesToInstall(dir)).toEqual(['ai@^7.0.0']);
@@ -29,7 +29,7 @@ describe('resolveAiSdkPackagesToInstall', () => {
       JSON.stringify({
         name: 'x',
         dependencies: {
-          '@novu/framework': 'latest',
+          '@notify/framework': 'latest',
           ai: '^6.0.0',
         },
       })

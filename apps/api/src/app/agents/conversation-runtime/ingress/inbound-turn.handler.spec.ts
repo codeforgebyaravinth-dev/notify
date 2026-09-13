@@ -1,4 +1,4 @@
-import { AgentSubscriberAccessEnum } from '@novu/shared';
+import { AgentSubscriberAccessEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { ManagedRuntime } from '../../managed-runtime/managed.runtime';

@@ -1,5 +1,5 @@
-import { IsValidContextPayload } from '@novu/application-generic';
-import { ContextPayload } from '@novu/shared';
+import { IsValidContextPayload } from '@notify/application-generic';
+import { ContextPayload } from '@notify/shared';
 import { IsArray, IsBoolean, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 import { EnvironmentCommand } from '../../shared/commands/project.command';

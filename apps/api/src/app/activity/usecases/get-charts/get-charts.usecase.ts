@@ -1,7 +1,7 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { PinoLogger } from '@novu/application-generic';
-import { CommunityOrganizationRepository, OrganizationEntity } from '@novu/dal';
-import { ApiServiceLevelEnum, FeatureNameEnum, getFeatureForTierAsNumber } from '@novu/shared';
+import { PinoLogger } from '@notify/application-generic';
+import { CommunityOrganizationRepository, OrganizationEntity } from '@notify/dal';
+import { ApiServiceLevelEnum, FeatureNameEnum, getFeatureForTierAsNumber } from '@notify/shared';
 import {
   ActiveSubscribersDataPointDto,
   ActiveSubscribersTrendDataPointDto,

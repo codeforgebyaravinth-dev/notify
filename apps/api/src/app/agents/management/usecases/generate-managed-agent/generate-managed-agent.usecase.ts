@@ -1,13 +1,13 @@
 import { Injectable, ServiceUnavailableException } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
-import { AnalyticsService, InstrumentUsecase, PinoLogger } from '@novu/application-generic';
+import { AnalyticsService, InstrumentUsecase, PinoLogger } from '@notify/application-generic';
 import {
   ApiAuthSchemeEnum,
   CLAUDE_ANTHROPIC_SKILLS,
   CLAUDE_BUILTIN_TOOLS,
   CLAUDE_DEFAULT_TOOL_TYPES,
   MCP_SERVERS,
-} from '@novu/shared';
+} from '@notify/shared';
 
 import { KeylessAbuseGuardService } from '../../../../keyless/keyless-abuse-guard.service';
 import { GenerateManagedAgentCommand } from './generate-managed-agent.command';
@@ -187,7 +187,7 @@ function ensureDefaultTools(tools: string[], skills: Array<{ skillId: string }>)
  * Generates a Claude managed-agent configuration from a free-form prompt.
  *
  * Lives in the API agents module so the agent-generation domain logic stays close to the rest of
- * the agents code. The actual LLM call relies on `LlmService` from `@novu/ee-ai`, which is loaded
+ * the agents code. The actual LLM call relies on `LlmService` from `@notify/ee-ai`, which is loaded
  * lazily via `require` so the API package remains buildable when the EE module is absent (OSS).
  */
 @Injectable()
@@ -281,14 +281,14 @@ export class GenerateManagedAgent {
   private loadEeAi(): EeAiModule {
     try {
       // biome-ignore lint/style/noCommonJs: dynamic require keeps the EE module optional for OSS builds
-      const eeAi = require('@novu/ee-ai');
+      const eeAi = require('@notify/ee-ai');
       if (!eeAi?.LlmService || !eeAi?.TokenUsageTracker || typeof eeAi?.trackTokenUsage !== 'function') {
-        throw new Error('Required @novu/ee-ai exports are not available in the current build');
+        throw new Error('Required @notify/ee-ai exports are not available in the current build');
       }
 
       return eeAi;
     } catch (error) {
-      this.logger.error({ err: error }, 'Failed to load @novu/ee-ai for managed-agent generation');
+      this.logger.error({ err: error }, 'Failed to load @notify/ee-ai for managed-agent generation');
       throw new ServiceUnavailableException('Managed agent generation is unavailable in this deployment');
     }
   }

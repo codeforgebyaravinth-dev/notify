@@ -9,7 +9,7 @@ import {
   providers,
   SmsProviderIdEnum,
   ToolProviderIdEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { useMemo } from 'react';
 
 export function useIntegrationList(searchQuery: string = '') {

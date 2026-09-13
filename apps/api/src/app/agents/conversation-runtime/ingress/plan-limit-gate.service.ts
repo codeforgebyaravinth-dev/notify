@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { AgentEntitlementsService, PinoLogger } from '@novu/application-generic';
-import { ConversationEntity } from '@novu/dal';
-import type { AgentAction } from '@novu/framework';
+import { AgentEntitlementsService, PinoLogger } from '@notify/application-generic';
+import { ConversationEntity } from '@notify/dal';
+import type { AgentAction } from '@notify/framework';
 import type { CardElement, Thread } from 'chat';
 import { ResolvedAgentConfig } from '../../channels/agent-config-resolver.service';
 import { captureAgentWarning } from '../../shared/errors/capture-agent-sentry';

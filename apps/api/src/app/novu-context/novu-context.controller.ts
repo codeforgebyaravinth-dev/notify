@@ -1,7 +1,7 @@
 import { ClassSerializerInterceptor, Controller, Get, UseInterceptors } from '@nestjs/common';
 import { ApiExcludeController, ApiOperation } from '@nestjs/swagger';
-import { SkipPermissionsCheck } from '@novu/application-generic';
-import { ApiRateLimitCategoryEnum, UserSessionData } from '@novu/shared';
+import { SkipPermissionsCheck } from '@notify/application-generic';
+import { ApiRateLimitCategoryEnum, UserSessionData } from '@notify/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ThrottlerCategory } from '../rate-limiting/guards';
 import { ApiCommonResponses } from '../shared/framework/response.decorator';

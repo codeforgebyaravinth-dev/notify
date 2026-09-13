@@ -1,6 +1,6 @@
-import { CreateExecutionDetails, DetailEnum } from '@novu/application-generic';
-import { DeliveryLifecycleState, JobEntity, MessageEntity, MessageRepository } from '@novu/dal';
-import { safeJsonStringify } from '@novu/shared';
+import { CreateExecutionDetails, DetailEnum } from '@notify/application-generic';
+import { DeliveryLifecycleState, JobEntity, MessageEntity, MessageRepository } from '@notify/dal';
+import { safeJsonStringify } from '@notify/shared';
 import { SendMessageChannelCommand } from './send-message-channel.command';
 
 export enum SendMessageStatus {

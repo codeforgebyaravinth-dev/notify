@@ -8,7 +8,7 @@ import { Motion } from '../Motion';
 import { useTooltip } from './TooltipRoot';
 
 export const tooltipContentVariants = () =>
-  'nt-bg-foreground nt-p-2 nt-shadow-tooltip nt-rounded-lg nt-text-background nt-text-xs';
+  'nt-bg-gradient-to-r nt-from-purple-600 nt-to-red-500 nt-p-2 nt-shadow-tooltip nt-nt-rounded-none nt-text-background nt-text-xs';
 
 type TooltipContentProps = JSX.IntrinsicElements['div'] & {
   appearanceKey?: AllAppearanceKey;

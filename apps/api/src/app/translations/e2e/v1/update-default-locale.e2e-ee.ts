@@ -1,5 +1,5 @@
-import { OrganizationRepository } from '@novu/dal';
-import { getEERepository, UserSession } from '@novu/testing';
+import { OrganizationRepository } from '@notify/dal';
+import { getEERepository, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('[V1 Translations] Update default locale and add new translations - /translations/language (PATCH) #novu-v2', async () => {

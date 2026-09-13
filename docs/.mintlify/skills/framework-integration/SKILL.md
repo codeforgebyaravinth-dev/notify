@@ -1,16 +1,16 @@
 ---
 name: novu-framework-integration
-description: Build code-first notification workflows with @novu/framework. Use when defining workflows in TypeScript (Zod / JSON Schema / Class Validator), composing channel steps (email, SMS, push, chat, in-app) with action steps (delay, digest, custom), exposing Step Controls for non-technical teammates, rendering React/Vue/Svelte Email templates, hosting the Bridge Endpoint inside Next.js, Express, NestJS, Remix, Nuxt, SvelteKit, H3, or AWS Lambda, syncing to Novu Cloud via CLI / GitHub Actions, securing production with HMAC, or implementing translations, hydration, multi-channel orchestration, and LLM-powered notification logic in code.
+description: Build code-first notification workflows with @notify/framework. Use when defining workflows in TypeScript (Zod / JSON Schema / Class Validator), composing channel steps (email, SMS, push, chat, in-app) with action steps (delay, digest, custom), exposing Step Controls for non-technical teammates, rendering React/Vue/Svelte Email templates, hosting the Bridge Endpoint inside Next.js, Express, NestJS, Remix, Nuxt, SvelteKit, H3, or AWS Lambda, syncing to Novu Cloud via CLI / GitHub Actions, securing production with HMAC, or implementing translations, hydration, multi-channel orchestration, and LLM-powered notification logic in code.
 inputs:
   - name: NOVU_SECRET_KEY
-    description: "Server-side API key from https://dashboard.novu.co/api-keys. Used by @novu/framework and the Bridge Endpoint."
+    description: "Server-side API key from https://dashboard.novu.co/api-keys. Used by @notify/framework and the Bridge Endpoint."
     required: true
     type: secret
 ---
 
 # Framework Integration
 
-Use `@novu/framework` to build notification workflows **in code**, alongside your application source. Workflows live in your repo, content is rendered using libraries you already use (React Email, Vue Email, Svelte Email), and a single HTTP endpoint (the Bridge) lets Novu Cloud execute them with just-in-time data from your services.
+Use `@notify/framework` to build notification workflows **in code**, alongside your application source. Workflows live in your repo, content is rendered using libraries you already use (React Email, Vue Email, Svelte Email), and a single HTTP endpoint (the Bridge) lets Novu Cloud execute them with just-in-time data from your services.
 
 > Use this skill when building workflows **in code**. For workflows authored in the Novu Dashboard, just trigger them via [`trigger-notification`](../trigger-notification) — no Framework needed.
 
@@ -28,7 +28,7 @@ The two approaches **coexist** — a single environment can have both code-defin
 
 ## How It Works
 
-1. You define workflows in code with `workflow(...)` from `@novu/framework`.
+1. You define workflows in code with `workflow(...)` from `@notify/framework`.
 2. You expose a single `/api/novu` HTTP route in your app — the **Bridge Endpoint**.
 3. You sync the bridge URL to Novu Cloud (via `npx novu sync` or GitHub Action).
 4. Novu Cloud calls your bridge over an authenticated tunnel during workflow execution to fetch step content with the latest data.
@@ -50,7 +50,7 @@ This creates a sample bridge app with a workflow, env file, and a working `/api/
 ### 2. Or add to an existing app
 
 ```bash
-npm install @novu/framework zod @react-email/components react-email
+npm install @notify/framework zod @react-email/components react-email
 ```
 
 ```bash
@@ -60,7 +60,7 @@ NOVU_SECRET_KEY=<YOUR_NOVU_SECRET_KEY>
 ### 3. Define a workflow
 
 ```typescript
-import { workflow } from "@novu/framework";
+import { workflow } from "@notify/framework";
 import { z } from "zod";
 
 export const welcomeWorkflow = workflow(
@@ -475,7 +475,7 @@ Each framework ships a `serve` wrapper that handles parsing, HMAC verification, 
 ### Next.js (App Router)
 
 ```typescript
-import { serve } from "@novu/framework/next";
+import { serve } from "@notify/framework/next";
 import { welcomeWorkflow } from "@/novu/workflows";
 
 export const { GET, POST, OPTIONS } = serve({
@@ -486,7 +486,7 @@ export const { GET, POST, OPTIONS } = serve({
 ### Next.js (Pages Router)
 
 ```typescript
-import { serve } from "@novu/framework/next";
+import { serve } from "@notify/framework/next";
 import { welcomeWorkflow } from "../../novu/workflows";
 
 export default serve({ workflows: [welcomeWorkflow] });
@@ -496,7 +496,7 @@ export default serve({ workflows: [welcomeWorkflow] });
 
 ```typescript
 import express from "express";
-import { serve } from "@novu/framework/express";
+import { serve } from "@notify/framework/express";
 import { welcomeWorkflow } from "./novu/workflows";
 
 const app = express();
@@ -509,7 +509,7 @@ app.listen(4000);
 
 ```typescript
 import { Module } from "@nestjs/common";
-import { NovuModule } from "@novu/framework/nest";
+import { NovuModule } from "@notify/framework/nest";
 import { welcomeWorkflow } from "./novu/workflows";
 
 @Module({
@@ -528,7 +528,7 @@ For dependency injection, use `NovuModule.registerAsync` — see [`references/br
 ### Remix
 
 ```typescript
-import { serve } from "@novu/framework/remix";
+import { serve } from "@notify/framework/remix";
 import { welcomeWorkflow } from "../novu/workflows";
 
 const handler = serve({ workflows: [welcomeWorkflow] });
@@ -538,7 +538,7 @@ export { handler as action, handler as loader };
 ### SvelteKit
 
 ```typescript
-import { serve } from "@novu/framework/sveltekit";
+import { serve } from "@notify/framework/sveltekit";
 import { welcomeWorkflow } from "$lib/novu/workflows";
 
 export const { GET, POST, OPTIONS } = serve({ workflows: [welcomeWorkflow] });
@@ -547,7 +547,7 @@ export const { GET, POST, OPTIONS } = serve({ workflows: [welcomeWorkflow] });
 ### Nuxt
 
 ```typescript
-import { serve } from "@novu/framework/nuxt";
+import { serve } from "@notify/framework/nuxt";
 import { welcomeWorkflow } from "~/novu/workflows";
 
 export default defineEventHandler(serve({ workflows: [welcomeWorkflow] }));
@@ -558,7 +558,7 @@ export default defineEventHandler(serve({ workflows: [welcomeWorkflow] }));
 ```typescript
 import { createApp, eventHandler, toNodeListener } from "h3";
 import { createServer } from "node:http";
-import { serve } from "@novu/framework/h3";
+import { serve } from "@notify/framework/h3";
 import { welcomeWorkflow } from "./novu/workflows";
 
 const app = createApp();
@@ -569,7 +569,7 @@ createServer(toNodeListener(app)).listen(4000);
 ### AWS Lambda
 
 ```typescript
-import { serve } from "@novu/framework/lambda";
+import { serve } from "@notify/framework/lambda";
 import { welcomeWorkflow } from "./novu/workflows";
 
 export const novu = serve({ workflows: [welcomeWorkflow] });
@@ -578,7 +578,7 @@ export const novu = serve({ workflows: [welcomeWorkflow] });
 ### Custom (any framework)
 
 ```typescript
-import { NovuRequestHandler, ServeHandlerOptions } from "@novu/framework";
+import { NovuRequestHandler, ServeHandlerOptions } from "@notify/framework";
 
 export const serve = (options: ServeHandlerOptions) =>
   new NovuRequestHandler({
@@ -625,10 +625,10 @@ The Studio:
 
 ## Triggering Workflows
 
-Code-defined workflows are triggered the same way as Dashboard workflows — using `@novu/api` from your trigger surface (server, queue worker, webhook handler):
+Code-defined workflows are triggered the same way as Dashboard workflows — using `@notify/api` from your trigger surface (server, queue worker, webhook handler):
 
 ```typescript
-import { Novu } from "@novu/api";
+import { Novu } from "@notify/api";
 const novu = new Novu({ secretKey: process.env.NOVU_SECRET_KEY });
 
 await novu.trigger({
@@ -690,7 +690,7 @@ Vue Email, Svelte Email, and Remix + React Email are also supported. See [`refer
 For Framework-based workflows, translation lives in your code (not in the Novu Translation system, which targets Dashboard workflows). Use any i18n library (e.g. i18next) and resolve content from `subscriber.locale` inside the resolver.
 
 ```typescript
-import { workflow } from "@novu/framework";
+import { workflow } from "@notify/framework";
 import i18n from "./i18n";
 
 export const localizedWorkflow = workflow(
@@ -776,8 +776,8 @@ GitLab CI, Jenkins, CircleCI, Bitbucket, Azure DevOps, and Travis CI all work vi
 Override defaults globally:
 
 ```typescript
-import { Client as NovuFrameworkClient } from "@novu/framework";
-import { serve } from "@novu/framework/next";
+import { Client as NovuFrameworkClient } from "@notify/framework";
+import { serve } from "@notify/framework/next";
 
 export const { GET, POST, OPTIONS } = serve({
   client: new NovuFrameworkClient({
@@ -807,7 +807,7 @@ Environment variables read by the Client:
 11. **Provider override `_passthrough` is unvalidated** — typos won't error at compile time. Use known typed provider keys whenever possible.
 12. **Changing a delay/digest step's content does not affect already-scheduled events** — content is captured at the time of the original trigger.
 13. **Workflow handlers must be deterministic across retries** — Novu re-invokes the bridge to resolve step content. Avoid side-effects outside `step.custom` (custom is the only step whose result is durably persisted).
-14. **`@novu/framework` requires Node.js ≥ 20**.
+14. **`@notify/framework` requires Node.js ≥ 20**.
 
 ## Code Style Tips
 

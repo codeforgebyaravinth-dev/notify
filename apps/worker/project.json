@@ -1,5 +1,5 @@
 {
-  "name": "@novu/worker",
+  "name": "@notify/worker",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "tags": ["type:app"],
   "sourceRoot": "apps/worker/src",

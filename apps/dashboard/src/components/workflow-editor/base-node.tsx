@@ -1,4 +1,4 @@
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { cva, VariantProps } from 'class-variance-authority';
 import { motion } from 'motion/react';
 import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';

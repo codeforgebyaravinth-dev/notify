@@ -5,7 +5,7 @@ import {
   RequestLog,
   RequestLogRepository,
   RequestLogSource,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import { GetRequestsResponseDto, RequestLogResponseDto } from '../../dtos/get-requests.response.dto';
 import { requestLogSelectColumns } from '../../shared/select.const';
 import { GetRequestsCommand } from './get-requests.command';

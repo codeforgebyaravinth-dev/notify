@@ -1,10 +1,10 @@
 ---
 title: 'AWS Lambda'
-description: "Get started with Novu Framework in an AWS Lambda function by scaffolding a bridge handler, defining a workflow, and triggering notifications."
+description: "Get started with Notify Framework in an AWS Lambda function by scaffolding a bridge handler, defining a workflow, and triggering notifications."
 ---
 
 
-In this guide, we will add a Novu [Bridge Endpoint](/framework/endpoint) to a AWS Lambda application and send our first test workflow.
+In this guide, we will add a Notify [Bridge Endpoint](/framework/endpoint) to a AWS Lambda application and send our first test workflow.
 
 <Steps>
     <Step>
@@ -13,26 +13,26 @@ In this guide, we will add a Novu [Bridge Endpoint](/framework/endpoint) to a AW
 Start local development by running:
 
 ```bash
-npx novu dev
+npx notify dev
 ```
 
-This opens the Novu Dashboard in **Local mode** - a local environment connected to your running app through a tunnel - where you can preview and test the workflows running on your machine. See [Local development](/framework/studio) for details.
+This opens the Notify Dashboard in **Local mode** - a local environment connected to your running app through a tunnel - where you can preview and test the workflows running on your machine. See [Local development](/framework/studio) for details.
 
     </Step>
    <Step>
          ## Install packages
 
-Install the Novu Framework package:
+Install the Notify Framework package:
 
 ```bash
-npm install @novu/framework
+npm install @notify/framework
 ```
 
 This package provides all the necessary tools to build and manage your notification workflows.
 
     </Step>
    <Step>
-         ## Add a Novu API Endpoint
+         ## Add a Notify API Endpoint
         ```typescript src/functions/api/novu.ts
 
         module.exports.novu = serve({
@@ -43,7 +43,7 @@ This package provides all the necessary tools to build and manage your notificat
     <Step>
         ## Configure your secret key
 
-Add your Novu secret key to your environment variables:
+Add your Notify secret key to your environment variables:
 
 ```bash .env
 NOVU_SECRET_KEY=your_secret_key
@@ -52,16 +52,16 @@ NOVU_SECRET_KEY=your_secret_key
     </Step>
     <Step>
         ## Create your workflow definition
-        Add a `novu` folder in your app folder as such `novu/workflows.ts` that will contain your workflow definitions.
+        Add a `notify` folder in your app folder as such `notify/workflows.ts` that will contain your workflow definitions.
 
-```ts app/novu/workflows.ts
-import { workflow } from '@novu/framework';
+```ts app/notify/workflows.ts
+import { workflow } from '@notify/framework';
 
 export const testWorkflow = workflow('test-workflow', async ({ step }) => {
   await step.email('test-email', async () => {
     return {
       subject: 'Test Email',
-      body: 'This is a test email from Novu Framework!',
+      body: 'This is a test email from Notify Framework!',
     };
   });
 });
@@ -70,18 +70,18 @@ export const testWorkflow = workflow('test-workflow', async ({ step }) => {
     </Step>
     <Step>
         ## Start your application
-        Start your AWS Lambda server with the Novu Endpoint configured.
+        Start your AWS Lambda server with the Notify Endpoint configured.
 
-        If your Local Lambda application is running on other than `4000` port, restart the `npx novu dev` command with the port:
+        If your Local Lambda application is running on other than `4000` port, restart the `npx notify dev` command with the port:
 
         ```tsx
-        npx novu@latest dev --port <YOUR_AWS LAMBDA_APPLICATION_PORT>
+        npx notify@latest dev --port <YOUR_AWS LAMBDA_APPLICATION_PORT>
         ```
     </Step>
     <Step>
         ## Test your endpoint
 
-Test your workflow by triggering it from the Local environment or using the Novu API:
+Test your workflow by triggering it from the Local environment or using the Notify API:
 
 ```bash
 curl -X POST https://api.novu.co/v1/events/trigger \
@@ -100,7 +100,7 @@ You should see the notification being processed in the Local environment.
     <Step>
         ## Deploy your application
 
-Deploy your application to your preferred hosting provider. Make sure the `/api/novu` endpoint is accessible from the internet.
+Deploy your application to your preferred hosting provider. Make sure the `/api/notify` endpoint is accessible from the internet.
 
 For local development and testing, you can use tools like ngrok to expose your local server to the internet.
 

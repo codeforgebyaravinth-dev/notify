@@ -1,20 +1,20 @@
-'@novu/api-service':
+'@notify/api-service':
   - apps/api/**/*
-'@novu/worker':
+'@notify/worker':
   - apps/worker/**/*
-'@novu/dashboard':
+'@notify/dashboard':
   - apps/dashboard/**/*
-'@novu/ws':
+'@notify/ws':
   - apps/ws/**/*
-'@novu/inbound-mail':
+'@notify/inbound-mail':
   - apps/inbound-mail/**/*
-'@novu/webhook':
+'@notify/webhook':
   - apps/webhook/**/*
 '@novu/thalamus-observer':
   - enterprise/workers/thalamus-observer/**/*
-'@novu/dal':
+'@notify/dal':
   - libs/dal/**/*
-'@novu/shared':
+'@notify/shared':
   - packages/shared/**/*
 'providers':
   - providers/**/*

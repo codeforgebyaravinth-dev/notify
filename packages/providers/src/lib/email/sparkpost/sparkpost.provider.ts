@@ -1,4 +1,4 @@
-import { EmailProviderIdEnum } from '@novu/shared';
+import { EmailProviderIdEnum } from '@notify/shared';
 import {
   ChannelTypeEnum,
   CheckIntegrationResponseEnum,
@@ -6,7 +6,7 @@ import {
   IEmailOptions,
   IEmailProvider,
   ISendMessageSuccessResponse,
-} from '@novu/stateless';
+} from '@notify/stateless';
 import axios, { AxiosError } from 'axios';
 import { randomUUID } from 'crypto';
 import { BaseProvider, CasingEnum } from '../../../base.provider';

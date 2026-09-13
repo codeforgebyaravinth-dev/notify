@@ -1,6 +1,6 @@
-import { AgentIntegrationRepository, AgentRepository, EnvironmentRepository, IntegrationRepository } from '@novu/dal';
-import { ChannelTypeEnum, EmailProviderIdEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { AgentIntegrationRepository, AgentRepository, EnvironmentRepository, IntegrationRepository } from '@notify/dal';
+import { ChannelTypeEnum, EmailProviderIdEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Agent Promotion - /v2/environments/:targetEnvironmentId/publish (POST) #novu-v2', () => {

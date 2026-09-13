@@ -1,7 +1,7 @@
 import { BadRequestException, ConflictException, Inject, Injectable, NotFoundException } from '@nestjs/common';
-import { AnalyticsService, decryptCredentials, encryptCredentials, PinoLogger } from '@novu/application-generic';
-import { EnvironmentRepository, IntegrationEntity, IntegrationRepository } from '@novu/dal';
-import { CHANNELS_WITH_PRIMARY } from '@novu/shared';
+import { AnalyticsService, decryptCredentials, encryptCredentials, PinoLogger } from '@notify/application-generic';
+import { EnvironmentRepository, IntegrationEntity, IntegrationRepository } from '@notify/dal';
+import { CHANNELS_WITH_PRIMARY } from '@notify/shared';
 import { assertIntegrationEnvironmentScope } from '../../utils/assert-integration-environment-scope';
 import { validateOutboundIntegrationCredentials } from '../../utils/validate-outbound-integration-credentials';
 import { CheckIntegrationCommand } from '../check-integration/check-integration.command';

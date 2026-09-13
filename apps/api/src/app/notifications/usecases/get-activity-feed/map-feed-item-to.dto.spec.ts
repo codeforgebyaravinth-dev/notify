@@ -1,5 +1,5 @@
-import { NotificationFeedItemEntity } from '@novu/dal';
-import { FieldLogicalOperatorEnum, FieldOperatorEnum, FilterPartTypeEnum, StepTypeEnum } from '@novu/shared';
+import { NotificationFeedItemEntity } from '@notify/dal';
+import { FieldLogicalOperatorEnum, FieldOperatorEnum, FilterPartTypeEnum, StepTypeEnum } from '@notify/shared';
 import { expect } from 'chai';
 import { mapFeedItemToDto } from './map-feed-item-to.dto';
 

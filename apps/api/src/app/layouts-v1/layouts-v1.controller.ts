@@ -13,8 +13,8 @@ import {
 } from '@nestjs/common';
 import { ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
 import { ApiExcludeController } from '@nestjs/swagger/dist/decorators/api-exclude-controller.decorator';
-import { GetLayoutCommandV0, GetLayoutUseCaseV0, OtelSpan, PinoLogger } from '@novu/application-generic';
-import { OrderByEnum, OrderDirectionEnum, UserSessionData } from '@novu/shared';
+import { GetLayoutCommandV0, GetLayoutUseCaseV0, OtelSpan, PinoLogger } from '@notify/application-generic';
+import { OrderByEnum, OrderDirectionEnum, UserSessionData } from '@notify/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import {

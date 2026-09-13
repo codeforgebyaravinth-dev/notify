@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { WorkflowListResponseDto } from '@novu/application-generic';
+import { WorkflowListResponseDto } from '@notify/application-generic';
 import { Type } from 'class-transformer';
 import { IsArray, IsNumber, ValidateNested } from 'class-validator';
 

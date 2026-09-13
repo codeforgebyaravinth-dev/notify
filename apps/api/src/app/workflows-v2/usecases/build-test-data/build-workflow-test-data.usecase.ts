@@ -10,15 +10,15 @@ import {
   JSONSchemaDto,
   mockSchemaDefaults,
   parsePayloadSchema,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   ControlValuesRepository,
   JsonSchemaFormatEnum,
   JsonSchemaTypeEnum,
   NotificationStepEntity,
   NotificationTemplateEntity,
-} from '@novu/dal';
-import { ControlValuesLevelEnum, StepTypeEnum, UserSessionData } from '@novu/shared';
+} from '@notify/dal';
+import { ControlValuesLevelEnum, StepTypeEnum, UserSessionData } from '@notify/shared';
 import { WorkflowTestDataResponseDto } from '../../dtos';
 import { WorkflowTestDataCommand } from './build-workflow-test-data.command';
 

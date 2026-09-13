@@ -1,5 +1,5 @@
-import { EmailProviderIdEnum } from '@novu/shared';
-import { ChannelTypeEnum, IEmailOptions, IEmailProvider, ISendMessageSuccessResponse, IEmailEventBody } from '@novu/stateless';
+import { EmailProviderIdEnum } from '@notify/shared';
+import { ChannelTypeEnum, IEmailOptions, IEmailProvider, ISendMessageSuccessResponse, IEmailEventBody } from '@notify/stateless';
 import { SESEmailProvider } from '../email/ses/ses.provider';
 import { SESConfig } from '../email/ses/ses.config';
 import { WithPassthrough } from '../../utils/types';

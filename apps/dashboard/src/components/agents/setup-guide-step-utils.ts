@@ -1,4 +1,4 @@
-import { CredentialsKeyEnum, type ICredentials } from '@novu/shared';
+import { CredentialsKeyEnum, type ICredentials } from '@notify/shared';
 import { getAgentApiBaseUrl } from '@/config';
 
 export type StepStatus = 'completed' | 'current' | 'upcoming';

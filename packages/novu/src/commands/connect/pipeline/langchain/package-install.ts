@@ -3,7 +3,7 @@ import { installPackages } from '../../../init/helpers/install';
 import { detectPackageManager } from '../../../step/utils/package-manager';
 import { hasDependency, readProjectPackageJson } from '../bridge/project-package';
 
-const FRAMEWORK_PACKAGE = '@novu/framework';
+const FRAMEWORK_PACKAGE = '@notify/framework';
 const LANGCHAIN_PACKAGE = 'langchain';
 const LANGCHAIN_CORE_PACKAGE = '@langchain/core';
 

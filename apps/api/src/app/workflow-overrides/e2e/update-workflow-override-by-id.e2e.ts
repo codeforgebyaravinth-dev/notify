@@ -1,6 +1,6 @@
-import { IUpdateWorkflowOverrideRequestDto } from '@novu/shared';
+import { IUpdateWorkflowOverrideRequestDto } from '@notify/shared';
 
-import { UserSession, WorkflowOverrideService } from '@novu/testing';
+import { UserSession, WorkflowOverrideService } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Update Workflow Override By ID - /workflow-overrides/:overrideId (PUT) #novu-v0', () => {

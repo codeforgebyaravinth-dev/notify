@@ -1,6 +1,6 @@
 import { forwardRef, Module } from '@nestjs/common';
 
-import { ResourceValidatorService } from '@novu/application-generic';
+import { ResourceValidatorService } from '@notify/application-generic';
 import { AuthModule } from '../auth/auth.module';
 import { ChangeModule } from '../change/change.module';
 import { MessageTemplateModule } from '../message-template/message-template.module';

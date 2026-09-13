@@ -1,24 +1,24 @@
 ---
-title: 'Supabase Auth Notifications with Novu'
+title: 'Supabase Auth Notifications with Notify'
 sidebarTitle: 'Supabase auth'
-description: "Send signup, password reset, and authentication alert notifications from Supabase Auth events using Novu workflows, subscribers, and multi-channel delivery."
+description: "Send signup, password reset, and authentication alert notifications from Supabase Auth events using Notify workflows, subscribers, and multi-channel delivery."
 ---
 
 
-Send auth notifications from Supabase by listening to Supabase Auth events in your backend or Edge Function and triggering Novu workflows for signup confirmations, password resets, and security alerts.
+Send auth notifications from Supabase by listening to Supabase Auth events in your backend or Edge Function and triggering Notify workflows for signup confirmations, password resets, and security alerts.
 
-## How does the Supabase and Novu integration work?
+## How does the Supabase and Notify integration work?
 
 1. Supabase Auth emits an event (for example, `SIGNED_UP` or password recovery initiated).
 2. Your application or Edge Function handles the event.
-3. Your handler calls Novu's [Trigger event](/api-reference/events/trigger-event) API with the user's `subscriberId` and event payload.
-4. Novu delivers the notification through your configured workflow.
+3. Your handler calls Notify's [Trigger event](/api-reference/events/trigger-event) API with the user's `subscriberId` and event payload.
+4. Notify delivers the notification through your configured workflow.
 
 ## How do I send a signup notification?
 
 <Steps>
-  <Step title="Create a welcome workflow in Novu">
-    Add email and optional in-app steps to a `welcome` workflow in the Novu Dashboard.
+  <Step title="Create a welcome workflow in Notify">
+    Add email and optional in-app steps to a `welcome` workflow in the Notify Dashboard.
   </Step>
 
   <Step title="Listen for Supabase auth events">
@@ -27,9 +27,9 @@ Send auth notifications from Supabase by listening to Supabase Auth events in yo
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({ secretKey: Deno.env.get('NOVU_SECRET_KEY')! });
+const notify = new Notify({ secretKey: Deno.env.get('NOVU_SECRET_KEY')! });
 
 Deno.serve(async (req) => {
   const { type, record } = await req.json();
@@ -50,11 +50,11 @@ Deno.serve(async (req) => {
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
 def handle_supabase_auth_event(event_type, record):
     if event_type == "INSERT" and record.get("email"):
-        with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+        with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
             novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
                 workflow_id="welcome",
                 to={"subscriber_id": record["id"], "email": record["email"]},
@@ -94,8 +94,8 @@ func handleSupabaseAuthEvent(eventType string, record map[string]any) error {
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
 function handleSupabaseAuthEvent(string $type, array $record): void
 {
@@ -103,7 +103,7 @@ function handleSupabaseAuthEvent(string $type, array $record): void
         return;
     }
 
-    $sdk = novu\Novu::builder()
+    $sdk = notify\Notify::builder()
         ->setSecurity('<YOUR_SECRET_KEY_HERE>')
         ->build();
 
@@ -122,8 +122,8 @@ function handleSupabaseAuthEvent(string $type, array $record): void
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 
 async Task HandleSupabaseAuthEvent(string type, Dictionary<string, object> record)
@@ -147,14 +147,14 @@ async Task HandleSupabaseAuthEvent(string type, Dictionary<string, object> recor
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 import java.util.Map;
 
 void handleSupabaseAuthEvent(String type, Map<String, Object> record) {
     if (!"INSERT".equals(type) || record.get("email") == null) return;
 
-    Novu novu = Novu.builder()
+    Notify novu = Notify.builder()
         .secretKey("<YOUR_SECRET_KEY_HERE>")
         .build();
 
@@ -187,7 +187,7 @@ curl -X POST 'https://api.novu.co/v1/events/trigger' \
   </Step>
 
   <Step title="Handle password reset emails">
-    When using Supabase's built-in password reset, customize the email template in Supabase or disable it and trigger a Novu `password-reset` workflow instead. See [password reset notifications](/guides/use-cases/password-reset-notifications).
+    When using Supabase's built-in password reset, customize the email template in Supabase or disable it and trigger a Notify `password-reset` workflow instead. See [password reset notifications](/guides/use-cases/password-reset-notifications).
   </Step>
 </Steps>
 
@@ -200,10 +200,10 @@ curl -X POST 'https://api.novu.co/v1/events/trigger' \
 ## Frequently asked questions
 
 <AccordionGroup>
-  <Accordion title="Can I replace Supabase auth emails entirely with Novu?">
-    Yes. Disable Supabase email templates for the events you want Novu to handle, then trigger Novu workflows from your auth hooks or Edge Functions.
+  <Accordion title="Can I replace Supabase auth emails entirely with Notify?">
+    Yes. Disable Supabase email templates for the events you want Notify to handle, then trigger Notify workflows from your auth hooks or Edge Functions.
   </Accordion>
   <Accordion title="What should I use as the subscriberId?">
-    Use the Supabase user UUID as the `subscriberId` to keep identifiers consistent across your application and Novu.
+    Use the Supabase user UUID as the `subscriberId` to keep identifiers consistent across your application and Notify.
   </Accordion>
 </AccordionGroup>

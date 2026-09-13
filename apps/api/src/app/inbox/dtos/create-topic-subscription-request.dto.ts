@@ -1,5 +1,5 @@
 import { ApiExtraModels, ApiPropertyOptional, getSchemaPath } from '@nestjs/swagger';
-import { TOPIC_SUBSCRIPTION_IDENTIFIER_MAX_LENGTH } from '@novu/shared';
+import { TOPIC_SUBSCRIPTION_IDENTIFIER_MAX_LENGTH } from '@notify/shared';
 import { Type } from 'class-transformer';
 import { IsArray, IsOptional, IsString, MaxLength, ValidateNested } from 'class-validator';
 import {

@@ -8,7 +8,7 @@ import {
   TemplateVariableTypeEnum,
   TriggerContextTypeEnum,
   TriggerTypeEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { SubscriberPreferenceChannels } from '../../shared/dtos/preference-channels';
 
 class Preference {

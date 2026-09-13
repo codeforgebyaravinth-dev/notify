@@ -56,7 +56,7 @@ function computePackageRequirement(projectDir: string): BridgeRequirement {
     return {
       id: 'package',
       status: 'ok',
-      detail: '@novu/framework and langchain installed',
+      detail: '@notify/framework and langchain installed',
     };
   }
 
@@ -130,7 +130,7 @@ function computeCodeWiringRequirement(projectDir: string): BridgeRequirement {
 
   const parts: string[] = [];
   if (!wiring.hasLangChainImport) {
-    parts.push('@novu/framework/langchain import not found');
+    parts.push('@notify/framework/langchain import not found');
   }
   if (!wiring.hasBridgeRoute) {
     parts.push('bridge route app/api/novu/route.ts not found');

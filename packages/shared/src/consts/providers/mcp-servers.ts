@@ -159,7 +159,7 @@ export type McpServer = {
    * is the catch-all for MCPs whose connector OAuth lives inside the managed
    * agent runtime provider's vault UI.
    *
-   * Typed as optional only so external `@novu/shared` consumers that pin
+   * Typed as optional only so external `@notify/shared` consumers that pin
    * older minor versions keep type-checking; in this repo every entry sets
    * the field and the picker treats a missing value as
    * `provider-managed`.

@@ -1,16 +1,16 @@
 ---
-title: "Email Webhook Email Integration with Novu"
+title: "Email Webhook Email Integration with Notify"
 sidebarTitle: "Email Webhook"
-description: "Connect an email webhook provider to Novu to deliver transactional emails through your own HTTP endpoint using a webhook URL and HMAC secret."
+description: "Connect an email webhook provider to Notify to deliver transactional emails through your own HTTP endpoint using a webhook URL and HMAC secret."
 ---
 
-Email Webhook lets Novu hand each email payload to an HTTP endpoint you control. Instead of calling a built-in ESP SDK, Novu `POST`s the rendered message to your **Webhook URL** and signs the body with your HMAC secret.
+Email Webhook lets Notify hand each email payload to an HTTP endpoint you control. Instead of calling a built-in ESP SDK, Notify `POST`s the rendered message to your **Webhook URL** and signs the body with your HMAC secret.
 
-Use this when you want Novu workflows and templates, but delivery goes through an internal service or a provider that is not listed in the Integrations Store.
+Use this when you want Notify workflows and templates, but delivery goes through an internal service or a provider that is not listed in the Integrations Store.
 
-## Creating an Email Webhook integration with Novu
+## Creating an Email Webhook integration with Notify
 
-1. Visit the [Integrations](https://dashboard.novu.co/integrations?utm_campaign=docs-email-webhook) page on Novu.
+1. Visit the [Integrations](https://dashboard.novu.co/integrations?utm_campaign=docs-email-webhook) page on Notify.
 2. Click **Add a provider**.
 3. Locate **Email Webhook** under the Email section and click **Connect**.
 4. Enter your:
@@ -23,17 +23,17 @@ Use this when you want Novu workflows and templates, but delivery goes through a
 
 ## Request format
 
-For each email, Novu sends a `POST` request to your webhook URL with:
+For each email, Notify sends a `POST` request to your webhook URL with:
 
 - `Content-Type: application/json`
-- `X-Novu-Signature: <hmac-sha256-hex>` of the raw JSON body, using your Secret Hmac Key
+- `X-Notify-Signature: <hmac-sha256-hex>` of the raw JSON body, using your Secret Hmac Key
 
 Verify the signature before processing the payload. Reject requests that do not match.
 
-The JSON body includes the rendered email fields Novu already prepared for the subscriber (to, from, subject, html/text content, and related metadata).
+The JSON body includes the rendered email fields Notify already prepared for the subscriber (to, from, subject, html/text content, and related metadata).
 
 <Note>
-  Email Webhook is marked beta in Novu. Treat it as a custom delivery bridge and monitor your endpoint health.
+  Email Webhook is marked beta in Notify. Treat it as a custom delivery bridge and monitor your endpoint health.
 </Note>
 
 ## Next Steps

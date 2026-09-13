@@ -1,6 +1,6 @@
 import { Controller, Get, Inject, Options, Post, Req, Res } from '@nestjs/common';
 import { ApiExcludeController } from '@nestjs/swagger';
-import { NovuClient } from '@novu/framework/nest';
+import { NovuClient } from '@notify/framework/nest';
 import type { Request, Response } from 'express';
 import { NovuBridgeClient } from './novu-bridge-client';
 

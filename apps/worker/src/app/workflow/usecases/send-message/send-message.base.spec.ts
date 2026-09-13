@@ -1,4 +1,4 @@
-import { TriggerOverrides } from '@novu/shared';
+import { TriggerOverrides } from '@notify/shared';
 import { expect } from 'chai';
 import { combineProviderOverrides } from './send-message.base';
 

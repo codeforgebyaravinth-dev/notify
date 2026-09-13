@@ -1,10 +1,10 @@
 ---
 title: 'Python'
-description: "Connect a Python application to Novu with the official server SDK to trigger workflows, manage subscribers, and send notifications from Python."
+description: "Connect a Python application to Notify with the official server SDK to trigger workflows, manage subscribers, and send notifications from Python."
 ---
 
 
-Novu's Python SDK provides simple, yet comprehensive notification management, and delivery capabilities through multiple channels that you can implement using code that integrates seamlessly with your Python application.
+Notify's Python SDK provides simple, yet comprehensive notification management, and delivery capabilities through multiple channels that you can implement using code that integrates seamlessly with your Python application.
 
 [Explore the source code on GitHub](https://github.com/novuhq/novu-py)
 
@@ -14,7 +14,7 @@ Novu's Python SDK provides simple, yet comprehensive notification management, an
   <Tab title="PIP">
     PIP is the default package installer for Python, enabling easy installation and management of packages from PyPI via the command line.
     ```bash
-    pip install novu-py
+    pip install notify-py
     ```
   </Tab>
   <Tab title="Poetry">
@@ -22,7 +22,7 @@ Novu's Python SDK provides simple, yet comprehensive notification management, an
 Poetry is a modern tool that simplifies dependency management and package publishing by using a single pyproject.toml file to handle project metadata and dependencies.
 
     ```bash
-    poetry add novu-py
+    poetry add notify-py
     ```
 
   </Tab>
@@ -30,7 +30,7 @@ Poetry is a modern tool that simplifies dependency management and package publis
     You can use this SDK in a Python shell with uv and the uvx command that comes with it like so:
 
     ```bash
-    uvx --from novu-py python
+    uvx --from notify-py python
     ```
 
     It's also possible to write a standalone Python script without needing to set up a whole project like so:
@@ -40,13 +40,13 @@ Poetry is a modern tool that simplifies dependency management and package publis
     # /// script
     # requires-python = ">=3.9"
     # dependencies = [
-    #     "novu-py",
+    #     "notify-py",
     # ]
     # ///
 
-    from novu_py import Novu
+    from novu_py import Notify
 
-    sdk = Novu(
+    sdk = Notify(
       # SDK arguments
     )
 
@@ -65,12 +65,12 @@ Poetry is a modern tool that simplifies dependency management and package publis
       <Tab title="Synchronous">
 ```python
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 import os
 
-with Novu(
+with Notify(
 secret_key=os.getenv("NOVU_SECRET_KEY", ""),
-) as novu:
+) as notify:
 
     res = novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="workflow_identifier",
@@ -88,7 +88,7 @@ secret_key=os.getenv("NOVU_SECRET_KEY", ""),
         },
         overrides={
           "email": {
-            "bcc": "no-reply@novu.co"
+            "bcc": "no-reply@notify.co"
           }
         },
     ))
@@ -102,13 +102,13 @@ secret_key=os.getenv("NOVU_SECRET_KEY", ""),
 ```python
 import asyncio
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 import os
 
 async def main():
-async with Novu(
+async with Notify(
 secret_key=os.getenv("NOVU_SECRET_KEY", ""),
-) as novu:
+) as notify:
 
         res = await novu.trigger_async(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
             workflow_id="workflow_identifier",
@@ -126,7 +126,7 @@ secret_key=os.getenv("NOVU_SECRET_KEY", ""),
             },
             overrides={
               "email": {
-                "bcc": "no-reply@novu.co",
+                "bcc": "no-reply@notify.co",
               }
             },
         ))
@@ -144,13 +144,13 @@ asyncio.run(main())
   <Tab title="EU Region">
 ```python
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 import os
 
-with Novu(
+with Notify(
 server_url="https://eu.api.novu.co",
 secret_key=os.getenv("NOVU_SECRET_KEY", ""),
-) as novu:
+) as notify:
 
     res = novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="workflow_identifier",
@@ -165,7 +165,7 @@ secret_key=os.getenv("NOVU_SECRET_KEY", ""),
         },
         overrides={
           "email": {
-            "bcc": "no-reply@novu.co"
+            "bcc": "no-reply@notify.co"
           }
         },
     ))

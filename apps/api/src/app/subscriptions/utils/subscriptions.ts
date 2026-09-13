@@ -1,6 +1,6 @@
-import { buildDefaultSubscriptionIdentifier } from '@novu/application-generic';
-import { NotificationTemplateEntity, PreferencesEntity, TopicSubscribersEntity } from '@novu/dal';
-import { SeverityLevelEnum } from '@novu/shared';
+import { buildDefaultSubscriptionIdentifier } from '@notify/application-generic';
+import { NotificationTemplateEntity, PreferencesEntity, TopicSubscribersEntity } from '@notify/dal';
+import { SeverityLevelEnum } from '@notify/shared';
 import { RulesLogic } from 'json-logic-js';
 import { SubscriptionDetailsResponseDto } from '../../shared/dtos/subscription-details-response.dto';
 import {

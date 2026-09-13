@@ -1,5 +1,5 @@
 import { Completion } from '@codemirror/autocomplete';
-import type { JSONSchemaDefinition } from '@novu/shared';
+import type { JSONSchemaDefinition } from '@notify/shared';
 import { JSONSchema7 } from 'json-schema';
 import { isAllowedAlias } from '@/components/maily/repeat-block-aliases';
 import { SYSTEM_VARIABLE_DEFINITIONS } from '@/components/variables/system-variable-definitions';

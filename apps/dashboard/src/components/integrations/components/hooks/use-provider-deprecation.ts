@@ -1,4 +1,4 @@
-import { FeatureFlagsKeysEnum, IProviderConfig, providers } from '@novu/shared';
+import { FeatureFlagsKeysEnum, IProviderConfig, providers } from '@notify/shared';
 import { useMemo } from 'react';
 import { useFeatureFlag } from '@/hooks/use-feature-flag';
 import { isChannelVisibleInUi } from '@/utils/channels';

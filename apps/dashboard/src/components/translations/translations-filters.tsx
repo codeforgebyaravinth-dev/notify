@@ -1,4 +1,4 @@
-import { DEFAULT_LOCALE, EnvironmentTypeEnum, PermissionsEnum } from '@novu/shared';
+import { DEFAULT_LOCALE, EnvironmentTypeEnum, PermissionsEnum } from '@notify/shared';
 import { AnimatePresence, motion } from 'motion/react';
 import { HTMLAttributes, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';

@@ -1,4 +1,4 @@
-import { AGENT_EVENT_PROTOCOL_VERSION, type AgentEvent } from '@novu/agent-event-protocol';
+import { AGENT_EVENT_PROTOCOL_VERSION, type AgentEvent } from '@notify/agent-event-protocol';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { AgentDeliveryError } from './agent.errors';
 import { AgentEventOutbox } from './agent-event-outbox';

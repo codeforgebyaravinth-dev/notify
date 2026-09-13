@@ -1,9 +1,9 @@
 'use client';
 
-import { Subscription as RSubscription, type SubscriptionProps } from '@novu/react';
+import { Subscription as RSubscription, type SubscriptionProps } from '@notify/react';
 
 export function Subscription(props: SubscriptionProps) {
   return <RSubscription {...props} />;
 }
 
-export { SubscriptionButton, SubscriptionPreferences } from '@novu/react';
+export { SubscriptionButton, SubscriptionPreferences } from '@notify/react';

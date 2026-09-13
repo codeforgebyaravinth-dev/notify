@@ -5,7 +5,7 @@ Topics are named groups of subscribers used for broadcast-style notifications.
 ## Create a Topic
 
 ```typescript
-import { Novu } from "@novu/api";
+import { Novu } from "@notify/api";
 
 const novu = new Novu({
   secretKey: process.env.NOVU_SECRET_KEY,

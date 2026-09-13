@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { AnalyticsService, InstrumentUsecase } from '@novu/application-generic';
-import { SubscriberEntity, SubscriberRepository } from '@novu/dal';
-import { PreferenceLevelEnum, SeverityLevelEnum } from '@novu/shared';
+import { AnalyticsService, InstrumentUsecase } from '@notify/application-generic';
+import { SubscriberEntity, SubscriberRepository } from '@notify/dal';
+import { PreferenceLevelEnum, SeverityLevelEnum } from '@notify/shared';
 import {
   GetSubscriberGlobalPreference,
   GetSubscriberGlobalPreferenceCommand,

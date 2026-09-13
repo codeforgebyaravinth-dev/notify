@@ -1,4 +1,4 @@
-import { AgentRuntimeProviderIdEnum } from '@novu/shared';
+import { AgentRuntimeProviderIdEnum } from '@notify/shared';
 import { useId, useState } from 'react';
 import {
   RiAlertLine,

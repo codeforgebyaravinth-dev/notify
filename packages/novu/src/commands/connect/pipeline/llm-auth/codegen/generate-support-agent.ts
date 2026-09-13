@@ -134,14 +134,14 @@ function buildAiSdkImports(kind: GenerateSupportAgentInput['llmAuth']['kind']): 
   const withTools = aiSdkCodegenSupportsTools(kind);
   const toolImports = withTools
     ? `import { generateText, tool } from 'ai';
-import { toModelMessages } from '@novu/framework/ai-sdk';
+import { toModelMessages } from '@notify/framework/ai-sdk';
 import { searchNovuDocsIndex, searchNovuDocsInputSchema } from './tools/search-novu-docs';`
     : `import { generateText } from 'ai';
-import { toModelMessages } from '@novu/framework/ai-sdk';`;
+import { toModelMessages } from '@notify/framework/ai-sdk';`;
 
-  const base = `/** @jsxImportSource @novu/framework */
-import { Actions, Button, Card, CardText } from '@novu/framework';
-import { agent } from '@novu/framework/ai-sdk';
+  const base = `/** @jsxImportSource @notify/framework */
+import { Actions, Button, Card, CardText } from '@notify/framework';
+import { agent } from '@notify/framework/ai-sdk';
 ${toolImports}`;
 
   if (kind === 'openai-api-key') {
@@ -168,9 +168,9 @@ import { claudeCode } from 'ai-sdk-provider-claude-code';`;
 }
 
 function buildLangChainImports(kind: GenerateSupportAgentInput['llmAuth']['kind']): string {
-  const base = `/** @jsxImportSource @novu/framework */
-import { Actions, Button, Card, CardText } from '@novu/framework';
-import { agent } from '@novu/framework/langchain';
+  const base = `/** @jsxImportSource @notify/framework */
+import { Actions, Button, Card, CardText } from '@notify/framework';
+import { agent } from '@notify/framework/langchain';
 import { tool } from '@langchain/core/tools';
 import { searchNovuDocsIndex, searchNovuDocsInputSchema } from './tools/search-novu-docs';`;
 

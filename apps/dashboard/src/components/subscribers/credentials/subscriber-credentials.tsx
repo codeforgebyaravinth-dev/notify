@@ -1,5 +1,5 @@
-import type { ChannelEndpointType } from '@novu/shared';
-import { ChannelTypeEnum, FeatureFlagsKeysEnum } from '@novu/shared';
+import type { ChannelEndpointType } from '@notify/shared';
+import { ChannelTypeEnum, FeatureFlagsKeysEnum } from '@notify/shared';
 import { formatDistanceToNow } from 'date-fns';
 import { useMemo, useState } from 'react';
 import { ExternalToast } from 'sonner';

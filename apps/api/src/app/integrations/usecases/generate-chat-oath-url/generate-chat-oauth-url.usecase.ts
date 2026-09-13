@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
-import { IntegrationEntity, IntegrationRepository } from '@novu/dal';
-import { ChannelTypeEnum, ChatProviderIdEnum } from '@novu/shared';
+import { IntegrationEntity, IntegrationRepository } from '@notify/dal';
+import { ChannelTypeEnum, ChatProviderIdEnum } from '@notify/shared';
 import { GenerateChatOauthUrlCommand } from './generate-chat-oauth-url.command';
 import { GenerateMsTeamsOauthUrlCommand } from './generate-msteams-oath-url/generate-msteams-oauth-url.command';
 import { GenerateMsTeamsOauthUrl } from './generate-msteams-oath-url/generate-msteams-oauth-url.usecase';

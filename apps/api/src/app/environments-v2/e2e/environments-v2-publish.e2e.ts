@@ -1,8 +1,8 @@
-import { Novu } from '@novu/api';
-import { CreateWorkflowDto, WorkflowCreationSourceEnum, WorkflowResponseDto } from '@novu/api/models/components';
-import { EnvironmentRepository, NotificationTemplateRepository } from '@novu/dal';
-import { EmailBlockTypeEnum, ResourceOriginEnum, StepTypeEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { Novu } from '@notify/api';
+import { CreateWorkflowDto, WorkflowCreationSourceEnum, WorkflowResponseDto } from '@notify/api/models/components';
+import { EnvironmentRepository, NotificationTemplateRepository } from '@notify/dal';
+import { EmailBlockTypeEnum, ResourceOriginEnum, StepTypeEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { initNovuClassSdkInternalAuth } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';
 

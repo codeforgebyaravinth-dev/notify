@@ -1,39 +1,39 @@
 ---
-title: "Push Webhook Push Integration with Novu"
+title: "Push Webhook Push Integration with Notify"
 sidebarTitle: "Push Webhook"
-description: "Connect a push webhook provider to Novu to deliver push notifications through your own HTTP endpoint or a custom push gateway using a webhook URL and headers."
+description: "Connect a push webhook provider to Notify to deliver push notifications through your own HTTP endpoint or a custom push gateway using a webhook URL and headers."
 ---
 
-This guide walks you through the entire process of configuring and using Push Webhook with Novu.
+This guide walks you through the entire process of configuring and using Push Webhook with Notify.
 
-The Push Webhook provider is different from other push providers because it does not depend on a third-party service. Instead, Novu sends push notifications directly to a webhook URL that you control. This approach is ideal if you want full control over how notifications are processed, routed, or stored in your system.
+The Push Webhook provider is different from other push providers because it does not depend on a third-party service. Instead, Notify sends push notifications directly to a webhook URL that you control. This approach is ideal if you want full control over how notifications are processed, routed, or stored in your system.
 
-## Configure Push Webhook with Novu
+## Configure Push Webhook with Notify
 
-To configure Push Webhook, you must provide an endpoint URL for Novu to call and a secret HMAC key to verify the request's authenticity.
+To configure Push Webhook, you must provide an endpoint URL for Notify to call and a secret HMAC key to verify the request's authenticity.
 
 ### Step 1: Get your webhook URL and secret key
 
-Before connecting to Novu, you need two things:
+Before connecting to Notify, you need two things:
 
-* **Webhook URL**: This is your own API endpoint that will receive the `POST` request from Novu. For quick testing, you can use a service like [webhook.site](https://webhook.site/).
-* **Secret HMAC Key:** This is a self-generated secret string. Novu will use it to encrypt the payload using the `HMAC SHA256` algorithm and send the hash in the `x-novu-signature` header. This lets you verify that the request is genuinely from Novu. See [how to generate a HMAC key](/platform/inbox/prepare-for-production#2-generate-hmac-hash-on-the-server-side).
+* **Webhook URL**: This is your own API endpoint that will receive the `POST` request from Notify. For quick testing, you can use a service like [webhook.site](https://webhook.site/).
+* **Secret HMAC Key:** This is a self-generated secret string. Notify will use it to encrypt the payload using the `HMAC SHA256` algorithm and send the hash in the `x-notify-signature` header. This lets you verify that the request is genuinely from Notify. See [how to generate a HMAC key](/platform/inbox/prepare-for-production#2-generate-hmac-hash-on-the-server-side).
 
 <Note>
   Your webhook URL endpoint must be able to accept `POST` requests.
 </Note>
 
-### Step 2: Connect Push Webhook to Novu
+### Step 2: Connect Push Webhook to Notify
 
-Next, add these keys to your Push Webhook integration in the Novu dashboard:
+Next, add these keys to your Push Webhook integration in the Notify dashboard:
 
 <Steps>
-  <Step title="Log in to the Novu dashboard">
-    Open the [Novu Dashboard](https://dashboard.novu.co).
+  <Step title="Log in to the Notify dashboard">
+    Open the [Notify Dashboard](https://dashboard.novu.co).
   </Step>
 
 <Step title="Open Integration Store">
-    On the Novu dashboard, navigate to the **Integration Store**.
+    On the Notify dashboard, navigate to the **Integration Store**.
   </Step>
 
 <Step title="Connect a provider">
@@ -47,7 +47,7 @@ Next, add these keys to your Push Webhook integration in the Novu dashboard:
 <Step title="Fill in integration fields">
     * **Webhook URL:** The endpoint URL that you prepared in Step 1.
     * **Secret HMAC Key:** The secret key used to sign webhook calls.
-    ![Push Webhook Integration in Novu](/images/channels-and-providers/push/push-webhook/push-webhook-integration.png)
+    ![Push Webhook Integration in Notify](/images/channels-and-providers/push/push-webhook/push-webhook-integration.png)
   </Step>
 
 <Step title="Create the integration">
@@ -55,7 +55,7 @@ Next, add these keys to your Push Webhook integration in the Novu dashboard:
   </Step>
 </Steps>
 
-## Using Push Webhook with Novu
+## Using Push Webhook with Notify
 
 Once configured, you must register a device token for your subscriber and trigger a workflow.
 
@@ -68,10 +68,10 @@ Any random string can be used as a device token. This token is included in the w
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
-import { ChatOrPushProviderEnum } from "@novu/api/models/components";
+import { Notify } from '@notify/api';
+import { ChatOrPushProviderEnum } from "@notify/api/models/components";
 
-const novu = new Novu({ secretKey: "<NOVU_SECRET_KEY>" });
+const notify = new Notify({ secretKey: "<NOVU_SECRET_KEY>" });
 
 await novu.subscribers.credentials.update(
   {
@@ -87,9 +87,9 @@ await novu.subscribers.credentials.update(
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.subscribers.credentials.update(
         subscriber_id="subscriberId",
         update_subscriber_channel_request_dto={
@@ -123,10 +123,10 @@ res, err := s.Subscribers.Credentials.Update(context.Background(), "subscriberId
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 
 $sdk->subscribersCredentials->update(
     subscriberId: 'subscriberId',
@@ -142,8 +142,8 @@ $sdk->subscribersCredentials->update(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
@@ -161,11 +161,11 @@ await sdk.Subscribers.Credentials.UpdateAsync(
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 import java.util.List;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 
 novu.subscribers().credentials().update()
     .subscriberId("subscriberId")
@@ -201,16 +201,16 @@ curl -L -X PUT 'https://api.novu.co/v1/subscribers/<SUBSCRIBER_ID>/credentials' 
 
 ### Step 2: Send a notification
 
-Now you're ready to send a push notification. [Create a workflow with a Push step](/platform/workflow/create-a-workflow) and trigger it. Novu sends the notification payload to the webhook URL that you configured.
+Now you're ready to send a push notification. [Create a workflow with a Push step](/platform/workflow/create-a-workflow) and trigger it. Notify sends the notification payload to the webhook URL that you configured.
 
-The example below demonstrates a simple trigger using Novu’s SDK.
+The example below demonstrates a simple trigger using Notify’s SDK.
 
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({ secretKey: "<NOVU_SECRET_KEY>" });
+const notify = new Notify({ secretKey: "<NOVU_SECRET_KEY>" });
 
 await novu.trigger({
   workflowId: "workflowId",
@@ -225,9 +225,9 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="workflowId",
         to={"subscriber_id": "SUBSCRIBER_ID"},
@@ -262,10 +262,10 @@ res, err := s.Trigger(context.Background(), components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 
 $sdk->trigger(
     triggerEventRequestDto: new Components\TriggerEventRequestDto(
@@ -280,8 +280,8 @@ $sdk->trigger(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
 
@@ -296,10 +296,10 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto() {
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 
 novu.trigger()
     .body(TriggerEventRequestDto.builder()
@@ -330,9 +330,9 @@ curl --location 'https://api.novu.co/v1/events/trigger' \
   </Tab>
 </Tabs>
 
-## Payload sent by Novu to webhook URL
+## Payload sent by Notify to webhook URL
 
-When you trigger a workflow, Novu sends a `POST` request to your webhook URL with a JSON body similar to the one below.
+When you trigger a workflow, Notify sends a `POST` request to your webhook URL with a JSON body similar to the one below.
 
 The payload includes:
 * The `title` and `content` from your workflow editor.
@@ -395,7 +395,7 @@ The payload includes:
 
 ## Checking authenticity
 
-If you provided a secret HMAC key during configuration, then Novu will include a `x-novu-signature` header in the request. You can use this header to verify that the request is from Novu and not a malicious third party.
+If you provided a secret HMAC key during configuration, then Notify will include a `x-notify-signature` header in the request. You can use this header to verify that the request is from Notify and not a malicious third party.
 
 Here is an example of how to validate the hash:
 
@@ -408,7 +408,7 @@ const secretKey = 'YOUR_HMAC_SECRET_KEY';
 // function to handle webhook url route request
 async function acceptNovuPushWebHookRequest(request, response) {
   const payloadSentByNovu = request.body;
-  const hmacHashSentByNovu = request.headers['x-novu-signature'];
+  const hmacHashSentByNovu = request.headers['x-notify-signature'];
 
 const actualHashValue = crypto
     .createHmac('sha256', secretKey)
@@ -417,7 +417,7 @@ const actualHashValue = crypto
 
 if (hmacHashSentByNovu === actualHashValue) {
     // handle the notification
-    console.log('Request sent by Novu');
+    console.log('Request sent by Notify');
   } else {
     throw new Error('Not a valid request');
   }

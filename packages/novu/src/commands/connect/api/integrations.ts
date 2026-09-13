@@ -2,7 +2,7 @@ import {
   AgentRuntimeProviderIdEnum,
   type WhatsAppEmbeddedSignupUnavailableReason,
   type WhatsAppSignupLinkStatus,
-} from '@novu/shared';
+} from '@notify/shared';
 import type { ConnectApiClient } from './client';
 import { NovuApiError } from './client';
 

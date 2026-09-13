@@ -4,8 +4,8 @@ import {
   encryptChannelEndpoint,
   InstrumentUsecase,
   validateEndpointForType,
-} from '@novu/application-generic';
-import { ChannelEndpointEntity, ChannelEndpointRepository } from '@novu/dal';
+} from '@notify/application-generic';
+import { ChannelEndpointEntity, ChannelEndpointRepository } from '@notify/dal';
 import { UpdateChannelEndpointCommand } from './update-channel-endpoint.command';
 
 @Injectable()

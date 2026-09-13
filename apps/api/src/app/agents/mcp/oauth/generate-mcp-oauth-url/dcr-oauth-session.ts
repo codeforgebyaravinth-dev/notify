@@ -1,7 +1,7 @@
 import { isIP } from 'node:net';
-import { decryptMcpConnectionOAuthClient, isPrivateIp } from '@novu/application-generic';
-import { McpConnectionEntity, McpConnectionOAuthClient } from '@novu/dal';
-import { McpConnectionAuthModeEnum, McpConnectionStatusEnum } from '@novu/shared';
+import { decryptMcpConnectionOAuthClient, isPrivateIp } from '@notify/application-generic';
+import { McpConnectionEntity, McpConnectionOAuthClient } from '@notify/dal';
+import { McpConnectionAuthModeEnum, McpConnectionStatusEnum } from '@notify/shared';
 
 import { buildMcpOAuthRedirectUri } from './mcp-oauth-state';
 import { pickReusableOAuthClient } from './pick-reusable-oauth-client';

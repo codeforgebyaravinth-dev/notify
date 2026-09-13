@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import type { AgentEventEnvelope } from '@novu/agent-event-protocol';
-import { PinoLogger, shortId, WebSocketsQueueService } from '@novu/application-generic';
+import type { AgentEventEnvelope } from '@notify/agent-event-protocol';
+import { PinoLogger, shortId, WebSocketsQueueService } from '@notify/application-generic';
 import {
   conversationIdFromThreadId,
   extractCardPlainText,
@@ -9,9 +9,9 @@ import {
   type WebChatDeliverMessageResult,
   type WebChatEditMessageParams,
   type WebChatStartTypingParams,
-} from '@novu/chat-adapter-web';
-import { type ConversationEntity, ConversationParticipantTypeEnum, SubscriberRepository } from '@novu/dal';
-import { WebSocketEventEnum } from '@novu/shared';
+} from '@notify/chat-adapter-web';
+import { type ConversationEntity, ConversationParticipantTypeEnum, SubscriberRepository } from '@notify/dal';
+import { WebSocketEventEnum } from '@notify/shared';
 import type { CardElement } from 'chat';
 import type { ResolvedAgentConfig } from '../channels/agent-config-resolver.service';
 import { AgentConversationService } from '../conversation-runtime/conversation/agent-conversation.service';
@@ -25,7 +25,7 @@ export type WebChatPlatformDeliveryContext = {
 };
 
 /**
- * Nest-owned platform callbacks for `@novu/chat-adapter-web`. Web has no
+ * Nest-owned platform callbacks for `@notify/chat-adapter-web`. Web has no
  * external platform, so this layer *is* the platform: it resolves the
  * conversation from the thread id, emits the live WS envelope, and reports
  * `{ messageId, sequence }` upward through {@link OutboundDeliveryInfo}.

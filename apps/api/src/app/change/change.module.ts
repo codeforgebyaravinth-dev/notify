@@ -16,8 +16,8 @@ import { PromoteNotificationTemplateChange } from './usecases/promote-notificati
 const enterpriseImports = (): Array<Type | DynamicModule | Promise<DynamicModule> | ForwardReference> => {
   const modules: Array<Type | DynamicModule | Promise<DynamicModule> | ForwardReference> = [];
   if (process.env.NOVU_ENTERPRISE === 'true' || process.env.CI_EE_TEST === 'true') {
-    if (require('@novu/ee-translation')?.EnterpriseTranslationModule) {
-      modules.push(require('@novu/ee-translation')?.EnterpriseTranslationModule);
+    if (require('@notify/ee-translation')?.EnterpriseTranslationModule) {
+      modules.push(require('@notify/ee-translation')?.EnterpriseTranslationModule);
     }
   }
 

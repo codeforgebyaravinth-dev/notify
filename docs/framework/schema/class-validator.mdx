@@ -1,9 +1,9 @@
 ---
 title: "Class Validator"
-description: "Integrate class-validator with Novu Framework to validate workflow payload and step control schemas using TypeScript class decorators."
+description: "Integrate class-validator with Notify Framework to validate workflow payload and step control schemas using TypeScript class decorators."
 ---
 
-Novu Framework allows you to use [Class Validator](https://www.npmjs.com/package/class-validator) to define the [Control](/framework/controls) and [Payload](/framework/payload) schemas for your workflows.
+Notify Framework allows you to use [Class Validator](https://www.npmjs.com/package/class-validator) to define the [Control](/framework/controls) and [Payload](/framework/payload) schemas for your workflows.
 
 ## Add class validator to your project
 
@@ -13,7 +13,7 @@ Novu Framework allows you to use [Class Validator](https://www.npmjs.com/package
         npm install class-validator class-validator-jsonschema reflect-metadata
         ```
 
-        Novu requires the `class-validator-jsonschema` package to generate JSON schemas from your DTOs. You may also need the `reflect-metadata` package.
+        Notify requires the `class-validator-jsonschema` package to generate JSON schemas from your DTOs. You may also need the `reflect-metadata` package.
     </Step>
     <Step title="Use Class Validator in your workflow">
         After installation, the Class Validator DTOs can be used interchangeably with the `controlSchema` and `payloadSchema` options in your workflow definitions.
@@ -70,7 +70,7 @@ Novu Framework allows you to use [Class Validator](https://www.npmjs.com/package
 
 ## Controls and Payload UI
 
-When you define a `controlSchema` for a step, Novu will automatically generate a UI for the controls in the workflow editor.
+When you define a `controlSchema` for a step, Notify will automatically generate a UI for the controls in the workflow editor.
 
 - **Form Input Title** - Will be derived from the key of the Class Validator schema. Unfortunately Class Validator does not support custom titles at this point.
 - **Form Input Type** - Will be derived from the Class Validator schema type, with support for `string`, `number`, `boolean`, and `enum` and `array` types.

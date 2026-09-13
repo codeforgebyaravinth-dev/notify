@@ -1,4 +1,4 @@
-import { StepResponseDto, WorkflowResponseDto } from '@novu/application-generic';
+import { StepResponseDto, WorkflowResponseDto } from '@notify/application-generic';
 import { IResourceDiff } from '../../../types/sync.types';
 
 export type INormalizedWorkflow = Omit<

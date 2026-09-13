@@ -1,5 +1,5 @@
-import { IntegrationRepository } from '@novu/dal';
-import { UserSession } from '@novu/testing';
+import { IntegrationRepository } from '@notify/dal';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Deactivate Integration #novu-v2', () => {

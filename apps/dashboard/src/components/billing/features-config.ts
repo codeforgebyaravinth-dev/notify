@@ -1,4 +1,4 @@
-import { ApiServiceLevelEnum, FeatureNameEnum, getFeatureForTierAsText } from '@novu/shared';
+import { ApiServiceLevelEnum, FeatureNameEnum, getFeatureForTierAsText } from '@notify/shared';
 
 export interface PlanFeature {
   text: string;

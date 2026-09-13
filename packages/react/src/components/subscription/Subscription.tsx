@@ -1,4 +1,4 @@
-import { SubscriptionLocalization } from '@novu/js/ui';
+import { SubscriptionLocalization } from '@notify/js/ui';
 import React, { useMemo } from 'react';
 import { useNovu } from '../../hooks/NovuProvider';
 import { ReactSubscriptionAppearance } from '../../utils/types';

@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException, UnauthorizedException } from '@nestjs/common';
-import { GetDecryptedIntegrations } from '@novu/application-generic';
-import { EnvironmentRepository, IntegrationRepository } from '@novu/dal';
-import { ChatProviderIdEnum } from '@novu/shared';
+import { GetDecryptedIntegrations } from '@notify/application-generic';
+import { EnvironmentRepository, IntegrationRepository } from '@notify/dal';
+import { ChatProviderIdEnum } from '@notify/shared';
 import { createHmac } from 'crypto';
 import { buildAgentApiRootUrl } from '../../../agents/shared/util/agent-api-root-url';
 import { areHexDigestsEqual } from '../../../shared/helpers/timing-safe-equal';

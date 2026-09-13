@@ -4,7 +4,7 @@ import {
   CommunityUserRepository,
   EnvironmentRepository,
   IntegrationRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   ApiServiceLevelEnum,
   ChannelTypeEnum,
@@ -15,8 +15,8 @@ import {
   JobTitleEnum,
   MemberRoleEnum,
   SmsProviderIdEnum,
-} from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Create Organization - /organizations (POST) #novu-v0-os', async () => {

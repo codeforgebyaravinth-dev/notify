@@ -1,6 +1,6 @@
 ---
 title: 'Laravel'
-description: "Connect a Laravel application to Novu with the official PHP server SDK to trigger workflows, manage subscribers, and send notifications from PHP."
+description: "Connect a Laravel application to Notify with the official PHP server SDK to trigger workflows, manage subscribers, and send notifications from PHP."
 ---
 
 <Warning>
@@ -8,14 +8,14 @@ description: "Connect a Laravel application to Novu with the official PHP server
   repository](https://github.com/novuhq/novu-laravel).
 </Warning>
 
-Novu's Laravel SDK provides simple, yet comprehensive notification management, and delivery capabilities through multiple channels that you can implement using code that integrates seamlessly with your Laravel application.
+Notify's Laravel SDK provides simple, yet comprehensive notification management, and delivery capabilities through multiple channels that you can implement using code that integrates seamlessly with your Laravel application.
 
 [Explore the source code on GitHub](https://github.com/novuhq/novu-laravel)
 
 ## Installation
 
 ```php
-composer require novu/novu-laravel
+composer require notify/notify-laravel
 ```
 
 <Note>
@@ -26,9 +26,9 @@ composer require novu/novu-laravel
 ## Usage
 
 ```php
-use Novu\Laravel\Facades\Novu;
+use Notify\Laravel\Facades\Notify;
 
-$response = Novu::triggerEvent([
+$response = Notify::triggerEvent([
     'name' => '<WORKFLOW_TRIGGER_IDENTIFIER_FROM_DASHBOARD>',
     'payload' => ['customVariables' => 'Hello'],
     'to' => [
@@ -37,8 +37,8 @@ $response = Novu::triggerEvent([
     ]
 ])->toArray();
 
-// or you can use the novu() helper function like so:
-novu()->triggerEvent([
+// or you can use the notify() helper function like so:
+notify()->triggerEvent([
     'name' => '<WORKFLOW_TRIGGER_IDENTIFIER_FROM_DASHBOARD>',
     'payload' => ['customVariables' => 'Hello'],
     'to' => [

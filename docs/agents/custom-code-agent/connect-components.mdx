@@ -4,14 +4,14 @@ description: 'Use prebuilt React components so your users can install and connec
 ---
 
 
-Novu provides pre-built UI components for chat platforms like Slack, Microsoft Teams, Telegram and other communication platforms. Add these components so users can install the communication platform app in their workspace and connect it to your agent.
+Notify provides pre-built UI components for chat platforms like Slack, Microsoft Teams, Telegram and other communication platforms. Add these components so users can install the communication platform app in their workspace and connect it to your agent.
 
 ## Slack connect button
 
-`SlackConnectButton` is a pre-built UI component in the `@novu/react` SDK that connects an agent to a Slack workspace. Check out the example below.
+`SlackConnectButton` is a pre-built UI component in the `@notify/react` SDK that connects an agent to a Slack workspace. Check out the example below.
 
 ```tsx
-import { SlackConnectButton } from '@novu/react';
+import { SlackConnectButton } from '@notify/react';
 
 const SlackConnectButtonComponent = () => {
   const subscriberId = 'subscriber-id';
@@ -44,13 +44,13 @@ export default SlackConnectButtonComponent;
 ```
 
 <Prompt description="Add SlackConnectButton to my app" icon="plug" actions={["copy", "cursor"]}>
-Add the Novu SlackConnectButton from @novu/react to my app so each of my end users can connect "YOUR_AGENT_NAME" to their own Slack workspace.
+Add the Notify SlackConnectButton from @notify/react to my app so each of my end users can connect "YOUR_AGENT_NAME" to their own Slack workspace.
 
-Context: The Slack integration already exists in Novu. This is purely a frontend code integration - do NOT run the Novu CLI or the agent-onboarding flow.
+Context: The Slack integration already exists in Notify. This is purely a frontend code integration - do NOT run the Notify CLI or the agent-onboarding flow.
 
 Requirements:
-- Install @novu/react with my project's package manager.
-- Render `<SlackConnectButton />` inside a `<NovuProvider>` configured for the currently signed-in end user.
+- Install @notify/react with my project's package manager.
+- Render `<SlackConnectButton />` inside a `<NotifyProvider>` configured for the currently signed-in end user.
 - Use applicationIdentifier="YOUR_APPLICATION_IDENTIFIER" and integrationIdentifier="YOUR_INTEGRATION_IDENTIFIER" with connectionMode="subscriber". Store applicationIdentifier in an environment variable rather than hardcoding it.
 - In subscriber mode each user gets their own connection, so pass the authenticated user's id as subscriberId - source it from my app's existing auth, don't hardcode it.
 - Follow my app's existing framework, routing, styling, and TypeScript conventions, place the button in a sensible spot in the UI, and add no unnecessary wrappers.
@@ -81,17 +81,17 @@ Optional reference: https://docs.novu.co/agents/custom-code-agent/connect-compon
 
 ## Microsoft Teams connect button
 
-`MsTeamsConnectButton` is a pre-built UI component in the `@novu/react` SDK that connects an agent to a user's Microsoft Teams. In subscriber mode, `autoLinkUser` defaults to `true` so the per-user Teams identity is linked after admin consent.
+`MsTeamsConnectButton` is a pre-built UI component in the `@notify/react` SDK that connects an agent to a user's Microsoft Teams. In subscriber mode, `autoLinkUser` defaults to `true` so the per-user Teams identity is linked after admin consent.
 
 ```tsx
-import { NovuProvider, MsTeamsConnectButton } from '@novu/react';
+import { NotifyProvider, MsTeamsConnectButton } from '@notify/react';
 
 const MsTeamsConnectButtonComponent = () => {
   const subscriberId = 'subscriber-id';
   const integrationIdentifier = 'msteams-integration-identifier';
 
   return (
-    <NovuProvider subscriberId={subscriberId} applicationIdentifier="application-identifier">
+    <NotifyProvider subscriberId={subscriberId} applicationIdentifier="application-identifier">
       <MsTeamsConnectButton
         integrationIdentifier={integrationIdentifier}
         connectionMode="subscriber"
@@ -105,7 +105,7 @@ const MsTeamsConnectButtonComponent = () => {
           console.error(error);
         }}
       />
-    </NovuProvider>
+    </NotifyProvider>
   );
 };
 
@@ -113,13 +113,13 @@ export default MsTeamsConnectButtonComponent;
 ```
 
 <Prompt description="Add MsTeamsConnectButton to my app" icon="plug" actions={["copy", "cursor"]}>
-Add the Novu MsTeamsConnectButton from @novu/react to my app so each of my end users can connect "YOUR_AGENT_NAME" to their own Microsoft Teams.
+Add the Notify MsTeamsConnectButton from @notify/react to my app so each of my end users can connect "YOUR_AGENT_NAME" to their own Microsoft Teams.
 
-Context: The Microsoft Teams integration already exists in Novu. This is purely a frontend code integration - do NOT run the Novu CLI or the agent-onboarding flow.
+Context: The Microsoft Teams integration already exists in Notify. This is purely a frontend code integration - do NOT run the Notify CLI or the agent-onboarding flow.
 
 Requirements:
-- Install @novu/react with my project's package manager.
-- Render `<MsTeamsConnectButton />` inside a `<NovuProvider>` configured for the currently signed-in end user.
+- Install @notify/react with my project's package manager.
+- Render `<MsTeamsConnectButton />` inside a `<NotifyProvider>` configured for the currently signed-in end user.
 - Use applicationIdentifier="YOUR_APPLICATION_IDENTIFIER" and integrationIdentifier="YOUR_INTEGRATION_IDENTIFIER" with connectionMode="subscriber". Store applicationIdentifier in an environment variable rather than hardcoding it.
 - In subscriber mode each user gets their own connection, so pass the authenticated user's id as subscriberId - source it from my app's existing auth, don't hardcode it. autoLinkUser defaults to true in subscriber mode.
 - Follow my app's existing framework, routing, styling, and TypeScript conventions, place the button in a sensible spot in the UI, and add no unnecessary wrappers.
@@ -135,7 +135,7 @@ Optional reference: https://docs.novu.co/agents/custom-code-agent/connect-compon
 | --- | --- | --- |
 | `integrationIdentifier` | `string` | Required. Identifier of the Teams integration. |
 | `connectionIdentifier` | `string` | Optional. Stable id for the connection. |
-| `subscriberId` | `string` | Optional. Defaults to the `NovuProvider` subscriber. |
+| `subscriberId` | `string` | Optional. Defaults to the `NotifyProvider` subscriber. |
 | `connectionMode` | `ConnectionMode` | e.g. `subscriber`. |
 | `autoLinkUser` | `boolean` | Defaults to `true` in subscriber mode. |
 | `onConnectSuccess` | `(connectionIdentifier: string) => void` | Called with the connection identifier after consent succeeds. |
@@ -151,19 +151,19 @@ If auto-link fails after admin consent, use `MsTeamsLinkUser` as a follow-up. Ch
 
 ## Telegram connect button
 
-`TelegramConnectButton` is a pre-built UI component in the `@novu/react` SDK that links a subscriber's Telegram chat to your agent. It authenticates with the subscriber JWT from `NovuProvider`, so no secret key is exposed in the browser.
+`TelegramConnectButton` is a pre-built UI component in the `@notify/react` SDK that links a subscriber's Telegram chat to your agent. It authenticates with the subscriber JWT from `NotifyProvider`, so no secret key is exposed in the browser.
 
 When clicked, the button issues a `t.me/<bot>?start=<code>` deep link, opens it in a new tab, and polls until the subscriber presses **Start** in Telegram. Clicking again while connected disconnects the chat.
 
 ```tsx
-import { NovuProvider, TelegramConnectButton } from '@novu/react';
+import { NotifyProvider, TelegramConnectButton } from '@notify/react';
 
 const TelegramConnectButtonComponent = () => {
   const subscriberId = 'subscriber-id';
   const integrationIdentifier = 'telegram-integration-identifier';
 
   return (
-    <NovuProvider subscriberId={subscriberId} applicationIdentifier="application-identifier">
+    <NotifyProvider subscriberId={subscriberId} applicationIdentifier="application-identifier">
       <TelegramConnectButton
         integrationIdentifier={integrationIdentifier}
         connectLabel="Connect Telegram"
@@ -178,7 +178,7 @@ const TelegramConnectButtonComponent = () => {
           // Handle disconnect
         }}
       />
-    </NovuProvider>
+    </NotifyProvider>
   );
 };
 
@@ -186,13 +186,13 @@ export default TelegramConnectButtonComponent;
 ```
 
 <Prompt description="Add TelegramConnectButton to my app" icon="plug" actions={["copy", "cursor"]}>
-Add the Novu TelegramConnectButton from @novu/react to my app so each of my end users can connect "YOUR_AGENT_NAME" to their own Telegram chat.
+Add the Notify TelegramConnectButton from @notify/react to my app so each of my end users can connect "YOUR_AGENT_NAME" to their own Telegram chat.
 
-Context: The Telegram integration already exists in Novu. This is purely a frontend code integration - do NOT run the Novu CLI or the agent-onboarding flow.
+Context: The Telegram integration already exists in Notify. This is purely a frontend code integration - do NOT run the Notify CLI or the agent-onboarding flow.
 
 Requirements:
-- Install @novu/react with my project's package manager.
-- Render `<TelegramConnectButton />` inside a `<NovuProvider>` configured for the currently signed-in end user.
+- Install @notify/react with my project's package manager.
+- Render `<TelegramConnectButton />` inside a `<NotifyProvider>` configured for the currently signed-in end user.
 - Use applicationIdentifier="YOUR_APPLICATION_IDENTIFIER" and integrationIdentifier="YOUR_INTEGRATION_IDENTIFIER". Store applicationIdentifier in an environment variable rather than hardcoding it.
 - Pass the authenticated user's id as subscriberId - source it from my app's existing auth, don't hardcode it.
 - Follow my app's existing framework, routing, styling, and TypeScript conventions, place the button in a sensible spot in the UI, and add no unnecessary wrappers.
@@ -207,7 +207,7 @@ Optional reference: https://docs.novu.co/agents/custom-code-agent/connect-compon
 | Property | Type | Description |
 | --- | --- | --- |
 | `integrationIdentifier` | `string` | Required. Identifier of the Telegram integration to link against. |
-| `subscriberId` | `string` | Optional. Subscriber to link. Defaults to the `NovuProvider` subscriber. |
+| `subscriberId` | `string` | Optional. Subscriber to link. Defaults to the `NotifyProvider` subscriber. |
 | `onConnectSuccess` | `(endpointIdentifier: string) => void` | Called once the Telegram chat endpoint is detected. |
 | `onConnectError` | `(error: unknown) => void` | Called when issuing the link fails or polling times out. |
 | `onDisconnectSuccess` | `() => void` | Called after the chat endpoint is removed. |

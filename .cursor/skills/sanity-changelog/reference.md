@@ -37,7 +37,7 @@ Look at recent posts for voice + structure:
 
 ### Snapshot (verify before use — may drift)
 
-- Categories: `Dashboard` `c35549e4-0fa3-45ca-aa88-67bf2c93fc51`, `New Feature` `8979aa18-c496-43fd-acb8-d1f75ac80034`, `Improvement` `4dc00b28-34f9-46c5-a38e-e9f639e956a9`, `Bug Fix` `ccd3b8dd-fdce-4a49-b46d-42922e7ac2c4`, `Chat` `92f4f918-6ca0-4fc2-961f-7808fc5d4e0a`, `Email` `07ef612e-934a-4746-ab52-00d626f6df1e`, `Slack` `c2e41136-141f-4ac2-bd9f-cfd4e68ce09c`, `MCP` `7b34c994-a190-48eb-bebc-dc6f1bb45ef4`, `@novu/react` `68633a07-04e2-4cda-96be-e8777b68692c`, `@novu/js` `8056885d-2a08-4f98-8a8c-364578b87f90`.
+- Categories: `Dashboard` `c35549e4-0fa3-45ca-aa88-67bf2c93fc51`, `New Feature` `8979aa18-c496-43fd-acb8-d1f75ac80034`, `Improvement` `4dc00b28-34f9-46c5-a38e-e9f639e956a9`, `Bug Fix` `ccd3b8dd-fdce-4a49-b46d-42922e7ac2c4`, `Chat` `92f4f918-6ca0-4fc2-961f-7808fc5d4e0a`, `Email` `07ef612e-934a-4746-ab52-00d626f6df1e`, `Slack` `c2e41136-141f-4ac2-bd9f-cfd4e68ce09c`, `MCP` `7b34c994-a190-48eb-bebc-dc6f1bb45ef4`, `@notify/react` `68633a07-04e2-4cda-96be-e8777b68692c`, `@notify/js` `8056885d-2a08-4f98-8a8c-364578b87f90`.
 - `tag` documents (used by `changeBlock` items): React, Node.js, Notifications, WebSockets, Open Source, Tutorial. Broad — only apply when clearly relevant.
 
 ## Portable Text cheat sheet
@@ -116,7 +116,7 @@ For "improvements & fixes since the last release":
 
 ### Include (customer-relevant)
 
-Bug fixes and UX/product improvements a customer would notice: dashboard, Inbox, workflow editor, API correctness, subscriber/preferences, delivery/providers (email/SMS/push/chat), SDKs (`@novu/react`, `@novu/js`, `@novu/api`), agents product. Customer-facing reliability/perf fixes count.
+Bug fixes and UX/product improvements a customer would notice: dashboard, Inbox, workflow editor, API correctness, subscriber/preferences, delivery/providers (email/SMS/push/chat), SDKs (`@notify/react`, `@notify/js`, `@notify/api`), agents product. Customer-facing reliability/perf fixes count.
 
 ### Exclude
 

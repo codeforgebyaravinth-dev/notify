@@ -1,7 +1,7 @@
 // August 14th, 2023
 
-import { LayoutRepository, OrganizationRepository } from '@novu/dal';
-import { slugify } from '@novu/shared';
+import { LayoutRepository, OrganizationRepository } from '@notify/dal';
+import { slugify } from '@notify/shared';
 import shortid from 'shortid';
 
 export async function addLayoutIdentifierMigration() {

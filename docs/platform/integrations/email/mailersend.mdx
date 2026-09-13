@@ -1,28 +1,28 @@
 ---
-title: "MailerSend Email Integration with Novu"
+title: "MailerSend Email Integration with Notify"
 sidebarTitle: 'MailerSend'
-description: "Connect MailerSend to Novu to send transactional emails through workflows. Store your MailerSend API token and verified domain sender in the Novu dashboard."
+description: "Connect MailerSend to Notify to send transactional emails through workflows. Store your MailerSend API token and verified domain sender in the Notify dashboard."
 ---
 
 [MailerSend](https://www.mailersend.com/) is an email delivery service that allows you to send emails from your application.
 
 ## Getting Started
 
-To use the MailerSend provider in the email channel, you will need to create a MailerSend account and add your API key to the MailerSend integration on the Novu platform. To generate the API token go visit the [MailerSend API Tokens](https://www.mailersend.com/help/managing-api-tokens) page.
+To use the MailerSend provider in the email channel, you will need to create a MailerSend account and add your API key to the MailerSend integration on the Notify platform. To generate the API token go visit the [MailerSend API Tokens](https://www.mailersend.com/help/managing-api-tokens) page.
 
-## Creating the MailerSend integration with Novu
+## Creating the MailerSend integration with Notify
 
-- Visit the [Integrations](https://dashboard.novu.co/integrations?utm_campaign=docs-mailersend) page on Novu.
+- Visit the [Integrations](https://dashboard.novu.co/integrations?utm_campaign=docs-mailersend) page on Notify.
 - Click on Add a Provider.
 - Select MailerSend service.
 - Enter the API key.
 - Click on the `Disabled` button and mark it as `Active`.
 - Click on the **Update** button.
-- You should now be able to send notifications using MailerSend in Novu.
+- You should now be able to send notifications using MailerSend in Notify.
 
 ## Using MailerSend template
 
-Novu has its own email editor for writing email template. If you want to use pre made template from MailerSend, you can use `customData` filed of email overrides to send template details. Make sure your `Api Key` has enough permission to read and process the template.
+Notify has its own email editor for writing email template. If you want to use pre made template from MailerSend, you can use `customData` filed of email overrides to send template details. Make sure your `Api Key` has enough permission to read and process the template.
 
 <Note>
   sending `customData` field in overrides to send mailersend template will work only in following cases:
@@ -33,9 +33,9 @@ Novu has its own email editor for writing email template. If you want to use pre
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({ secretKey: "<NOVU_SECRET_KEY>" });
+const notify = new Notify({ secretKey: "<NOVU_SECRET_KEY>" });
 
 await novu.trigger({
   workflowId: "workflowId",
@@ -67,9 +67,9 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="workflowId",
         to={"subscriber_id": "subscriberId"},
@@ -138,10 +138,10 @@ res, err := s.Trigger(context.Background(), components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 
 $sdk->trigger(
     triggerEventRequestDto: new Components\TriggerEventRequestDto(
@@ -173,8 +173,8 @@ $sdk->trigger(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
 
@@ -206,10 +206,10 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto() {
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 
 novu.trigger()
     .body(TriggerEventRequestDto.builder()

@@ -1,12 +1,12 @@
 ---
 title: 'PHP SDK'
-description: "Connect a PHP application to Novu with the official server SDK to trigger workflows, manage subscribers, and send notifications from PHP code."
+description: "Connect a PHP application to Notify with the official server SDK to trigger workflows, manage subscribers, and send notifications from PHP code."
 ---
 
 
-Novu's PHP SDK provides simple, yet comprehensive notification management, and delivery capabilities through multiple channels that you can implement using code that integrates seamlessly with your PHP application.
+Notify's PHP SDK provides simple, yet comprehensive notification management, and delivery capabilities through multiple channels that you can implement using code that integrates seamlessly with your PHP application.
 
-[Explore the source code on GitHub](https://github.com/novuhq/php-novu)
+[Explore the source code on GitHub](https://github.com/novuhq/php-notify)
 
 ## Installation
 
@@ -27,10 +27,10 @@ declare(strict_types=1);
  
 require 'vendor/autoload.php';
  
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
  
-$sdk = novu\Novu::builder()
+$sdk = notify\Notify::builder()
     ->setSecurity(
         '<YOUR_SECRET_KEY_HERE>'
     )
@@ -52,7 +52,7 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
     ],
     overrides: [
         'email' => [
-            'bcc' => 'no-reply@novu.co',
+            'bcc' => 'no-reply@notify.co',
         ],
     ],
 );
@@ -74,10 +74,10 @@ declare(strict_types=1);
 
 require 'vendor/autoload.php';
 
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()
+$sdk = notify\Notify::builder()
     ->setServerURL('https://eu.api.novu.co')
     ->setSecurity(
         '<YOUR_SECRET_KEY_HERE>'
@@ -100,7 +100,7 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
     ],
     overrides: [
         'email' => [
-            'bcc' => 'no-reply@novu.co',
+            'bcc' => 'no-reply@notify.co',
         ],
     ],
 );

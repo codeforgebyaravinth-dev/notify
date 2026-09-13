@@ -1,5 +1,5 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { PinoLogger } from '@novu/application-generic';
+import { PinoLogger } from '@notify/application-generic';
 import { InboundEmailParseCommand } from './inbound-email-parse.command';
 import {
   InboundParseDroppedError,

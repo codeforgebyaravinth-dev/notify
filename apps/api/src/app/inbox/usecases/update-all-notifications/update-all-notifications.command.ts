@@ -1,4 +1,4 @@
-import { type TagsFilter } from '@novu/shared';
+import { type TagsFilter } from '@notify/shared';
 import { Type } from 'class-transformer';
 import { IsBoolean, IsDefined, IsOptional, IsString, ValidateNested } from 'class-validator';
 

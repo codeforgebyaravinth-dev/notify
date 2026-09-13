@@ -1,5 +1,5 @@
-import { IsValidContextPayload } from '@novu/application-generic';
-import { NotificationTemplateEntity } from '@novu/dal';
+import { IsValidContextPayload } from '@notify/application-generic';
+import { NotificationTemplateEntity } from '@notify/dal';
 import {
   AddressingTypeEnum,
   ContextPayload,
@@ -9,7 +9,7 @@ import {
   TriggerRecipientsPayload,
   TriggerRequestCategoryEnum,
   TriggerTenantContext,
-} from '@novu/shared';
+} from '@notify/shared';
 import { IsDefined, IsEnum, IsOptional, IsString, ValidateIf, ValidateNested } from 'class-validator';
 import { EnvironmentWithUserCommand } from '../../../shared/commands/project.command';
 

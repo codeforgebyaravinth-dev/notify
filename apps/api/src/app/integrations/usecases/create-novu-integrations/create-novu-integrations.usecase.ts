@@ -5,8 +5,8 @@ import {
   areNovuManagedClaudeCredentialsSet,
   areNovuSlackCredentialsSet,
   FeatureFlagsService,
-} from '@novu/application-generic';
-import { EnvironmentEntity, IntegrationRepository, OrganizationEntity, UserEntity } from '@novu/dal';
+} from '@notify/application-generic';
+import { EnvironmentEntity, IntegrationRepository, OrganizationEntity, UserEntity } from '@notify/dal';
 
 import {
   AgentRuntimeProviderIdEnum,
@@ -18,7 +18,7 @@ import {
   FeatureFlagsKeysEnum,
   InAppProviderIdEnum,
   IntegrationKindEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { CreateIntegrationCommand } from '../create-integration/create-integration.command';
 import { CreateIntegration } from '../create-integration/create-integration.usecase';
 import { SetIntegrationAsPrimaryCommand } from '../set-integration-as-primary/set-integration-as-primary.command';

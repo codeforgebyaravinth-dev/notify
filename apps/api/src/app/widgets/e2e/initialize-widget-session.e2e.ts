@@ -1,7 +1,7 @@
-import { createHash } from '@novu/application-generic';
-import { IntegrationRepository } from '@novu/dal';
-import { ChannelTypeEnum, InAppProviderIdEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { createHash } from '@notify/application-generic';
+import { IntegrationRepository } from '@notify/dal';
+import { ChannelTypeEnum, InAppProviderIdEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 // import { encryptApiKeysMigration } from '../../../../migrations/encrypt-api-keys/encrypt-api-keys-migration';

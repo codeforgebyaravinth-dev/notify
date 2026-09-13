@@ -25,8 +25,8 @@ import {
   UpdateSubscriberChannelCommand,
   UpdateSubscriberChannelRequestDto,
   UpdateSubscriberCommand,
-} from '@novu/application-generic';
-import { MessageEntity } from '@novu/dal';
+} from '@notify/application-generic';
+import { MessageEntity } from '@notify/dal';
 import {
   ApiRateLimitCategoryEnum,
   ApiRateLimitCostEnum,
@@ -36,7 +36,7 @@ import {
   PreferenceLevelEnum,
   TriggerTypeEnum,
   UserSessionData,
-} from '@novu/shared';
+} from '@notify/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import { UpdatePreferencesCommand } from '../inbox/usecases/update-preferences/update-preferences.command';

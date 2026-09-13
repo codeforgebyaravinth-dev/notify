@@ -1,4 +1,4 @@
-import { type IEnvironment } from '@novu/shared';
+import { type IEnvironment } from '@notify/shared';
 import { useCallback, useLayoutEffect, useMemo, useState } from 'react';
 import { matchPath, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useAuth } from '@/context/auth/hooks';

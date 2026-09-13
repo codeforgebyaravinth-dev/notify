@@ -1,4 +1,4 @@
-import { LAYOUT_CONTENT_VARIABLE } from '@novu/shared';
+import { LAYOUT_CONTENT_VARIABLE } from '@notify/shared';
 import { isAllowedAlias } from '@/components/maily/repeat-block-aliases';
 
 export type VariableMatch = {

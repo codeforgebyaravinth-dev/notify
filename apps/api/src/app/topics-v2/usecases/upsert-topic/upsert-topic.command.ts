@@ -1,4 +1,4 @@
-import { EnvironmentCommand } from '@novu/application-generic';
+import { EnvironmentCommand } from '@notify/application-generic';
 import { IsBoolean, IsNotEmpty, IsOptional, IsString, Length } from 'class-validator';
 
 export class UpsertTopicCommand extends EnvironmentCommand {

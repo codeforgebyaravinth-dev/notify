@@ -1,4 +1,4 @@
-import { ConversationParticipant, ConversationParticipantTypeEnum } from '@novu/dal';
+import { ConversationParticipant, ConversationParticipantTypeEnum } from '@notify/dal';
 import { AgentPlatformEnum } from '../../shared/enums/agent-platform.enum';
 
 export function recoverSubscriberParticipantId(participants: ConversationParticipant[]): string | null {

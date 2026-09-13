@@ -7,7 +7,7 @@ Create a channel endpoint to register a subscriber-specific delivery target (Sla
 
 ## `tool_webhook` variant
 
-Use type `tool_webhook` with a **Tool Webhook** integration configured for **Dynamic** routing. A subscriber may have **multiple** `tool_webhook` endpoints on the same integration — Novu delivers the Tool step once per endpoint.
+Use type `tool_webhook` with a **Tool Webhook** integration configured for **Dynamic** routing. A subscriber may have **multiple** `tool_webhook` endpoints on the same integration — Notify delivers the Tool step once per endpoint.
 
 | Field | Type | Description |
 | --- | --- | --- |
@@ -31,7 +31,7 @@ curl -L -X POST 'https://api.novu.co/v1/channel-endpoints' \
   "subscriberId": "user-123",
   "createSubscriberIfMissing": true,
   "endpoint": {
-    "url": "https://customer.example.com/hooks/novu",
+    "url": "https://customer.example.com/hooks/notify",
     "headers": { "Authorization": "Bearer token" },
     "method": "POST"
   }

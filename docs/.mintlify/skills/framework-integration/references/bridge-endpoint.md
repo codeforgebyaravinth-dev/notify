@@ -24,7 +24,7 @@ You may use any path. The full bridge URL becomes `<your-app-base-url><path>`. E
 
 ```typescript
 // app/api/novu/route.ts
-import { serve } from "@novu/framework/next";
+import { serve } from "@notify/framework/next";
 import { welcomeWorkflow } from "@/novu/workflows";
 
 export const { GET, POST, OPTIONS } = serve({
@@ -36,7 +36,7 @@ export const { GET, POST, OPTIONS } = serve({
 
 ```typescript
 // pages/api/novu.ts
-import { serve } from "@novu/framework/next";
+import { serve } from "@notify/framework/next";
 import { welcomeWorkflow } from "../../novu/workflows";
 
 export default serve({ workflows: [welcomeWorkflow] });
@@ -46,7 +46,7 @@ export default serve({ workflows: [welcomeWorkflow] });
 
 ```typescript
 import express from "express";
-import { serve } from "@novu/framework/express";
+import { serve } from "@notify/framework/express";
 import { welcomeWorkflow } from "./novu/workflows";
 
 const app = express();
@@ -62,7 +62,7 @@ app.listen(4000);
 
 ```typescript
 import { Module } from "@nestjs/common";
-import { NovuModule } from "@novu/framework/nest";
+import { NovuModule } from "@notify/framework/nest";
 import { welcomeWorkflow } from "./novu/workflows";
 
 @Module({
@@ -80,7 +80,7 @@ export class AppModule {}
 
 ```typescript
 import { Module } from "@nestjs/common";
-import { NovuModule } from "@novu/framework/nest";
+import { NovuModule } from "@notify/framework/nest";
 import { NotificationService } from "./notification.service";
 import { UserService } from "./user.service";
 
@@ -103,7 +103,7 @@ export class AppModule {}
 
 ```typescript
 import { Injectable } from "@nestjs/common";
-import { workflow } from "@novu/framework";
+import { workflow } from "@notify/framework";
 import { z } from "zod";
 import { UserService } from "./user.service";
 
@@ -134,7 +134,7 @@ export class NotificationService {
 
 ```typescript
 // app/routes/api.novu.ts
-import { serve } from "@novu/framework/remix";
+import { serve } from "@notify/framework/remix";
 import { welcomeWorkflow } from "../novu/workflows";
 
 const handler = serve({ workflows: [welcomeWorkflow] });
@@ -146,7 +146,7 @@ export { handler as action, handler as loader };
 
 ```typescript
 // src/routes/api/novu/+server.ts
-import { serve } from "@novu/framework/sveltekit";
+import { serve } from "@notify/framework/sveltekit";
 import { welcomeWorkflow } from "$lib/novu/workflows";
 
 export const { GET, POST, OPTIONS } = serve({ workflows: [welcomeWorkflow] });
@@ -156,7 +156,7 @@ export const { GET, POST, OPTIONS } = serve({ workflows: [welcomeWorkflow] });
 
 ```typescript
 // server/api/novu.ts
-import { serve } from "@novu/framework/nuxt";
+import { serve } from "@notify/framework/nuxt";
 import { welcomeWorkflow } from "~/novu/workflows";
 
 export default defineEventHandler(serve({ workflows: [welcomeWorkflow] }));
@@ -167,7 +167,7 @@ export default defineEventHandler(serve({ workflows: [welcomeWorkflow] }));
 ```typescript
 import { createApp, eventHandler, toNodeListener } from "h3";
 import { createServer } from "node:http";
-import { serve } from "@novu/framework/h3";
+import { serve } from "@notify/framework/h3";
 import { welcomeWorkflow } from "./novu/workflows";
 
 const app = createApp();
@@ -179,7 +179,7 @@ createServer(toNodeListener(app)).listen(4000);
 ## AWS Lambda
 
 ```typescript
-import { serve } from "@novu/framework/lambda";
+import { serve } from "@notify/framework/lambda";
 import { welcomeWorkflow } from "./novu/workflows";
 
 export const novu = serve({ workflows: [welcomeWorkflow] });
@@ -192,7 +192,7 @@ Wire `novu` to API Gateway / Lambda Function URL. Use a stable URL for the bridg
 If your framework isn't directly supported, wrap `NovuRequestHandler`:
 
 ```typescript
-import { NovuRequestHandler, ServeHandlerOptions } from "@novu/framework";
+import { NovuRequestHandler, ServeHandlerOptions } from "@notify/framework";
 import type { Request, Response } from "express";
 
 export const serve = (options: ServeHandlerOptions) => {

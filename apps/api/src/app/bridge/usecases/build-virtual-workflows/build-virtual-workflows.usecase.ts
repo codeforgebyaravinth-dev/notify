@@ -17,9 +17,9 @@ import {
   WorkflowForVariableSchema,
   WorkflowResponseDto,
   WorkflowWithPreferencesForMapper,
-} from '@novu/application-generic';
-import { DiscoverStepOutput, DiscoverWorkflowOutput } from '@novu/framework/internal';
-import { ResourceOriginEnum, ResourceTypeEnum, SeverityLevelEnum, StepTypeEnum, UserSessionData } from '@novu/shared';
+} from '@notify/application-generic';
+import { DiscoverStepOutput, DiscoverWorkflowOutput } from '@notify/framework/internal';
+import { ResourceOriginEnum, ResourceTypeEnum, SeverityLevelEnum, StepTypeEnum, UserSessionData } from '@notify/shared';
 import {
   buildDiscoveredWorkflowRawData,
   buildVirtualInternalId,

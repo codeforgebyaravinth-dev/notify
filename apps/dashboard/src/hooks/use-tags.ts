@@ -1,4 +1,4 @@
-import type { ITagsResponse } from '@novu/shared';
+import type { ITagsResponse } from '@notify/shared';
 import { useQuery } from '@tanstack/react-query';
 import { getTags } from '@/api/environments';
 import { useEnvironment } from '@/context/environment/hooks';

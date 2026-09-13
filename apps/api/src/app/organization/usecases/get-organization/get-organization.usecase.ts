@@ -1,5 +1,5 @@
 import { Injectable, Scope } from '@nestjs/common';
-import { OrganizationEntity, OrganizationRepository } from '@novu/dal';
+import { OrganizationEntity, OrganizationRepository } from '@notify/dal';
 import { GetOrganizationCommand } from './get-organization.command';
 
 @Injectable()

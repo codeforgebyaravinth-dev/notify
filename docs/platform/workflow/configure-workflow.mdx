@@ -1,6 +1,6 @@
 ---
 title: 'Configure Workflow'
-description: "Configure workflow metadata, delivery preferences, tags, and payload schemas from the Novu workflow editor to prepare notifications for triggering."
+description: "Configure workflow metadata, delivery preferences, tags, and payload schemas from the Notify workflow editor to prepare notifications for triggering."
 ---
 
 After creating a workflow, you are redirected to the workflow editor, where you configure workflow-level settings. You can also open any existing workflow from the Workflows page to access the editor.
@@ -29,7 +29,7 @@ Tags help keep things tidy and manageable for both you and your team and you can
 Tags can be used to:
 - Conditionally display notifications in the [`<Inbox />`](/platform/inbox/advanced-customization/conditional-display) or filter workflows in [`<Subscription />`](/platform/subscription/customize-and-configure#custom-preferences).
 - Filter and search for workflows in the dashboard.
-- [Retrieve](/api-reference/workflows/retrieve-a-workflow) or [list workflows](/api-reference/workflows/list-all-workflows) via the Novu API.
+- [Retrieve](/api-reference/workflows/retrieve-a-workflow) or [list workflows](/api-reference/workflows/list-all-workflows) via the Notify API.
 
 ### Add a workflow tag
 1. In the workflow editor, find the Tags field.
@@ -49,7 +49,7 @@ Workflow channel preferences let you set default channel preferences for subscri
 
 ### Critical workflows
 
-Novu allows you to mark a workflow as critical, this means that the notification sent from that workflow must always be delivered to the subscribers regardless of their personal preferences and they cannot change their preferences for this workflow.
+Notify allows you to mark a workflow as critical, this means that the notification sent from that workflow must always be delivered to the subscribers regardless of their personal preferences and they cannot change their preferences for this workflow.
 
 This is useful for high-priority notifications that are related to security, financial, or access-related information, where missing a message could have some consequences. 
 
@@ -62,11 +62,11 @@ Notification severity lets you classify workflows by importance, helping subscri
 - **Low**: General or informational notifications
 - **None**: The default level for all new and existing workflows
 
-You can set the severity for a workflow in the Novu dashboard by selecting a value from the **Notification severity** list.
+You can set the severity for a workflow in the Notify dashboard by selecting a value from the **Notification severity** list.
 
 ![Notification Severity](/images/workflows/configure-workflow/notification-severity.png)
 
-Severity levels affect how notifications appear in the Novu [`<Inbox />`](/platform/inbox). By default, severity controls visual cues such as color, icons, and the bell indicator, helping users prioritize messages at a glance:
+Severity levels affect how notifications appear in the Notify [`<Inbox />`](/platform/inbox). By default, severity controls visual cues such as color, icons, and the bell indicator, helping users prioritize messages at a glance:
 
 - **High**: Red hue
 - **Medium**: Orange hue
@@ -80,10 +80,10 @@ These default styles are [customizable](/platform/inbox/configuration/styling#st
 The Payload schema defines, manages, and validates the structure of data sent to a workflow. By defining a schema, you ensure that payload object, while triggering the workflow, is predictable, type-safe, and consistent across environments.
 
 <Note>
-  Novu’s payload schema is based on the [JSON Schema](https://json-schema.org/) standard.
+  Notify’s payload schema is based on the [JSON Schema](https://json-schema.org/) standard.
 </Note>
 
-The schema acts as a contract between your systems and Novu, defining which variables exist, how they are structured, and what validation rules apply. This gives your team a shared, explicit source of truth for workflow data.
+The schema acts as a contract between your systems and Notify, defining which variables exist, how they are structured, and what validation rules apply. This gives your team a shared, explicit source of truth for workflow data.
 
 You can reference payload schema fields in the template editor, action step configuration, and step conditions to insert dynamic content and build data-driven logic. Payload schemas are especially useful for complex workflows that rely on reusable components, dynamic payloads, or strict validation requirements
 
@@ -107,7 +107,7 @@ Each schema property includes the following fields:
 
 ### Define workflow schema
 
-Each property you define becomes part of the payload schema, and helps Novu suggest accurate variables when configuring channel steps or digest actions.
+Each property you define becomes part of the payload schema, and helps Notify suggest accurate variables when configuring channel steps or digest actions.
 You can define the expected payload schema in three ways:
 
 #### Manually
@@ -118,13 +118,13 @@ Manually define each property by specifying its name, type, and validation rules
 
 #### Import from JSON
 
-If you already have a sample payload, you can import it as a JSON object from the **Manage workflow schema** section. Novu automatically infers property names, types, and nested structures.
+If you already have a sample payload, you can import it as a JSON object from the **Manage workflow schema** section. Notify automatically infers property names, types, and nested structures.
 
 <video autoPlay loop muted playsInline src="/images/workflows/configure-workflow/import-payload.mp4" />
 
 #### Create an inline variable
 
-While adding notification content in the template editors, you can reference a variable that doesn’t exist in the schema (for example, `payload.title`). Novu will prompt you to create the variable inline and add it to your schema with a default type of `String`.
+While adding notification content in the template editors, you can reference a variable that doesn’t exist in the schema (for example, `payload.title`). Notify will prompt you to create the variable inline and add it to your schema with a default type of `String`.
 
 After creating the variable, you can edit it from the **Manage payload schema** directly in the template editor.
 
@@ -159,7 +159,7 @@ Additional options appear depending on the selected type:
 
 ### Enforce schema validation
 
-Schema validation is enabled per workflow. When enabled, Novu validates incoming payloads against the schema when the workflow is triggered.
+Schema validation is enabled per workflow. When enabled, Notify validates incoming payloads against the schema when the workflow is triggered.
 
 This means:
 - Missing required properties will cause the request to fail.

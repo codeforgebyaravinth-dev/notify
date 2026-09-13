@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { GetEnvironmentTags } from '@novu/application-generic';
+import { GetEnvironmentTags } from '@notify/application-generic';
 import { SharedModule } from '../shared/shared.module';
 import { WorkflowModule } from '../workflows-v2/workflow.module';
 import { EnvironmentsController } from './environments.controller';

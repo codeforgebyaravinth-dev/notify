@@ -1,5 +1,5 @@
-import { CompileEmailTemplate } from '@novu/application-generic';
-import type { IEmailOptions } from '@novu/shared';
+import { CompileEmailTemplate } from '@notify/application-generic';
+import type { IEmailOptions } from '@notify/shared';
 import { expect } from 'chai';
 
 function hasEmailOverrideRecipients(emailOverrides?: Record<string, unknown>): boolean {

@@ -3,6 +3,6 @@ import {
   CompileInAppTemplate,
   CompileStepTemplate,
   CompileTemplate,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 
 export const USE_CASES = [CompileTemplate, CompileEmailTemplate, CompileInAppTemplate, CompileStepTemplate];

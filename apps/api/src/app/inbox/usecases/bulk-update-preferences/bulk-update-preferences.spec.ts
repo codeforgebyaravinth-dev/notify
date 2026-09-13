@@ -1,12 +1,12 @@
 import { BadRequestException, NotFoundException, UnprocessableEntityException } from '@nestjs/common';
-import { AnalyticsService, FeatureFlagsService } from '@novu/application-generic';
+import { AnalyticsService, FeatureFlagsService } from '@notify/application-generic';
 import {
   ContextRepository,
   EnvironmentRepository,
   NotificationTemplateRepository,
   SubscriberRepository,
-} from '@novu/dal';
-import { FeatureFlagsKeysEnum, PreferenceLevelEnum, TriggerTypeEnum } from '@novu/shared';
+} from '@notify/dal';
+import { FeatureFlagsKeysEnum, PreferenceLevelEnum, TriggerTypeEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { UpdatePreferences } from '../update-preferences/update-preferences.usecase';

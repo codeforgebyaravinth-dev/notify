@@ -1,6 +1,6 @@
-import { FeedRepository, MessageTemplateRepository, NotificationTemplateRepository } from '@novu/dal';
-import { StepTypeEnum } from '@novu/shared';
-import { NotificationTemplateService, UserSession } from '@novu/testing';
+import { FeedRepository, MessageTemplateRepository, NotificationTemplateRepository } from '@notify/dal';
+import { StepTypeEnum } from '@notify/shared';
+import { NotificationTemplateService, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { CreateWorkflowRequestDto } from '../../workflows-v1/dtos';
 

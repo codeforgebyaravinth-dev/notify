@@ -10,9 +10,9 @@ import {
   WorkflowRun,
   WorkflowRunRepository,
   WorkflowRunStatusEnum,
-} from '@novu/application-generic';
-import { TopicSubscribersRepository } from '@novu/dal';
-import { SeverityLevelEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { TopicSubscribersRepository } from '@notify/dal';
+import { SeverityLevelEnum } from '@notify/shared';
 import { WorkflowRunStatusDtoEnum } from '../../dtos/shared.dto';
 import { GetWorkflowRunsDto, GetWorkflowRunsResponseDto } from '../../dtos/workflow-runs-response.dto';
 import { mapWorkflowRunStatusToDto } from '../../shared/mappers';

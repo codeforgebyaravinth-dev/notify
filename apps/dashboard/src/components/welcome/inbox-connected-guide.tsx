@@ -1,4 +1,4 @@
-import { IEnvironment } from '@novu/shared';
+import { IEnvironment } from '@notify/shared';
 import { motion } from 'motion/react';
 import { useEffect, useMemo } from 'react';
 import {

@@ -6,9 +6,9 @@ import {
   ConversationParticipantTypeEnum,
   ConversationRepository,
   ConversationStatusEnum,
-} from '@novu/dal';
-import { AgentSubscriberAccessEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/dal';
+import { AgentSubscriberAccessEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 /** Valid ObjectId shape required by conversation / activity schemas for `_integrationId`. */

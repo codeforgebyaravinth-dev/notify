@@ -1,4 +1,4 @@
-import { isClaudePlatformConsoleProvider, PermissionsEnum } from '@novu/shared';
+import { isClaudePlatformConsoleProvider, PermissionsEnum } from '@notify/shared';
 import { RiMore2Fill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import type { AgentResponse } from '@/api/agents';

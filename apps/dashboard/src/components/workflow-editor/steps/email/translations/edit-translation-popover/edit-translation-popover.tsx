@@ -1,4 +1,4 @@
-import { DEFAULT_LOCALE } from '@novu/shared';
+import { DEFAULT_LOCALE } from '@notify/shared';
 import React, { ComponentType, useCallback, useId, useState } from 'react';
 import { RiDeleteBin2Line, RiErrorWarningLine, RiListView, RiQuestionLine } from 'react-icons/ri';
 import { TranslateVariableIcon } from '@/components/icons/translate-variable';

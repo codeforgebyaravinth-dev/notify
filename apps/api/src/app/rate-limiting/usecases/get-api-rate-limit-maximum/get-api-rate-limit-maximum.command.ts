@@ -1,4 +1,4 @@
-import { ApiRateLimitCategoryEnum } from '@novu/shared';
+import { ApiRateLimitCategoryEnum } from '@notify/shared';
 import { IsDefined, IsEnum } from 'class-validator';
 import { EnvironmentCommand } from '../../../shared/commands/project.command';
 

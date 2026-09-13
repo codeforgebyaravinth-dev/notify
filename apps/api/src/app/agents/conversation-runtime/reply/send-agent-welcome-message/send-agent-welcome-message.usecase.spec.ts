@@ -1,4 +1,4 @@
-import { ChatProviderIdEnum, EmailProviderIdEnum } from '@novu/shared';
+import { ChatProviderIdEnum, EmailProviderIdEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon, { restore, stub } from 'sinon';
 

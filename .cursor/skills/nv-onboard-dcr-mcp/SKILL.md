@@ -159,7 +159,7 @@ Record which scopes the PRM advertises and which scope string Novu should reques
 
 0. Confirm candidate was **not** already `oauth.mode: dcr` (see Candidate selection)
 1. Add catalog entry in `packages/shared/src/consts/providers/mcp-servers.ts`
-2. Run `pnpm build --filter @novu/shared` if shared types changed
+2. Run `pnpm build --filter @notify/shared` if shared types changed
 3. Only if needed: discovery or `token-exchange-outcome.ts` changes (review-gated)
 4. Confirm `packages/shared/src/consts/providers/mcp-servers.spec.ts` DCR schema test passes
 5. If blocked: append a row to [`blocked-mcp-servers.md`](./blocked-mcp-servers.md); if unblocked later, move the row to Resolved

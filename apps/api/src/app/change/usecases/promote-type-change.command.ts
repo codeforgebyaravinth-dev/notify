@@ -1,3 +1,3 @@
-import { PromoteTypeChangeCommand } from '@novu/application-generic';
+import { PromoteTypeChangeCommand } from '@notify/application-generic';
 
 export { PromoteTypeChangeCommand };

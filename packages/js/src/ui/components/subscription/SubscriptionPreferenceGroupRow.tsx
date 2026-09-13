@@ -57,7 +57,7 @@ export const SubscriptionPreferenceGroupRow = (props: {
     <div
       class={style({
         key: 'subscriptionPreferenceGroupContainer',
-        className: 'nt-bg-neutral-alpha-25 nt-rounded-lg nt-border nt-border-neutral-alpha-50',
+        className: 'nt-bg-neutral-alpha-25 nt-nt-rounded-none nt-border nt-border-neutral-alpha-50',
         context: { group: props.group } satisfies Parameters<
           SubscriptionAppearanceCallback['subscriptionPreferenceGroupContainer']
         >[0],
@@ -171,7 +171,7 @@ export const SubscriptionPreferenceGroupRow = (props: {
         <div
           class={style({
             key: 'subscriptionPreferenceGroupBody',
-            className: 'nt-flex nt-p-2 nt-flex-col nt-gap-1 nt-bg-background nt-rounded-b-lg',
+            className: 'nt-flex nt-p-2 nt-flex-col nt-gap-1 nt-bg-background nt-nt-rounded-none-lg',
             context: { group: props.group } satisfies Parameters<
               SubscriptionAppearanceCallback['subscriptionPreferenceGroupBody']
             >[0],
@@ -182,7 +182,7 @@ export const SubscriptionPreferenceGroupRow = (props: {
               <div
                 class={style({
                   key: 'subscriptionPreferenceGroupWorkflowRow',
-                  className: 'nt-flex nt-items-center nt-justify-between nt-p-2 nt-rounded nt-gap-2',
+                  className: 'nt-flex nt-items-center nt-justify-between nt-p-2 nt-nt-rounded-none nt-gap-2',
                   context: { preference: el } satisfies Parameters<
                     SubscriptionAppearanceCallback['subscriptionPreferenceGroupWorkflowRow']
                   >[0],

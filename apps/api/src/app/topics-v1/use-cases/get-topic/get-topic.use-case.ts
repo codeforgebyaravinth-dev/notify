@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { TopicEntity, TopicRepository } from '@novu/dal';
+import { TopicEntity, TopicRepository } from '@notify/dal';
 import { TopicDto } from '../../dtos';
 import { ExternalSubscriberId } from '../../types';
 import { GetTopicCommand } from './get-topic.command';

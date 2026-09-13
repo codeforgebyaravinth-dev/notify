@@ -4,7 +4,7 @@ import {
   GetPreferences,
   UpdateChange,
   UpsertPreferences,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import { ApplyChange } from './apply-change/apply-change.usecase';
 import { BulkApplyChange } from './bulk-apply-change/bulk-apply-change.usecase';
 import { CountChanges } from './count-changes/count-changes.usecase';

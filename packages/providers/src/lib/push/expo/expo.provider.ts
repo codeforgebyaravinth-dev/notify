@@ -1,5 +1,5 @@
-import { PushProviderIdEnum } from '@novu/shared';
-import { IPushOptions, IPushProvider, ISendMessageSuccessResponse } from '@novu/stateless';
+import { PushProviderIdEnum } from '@notify/shared';
+import { IPushOptions, IPushProvider, ISendMessageSuccessResponse } from '@notify/stateless';
 import { Expo, ExpoPushMessage, ExpoPushTicket } from 'expo-server-sdk';
 import { CasingEnum } from '../../../base.provider';
 import { WithPassthrough } from '../../../utils/types';

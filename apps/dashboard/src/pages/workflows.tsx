@@ -4,7 +4,7 @@ import {
   FeatureFlagsKeysEnum,
   PermissionsEnum,
   WorkflowStatusEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { useQuery } from '@tanstack/react-query';
 import type { Variants } from 'motion/react';
 import { AnimatePresence, motion } from 'motion/react';

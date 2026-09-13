@@ -1,6 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { MessageRepository } from '@novu/dal';
-import { ChannelTypeEnum, WebSocketEventEnum } from '@novu/shared';
+import { MessageRepository } from '@notify/dal';
+import { ChannelTypeEnum, WebSocketEventEnum } from '@notify/shared';
 import { WSGateway } from '../../ws.gateway';
 import { ExternalServicesRouteCommand } from './external-services-route.command';
 import { IUnreadCountPaginationIndication, IUnseenCountPaginationIndication } from './types';

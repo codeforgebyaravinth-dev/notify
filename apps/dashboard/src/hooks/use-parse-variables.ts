@@ -1,4 +1,4 @@
-import { type JSONSchemaDefinition } from '@novu/shared';
+import { type JSONSchemaDefinition } from '@notify/shared';
 import { JSONSchema7 } from 'json-schema';
 import merge from 'lodash.merge';
 import { useMemo } from 'react';

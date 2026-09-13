@@ -1,6 +1,6 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { LayoutDtoV0 } from '@novu/application-generic';
-import { OrderByEnum } from '@novu/shared';
+import { LayoutDtoV0 } from '@notify/application-generic';
+import { OrderByEnum } from '@notify/shared';
 import { Transform } from 'class-transformer';
 import { IsInt, IsOptional, IsString, Min } from 'class-validator';
 

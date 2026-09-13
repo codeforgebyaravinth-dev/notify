@@ -1,4 +1,4 @@
-import { type PreviewError } from '@novu/shared';
+import { type PreviewError } from '@notify/shared';
 import { RiErrorWarningLine } from 'react-icons/ri';
 
 export function StepResolverPreviewError({ error }: { error: PreviewError }) {

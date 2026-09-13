@@ -1,4 +1,4 @@
-import { ChatProviderIdEnum } from '@novu/shared';
+import { ChatProviderIdEnum } from '@notify/shared';
 import { buildMsTeamsWhatsNextConfig } from './msteams-whats-next-config';
 import { buildSlackWhatsNextConfig } from './slack-whats-next-config';
 import { buildTelegramWhatsNextConfig } from './telegram-whats-next-config';

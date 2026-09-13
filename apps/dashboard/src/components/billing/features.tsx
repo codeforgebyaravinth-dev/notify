@@ -4,7 +4,7 @@ import {
   getFeatureForTier,
   getFeatureForTierAsText,
   isDetailedPriceListItem,
-} from '@novu/shared';
+} from '@notify/shared';
 import { Check, Minus } from 'lucide-react';
 import { FEATURE_SECTIONS } from './features-config';
 

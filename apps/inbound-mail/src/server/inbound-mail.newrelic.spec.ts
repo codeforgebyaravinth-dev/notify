@@ -1,5 +1,5 @@
 import net from 'node:net';
-import { ObservabilityBackgroundTransactionEnum } from '@novu/shared';
+import { ObservabilityBackgroundTransactionEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 

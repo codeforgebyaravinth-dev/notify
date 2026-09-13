@@ -1,8 +1,8 @@
 // Source is taken from the un-maintained https://github.com/Flolagale/mailin and refactored
 
 // Deep-path import (not the package barrel) so hydrating secrets doesn't evaluate
-// @novu/application-generic before config/env.config and OTEL instrumentation run.
-import { runWithHydratedSecrets } from '@novu/application-generic/build/main/services/secrets-manager';
+// @notify/application-generic before config/env.config and OTEL instrumentation run.
+import { runWithHydratedSecrets } from '@notify/application-generic/build/main/services/secrets-manager';
 
 const LOG_CONTEXT = 'Main';
 

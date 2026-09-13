@@ -1,4 +1,4 @@
-import { BaseDeleteSubscriptionArgs, NovuError, DeleteSubscriptionArgs as RemoveSubscriptionArgs } from '@novu/js';
+import { BaseDeleteSubscriptionArgs, NovuError, DeleteSubscriptionArgs as RemoveSubscriptionArgs } from '@notify/js';
 import { useCallback, useRef, useState } from 'react';
 import { useNovu } from './NovuProvider';
 

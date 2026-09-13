@@ -1,13 +1,13 @@
 import crypto from 'node:crypto';
 import { BadRequestException, HttpException, Injectable, InternalServerErrorException } from '@nestjs/common';
-import { PinoLogger } from '@novu/application-generic';
+import { PinoLogger } from '@notify/application-generic';
 import {
   CommunityOrganizationRepository,
   CommunityUserRepository,
   EnvironmentEntity,
   EnvironmentRepository,
   MemberRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import { Sync } from '../../../bridge/usecases/sync';
 import { areHexDigestsEqual } from '../../../shared/helpers/timing-safe-equal';
 import { ProcessVercelWebhookCommand } from './process-vercel-webhook.command';

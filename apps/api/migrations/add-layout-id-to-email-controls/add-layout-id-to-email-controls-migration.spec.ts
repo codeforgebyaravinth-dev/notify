@@ -1,6 +1,6 @@
-import { MessageTemplateRepository } from '@novu/dal';
-import { StepTypeEnum, UiComponentEnum, WorkflowCreationSourceEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { MessageTemplateRepository } from '@notify/dal';
+import { StepTypeEnum, UiComponentEnum, WorkflowCreationSourceEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { run } from './add-layout-id-to-email-controls-migration';
 

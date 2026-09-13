@@ -1,5 +1,5 @@
-import { assertAllowedSinchSmsRegion, SmsProviderIdEnum } from '@novu/shared';
-import { ChannelTypeEnum, ISendMessageSuccessResponse, ISmsOptions, ISmsProvider } from '@novu/stateless';
+import { assertAllowedSinchSmsRegion, SmsProviderIdEnum } from '@notify/shared';
+import { ChannelTypeEnum, ISendMessageSuccessResponse, ISmsOptions, ISmsProvider } from '@notify/stateless';
 
 import axios from 'axios';
 import { BaseProvider, CasingEnum } from '../../../base.provider';

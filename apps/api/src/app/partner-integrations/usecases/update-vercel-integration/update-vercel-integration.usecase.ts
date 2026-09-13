@@ -1,13 +1,13 @@
 import { HttpService } from '@nestjs/axios';
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { AnalyticsService, decryptApiKey, PinoLogger } from '@novu/application-generic';
+import { AnalyticsService, decryptApiKey, PinoLogger } from '@notify/application-generic';
 import {
   CommunityUserRepository,
   EnvironmentEntity,
   EnvironmentRepository,
   MemberRepository,
   OrganizationRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import { lastValueFrom } from 'rxjs';
 import { Sync } from '../../../bridge/usecases/sync';
 import { UpdateVercelIntegrationCommand } from './update-vercel-integration.command';

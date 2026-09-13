@@ -1,4 +1,4 @@
-import { encodeOAuthState } from '@novu/application-generic';
+import { encodeOAuthState } from '@notify/application-generic';
 import { expect } from 'chai';
 
 import { MCP_OAUTH_CALLBACK_PATH } from './mcp-oauth.constants';

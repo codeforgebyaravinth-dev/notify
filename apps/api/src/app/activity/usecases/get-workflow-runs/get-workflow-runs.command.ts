@@ -1,4 +1,4 @@
-import { SeverityLevelEnum } from '@novu/shared';
+import { SeverityLevelEnum } from '@notify/shared';
 import { IsArray, IsIn, IsInt, IsISO8601, IsOptional, IsString, Max, Min } from 'class-validator';
 import { EnvironmentWithUserCommand } from '../../../shared/commands/project.command';
 import { WorkflowRunStatusDtoEnum } from '../../dtos/shared.dto';

@@ -8,9 +8,9 @@ import {
   TraceLogRepository,
   WorkflowRun,
   WorkflowRunRepository,
-} from '@novu/application-generic';
-import { JobEntity, JobRepository } from '@novu/dal';
-import { StepTypeEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { JobEntity, JobRepository } from '@notify/dal';
+import { StepTypeEnum } from '@notify/shared';
 import { subDays } from 'date-fns';
 import { GetWorkflowRunResponseDto, StepRunDto } from '../../dtos/workflow-run-response.dto';
 import { mapTraceToExecutionDetailDto, mapWorkflowRunStatusToDto } from '../../shared/mappers';

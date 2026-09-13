@@ -1,6 +1,6 @@
-import { IntegrationRepository } from '@novu/dal';
-import { ChannelTypeEnum, ToolProviderIdEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { IntegrationRepository } from '@notify/dal';
+import { ChannelTypeEnum, ToolProviderIdEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 
 const integrationRepository = new IntegrationRepository();
 

@@ -1,4 +1,4 @@
-import { CardElement, ChatRenderValidationLevelEnum } from '@novu/stateless';
+import { CardElement, ChatRenderValidationLevelEnum } from '@notify/stateless';
 import { describe, expect, test } from 'vitest';
 import { cardToWhatsAppText, validateWhatsAppCard } from './card-render.utils';
 

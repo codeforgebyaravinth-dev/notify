@@ -9,12 +9,12 @@ import { type SupportedFrameworkName } from '../types';
  *
  * Example:
  *
- * import { serve, Client, type Workflow } from '@novu/framework/h3';
+ * import { serve, Client, type Workflow } from '@notify/framework/h3';
  *
  * instead of
  *
- * import { serve } from '@novu/framework/h3';
- * import { Client, type Workflow } from '@novu/framework';
+ * import { serve } from '@notify/framework/h3';
+ * import { Client, type Workflow } from '@notify/framework';
  */
 export * from '../index';
 export const frameworkName: SupportedFrameworkName = 'h3';
@@ -26,7 +26,7 @@ export const frameworkName: SupportedFrameworkName = 'h3';
  * @example
  * ```ts
  * import { createApp, eventHandler, toNodeListener } from "h3";
- * import { serve } from "@novu/framework/h3";
+ * import { serve } from "@notify/framework/h3";
  * import { createServer } from "node:http";
  * import { myWorkflow } from "./src/novu/workflows";
  *

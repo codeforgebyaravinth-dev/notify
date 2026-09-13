@@ -1,4 +1,4 @@
-import { ContextPayload } from '@novu/shared';
+import { ContextPayload } from '@notify/shared';
 import { useEffect } from 'react';
 import { PayloadData, PreviewSubscriberData } from '../types/preview-context.types';
 import {

@@ -13,7 +13,7 @@ describe('app-agent-ai-sdk template', () => {
     const source = fs.readFileSync(agentFile, 'utf8');
     const activeImports = source.split('// Wire your LLM')[0] ?? source;
 
-    expect(source).toContain("from '@novu/framework/ai-sdk'");
+    expect(source).toContain("from '@notify/framework/ai-sdk'");
     expect(source).not.toMatch(/import\s*\{[^}]*\bagent\b[^}]*\}\s*from\s*'@novu\/framework'/);
     expect(source).toContain("import { tool } from 'ai'");
     expect(source).toContain(

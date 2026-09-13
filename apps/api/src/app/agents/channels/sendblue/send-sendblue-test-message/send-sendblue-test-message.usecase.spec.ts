@@ -1,6 +1,6 @@
 import { NotFoundException, UnprocessableEntityException } from '@nestjs/common';
-import { SendblueChatProvider } from '@novu/providers/dist/cjs/lib/chat/sendblue/sendblue.provider';
-import { ChatProviderIdEnum } from '@novu/shared';
+import { SendblueChatProvider } from '@notify/providers/dist/cjs/lib/chat/sendblue/sendblue.provider';
+import { ChatProviderIdEnum } from '@notify/shared';
 import { expect } from 'chai';
 import { restore, stub } from 'sinon';
 import { SendSendblueTestMessageCommand } from './send-sendblue-test-message.command';

@@ -1,4 +1,4 @@
-import { GetLayoutUseCase, GetLayoutUseCaseV0, LayoutVariablesSchemaUseCase } from '@novu/application-generic';
+import { GetLayoutUseCase, GetLayoutUseCaseV0, LayoutVariablesSchemaUseCase } from '@notify/application-generic';
 import { BuildLayoutIssuesUsecase } from './build-layout-issues/build-layout-issues.usecase';
 import { DeleteLayoutUseCase } from './delete-layout';
 import { DuplicateLayoutUseCase } from './duplicate-layout';

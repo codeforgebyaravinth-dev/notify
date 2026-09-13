@@ -1,5 +1,5 @@
-import { ApiContextPayload, IsValidContextPayload } from '@novu/application-generic';
-import { ContextPayload } from '@novu/shared';
+import { ApiContextPayload, IsValidContextPayload } from '@notify/application-generic';
+import { ContextPayload } from '@notify/shared';
 import { Type } from 'class-transformer';
 import { IsDefined, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { ScheduleDto } from '../../shared/dtos/schedule';

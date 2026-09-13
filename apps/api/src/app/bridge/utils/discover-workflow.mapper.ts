@@ -1,5 +1,5 @@
-import { DiscoverWorkflowOutput } from '@novu/framework/internal';
-import { buildWorkflowPreferences, WorkflowPreferences } from '@novu/shared';
+import { DiscoverWorkflowOutput } from '@notify/framework/internal';
+import { buildWorkflowPreferences, WorkflowPreferences } from '@notify/shared';
 import { createHash } from 'crypto';
 
 /**

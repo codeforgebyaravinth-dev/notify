@@ -14,8 +14,8 @@ import {
   WorkerProcessor,
   WorkflowInMemoryProviderService,
   WorkflowWorkerService,
-} from '@novu/application-generic';
-import { FeatureFlagsKeysEnum, ObservabilityBackgroundTransactionEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { FeatureFlagsKeysEnum, ObservabilityBackgroundTransactionEnum } from '@notify/shared';
 
 const nr = require('newrelic');
 

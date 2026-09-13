@@ -1,4 +1,4 @@
-import { useNovu } from '@novu/react';
+import { useNovu } from '@notify/react';
 import { useQuery } from '@tanstack/react-query';
 import { useCallback, useRef, useState } from 'react';
 import { NOVU_COPILOT_SLACK_INTEGRATION_IDENTIFIER } from '@/config';

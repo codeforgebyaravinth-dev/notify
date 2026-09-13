@@ -1,4 +1,4 @@
-import { ApiServiceLevelEnum, EnvironmentTypeEnum, PermissionsEnum } from '@novu/shared';
+import { ApiServiceLevelEnum, EnvironmentTypeEnum, PermissionsEnum } from '@notify/shared';
 import { IconType } from 'react-icons/lib';
 import { RiAddCircleLine } from 'react-icons/ri';
 import { useLocation, useNavigate } from 'react-router-dom';

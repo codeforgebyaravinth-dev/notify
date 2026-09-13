@@ -1,6 +1,6 @@
-/** @jsxImportSource @novu/framework */
-import { Actions, Button, Card, CardText } from '@novu/framework';
-import { agent } from '@novu/framework/ai-sdk';
+/** @jsxImportSource @notify/framework */
+import { Actions, Button, Card, CardText } from '@notify/framework';
+import { agent } from '@notify/framework/ai-sdk';
 import { tool } from 'ai';
 
 import { searchNovuDocsIndex, searchNovuDocsInputSchema } from './tools/search-novu-docs';
@@ -19,7 +19,7 @@ const searchNovuDocs = tool({
 //
 // import { generateText } from 'ai';
 // import { openai } from '@ai-sdk/openai';
-// import { toModelMessages } from '@novu/framework/ai-sdk';
+// import { toModelMessages } from '@notify/framework/ai-sdk';
 
 /**
  * Novu calls these handlers whenever a user sends a message or clicks an action

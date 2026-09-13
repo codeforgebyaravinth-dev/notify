@@ -1,5 +1,5 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { ChannelTypeEnum } from '@novu/shared';
+import { ChannelTypeEnum } from '@notify/shared';
 import { IsEnum, IsOptional } from 'class-validator';
 
 export class DeleteMessageByTransactionIdRequestDto {

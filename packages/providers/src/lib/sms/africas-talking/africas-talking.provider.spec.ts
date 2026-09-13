@@ -1,4 +1,4 @@
-import { SmsProviderIdEnum } from '@novu/shared';
+import { SmsProviderIdEnum } from '@notify/shared';
 import { expect, test, vi } from 'vitest';
 import { AfricasTalkingSmsProvider } from './africas-talking.provider';
 

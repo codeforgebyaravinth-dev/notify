@@ -1,5 +1,5 @@
 import { Injectable, type OnModuleInit } from '@nestjs/common';
-import { type IAgentRuntimeProvider, PinoLogger } from '@novu/application-generic';
+import { type IAgentRuntimeProvider, PinoLogger } from '@notify/application-generic';
 import {
   type AgentEntity,
   AgentRepository,
@@ -10,7 +10,7 @@ import {
   ConversationRepository,
   SubscriberEntity,
   SubscriberRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import { type Message, MessageRole, type SerializedRequestParams } from '@novu/thalamus';
 import { createWebhookHandler, type WebhookHandler } from '@novu/thalamus/webhook';
 import type { Request, Response } from 'express';

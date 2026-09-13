@@ -1,4 +1,4 @@
-import { type IIntegration, providers as novuProviders } from '@novu/shared';
+import { type IIntegration, providers as novuProviders } from '@notify/shared';
 import { useQuery } from '@tanstack/react-query';
 import { RiAddLine, RiArrowRightLine, RiArrowRightSLine, RiSpam2Fill } from 'react-icons/ri';
 import { Link, useLocation, useNavigate } from 'react-router-dom';

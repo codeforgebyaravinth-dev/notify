@@ -1,4 +1,4 @@
-import { DomainRouteEntity } from '@novu/dal';
+import { DomainRouteEntity } from '@notify/dal';
 import { DomainRouteResponseDto } from '../dtos/domain-route-response.dto';
 
 export function toDomainRouteResponse(route: DomainRouteEntity): DomainRouteResponseDto {

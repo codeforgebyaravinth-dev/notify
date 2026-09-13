@@ -1,7 +1,7 @@
 import { generateKeyPairSync } from 'node:crypto';
 import { BadRequestException } from '@nestjs/common';
-import type { DomainEntity } from '@novu/dal';
-import { DomainStatusEnum, FeatureFlagsKeysEnum } from '@novu/shared';
+import type { DomainEntity } from '@notify/dal';
+import { DomainStatusEnum, FeatureFlagsKeysEnum } from '@notify/shared';
 import { expect } from 'chai';
 import { restore, stub } from 'sinon';
 import { DomainConnectStatusReasonEnum } from '../dtos/domain-connect-status-response.dto';

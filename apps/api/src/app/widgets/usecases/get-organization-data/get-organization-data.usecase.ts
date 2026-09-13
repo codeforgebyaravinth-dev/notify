@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { CommunityOrganizationRepository } from '@novu/dal';
+import { CommunityOrganizationRepository } from '@notify/dal';
 import { OrganizationResponseDto } from '../../dtos/organization-response.dto';
 import { GetOrganizationDataCommand } from './get-organization-data.command';
 

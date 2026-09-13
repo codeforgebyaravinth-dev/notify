@@ -1,6 +1,6 @@
 import { Body, Controller, Get, HttpCode, HttpStatus, Post, Query } from '@nestjs/common';
 import { ApiExcludeController, ApiOperation } from '@nestjs/swagger';
-import { ApiRateLimitCategoryEnum } from '@novu/shared';
+import { ApiRateLimitCategoryEnum } from '@notify/shared';
 
 import { ThrottlerCategory } from '../rate-limiting/guards';
 import { ApiCommonResponses, ApiResponse } from '../shared/framework/response.decorator';

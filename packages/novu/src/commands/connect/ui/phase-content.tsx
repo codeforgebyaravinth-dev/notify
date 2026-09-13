@@ -1,5 +1,5 @@
 import { PasswordInput, Select, TextInput } from '@inkjs/ui';
-import { AWS_CLAUDE_COMMERCIAL_REGIONS } from '@novu/shared';
+import { AWS_CLAUDE_COMMERCIAL_REGIONS } from '@notify/shared';
 import { Box, Text, useInput } from 'ink';
 // biome-ignore lint/correctness/noUnusedImports: classic-JSX linter falls back here because tsconfig.json excludes ui/.
 import React from 'react';

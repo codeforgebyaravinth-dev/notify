@@ -10,12 +10,12 @@ import { Either, type SupportedFrameworkName } from '../types';
  *
  * Example:
  *
- * import { serve, Client, type Workflow } from '@novu/framework/express';
+ * import { serve, Client, type Workflow } from '@notify/framework/express';
  *
  * instead of
  *
- * import { serve } from '@novu/framework/express';
- * import { Client, type Workflow } from '@novu/framework';
+ * import { serve } from '@notify/framework/express';
+ * import { Client, type Workflow } from '@notify/framework';
  */
 export * from '../index';
 export const frameworkName: SupportedFrameworkName = 'express';
@@ -30,7 +30,7 @@ export const frameworkName: SupportedFrameworkName = 'express';
  *
  * @example
  * ```ts
- * import { serve } from "@novu/framework/express";
+ * import { serve } from "@notify/framework/express";
  * import { myWorkflow } from "./src/novu/workflows"; // Your workflows
  *
  * // Important:  ensure you add JSON middleware to process incoming JSON POST payloads.

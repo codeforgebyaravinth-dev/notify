@@ -1,8 +1,8 @@
 import { randomBytes } from 'node:crypto';
 import { Injectable } from '@nestjs/common';
-import { decryptCredentials, encryptSecret, InstrumentUsecase, PinoLogger } from '@novu/application-generic';
-import { AgentIntegrationRepository, AgentRepository, IntegrationRepository } from '@novu/dal';
-import { ChatProviderIdEnum } from '@novu/shared';
+import { decryptCredentials, encryptSecret, InstrumentUsecase, PinoLogger } from '@notify/application-generic';
+import { AgentIntegrationRepository, AgentRepository, IntegrationRepository } from '@notify/dal';
+import { ChatProviderIdEnum } from '@notify/shared';
 
 import {
   isAgentWebhookUrl,

@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { BaseRepository, EnvironmentRepository } from '@novu/dal';
-import { EnvironmentEnum, UserSessionData } from '@novu/shared';
+import { BaseRepository, EnvironmentRepository } from '@notify/dal';
+import { EnvironmentEnum, UserSessionData } from '@notify/shared';
 import { assertEnvironmentScopedAccess } from '../../shared/utils/auth.utils';
 
 export interface IEnvironmentValidationParams {

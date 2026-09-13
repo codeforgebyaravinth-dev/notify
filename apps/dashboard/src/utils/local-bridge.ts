@@ -1,4 +1,4 @@
-import type { StepResponseDto, WorkflowResponseDto } from '@novu/shared';
+import type { StepResponseDto, WorkflowResponseDto } from '@notify/shared';
 import { getIdFromSlug, STEP_DIVIDER, WORKFLOW_DIVIDER } from '@/utils/id-utils';
 import { clearFromStorage, loadFromStorage, saveToStorage } from '@/utils/local-storage';
 

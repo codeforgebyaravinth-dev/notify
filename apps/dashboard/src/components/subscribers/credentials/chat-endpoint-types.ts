@@ -1,5 +1,5 @@
-import type { ChannelEndpointType } from '@novu/shared';
-import { ChatProviderIdEnum, ENDPOINT_TYPES, isToolWebhookDynamicRouting, ToolProviderIdEnum } from '@novu/shared';
+import type { ChannelEndpointType } from '@notify/shared';
+import { ChatProviderIdEnum, ENDPOINT_TYPES, isToolWebhookDynamicRouting, ToolProviderIdEnum } from '@notify/shared';
 import type { IconType } from 'react-icons';
 import { RiAtLine, RiHashtag, RiKey2Line, RiLinksLine, RiTelegramLine } from 'react-icons/ri';
 

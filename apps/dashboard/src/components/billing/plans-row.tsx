@@ -1,4 +1,4 @@
-import { ApiServiceLevelEnum, StripeBillingIntervalEnum } from '@novu/shared';
+import { ApiServiceLevelEnum, StripeBillingIntervalEnum } from '@notify/shared';
 import { Check } from 'lucide-react';
 import { AnimatePresence, motion, useInView } from 'motion/react';
 import { useRef } from 'react';

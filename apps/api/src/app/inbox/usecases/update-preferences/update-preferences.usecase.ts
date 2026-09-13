@@ -12,7 +12,7 @@ import {
   UpsertPreferences,
   UpsertSubscriberGlobalPreferencesCommand,
   UpsertSubscriberWorkflowPreferencesCommand,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   BaseRepository,
   EnforceEnvOrOrgIds,
@@ -22,7 +22,7 @@ import {
   SubscriberEntity,
   SubscriberRepository,
   TopicSubscribersRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   buildWorkflowPreferences,
   FeatureFlagsKeysEnum,
@@ -35,7 +35,7 @@ import {
   WebhookObjectTypeEnum,
   WorkflowPreferences,
   WorkflowPreferencesPartial,
-} from '@novu/shared';
+} from '@notify/shared';
 import { FilterQuery } from 'mongoose';
 import {
   GetSubscriberGlobalPreference,

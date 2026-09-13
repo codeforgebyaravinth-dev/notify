@@ -1,7 +1,7 @@
 import { BadRequestException } from '@nestjs/common';
-import { MsTeamsTokenService } from '@novu/application-generic';
-import { EnvironmentRepository, IntegrationRepository } from '@novu/dal';
-import { ChatProviderIdEnum, ENDPOINT_TYPES } from '@novu/shared';
+import { MsTeamsTokenService } from '@notify/application-generic';
+import { EnvironmentRepository, IntegrationRepository } from '@notify/dal';
+import { ChatProviderIdEnum, ENDPOINT_TYPES } from '@notify/shared';
 import axios from 'axios';
 import { expect } from 'chai';
 import { createHmac } from 'crypto';

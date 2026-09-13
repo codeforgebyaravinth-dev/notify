@@ -1,5 +1,5 @@
-import { ApiServiceLevelEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { ApiServiceLevelEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Delete Environment API key environment scope - DELETE /environments/:environmentId #novu-v2', () => {

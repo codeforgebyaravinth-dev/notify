@@ -5,7 +5,7 @@ import {
   ITemplateVariable,
   MessageTemplateContentType,
   StepTypeEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 
 export class MessageTemplateDto {
   type: StepTypeEnum;

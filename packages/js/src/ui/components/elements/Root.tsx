@@ -12,7 +12,7 @@ export const Root = (props: RootProps) => {
 
   return (
     <>
-      <Show when={!hideBranding()}>{new Comment(' Powered by Novu - https://novu.co ')}</Show>
+      <Show when={!hideBranding()}>{new Comment(' Powered by Notify ')}</Show>
       <div
         id={`novu-root-${id()}`}
         class={style({

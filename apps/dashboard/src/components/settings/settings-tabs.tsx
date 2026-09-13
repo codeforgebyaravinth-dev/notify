@@ -7,7 +7,7 @@ import {
   GetSubscriptionDto,
   getFeatureForTierAsBoolean,
   PermissionsEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { motion } from 'motion/react';
 import { useMemo } from 'react';
 import { RiBuilding2Line, RiMoneyDollarCircleLine, RiTeamLine, RiUserLine, RiShieldLine, RiSettings2Line } from 'react-icons/ri';

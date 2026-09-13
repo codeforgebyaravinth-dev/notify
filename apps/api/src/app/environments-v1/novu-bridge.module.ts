@@ -10,7 +10,7 @@ import {
   GetLayoutUseCaseV0,
   InMemoryLRUCacheService,
   LayoutVariablesSchemaUseCase,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   CommunityOrganizationRepository,
   ControlValuesRepository,
@@ -21,8 +21,8 @@ import {
   JobRepository,
   LayoutRepository,
   NotificationTemplateRepository,
-} from '@novu/dal';
-import { NovuClient, NovuHandler } from '@novu/framework/nest';
+} from '@notify/dal';
+import { NovuClient, NovuHandler } from '@notify/framework/nest';
 import { GetOrganizationSettings } from '../organization/usecases/get-organization-settings/get-organization-settings.usecase';
 import { SharedModule } from '../shared/shared.module';
 import { NovuBridgeController } from './novu-bridge.controller';

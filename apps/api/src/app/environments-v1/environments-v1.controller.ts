@@ -17,8 +17,8 @@ import {
   ProductFeature,
   RequirePermissions,
   SkipPermissionsCheck,
-} from '@novu/application-generic';
-import { CommunityOrganizationRepository } from '@novu/dal';
+} from '@notify/application-generic';
+import { CommunityOrganizationRepository } from '@notify/dal';
 import {
   ApiAuthSchemeEnum,
   ApiServiceLevelEnum,
@@ -28,7 +28,7 @@ import {
   PermissionsEnum,
   ProductFeatureKeyEnum,
   UserSessionData,
-} from '@novu/shared';
+} from '@notify/shared';
 import { ErrorDto } from '../../error-dto';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ExternalApiAccessible, OAuthAccessible } from '../auth/framework/external-api.decorator';

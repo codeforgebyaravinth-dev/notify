@@ -1,5 +1,5 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { PinoLogger } from '@novu/application-generic';
+import { PinoLogger } from '@notify/application-generic';
 import type { Chat } from 'chat';
 import { Request as ExpressRequest, Response as ExpressResponse } from 'express';
 import { AgentConfigResolver, AgentConfigResolveSource } from '../../channels/agent-config-resolver.service';

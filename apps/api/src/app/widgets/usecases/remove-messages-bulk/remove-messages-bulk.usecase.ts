@@ -5,9 +5,9 @@ import {
   buildMessageCountKey,
   InvalidateCacheService,
   WebSocketsQueueService,
-} from '@novu/application-generic';
-import { DalException, MessageRepository, SubscriberEntity, SubscriberRepository } from '@novu/dal';
-import { ChannelTypeEnum, WebSocketEventEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { DalException, MessageRepository, SubscriberEntity, SubscriberRepository } from '@notify/dal';
+import { ChannelTypeEnum, WebSocketEventEnum } from '@notify/shared';
 
 import { MarkEnum } from '../mark-message-as/mark-message-as.command';
 import { RemoveMessagesBulkCommand } from './remove-messages-bulk.command';

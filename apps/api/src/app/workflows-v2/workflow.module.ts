@@ -23,8 +23,8 @@ import {
   UpsertControlValuesUseCase,
   UpsertPreferences,
   UpsertWorkflowUseCase,
-} from '@novu/application-generic';
-import { CommunityOrganizationRepository } from '@novu/dal';
+} from '@notify/application-generic';
+import { CommunityOrganizationRepository } from '@notify/dal';
 import { AgentsModule } from '../agents/agents.module';
 import { AuthModule } from '../auth/auth.module';
 import { BridgeModule } from '../bridge';

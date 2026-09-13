@@ -1,5 +1,5 @@
 /** biome-ignore-all lint/correctness/useUniqueElementIds: expected */
-import { IEnvironment } from '@novu/shared';
+import { IEnvironment } from '@notify/shared';
 import { Cross2Icon } from '@radix-ui/react-icons';
 import { useState } from 'react';
 import { RiAlertFill } from 'react-icons/ri';

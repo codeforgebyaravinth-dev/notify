@@ -1,11 +1,11 @@
 import { Controller, Get, Inject, Options, Post, Req, Res } from '@nestjs/common';
 import { ApiExcludeController } from '@nestjs/swagger';
-import { NovuClient } from '@novu/framework/nest';
+import { NovuClient } from '@notify/framework/nest';
 import type { Request, Response } from 'express';
 import { NovuCopilotBridgeClient } from './novu-copilot-bridge.client';
 
 /**
- * In-API `@novu/framework` bridge for the Novu-hosted NovuCopilot agent.
+ * In-API `@notify/framework` bridge for the Novu-hosted NovuCopilot agent.
  *
  * Reachable at `<global prefix>/novu/bridge` (e.g. `/v1/novu/bridge`); the
  * copilot's `AgentEntity.bridgeUrl` must point here so `BridgeExecutorService` can dispatch inbound

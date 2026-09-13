@@ -1,5 +1,5 @@
-import { Variable } from '@novu/maily-core/extensions';
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { Variable } from '@notify/maily-core/extensions';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { Editor } from '@tiptap/core';
 import { EditorView } from '@uiw/react-codemirror';
 import React, { useCallback, useMemo, useRef } from 'react';

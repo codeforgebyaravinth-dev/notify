@@ -3,12 +3,12 @@
  * | NOTICE |
  * ==========
  *
- * This file contains copied code from @novu/shared in order to temporarily eliminate the dependency of
+ * This file contains copied code from @notify/shared in order to temporarily eliminate the dependency of
  * framework on the shared package.
  *
  * The shared package, doesn't support ESM/CJS with strict TS yet.
- * So we sacrificed a bit code duplication in order to address ESM/CJS issues reported on the @novu/framework
- * caused by its @novu/shared dependency.
+ * So we sacrificed a bit code duplication in order to address ESM/CJS issues reported on the @notify/framework
+ * caused by its @notify/shared dependency.
  *
  * Treat this as a temporary solution until the shared package is updated with the above.
  *

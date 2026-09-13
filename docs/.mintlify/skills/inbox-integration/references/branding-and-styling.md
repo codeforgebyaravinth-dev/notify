@@ -31,8 +31,8 @@ Styles are auto-injected into `<head>`. If the Inbox is rendered inside a shadow
 Novu currently ships a `dark` base theme:
 
 ```tsx
-import { Inbox } from "@novu/react";
-import { dark } from "@novu/react/themes";
+import { Inbox } from "@notify/react";
+import { dark } from "@notify/react/themes";
 
 <Inbox
   applicationIdentifier="YOUR_NOVU_APP_ID"
@@ -275,7 +275,7 @@ appearance={{
 Replace built-in icons with anything that renders to a React node:
 
 ```tsx
-import { Inbox } from "@novu/react";
+import { Inbox } from "@notify/react";
 import {
   RiSettings3Fill,
   RiArrowDownLine,
@@ -390,7 +390,7 @@ appearance={{
 ### Brand-locked dark
 
 ```tsx
-import { dark } from "@novu/react/themes";
+import { dark } from "@notify/react/themes";
 
 appearance={{
   baseTheme: dark,

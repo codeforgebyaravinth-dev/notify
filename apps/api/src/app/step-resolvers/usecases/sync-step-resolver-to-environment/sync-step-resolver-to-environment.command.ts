@@ -1,6 +1,6 @@
-import { EnvironmentWithUserObjectCommand } from '@novu/application-generic';
-import { ClientSession } from '@novu/dal';
-import { StepTypeEnum } from '@novu/shared';
+import { EnvironmentWithUserObjectCommand } from '@notify/application-generic';
+import { ClientSession } from '@notify/dal';
+import { StepTypeEnum } from '@notify/shared';
 import { Exclude, Type } from 'class-transformer';
 import { IsArray, IsDefined, IsEnum, IsNotEmpty, IsOptional, IsString, ValidateNested } from 'class-validator';
 

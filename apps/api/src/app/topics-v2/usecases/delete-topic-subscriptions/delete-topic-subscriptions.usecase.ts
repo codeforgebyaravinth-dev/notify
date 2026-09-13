@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { InstrumentUsecase } from '@novu/application-generic';
+import { InstrumentUsecase } from '@notify/application-generic';
 import {
   PreferencesRepository,
   SubscriberEntity,
@@ -8,8 +8,8 @@ import {
   TopicRepository,
   TopicSubscribersEntity,
   TopicSubscribersRepository,
-} from '@novu/dal';
-import { PreferencesTypeEnum } from '@novu/shared';
+} from '@notify/dal';
+import { PreferencesTypeEnum } from '@notify/shared';
 import {
   DeleteTopicSubscriptionsResponseDto,
   SubscriptionDto,

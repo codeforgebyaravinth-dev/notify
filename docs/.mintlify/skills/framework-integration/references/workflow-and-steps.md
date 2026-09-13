@@ -1,11 +1,11 @@
 # Workflow & Step API Reference
 
-Full reference for the `workflow()` and `step.*` APIs in `@novu/framework`.
+Full reference for the `workflow()` and `step.*` APIs in `@notify/framework`.
 
 ## `workflow(id, handler, options?)`
 
 ```typescript
-import { workflow } from "@novu/framework";
+import { workflow } from "@notify/framework";
 
 workflow(workflowId, handler, options);
 ```

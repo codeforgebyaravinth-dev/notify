@@ -6,7 +6,7 @@ import {
   ITemplateVariable,
   MessageTemplateContentType,
   StepTypeEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { IsDefined, IsEnum, IsOptional, IsString, ValidateNested } from 'class-validator';
 
 export class MessageTemplate {

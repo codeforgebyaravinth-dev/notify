@@ -1,4 +1,4 @@
-import { DirectionEnum } from '@novu/shared';
+import { DirectionEnum } from '@notify/shared';
 import { keepPreviousData, UseQueryOptions, useQuery } from '@tanstack/react-query';
 import { getTopics, ListTopicsResponse } from '@/api/topics';
 import { useEnvironment } from '@/context/environment/hooks';

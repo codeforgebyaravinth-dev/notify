@@ -15,8 +15,8 @@ import {
   GetEnvironmentTagsDto,
   RequirePermissions,
   SkipPermissionsCheck,
-} from '@novu/application-generic';
-import { PermissionsEnum, UserSessionData } from '@novu/shared';
+} from '@notify/application-generic';
+import { PermissionsEnum, UserSessionData } from '@notify/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import { ApiCommonResponses, ApiResponse } from '../shared/framework/response.decorator';

@@ -1,7 +1,7 @@
 import { Logger } from '@nestjs/common';
 import { IoAdapter } from '@nestjs/platform-socket.io';
-import { WebSocketsInMemoryProviderService } from '@novu/application-generic';
-import { getRedisPrefix } from '@novu/shared';
+import { WebSocketsInMemoryProviderService } from '@notify/application-generic';
+import { getRedisPrefix } from '@notify/shared';
 import { createAdapter } from '@socket.io/redis-adapter';
 import { ServerOptions } from 'socket.io';
 

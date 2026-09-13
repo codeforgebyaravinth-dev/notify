@@ -1,6 +1,6 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { parseSlugId } from '@novu/application-generic';
-import { StepTypeEnum } from '@novu/shared';
+import { parseSlugId } from '@notify/application-generic';
+import { StepTypeEnum } from '@notify/shared';
 import { Transform, Type } from 'class-transformer';
 import {
   ArrayMinSize,

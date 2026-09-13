@@ -1,9 +1,9 @@
 ---
 title: "Zod"
-description: "Integrate Zod with Novu Framework to define and validate workflow payload schemas and step controls with type-safe TypeScript inference."
+description: "Integrate Zod with Notify Framework to define and validate workflow payload schemas and step controls with type-safe TypeScript inference."
 ---
 
-Novu Framework allows you to use [Zod](https://zod.dev/) to define the [Control](/framework/controls) and [Payload](/framework/payload) schemas for your workflows. _(Supports Zod v3)_
+Notify Framework allows you to use [Zod](https://zod.dev/) to define the [Control](/framework/controls) and [Payload](/framework/payload) schemas for your workflows. _(Supports Zod v3)_
 
 ## Add Zod to your project
 
@@ -14,7 +14,7 @@ Novu Framework allows you to use [Zod](https://zod.dev/) to define the [Control]
         ```
         
         <Note>
-          Novu Framework supports Zod v3. Make sure you're using this version for optimal performance and feature support.
+          Notify Framework supports Zod v3. Make sure you're using this version for optimal performance and feature support.
         </Note>
     </Step>
     <Step title="Use Zod in your workflow">
@@ -29,7 +29,7 @@ Novu Framework allows you to use [Zod](https://zod.dev/) to define the [Control]
             },
             {
                 controlSchema: z.object({
-                    subject: z.string().default('A Successful Test on Novu from {{userName}}'),
+                    subject: z.string().default('A Successful Test on Notify from {{userName}}'),
                 }),
             });
         }, {
@@ -44,7 +44,7 @@ Novu Framework allows you to use [Zod](https://zod.dev/) to define the [Control]
 
 ## Controls and Payload UI
 
-When you define a `controlSchema` for a step, Novu will automatically generate a UI for the controls in the workflow editor.
+When you define a `controlSchema` for a step, Notify will automatically generate a UI for the controls in the workflow editor.
 
 - **Form Input Title** - Will be derived from the key of the Zod schema. Unfortunately Zod does not support custom titles at this point.
 - **Form Input Type** - Will be derived from the Zod schema type, with support for `string`, `number`, `boolean`, and `enum` and `array` types.

@@ -23,9 +23,9 @@ import {
   GetTenantCommand,
   UpdateTenant,
   UpdateTenantCommand,
-} from '@novu/application-generic';
-import { EnvironmentEntity, OrganizationEntity, UserEntity } from '@novu/dal';
-import { ApiRateLimitCategoryEnum, FeatureFlagsKeysEnum, UserSessionData } from '@novu/shared';
+} from '@notify/application-generic';
+import { EnvironmentEntity, OrganizationEntity, UserEntity } from '@notify/dal';
+import { ApiRateLimitCategoryEnum, FeatureFlagsKeysEnum, UserSessionData } from '@notify/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import { ThrottlerCategory } from '../rate-limiting/guards';

@@ -1,5 +1,5 @@
-import { SmsProviderIdEnum } from '@novu/shared';
-import { ChannelTypeEnum, ISendMessageSuccessResponse, ISmsOptions, ISmsProvider } from '@novu/stateless';
+import { SmsProviderIdEnum } from '@notify/shared';
+import { ChannelTypeEnum, ISendMessageSuccessResponse, ISmsOptions, ISmsProvider } from '@notify/stateless';
 
 import Sms77Client, { SmsJsonResponse, SmsParams } from 'sms77-client';
 import { BaseProvider, CasingEnum } from '../../../base.provider';

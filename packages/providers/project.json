@@ -1,5 +1,5 @@
 {
-  "name": "@novu/providers",
+  "name": "@notify/providers",
   "sourceRoot": "packages/providers/src",
   "projectType": "library",
   "targets": {

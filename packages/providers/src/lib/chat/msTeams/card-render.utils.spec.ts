@@ -1,4 +1,4 @@
-import { CardElement } from '@novu/stateless';
+import { CardElement } from '@notify/stateless';
 import { describe, expect, test } from 'vitest';
 import { toTeamsFlavoredCard, validateTeamsCard } from './card-render.utils';
 

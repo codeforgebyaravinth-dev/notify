@@ -19,14 +19,14 @@ import {
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiExcludeController } from '@nestjs/swagger';
-import { IntegrationRepository } from '@novu/dal';
+import { IntegrationRepository } from '@notify/dal';
 import {
   ChatProviderIdEnum,
   ConnectionMode,
   MessageActionStatusEnum,
   PreferenceLevelEnum,
   UserSessionData,
-} from '@novu/shared';
+} from '@notify/shared';
 import type { Request } from 'express';
 import { getClientIp } from 'request-ip';
 import { ListChannelConnectionsQueryDto } from '../channel-connections/dtos/list-channel-connections-query.dto';

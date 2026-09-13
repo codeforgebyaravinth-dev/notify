@@ -14,7 +14,7 @@ const outputDir = join(scriptDir, '../src/consts/providers/provider-overrides/te
 const typeFile = join(scriptDir, 'telegram-override.type.ts');
 
 const ROOT_TYPE = 'TelegramOverride';
-const GENERATE_COMMAND = 'pnpm --filter @novu/shared generate:telegram-schema';
+const GENERATE_COMMAND = 'pnpm --filter @notify/shared generate:telegram-schema';
 
 function definitionKeyOf(ref: string): string {
   return decodeURIComponent(ref.replace('#/definitions/', ''));

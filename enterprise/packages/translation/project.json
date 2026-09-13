@@ -1,5 +1,5 @@
 {
-  "name": "@novu/ee-translation",
+  "name": "@notify/ee-translation",
   "sourceRoot": "enterprise/packages/translation/src",
   "projectType": "library",
   "targets": {

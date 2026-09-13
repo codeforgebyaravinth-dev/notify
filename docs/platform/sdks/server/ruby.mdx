@@ -1,6 +1,6 @@
 ---
 title: 'Ruby'
-description: "Connect a Ruby application to Novu with the official server SDK to trigger workflows, manage subscribers, and send notifications from Ruby code."
+description: "Connect a Ruby application to Notify with the official server SDK to trigger workflows, manage subscribers, and send notifications from Ruby code."
 ---
 
 <Warning>
@@ -8,22 +8,22 @@ description: "Connect a Ruby application to Novu with the official server SDK to
   repository](https://github.com/novuhq/novu-ruby).
 </Warning>
 
-Novu's Ruby SDK provides simple, yet comprehensive notification management, and delivery capabilities through multiple channels that you can implement using code that integrates seamlessly with your Ruby application.
+Notify's Ruby SDK provides simple, yet comprehensive notification management, and delivery capabilities through multiple channels that you can implement using code that integrates seamlessly with your Ruby application.
 
 [Explore the source code on GitHub](https://github.com/novuhq/novu-ruby)
 
 ## Installation
 
 ```bash
-gem install novu
+gem install notify
 ```
 
 ## Usage
 
 ```ruby
-require 'novu'
+require 'notify'
 
-client = Novu::Client.new(access_token: 'YOUR_NOVU_API_TOKEN')
+client = Notify::Client.new(access_token: 'YOUR_NOVU_API_TOKEN')
 
 payload = {
     'name' => 'Trigger1',

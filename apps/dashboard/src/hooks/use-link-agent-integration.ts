@@ -1,4 +1,4 @@
-import { ChannelTypeEnum, EmailProviderIdEnum, type IIntegration, PROVIDER_ID_TO_CHANNEL_MAP } from '@novu/shared';
+import { ChannelTypeEnum, EmailProviderIdEnum, type IIntegration, PROVIDER_ID_TO_CHANNEL_MAP } from '@notify/shared';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useCallback, useRef, useState } from 'react';
 import {

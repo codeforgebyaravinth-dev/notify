@@ -1,6 +1,6 @@
 ---
 title: 'Set up the Inbox'
-description: "Integrate the Novu Inbox component into your application to display real-time in-app notifications for your subscribers with drop-in React or JS components."
+description: "Integrate the Notify Inbox component into your application to display real-time in-app notifications for your subscribers with drop-in React or JS components."
 ---
 
 The Inbox component displays a notification bell by default, which opens a menu containing the subscriber's notifications and preferences.
@@ -12,40 +12,40 @@ To get started, install the Inbox UI:
 <Tabs>
   <Tab title="Next.js">
     ```package-install
-    npm install @novu/nextjs
+    npm install @notify/nextjs
     ```
   </Tab>
   <Tab title="React">
     ```package-install
-    npm install @novu/react
+    npm install @notify/react
     ```
   </Tab>
 </Tabs>
 
 <Note>
-  **`@novu/react` requires React 18 or later.** The package supports React `^18.0.0` and React 19 (`^19.0.0`). React 17 and below are not supported. When rendering the Inbox UI, you also need `react-dom` at the same version.
+  **`@notify/react` requires React 18 or later.** The package supports React `^18.0.0` and React 19 (`^19.0.0`). React 17 and below are not supported. When rendering the Inbox UI, you also need `react-dom` at the same version.
 </Note>
 
 <Tabs>
   <Tab title="Next.js">
-<Prompt description="Add Novu Inbox to my Next.js app" icon="sparkles" actions={["copy", "cursor"]}>
-# Add Novu Inbox to Next.js App
+<Prompt description="Add Notify Inbox to my Next.js app" icon="sparkles" actions={["copy", "cursor"]}>
+# Add Notify Inbox to Next.js App
 
-Install `@novu/nextjs`. Add the `<Inbox />` component to your header, navbar, or sidebar.
+Install `@notify/nextjs`. Add the `<Inbox />` component to your header, navbar, or sidebar.
 
 Latest docs: https://docs.novu.co/platform/quickstart/nextjs
 
 ## Install
 
 ```bash
-npm install @novu/nextjs
+npm install @notify/nextjs
 ```
 
 ## Component
 
 ```tsx
 'use client';
-import { Inbox } from '@novu/nextjs';
+import { Inbox } from '@notify/nextjs';
 
 export default function NotificationInbox() {
   return (
@@ -86,7 +86,7 @@ NEVER:
 
 ## Verify Before Responding
 
-1. Is `@novu/nextjs` installed with the project's package manager?
+1. Is `@notify/nextjs` installed with the project's package manager?
 2. Is `<Inbox />` placed inline in existing UI?
 3. Are design tokens extracted and applied?
 4. Are all props non-empty and properly typed?
@@ -96,23 +96,23 @@ If any fails, revise.
 </Prompt>
   </Tab>
   <Tab title="React">
-<Prompt description="Add Novu Inbox to my React app" icon="sparkles" actions={["copy", "cursor"]}>
-# Add Novu Inbox to React App
+<Prompt description="Add Notify Inbox to my React app" icon="sparkles" actions={["copy", "cursor"]}>
+# Add Notify Inbox to React App
 
-Install `@novu/react`. Add the `<Inbox />` component to your header, navbar, or sidebar.
+Install `@notify/react`. Add the `<Inbox />` component to your header, navbar, or sidebar.
 
 Latest docs: https://docs.novu.co/platform/quickstart/react
 
 ## Install
 
 ```bash
-npm install @novu/react
+npm install @notify/react
 ```
 
 ## Component
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 import { useNavigate } from 'react-router-dom';
 
 export default function NotificationInbox() {
@@ -157,7 +157,7 @@ NEVER:
 
 ## Verify Before Responding
 
-1. Is `@novu/react` installed with the project's package manager?
+1. Is `@notify/react` installed with the project's package manager?
 2. Is `<Inbox />` placed inline in existing UI?
 3. Are design tokens extracted and applied?
 4. Are all props non-empty and properly typed?
@@ -178,7 +178,7 @@ Keyless mode lets you test the look and features of the Inbox component instantl
   <Tab title="Next.js">
     ```tsx
 
-    export function Novu() {
+    export function Notify() {
       return (
         <Inbox />
       );
@@ -188,7 +188,7 @@ Keyless mode lets you test the look and features of the Inbox component instantl
   <Tab title="React">
     ```tsx
 
-    export function Novu() {
+    export function Notify() {
       return (
         <Inbox />
       );
@@ -203,7 +203,7 @@ Keyless mode lets you test the look and features of the Inbox component instantl
 
 ## Use Inbox with real subscribers
 
-To display real-time notifications for your subscribers, connect the Inbox component to your Novu environment using your `applicationIdentifier` and a `subscriberId`. You can create or manage subscribers from the [Novu Dashboard](https://dashboard.novu.co/subscribers).
+To display real-time notifications for your subscribers, connect the Inbox component to your Notify environment using your `applicationIdentifier` and a `subscriberId`. You can create or manage subscribers from the [Notify Dashboard](https://dashboard.novu.co/subscribers).
 
 ### US region (default)
 
@@ -211,7 +211,7 @@ To display real-time notifications for your subscribers, connect the Inbox compo
   <Tab title="Next.js">
     ```tsx
 
-    export function Novu() {
+    export function Notify() {
       return (
         <Inbox
           applicationIdentifier="APPLICATION_IDENTIFIER"
@@ -224,7 +224,7 @@ To display real-time notifications for your subscribers, connect the Inbox compo
   <Tab title="React">
     ```tsx
 
-    export function Novu() {
+    export function Notify() {
       return (
         <Inbox
           applicationIdentifier="APPLICATION_IDENTIFIER"
@@ -242,13 +242,13 @@ To display real-time notifications for your subscribers, connect the Inbox compo
 
 ### EU region
 
-If your Novu account is in the EU region, then include the `backendUrl` and `socketUrl` props to connect to EU-specific API endpoints:
+If your Notify account is in the EU region, then include the `backendUrl` and `socketUrl` props to connect to EU-specific API endpoints:
 
 <Tabs>
   <Tab title="Next.js">
     ```tsx
 
-    export function Novu() {
+    export function Notify() {
       return (
         <Inbox
           applicationIdentifier="APPLICATION_IDENTIFIER"
@@ -263,7 +263,7 @@ If your Novu account is in the EU region, then include the `backendUrl` and `soc
   <Tab title="React">
     ```tsx
 
-    export function Novu() {
+    export function Notify() {
       return (
         <Inbox
           applicationIdentifier="APPLICATION_IDENTIFIER"

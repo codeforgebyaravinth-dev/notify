@@ -1,5 +1,5 @@
-import { GetContextResponseDto } from '@novu/api/models/components';
-import { ContextId, ContextType } from '@novu/shared';
+import { GetContextResponseDto } from '@notify/api/models/components';
+import { ContextId, ContextType } from '@notify/shared';
 import { UseQueryOptions, useQuery } from '@tanstack/react-query';
 import { getContext } from '@/api/contexts';
 import { requireEnvironment, useEnvironment } from '@/context/environment/hooks';

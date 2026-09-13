@@ -4,8 +4,8 @@ import {
   CalculateDemoClaudeQuota,
   CalculateDemoClaudeQuotaCommand,
   DemoQuotaExhaustedError,
-} from '@novu/application-generic';
-import { type AgentEntity, ConversationRepository, type ConversationTokenUsage } from '@novu/dal';
+} from '@notify/application-generic';
+import { type AgentEntity, ConversationRepository, type ConversationTokenUsage } from '@notify/dal';
 import type { Response as ThalamusResponse } from '@novu/thalamus';
 
 import type { ManagedAgentContext } from './managed-agent.service';

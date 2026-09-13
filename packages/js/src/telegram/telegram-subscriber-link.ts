@@ -30,7 +30,7 @@ type LinkChannelEndpointApiResponse = {
  *
  * @example
  * ```ts
- * import { TelegramSubscriberLink } from '@novu/js';
+ * import { TelegramSubscriberLink } from '@notify/js';
  *
  * const link = new TelegramSubscriberLink({
  *   secretKey: process.env.NOVU_SECRET_KEY,

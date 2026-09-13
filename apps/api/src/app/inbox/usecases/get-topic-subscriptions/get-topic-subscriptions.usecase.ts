@@ -1,13 +1,13 @@
 import { Injectable } from '@nestjs/common';
-import { FeatureFlagsService, InstrumentUsecase } from '@novu/application-generic';
+import { FeatureFlagsService, InstrumentUsecase } from '@notify/application-generic';
 import {
   NotificationTemplateRepository,
   PreferencesEntity,
   PreferencesRepository,
   TopicSubscribersEntity,
   TopicSubscribersRepository,
-} from '@novu/dal';
-import { FeatureFlagsKeysEnum, PreferencesTypeEnum } from '@novu/shared';
+} from '@notify/dal';
+import { FeatureFlagsKeysEnum, PreferencesTypeEnum } from '@notify/shared';
 import { SubscriptionDetailsResponseDto } from '../../../shared/dtos/subscription-details-response.dto';
 import {
   mapTopicSubscriptionToDto,

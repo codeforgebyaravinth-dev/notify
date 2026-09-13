@@ -1,5 +1,5 @@
-import type { PinoLogger } from '@novu/application-generic';
-import type { ConversationChannel, ConversationEntity } from '@novu/dal';
+import type { PinoLogger } from '@notify/application-generic';
+import type { ConversationChannel, ConversationEntity } from '@notify/dal';
 import type { Thread } from 'chat';
 import { buildUnresolvedSubscriberAccessReply } from '../../shared/util/agent-inbound-replies';
 import type { ThreadReplyPersistContext } from '../egress/outbound.gateway';

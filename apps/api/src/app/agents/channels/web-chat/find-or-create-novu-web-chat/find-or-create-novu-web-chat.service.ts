@@ -5,8 +5,8 @@ import {
   AgentRepository,
   IntegrationEntity,
   IntegrationRepository,
-} from '@novu/dal';
-import { ChannelTypeEnum, ChatProviderIdEnum, providers, slugify } from '@novu/shared';
+} from '@notify/dal';
+import { ChannelTypeEnum, ChatProviderIdEnum, providers, slugify } from '@notify/shared';
 import { ClientSession } from 'mongoose';
 import shortid from 'shortid';
 

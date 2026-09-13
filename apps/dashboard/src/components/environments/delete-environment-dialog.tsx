@@ -1,4 +1,4 @@
-import { IEnvironment } from '@novu/shared';
+import { IEnvironment } from '@notify/shared';
 import { Cross2Icon } from '@radix-ui/react-icons';
 import { RiAlertFill } from 'react-icons/ri';
 import { Button } from '@/components/primitives/button';

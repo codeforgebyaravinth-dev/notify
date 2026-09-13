@@ -1,12 +1,12 @@
 ---
 title: 'GitHub Actions'
-description: "Deploy Novu Framework workflows automatically from GitHub with the official Novu Sync action to keep production in sync with your repository."
+description: "Deploy Notify Framework workflows automatically from GitHub with the official Notify Sync action to keep production in sync with your repository."
 ---
 
-Learn how to deploy your Novu workflows with our built-in GitHub Action command:
+Learn how to deploy your Notify workflows with our built-in GitHub Action command:
 
 ```yaml
-name: Deploy workflow State to Novu
+name: Deploy workflow State to Notify
 
 on:
   workflow_dispatch:
@@ -18,11 +18,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      # https://github.com/novuhq/actions-novu-sync
-      - name: Sync State to Novu
-        uses: novuhq/actions-novu-sync@v2
+      # https://github.com/novuhq/actions-notify-sync
+      - name: Sync State to Notify
+        uses: novuhq/actions-notify-sync@v2
         with:
-          # The secret key used to authenticate with Novu Cloud
+          # The secret key used to authenticate with Notify Cloud
           # To get the secret key, go to https://web.novu.co/api-keys.
           # Required.
           secret-key: ${{ secrets.NOVU_SECRET_KEY }}
@@ -32,7 +32,7 @@ jobs:
           # Required.
           bridge-url: ${{ secrets.NOVU_BRIDGE_URL }}
 
-          # The Novu Cloud API URL to sync with.
+          # The Notify Cloud API URL to sync with.
           # Optional.
           # Defaults to https://api.novu.co
           api-url: https://api.novu.co

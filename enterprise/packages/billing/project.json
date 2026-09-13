@@ -1,5 +1,5 @@
 {
-  "name": "@novu/ee-billing",
+  "name": "@notify/ee-billing",
   "sourceRoot": "enterprise/packages/billing/src",
   "projectType": "library",
   "targets": {

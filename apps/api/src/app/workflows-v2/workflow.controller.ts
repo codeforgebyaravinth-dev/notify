@@ -31,7 +31,7 @@ import {
   UpsertWorkflowCommand,
   UserSession,
   WorkflowResponseDto,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   ApiAuthSchemeEnum,
   ApiRateLimitCategoryEnum,
@@ -39,7 +39,7 @@ import {
   PermissionsEnum,
   ResourceOriginEnum,
   UserSessionData,
-} from '@novu/shared';
+} from '@notify/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ThrottlerCategory } from '../rate-limiting/guards/throttler.decorator';
 import { ApiCommonResponses, ApiResponse } from '../shared/framework/response.decorator';

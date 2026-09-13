@@ -1,6 +1,6 @@
-import { NotificationTemplateRepository, TenantRepository } from '@novu/dal';
-import { ICreateWorkflowOverrideRequestDto } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { NotificationTemplateRepository, TenantRepository } from '@notify/dal';
+import { ICreateWorkflowOverrideRequestDto } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Create Integration - /workflow-overrides (POST) #novu-v0', () => {

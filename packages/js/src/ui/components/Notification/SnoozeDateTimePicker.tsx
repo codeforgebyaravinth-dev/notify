@@ -144,7 +144,7 @@ export const SnoozeDateTimePicker: Component<SnoozeDateTimePickerProps> = (props
     <div
       class={style({
         key: 'snoozeDatePicker',
-        className: 'nt-bg-background nt-rounded-md nt-shadow-lg nt-w-[260px]',
+        className: 'nt-bg-background nt-nt-rounded-none nt-shadow-lg nt-w-[260px]',
       })}
       onClick={(e) => e.stopPropagation()}
     >

@@ -1,6 +1,6 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { ApiContextPayload, IsValidContextPayload, parseSlugId } from '@novu/application-generic';
-import { ContextPayload, IPreferenceChannels } from '@novu/shared';
+import { ApiContextPayload, IsValidContextPayload, parseSlugId } from '@notify/application-generic';
+import { ContextPayload, IPreferenceChannels } from '@notify/shared';
 import { Transform, Type } from 'class-transformer';
 import { IsOptional, ValidateNested } from 'class-validator';
 import { ScheduleDto } from '../../shared/dtos/schedule';

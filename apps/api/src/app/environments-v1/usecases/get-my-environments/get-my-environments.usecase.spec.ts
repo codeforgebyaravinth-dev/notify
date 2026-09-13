@@ -1,5 +1,5 @@
-import { PinoLogger } from '@novu/application-generic';
-import { EnvironmentRepository } from '@novu/dal';
+import { PinoLogger } from '@notify/application-generic';
+import { EnvironmentRepository } from '@notify/dal';
 import { expect } from 'chai';
 import sinon from 'sinon';
 

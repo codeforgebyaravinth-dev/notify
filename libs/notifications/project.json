@@ -1,5 +1,5 @@
 {
-  "name": "@novu/notifications",
+  "name": "@notify/notifications",
   "sourceRoot": "libs/notifications/src",
   "projectType": "library",
   "targets": {

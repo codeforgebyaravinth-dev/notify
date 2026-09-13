@@ -1,7 +1,7 @@
 import { createHash, randomBytes } from 'node:crypto';
 import { BadRequestException, Injectable, UnprocessableEntityException } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
-import type { EventType, RequestTraceInput } from '@novu/application-generic';
+import type { EventType, RequestTraceInput } from '@notify/application-generic';
 import {
   assertSafeOutboundUrl,
   ExecuteBridgeRequest,
@@ -21,7 +21,7 @@ import {
   StorageHelperService,
   TraceLogRepository,
   WorkflowQueueService,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   AgentRepository,
   NotificationTemplateEntity,
@@ -31,14 +31,14 @@ import {
   UserEntity,
   WorkflowOverrideEntity,
   WorkflowOverrideRepository,
-} from '@novu/dal';
-import { DiscoverWorkflowOutput, GetActionEnum } from '@novu/framework/internal';
+} from '@notify/dal';
+import { DiscoverWorkflowOutput, GetActionEnum } from '@notify/framework/internal';
 import {
   FeatureFlagsKeysEnum,
   ResourceOriginEnum,
   TriggerEventStatusEnum,
   TriggerRecipientsPayload,
-} from '@novu/shared';
+} from '@notify/shared';
 import Ajv, { ValidateFunction } from 'ajv';
 import addFormats from 'ajv-formats';
 import { generateTransactionId } from '../../../shared/helpers/generate-transaction-id';

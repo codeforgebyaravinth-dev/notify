@@ -1,4 +1,4 @@
-import { workflow } from '@novu/framework';
+import { workflow } from '@notify/framework';
 import { renderEmail } from '../../emails/novu-onboarding-email';
 import { emailControlSchema, payloadSchema } from './schemas';
 

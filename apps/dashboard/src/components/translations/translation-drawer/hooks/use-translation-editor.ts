@@ -1,4 +1,4 @@
-import { TranslationResponseDto } from '@novu/api/models/components';
+import { TranslationResponseDto } from '@notify/api/models/components';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 function escapeControlCharsInJsonStrings(jsonString: string): string {

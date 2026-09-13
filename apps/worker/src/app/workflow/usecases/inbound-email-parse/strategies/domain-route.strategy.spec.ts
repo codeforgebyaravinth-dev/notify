@@ -1,12 +1,12 @@
-import { InboundDomainRouteDelivery, PinoLogger } from '@novu/application-generic';
+import { InboundDomainRouteDelivery, PinoLogger } from '@notify/application-generic';
 import {
   AgentIntegrationRepository,
   AgentRepository,
   DomainRepository,
   DomainRouteRepository,
   IntegrationRepository,
-} from '@novu/dal';
-import { DomainRouteTypeEnum, DomainStatusEnum, EmailProviderIdEnum } from '@novu/shared';
+} from '@notify/dal';
+import { DomainRouteTypeEnum, DomainStatusEnum, EmailProviderIdEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { InboundEmailParseCommand } from '../inbound-email-parse.command';

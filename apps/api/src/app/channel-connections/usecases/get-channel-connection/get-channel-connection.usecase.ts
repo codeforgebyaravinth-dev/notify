@@ -1,11 +1,11 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { InstrumentUsecase } from '@novu/application-generic';
+import { InstrumentUsecase } from '@notify/application-generic';
 import {
   ChannelConnectionDBModel,
   ChannelConnectionEntity,
   ChannelConnectionRepository,
   EnforceEnvOrOrgIds,
-} from '@novu/dal';
+} from '@notify/dal';
 import { FilterQuery } from 'mongoose';
 import { GetChannelConnectionCommand } from './get-channel-connection.command';
 

@@ -1,4 +1,4 @@
-import { UserSession } from '@novu/testing';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Preview sms - /v1/content-templates/preview/sms (POST) #novu-v0', () => {

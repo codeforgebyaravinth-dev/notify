@@ -83,5 +83,5 @@ Novu uses a git submodule at `.source` pointing to `git@github.com:novuhq/packag
 
 - The `.source` directory contains the actual enterprise source code (private repo).
 - `enterprise/packages/*/src` are symlinks to `.source/*/src`.
-- Enterprise packages: `@novu/ee-auth`, `@novu/ee-api`, `@novu/ee-dal`, `@novu/ee-billing`, `@novu/ee-translation`, `@novu/ee-shared-services`.
+- Enterprise packages: `@notify/ee-auth`, `@notify/ee-api`, `@notify/ee-dal`, `@notify/ee-billing`, `@notify/ee-translation`, `@notify/ee-shared-services`.
 - The `check-ee.mjs` script in each enterprise package only builds if the `src` folder exists (graceful degradation for OSS contributors).

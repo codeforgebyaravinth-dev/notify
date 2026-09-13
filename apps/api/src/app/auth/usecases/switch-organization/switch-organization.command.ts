@@ -1,4 +1,4 @@
-import { AuthenticatedCommand } from '@novu/application-generic';
+import { AuthenticatedCommand } from '@notify/application-generic';
 import { IsNotEmpty } from 'class-validator';
 
 export class SwitchOrganizationCommand extends AuthenticatedCommand {

@@ -1,4 +1,4 @@
-import { AGENT_EVENT_PROTOCOL_VERSION } from '@novu/agent-event-protocol';
+import { AGENT_EVENT_PROTOCOL_VERSION } from '@notify/agent-event-protocol';
 import { AgentChatService } from '../api';
 import { NovuEventEmitter } from '../event-emitter';
 import { AgentChat } from './agent-chat';

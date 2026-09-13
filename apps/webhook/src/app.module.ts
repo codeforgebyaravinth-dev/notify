@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 
-import { createNestLoggingModuleOptions, LoggerModule, TracingModule } from '@novu/application-generic';
+import { createNestLoggingModuleOptions, LoggerModule, TracingModule } from '@notify/application-generic';
 import { SentryModule } from '@sentry/nestjs/setup';
 import packageJson from '../package.json';
 import { AppController } from './app.controller';

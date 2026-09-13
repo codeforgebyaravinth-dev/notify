@@ -1,4 +1,4 @@
-import { CredentialsKeyEnum } from '@novu/shared';
+import { CredentialsKeyEnum } from '@notify/shared';
 
 export type SlackCredentialField =
   | CredentialsKeyEnum.ApplicationId

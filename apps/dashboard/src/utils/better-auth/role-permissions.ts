@@ -1,1 +1,1 @@
-export { ROLE_PERMISSIONS } from '@novu/shared';
+export { ROLE_PERMISSIONS } from '@notify/shared';

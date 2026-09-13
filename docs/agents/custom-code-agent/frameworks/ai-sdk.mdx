@@ -1,13 +1,13 @@
 ---
 title: "AI SDK reference"
-description: "API reference for @novu/framework/ai-sdk: return types, tools, MCP, and approval gating with the Vercel AI SDK."
+description: "API reference for @notify/framework/ai-sdk: return types, tools, MCP, and approval gating with the Vercel AI SDK."
 sidebarTitle: AI SDK
 ---
 
 
 Already connecting an agent? Start with [Connect AI SDK to Slack](/agents/get-started/ai-sdk). This page is the adapter API.
 
-`@novu/framework/ai-sdk` lets you write agent handlers with the [Vercel AI SDK](https://ai-sdk.dev/). Return an AI SDK result straight from `onMessage` and Novu delivers the text - including tool loops and approval gating - to the conversation.
+`@notify/framework/ai-sdk` lets you write agent handlers with the [Vercel AI SDK](https://ai-sdk.dev/). Return an AI SDK result straight from `onMessage` and Notify delivers the text - including tool loops and approval gating - to the conversation.
 
 ## Before you start
 
@@ -21,27 +21,27 @@ Install the framework, the AI SDK, and a model provider:
 
 <CodeGroup>
 ```bash title="OpenAI"
-npm install @novu/framework ai @ai-sdk/openai
+npm install @notify/framework ai @ai-sdk/openai
 ```
 ```bash title="Anthropic"
-npm install @novu/framework ai @ai-sdk/anthropic
+npm install @notify/framework ai @ai-sdk/anthropic
 ```
 ```bash title="Google"
-npm install @novu/framework ai @ai-sdk/google
+npm install @notify/framework ai @ai-sdk/google
 ```
 ```bash title="Groq"
-npm install @novu/framework ai @ai-sdk/groq
+npm install @notify/framework ai @ai-sdk/groq
 ```
 </CodeGroup>
 
-`@novu/framework` and `ai` are required; pick one provider package. Examples on this page use OpenAI - see the [AI SDK providers list](https://ai-sdk.dev/providers/ai-sdk-providers) for others.
+`@notify/framework` and `ai` are required; pick one provider package. Examples on this page use OpenAI - see the [AI SDK providers list](https://ai-sdk.dev/providers/ai-sdk-providers) for others.
 
 ## Minimal agent
 
-Import `agent` and `toModelMessages` from `@novu/framework/ai-sdk`, then return `generateText()` from `onMessage`:
+Import `agent` and `toModelMessages` from `@notify/framework/ai-sdk`, then return `generateText()` from `onMessage`:
 
 ```typescript
-import { agent, toModelMessages } from '@novu/framework/ai-sdk';
+import { agent, toModelMessages } from '@notify/framework/ai-sdk';
 import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
@@ -65,13 +65,13 @@ On the AI SDK path, `onMessage` (and `onToolApproval`) can return an AI SDK resu
 
 | Return | Behavior |
 | --- | --- |
-| `generateText(...)` | Novu delivers the generated text |
-| `streamText(...)` | Novu waits for the full response, then delivers the final text (same outcome as `generateText`) |
+| `generateText(...)` | Notify delivers the generated text |
+| `streamText(...)` | Notify waits for the full response, then delivers the final text (same outcome as `generateText`) |
 | `string` / JSX `Card` | Delivered as a normal reply - see [Reply](/agents/custom-code-agent/building-blocks/reply) |
 | nothing | After you call `ctx.reply()` yourself |
 
 <Note>
-  Returning `streamText(...)` behaves the same as returning `generateText(...)` - Novu waits for the full response, then posts the completed text.
+  Returning `streamText(...)` behaves the same as returning `generateText(...)` - Notify waits for the full response, then posts the completed text.
 </Note>
 
 To stream live updates in the thread, call `streamText()` inside the handler **without returning it**. Post a reply, then update it as chunks arrive with [`ReplyHandle.edit()`](/agents/custom-code-agent/building-blocks/edit-sent-messages):
@@ -116,7 +116,7 @@ messages: toModelMessages(ctx.history);
 
 ## Automatic tool approval
 
-Set `needsApproval: true` on an AI SDK `tool()`. When the model calls it, Novu posts the Approve / Deny card and pauses the turn. After the user decides, Novu re-runs `onMessage` - `toModelMessages(ctx.history)` now includes the decision, so the tool loop continues with no extra code from you.
+Set `needsApproval: true` on an AI SDK `tool()`. When the model calls it, Notify posts the Approve / Deny card and pauses the turn. After the user decides, Notify re-runs `onMessage` - `toModelMessages(ctx.history)` now includes the decision, so the tool loop continues with no extra code from you.
 
 ```typescript
 import { tool } from 'ai';
@@ -134,7 +134,7 @@ Add `onToolApproval` when you need a hook after the click. See [Tool approval](/
 
 ## Turn failures and `onError`
 
-When a returned `generateText()` / `streamText()` result rejects - for example the provider errors or stream consumption fails - the failure propagates to the same dispatch boundary as a thrown handler error. Register `onError` on the agent to log, suppress user notification, send custom copy, or fall back to Novu's generic message.
+When a returned `generateText()` / `streamText()` result rejects - for example the provider errors or stream consumption fails - the failure propagates to the same dispatch boundary as a thrown handler error. Register `onError` on the agent to log, suppress user notification, send custom copy, or fall back to Notify's generic message.
 
 ```typescript
 export const supportAgent = agent('support-bot', {
@@ -143,7 +143,7 @@ export const supportAgent = agent('support-bot', {
 
   onError: async (error, ctx) => {
     console.error(error.message, error.cause);
-    // return nothing → generic user copy from Novu
+    // return nothing → generic user copy from Notify
     // return { suppress: true } → silent
     // return 'Custom apology' → your copy
   },
@@ -176,7 +176,7 @@ onMessage: async (message, ctx) => {
 },
 ```
 
-Novu does not inject MCP credentials into `ctx`. Resolve tokens in your handler - for example, look up a per-subscriber token you stored after your own OAuth flow using `ctx.subscriber?.subscriberId`.
+Notify does not inject MCP credentials into `ctx`. Resolve tokens in your handler - for example, look up a per-subscriber token you stored after your own OAuth flow using `ctx.subscriber?.subscriberId`.
 
 ## Related
 
@@ -194,6 +194,6 @@ Novu does not inject MCP credentials into `ctx`. Resolve tokens in your handler 
     Return LangChain agent configs with automatic tool approval resume.
   </Card>
   <Card icon="code" href="/agents/custom-code-agent/frameworks/other" title="Other frameworks">
-    Wire handlers without a Novu runtime adapter.
+    Wire handlers without a Notify runtime adapter.
   </Card>
 </Columns>

@@ -1,4 +1,4 @@
-import { ApiServiceLevelEnum } from '@novu/shared';
+import { ApiServiceLevelEnum } from '@notify/shared';
 import { useMutation } from '@tanstack/react-query';
 import { toast } from 'sonner';
 import { showErrorToast } from '@/components/primitives/sonner-helpers';

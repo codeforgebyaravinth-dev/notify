@@ -9,8 +9,8 @@ import {
   CompileStepTemplate,
   CompileStepTemplateCommand,
   PinoLogger,
-} from '@novu/application-generic';
-import { IEmailBlock, IMessageCTA, MessageTemplateContentType, UserSessionData } from '@novu/shared';
+} from '@notify/application-generic';
+import { IEmailBlock, IMessageCTA, MessageTemplateContentType, UserSessionData } from '@notify/shared';
 import { format } from 'date-fns';
 import i18next from 'i18next';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';

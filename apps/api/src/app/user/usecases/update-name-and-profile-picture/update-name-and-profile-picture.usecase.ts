@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
-import { buildUserKey, InvalidateCacheService } from '@novu/application-generic';
-import { UserEntity, UserRepository } from '@novu/dal';
+import { buildUserKey, InvalidateCacheService } from '@notify/application-generic';
+import { UserEntity, UserRepository } from '@notify/dal';
 
 import { BaseUserProfileUsecase } from '../base-user-profile.usecase';
 import { UpdateNameAndProfilePictureCommand } from './update-name-and-profile-picture.command';

@@ -5,7 +5,7 @@ import type {
   CardElementLinkButtonElement,
   CardElementLinkElement,
   CardElementTextElement,
-} from '@novu/shared';
+} from '@notify/shared';
 
 import { cn } from '@/utils/ui';
 import { renderInlineMarkdown } from './inline-markdown';

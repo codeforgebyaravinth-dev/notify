@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { type PendingToolApproval } from '@novu/application-generic';
+import { type PendingToolApproval } from '@notify/application-generic';
 import {
   AgentRepository,
   AgentToolTrustRepository,
@@ -8,7 +8,7 @@ import {
   SubscriberRepository,
   type ToolTrust,
   type ToolTrustPolicy,
-} from '@novu/dal';
+} from '@notify/dal';
 import type { ToolTrustTarget } from '../../shared/tool-approval/action-id';
 
 @Injectable()

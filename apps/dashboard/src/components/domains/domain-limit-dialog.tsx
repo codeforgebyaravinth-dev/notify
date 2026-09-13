@@ -1,4 +1,4 @@
-import type { ResourceLimitSource } from '@novu/shared';
+import type { ResourceLimitSource } from '@notify/shared';
 import { PlanLimitUpgradeDialog } from '@/components/billing/plan-limit-upgrade-dialog';
 
 type DomainLimitDialogProps = {

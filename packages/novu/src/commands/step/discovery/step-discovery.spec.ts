@@ -203,7 +203,7 @@ describe('step-discovery', () => {
   } = {}): string {
     const lines: string[] = [];
 
-    lines.push("import { step } from '@novu/framework/step-resolver';");
+    lines.push("import { step } from '@notify/framework/step-resolver';");
     lines.push("import { render } from '@react-email/components';");
 
     if (useJsx) {

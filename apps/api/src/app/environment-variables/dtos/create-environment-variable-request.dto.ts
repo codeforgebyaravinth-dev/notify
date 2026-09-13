@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { EnvironmentVariableType, ICreateEnvironmentVariableDto, IEnvironmentVariableValueDto } from '@novu/shared';
+import { EnvironmentVariableType, ICreateEnvironmentVariableDto, IEnvironmentVariableValueDto } from '@notify/shared';
 import { Type } from 'class-transformer';
 import {
   ArrayUnique,

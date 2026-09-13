@@ -1,4 +1,4 @@
-import { ChannelTypeEnum } from '@novu/shared';
+import { ChannelTypeEnum } from '@notify/shared';
 import { Type } from 'class-transformer';
 import { IsBoolean, ValidateNested } from 'class-validator';
 

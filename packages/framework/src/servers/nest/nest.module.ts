@@ -13,7 +13,7 @@ import { applyDecorators } from './nest.utils';
  *
  * @example
  * ```ts
- * import { NovuModule } from "@novu/framework/nest";
+ * import { NovuModule } from "@notify/framework/nest";
  * import { myWorkflow } from "./src/novu/workflows"; // Your workflows
  *
  * @Module({

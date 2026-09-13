@@ -18,8 +18,8 @@ import {
   UpdateWorkflowV0,
   UpsertControlValuesUseCase,
   UpsertPreferences,
-} from '@novu/application-generic';
-import { CommunityOrganizationRepository, PreferencesRepository } from '@novu/dal';
+} from '@notify/application-generic';
+import { CommunityOrganizationRepository, PreferencesRepository } from '@notify/dal';
 import { OutboundWebhooksModule } from '../outbound-webhooks/outbound-webhooks.module';
 import { SharedModule } from '../shared/shared.module';
 import { DeleteWorkflowUseCase } from '../workflows-v1/usecases/delete-workflow/delete-workflow.usecase';

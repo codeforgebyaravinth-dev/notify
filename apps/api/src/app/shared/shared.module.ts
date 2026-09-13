@@ -29,7 +29,7 @@ import {
   TraceRollupRepository,
   WorkflowRunCountRepository,
   WorkflowRunRepository,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   AgentIntegrationRepository,
   AgentRepository,
@@ -62,13 +62,13 @@ import {
   TopicSubscribersRepository,
   UserRepository,
   WorkflowOverrideRepository,
-} from '@novu/dal';
-import { isClerkEnabled, JobTopicNameEnum } from '@novu/shared';
+} from '@notify/dal';
+import { isClerkEnabled, JobTopicNameEnum } from '@notify/shared';
 import packageJson from '../../../package.json';
 
 function getDynamicAuthProviders() {
   if (isClerkEnabled()) {
-    const eeAuthPackage = require('@novu/ee-auth');
+    const eeAuthPackage = require('@notify/ee-auth');
 
     return eeAuthPackage.injectEEAuthProviders();
   } else {

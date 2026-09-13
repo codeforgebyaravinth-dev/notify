@@ -1,4 +1,4 @@
-import { MemberRoleEnum, PermissionsEnum } from '@novu/shared';
+import { MemberRoleEnum, PermissionsEnum } from '@notify/shared';
 import { createContext } from 'react';
 
 export type BetterAuthUser = {

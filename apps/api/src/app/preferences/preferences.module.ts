@@ -1,6 +1,6 @@
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
-import { DeletePreferencesUseCase, GetPreferences, UpsertPreferences } from '@novu/application-generic';
-import { PreferencesRepository } from '@novu/dal';
+import { DeletePreferencesUseCase, GetPreferences, UpsertPreferences } from '@notify/application-generic';
+import { PreferencesRepository } from '@notify/dal';
 import { SharedModule } from '../shared/shared.module';
 import { PreferencesController } from './preferences.controller';
 

@@ -1,4 +1,4 @@
-import { DomainStatusEnum, type IEnvironment } from '@novu/shared';
+import { DomainStatusEnum, type IEnvironment } from '@notify/shared';
 import { type QueryClient, useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import {
   type CursorPaginatedResponse,

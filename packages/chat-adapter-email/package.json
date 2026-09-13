@@ -1,5 +1,5 @@
 {
-  "name": "@novu/chat-adapter-email",
+  "name": "@notify/chat-adapter-email",
   "version": "0.0.1",
   "private": true,
   "type": "module",
@@ -18,7 +18,7 @@
     "check:fix": "biome check --write ."
   },
   "dependencies": {
-    "@novu/shared": "workspace:*",
+    "@notify/shared": "workspace:*",
     "@react-email/components": "1.0.12",
     "@react-email/render": "2.0.7",
     "hast-util-to-html": "9.0.5",

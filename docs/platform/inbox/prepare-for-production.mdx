@@ -1,15 +1,15 @@
 ---
 title: 'Prepare for Production'
-description: "Prepare your Novu Inbox for production by enabling HMAC encryption to secure subscriber sessions, removing branding, and configuring the component for scale."
+description: "Prepare your Notify Inbox for production by enabling HMAC encryption to secure subscriber sessions, removing branding, and configuring the component for scale."
 ---
 
-Before deploying the Inbox UI to production, you should secure your integration and configure the correct environment. You can also remove Novu's branding from your notifications.
+Before deploying the Inbox UI to production, you should secure your integration and configure the correct environment. You can also remove Notify's branding from your notifications.
 
 This ensures that your end users receive notifications safely, without exposure to unnecessary risks, and in a way that aligns with your product branding.
 
 ## Set the correct environment
 
-Novu supports multiple environments, including development, production, and any custom environments you create.
+Notify supports multiple environments, including development, production, and any custom environments you create.
 
 When preparing for deployment, choose the environment that will serve as your production environment and update your configuration accordingly:
 
@@ -31,23 +31,23 @@ When you add the Inbox to your application, you're required to pass:
   Without additional security, a malicious actor could potentially guess another subscriber's `subscriberId` and use your public `applicationIdentifier` to view that user's notifications.
 </Warning>
 
-You can prevent this by enabling HMAC (Hash-based Message Authentication Code) encryption. This process uses a _secret key_ to create a secure signature (`subscriberHash`) for each `subscriberId`. Novu verifies this hash to authenticate feed requests and to authorize updates to subscriber profile fields (`firstName`, `email`, `locale`, `data`, and so on) passed via the `subscriber` prop. Without `subscriberHash`, new subscribers are created with those fields, but existing profiles are not updated.
+You can prevent this by enabling HMAC (Hash-based Message Authentication Code) encryption. This process uses a _secret key_ to create a secure signature (`subscriberHash`) for each `subscriberId`. Notify verifies this hash to authenticate feed requests and to authorize updates to subscriber profile fields (`firstName`, `email`, `locale`, `data`, and so on) passed via the `subscriber` prop. Without `subscriberHash`, new subscribers are created with those fields, but existing profiles are not updated.
 
 Follow these steps to enable HMAC encryption.
 
 ### 1. Enable HMAC in the dashboard
 
-Activate the HMAC security feature within your Novu in-app provider settings.
+Activate the HMAC security feature within your Notify in-app provider settings.
 
-1. Go to [Novu Dashboard](https://dashboard.novu.co).
+1. Go to [Notify Dashboard](https://dashboard.novu.co).
 2. Navigate to the [Integrations Store](https://dashboard.novu.co/integrations) page.
-3. Click on the **Novu In-App** for your chosen production environment
+3. Click on the **Notify In-App** for your chosen production environment
 4. A side panel opens from the right side of the screen with the provider settings, enable `Security HMAC encryption` toggle in **Integration Credentials** section.
-  ![Enabling HMAC in the Novu dashboard](/images/inbox/hmac.png)
+  ![Enabling HMAC in the Notify dashboard](/images/inbox/hmac.png)
 
 ### 2. Generate HMAC hash on the server side
 
-Next, use your secret key from the [API Keys](https://dashboard.novu.co/api-keys) page on the Novu dashboard to generate an HMAC-SHA256 hash of the `subscriberId` on the server side.
+Next, use your secret key from the [API Keys](https://dashboard.novu.co/api-keys) page on the Notify dashboard to generate an HMAC-SHA256 hash of the `subscriberId` on the server side.
 
 The hash is computed as `HMAC-SHA256(secretKey, subscriberId)` and returned as a lowercase hex string.
 
@@ -59,7 +59,7 @@ import { createHmac } from 'crypto';
 // The subscriberId of the logged-in user
 const subscriberId = 'REPLACE_WITH_SUBSCRIBER_ID';
 
-// The secret key from your Novu API Keys page
+// The secret key from your Notify API Keys page
 const novuSecretKey = process.env.NOVU_SECRET_KEY;
 
 // Generate the HMAC hash
@@ -77,7 +77,7 @@ import os
 # The subscriberId of the logged-in user
 subscriber_id = 'REPLACE_WITH_SUBSCRIBER_ID'
 
-# The secret key from your Novu API Keys page
+# The secret key from your Notify API Keys page
 novu_secret_key = os.environ['NOVU_SECRET_KEY']
 
 # Generate the HMAC hash
@@ -100,7 +100,7 @@ import (
 // The subscriberId of the logged-in user
 subscriberID := "REPLACE_WITH_SUBSCRIBER_ID"
 
-// The secret key from your Novu API Keys page
+// The secret key from your Notify API Keys page
 novuSecretKey := os.Getenv("NOVU_SECRET_KEY")
 
 mac := hmac.New(sha256.New, []byte(novuSecretKey))
@@ -115,7 +115,7 @@ subscriberHash := hex.EncodeToString(mac.Sum(nil))
 // The subscriberId of the logged-in user
 $subscriberId = 'REPLACE_WITH_SUBSCRIBER_ID';
 
-// The secret key from your Novu API Keys page
+// The secret key from your Notify API Keys page
 $novuSecretKey = getenv('NOVU_SECRET_KEY');
 
 // Generate the HMAC hash
@@ -129,7 +129,7 @@ require 'openssl'
 # The subscriberId of the logged-in user
 subscriber_id = 'REPLACE_WITH_SUBSCRIBER_ID'
 
-# The secret key from your Novu API Keys page
+# The secret key from your Notify API Keys page
 novu_secret_key = ENV['NOVU_SECRET_KEY']
 
 # Generate the HMAC hash
@@ -163,7 +163,7 @@ using System.Text;
 // The subscriberId of the logged-in user
 string subscriberId = "REPLACE_WITH_SUBSCRIBER_ID";
 
-// The secret key from your Novu API Keys page
+// The secret key from your Notify API Keys page
 string novuSecretKey = Environment.GetEnvironmentVariable("NOVU_SECRET_KEY");
 
 using var hmac = new HMACSHA256(Encoding.UTF8.GetBytes(novuSecretKey));
@@ -184,7 +184,7 @@ import { canonicalize } from '@tufjs/canonical-json';
 // The subscriberId of the logged-in user
 const subscriberId = 'REPLACE_WITH_SUBSCRIBER_ID';
 
-// The secret key from your Novu API Keys page
+// The secret key from your Notify API Keys page
 const novuSecretKey = process.env.NOVU_SECRET_KEY;
 
 // Generate the subscriber hash
@@ -221,7 +221,7 @@ Pass the hash to the `subscriberHash` prop in your Inbox component.
 <Tabs>
   <Tab title="Without Context"> 
 ```tsx title="components/InboxWithSubscriberHash.tsx"
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 
 // Example: The hmacHash is passed to the frontend
 // as part of the user object after they authenticate.
@@ -243,7 +243,7 @@ const hmacHash = user?.novuSubscriberHash;
 </Tab>
 <Tab title="With Context">
 ```tsx title="components/InboxWithSubscriberAndContextHashes.tsx"
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 
 const { user } = currentUser();
 const subscriberHash = user?.novuSubscriberHash;
@@ -274,20 +274,20 @@ const context = {
   If HMAC encryption is active in In-App provider settings and `subscriberHash` is not provided, the Inbox will not load. When passing a `subscriber` object, `subscriberHash` is also required to update an existing subscriber's profile fields.
 </Note>
 
-## Remove Novu branding
+## Remove Notify branding
 
-Users on a paid plan can remove the Novu branding from the Inbox UI and Emails.
+Users on a paid plan can remove the Notify branding from the Inbox UI and Emails.
 
 <Note>
-Novu branding appears on Inbox UI, emails and [agents](/agents) messages. It does not change the content of SMS, push, or chat messages.
+Notify branding appears on Inbox UI, emails and [agents](/agents) messages. It does not change the content of SMS, push, or chat messages.
 </Note>
 
 To remove the branding:
 
-1. Go to the [Novu Dashboard](https://dashboard.novu.co) and open the [Settings page](https://dashboard.novu.co/settings) directly, or click your organization name in the top-left of the sidebar to open it.
+1. Go to the [Notify Dashboard](https://dashboard.novu.co) and open the [Settings page](https://dashboard.novu.co/settings) directly, or click your organization name in the top-left of the sidebar to open it.
 2. Under the **Organization** tab, find the **Branding & Integrations** section.
-3. Enable the **Remove Novu branding** toggle.
+3. Enable the **Remove Notify branding** toggle.
 
-![Removing Novu branding](/images/inbox/novu-branding.png)
+![Removing Notify branding](/images/inbox/novu-branding.png)
 
 If you see this toggle disabled, confirm that your organization is on a paid plan. This toggle is disabled on the free plan.

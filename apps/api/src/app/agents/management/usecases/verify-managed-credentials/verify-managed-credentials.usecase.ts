@@ -1,5 +1,5 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { InstrumentUsecase, resolveAgentRuntime } from '@novu/application-generic';
+import { InstrumentUsecase, resolveAgentRuntime } from '@notify/application-generic';
 
 import { VerifyManagedCredentialsCommand } from './verify-managed-credentials.command';
 

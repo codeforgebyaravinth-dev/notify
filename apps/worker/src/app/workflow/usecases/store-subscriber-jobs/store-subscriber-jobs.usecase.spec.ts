@@ -1,4 +1,4 @@
-import { StepTypeEnum } from '@novu/shared';
+import { StepTypeEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { StoreSubscriberJobs } from './store-subscriber-jobs.usecase';

@@ -1,16 +1,16 @@
 ---
-title: 'How do contexts work in Novu?'
+title: 'How do contexts work in Notify?'
 sidebarTitle: 'Contexts'
-description: "Learn how contexts work in Novu, how they differ from payloads, and how they scope, personalize, and filter notifications across workflows and Inbox."
+description: "Learn how contexts work in Notify, how they differ from payloads, and how they scope, personalize, and filter notifications across workflows and Inbox."
 ---
 
 A _context_ is user-defined metadata you attach when triggering a workflow. Contexts let you scope, personalize, and filter notifications without duplicating subscribers, workflows, or templates.
 
 Common context types include `tenant`, `app`, `region`, or any key that matches your product model. Each context entry is either a simple identifier or a rich object with an `id` and optional `data` fields.
 
-![Novu contexts feature showing tenant-scoped notification isolation in the dashboard](/images/inbox/Contexts.png)
+![Notify contexts feature showing tenant-scoped notification isolation in the dashboard](/images/inbox/Contexts.png)
 
-## How contexts fit into Novu's model
+## How contexts fit into Notify's model
 
 When you [trigger](/platform/concepts/trigger) a workflow, you pass:
 
@@ -18,7 +18,7 @@ When you [trigger](/platform/concepts/trigger) a workflow, you pass:
 - A **payload** (event-specific data for this run)
 - An optional **context** (shared metadata that scopes and personalizes the notification)
 
-Contexts are persistent. Unlike a payload, which exists only for a single workflow execution, context data is stored in Novu and reused across triggers, templates, the [Inbox](/platform/inbox), and the Activity Feed.
+Contexts are persistent. Unlike a payload, which exists only for a single workflow execution, context data is stored in Notify and reused across triggers, templates, the [Inbox](/platform/inbox), and the Activity Feed.
 
 <Note>
   You can pass up to five context keys per trigger. Each context `data` object is limited to 64KB. See [Manage contexts](/platform/workflow/advanced-features/contexts/manage-contexts) for schema details.
@@ -39,7 +39,7 @@ Use the payload for data that changes on every event. Use context for metadata t
 
 ## Context structure
 
-Each key in the `context` object is a context type. Novu supports three formats per key:
+Each key in the `context` object is a context type. Notify supports three formats per key:
 
 ```ts
 context: {
@@ -60,11 +60,11 @@ context: {
 }
 ```
 
-Contexts are **auto-created** the first time Novu sees them (via a workflow trigger or the Inbox).
+Contexts are **auto-created** the first time Notify sees them (via a workflow trigger or the Inbox).
 
 During **workflow triggers**, existing context `data` is **upserted** when you include a `data` object inline - similar to subscriber fields. Passing only a string identifier (for example, `tenant: "acme-corp"`) references the context without changing stored `data`.
 
-**Inbox** and other subscriber-facing APIs only find or create contexts and do **not** update existing `data`. You can also manage context data through the [Contexts API](/api-reference/contexts/context-schema) or the Novu dashboard.
+**Inbox** and other subscriber-facing APIs only find or create contexts and do **not** update existing `data`. You can also manage context data through the [Contexts API](/api-reference/contexts/context-schema) or the Notify dashboard.
 
 ## What you can use contexts for
 
@@ -108,7 +108,7 @@ The [Inbox](/platform/inbox) uses **exact-match** filtering. The `context` prop 
 | `{ tenant: "acme" }` | `{ tenant: "globex" }` | No |
 | `{ tenant: "acme" }` | `{}` | No |
 
-When a subscriber switches tenants in your app, re-render the Inbox with the new context. Novu refetches notifications and reconnects the WebSocket scope automatically.
+When a subscriber switches tenants in your app, re-render the Inbox with the new context. Notify refetches notifications and reconnects the WebSocket scope automatically.
 
 <Warning>
   Because `context` is set on the client, secure it with `contextHash` in production. See [Inbox with context](/platform/inbox/configuration/inbox-with-context).
@@ -119,9 +119,9 @@ When a subscriber switches tenants in your app, re-render the Inbox with the new
 <Tabs>
   <Tab title="Node.js">
 ```ts
-import { Novu } from "@novu/api";
+import { Notify } from "@notify/api";
 
-const novu = new Novu({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
+const notify = new Notify({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
 
 await novu.trigger({
   workflowId: "invoice-paid",
@@ -140,9 +140,9 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="invoice-paid",
         to={"subscriber_id": "user-123"},
@@ -191,10 +191,10 @@ s.Trigger(context.Background(), components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()
+$sdk = notify\Notify::builder()
     ->setSecurity('<YOUR_SECRET_KEY_HERE>')
     ->build();
 
@@ -218,8 +218,8 @@ $sdk->trigger(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new NovuSDK(secretKey: "<YOUR_SECRET_KEY_HERE>");
@@ -246,11 +246,11 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto() {
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 import java.util.Map;
 
-Novu novu = Novu.builder()
+Notify novu = Notify.builder()
     .secretKey("<YOUR_SECRET_KEY_HERE>")
     .build();
 
@@ -320,7 +320,7 @@ curl -L -g -X POST 'https://api.novu.co/v1/events/trigger' \
   <Accordion title="Should I create and update contexts ahead of time or pass context data on every trigger?">
     Both patterns are supported.
 
-    **Inline on workflow trigger (server-side):** When you trigger a workflow with a rich context object that includes `data`, Novu creates the context if it is missing or replaces stored `data` if it already exists. This works like subscriber upsert and is useful when your backend already has the latest tenant metadata at trigger time. Pass only the context `id` as a string when you want to reference existing data without changing it.
+    **Inline on workflow trigger (server-side):** When you trigger a workflow with a rich context object that includes `data`, Notify creates the context if it is missing or replaces stored `data` if it already exists. This works like subscriber upsert and is useful when your backend already has the latest tenant metadata at trigger time. Pass only the context `id` as a string when you want to reference existing data without changing it.
 
     **Ahead of time via API or dashboard:** Create contexts with initial `data` before you need them, then [update context data](/api-reference/contexts/update-a-context) when metadata changes (for example, tenant name or plan). Use this when you want a single source of truth outside of triggers.
 

@@ -1,13 +1,13 @@
 import { Injectable } from '@nestjs/common';
-import { PinoLogger } from '@novu/application-generic';
+import { PinoLogger } from '@notify/application-generic';
 import {
   type ChannelConnectionEntity,
   ChannelConnectionRepository,
   ChannelEndpointRepository,
   type ContextEntity,
   ContextRepository,
-} from '@novu/dal';
-import type { AgentContextPayload, AgentContextValue } from '@novu/framework';
+} from '@notify/dal';
+import type { AgentContextPayload, AgentContextValue } from '@notify/framework';
 import { ResolvedAgentConfig } from '../../channels/agent-config-resolver.service';
 import { captureAgentWarning } from '../../shared/errors/capture-agent-sentry';
 import { PLATFORM_ENDPOINT_CONFIG } from '../../shared/util/platform-endpoint-config';

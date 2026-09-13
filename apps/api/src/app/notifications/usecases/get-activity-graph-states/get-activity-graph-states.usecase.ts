@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { NotificationRepository } from '@novu/dal';
+import { NotificationRepository } from '@notify/dal';
 import { subDays } from 'date-fns';
 import { ActivityGraphStatesResponse } from '../../dtos/activity-graph-states-response.dto';
 import { GetActivityGraphStatsCommand } from './get-activity-graph-states.command';

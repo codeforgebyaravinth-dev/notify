@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { ContextRepository } from '@novu/dal';
+import { ContextRepository } from '@notify/dal';
 import { DeleteContextCommand } from './delete-context.command';
 
 @Injectable()

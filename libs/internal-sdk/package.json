@@ -1,5 +1,5 @@
 {
-  "name": "@novu/api",
+  "name": "@notify/api",
   "version": "3.19.0",
   "author": "Novu",
   "main": "./index.js",

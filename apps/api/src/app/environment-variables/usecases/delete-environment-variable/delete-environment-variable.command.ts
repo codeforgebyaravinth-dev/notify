@@ -1,4 +1,4 @@
-import { OrganizationLevelWithUserCommand } from '@novu/application-generic';
+import { OrganizationLevelWithUserCommand } from '@notify/application-generic';
 import { IsBoolean, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 export class DeleteEnvironmentVariableCommand extends OrganizationLevelWithUserCommand {

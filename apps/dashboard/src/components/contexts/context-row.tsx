@@ -1,5 +1,5 @@
-import { GetContextResponseDto } from '@novu/api/models/components';
-import { PermissionsEnum } from '@novu/shared';
+import { GetContextResponseDto } from '@notify/api/models/components';
+import { PermissionsEnum } from '@notify/shared';
 import { ComponentProps, useState } from 'react';
 import { RiDeleteBin2Line, RiMore2Fill, RiPulseFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';

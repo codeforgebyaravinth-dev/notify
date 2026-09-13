@@ -1,6 +1,6 @@
 import { ApiProperty, ApiPropertyOptional, getSchemaPath } from '@nestjs/swagger';
-import { ApiContextPayload, IsValidContextPayload } from '@novu/application-generic';
-import { ContextPayload, TriggerRecipientSubscriber, TriggerTenantContext } from '@novu/shared';
+import { ApiContextPayload, IsValidContextPayload } from '@notify/application-generic';
+import { ContextPayload, TriggerRecipientSubscriber, TriggerTenantContext } from '@notify/shared';
 import { Type } from 'class-transformer';
 import { IsDefined, IsNotEmpty, IsObject, IsOptional, IsString, ValidateIf, ValidateNested } from 'class-validator';
 import { SubscriberPayloadDto, TenantPayloadDto, TriggerOverrides } from './trigger-event-request.dto';

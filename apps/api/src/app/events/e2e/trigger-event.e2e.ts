@@ -1,7 +1,7 @@
-import { Novu } from '@novu/api';
-import { CreateIntegrationRequestDto, TriggerEventResponseDto } from '@novu/api/models/components';
-import { SubscriberPayloadDto } from '@novu/api/src/models/components/subscriberpayloaddto';
-import { ClickHouseService, DetailEnum, QueryBuilder, Trace, TraceLogRepository } from '@novu/application-generic';
+import { Novu } from '@notify/api';
+import { CreateIntegrationRequestDto, TriggerEventResponseDto } from '@notify/api/models/components';
+import { SubscriberPayloadDto } from '@notify/api/src/models/components/subscriberpayloaddto';
+import { ClickHouseService, DetailEnum, QueryBuilder, Trace, TraceLogRepository } from '@notify/application-generic';
 import {
   CommunityOrganizationRepository,
   ExecutionDetailsRepository,
@@ -15,7 +15,7 @@ import {
   SubscriberEntity,
   SubscriberRepository,
   TenantRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   ActorTypeEnum,
   ChannelTypeEnum,
@@ -40,9 +40,9 @@ import {
   TemplateVariableTypeEnum,
   WorkflowCreationSourceEnum,
   WorkflowResponseDto,
-} from '@novu/shared';
-import { EmailEventStatusEnum } from '@novu/stateless';
-import { SubscribersService, UserSession, WorkflowOverrideService } from '@novu/testing';
+} from '@notify/shared';
+import { EmailEventStatusEnum } from '@notify/stateless';
+import { SubscribersService, UserSession, WorkflowOverrideService } from '@notify/testing';
 import { expect } from 'chai';
 import { v4 as uuid } from 'uuid';
 import { initNovuClassSdk } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';

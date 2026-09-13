@@ -1,9 +1,9 @@
 import '../../src/config';
 
 import { NestFactory } from '@nestjs/core';
-import { encryptSecret, PinoLogger } from '@novu/application-generic';
-import { EnvironmentRepository, IApiKey } from '@novu/dal';
-import { EncryptedSecret } from '@novu/shared';
+import { encryptSecret, PinoLogger } from '@notify/application-generic';
+import { EnvironmentRepository, IApiKey } from '@notify/dal';
+import { EncryptedSecret } from '@notify/shared';
 import { createHash } from 'crypto';
 
 import { AppModule } from '../../src/app.module';

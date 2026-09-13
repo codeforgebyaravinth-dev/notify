@@ -1,5 +1,5 @@
-import type { AgentMcpServerRepository, McpConnectionRepository, SubscriberRepository } from '@novu/dal';
-import { MCP_SERVERS, McpConnectionStatusEnum } from '@novu/shared';
+import type { AgentMcpServerRepository, McpConnectionRepository, SubscriberRepository } from '@notify/dal';
+import { MCP_SERVERS, McpConnectionStatusEnum } from '@notify/shared';
 
 import type { OAuthMcp } from './oauth-mcp.types';
 

@@ -1,5 +1,5 @@
-import type { IEnvironment, WorkflowListResponseDto, WorkflowResponseDto } from '@novu/shared';
-import { ResourceOriginEnum, WorkflowStatusEnum } from '@novu/shared';
+import type { IEnvironment, WorkflowListResponseDto, WorkflowResponseDto } from '@notify/shared';
+import { ResourceOriginEnum, WorkflowStatusEnum } from '@notify/shared';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';

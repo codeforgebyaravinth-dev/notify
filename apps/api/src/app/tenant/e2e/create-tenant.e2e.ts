@@ -1,7 +1,7 @@
 // noinspection ExceptionCaughtLocallyJS
 
-import { TenantRepository } from '@novu/dal';
-import { UserSession } from '@novu/testing';
+import { TenantRepository } from '@notify/dal';
+import { UserSession } from '@notify/testing';
 import type { AxiosResponse } from 'axios';
 import axios, { AxiosError } from 'axios';
 import { expect } from 'chai';

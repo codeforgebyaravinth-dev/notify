@@ -1,4 +1,4 @@
-import { Novu } from '@novu/api';
+import { Novu } from '@notify/api';
 import {
   ContentIssueEnum,
   CreateWorkflowDto,
@@ -14,11 +14,11 @@ import {
   WorkflowCreationSourceEnum,
   WorkflowListResponseDto,
   WorkflowStatusEnum,
-} from '@novu/api/models/components';
-import { ErrorDto } from '@novu/api/models/errors';
-import { WorkflowResponseDto } from '@novu/api/src/models/components';
-import { buildSlug, JSONSchemaDto } from '@novu/application-generic';
-import { PreferencesRepository } from '@novu/dal';
+} from '@notify/api/models/components';
+import { ErrorDto } from '@notify/api/models/errors';
+import { WorkflowResponseDto } from '@notify/api/src/models/components';
+import { buildSlug, JSONSchemaDto } from '@notify/application-generic';
+import { PreferencesRepository } from '@notify/dal';
 import {
   ApiServiceLevelEnum,
   DEFAULT_WORKFLOW_PREFERENCES,
@@ -27,8 +27,8 @@ import {
   ShortIsPrefixEnum,
   StepTypeEnum,
   slugify,
-} from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import chai, { expect } from 'chai';
 import chaiSubset from 'chai-subset';
 import {

@@ -104,7 +104,7 @@ export class AgentError extends Error {
  *
  * @example
  * ```ts
- * import { AgentDeliveryError } from '@novu/framework';
+ * import { AgentDeliveryError } from '@notify/framework';
  *
  * try {
  *   await ctx.reply('Hello!');

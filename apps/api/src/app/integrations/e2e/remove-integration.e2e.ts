@@ -1,7 +1,7 @@
 import { HttpStatus } from '@nestjs/common';
-import { EnvironmentRepository, IntegrationRepository } from '@novu/dal';
-import { ChannelTypeEnum, ChatProviderIdEnum, EmailProviderIdEnum, PushProviderIdEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { EnvironmentRepository, IntegrationRepository } from '@notify/dal';
+import { ChannelTypeEnum, ChatProviderIdEnum, EmailProviderIdEnum, PushProviderIdEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Delete Integration - /integration/:integrationId (DELETE) #novu-v2', () => {

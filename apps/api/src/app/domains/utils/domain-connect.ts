@@ -1,5 +1,5 @@
 import { createSign } from 'node:crypto';
-import { DomainEntity } from '@novu/dal';
+import { DomainEntity } from '@notify/dal';
 import { parse } from 'tldts';
 import { getMailServerDomain } from './dns-records';
 

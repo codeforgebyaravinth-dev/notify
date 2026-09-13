@@ -1,4 +1,4 @@
-import { ResourceOriginEnum, StepCreateDto, WorkflowResponseDto } from '@novu/shared';
+import { ResourceOriginEnum, StepCreateDto, WorkflowResponseDto } from '@notify/shared';
 import { Node, ReactFlowInstance } from '@xyflow/react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';

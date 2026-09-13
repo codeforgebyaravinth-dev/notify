@@ -1,4 +1,4 @@
-import { EmailProviderIdEnum } from '@novu/shared';
+import { EmailProviderIdEnum } from '@notify/shared';
 import {
   ChannelTypeEnum,
   CheckIntegrationResponseEnum,
@@ -8,7 +8,7 @@ import {
   IEmailOptions,
   IEmailProvider,
   ISendMessageSuccessResponse,
-} from '@novu/stateless';
+} from '@notify/stateless';
 import { Errors, Message, Models, ServerClient } from 'postmark';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
 import { WithPassthrough } from '../../../utils/types';

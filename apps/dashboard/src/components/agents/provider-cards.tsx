@@ -4,7 +4,7 @@ import {
   EmailProviderIdEnum,
   type IIntegration,
   providers as novuProviders,
-} from '@novu/shared';
+} from '@notify/shared';
 import { type ReactNode, useMemo } from 'react';
 import {
   RiArrowLeftSLine,

@@ -1,5 +1,5 @@
 import { Injectable, ServiceUnavailableException } from '@nestjs/common';
-import { PinoLogger } from '@novu/application-generic';
+import { PinoLogger } from '@notify/application-generic';
 
 // Keep in sync with compatibility_date in enterprise/workers/step-resolver/wrangler.jsonc
 const CF_COMPATIBILITY_DATE = '2025-11-18';

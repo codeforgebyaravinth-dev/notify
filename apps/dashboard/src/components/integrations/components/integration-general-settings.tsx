@@ -4,7 +4,7 @@ import {
   IIntegration,
   IProviderConfig,
   PermissionsEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { Control } from 'react-hook-form';
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/primitives/form/form';
 import { Input } from '@/components/primitives/input';

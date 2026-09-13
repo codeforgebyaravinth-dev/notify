@@ -1,4 +1,4 @@
-import { ChannelTypeEnum } from '@novu/shared';
+import { ChannelTypeEnum } from '@notify/shared';
 import { useEffect, useState } from 'react';
 import ReactConfetti from 'react-confetti';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';

@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { InstrumentUsecase, PinoLogger, TraceRollupRepository } from '@novu/application-generic';
+import { InstrumentUsecase, PinoLogger, TraceRollupRepository } from '@notify/application-generic';
 import { ProviderVolumeDataPointDto } from '../../dtos/get-charts.response.dto';
 import { BuildProviderByVolumeChartCommand } from './build-provider-by-volume-chart.command';
 

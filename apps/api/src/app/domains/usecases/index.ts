@@ -1,4 +1,4 @@
-import { AttachmentRehydrator, InboundDomainRouteDelivery } from '@novu/application-generic';
+import { AttachmentRehydrator, InboundDomainRouteDelivery } from '@notify/application-generic';
 import { CreateDomain } from './create-domain/create-domain.usecase';
 import { CreateDomainConnectApplyUrl } from './create-domain-connect-apply-url/create-domain-connect-apply-url.usecase';
 import { CreateDomainRoute } from './create-domain-route/create-domain-route.usecase';

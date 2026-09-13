@@ -1,4 +1,4 @@
-import { providers } from '@novu/shared';
+import { providers } from '@notify/shared';
 import type { AgentIntegrationLink, AgentResponse } from '@/api/agents';
 import { AgentIntegrationGuideLayout } from './agent-integration-guide-layout';
 import { AgentIntegrationGuideSection } from './agent-integration-guide-section';

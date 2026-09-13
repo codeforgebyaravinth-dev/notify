@@ -1,5 +1,5 @@
 import { Reflector } from '@nestjs/core';
-import { ApiRateLimitCategoryEnum, ApiRateLimitCostEnum } from '@novu/shared';
+import { ApiRateLimitCategoryEnum, ApiRateLimitCostEnum } from '@notify/shared';
 
 export const ThrottlerCategory = Reflector.createDecorator<ApiRateLimitCategoryEnum>();
 

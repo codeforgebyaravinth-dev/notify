@@ -1,4 +1,4 @@
-import { ConversationActivityTypeEnum } from '@novu/dal';
+import { ConversationActivityTypeEnum } from '@notify/dal';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { BridgeExpireSupersededApprovalsService } from './bridge-expire-superseded-approvals.service';

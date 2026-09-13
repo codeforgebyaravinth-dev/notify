@@ -1,4 +1,4 @@
-import { IEnvironment, PermissionsEnum, SECRET_MASK } from '@novu/shared';
+import { IEnvironment, PermissionsEnum, SECRET_MASK } from '@notify/shared';
 import React, { useState } from 'react';
 import {
   RiAlertLine,

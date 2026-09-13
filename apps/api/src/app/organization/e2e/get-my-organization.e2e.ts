@@ -1,5 +1,5 @@
-import { CommunityOrganizationRepository, PartnerTypeEnum } from '@novu/dal';
-import { UserSession } from '@novu/testing';
+import { CommunityOrganizationRepository, PartnerTypeEnum } from '@notify/dal';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Get my organization - /organizations/me (GET) #novu-v0-os', async () => {

@@ -1,4 +1,4 @@
-import { UserSessionData } from '@novu/shared';
+import { UserSessionData } from '@notify/shared';
 
 let nr: any;
 

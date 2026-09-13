@@ -5,21 +5,21 @@ import {
   GetNovuProviderCredentials,
   GetNovuProviderCredentialsCommand,
   PinoLogger,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   AgentIntegrationRepository,
   EnvironmentRepository,
   ICredentialsEntity,
   IntegrationEntity,
   SubscriberRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   ChannelTypeEnum,
   ChatProviderIdEnum,
   ConnectionMode,
   ContextPayload,
   SLACK_AGENT_OAUTH_SCOPES,
-} from '@novu/shared';
+} from '@notify/shared';
 import { validateConnectionMode } from '../../../../channel-connections/usecases/channel-connection.utils';
 import { ensureSubscriberProvisioned } from '../../../../channel-connections/usecases/ensure-connect-dashboard-subscriber';
 import { areHexDigestsEqual } from '../../../../shared/helpers/timing-safe-equal';

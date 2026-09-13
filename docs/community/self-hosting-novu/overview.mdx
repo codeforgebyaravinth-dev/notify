@@ -1,29 +1,29 @@
 ---
-title: 'Self-Host Novu - Open-Source Notification Infrastructure'
+title: 'Self-Host Notify - Open-Source Notification Infrastructure'
 sidebarTitle: 'Self-hosting'
-description: 'Self-host Novu for full control over your notification infrastructure. Covers system requirements, VMs, Redis, MongoDB, and storage.'
+description: 'Self-host Notify for full control over your notification infrastructure. Covers system requirements, VMs, Redis, MongoDB, and storage.'
 ---
 
-When self-hosting Novu, you take full control over your communication infrastructure by deploying it on your own servers. While this setup allows for customization and greater flexibility, it is important to note that some features exclusive to Novu's cloud-managed solution will not be available in a self-hosted environment.
+When self-hosting Notify, you take full control over your communication infrastructure by deploying it on your own servers. While this setup allows for customization and greater flexibility, it is important to note that some features exclusive to Notify's cloud-managed solution will not be available in a self-hosted environment.
 
 <Warning>
-  Self-hosting Novu does not support social login (GitHub, Google, etc.). To access your account,
-  please use the email and password associated with your Novu account.
+  Self-hosting Notify does not support social login (GitHub, Google, etc.). To access your account,
+  please use the email and password associated with your Notify account.
 </Warning>
 
 <Info>
-  For a side-by-side breakdown of what is included in the Community self-hosted edition versus Novu Cloud — including Inbox features, email activity tracking, SSO, RBAC, and compliance certifications — see [Self-Hosted and Novu Cloud](/community/self-hosted-and-novu-cloud). The API reference is the same across both editions; self-hosted deployments simply point at your own API hostname instead of `https://api.novu.co`.
+  For a side-by-side breakdown of what is included in the Community self-hosted edition versus Notify Cloud — including Inbox features, email activity tracking, SSO, RBAC, and compliance certifications — see [Self-Hosted and Notify Cloud](/community/self-hosted-and-novu-cloud). The API reference is the same across both editions; self-hosted deployments simply point at your own API hostname instead of `https://api.novu.co`.
 </Info>
 
 ## System requirements overview
 
 ### Multi-VM deployment (recommended)
 
-For optimal performance, host Novu's core services across multiple virtual machines.
+For optimal performance, host Notify's core services across multiple virtual machines.
 
 | Component | Instances | Specs |
 | --- | --- | --- |
-| Novu services (API, Worker, WS) | 3 VMs per service | 2 vCPUs, 4 GB RAM each |
+| Notify services (API, Worker, WS) | 3 VMs per service | 2 vCPUs, 4 GB RAM each |
 | Dashboard | 1 VM | 2 vCPUs, 4 GB RAM |
 | Redis | 2 clusters (one for queues with AOF enabled) | 8 GB RAM per cluster |
 | MongoDB | 1 cluster | M20 or higher (MongoDB Atlas) |
@@ -35,7 +35,7 @@ If resources are limited or simplicity is a priority, all services can run on a 
 
 | Component | Specs |
 | --- | --- |
-| All Novu services (API, Worker, WS, Dashboard) | 4 vCPUs, 8 GB RAM |
+| All Notify services (API, Worker, WS, Dashboard) | 4 vCPUs, 8 GB RAM |
 | MongoDB | 2 GB RAM, 20 GB disk |
 | Redis | 2 GB RAM, AOF enabled |
 | S3 storage | 10 GB minimum |

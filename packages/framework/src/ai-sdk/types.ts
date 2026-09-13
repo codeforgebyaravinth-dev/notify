@@ -21,7 +21,7 @@ export type AiSdkApprovalRequestPart = Extract<
 >;
 
 /**
- * Handlers for `@novu/framework/ai-sdk` agents.
+ * Handlers for `@notify/framework/ai-sdk` agents.
  *
  * Extends {@link AgentHandlers}: same events and config (`toolApproval`, etc.),
  * but `onMessage` and `onToolApproval` may return an AI SDK result for automatic delivery.

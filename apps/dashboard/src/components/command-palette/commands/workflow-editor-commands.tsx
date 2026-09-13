@@ -1,4 +1,4 @@
-import type { StepResponseDto } from '@novu/shared';
+import type { StepResponseDto } from '@notify/shared';
 import { RiEditLine, RiPlayFill, RiSettings4Line } from 'react-icons/ri';
 import { useNavigate } from 'react-router-dom';
 import { StepTypeEnum } from '@/utils/enums';

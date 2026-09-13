@@ -10,7 +10,7 @@ import {
   SsrfBlockedError,
   safeOutboundJsonRequest,
   splitOAuthState,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   AgentMcpServerRepository,
   AgentRepository,
@@ -21,7 +21,7 @@ import {
   McpConnectionOAuthClient,
   McpConnectionRepository,
   SubscriberRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   MCP_SERVERS,
   McpConnectionAuthModeEnum,
@@ -29,7 +29,7 @@ import {
   type McpOAuthCatalogEntry,
   type McpTokenEndpointAuthMethod,
   resolvePersistedMcpTokenEndpointAuthMethod,
-} from '@novu/shared';
+} from '@notify/shared';
 import { areHexDigestsEqual } from '../../../../shared/helpers/timing-safe-equal';
 import { OutboundGateway } from '../../../conversation-runtime/egress/outbound.gateway';
 import { ManagedAgentService } from '../../../managed-runtime/managed-agent.service';

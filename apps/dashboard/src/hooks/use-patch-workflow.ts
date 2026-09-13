@@ -1,4 +1,4 @@
-import type { WorkflowResponseDto } from '@novu/shared';
+import type { WorkflowResponseDto } from '@notify/shared';
 import { UseMutationOptions, useMutation, useQueryClient } from '@tanstack/react-query';
 import { patchWorkflow } from '@/api/workflows';
 import { useEnvironment } from '@/context/environment/hooks';

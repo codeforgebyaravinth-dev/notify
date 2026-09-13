@@ -1,4 +1,4 @@
-import { ChatProviderIdEnum, PushProviderIdEnum } from '@novu/shared';
+import { ChatProviderIdEnum, PushProviderIdEnum } from '@notify/shared';
 import { IsNotEmpty, IsString } from 'class-validator';
 import { EnvironmentCommand } from '../../../shared/commands/project.command';
 

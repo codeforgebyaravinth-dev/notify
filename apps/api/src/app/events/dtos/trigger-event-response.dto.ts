@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IWorkflowDataDto } from '@novu/application-generic';
-import { TriggerEventStatusEnum } from '@novu/shared';
+import { IWorkflowDataDto } from '@notify/application-generic';
+import { TriggerEventStatusEnum } from '@notify/shared';
 import { IsBoolean, IsDefined, IsEnum, IsOptional, IsString } from 'class-validator';
 
 export class TriggerEventResponseDto {

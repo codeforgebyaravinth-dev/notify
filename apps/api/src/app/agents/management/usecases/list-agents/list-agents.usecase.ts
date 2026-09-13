@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { AgentEntitlementsService, InstrumentUsecase, isAgentOverPlanLimit } from '@novu/application-generic';
-import { AgentIntegrationRepository, AgentRepository, IntegrationRepository } from '@novu/dal';
-import { DirectionEnum } from '@novu/shared';
+import { AgentEntitlementsService, InstrumentUsecase, isAgentOverPlanLimit } from '@notify/application-generic';
+import { AgentIntegrationRepository, AgentRepository, IntegrationRepository } from '@notify/dal';
+import { DirectionEnum } from '@notify/shared';
 import type { AgentIntegrationSummaryDto } from '../../../shared/dtos/agent-integration-summary.dto';
 import { ListAgentsResponseDto } from '../../../shared/dtos/list-agents-response.dto';
 import { toAgentIntegrationSummary, toAgentResponse } from '../../../shared/mappers/agent-response.mapper';

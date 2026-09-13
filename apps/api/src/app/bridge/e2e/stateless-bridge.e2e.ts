@@ -1,7 +1,7 @@
-import { NotificationTemplateRepository } from '@novu/dal';
-import { workflow } from '@novu/framework';
-import { ResourceOriginEnum, StepTypeEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { NotificationTemplateRepository } from '@notify/dal';
+import { workflow } from '@notify/framework';
+import { ResourceOriginEnum, StepTypeEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import getPort from 'get-port';
 import { TestBridgeServer } from '../../../../e2e/test-bridge-server';

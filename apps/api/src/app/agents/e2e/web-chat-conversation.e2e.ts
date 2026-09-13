@@ -1,13 +1,13 @@
-import { AGENT_EVENT_PROTOCOL_VERSION, type AgentEventEnvelope } from '@novu/agent-event-protocol';
-import { AgentEntitlementsService, WebSocketsQueueService } from '@novu/application-generic';
+import { AGENT_EVENT_PROTOCOL_VERSION, type AgentEventEnvelope } from '@notify/agent-event-protocol';
+import { AgentEntitlementsService, WebSocketsQueueService } from '@notify/application-generic';
 import {
   ConversationActivationRepository,
   ConversationActivitySenderTypeEnum,
   ConversationActivityTypeEnum,
   ConversationParticipantTypeEnum,
-} from '@novu/dal';
-import { ChatProviderIdEnum, WebSocketEventEnum } from '@novu/shared';
-import { testServer } from '@novu/testing';
+} from '@notify/dal';
+import { ChatProviderIdEnum, WebSocketEventEnum } from '@notify/shared';
+import { testServer } from '@notify/testing';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { PlanLimitGateService } from '../conversation-runtime/ingress/plan-limit-gate.service';

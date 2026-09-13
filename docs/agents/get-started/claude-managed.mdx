@@ -1,19 +1,19 @@
 ---
 title: "Connect Claude managed agent"
-description: "Create a Claude managed agent with Anthropic credentials via the Novu CLI, connect Slack, and send your first message. No bridge server."
+description: "Create a Claude managed agent with Anthropic credentials via the Notify CLI, connect Slack, and send your first message. No bridge server."
 sidebarTitle: Claude Managed
 ---
 
-Create a managed agent on Anthropic Claude and connect it to Slack with the Novu CLI. No bridge server is required.
+Create a managed agent on Anthropic Claude and connect it to Slack with the Notify CLI. No bridge server is required.
 
-For Claude Platform on AWS, see [Connect AWS Claude managed agent](/agents/get-started/aws-claude). To try without your own API key, select **Try a demo agent** in the CLI (`npx novu connect`).
+For Claude Platform on AWS, see [Connect AWS Claude managed agent](/agents/get-started/aws-claude). To try without your own API key, select **Try a demo agent** in the CLI (`npx notify connect`).
 
-<video autoPlay loop muted playsInline src="/images/agents/quickstart/novu-connect-demo.mp4" />
+<video autoPlay loop muted playsInline src="/images/agents/quickstart/notify-connect-demo.mp4" />
 
 ## Prerequisites
 
 - Node.js on your machine
-- A [Novu account](https://dashboard.novu.co/agents) (you can create one during setup)
+- A [Notify account](https://dashboard.novu.co/agents) (you can create one during setup)
 - An [Anthropic API key](https://console.anthropic.com/settings/keys)
 - A Slack workspace where you can install apps
 
@@ -25,7 +25,7 @@ For Claude Platform on AWS, see [Connect AWS Claude managed agent](/agents/get-s
 ## Run the CLI
 
 ```bash
-npx novu connect
+npx notify connect
 ```
 </Step>
 
@@ -34,7 +34,7 @@ npx novu connect
 
 When the CLI asks **Where your agent runs?**, select **Claude Managed Agent**.
 
-The CLI prompts for your **Anthropic API key** (`sk-ant-…`). Paste the key from the [Anthropic console](https://console.anthropic.com/settings/keys). Novu verifies it and creates a Claude runtime integration in your environment.
+The CLI prompts for your **Anthropic API key** (`sk-ant-…`). Paste the key from the [Anthropic console](https://console.anthropic.com/settings/keys). Notify verifies it and creates a Claude runtime integration in your environment.
 </Step>
 
 <Step>
@@ -46,7 +46,7 @@ The CLI prompts for your **Anthropic API key** (`sk-ant-…`). Paste the key fro
     Create an engineering assistant agent that checks Linear and GitHub for open issues, pending PR reviews, and review requests. It summarizes what needs attention, flags blockers and stale tickets, and posts a short daily standup digest. It keeps responses concise and links back to the relevant Linear issue or GitHub pull request.
     ```
 
-2. Novu generates a name, identifier, system prompt, tools, MCP servers, and skills from that description.
+2. Notify generates a name, identifier, system prompt, tools, MCP servers, and skills from that description.
 3. Review the fields. Select **Create this agent**, or **Regenerate from description** to revise.
 </Step>
 
@@ -58,7 +58,7 @@ When prompted to pick a channel, select **Slack**.
 1. Open [https://api.slack.com/apps](https://api.slack.com/apps).
 2. Under **App Configuration Tokens**, click **Generate Token**.
 3. Copy the access token (starts with `xoxe.xoxp-`).
-4. Paste it into the CLI. Novu uses it once to create the Slack app and does not store it.
+4. Paste it into the CLI. Notify uses it once to create the Slack app and does not store it.
 5. Follow the install link to add the bot to your workspace.
 </Step>
 
@@ -67,19 +67,19 @@ When prompted to pick a channel, select **Slack**.
 
 Open Slack and DM the agent (or @mention it in a channel). If the generated config includes Linear or GitHub MCP servers, the agent may prompt you to authorize them in-thread.
 
-Manage channels and conversations in the [Novu dashboard](https://dashboard.novu.co/agents).
+Manage channels and conversations in the [Notify dashboard](https://dashboard.novu.co/agents).
 </Step>
 
 </Steps>
 
 <Note>
-  Non-interactive / CI: `npx novu connect --runtime claude --anthropic-api-key <key>`. See [Create an agent](/api-reference/agents/create-an-agent) for the REST API.
+  Non-interactive / CI: `npx notify connect --runtime claude --anthropic-api-key <key>`. See [Create an agent](/api-reference/agents/create-an-agent) for the REST API.
 </Note>
 
 <Prompt description="Copy an example agent description" icon="plug" actions={["copy", "cursor"]}>
 Create an engineering assistant agent that checks Linear and GitHub for open issues, pending PR reviews, and review requests. It summarizes what needs attention, flags blockers and stale tickets, and posts a short daily standup digest. It keeps responses concise and links back to the relevant Linear issue or GitHub pull request.
 
-Use the Novu CLI (`npx novu connect`) with Claude Managed Agent and an Anthropic API key. Connect Slack as the first channel.
+Use the Notify CLI (`npx notify connect`) with Claude Managed Agent and an Anthropic API key. Connect Slack as the first channel.
 
 Reference: https://docs.novu.co/agents/get-started/claude-managed
 </Prompt>

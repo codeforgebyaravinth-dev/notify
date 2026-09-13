@@ -1,4 +1,4 @@
-import type { NovuUI } from '@novu/js/ui';
+import type { NovuUI } from '@notify/js/ui';
 import React from 'react';
 import { createContextAndHook } from '../utils/createContextAndHook';
 

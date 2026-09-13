@@ -1,4 +1,4 @@
-import { normalizeReferences } from '@novu/application-generic';
+import { normalizeReferences } from '@notify/application-generic';
 import { createHash } from 'crypto';
 
 /*

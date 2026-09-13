@@ -1,5 +1,5 @@
-import { TranslationGroupDto } from '@novu/api/models/components';
-import { EnvironmentTypeEnum, PermissionsEnum } from '@novu/shared';
+import { TranslationGroupDto } from '@notify/api/models/components';
+import { EnvironmentTypeEnum, PermissionsEnum } from '@notify/shared';
 import { ComponentProps, useCallback } from 'react';
 import { RiDeleteBin2Line, RiLayout5Line, RiMore2Fill, RiRouteFill } from 'react-icons/ri';
 import { useNavigate, useParams } from 'react-router-dom';

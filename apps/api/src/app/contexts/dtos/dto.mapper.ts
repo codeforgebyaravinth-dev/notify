@@ -1,4 +1,4 @@
-import { ContextEntity } from '@novu/dal';
+import { ContextEntity } from '@notify/dal';
 import { GetContextResponseDto } from './get-context-response.dto';
 
 export function mapContextEntityToDto(context: ContextEntity): GetContextResponseDto {

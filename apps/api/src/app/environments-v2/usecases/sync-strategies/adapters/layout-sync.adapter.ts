@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { LayoutEntity } from '@novu/dal';
+import { LayoutEntity } from '@notify/dal';
 import {
   LayoutSyncToEnvironmentCommand,
   LayoutSyncToEnvironmentUseCase,

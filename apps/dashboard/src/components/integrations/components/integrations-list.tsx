@@ -1,4 +1,4 @@
-import { ChannelTypeEnum, EmailProviderIdEnum, SmsProviderIdEnum, PushProviderIdEnum, FeatureFlagsKeysEnum, providers as novuProviders } from '@novu/shared';
+import { ChannelTypeEnum, EmailProviderIdEnum, SmsProviderIdEnum, PushProviderIdEnum, FeatureFlagsKeysEnum, providers as novuProviders } from '@notify/shared';
 import { useMemo } from 'react';
 import { Skeleton } from '@/components/primitives/skeleton';
 import { useEnvironment } from '@/context/environment/hooks';

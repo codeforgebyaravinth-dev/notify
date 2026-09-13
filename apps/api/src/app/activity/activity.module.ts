@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { WorkflowRunService } from '@novu/application-generic';
+import { WorkflowRunService } from '@notify/application-generic';
 import { SharedModule } from '../shared/shared.module';
 import { ActivityController } from './activity.controller';
 import { BuildActiveSubscribersChart } from './usecases/build-active-subscribers-chart/build-active-subscribers-chart.usecase';

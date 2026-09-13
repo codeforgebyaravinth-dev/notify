@@ -1,4 +1,4 @@
-import { type TagsFilter } from '@novu/shared';
+import { type TagsFilter } from '@notify/shared';
 import { IsOptional, IsString } from 'class-validator';
 
 import { IsTagsFilter } from '../validators/is-tags-filter.validator';

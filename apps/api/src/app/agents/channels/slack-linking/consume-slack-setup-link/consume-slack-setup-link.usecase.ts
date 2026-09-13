@@ -5,9 +5,9 @@ import {
   NotFoundException,
   UnauthorizedException,
 } from '@nestjs/common';
-import { PinoLogger } from '@novu/application-generic';
-import { AgentRepository, IntegrationRepository } from '@novu/dal';
-import { ChatProviderIdEnum } from '@novu/shared';
+import { PinoLogger } from '@notify/application-generic';
+import { AgentRepository, IntegrationRepository } from '@notify/dal';
+import { ChatProviderIdEnum } from '@notify/shared';
 import { SlackQuickSetupCommand } from '../../../../integrations/usecases/slack-quick-setup/slack-quick-setup.command';
 import { SlackQuickSetup } from '../../../../integrations/usecases/slack-quick-setup/slack-quick-setup.usecase';
 import {

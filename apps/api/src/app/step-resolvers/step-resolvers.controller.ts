@@ -17,8 +17,8 @@ import {
   DisconnectStepResolverUsecase,
   ExternalApiAccessible,
   RequirePermissions,
-} from '@novu/application-generic';
-import { ApiRateLimitCategoryEnum, PermissionsEnum, UserSessionData } from '@novu/shared';
+} from '@notify/application-generic';
+import { ApiRateLimitCategoryEnum, PermissionsEnum, UserSessionData } from '@notify/shared';
 import { plainToInstance } from 'class-transformer';
 import { ValidationError, validateSync } from 'class-validator';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';

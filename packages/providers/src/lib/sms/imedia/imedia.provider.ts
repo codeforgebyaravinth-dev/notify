@@ -1,4 +1,4 @@
-import { SmsProviderIdEnum } from '@novu/shared';
+import { SmsProviderIdEnum } from '@notify/shared';
 import {
   ChannelTypeEnum,
   type ISendMessageSuccessResponse,
@@ -6,7 +6,7 @@ import {
   type ISmsOptions,
   type ISmsProvider,
   SmsEventStatusEnum,
-} from '@novu/stateless';
+} from '@notify/stateless';
 import axios, { type AxiosInstance } from 'axios';
 
 import { BaseProvider, CasingEnum } from '../../../base.provider';

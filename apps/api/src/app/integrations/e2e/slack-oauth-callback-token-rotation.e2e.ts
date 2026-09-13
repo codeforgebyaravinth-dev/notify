@@ -1,12 +1,12 @@
-import { decryptChannelConnectionAuth, encodeOAuthState, encryptCredentials } from '@novu/application-generic';
+import { decryptChannelConnectionAuth, encodeOAuthState, encryptCredentials } from '@notify/application-generic';
 import {
   ChannelConnectionRepository,
   EnvironmentRepository,
   IntegrationRepository,
   SubscriberRepository,
-} from '@novu/dal';
-import { ChannelTypeEnum, ChatProviderIdEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/dal';
+import { ChannelTypeEnum, ChatProviderIdEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import axios from 'axios';
 import { expect } from 'chai';
 import { createHmac } from 'crypto';

@@ -1,5 +1,5 @@
-import { GetContextResponseDto } from '@novu/api/models/components';
-import { ContextPayload } from '@novu/shared';
+import { GetContextResponseDto } from '@notify/api/models/components';
+import { ContextPayload } from '@notify/shared';
 import { JSONSchema7 } from 'json-schema';
 import { useCallback, useState } from 'react';
 import { useFetchContexts } from '@/hooks/use-fetch-contexts';

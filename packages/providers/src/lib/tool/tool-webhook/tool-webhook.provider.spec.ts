@@ -1,7 +1,7 @@
 import crypto from 'node:crypto';
 import * as dns from 'node:dns';
 import * as http from 'node:http';
-import { ENDPOINT_TYPES, ToolWebhookData } from '@novu/stateless';
+import { ENDPOINT_TYPES, ToolWebhookData } from '@notify/stateless';
 import { afterAll, afterEach, beforeAll, beforeEach, expect, test, vi } from 'vitest';
 import { ToolWebhookProvider } from './tool-webhook.provider';
 

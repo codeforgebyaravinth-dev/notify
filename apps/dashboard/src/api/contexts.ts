@@ -3,8 +3,8 @@ import {
   GetContextResponseDto,
   ListContextsResponseDto,
   UpdateContextRequestDto,
-} from '@novu/api/models/components';
-import type { ContextId, ContextType, DirectionEnum, IEnvironment } from '@novu/shared';
+} from '@notify/api/models/components';
+import type { ContextId, ContextType, DirectionEnum, IEnvironment } from '@notify/shared';
 import { delV2, getV2, patchV2, postV2 } from './api.client';
 
 export const getContexts = async ({

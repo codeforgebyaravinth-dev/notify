@@ -4,7 +4,7 @@ import {
   featureFlagsService,
   UpdateSubscriber,
   UpdateSubscriberChannel,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   ChannelConnectionRepository,
   ChannelEndpointRepository,
@@ -13,7 +13,7 @@ import {
   EnvironmentRepository,
   IntegrationRepository,
   SubscriberRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import { SharedModule } from '../shared/shared.module';
 import { ChannelEndpointsController } from './channel-endpoints.controller';
 import { CreateChannelEndpoint } from './usecases/create-channel-endpoint/create-channel-endpoint.usecase';

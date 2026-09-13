@@ -1,4 +1,4 @@
-import { IIntegration } from '@novu/shared';
+import { IIntegration } from '@notify/shared';
 import { useState } from 'react';
 import { ConfirmationModal } from '@/components/confirmation-modal';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/primitives/select';

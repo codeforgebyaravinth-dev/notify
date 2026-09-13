@@ -1,8 +1,8 @@
 import '../../src/config';
 
 import { NestFactory } from '@nestjs/core';
-import { buildDefaultSubscriptionIdentifier, PinoLogger } from '@novu/application-generic';
-import { TopicSubscribersRepository } from '@novu/dal';
+import { buildDefaultSubscriptionIdentifier, PinoLogger } from '@notify/application-generic';
+import { TopicSubscribersRepository } from '@notify/dal';
 import { AppModule } from '../../src/app.module';
 
 export async function run() {

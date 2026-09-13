@@ -51,7 +51,7 @@ jobs:
       - name: Build API & Worker
         env:
           NX_NO_CLOUD: ${{ secrets.NX_CLOUD_ACCESS_TOKEN == '' && 'true' || 'false' }}
-        run: CI='' pnpm nx run-many --target=build --all --projects=@novu/api-service,@novu/worker
+        run: CI='' pnpm nx run-many --target=build --all --projects=@notify/api-service,@notify/worker
 
       - name: Start Worker
         shell: bash
@@ -75,7 +75,7 @@ jobs:
           NOVU_V2_MOCHA_REPORTER: dot
         run: |
           set -e
-          pnpm --filter @novu/api-service test:e2e:novu-v2-ce
+          pnpm --filter @notify/api-service test:e2e:novu-v2-ce
 
       - name: Run Novu V2 E2E tests
         if: ${{ inputs.ee }}
@@ -85,4 +85,4 @@ jobs:
           NOVU_V2_MOCHA_REPORTER: dot
         run: |
           set -e
-          pnpm --filter @novu/api-service test:e2e:novu-v2
+          pnpm --filter @notify/api-service test:e2e:novu-v2

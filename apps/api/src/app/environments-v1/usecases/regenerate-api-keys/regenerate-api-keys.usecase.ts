@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { decryptApiKey, encryptApiKey } from '@novu/application-generic';
+import { decryptApiKey, encryptApiKey } from '@notify/application-generic';
 
-import { EnvironmentRepository } from '@novu/dal';
+import { EnvironmentRepository } from '@notify/dal';
 import { createHash } from 'crypto';
 import { ApiKeyDto } from '../../dtos/api-key.dto';
 import { GenerateUniqueApiKey } from '../generate-unique-api-key/generate-unique-api-key.usecase';

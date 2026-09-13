@@ -1,14 +1,14 @@
 ---
 title: 'HTTP Step'
-description: "Use the HTTP step in Novu workflows to call external APIs, enrich payloads with response data, and coordinate side effects with the rest of your workflow."
+description: "Use the HTTP step in Notify workflows to call external APIs, enrich payloads with response data, and coordinate side effects with the rest of your workflow."
 ---
 
-The HTTP step is an Action step that allows workflows to call external APIs during execution. This provides a native way to interact with systems outside Novu directly from your workflows. It is useful for tasks such as enriching data, enabling conditional branching based on external responses, or communicating with internal delivery systems.
+The HTTP step is an Action step that allows workflows to call external APIs during execution. This provides a native way to interact with systems outside Notify directly from your workflows. It is useful for tasks such as enriching data, enabling conditional branching based on external responses, or communicating with internal delivery systems.
 
 This guide explains how to add and configure an HTTP step for your specific needs.
 
 <Note>
-  This feature is currently in public beta, please contact us at support@novu.co to enable it for your organization.
+  This feature is currently in public beta, please contact us at support@notify.co to enable it for your organization.
 </Note>
 
 ## Adding an HTTP step
@@ -66,14 +66,14 @@ You can control what happens when a step fails. The workflow can be configured t
 
 ## Securing HTTP requests
 
-With each API request, novu send `novu-signature` header. This header is a HMAC signature of the request body and the timestamp. You can verify the authenticity of the request by verifying the HMAC signature. Below example shows how to verify the HMAC signature in a Next.js API route. Here, Novu secret key is used to generate the HMAC signature. You can copy the secret key from the [Novu API Keys](https://dashboard.novu.co/api-keys) page.
+With each API request, notify send `notify-signature` header. This header is a HMAC signature of the request body and the timestamp. You can verify the authenticity of the request by verifying the HMAC signature. Below example shows how to verify the HMAC signature in a Next.js API route. Here, Notify secret key is used to generate the HMAC signature. You can copy the secret key from the [Notify API Keys](https://dashboard.novu.co/api-keys) page.
 
 <Note>
-  Replace `YOUR_SUBSCRIBER_ID` with a subscriber from your Novu dashboard and store your secret key as `NOVU_SECRET_KEY` in environment variables.
+  Replace `YOUR_SUBSCRIBER_ID` with a subscriber from your Notify dashboard and store your secret key as `NOVU_SECRET_KEY` in environment variables.
 </Note>
 
-<Prompt description="Implement a Novu HTTP webhook handler" icon="zap" actions={["copy", "cursor"]}>
-I need to implement an HTTP endpoint that will be called by Novu's notification workflow engine.
+<Prompt description="Implement a Notify HTTP webhook handler" icon="zap" actions={["copy", "cursor"]}>
+I need to implement an HTTP endpoint that will be called by Notify's notification workflow engine.
 
 ## Request my endpoint will receive
 
@@ -82,7 +82,7 @@ URL: https://your-app.example.com/api/novu-webhook
 
 Headers:
   Content-Type: application/json
-  novu-signature: t=TIMESTAMP,v1=HMAC_SHA256_SIGNATURE
+  notify-signature: t=TIMESTAMP,v1=HMAC_SHA256_SIGNATURE
 
 Body (JSON):
 ```json
@@ -97,13 +97,13 @@ Body (JSON):
 
 ## Signature verification
 
-Every request from Novu includes a `novu-signature` header to prove authenticity.
+Every request from Notify includes a `notify-signature` header to prove authenticity.
 Format: `t=TIMESTAMP,v1=SIGNATURE`
 
 To verify:
 1. Parse the header: split on comma, extract `t` (timestamp) and `v1` (HMAC)
 2. Build the signed string: timestamp dot JSON.stringify(requestBody)
-3. Compute HMAC-SHA256 of that string using your Novu secret key
+3. Compute HMAC-SHA256 of that string using your Notify secret key
 4. Compare (constant-time) your computed HMAC against the `v1` value
 5. Reject requests where the timestamp is more than 5 minutes old
 
@@ -113,7 +113,7 @@ Reference: https://docs.novu.co/platform/workflow/add-and-configure-steps/config
 
 Please write a complete endpoint handler (Node.js/Express by default, or match my project's framework) that:
 1. Accepts the POST request described above
-2. Reads the raw request body and verifies the `novu-signature` header
+2. Reads the raw request body and verifies the `notify-signature` header
 3. Parses the JSON body and extracts relevant fields
 4. Implements placeholder business logic
 5. Returns a 200 JSON response
@@ -121,7 +121,7 @@ Please write a complete endpoint handler (Node.js/Express by default, or match m
 Store NOVU_SECRET_KEY in environment variables. Do not create documentation files.
 </Prompt>
 
-```typescript title="api/novu-http-step-request/route.ts"
+```typescript title="api/notify-http-step-request/route.ts"
 import { NextRequest, NextResponse } from "next/server";
 import { createHmac, timingSafeEqual } from "node:crypto";
 
@@ -136,7 +136,7 @@ export async function POST(req: NextRequest) {
     // GET requests usually don't have a body
   }
 
-  const parts = headers["novu-signature"].split(",");
+  const parts = headers["notify-signature"].split(",");
   const timestampPart = parts.find((p) => p.startsWith("t="));
   const signaturePart = parts.find((p) => p.startsWith("v1="));
 

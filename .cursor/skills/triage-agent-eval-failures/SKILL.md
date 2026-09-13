@@ -1,6 +1,6 @@
 ---
 name: triage-agent-eval-failures
-description: Triage failing @novu/agent-evals scenarios to decide whether a failure is real or flaky, and whether to fix the playbook/prompt or the test (grader, tape, scenario, or judge). Use when an agent-evals scenario fails, when the user asks why an eval is red, or when deciding whether to fix the test or the prompt.
+description: Triage failing @notify/agent-evals scenarios to decide whether a failure is real or flaky, and whether to fix the playbook/prompt or the test (grader, tape, scenario, or judge). Use when an agent-evals scenario fails, when the user asks why an eval is red, or when deciding whether to fix the test or the prompt.
 ---
 
 # Triage Agent Eval Failures
@@ -14,7 +14,7 @@ The thing under test is the playbook doc (`packages/shared/docs/agent-onboarding
 Scenarios run a live model concurrently, so one red run is one sample, not a verdict. Re-run the single failing scenario 3–5× first:
 
 ```bash
-pnpm --filter @novu/agent-evals exec vitest run --config vitest.evals.config.ts -t <scenario-id>
+pnpm --filter @notify/agent-evals exec vitest run --config vitest.evals.config.ts -t <scenario-id>
 ```
 
 - Fails **every** run → deterministic failure, continue triage.
@@ -23,7 +23,7 @@ pnpm --filter @novu/agent-evals exec vitest run --config vitest.evals.config.ts 
 To reproduce judge graders locally:
 
 ```bash
-pnpm --filter @novu/agent-evals exec vitest run --config vitest.evals.config.ts -t <scenario-id>
+pnpm --filter @notify/agent-evals exec vitest run --config vitest.evals.config.ts -t <scenario-id>
 ```
 
 ## Step 1: identify which grader failed and its kind
@@ -78,7 +78,7 @@ A scenario passes only when every active grader averages ≥ `0.8` (`JUDGE_THRES
 4. If editing a deterministic grader, also run the synthetic unit tests so you don't break grader contracts:
 
 ```bash
-pnpm --filter @novu/agent-evals test
+pnpm --filter @notify/agent-evals test
 ```
 
 ## Output format

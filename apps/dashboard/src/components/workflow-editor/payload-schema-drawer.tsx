@@ -1,4 +1,4 @@
-import { type WorkflowResponseDto } from '@novu/shared';
+import { type WorkflowResponseDto } from '@notify/shared';
 import { useCallback, useEffect, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { RiFileMarkedLine, RiInformation2Line, RiShieldCheckLine } from 'react-icons/ri';

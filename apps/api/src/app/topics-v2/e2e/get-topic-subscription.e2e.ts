@@ -1,7 +1,7 @@
-import { Novu } from '@novu/api';
-import { SubscriberEntity, TopicSubscribersRepository } from '@novu/dal';
-import { CreateWorkflowDto, StepTypeEnum, WorkflowCreationSourceEnum } from '@novu/shared';
-import { SubscribersService, UserSession } from '@novu/testing';
+import { Novu } from '@notify/api';
+import { SubscriberEntity, TopicSubscribersRepository } from '@notify/dal';
+import { CreateWorkflowDto, StepTypeEnum, WorkflowCreationSourceEnum } from '@notify/shared';
+import { SubscribersService, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { initNovuClassSdk } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';
 

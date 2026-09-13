@@ -52,7 +52,7 @@ async function readJsonBody(req: IncomingMessage): Promise<Record<string, unknow
  * Boots a minimal in-process Sendblue API stub and publishes its base URL via
  * `process.env.SENDBLUE_API_BASE_URL`, which the official `sendblue` SDK
  * (used internally by the vendor-official `chat-adapter-sendblue` package that
- * `@novu/chat-adapter-sendblue` wraps) reads as its base URL override. This
+ * `@notify/chat-adapter-sendblue` wraps) reads as its base URL override. This
  * lets e2e tests drive the production Sendblue adapter (webhook verification,
  * replies via `send-message`, typing indicators) without the real Sendblue API.
  */

@@ -1,4 +1,4 @@
-import { MemberRoleEnum } from '@novu/shared';
+import { MemberRoleEnum } from '@notify/shared';
 import { IsEnum } from 'class-validator';
 
 export class UpdateMemberRolesDto {

@@ -1,5 +1,5 @@
 /** biome-ignore-all lint/correctness/useUniqueElementIds: working correctly */
-import { FeatureNameEnum } from '@novu/shared';
+import { FeatureNameEnum } from '@notify/shared';
 import { RiBookMarkedLine, RiGitBranchLine } from 'react-icons/ri';
 import { Link, useNavigate } from 'react-router-dom';
 import { FeaturePaywallState } from '@/components/billing/feature-paywall-state';

@@ -1,7 +1,7 @@
-import { decryptChannelConnectionAuth } from '@novu/application-generic';
-import { ChannelConnectionRepository, IntegrationRepository } from '@novu/dal';
-import { ChannelTypeEnum, ChatProviderIdEnum } from '@novu/shared';
-import { SubscribersService, UserSession } from '@novu/testing';
+import { decryptChannelConnectionAuth } from '@notify/application-generic';
+import { ChannelConnectionRepository, IntegrationRepository } from '@notify/dal';
+import { ChannelTypeEnum, ChatProviderIdEnum } from '@notify/shared';
+import { SubscribersService, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 const NOVU_ENCRYPTION_PREFIX = 'nvsk.';

@@ -1,7 +1,7 @@
 import { createParamDecorator, UnauthorizedException } from '@nestjs/common';
-import { UserSession } from '@novu/application-generic';
-import { SubscriberEntity } from '@novu/dal';
-import { ApiAuthSchemeEnum } from '@novu/shared';
+import { UserSession } from '@notify/application-generic';
+import { SubscriberEntity } from '@notify/dal';
+import { ApiAuthSchemeEnum } from '@notify/shared';
 import jwt from 'jsonwebtoken';
 
 export { UserSession };

@@ -1,5 +1,5 @@
 import { ForbiddenException, Injectable, NotFoundException } from '@nestjs/common';
-import { EnvironmentVariableRepository } from '@novu/dal';
+import { EnvironmentVariableRepository } from '@notify/dal';
 import { DeleteEnvironmentVariableCommand } from './delete-environment-variable.command';
 
 @Injectable()

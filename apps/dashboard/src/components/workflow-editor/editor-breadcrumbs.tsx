@@ -1,4 +1,4 @@
-import { ResourceOriginEnum, StepResponseDto, WorkflowResponseDto } from '@novu/shared';
+import { ResourceOriginEnum, StepResponseDto, WorkflowResponseDto } from '@notify/shared';
 import React from 'react';
 import { FaCode } from 'react-icons/fa6';
 import { RiArrowLeftSLine, RiCheckLine, RiExpandUpDownLine } from 'react-icons/ri';

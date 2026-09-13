@@ -1,7 +1,7 @@
-import { ICompileContext } from '@novu/application-generic';
-import type { EnvironmentEntity } from '@novu/dal';
-import type { ExecuteOutput } from '@novu/framework/internal';
-import type { SeverityLevelEnum } from '@novu/shared';
+import { ICompileContext } from '@notify/application-generic';
+import type { EnvironmentEntity } from '@notify/dal';
+import type { ExecuteOutput } from '@notify/framework/internal';
+import type { SeverityLevelEnum } from '@notify/shared';
 import { IsDefined, IsOptional } from 'class-validator';
 import { SendMessageCommand } from './send-message.command';
 

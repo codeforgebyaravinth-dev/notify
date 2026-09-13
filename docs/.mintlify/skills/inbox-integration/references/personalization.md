@@ -21,7 +21,7 @@ Render props let you replace specific parts of the Inbox while keeping the surro
 Receives the unread count broken down by severity:
 
 ```tsx
-import { Inbox, SeverityLevelEnum } from "@novu/react";
+import { Inbox, SeverityLevelEnum } from "@notify/react";
 
 <Inbox
   applicationIdentifier="YOUR_NOVU_APP_ID"
@@ -73,7 +73,7 @@ import { Inbox, SeverityLevelEnum } from "@novu/react";
 Replaces the built-in mark-as-read / archive / snooze affordances. **You're responsible for re-implementing them.**
 
 ```tsx
-import { Inbox } from "@novu/react";
+import { Inbox } from "@notify/react";
 import { Archive, Check } from "lucide-react";
 
 <Inbox
@@ -180,7 +180,7 @@ renderNotification={(notification) => {
 ### By severity
 
 ```tsx
-import { SeverityLevelEnum } from "@novu/react";
+import { SeverityLevelEnum } from "@notify/react";
 
 renderNotification={(notification) => {
   if (notification.severity === SeverityLevelEnum.HIGH) {
@@ -325,7 +325,7 @@ The `<Inbox>` component is composable. When passed children, it acts as a contex
 ### Standalone notification feed (no popover)
 
 ```tsx
-import { Inbox, Notifications } from "@novu/react";
+import { Inbox, Notifications } from "@notify/react";
 
 <Inbox
   applicationIdentifier="YOUR_NOVU_APP_ID"
@@ -338,7 +338,7 @@ import { Inbox, Notifications } from "@novu/react";
 ### Popover with Radix UI
 
 ```tsx
-import { Inbox, InboxContent, Bell } from "@novu/react";
+import { Inbox, InboxContent, Bell } from "@notify/react";
 import { Popover, PopoverTrigger, PopoverContent } from "@radix-ui/react-popover";
 
 <Inbox
@@ -368,7 +368,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import { Inbox, InboxContent } from "@novu/react";
+import { Inbox, InboxContent } from "@notify/react";
 
 export function NotificationDrawer() {
   return (
@@ -395,7 +395,7 @@ export function NotificationDrawer() {
 ### Full-page notification center
 
 ```tsx
-import { Inbox, InboxContent } from "@novu/react";
+import { Inbox, InboxContent } from "@notify/react";
 
 export default function NotificationsPage() {
   return (
@@ -493,7 +493,7 @@ const localizationByLocale = {
 Group notifications into filtered tabs:
 
 ```tsx
-import { Inbox, SeverityLevelEnum } from "@novu/react";
+import { Inbox, SeverityLevelEnum } from "@notify/react";
 
 <Inbox
   applicationIdentifier="YOUR_NOVU_APP_ID"
@@ -525,8 +525,8 @@ To show counts per tab, use the [`useCounts` hook](https://docs.novu.co/platform
 "use client";
 
 import { useRouter } from "next/navigation";
-import { Inbox, SeverityLevelEnum } from "@novu/react";
-import { dark } from "@novu/react/themes";
+import { Inbox, SeverityLevelEnum } from "@notify/react";
+import { dark } from "@notify/react/themes";
 
 export function BrandedInbox({ subscriberId, subscriberHash }) {
   const router = useRouter();

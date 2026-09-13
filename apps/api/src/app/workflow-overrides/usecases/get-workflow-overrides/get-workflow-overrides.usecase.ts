@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 
-import { WorkflowOverrideRepository } from '@novu/dal';
+import { WorkflowOverrideRepository } from '@notify/dal';
 import { GetWorkflowOverridesResponseDto } from '../../dtos/get-workflow-overrides-response.dto';
 import { GetWorkflowOverridesCommand } from './get-workflow-overrides.command';
 

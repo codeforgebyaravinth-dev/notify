@@ -1,13 +1,13 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { InstrumentUsecase, PinoLogger } from '@novu/application-generic';
+import { InstrumentUsecase, PinoLogger } from '@notify/application-generic';
 import {
   ControlValuesEntity,
   ControlValuesRepository,
   EnvironmentVariableRepository,
   NotificationTemplateEntity,
   NotificationTemplateRepository,
-} from '@novu/dal';
-import { ControlValuesLevelEnum } from '@novu/shared';
+} from '@notify/dal';
+import { ControlValuesLevelEnum } from '@notify/shared';
 import {
   EnvironmentVariableWorkflowInfoDto,
   GetEnvironmentVariableUsageResponseDto,

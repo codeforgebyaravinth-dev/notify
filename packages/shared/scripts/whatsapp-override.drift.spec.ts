@@ -10,7 +10,7 @@ import { whatsappOverrideJsonSchema } from '../src/consts/providers/provider-ove
 import { whatsappOverrideLiquidTolerantJsonSchema } from '../src/consts/providers/provider-overrides/whatsapp/whatsapp-override.liquid-tolerant.generated';
 import { buildWhatsappOverrideSchemas } from './generate-whatsapp-override-schema';
 
-const REGENERATE_HINT = 'Run `pnpm --filter @novu/shared generate:whatsapp-schema` and commit the result.';
+const REGENERATE_HINT = 'Run `pnpm --filter @notify/shared generate:whatsapp-schema` and commit the result.';
 const DRIFT_ENV_VAR = 'NOVU_TEST_WHATSAPP_SCHEMA_DRIFT';
 const scriptDir = dirname(fileURLToPath(import.meta.url));
 const sharedRoot = join(scriptDir, '..');
@@ -27,7 +27,7 @@ const VENDORED_UPSTREAM_COMMIT = '5f30dc1c6b482e67149ae6de0b27f19285d12839';
  */
 const isDriftCheckEnabled = process.env.CI === 'true' || process.env[DRIFT_ENV_VAR] === 'true';
 
-const SKIP_HINT = `run \`${DRIFT_ENV_VAR}=true pnpm --filter @novu/shared test\` to check this locally`;
+const SKIP_HINT = `run \`${DRIFT_ENV_VAR}=true pnpm --filter @notify/shared test\` to check this locally`;
 
 let regeneratedSchemas: ReturnType<typeof buildWhatsappOverrideSchemas> | undefined;
 

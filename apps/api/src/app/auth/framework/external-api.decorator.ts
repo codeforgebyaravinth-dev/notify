@@ -1,3 +1,3 @@
-import { ExternalApiAccessible, OAuthAccessible } from '@novu/application-generic';
+import { ExternalApiAccessible, OAuthAccessible } from '@notify/application-generic';
 
 export { ExternalApiAccessible, OAuthAccessible };

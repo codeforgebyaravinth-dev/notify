@@ -1,4 +1,4 @@
-import { ChatProviderIdEnum } from '@novu/shared';
+import { ChatProviderIdEnum } from '@notify/shared';
 import {
   CardElement,
   ChannelTypeEnum,
@@ -10,7 +10,7 @@ import {
   isChannelDataOfType,
   MsTeamsChannelData,
   MsTeamsUserData,
-} from '@novu/stateless';
+} from '@notify/stateless';
 import axios, { AxiosInstance } from 'axios';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
 import { esmImport } from '../../../utils/esm-import';

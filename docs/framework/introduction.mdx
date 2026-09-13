@@ -1,15 +1,15 @@
 ---
 title: 'Introduction'
-description: 'Discover how the Novu Framework empowers you to build, customize, and manage advanced notification workflows with a mix of code and no-code capabilities.'
+description: 'Discover how the Notify Framework empowers you to build, customize, and manage advanced notification workflows with a mix of code and no-code capabilities.'
 ---
 
-The Novu framework allows you to build and manage advanced notification workflows with code, and expose no-code controls for non-technical users to modify.
+The Notify framework allows you to build and manage advanced notification workflows with code, and expose no-code controls for non-technical users to modify.
 
 Workflows are the building blocks of your customer notification experience, they will define the what, when, how and where of your notifications.
 
 ## Building blocks
 
-Each Novu workflow is composed of 3 main components:
+Each Notify workflow is composed of 3 main components:
 
 - **Trigger** - The event that will start the workflow.
 - **Channel steps** - The delivery method of the notification with the content.
@@ -30,7 +30,7 @@ flowchart TB
 Let's take a look at a simple example of a workflow that sends an email after one day:
 
 ```tsx
-import { workflow } from '@novu/framework';
+import { workflow } from '@notify/framework';
 
 workflow('sample-workflow', async (step) => {
   await step.delay('delay', async () => {
@@ -42,8 +42,8 @@ workflow('sample-workflow', async (step) => {
 
   await step.email('email-step', async () => {
     return {
-      subject: 'Welcome to Novu',
-      body: 'Hello, welcome to Novu!',
+      subject: 'Welcome to Notify',
+      body: 'Hello, welcome to Notify!',
     };
   });
 });
@@ -56,10 +56,10 @@ Workflow identifiers should be unique to your application and should be descript
 
 ### Channel steps
 
-Channel Steps are the delivery methods of the notification. In our example, we have an email Channel Step that will send an email with the subject `Welcome to Novu` and the body `Hello, welcome to Novu!`.
-Novu's durable workflow execution engine will select the relevant delivery provider configured for this channel and send the notification with the specified content.
+Channel Steps are the delivery methods of the notification. In our example, we have an email Channel Step that will send an email with the subject `Welcome to Notify` and the body `Hello, welcome to Notify!`.
+Notify's durable workflow execution engine will select the relevant delivery provider configured for this channel and send the notification with the specified content.
 
-Novu supports a variety of common notification channels out-of-the-box, including **email**, **SMS**, **push**, **inbox**, and **chat**.
+Notify supports a variety of common notification channels out-of-the-box, including **email**, **SMS**, **push**, **inbox**, and **chat**.
 
 To read more about the full list of parameters, check out the [full SDK reference](/framework/typescript/overview).
 
@@ -69,14 +69,14 @@ Action Steps are purpose built functions that help you manage the flow of your w
 
 You can also use Action Steps to perform other tasks such as fetching data from an external API, updating a database, or sending a notification to another channel.
 
-Novu supported the following Action Steps: **delay**, **custom** and **digest**.
+Notify supported the following Action Steps: **delay**, **custom** and **digest**.
 
 ## Create a workflow
 
 Here's a bare-bones example of a workflow to send a notification in response to a trigger:
 
 ```tsx
-import { workflow } from '@novu/framework';
+import { workflow } from '@notify/framework';
 
 const myWorkflow = workflow(
   'new-signup',
@@ -99,7 +99,7 @@ We'll build on top of this basic code block in the following examples below.
 You can add any custom logic needed into your steps. For example, you might want to fetch more information about your new user from a database during the workflow execution. You can achieve this with the following changes:
 
 ```tsx
-import { workflow } from '@novu/framework';
+import { workflow } from '@notify/framework';
 
 const myWorkflow = workflow(
   'new-signup',
@@ -116,14 +116,14 @@ const myWorkflow = workflow(
 );
 ```
 
-We call this **just-in-time** notification data fetching. It allows you pull in data from the relevant sources during the workflow execution, removing the need to store all of your subscriber data in Novu.
+We call this **just-in-time** notification data fetching. It allows you pull in data from the relevant sources during the workflow execution, removing the need to store all of your subscriber data in Notify.
 
 ## Multi-step workflow
 
 What if you want to send another update to the same user in one week? But you don't want to send the follow-up if the user opted out. We can add more steps to the workflow to achieve this.
 
 ```tsx
-import { workflow } from '@novu/framework';
+import { workflow } from '@notify/framework';
 
 const myWorkflow = workflow(
   'new-signup',
@@ -186,10 +186,10 @@ With this simple workflow, we:
 - Waited 1 week
 - Sent a follow-up notification in-app
 
-That's the flexibility that Novu Framework offers.
+That's the flexibility that Notify Framework offers.
 
 <Note>
-  Read the section on [Controls](/framework/controls) next to learn how to expose Novu's no-code
+  Read the section on [Controls](/framework/controls) next to learn how to expose Notify's no-code
   editing capabilities to your peers.
 </Note>
 
@@ -198,7 +198,7 @@ That's the flexibility that Novu Framework offers.
 Payload schema defines the payload passed during the `novu.trigger` method. This is useful for ensuring that the payload is correctly formatted and that the data is valid.
 
 ```tsx
-import { workflow } from '@novu/framework';
+import { workflow } from '@notify/framework';
 import { render } from 'react-email';
 import { ReactEmailContent } from './ReactEmailContent';
 
@@ -232,7 +232,7 @@ workflow(
 Tags are used to categorize the workflows. They also allow you to filter and group notifications for your [Inbox](/platform/inbox/configuration/tabs) tabs.
 
 ```tsx
-import { workflow } from '@novu/framework';
+import { workflow } from '@notify/framework';
 
 workflow(
   'acme-login-alert',

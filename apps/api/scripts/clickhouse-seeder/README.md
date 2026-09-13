@@ -50,7 +50,7 @@ pnpm seed:clickhouse
 Or from the root directory:
 
 ```bash
-pnpm --filter @novu/api-service seed:clickhouse
+pnpm --filter @notify/api-service seed:clickhouse
 ```
 
 This will generate:

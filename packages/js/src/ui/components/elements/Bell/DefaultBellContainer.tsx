@@ -62,7 +62,7 @@ export const BellContainer = (props: DefaultBellContainerProps) => {
         class={style({
           key: SEVERITY_GLOW_KEYS[severity()],
           className: cn(
-            'nt-transition nt-absolute nt-inset-0 -nt-m-1 nt-rounded-full before:nt-content-[""] before:nt-absolute before:nt-inset-0 before:nt-rounded-full before:nt-m-1',
+            'nt-transition nt-absolute nt-inset-0 -nt-m-1 nt-nt-rounded-none before:nt-content-[""] before:nt-absolute before:nt-inset-0 before:nt-nt-rounded-none before:nt-m-1',
             {
               'nt-bg-severity-high-alpha-100 before:nt-bg-severity-high-alpha-200':
                 severity() === SeverityLevelEnum.HIGH,
@@ -97,7 +97,7 @@ export const BellContainer = (props: DefaultBellContainerProps) => {
           class={style({
             key: 'bellDot',
             className:
-              'nt-absolute nt-top-0 nt-right-0 nt-block nt-size-2 nt-transform nt-bg-counter nt-rounded-full nt-border nt-border-background',
+              'nt-absolute nt-top-0 nt-right-0 nt-block nt-size-2 nt-transform nt-bg-counter nt-nt-rounded-none nt-border nt-border-background',
             context: { unreadCount: unreadCount() } satisfies Parameters<InboxAppearanceCallback['bellDot']>[0],
           })}
         />

@@ -1,5 +1,5 @@
-import { MessageFilter } from '@novu/application-generic';
-import { IConfigurations, ICredentialsDto } from '@novu/shared';
+import { MessageFilter } from '@notify/application-generic';
+import { IConfigurations, ICredentialsDto } from '@notify/shared';
 import {
   IsArray,
   IsBoolean,

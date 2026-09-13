@@ -13,7 +13,7 @@ import {
   isAgentEmailEnabled,
   isAgentSharedInboxEnabled,
   isValidAgentEmailSlugPrefix,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   type AgentEntity,
   AgentIntegrationRepository,
@@ -21,7 +21,7 @@ import {
   CommunityOrganizationRepository,
   IntegrationEntity,
   IntegrationRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   ApiServiceLevelEnum,
   ChannelTypeEnum,
@@ -31,7 +31,7 @@ import {
   NOVU_PROVIDERS,
   providers,
   slugify,
-} from '@novu/shared';
+} from '@notify/shared';
 import { ClientSession } from 'mongoose';
 import shortid from 'shortid';
 

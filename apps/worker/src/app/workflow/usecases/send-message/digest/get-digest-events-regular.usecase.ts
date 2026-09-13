@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { getJobDigest, InstrumentUsecase } from '@novu/application-generic';
-import { IDigestBaseMetadata } from '@novu/shared';
+import { getJobDigest, InstrumentUsecase } from '@notify/application-generic';
+import { IDigestBaseMetadata } from '@notify/shared';
 import { sub } from 'date-fns';
 
 import { DigestEventsCommand } from './digest-events.command';

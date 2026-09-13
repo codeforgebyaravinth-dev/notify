@@ -1,4 +1,4 @@
-import { RedirectTargetEnum } from '@novu/shared';
+import { RedirectTargetEnum } from '@notify/shared';
 import { useFormContext } from 'react-hook-form';
 import { FormControl, FormField, FormItem, FormMessage } from '@/components/primitives/form/form';
 import { InputProps, InputRoot } from '@/components/primitives/input';

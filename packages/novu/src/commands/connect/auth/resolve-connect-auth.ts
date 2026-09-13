@@ -1,4 +1,4 @@
-import { CLI_DEVICE_SESSION_NAME_NOVU_CONNECT } from '@novu/shared';
+import { CLI_DEVICE_SESSION_NAME_NOVU_CONNECT } from '@notify/shared';
 import { browserDeviceAuth } from '../../wizard/auth/device-auth';
 import { type ResolveAuthOptions, resolveAuth } from '../../wizard/auth/resolve-auth';
 import type { ResolvedAuth, WizardCommandOptions } from '../../wizard/types';

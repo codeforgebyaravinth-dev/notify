@@ -1,4 +1,4 @@
-import { GetMasterJsonResponseDto } from '@novu/api/models/components';
+import { GetMasterJsonResponseDto } from '@notify/api/models/components';
 import { useMutation } from '@tanstack/react-query';
 import { getMasterJson } from '@/api/translations';
 import { showErrorToast, showSuccessToast } from '@/components/primitives/sonner-helpers';

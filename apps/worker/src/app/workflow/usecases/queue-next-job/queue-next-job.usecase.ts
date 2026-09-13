@@ -1,6 +1,6 @@
 import { forwardRef, Inject, Injectable } from '@nestjs/common';
-import { InstrumentUsecase } from '@novu/application-generic';
-import { JobEntity, JobRepository } from '@novu/dal';
+import { InstrumentUsecase } from '@notify/application-generic';
+import { JobEntity, JobRepository } from '@notify/dal';
 import { AddJob } from '../add-job';
 import { QueueNextJobCommand } from './queue-next-job.command';
 

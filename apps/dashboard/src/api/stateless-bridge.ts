@@ -1,4 +1,4 @@
-import type { GeneratePreviewResponseDto, IEnvironment, StepTypeEnum, WorkflowResponseDto } from '@novu/shared';
+import type { GeneratePreviewResponseDto, IEnvironment, StepTypeEnum, WorkflowResponseDto } from '@notify/shared';
 import { post } from './api.client';
 
 /**

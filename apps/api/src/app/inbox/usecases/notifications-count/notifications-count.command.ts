@@ -1,5 +1,5 @@
-import { SubscriberEntity } from '@novu/dal';
-import { SeverityLevelEnum, type TagsFilter } from '@novu/shared';
+import { SubscriberEntity } from '@notify/dal';
+import { SeverityLevelEnum, type TagsFilter } from '@notify/shared';
 import { IsArray, IsBoolean, IsDefined, IsOptional } from 'class-validator';
 import { EnvironmentWithSubscriber } from '../../../shared/commands/project.command';
 import { IsEnumOrArray } from '../../../shared/validators/is-enum-or-array';

@@ -1,5 +1,5 @@
-import { TopicSubscription } from '@novu/js';
-import { SubscriptionProps } from '@novu/js/ui';
+import { TopicSubscription } from '@notify/js';
+import { SubscriptionProps } from '@notify/js/ui';
 import { useCallback } from 'react';
 import { useNovuUI } from '../../context/NovuUIContext';
 import { useRenderer } from '../../context/RendererContext';

@@ -1,8 +1,8 @@
-import { Novu } from '@novu/api';
-import { CacheInMemoryProviderService, CacheService } from '@novu/application-generic';
-import { MessageRepository, NotificationTemplateEntity, SubscriberEntity, SubscriberRepository } from '@novu/dal';
-import { ChannelTypeEnum, ISubscribersDefine, StepTypeEnum } from '@novu/shared';
-import { SubscribersService, UserSession } from '@novu/testing';
+import { Novu } from '@notify/api';
+import { CacheInMemoryProviderService, CacheService } from '@notify/application-generic';
+import { MessageRepository, NotificationTemplateEntity, SubscriberEntity, SubscriberRepository } from '@notify/dal';
+import { ChannelTypeEnum, ISubscribersDefine, StepTypeEnum } from '@notify/shared';
+import { SubscribersService, UserSession } from '@notify/testing';
 import axios from 'axios';
 import { expect } from 'chai';
 import { initNovuClassSdk } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';

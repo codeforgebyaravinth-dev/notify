@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { MessageWebhookResponseDto, WorkflowResponseDto } from '@novu/application-generic';
-import { WebhookEventEnum, WebhookObjectTypeEnum } from '@novu/shared';
+import { MessageWebhookResponseDto, WorkflowResponseDto } from '@notify/application-generic';
+import { WebhookEventEnum, WebhookObjectTypeEnum } from '@notify/shared';
 import { InboxPreference } from '../inbox/utils/types';
 
 interface WebhookEventConfig {

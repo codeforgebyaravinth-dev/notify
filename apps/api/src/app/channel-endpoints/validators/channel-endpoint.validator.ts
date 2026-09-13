@@ -1,5 +1,5 @@
-import { validateEndpointForTypeFromSchema } from '@novu/application-generic';
-import { ChannelEndpointType } from '@novu/shared';
+import { validateEndpointForTypeFromSchema } from '@notify/application-generic';
+import { ChannelEndpointType } from '@notify/shared';
 import { registerDecorator, ValidationArguments, ValidationOptions } from 'class-validator';
 
 export function IsValidChannelEndpoint(validationOptions?: ValidationOptions) {

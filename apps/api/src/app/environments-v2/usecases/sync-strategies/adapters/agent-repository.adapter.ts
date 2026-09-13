@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { AgentEntity, AgentRepository } from '@novu/dal';
+import { AgentEntity, AgentRepository } from '@notify/dal';
 
 import { IBaseRepositoryService } from '../base/interfaces/base-repository.interface';
 

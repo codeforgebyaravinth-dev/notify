@@ -1,1 +1,1 @@
-export * from '@novu/react/hooks';
+export * from '@notify/react/hooks';

@@ -1,5 +1,5 @@
 ---
-title: "Tool Webhook Tool Integration with Novu"
+title: "Tool Webhook Tool Integration with Notify"
 sidebarTitle: "Tool Webhook"
 description: "Deliver Tool step notifications to your own HTTP endpoints. Use static mode for one shared URL or dynamic mode to fan out per-subscriber webhook URLs via channel endpoints."
 ---
@@ -13,8 +13,8 @@ Tool Webhook sends workflow Tool step output to an HTTP endpoint you control. Ch
 ## Prerequisites
 
 - An HTTPS (or HTTP for local testing) endpoint that accepts `POST`, `PUT`, or `PATCH` requests and returns a `2xx` response
-- Access to the [Novu dashboard](https://dashboard.novu.co)
-- For **dynamic** routing: your Novu **secret key** to register endpoints from your server
+- Access to the [Notify dashboard](https://dashboard.novu.co)
+- For **dynamic** routing: your Notify **secret key** to register endpoints from your server
 
 ## Static vs dynamic routing
 
@@ -29,11 +29,11 @@ Set **Routing Mode** when you create the integration. Defaults to **Static** whe
   Dynamic routing does not fall back to the integration URL. Register at least one `tool_webhook` endpoint per subscriber you intend to deliver to, or the step is skipped for that subscriber.
 </Warning>
 
-## Add Tool Webhook in Novu
+## Add Tool Webhook in Notify
 
 <Steps>
   <Step title="Open the Integrations Store">
-    In the Novu dashboard, click **Integrations Store** in the sidebar.
+    In the Notify dashboard, click **Integrations Store** in the sidebar.
   </Step>
 
   <Step title="Add Tool Webhook">
@@ -50,7 +50,7 @@ Set **Routing Mode** when you create the integration. Defaults to **Static** whe
     | **HTTP Method** | Yes | Yes | Default `POST`, `PUT`, or `PATCH`. Overridable per endpoint or step. |
     | **Headers** | Optional | Optional | Default request headers as a JSON object string, for example `{"Authorization":"Bearer shared-token"}`. |
     | **Body** | Optional | Optional | Default JSON object string merged into every request body (see [Body merge](#body-merge)). |
-    | **Signing Secret** | Optional | Optional | HMAC secret for the `X-Novu-Signature` header (see [Verify signatures](#verify-x-novu-signature)). |
+    | **Signing Secret** | Optional | Optional | HMAC secret for the `X-Notify-Signature` header (see [Verify signatures](#verify-x-notify-signature)). |
   </Step>
 
   <Step title="Create the integration">
@@ -60,7 +60,7 @@ Set **Routing Mode** when you create the integration. Defaults to **Static** whe
 
 ## Request shape
 
-Novu sends `Content-Type: application/json`. The exact JSON body depends on whether you configured a **Body** template on the integration.
+Notify sends `Content-Type: application/json`. The exact JSON body depends on whether you configured a **Body** template on the integration.
 
 ### Body merge
 
@@ -101,9 +101,9 @@ Use endpoint or step headers to override integration defaults — for example, s
 
 Resolution order: endpoint `method` (dynamic) → step override → integration **HTTP Method** → `POST`.
 
-## Verify `X-Novu-Signature`
+## Verify `X-Notify-Signature`
 
-When you set a **Signing Secret** on the integration, Novu signs the **exact UTF-8 request body string** with HMAC SHA-256 and sends the hex digest in the `X-Novu-Signature` header.
+When you set a **Signing Secret** on the integration, Notify signs the **exact UTF-8 request body string** with HMAC SHA-256 and sends the hex digest in the `X-Notify-Signature` header.
 
 Verify on your server using the raw request body bytes (before JSON re-serialization):
 
@@ -129,7 +129,7 @@ export function verifyNovuToolWebhook(rawBody: string, signatureHeader: string |
 // Express example — register before express.json()
 app.post('/novu-tool-webhook', express.raw({ type: 'application/json' }), (req, res) => {
   const rawBody = req.body.toString('utf-8');
-  const signature = req.headers['x-novu-signature'] as string | undefined;
+  const signature = req.headers['x-notify-signature'] as string | undefined;
 
   if (!verifyNovuToolWebhook(rawBody, signature)) {
     return res.status(401).send('Invalid signature');
@@ -142,24 +142,24 @@ app.post('/novu-tool-webhook', express.raw({ type: 'application/json' }), (req, 
 ```
 
 <Warning>
-  Re-stringifying a parsed JSON object often produces a different byte sequence than Novu signed. Always verify against the raw request body.
+  Re-stringifying a parsed JSON object often produces a different byte sequence than Notify signed. Always verify against the raw request body.
 </Warning>
 
-Your endpoint should return any `2xx` response. Novu treats non-2xx responses as delivery failures.
+Your endpoint should return any `2xx` response. Notify treats non-2xx responses as delivery failures.
 
 ## Dynamic mode: register subscriber endpoints
 
-In **dynamic** routing, each subscriber can have **multiple** `tool_webhook` endpoints on the same integration. Novu delivers the Tool step once per endpoint — useful when a subscriber wants parallel notifications to several systems.
+In **dynamic** routing, each subscriber can have **multiple** `tool_webhook` endpoints on the same integration. Notify delivers the Tool step once per endpoint — useful when a subscriber wants parallel notifications to several systems.
 
 <Warning>
-  Registering endpoints requires your Novu secret key. Call the channel-endpoints API from your server, never from a browser or mobile client.
+  Registering endpoints requires your Notify secret key. Call the channel-endpoints API from your server, never from a browser or mobile client.
 </Warning>
 
 ```mermaid
 sequenceDiagram
   participant Browser
   participant CustomerBackend as Customer backend
-  participant NovuAPI as Novu API
+  participant NovuAPI as Notify API
   participant CustomerWebhook as Subscriber webhook
   Browser->>CustomerBackend: callback URL (over HTTPS)
   CustomerBackend->>NovuAPI: POST /v1/channel-endpoints (secret key)
@@ -172,14 +172,14 @@ sequenceDiagram
 
 ### Create an endpoint
 
-Register a subscriber destination with type `tool_webhook`. Set `createSubscriberIfMissing: true` to provision the Novu subscriber on first connect.
+Register a subscriber destination with type `tool_webhook`. Set `createSubscriberIfMissing: true` to provision the Notify subscriber on first connect.
 
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({ secretKey: '<NOVU_SECRET_KEY>' });
+const notify = new Notify({ secretKey: '<NOVU_SECRET_KEY>' });
 
 await novu.channelEndpoints.create({
   type: 'tool_webhook',
@@ -187,7 +187,7 @@ await novu.channelEndpoints.create({
   subscriberId: '<SUBSCRIBER_ID>',
   createSubscriberIfMissing: true,
   endpoint: {
-    url: 'https://customer.example.com/hooks/novu',
+    url: 'https://customer.example.com/hooks/notify',
     headers: { Authorization: 'Bearer subscriber-token' },
     method: 'POST',
   },
@@ -197,16 +197,16 @@ await novu.channelEndpoints.create({
   <Tab title="Python">
 ```python
 import os
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.channel_endpoints.create(create_channel_endpoint_request_body={
         "type": "tool_webhook",
         "integration_identifier": "tool-webhook",
         "subscriber_id": "<SUBSCRIBER_ID>",
         "create_subscriber_if_missing": True,
         "endpoint": {
-            "url": "https://customer.example.com/hooks/novu",
+            "url": "https://customer.example.com/hooks/notify",
             "headers": {"Authorization": "Bearer subscriber-token"},
             "method": "POST",
         },
@@ -231,7 +231,7 @@ _, err := s.ChannelEndpoints.Create(context.Background(), components.CreateToolW
     SubscriberID:              "<SUBSCRIBER_ID>",
     CreateSubscriberIfMissing: novugo.Bool(true),
     Endpoint: components.ToolWebhookEndpointDto{
-        URL:     "https://customer.example.com/hooks/novu",
+        URL:     "https://customer.example.com/hooks/notify",
         Headers: map[string]string{"Authorization": "Bearer subscriber-token"},
         Method:  novugo.String("POST"),
     },
@@ -240,10 +240,10 @@ _, err := s.ChannelEndpoints.Create(context.Background(), components.CreateToolW
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 
 $sdk->channelEndpoints->create(
     createChannelEndpointRequestBody: new Components\CreateToolWebhookEndpointDto(
@@ -252,7 +252,7 @@ $sdk->channelEndpoints->create(
         subscriberId: '<SUBSCRIBER_ID>',
         createSubscriberIfMissing: true,
         endpoint: new Components\ToolWebhookEndpointDto(
-            url: 'https://customer.example.com/hooks/novu',
+            url: 'https://customer.example.com/hooks/notify',
             headers: ['Authorization' => 'Bearer subscriber-token'],
             method: 'POST',
         ),
@@ -262,8 +262,8 @@ $sdk->channelEndpoints->create(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
 
@@ -276,7 +276,7 @@ await sdk.ChannelEndpoints.CreateAsync(
         CreateSubscriberIfMissing = true,
         Endpoint = new ToolWebhookEndpointDto()
         {
-            Url = "https://customer.example.com/hooks/novu",
+            Url = "https://customer.example.com/hooks/notify",
             Headers = new Dictionary<string, string>
             {
                 ["Authorization"] = "Bearer subscriber-token",
@@ -288,10 +288,10 @@ await sdk.ChannelEndpoints.CreateAsync(
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 
 novu.channelEndpoints().create()
     .body(CreateToolWebhookEndpointDto.builder()
@@ -300,7 +300,7 @@ novu.channelEndpoints().create()
         .subscriberId("<SUBSCRIBER_ID>")
         .createSubscriberIfMissing(true)
         .endpoint(ToolWebhookEndpointDto.builder()
-            .url("https://customer.example.com/hooks/novu")
+            .url("https://customer.example.com/hooks/notify")
             .headers(Map.of("Authorization", "Bearer subscriber-token"))
             .method("POST")
             .build())
@@ -319,7 +319,7 @@ curl -L -X POST 'https://api.novu.co/v1/channel-endpoints' \
   "subscriberId": "<SUBSCRIBER_ID>",
   "createSubscriberIfMissing": true,
   "endpoint": {
-    "url": "https://customer.example.com/hooks/novu",
+    "url": "https://customer.example.com/hooks/notify",
     "headers": {
       "Authorization": "Bearer subscriber-token"
     },
@@ -337,8 +337,8 @@ curl -L -X POST 'https://api.novu.co/v1/channel-endpoints' \
 | `type` | `"tool_webhook"` | Discriminator for the endpoint variant. |
 | `integrationIdentifier` | `string` | Identifier of the Tool Webhook integration (must have **Routing Mode** = Dynamic). |
 | `subscriberId` | `string` | Subscriber whose endpoints receive the Tool step payload. |
-| `createSubscriberIfMissing` | `boolean` | Optional. When `true`, Novu creates the subscriber if missing. Defaults to `false`. |
-| `endpoint.url` | `string` | HTTPS or HTTP URL Novu calls for this endpoint. Encrypted at rest. |
+| `createSubscriberIfMissing` | `boolean` | Optional. When `true`, Notify creates the subscriber if missing. Defaults to `false`. |
+| `endpoint.url` | `string` | HTTPS or HTTP URL Notify calls for this endpoint. Encrypted at rest. |
 | `endpoint.headers` | `Record<string, string>` | Optional. Per-endpoint headers; override integration defaults on key collision. Header values are encrypted at rest. |
 | `endpoint.method` | `"POST" \| "PUT" \| "PATCH"` | Optional. Overrides the integration HTTP method for this endpoint only. Remains plaintext. |
 
@@ -369,16 +369,16 @@ See the [channel endpoints API reference](/api-reference/channel-endpoints/creat
   </Step>
 
   <Step title="Trigger the workflow">
-    Trigger the workflow for a subscriber. In static mode Novu calls the integration URL. In dynamic mode Novu calls every `tool_webhook` endpoint registered for that subscriber.
+    Trigger the workflow for a subscriber. In static mode Notify calls the integration URL. In dynamic mode Notify calls every `tool_webhook` endpoint registered for that subscriber.
   </Step>
 </Steps>
 
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({ secretKey: '<NOVU_SECRET_KEY>' });
+const notify = new Notify({ secretKey: '<NOVU_SECRET_KEY>' });
 
 await novu.trigger({
   workflowId: 'ops-handoff',
@@ -394,9 +394,9 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="ops-handoff",
         to={"subscriber_id": "<SUBSCRIBER_ID>"},
@@ -433,10 +433,10 @@ _, err := s.Trigger(context.Background(), components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 
 $sdk->trigger(
     triggerEventRequestDto: new Components\TriggerEventRequestDto(
@@ -452,8 +452,8 @@ $sdk->trigger(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
 
@@ -471,10 +471,10 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto()
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 
 novu.trigger()
     .body(TriggerEventRequestDto.builder()
@@ -507,7 +507,7 @@ curl --location 'https://api.novu.co/v1/events/trigger' \
 
 ## What happens without an endpoint (dynamic mode)
 
-If **Routing Mode** is **Dynamic** and a subscriber has **no** `tool_webhook` endpoints on the integration, Novu marks the Tool step as **skipped** for that subscriber in the Activity feed. Other subscribers on the same trigger are unaffected.
+If **Routing Mode** is **Dynamic** and a subscriber has **no** `tool_webhook` endpoints on the integration, Notify marks the Tool step as **skipped** for that subscriber in the Activity feed. Other subscribers on the same trigger are unaffected.
 
 ## Related
 

@@ -1,5 +1,5 @@
 import { Module, OnApplicationShutdown, Provider } from '@nestjs/common';
-import { FeatureFlagsService, WorkflowInMemoryProviderService } from '@novu/application-generic';
+import { FeatureFlagsService, WorkflowInMemoryProviderService } from '@notify/application-generic';
 import { SharedModule } from '../shared/shared.module';
 import { WebSocketWorker } from './services';
 import { ExternalServicesRoute } from './usecases/external-services-route';

@@ -1,4 +1,4 @@
-import { ContentService } from '@novu/application-generic';
+import { ContentService } from '@notify/application-generic';
 import {
   DelayTypeEnum,
   DigestTypeEnum,
@@ -9,7 +9,7 @@ import {
   INotificationTemplateStep,
   StepTypeEnum,
   TriggerContextTypeEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { expect } from 'chai';
 
 describe('ContentService', () => {

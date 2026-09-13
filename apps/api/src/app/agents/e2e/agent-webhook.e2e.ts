@@ -5,9 +5,9 @@ import {
   ConversationParticipantTypeEnum,
   ConversationStatusEnum,
   SubscriberRepository,
-} from '@novu/dal';
-import { ENDPOINT_TYPES } from '@novu/shared';
-import { testServer } from '@novu/testing';
+} from '@notify/dal';
+import { ENDPOINT_TYPES } from '@notify/shared';
+import { testServer } from '@notify/testing';
 import { expect } from 'chai';
 import type { EmojiValue } from 'chat';
 import sinon from 'sinon';

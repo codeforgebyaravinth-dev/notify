@@ -5,7 +5,7 @@ import {
   FeatureNameEnum,
   getFeatureForTierAsNumber,
   UNLIMITED_VALUE,
-} from '@novu/shared';
+} from '@notify/shared';
 import { ArrowRight, Check, DraftingCompass, FileCode2 } from 'lucide-react';
 import { useState } from 'react';
 import { ConfirmationModal } from '@/components/confirmation-modal';

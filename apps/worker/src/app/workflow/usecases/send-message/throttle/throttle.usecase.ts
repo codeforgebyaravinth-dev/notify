@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { CreateExecutionDetails, InstrumentUsecase } from '@novu/application-generic';
-import { MessageRepository } from '@novu/dal';
+import { CreateExecutionDetails, InstrumentUsecase } from '@notify/application-generic';
+import { MessageRepository } from '@notify/dal';
 import { SendMessageCommand } from '../send-message.command';
 import { SendMessageResult, SendMessageStatus, SendMessageType } from '../send-message-type.usecase';
 

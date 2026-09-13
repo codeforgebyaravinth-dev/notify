@@ -15,7 +15,7 @@ runs:
     - uses: mansagroup/nrwl-nx-action@a531870269e0c1eeb7af6247c4a206c31cae82cc # v3
       with:
         targets: build
-        projects: '@novu/api-service'
+        projects: '@notify/api-service'
         args: ''
 
     - name: Start API

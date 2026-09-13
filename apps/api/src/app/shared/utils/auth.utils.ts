@@ -1,5 +1,5 @@
 import { ForbiddenException } from '@nestjs/common';
-import { ApiAuthSchemeEnum } from '@novu/shared';
+import { ApiAuthSchemeEnum } from '@notify/shared';
 
 import { KEYLESS_ENVIRONMENT_PREFIX } from '../../inbox/utils/keyless.constants';
 

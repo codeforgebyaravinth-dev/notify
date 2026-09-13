@@ -1,5 +1,5 @@
 import { BadRequestException, Injectable, NotFoundException, UnprocessableEntityException } from '@nestjs/common';
-import { AnalyticsService, FeatureFlagsService, InstrumentUsecase } from '@novu/application-generic';
+import { AnalyticsService, FeatureFlagsService, InstrumentUsecase } from '@notify/application-generic';
 import {
   BaseRepository,
   ContextRepository,
@@ -7,8 +7,8 @@ import {
   NotificationTemplateEntity,
   NotificationTemplateRepository,
   SubscriberRepository,
-} from '@novu/dal';
-import { ContextPayload, FeatureFlagsKeysEnum, PreferenceLevelEnum } from '@novu/shared';
+} from '@notify/dal';
+import { ContextPayload, FeatureFlagsKeysEnum, PreferenceLevelEnum } from '@notify/shared';
 import { BulkUpdatePreferenceItemDto } from '../../dtos/bulk-update-preferences-request.dto';
 import { AnalyticsEventsEnum } from '../../utils';
 import { InboxPreference } from '../../utils/types';

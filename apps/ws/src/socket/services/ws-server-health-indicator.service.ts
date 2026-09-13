@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { HealthCheckError, HealthIndicator, HealthIndicatorResult } from '@nestjs/terminus';
 
-import { IHealthIndicator } from '@novu/application-generic';
+import { IHealthIndicator } from '@notify/application-generic';
 
 import { WSGateway } from '../ws.gateway';
 

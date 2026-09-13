@@ -1,5 +1,5 @@
-import { ChannelTypeEnum } from '@novu/dal';
-import { ChannelCTATypeEnum, ResourceOriginEnum, ResourceTypeEnum } from '@novu/shared';
+import { ChannelTypeEnum } from '@notify/dal';
+import { ChannelCTATypeEnum, ResourceOriginEnum, ResourceTypeEnum } from '@notify/shared';
 import { expect } from 'chai';
 
 import { mapToDto } from './notification-mapper';

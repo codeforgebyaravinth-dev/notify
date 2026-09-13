@@ -4,7 +4,7 @@ description: "Learn what the Agent Communication Interface (ACI) is, what proble
 ---
 
 
-Agent Communication Infrastructure (ACI) is the communication layer that connects agents to the messaging platforms where people already work, collaborate, and talk to businesses. ACI complements Novu's notification workflows: workflows deliver one-way or templated multi-channel notifications, while ACI handles two-way agent conversations across Slack, Teams, WhatsApp, and other messaging platforms.
+Agent Communication Infrastructure (ACI) is the communication layer that connects agents to the messaging platforms where people already work, collaborate, and talk to businesses. ACI complements Notify's notification workflows: workflows deliver one-way or templated multi-channel notifications, while ACI handles two-way agent conversations across Slack, Teams, WhatsApp, and other messaging platforms.
 
 ACI sits between communication channels and your agent logic. Instead of building separate integrations for each platform, ACI gives your agent one communication interface for inbound messages, outbound replies, conversation state, user identity, and delivery across:
 
@@ -37,7 +37,7 @@ You create the agent once. ACI handles communication across connected channels. 
 
 ACI introduces a three-part architecture that separates platform delivery from agent intelligence.
 
-![ACI architecture diagram showing communication channels, agent brain, and Novu communication layer](/images/agents/aci/what-is-aci.png)
+![ACI architecture diagram showing communication channels, agent brain, and Notify communication layer](/images/agents/aci/what-is-aci.png)
 
 ### Communication channels
 
@@ -64,7 +64,7 @@ When the agent replies, the bridge delivers the response back to the correct pla
 
 The agent's brain is the system that decides how to respond. ACI supports different kinds of agents, including custom code agents and managed agents.
 
-For a custom code agent, your server receives the context object and processes it however you decide. You can call an LLM, run business logic, use external APIs, route the conversation to a human, or combine multiple systems. You can build the agent brain with the Novu agent SDK, AI SDK, LangChain, OpenAI SDK, or any custom code of your choosing.
+For a custom code agent, your server receives the context object and processes it however you decide. You can call an LLM, run business logic, use external APIs, route the conversation to a human, or combine multiple systems. You can build the agent brain with the Notify agent SDK, AI SDK, LangChain, OpenAI SDK, or any custom code of your choosing.
 
 For a managed agent, you configure the agent's behavior, system prompt, tools, skills, and external connections. The managed platform runs the agent harness and executes the agent loop, while ACI handles the communication layer between the managed agent and your connected channels.
 

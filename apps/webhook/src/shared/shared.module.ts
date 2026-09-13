@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { AnalyticsService } from '@novu/application-generic';
-import { DalService, ExecutionDetailsRepository, IntegrationRepository, MessageRepository } from '@novu/dal';
+import { AnalyticsService } from '@notify/application-generic';
+import { DalService, ExecutionDetailsRepository, IntegrationRepository, MessageRepository } from '@notify/dal';
 
 const DAL_MODELS = [ExecutionDetailsRepository, MessageRepository, IntegrationRepository];
 

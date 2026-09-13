@@ -1,7 +1,7 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { CacheService, FeatureFlagsService } from '@novu/application-generic';
-import { AgentRepository } from '@novu/dal';
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { CacheService, FeatureFlagsService } from '@notify/application-generic';
+import { AgentRepository } from '@notify/dal';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import {
   INCR_WITH_EXPIRE_SCRIPT,
   KEYLESS_DAILY_COUNTER_TTL_SECONDS,

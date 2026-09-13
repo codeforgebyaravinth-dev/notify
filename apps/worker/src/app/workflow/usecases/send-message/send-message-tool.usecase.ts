@@ -14,16 +14,16 @@ import {
   SelectVariant,
   ToolFactory,
   BillingService,
-} from '@novu/application-generic';
-import { IntegrationEntity, MessageEntity, MessageRepository, SubscriberRepository } from '@novu/dal';
+} from '@notify/application-generic';
+import { IntegrationEntity, MessageEntity, MessageRepository, SubscriberRepository } from '@notify/dal';
 import {
   ChannelTypeEnum,
   ENDPOINT_ROUTED_TOOL_PROVIDERS,
   ExecutionDetailsSourceEnum,
   ExecutionDetailsStatusEnum,
   isEndpointRoutedToolProvider,
-} from '@novu/shared';
-import { ChannelData } from '@novu/stateless';
+} from '@notify/shared';
+import { ChannelData } from '@notify/stateless';
 import { addBreadcrumb } from '@sentry/node';
 import { PlatformException } from '../../../shared/utils';
 import { ResolveChannelEndpointsCommand } from './channel-endpoint-resolution/resolve-channel-endpoints.command';

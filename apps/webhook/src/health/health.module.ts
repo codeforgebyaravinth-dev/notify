@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TerminusModule } from '@nestjs/terminus';
-import { DalServiceHealthIndicator } from '@novu/application-generic';
+import { DalServiceHealthIndicator } from '@notify/application-generic';
 import { SharedModule } from '../shared/shared.module';
 import { HealthController } from './health.controller';
 

@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException, UnprocessableEntityException } from '@nestjs/common';
-import { PinoLogger, resolveAgentRuntime } from '@novu/application-generic';
-import { AgentMcpServerRepository, AgentRepository, IntegrationRepository } from '@novu/dal';
-import { AGENT_RUNTIME_PROVIDERS } from '@novu/shared';
+import { PinoLogger, resolveAgentRuntime } from '@notify/application-generic';
+import { AgentMcpServerRepository, AgentRepository, IntegrationRepository } from '@notify/dal';
+import { AGENT_RUNTIME_PROVIDERS } from '@notify/shared';
 import { AgentMcpDefinitionService } from '../../../mcp/runtime/agent-mcp-definition.service';
 import type {
   AgentRuntimeCapabilitiesDto,

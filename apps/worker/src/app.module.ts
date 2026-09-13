@@ -12,7 +12,7 @@ import {
 
 import { APP_FILTER } from '@nestjs/core';
 import { SentryGlobalFilter, SentryModule } from '@sentry/nestjs/setup';
-import { TracingModule } from '@novu/application-generic';
+import { TracingModule } from '@notify/application-generic';
 import { HealthModule } from './app/health/health.module';
 import { SharedModule } from './app/shared/shared.module';
 import { TelemetryModule } from './app/telemetry/telemetry.module';
@@ -44,16 +44,16 @@ if (process.env.SENTRY_DSN) {
 })
 export class AppModule implements OnApplicationBootstrap, OnApplicationShutdown, OnModuleDestroy {
   onModuleDestroy() {
-    Logger.log(`[@novu/worker]: AppModule is shuttind down...`);
+    Logger.log(`[@notify/worker]: AppModule is shuttind down...`);
     Logger.flush();
   }
 
   onApplicationBootstrap() {
-    Logger.log(`[@novu/worker]: Bootstrapped successfully!`);
+    Logger.log(`[@notify/worker]: Bootstrapped successfully!`);
   }
 
   onApplicationShutdown(signal: string) {
-    Logger.log(`[@novu/worker]: Application shutdown with signal ${signal}`);
+    Logger.log(`[@notify/worker]: Application shutdown with signal ${signal}`);
     Logger.flush();
   }
 }

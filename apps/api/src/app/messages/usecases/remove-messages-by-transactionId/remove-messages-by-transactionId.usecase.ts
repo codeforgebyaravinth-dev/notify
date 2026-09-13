@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 
-import { buildFeedKey, buildMessageCountKey, InvalidateCacheService } from '@novu/application-generic';
-import { EnforceEnvId, MessageEntity, MessageRepository } from '@novu/dal';
+import { buildFeedKey, buildMessageCountKey, InvalidateCacheService } from '@notify/application-generic';
+import { EnforceEnvId, MessageEntity, MessageRepository } from '@notify/dal';
 
 import { RemoveMessagesByTransactionIdCommand } from './remove-messages-by-transactionId.command';
 

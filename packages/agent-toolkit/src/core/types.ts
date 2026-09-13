@@ -1,5 +1,5 @@
 import type { ZodTypeAny } from 'zod';
-import type { Novu } from '@novu/api';
+import type { Novu } from '@notify/api';
 
 export type NovuToolkitConfig = {
   secretKey: string;

@@ -1,4 +1,4 @@
-import { EnvironmentTypeEnum, PermissionsEnum, ResourceOriginEnum } from '@novu/shared';
+import { EnvironmentTypeEnum, PermissionsEnum, ResourceOriginEnum } from '@notify/shared';
 import { Edge, EdgeLabelRenderer, EdgeProps, getBezierPath } from '@xyflow/react';
 import { RiInsertRowTop } from 'react-icons/ri';
 import { useWorkflow } from '@/components/workflow-editor/workflow-provider';

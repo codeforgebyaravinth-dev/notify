@@ -18,9 +18,9 @@ import {
   SsrfBlockedError,
   shouldIncludeBody,
   toHeadersRecord,
-} from '@novu/application-generic';
-import { ControlValuesRepository, JobRepository, MessageRepository, NotificationTemplateRepository } from '@novu/dal';
-import { compileJsonControlValues, createLiquidEngine, repairJsonString } from '@novu/framework/internal';
+} from '@notify/application-generic';
+import { ControlValuesRepository, JobRepository, MessageRepository, NotificationTemplateRepository } from '@notify/dal';
+import { compileJsonControlValues, createLiquidEngine, repairJsonString } from '@notify/framework/internal';
 import {
   ControlValuesLevelEnum,
   DeliveryLifecycleDetail,
@@ -29,7 +29,7 @@ import {
   ExecutionDetailsStatusEnum,
   isOutboundSsrfProtectionEnabled,
   ResourceOriginEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import { AdditionalOperation, RulesLogic } from 'json-logic-js';

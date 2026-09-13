@@ -1,7 +1,7 @@
 import './instrument';
 import { INestApplication } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-import { getErrorInterceptor, Logger } from '@novu/application-generic';
+import { getErrorInterceptor, Logger } from '@notify/application-generic';
 
 import { AppModule } from './app.module';
 

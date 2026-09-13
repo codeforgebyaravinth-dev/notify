@@ -1,5 +1,5 @@
 import { useOrganization } from '@clerk/react';
-import { ChannelTypeEnum, IIntegration } from '@novu/shared';
+import { ChannelTypeEnum, IIntegration } from '@notify/shared';
 import { useMemo } from 'react';
 import { IS_SELF_HOSTED, ONBOARDING_DEMO_WORKFLOW_ID } from '../config';
 import { useFetchIntegrations } from './use-fetch-integrations';

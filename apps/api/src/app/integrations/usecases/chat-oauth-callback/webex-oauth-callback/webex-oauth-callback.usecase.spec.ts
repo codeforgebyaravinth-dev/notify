@@ -5,8 +5,8 @@ import {
   ContextRepository,
   EnvironmentRepository,
   IntegrationRepository,
-} from '@novu/dal';
-import { ChatProviderIdEnum, ENDPOINT_TYPES } from '@novu/shared';
+} from '@notify/dal';
+import { ChatProviderIdEnum, ENDPOINT_TYPES } from '@notify/shared';
 import axios from 'axios';
 import { expect } from 'chai';
 import sinon from 'sinon';

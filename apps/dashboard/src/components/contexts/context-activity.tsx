@@ -1,4 +1,4 @@
-import { ContextId, ContextType, createContextKey, FeatureFlagsKeysEnum } from '@novu/shared';
+import { ContextId, ContextType, createContextKey, FeatureFlagsKeysEnum } from '@notify/shared';
 import { AnimatePresence } from 'motion/react';
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';

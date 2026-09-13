@@ -1,4 +1,4 @@
-import { IOrganizationEntity } from '@novu/shared';
+import { IOrganizationEntity } from '@notify/shared';
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { get } from '../../api/api.client';

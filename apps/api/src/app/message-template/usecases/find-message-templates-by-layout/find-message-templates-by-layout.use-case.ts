@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { MessageTemplateEntity, MessageTemplateRepository } from '@novu/dal';
+import { MessageTemplateEntity, MessageTemplateRepository } from '@notify/dal';
 
 import { FindMessageTemplatesByLayoutCommand } from './find-message-templates-by-layout.command';
 

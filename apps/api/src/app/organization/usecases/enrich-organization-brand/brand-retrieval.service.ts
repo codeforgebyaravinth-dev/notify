@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { PinoLogger } from '@novu/application-generic';
-import { IBrandColor, IBrandLogo } from '@novu/shared';
+import { PinoLogger } from '@notify/application-generic';
+import { IBrandColor, IBrandLogo } from '@notify/shared';
 import ContextDev from 'context.dev';
 
 export interface BrandData {

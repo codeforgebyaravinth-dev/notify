@@ -1,6 +1,6 @@
 # Local Studio & Novu CLI
 
-The **Local Studio** is a companion app to `@novu/framework`. It runs locally, talks to your Bridge Endpoint, and gives you a live preview of every workflow you've registered — including step controls, payload, and rendered output.
+The **Local Studio** is a companion app to `@notify/framework`. It runs locally, talks to your Bridge Endpoint, and gives you a live preview of every workflow you've registered — including step controls, payload, and rendered output.
 
 ## Prerequisites
 

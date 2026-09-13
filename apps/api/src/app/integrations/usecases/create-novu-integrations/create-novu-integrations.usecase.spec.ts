@@ -1,5 +1,5 @@
-import { AnalyticsService, FeatureFlagsService } from '@novu/application-generic';
-import { IntegrationRepository } from '@novu/dal';
+import { AnalyticsService, FeatureFlagsService } from '@notify/application-generic';
+import { IntegrationRepository } from '@notify/dal';
 import {
   AgentRuntimeProviderIdEnum,
   ChannelTypeEnum,
@@ -8,7 +8,7 @@ import {
   FeatureFlagsKeysEnum,
   InAppProviderIdEnum,
   IntegrationKindEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 

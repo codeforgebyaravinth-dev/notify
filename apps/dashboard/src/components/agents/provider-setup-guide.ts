@@ -1,4 +1,4 @@
-import { ChatProviderIdEnum, EmailProviderIdEnum } from '@novu/shared';
+import { ChatProviderIdEnum, EmailProviderIdEnum } from '@notify/shared';
 import { EmailSetupGuide } from './email-setup-guide';
 import { SendblueSetupGuide } from './sendblue-setup-guide';
 import { SlackSetupGuide } from './slack-setup-guide';

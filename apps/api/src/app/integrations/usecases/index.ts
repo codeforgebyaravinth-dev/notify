@@ -5,7 +5,7 @@ import {
   GetDecryptedIntegrations,
   NormalizeVariables,
   SelectIntegration,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import { AutoConfigureIntegration } from './auto-configure-integration/auto-configure-integration.usecase';
 import { AzureSetupOauthCallback } from './azure-setup-oauth-callback/azure-setup-oauth-callback.usecase';
 import { ChatOauthCallback } from './chat-oauth-callback/chat-oauth-callback.usecase';

@@ -15,7 +15,7 @@ export const InboxTabUnreadNotificationsCount = (props: { count: number }) => {
     <span
       class={style({
         key: 'notificationsTabsTriggerCount',
-        className: 'nt-rounded-full nt-bg-counter nt-px-[6px] nt-text-counter-foreground nt-text-sm',
+        className: 'nt-nt-rounded-none nt-bg-counter nt-px-[6px] nt-text-counter-foreground nt-text-sm',
       })}
     >
       {displayCount()}

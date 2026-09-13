@@ -4,9 +4,9 @@ import {
   decryptCredentials,
   isRotatingTokenProvider,
   normalizeRotatingAuth,
-} from '@novu/application-generic';
-import { IntegrationEntity } from '@novu/dal';
-import { ChatProviderIdEnum, ConnectionMode, ContextPayload, ProvidersIdEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { IntegrationEntity } from '@notify/dal';
+import { ChatProviderIdEnum, ConnectionMode, ContextPayload, ProvidersIdEnum } from '@notify/shared';
 import { AuthDto } from '../dtos/shared.dto';
 
 /**

@@ -1,7 +1,7 @@
-import { IntegrationRepository } from '@novu/dal';
-import { PushProviderIdEnum } from '@novu/shared';
-import { ChannelTypeEnum } from '@novu/stateless';
-import { UserSession } from '@novu/testing';
+import { IntegrationRepository } from '@notify/dal';
+import { PushProviderIdEnum } from '@notify/shared';
+import { ChannelTypeEnum } from '@notify/stateless';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { updateFcmCredentials } from './fcm-credentials-migration';
 

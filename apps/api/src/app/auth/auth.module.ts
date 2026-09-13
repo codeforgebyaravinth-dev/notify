@@ -1,6 +1,6 @@
-console.log("NOVU_ENTERPRISE is", process.env.NOVU_ENTERPRISE, "isBetterAuth:", require("@novu/shared").isBetterAuthEnabled());
+console.log("NOVU_ENTERPRISE is", process.env.NOVU_ENTERPRISE, "isBetterAuth:", require("@notify/shared").isBetterAuthEnabled());
 import { Global, MiddlewareConsumer, Module, ModuleMetadata } from '@nestjs/common';
-import { isBetterAuthEnabled, isClerkEnabled } from '@novu/shared';
+import { isBetterAuthEnabled, isClerkEnabled } from '@notify/shared';
 import { configure as configureCommunity, getCommunityAuthModuleConfig } from './community.auth.module.config';
 import { configure as configureEE, getEEModuleConfig } from './ee.auth.module.config';
 

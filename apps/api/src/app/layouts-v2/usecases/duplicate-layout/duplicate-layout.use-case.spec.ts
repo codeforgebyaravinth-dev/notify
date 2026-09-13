@@ -1,7 +1,7 @@
 import { ModuleRef } from '@nestjs/core';
-import { AnalyticsService, GetLayoutUseCase, PinoLogger } from '@novu/application-generic';
-import { ControlValuesRepository } from '@novu/dal';
-import { ChannelTypeEnum, ControlValuesLevelEnum, ResourceOriginEnum, ResourceTypeEnum } from '@novu/shared';
+import { AnalyticsService, GetLayoutUseCase, PinoLogger } from '@notify/application-generic';
+import { ControlValuesRepository } from '@notify/dal';
+import { ChannelTypeEnum, ControlValuesLevelEnum, ResourceOriginEnum, ResourceTypeEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { UpsertLayout } from '../upsert-layout';

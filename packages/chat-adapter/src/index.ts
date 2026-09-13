@@ -45,7 +45,7 @@ export { AgentEvent } from './types.js';
  *
  * @example
  *   import { Chat } from 'chat';
- *   import { createNovuAdapter } from '@novu/chat-sdk-adapter';
+ *   import { createNovuAdapter } from '@notify/chat-sdk-adapter';
  *   import { createMemoryState } from '@chat-adapter/state-memory';
  *
  *   // Reads NOVU_SECRET_KEY + NOVU_AGENT_IDENTIFIER from the environment:

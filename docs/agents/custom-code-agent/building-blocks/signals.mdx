@@ -1,12 +1,12 @@
 ---
 title: "Signals"
-description: "Use signals in custom code agent handlers to update metadata, trigger Novu workflows, and mark conversations resolved from your agent runtime."
+description: "Use signals in custom code agent handlers to update metadata, trigger Notify workflows, and mark conversations resolved from your agent runtime."
 ---
 
 
 Signals let you change conversation state without sending another chat message. [Replies](/agents/custom-code-agent/building-blocks/reply) go to the user; signals update metadata, fire workflows, or mark a thread resolved.
 
-Use `ctx.reply()` when the user should see something. Use signals when you only need to persist data, trigger a Novu workflow, or close the conversation.
+Use `ctx.reply()` when the user should see something. Use signals when you only need to persist data, trigger a Notify workflow, or close the conversation.
 
 ## Channel support
 
@@ -15,14 +15,14 @@ Use `ctx.reply()` when the user should see something. Use signals when you only 
 | Resolve conversation | Yes | Yes | Yes | Yes | Yes |
 | Metadata / trigger signals | Yes | Yes | Yes | Yes | Yes |
 
-Resolve and other signals are channel-agnostic. Novu applies them to the conversation regardless of provider. See [Channels overview](/agents/channels/overview).
+Resolve and other signals are channel-agnostic. Notify applies them to the conversation regardless of provider. See [Channels overview](/agents/channels/overview).
 
 ## Signal types
 
 | Signal | What it does | Method |
 | --- | --- | --- |
 | Metadata | Store key-value data on the conversation (persists across messages) | `ctx.metadata.set(key, value)` |
-| Trigger | Fire a Novu workflow (email, push, SMS, multi-step) | `ctx.trigger(workflowId, options)` |
+| Trigger | Fire a Notify workflow (email, push, SMS, multi-step) | `ctx.trigger(workflowId, options)` |
 | Resolve | Mark the conversation as resolved, with an optional summary | `ctx.resolve(summary?)` |
 
 You can combine both in one handler turn: reply to the user, set metadata, call `ctx.trigger()` for an escalation email, and `ctx.resolve()` when the issue is done.
@@ -48,7 +48,7 @@ Use metadata for intent, ticket IDs, escalation flags, or any state your agent n
 
 ## Trigger a workflow
 
-Start any Novu workflow from a handler, the same workflows you use for email, push, or SMS elsewhere in your account.
+Start any Notify workflow from a handler, the same workflows you use for email, push, or SMS elsewhere in your account.
 
 ```tsx
 ctx.trigger('escalation-email', {
@@ -76,7 +76,7 @@ Resolved conversations automatically reopen if the user sends a new message.
 ## Example: all three signals in one turn
 
 ```tsx
-import { agent } from '@novu/framework';
+import { agent } from '@notify/framework';
 
 export const myAgent = agent('my-agent', {
   onMessage: async (message, ctx) => {
@@ -110,6 +110,6 @@ export const myAgent = agent('my-agent', {
     Event handlers and the context object your agent receives on every turn.
   </Card>
   <Card icon="sparkles" href="/agents/custom-code-agent/frameworks/ai-sdk" title="AI SDK">
-    Build end to end with `@novu/framework/ai-sdk`.
+    Build end to end with `@notify/framework/ai-sdk`.
   </Card>
 </Columns>

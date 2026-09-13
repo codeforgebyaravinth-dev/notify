@@ -1,4 +1,4 @@
-import { ChatProviderIdEnum, EmailProviderIdEnum } from '@novu/shared';
+import { ChatProviderIdEnum, EmailProviderIdEnum } from '@notify/shared';
 import { useQueryClient } from '@tanstack/react-query';
 import { Loader } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState } from 'react';

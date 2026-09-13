@@ -99,7 +99,7 @@ export const DayScheduleCopy = (props: DayScheduleCopyProps) => {
             <Dropdown.Content
               portal
               appearanceKey="dayScheduleCopy__dropdownContent"
-              class="nt-rounded-md nt-min-w-[220px] nt-max-w-[220px] nt-p-1"
+              class="nt-nt-rounded-none nt-min-w-[220px] nt-max-w-[220px] nt-p-1"
             >
               <span
                 class={style({

@@ -1,13 +1,13 @@
-import { Novu } from '@novu/api';
+import { Novu } from '@notify/api';
 import {
   JobRepository,
   JobStatusEnum,
   MessageRepository,
   NotificationTemplateEntity,
   SubscriberEntity,
-} from '@novu/dal';
-import { DigestTypeEnum, DigestUnitEnum, IDigestRegularMetadata, StepTypeEnum } from '@novu/shared';
-import { SubscribersService, UserSession } from '@novu/testing';
+} from '@notify/dal';
+import { DigestTypeEnum, DigestUnitEnum, IDigestRegularMetadata, StepTypeEnum } from '@notify/shared';
+import { SubscribersService, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { initNovuClassSdk } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';
 import { pollForJobStatusChange } from './utils/poll-for-job-status-change.util';

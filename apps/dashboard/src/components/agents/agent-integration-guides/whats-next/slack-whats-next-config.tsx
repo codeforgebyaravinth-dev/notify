@@ -4,7 +4,7 @@ import { SetupButton } from '../../setup-guide-primitives';
 import type { ChannelWhatsNextConfig, WhatsNextConfigContext } from './whats-next-types';
 
 const SLACK_APPS_BASE_URL = 'https://api.slack.com/apps';
-const SLACK_REACT_PACKAGE = '@novu/react';
+const SLACK_REACT_PACKAGE = '@notify/react';
 
 function escapeJsxStringAttributeValue(value: string): string {
   return value.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
@@ -40,12 +40,12 @@ function buildSlackConnectSnippet(
 }
 
 function buildSlackPrompt(integrationIdentifier: string, agentName: string, applicationIdentifier: string): string {
-  return `Add the Novu SlackConnectButton from @novu/react to my app so each of my end users can connect "${agentName}" to their own Slack workspace.
+  return `Add the Novu SlackConnectButton from @notify/react to my app so each of my end users can connect "${agentName}" to their own Slack workspace.
 
 Context: I'm already signed in to the Novu dashboard and the "${agentName}" Slack integration already exists. This is purely a frontend code integration: do NOT run the Novu CLI, the agent-onboarding flow, or keyless mode.
 
 Requirements:
-- Install @novu/react with my project's package manager.
+- Install @notify/react with my project's package manager.
 - Render <SlackConnectButton /> inside a <NovuProvider> configured for the currently signed-in end user.
 - Use applicationIdentifier="${applicationIdentifier}" and integrationIdentifier="${integrationIdentifier}" with connectionMode="subscriber". Store applicationIdentifier in an environment variable rather than hardcoding it.
 - In subscriber mode each user gets their own connection, so pass the authenticated user's id as subscriberId: source it from my app's existing auth, don't hardcode it.
@@ -116,7 +116,7 @@ export function buildSlackWhatsNextConfig({
       {
         title: 'Add Slack connect button to your application',
         description:
-          'SlackConnectButton is a pre-built UI component in the @novu/react SDK that connects an agent to a Slack workspace.',
+          'SlackConnectButton is a pre-built UI component in the @notify/react SDK that connects an agent to a Slack workspace.',
         fullWidthContent: (
           <div className="pt-3">
             <CodeBlock code={connectSnippet} language="tsx" title="main.tsx" />

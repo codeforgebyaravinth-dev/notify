@@ -5,9 +5,9 @@ import {
   CreateExecutionDetailsCommand,
   DetailEnum,
   Instrument,
-} from '@novu/application-generic';
-import { JobEntity, JobRepository } from '@novu/dal';
-import { ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum, StepTypeEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { JobEntity, JobRepository } from '@notify/dal';
+import { ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum, StepTypeEnum } from '@notify/shared';
 
 import { PlatformException } from '../../../../shared/utils';
 

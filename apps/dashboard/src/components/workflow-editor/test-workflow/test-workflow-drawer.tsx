@@ -3,7 +3,7 @@ import {
   type ISubscriberResponseDto,
   PermissionsEnum,
   type WorkflowTestDataResponseDto,
-} from '@novu/shared';
+} from '@notify/shared';
 import { forwardRef, useCallback, useEffect, useState } from 'react';
 import { RiArrowDownSLine, RiFileCopyLine } from 'react-icons/ri';
 import { Button } from '@/components/primitives/button';

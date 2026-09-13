@@ -1,6 +1,6 @@
-import { CommunityOrganizationRepository } from '@novu/dal';
-import { ApiServiceLevelEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { CommunityOrganizationRepository } from '@notify/dal';
+import { ApiServiceLevelEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Product feature Test #novu-v0-os', async () => {

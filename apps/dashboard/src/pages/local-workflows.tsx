@@ -1,4 +1,4 @@
-import { WorkflowResponseDto } from '@novu/shared';
+import { WorkflowResponseDto } from '@notify/shared';
 import { FaCode } from 'react-icons/fa6';
 import { RiRefreshLine, RiTerminalBoxLine } from 'react-icons/ri';
 import { Link, Navigate, useParams } from 'react-router-dom';
@@ -182,7 +182,7 @@ export const LocalWorkflowsPage = () => {
           <div className="flex flex-col gap-1">
             <span className="text-foreground-900 text-sm font-medium">No workflows discovered</span>
             <span className="text-foreground-600 text-xs">
-              Define workflows with <code className="bg-neutral-alpha-100 rounded px-1 py-0.5">@novu/framework</code> in
+              Define workflows with <code className="bg-neutral-alpha-100 rounded px-1 py-0.5">@notify/framework</code> in
               your app — they will appear here automatically.
             </span>
           </div>

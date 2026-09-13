@@ -11,7 +11,7 @@ import {
   StepUpdateDto,
   UNLIMITED_VALUE,
   WorkflowResponseDto,
-} from '@novu/shared';
+} from '@notify/shared';
 import { FileCode2, Hash } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import { HTMLAttributes, ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react';

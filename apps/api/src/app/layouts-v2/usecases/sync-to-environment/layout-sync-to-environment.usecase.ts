@@ -6,9 +6,9 @@ import {
   Instrument,
   InstrumentUsecase,
   LayoutResponseDto,
-} from '@novu/application-generic';
-import { LocalizationResourceEnum } from '@novu/dal';
-import { ResourceOriginEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { LocalizationResourceEnum } from '@notify/dal';
+import { ResourceOriginEnum } from '@notify/shared';
 import { UpsertLayout, UpsertLayoutCommand, UpsertLayoutDataCommand } from '../upsert-layout';
 import { LayoutSyncToEnvironmentCommand } from './layout-sync-to-environment.command';
 
@@ -98,7 +98,7 @@ export class LayoutSyncToEnvironmentUseCase {
       return;
     }
 
-    const publishTranslationGroup = this.moduleRef.get(require('@novu/ee-translation')?.PublishTranslationGroup, {
+    const publishTranslationGroup = this.moduleRef.get(require('@notify/ee-translation')?.PublishTranslationGroup, {
       strict: false,
     });
 

@@ -1,4 +1,4 @@
-import { DirectionEnum } from '@novu/shared';
+import { DirectionEnum } from '@notify/shared';
 import { useEffect, useState } from 'react';
 import { useFetchSubscribers } from '@/hooks/use-fetch-subscribers';
 

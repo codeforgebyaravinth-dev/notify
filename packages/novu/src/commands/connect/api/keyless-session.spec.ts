@@ -1,4 +1,4 @@
-import { AgentRuntimeProviderIdEnum } from '@novu/shared';
+import { AgentRuntimeProviderIdEnum } from '@notify/shared';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 const post = vi.fn();

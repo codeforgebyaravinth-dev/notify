@@ -1,4 +1,4 @@
-import { AgentRuntimeProviderIdEnum } from '@novu/shared';
+import { AgentRuntimeProviderIdEnum } from '@notify/shared';
 
 export type RuntimeType = 'scratch' | 'claude' | 'vertex';
 

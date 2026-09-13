@@ -1,4 +1,4 @@
-import { FeatureNameEnum } from '@novu/shared';
+import { FeatureNameEnum } from '@notify/shared';
 import { useId } from 'react';
 import { RiBookMarkedLine, RiGlobalLine } from 'react-icons/ri';
 import { Link, useNavigate } from 'react-router-dom';

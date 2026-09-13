@@ -1,5 +1,5 @@
 import { ApiExtraModels, ApiProperty, ApiPropertyOptional, getSchemaPath } from '@nestjs/swagger';
-import { StepFilterDto } from '@novu/application-generic';
+import { StepFilterDto } from '@notify/application-generic';
 import {
   DaysEnum,
   DelayTypeEnum,
@@ -16,7 +16,7 @@ import {
   OrdinalEnum,
   OrdinalValueEnum,
   StepVariantDto,
-} from '@novu/shared';
+} from '@notify/shared';
 import { Type } from 'class-transformer';
 import { IsBoolean, IsString, ValidateNested } from 'class-validator';
 import { MessageTemplate } from './message-template';

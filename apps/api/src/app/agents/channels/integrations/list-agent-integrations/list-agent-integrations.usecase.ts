@@ -4,9 +4,9 @@ import {
   InstrumentUsecase,
   isChannelOverPlanLimit,
   PinoLogger,
-} from '@novu/application-generic';
-import { AgentIntegrationRepository, AgentRepository, IntegrationEntity, IntegrationRepository } from '@novu/dal';
-import { DirectionEnum, EmailProviderIdEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { AgentIntegrationRepository, AgentRepository, IntegrationEntity, IntegrationRepository } from '@notify/dal';
+import { DirectionEnum, EmailProviderIdEnum } from '@notify/shared';
 
 import { ListAgentIntegrationsResponseDto } from '../../../shared/dtos/list-agent-integrations-response.dto';
 import { toAgentIntegrationResponse } from '../../../shared/mappers/agent-response.mapper';

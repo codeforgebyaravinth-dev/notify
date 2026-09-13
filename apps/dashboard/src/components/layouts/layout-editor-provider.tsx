@@ -10,7 +10,7 @@ import {
   ResourceOriginEnum,
   RuntimeIssue,
   SubscriberDto,
-} from '@novu/shared';
+} from '@notify/shared';
 import { createContext, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useBlocker, useLocation } from 'react-router-dom';

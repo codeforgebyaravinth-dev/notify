@@ -1,4 +1,4 @@
-import { EnvironmentCommand } from '@novu/application-generic';
+import { EnvironmentCommand } from '@notify/application-generic';
 import { IsEnum, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 import { AgentPlatformEnum } from '../../shared/enums/agent-platform.enum';
 

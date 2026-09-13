@@ -1,4 +1,4 @@
-import { ChannelTypeEnum, ConfigConfigurationGroup, IIntegration, IProviderConfig } from '@novu/shared';
+import { ChannelTypeEnum, ConfigConfigurationGroup, IIntegration, IProviderConfig } from '@notify/shared';
 import { useEffect, useRef, useState } from 'react';
 import { Control, useWatch } from 'react-hook-form';
 import { RiCheckLine, RiCloseLine } from 'react-icons/ri';

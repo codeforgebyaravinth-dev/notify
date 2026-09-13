@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { InstrumentUsecase, PinoLogger } from '@novu/application-generic';
-import { BaseRepository } from '@novu/dal';
+import { InstrumentUsecase, PinoLogger } from '@notify/application-generic';
+import { BaseRepository } from '@notify/dal';
 import { EnvironmentValidationService } from '../../services';
 import { IPublishResult, ISyncContext, ISyncOptions, ISyncResult, ISyncStrategy } from '../../types/sync.types';
 import { AgentSyncStrategy } from '../sync-strategies/agent-sync.strategy';

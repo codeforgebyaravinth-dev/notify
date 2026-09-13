@@ -1,4 +1,4 @@
-import { getMcpIconPath, MCP_ICON_DEFAULT_ID } from '@novu/shared';
+import { getMcpIconPath, MCP_ICON_DEFAULT_ID } from '@notify/shared';
 import { useMemo, useState } from 'react';
 import { cn } from '@/utils/ui';
 

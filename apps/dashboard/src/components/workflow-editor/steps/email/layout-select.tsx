@@ -1,4 +1,4 @@
-import { EnvironmentTypeEnum } from '@novu/shared';
+import { EnvironmentTypeEnum } from '@notify/shared';
 import { useMemo } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { RiLayout5Line } from 'react-icons/ri';

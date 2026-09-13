@@ -1,4 +1,4 @@
-import { NotificationTemplateEntity } from '@novu/dal';
+import { NotificationTemplateEntity } from '@notify/dal';
 import {
   ChannelCTATypeEnum,
   FieldLogicalOperatorEnum,
@@ -7,8 +7,8 @@ import {
   StepTypeEnum,
   TemplateVariableTypeEnum,
   TriggerTypeEnum,
-} from '@novu/shared';
-import { NotificationTemplateService, UserSession } from '@novu/testing';
+} from '@notify/shared';
+import { NotificationTemplateService, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Get workflows - /workflows (GET) #novu-v0', async () => {

@@ -1,5 +1,5 @@
-import type { BlockGroupItem } from '@novu/maily-core/blocks';
-import type { StepResponseDto } from '@novu/shared';
+import type { BlockGroupItem } from '@notify/maily-core/blocks';
+import type { StepResponseDto } from '@notify/shared';
 import type { useTelemetry } from '@/hooks/use-telemetry';
 import { type BlockConfig, createEditorBlocks } from './maily-config';
 

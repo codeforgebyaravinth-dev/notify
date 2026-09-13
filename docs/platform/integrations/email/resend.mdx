@@ -1,14 +1,14 @@
 ---
-title: "Resend Email Integration with Novu"
+title: "Resend Email Integration with Notify"
 sidebarTitle: 'Resend'
-description: "Connect Resend to Novu to send transactional emails through workflows. Store your Resend API key and verified sending domain in the Novu dashboard for delivery."
+description: "Connect Resend to Notify to send transactional emails through workflows. Store your Resend API key and verified sending domain in the Notify dashboard for delivery."
 ---
 
-You can use the [Resend](https://resend.com/) provider to send transactional emails to your customers using the Novu Platform with a single API to create multi-channel experiences.
+You can use the [Resend](https://resend.com/) provider to send transactional emails to your customers using the Notify Platform with a single API to create multi-channel experiences.
 
 ## Getting Started
 
-To use the Resend provider in the email channel, you will need to create a Resend account and add your API key to the Resend integration on the Novu platform.
+To use the Resend provider in the email channel, you will need to create a Resend account and add your API key to the Resend integration on the Notify platform.
 
 ## Generating an API Key
 
@@ -26,9 +26,9 @@ Before you can send emails on a large scale, you will need to authenticate your 
 
 Resend allows you to authenticate your sender identity using [Domain Authentication](https://resend.com/docs/dashboard/domains/introduction).
 
-## Creating a Resend integration with Novu
+## Creating a Resend integration with Notify
 
-- Visit the [Integrations](https://dashboard.novu.co/integrations?utm_campaign=docs-resend) page on Novu.
+- Visit the [Integrations](https://dashboard.novu.co/integrations?utm_campaign=docs-resend) page on Notify.
 - Click on Add a Provider.
 - Select Resend service.
 - Enter your Resend API Key.
@@ -37,27 +37,27 @@ Resend allows you to authenticate your sender identity using [Domain Authentica
 - Fill in the `Sender's name`.
 - Click on the `Disabled` button and mark it as `Active`.
 - Click on the **Update** button.
-- You should now be able to send notifications using Resend in Novu.
+- You should now be able to send notifications using Resend in Notify.
 
 ## React Email with Code Steps
 
 <Tip>
-  Resend maintains [React Email](https://react.email). Use Novu [Code Steps](/platform/workflow/add-and-configure-steps/code-steps) to author templates in React Email and deliver them through your Resend integration - no dashboard HTML editor required.
+  Resend maintains [React Email](https://react.email). Use Notify [Code Steps](/platform/workflow/add-and-configure-steps/code-steps) to author templates in React Email and deliver them through your Resend integration - no dashboard HTML editor required.
 </Tip>
 
-1. Connect Resend in Novu (steps below).
+1. Connect Resend in Notify (steps below).
 2. Add an email step and switch it to **Custom Code**.
 3. Publish a handler linked to your React Email template:
 
 ```bash
-npx novu step publish \
+npx notify step publish \
   --workflow your-workflow-id \
   --step your-email-step-id \
   --template ./emails/welcome.tsx \
   --secret-key nv-sk-...
 ```
 
-The CLI scaffolds a handler that calls `render()` from `@react-email/components` and returns HTML for Novu to send via Resend. See [Code Steps](/platform/workflow/add-and-configure-steps/code-steps) for the more details.
+The CLI scaffolds a handler that calls `render()` from `@react-email/components` and returns HTML for Notify to send via Resend. See [Code Steps](/platform/workflow/add-and-configure-steps/code-steps) for the more details.
 
 ## Next Steps
 

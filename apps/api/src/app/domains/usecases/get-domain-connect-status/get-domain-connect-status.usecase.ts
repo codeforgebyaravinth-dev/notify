@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { FeatureFlagsService } from '@novu/application-generic';
-import { DomainRepository } from '@novu/dal';
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsService } from '@notify/application-generic';
+import { DomainRepository } from '@notify/dal';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import {
   DomainConnectStatusReasonEnum,
   DomainConnectStatusResponseDto,

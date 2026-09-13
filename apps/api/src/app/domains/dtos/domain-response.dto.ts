@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { DomainStatusEnum } from '@novu/shared';
+import { DomainStatusEnum } from '@notify/shared';
 import { ExpectedDnsRecordDto } from './expected-dns-record.dto';
 
 export class DomainResponseDto {

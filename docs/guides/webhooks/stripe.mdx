@@ -1,6 +1,6 @@
 ---
 title: 'Stripe'
-description: "Integrate Stripe webhooks with Novu notifications in a Next.js application. Trigger workflows on payments, subscriptions, invoices, and refund events."
+description: "Integrate Stripe webhooks with Notify notifications in a Next.js application. Trigger workflows on payments, subscriptions, invoices, and refund events."
 ---
 
 
@@ -13,10 +13,10 @@ When specific events happen in Stripe (e.g., payment, subscription, or customer 
 1. Receive the webhook event from Stripe.
 2. Verify the webhook signature.
 3. Process the event data.
-4. Trigger the corresponding **Novu notification workflow**.
+4. Trigger the corresponding **Notify notification workflow**.
 
 <Note>
-  You can also clone this repository: https://github.com/novuhq/stripe-to-novu-webhooks
+  You can also clone this repository: https://github.com/novuhq/stripe-to-notify-webhooks
 </Note>
 
 ## Prerequisites
@@ -24,7 +24,7 @@ When specific events happen in Stripe (e.g., payment, subscription, or customer 
 Before proceeding, ensure you have:
 
 - A **Stripe account** ([Sign up here](https://dashboard.stripe.com/signup)).
-- A **Novu account** ([Sign up here](https://novu.com/signup)).
+- A **Notify account** ([Sign up here](https://novu.com/signup)).
 
 <Steps>
 <Step>
@@ -34,7 +34,7 @@ Before proceeding, ensure you have:
 Run the following command to install the required packages:
 
 ```
-npm install @novu/api @clerk/nextjs @stripe
+npm install @notify/api @clerk/nextjs @stripe
 ```
 
 </Step>
@@ -180,7 +180,7 @@ The following snippet is the complete code of how to create a webhook endpoint f
 ```jsx
 import Stripe from "stripe";
 import { NextResponse, NextRequest } from "next/server";
-import { triggerWorkflow } from "@/app/utils/novu";
+import { triggerWorkflow } from "@/app/utils/notify";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
@@ -255,7 +255,7 @@ async function payloadBuilder(response: any) {
 
 <Step>
 
-## Add Novu Workflow Notification Trigger Function
+## Add Notify Workflow Notification Trigger Function
 
 Create `app/utils/novu.ts` :
 
@@ -277,9 +277,9 @@ Create `app/utils/novu.ts` :
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({
+const notify = new Notify({
   secretKey: process.env['NOVU_SECRET_KEY']!,
 });
 
@@ -297,10 +297,10 @@ export async function triggerWorkflow(workflowId: string, subscriber: object, pa
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
 def trigger_workflow(workflow_id: str, subscriber: dict, payload: dict):
-    with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+    with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
         novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
             workflow_id=workflow_id,
             to=subscriber,
@@ -331,12 +331,12 @@ func triggerWorkflow(workflowID string, subscriber components.SubscriberPayloadD
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
 function triggerWorkflow(string $workflowId, array $subscriber, array $payload): void
 {
-    $sdk = novu\Novu::builder()
+    $sdk = notify\Notify::builder()
         ->setSecurity('<YOUR_SECRET_KEY_HERE>')
         ->build();
 
@@ -357,11 +357,11 @@ function triggerWorkflow(string $workflowId, array $subscriber, array $payload):
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 
-var novu = new NovuSDK(secretKey: "<YOUR_SECRET_KEY_HERE>");
+var notify = new NovuSDK(secretKey: "<YOUR_SECRET_KEY_HERE>");
 
 async Task TriggerWorkflow(string workflowId, SubscriberPayloadDto subscriber, Dictionary<string, object> payload)
 {
@@ -375,11 +375,11 @@ async Task TriggerWorkflow(string workflowId, SubscriberPayloadDto subscriber, D
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 import java.util.Map;
 
-Novu novu = Novu.builder()
+Notify novu = Notify.builder()
     .secretKey("<YOUR_SECRET_KEY_HERE>")
     .build();
 
@@ -416,17 +416,17 @@ curl -X POST 'https://api.novu.co/v1/events/trigger' \
 
 <Step>
 
-## Add or create Novu workflows in your Novu dashboard
+## Add or create Notify workflows in your Notify dashboard
 
-In Novu, a webhook event - such as a user being created or updated - can trigger one or more workflows, depending on how you want to handle these events in your application. 
+In Notify, a webhook event - such as a user being created or updated - can trigger one or more workflows, depending on how you want to handle these events in your application. 
 
 A workflow defines a sequence of actions (e.g., sending notifications, updating records) that execute when triggered by a webhook. 
 
-The Novu dashboard allows you to either create a custom workflow from scratch or choose from pre-built templates to streamline the process.
+The Notify dashboard allows you to either create a custom workflow from scratch or choose from pre-built templates to streamline the process.
 
 ---
 
-Follow these steps to set up your workflow(s) in the Novu dashboard:
+Follow these steps to set up your workflow(s) in the Notify dashboard:
 
 ### Identify the Triggering Event(s)
 
@@ -620,7 +620,7 @@ Follow these steps to set up your workflow(s) in the Novu dashboard:
 <Tabs>
 <Tab title="Use a Workflow Template">
    
-   Browse the workflow template store in the Novu dashboard. If a template matches your use case (e.g., "User Onboarding"), select it and proceed to customize it.
+   Browse the workflow template store in the Notify dashboard. If a template matches your use case (e.g., "User Onboarding"), select it and proceed to customize it.
 
    <video autoPlay loop muted playsInline src="./media-assets/clerk/workflow-fromTemplate.mp4" />
  
@@ -632,13 +632,13 @@ Follow these steps to set up your workflow(s) in the Novu dashboard:
 
    <video autoPlay loop muted playsInline src="./media-assets/clerk/blankWorkflow.mp4" />
 </Tab>
-<Tab title="Code-First Workflow (Novu Framework)">
+<Tab title="Code-First Workflow (Notify Framework)">
 
-   If you prefer a more code-based approach, you can create a workflow using the Novu Framework.
+   If you prefer a more code-based approach, you can create a workflow using the Notify Framework.
    
-   <Card title="Novu Framework" icon="square-code" href="/framework">
+   <Card title="Notify Framework" icon="square-code" href="/framework">
    <p>
-      The Novu framework allows you to build and manage advanced notification workflows with code, and expose no-code controls for non-technical users to modify.
+      The Notify framework allows you to build and manage advanced notification workflows with code, and expose no-code controls for non-technical users to modify.
    </p>
    </Card>
 
@@ -652,7 +652,7 @@ Follow these steps to set up your workflow(s) in the Novu dashboard:
 
    - For a blank workflow, add actions like sending emails, sending in-app notifications, Push notifications, or other actions.
 
-   - For a code-first workflow, you can use the Novu Framework to build your workflow right within your code base.
+   - For a code-first workflow, you can use the Notify Framework to build your workflow right within your code base.
 
 ### Set Trigger Conditions
 
@@ -676,15 +676,15 @@ Follow these steps to set up your workflow(s) in the Novu dashboard:
 
 By default, Stripe sends email notifications whenever necessary, such as subscription created, updated, and more.
 
-To prevent users from receiving duplicate emails, we need to disable email delivery by Stripe for the notifications handled by Novu.
+To prevent users from receiving duplicate emails, we need to disable email delivery by Stripe for the notifications handled by Notify.
 
 1. In your Stripe Dashboard, navigate to the **Settings**.
 
 2. Under the **Product Settings** section, navigate to the **Billing** tab.
 
-3. Toggle **off** delivery of the events you want to handle with Novu.
+3. Toggle **off** delivery of the events you want to handle with Notify.
 
-This ensures that Stripe does not send duplicate emails, allowing Novu to manage the notifications seamlessly.
+This ensures that Stripe does not send duplicate emails, allowing Notify to manage the notifications seamlessly.
 
 </Step>
 

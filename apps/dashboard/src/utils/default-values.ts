@@ -1,4 +1,4 @@
-import { Controls } from '@novu/shared';
+import { Controls } from '@notify/shared';
 import { buildDefaultValues, buildDefaultValuesOfDataSchema } from '@/utils/schema';
 
 // Strips out null/undefined/empty-string entries so that unset saved values

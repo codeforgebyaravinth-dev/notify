@@ -1,5 +1,5 @@
 /** biome-ignore-all lint/correctness/useUniqueElementIds: expected */
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { motion } from 'motion/react';
 import { useEffect, useMemo, useState } from 'react';
 import { ResizablePanel, ResizablePanelGroup } from '@/components/primitives/resizable';

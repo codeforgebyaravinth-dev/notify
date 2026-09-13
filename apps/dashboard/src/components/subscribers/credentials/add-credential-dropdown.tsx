@@ -1,4 +1,4 @@
-import { ChatProviderIdEnum } from '@novu/shared';
+import { ChatProviderIdEnum } from '@notify/shared';
 import { useState } from 'react';
 import { RiAddLine, RiLink } from 'react-icons/ri';
 import { requestTelegramSubscriberLink } from '@/api/agents';

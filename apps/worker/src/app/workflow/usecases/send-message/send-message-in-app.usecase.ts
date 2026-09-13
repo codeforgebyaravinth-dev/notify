@@ -16,10 +16,10 @@ import {
   SendWebhookMessage,
   WebSocketsQueueService,
   BillingService,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 
-import { MessageEntity, MessageRepository, SubscriberRepository } from '@novu/dal';
-import { InAppOutput } from '@novu/framework/internal';
+import { MessageEntity, MessageRepository, SubscriberRepository } from '@notify/dal';
+import { InAppOutput } from '@notify/framework/internal';
 import {
   ActorTypeEnum,
   ChannelTypeEnum,
@@ -29,7 +29,7 @@ import {
   WebhookEventEnum,
   WebhookObjectTypeEnum,
   WebSocketEventEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { addBreadcrumb } from '@sentry/node';
 import { PlatformException } from '../../../shared/utils';
 import { SendMessageBase } from './send-message.base';

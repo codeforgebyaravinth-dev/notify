@@ -1,4 +1,4 @@
-import { EnvironmentId } from '@novu/shared';
+import { EnvironmentId } from '@notify/shared';
 import { IsDefined, IsEmail, IsMongoId, IsNotEmpty } from 'class-validator';
 import { AuthenticatedCommand } from '../../../shared/commands/authenticated.command';
 

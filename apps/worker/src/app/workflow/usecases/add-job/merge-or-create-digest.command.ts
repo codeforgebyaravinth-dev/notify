@@ -1,6 +1,6 @@
-import { BaseCommand } from '@novu/application-generic';
+import { BaseCommand } from '@notify/application-generic';
 
-import { JobEntity } from '@novu/dal';
+import { JobEntity } from '@notify/dal';
 import { IsDefined } from 'class-validator';
 
 export class MergeOrCreateDigestCommand extends BaseCommand {

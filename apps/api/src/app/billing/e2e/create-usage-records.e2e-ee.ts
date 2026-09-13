@@ -1,10 +1,10 @@
 // biome-ignore lint/style/noRestrictedImports: <explanation>
 import { Logger } from '@nestjs/common';
-import { ApiServiceLevelEnum, StripeBillingIntervalEnum } from '@novu/shared';
+import { ApiServiceLevelEnum, StripeBillingIntervalEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 
-const { StripeUsageTypeEnum } = require('@novu/ee-billing/src/stripe/types');
+const { StripeUsageTypeEnum } = require('@notify/ee-billing/src/stripe/types');
 
 const mockMonthlyBusinessSubscription = {
   id: 'subscription_id',
@@ -23,7 +23,7 @@ const mockMonthlyBusinessSubscription = {
 };
 
 describe('CreateUsageRecords #novu-v2', () => {
-  const eeBilling = require('@novu/ee-billing');
+  const eeBilling = require('@notify/ee-billing');
   if (!eeBilling) {
     throw new Error('ee-billing does not exist');
   }

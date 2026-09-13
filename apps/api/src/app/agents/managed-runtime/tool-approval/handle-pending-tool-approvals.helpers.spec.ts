@@ -1,4 +1,4 @@
-import { ConversationParticipantTypeEnum } from '@novu/dal';
+import { ConversationParticipantTypeEnum } from '@notify/dal';
 import { expect } from 'chai';
 import { AgentPlatformEnum } from '../../shared/enums/agent-platform.enum';
 import { recoverEmailFromParticipants, recoverSubscriberParticipantId } from './handle-pending-tool-approvals.helpers';

@@ -76,29 +76,29 @@ jobs:
 
           # Check for service-specific labels only if not skipping
           if [ "$SKIP_DEPLOYMENT" = "false" ]; then
-            if echo "$LABELS" | grep -q "@novu/api-service"; then
+            if echo "$LABELS" | grep -q "@notify/api-service"; then
               DEPLOY_API=true
-              echo "Found @novu/api-service label"
+              echo "Found @notify/api-service label"
             fi
             
-            if echo "$LABELS" | grep -q "@novu/worker"; then
+            if echo "$LABELS" | grep -q "@notify/worker"; then
               DEPLOY_WORKER=true
-              echo "Found @novu/worker label"
+              echo "Found @notify/worker label"
             fi
             
-            if echo "$LABELS" | grep -q "@novu/ws"; then
+            if echo "$LABELS" | grep -q "@notify/ws"; then
               DEPLOY_WS=true
-              echo "Found @novu/ws label"
+              echo "Found @notify/ws label"
             fi
             
-            if echo "$LABELS" | grep -q "@novu/webhook"; then
+            if echo "$LABELS" | grep -q "@notify/webhook"; then
               DEPLOY_WEBHOOK=true
-              echo "Found @novu/webhook label"
+              echo "Found @notify/webhook label"
             fi
 
-            if echo "$LABELS" | grep -q "@novu/inbound-mail"; then
+            if echo "$LABELS" | grep -q "@notify/inbound-mail"; then
               DEPLOY_INBOUND_MAIL=true
-              echo "Found @novu/inbound-mail label"
+              echo "Found @notify/inbound-mail label"
             fi
 
             if echo "$LABELS" | grep -q "@novu/thalamus-observer"; then

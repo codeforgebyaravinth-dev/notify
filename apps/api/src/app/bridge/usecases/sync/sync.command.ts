@@ -1,5 +1,5 @@
-import { EnvironmentWithUserCommand, IStepControl } from '@novu/application-generic';
-import type { CustomDataType, IPreferenceChannels, JSONSchemaDto, StepType } from '@novu/shared';
+import { EnvironmentWithUserCommand, IStepControl } from '@notify/application-generic';
+import type { CustomDataType, IPreferenceChannels, JSONSchemaDto, StepType } from '@notify/shared';
 import { Type } from 'class-transformer';
 import { IsDefined, IsOptional, IsString, ValidateNested } from 'class-validator';
 

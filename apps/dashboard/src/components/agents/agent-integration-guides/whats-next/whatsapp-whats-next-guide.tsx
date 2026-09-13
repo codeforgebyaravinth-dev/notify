@@ -1,4 +1,4 @@
-import { ChatProviderIdEnum } from '@novu/shared';
+import { ChatProviderIdEnum } from '@notify/shared';
 import { type ReactNode, useMemo, useState } from 'react';
 import { RiExpandUpDownLine, RiKey2Line } from 'react-icons/ri';
 import type { AgentIntegrationLink, AgentResponse } from '@/api/agents';

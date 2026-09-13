@@ -3,7 +3,7 @@ import {
   CONVERSATIONAL_PROVIDERS,
   type ConversationalProvider,
   FeatureFlagsKeysEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { useMemo } from 'react';
 import { useFeatureFlag } from '@/hooks/use-feature-flag';
 

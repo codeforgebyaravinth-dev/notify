@@ -1,4 +1,4 @@
-import { DomainRouteTypeEnum } from '@novu/shared';
+import { DomainRouteTypeEnum } from '@notify/shared';
 import { Transform } from 'class-transformer';
 import { IsEnum, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 import { EnvironmentWithUserCommand } from '../../../shared/commands/project.command';

@@ -1,4 +1,4 @@
-import type { AllAppearance, AllIconKey, AllIconOverrides } from '@novu/js/ui';
+import type { AllAppearance, AllIconKey, AllIconOverrides } from '@notify/js/ui';
 import { MountedElement } from '../context/RendererContext';
 import type { ReactAllAppearance, ReactIconRenderer, ReactInboxAppearance, ReactSubscriptionAppearance } from './types';
 

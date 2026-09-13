@@ -1,5 +1,5 @@
 import { Test } from '@nestjs/testing';
-import { CacheService, cacheService as inMemoryCacheService } from '@novu/application-generic';
+import { CacheService, cacheService as inMemoryCacheService } from '@notify/application-generic';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { v4 as uuid } from 'uuid';

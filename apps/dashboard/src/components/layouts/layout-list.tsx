@@ -1,4 +1,4 @@
-import { ApiServiceLevelEnum, DirectionEnum } from '@novu/shared';
+import { ApiServiceLevelEnum, DirectionEnum } from '@notify/shared';
 import { HTMLAttributes } from 'react';
 import {
   LayoutsFilter,

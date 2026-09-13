@@ -1,7 +1,7 @@
 import { BadGatewayException, Injectable, NotFoundException, UnauthorizedException } from '@nestjs/common';
-import { decryptCredentials, PinoLogger } from '@novu/application-generic';
-import { ChannelEndpointRepository, IntegrationRepository } from '@novu/dal';
-import { ChatProviderIdEnum, ENDPOINT_TYPES } from '@novu/shared';
+import { decryptCredentials, PinoLogger } from '@notify/application-generic';
+import { ChannelEndpointRepository, IntegrationRepository } from '@notify/dal';
+import { ChatProviderIdEnum, ENDPOINT_TYPES } from '@notify/shared';
 import Axios from 'axios';
 
 import { LinkTelegramChatToSubscriberCommand } from '../link-telegram-chat-to-subscriber/link-telegram-chat-to-subscriber.command';

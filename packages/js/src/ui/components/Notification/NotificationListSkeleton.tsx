@@ -50,7 +50,7 @@ export const NotificationListSkeleton = (props: NotificationListSkeletonProps) =
           >
             <SkeletonAvatar
               appearanceKey="notificationList__skeletonAvatar"
-              class="nt-w-8 nt-h-8 nt-rounded-full nt-bg-neutral-alpha-100"
+              class="nt-w-8 nt-h-8 nt-nt-rounded-none nt-bg-neutral-alpha-100"
             />
             <div
               class={style({
@@ -60,11 +60,11 @@ export const NotificationListSkeleton = (props: NotificationListSkeletonProps) =
             >
               <SkeletonText
                 appearanceKey="notificationList__skeletonText"
-                class="nt-h-2 nt-w-1/3 nt-bg-neutral-alpha-50 nt-rounded"
+                class="nt-h-2 nt-w-1/3 nt-bg-neutral-alpha-50 nt-nt-rounded-none"
               />
               <SkeletonText
                 appearanceKey="notificationList__skeletonText"
-                class="nt-h-2 nt-w-2/3 nt-bg-neutral-alpha-50 nt-rounded"
+                class="nt-h-2 nt-w-2/3 nt-bg-neutral-alpha-50 nt-nt-rounded-none"
               />
             </div>
           </Motion.div>

@@ -1,4 +1,4 @@
-import { StepTypeEnum } from '@novu/shared';
+import { StepTypeEnum } from '@notify/shared';
 import React from 'react';
 import { RiAddFill } from 'react-icons/ri';
 import { Card, CardContent } from '../primitives/card';

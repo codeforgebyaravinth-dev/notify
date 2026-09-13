@@ -5,15 +5,15 @@ import {
   GetPreferencesCommand,
   InstrumentUsecase,
   PinoLogger,
-} from '@novu/application-generic';
-import { ErrorCodesEnum, NotificationTemplateEntity, PreferencesRepository, TopicSubscribersEntity } from '@novu/dal';
+} from '@notify/application-generic';
+import { ErrorCodesEnum, NotificationTemplateEntity, PreferencesRepository, TopicSubscribersEntity } from '@notify/dal';
 import {
   buildWorkflowPreferences,
   PreferencesTypeEnum,
   SeverityLevelEnum,
   WorkflowPreferences,
   WorkflowPreferencesPartial,
-} from '@novu/shared';
+} from '@notify/shared';
 import { RulesLogic } from 'json-logic-js';
 import { SubscriptionPreferenceDto } from '../../../shared/dtos/subscriptions/create-subscriptions-response.dto';
 import { CreateSubscriptionPreferencesCommand } from './create-subscription-preferences.command';

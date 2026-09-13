@@ -1,6 +1,6 @@
-import { EnvironmentWithUserCommand } from '@novu/application-generic';
-import { JobEntity, NotificationEntity } from '@novu/dal';
-import { StatelessControls } from '@novu/shared';
+import { EnvironmentWithUserCommand } from '@notify/application-generic';
+import { JobEntity, NotificationEntity } from '@notify/dal';
+import { StatelessControls } from '@notify/shared';
 import { IsDefined } from 'class-validator';
 
 export type PartialNotificationEntity = Pick<

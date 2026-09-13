@@ -1,4 +1,4 @@
-import { ApiServiceLevelEnum, FeatureNameEnum, PermissionsEnum } from '@novu/shared';
+import { ApiServiceLevelEnum, FeatureNameEnum, PermissionsEnum } from '@notify/shared';
 import { Switch } from '@/components/primitives/switch';
 import { UpgradeCTATooltip } from '@/components/upgrade-cta-tooltip';
 import { useFetchSubscription } from '@/hooks/use-fetch-subscription';

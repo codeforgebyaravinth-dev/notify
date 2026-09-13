@@ -1,5 +1,5 @@
-import { SubscriberResponseDto } from '@novu/api/models/components';
-import type { ChatProviderIdEnum, IChannelCredentials, IEnvironment, PushProviderIdEnum } from '@novu/shared';
+import { SubscriberResponseDto } from '@notify/api/models/components';
+import type { ChatProviderIdEnum, IChannelCredentials, IEnvironment, PushProviderIdEnum } from '@notify/shared';
 import { del, patch, put } from './api.client';
 
 export type SubscriberCredentialsProviderId = ChatProviderIdEnum | PushProviderIdEnum;

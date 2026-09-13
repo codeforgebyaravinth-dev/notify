@@ -1,5 +1,5 @@
-import { Novu, NovuOptions } from '@novu/js';
-import { buildSubscriber } from '@novu/js/internal';
+import { Novu, NovuOptions, initializeNotify, getNotify } from '@notify/js';
+import { buildSubscriber } from '@notify/js/internal';
 import { createContext, ReactNode, useContext, useMemo } from 'react';
 
 export type NovuProviderProps = NovuOptions & {
@@ -68,7 +68,7 @@ export const InternalNovuProvider = (props: NovuProviderProps) => {
 
   const value = useMemo(
     () => ({
-      novu: new Novu({
+      novu: props.applicationIdentifier ? initializeNotify({
         applicationIdentifier,
         subscriberHash,
         contextHash,
@@ -80,7 +80,7 @@ export const InternalNovuProvider = (props: NovuProviderProps) => {
         subscriber: subscriberObj,
         defaultSchedule,
         context,
-      }),
+      }) : getNotify(),
       realtime,
     }),
     [

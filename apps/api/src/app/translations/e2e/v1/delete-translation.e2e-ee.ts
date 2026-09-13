@@ -1,4 +1,4 @@
-import { UserSession } from '@novu/testing';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('[V1 Translations] Delete a Translation - /translations/group/:id/locale/:locale (Delete) #novu-v2', async () => {

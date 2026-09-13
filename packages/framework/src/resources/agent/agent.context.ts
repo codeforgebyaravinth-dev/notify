@@ -1,4 +1,4 @@
-import type { AgentEvent, AgentFileRef, AgentMessageContent, AgentRunOutcome } from '@novu/agent-event-protocol';
+import type { AgentEvent, AgentFileRef, AgentMessageContent, AgentRunOutcome } from '@notify/agent-event-protocol';
 import type { Emoji } from 'chat';
 import { AgentDeliveryError } from './agent.errors';
 import { type AgentRuntimeContext, RUNTIME_CONTEXT_BRAND } from './agent.runtime';

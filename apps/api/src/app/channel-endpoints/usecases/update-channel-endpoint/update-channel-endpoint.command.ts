@@ -1,5 +1,5 @@
-import { BaseCommand } from '@novu/application-generic';
-import { ChannelEndpointByType, ChannelEndpointType } from '@novu/shared';
+import { BaseCommand } from '@notify/application-generic';
+import { ChannelEndpointByType, ChannelEndpointType } from '@notify/shared';
 import { IsDefined, IsString } from 'class-validator';
 import { EnvironmentCommand } from '../../../shared/commands/project.command';
 import { IsValidChannelEndpoint } from '../../validators/channel-endpoint.validator';

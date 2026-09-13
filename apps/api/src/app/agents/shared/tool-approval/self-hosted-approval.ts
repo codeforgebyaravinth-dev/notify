@@ -1,4 +1,4 @@
-import { buildApprovalActionId } from '@novu/framework/internal';
+import { buildApprovalActionId } from '@notify/framework/internal';
 import type { SlackNativeDelivery } from '../../conversation-runtime/egress/slack-native-delivery';
 import type { ReplyContentDto, ToolApprovalRequestPayloadDto } from '../dtos/agent-reply-payload.dto';
 import {

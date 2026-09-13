@@ -1,4 +1,4 @@
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { IS_EU, IS_SELF_HOSTED_CE } from '@/config';
 import { useFeatureFlag } from '@/hooks/use-feature-flag';
 

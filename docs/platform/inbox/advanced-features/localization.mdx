@@ -1,6 +1,6 @@
 ---
 title: 'Localization'
-description: "Customize the Novu Inbox UI for different languages using the localization prop to translate labels, empty states, and accessibility strings."
+description: "Customize the Notify Inbox UI for different languages using the localization prop to translate labels, empty states, and accessibility strings."
 ---
 
 Localize the UI text of the Inbox component to align with your product’s voice or support multiple languages. This helps create a more consistent, accessible experience for subscribers across different regions.
@@ -18,9 +18,9 @@ If you omit any keys, then the component reverts to the default `en-US` values.
 ![Overriding the default text in the Inbox component UI using localization prop](/images/inbox/localization.png)
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 
-function NovuInbox() {
+function NotifyInbox() {
   return (
     <Inbox
       applicationIdentifier="YOUR_APPLICATION_IDENTIFIER"
@@ -35,11 +35,11 @@ function NovuInbox() {
   );
 }
 
-export default NovuInbox;
+export default NotifyInbox;
 ```
 
 <Note>
-  Localization is also fully supported in @novu/react-native. 
+  Localization is also fully supported in @notify/react-native. 
 </Note>
 
 ## Available localization keys
@@ -118,9 +118,9 @@ Each key in dynamic should match a workflow ID, and its value should be the loca
 ![Localizing workflow names in preferences](/images/inbox/localizing-workflow-names.png)
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 
-function NovuInbox() {
+function NotifyInbox() {
   return (
       <Inbox
         applicationIdentifier="YOUR_APPLICATION_IDENTIFIER"
@@ -135,6 +135,6 @@ function NovuInbox() {
       />
   )
 }
-export default NovuInbox;
+export default NotifyInbox;
 
 ```

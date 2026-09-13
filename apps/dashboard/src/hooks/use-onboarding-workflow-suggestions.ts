@@ -4,7 +4,7 @@ import {
   StepTypeEnum,
   WorkflowCreationSourceEnum,
   WorkflowResponseDto,
-} from '@novu/shared';
+} from '@notify/shared';
 import { useQuery } from '@tanstack/react-query';
 import { useMemo } from 'react';
 import { fetchOnboardingWorkflowSuggestions, OnboardingSuggestionsResponse } from '@/api/ai';

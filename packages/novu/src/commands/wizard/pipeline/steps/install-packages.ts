@@ -13,12 +13,12 @@ import {
   renderInstallCommand,
 } from '../../utils/package-managers';
 
-const NOVU_JS = '@novu/js';
-const NOVU_REACT = '@novu/react';
-const NOVU_NEXTJS = '@novu/nextjs';
-const NOVU_REACT_NATIVE = '@novu/react-native';
-const NOVU_API = '@novu/api';
-const NOVU_FRAMEWORK = '@novu/framework';
+const NOVU_JS = '@notify/js';
+const NOVU_REACT = '@notify/react';
+const NOVU_NEXTJS = '@notify/nextjs';
+const NOVU_REACT_NATIVE = '@notify/react-native';
+const NOVU_API = '@notify/api';
+const NOVU_FRAMEWORK = '@notify/framework';
 const REACT_EMAIL_COMPONENTS = '@react-email/components';
 
 export interface InstallPackagesTargetResult {
@@ -188,14 +188,14 @@ export function pickPackagesForTarget(goal: WizardGoal, target: InstallTarget): 
  * Picks the Inbox SDK for a `web` / `fullstack` workspace.
  *
  * Priority order:
- *  1. React Native / Expo → `@novu/react-native` (Inbox ships as a
- *     separate package on RN — `@novu/react` won't run there).
- *  2. Next.js (any router) → `@novu/nextjs` (subpath exports cover both
- *     App and Pages routers and pull `@novu/react` transitively).
+ *  1. React Native / Expo → `@notify/react-native` (Inbox ships as a
+ *     separate package on RN — `@notify/react` won't run there).
+ *  2. Next.js (any router) → `@notify/nextjs` (subpath exports cover both
+ *     App and Pages routers and pull `@notify/react` transitively).
  *  3. Other React-based frameworks (Remix, RedwoodJS, Blitz,
- *     Astro+React, React+Vite, plain React) → `@novu/react`.
+ *     Astro+React, React+Vite, plain React) → `@notify/react`.
  *  4. Non-React frameworks (Vue, Svelte, SvelteKit, Nuxt, Solid,
- *     Angular, Qwik, static Astro, anything else) → `@novu/js`,
+ *     Angular, Qwik, static Astro, anything else) → `@notify/js`,
  *     Novu's headless / framework-agnostic Inbox SDK.
  */
 export function pickInboxSdk(classification: WorkspaceClassification): string {

@@ -1,4 +1,4 @@
-import { ApiServiceLevelEnum, PermissionsEnum, StripeBillingIntervalEnum } from '@novu/shared';
+import { ApiServiceLevelEnum, PermissionsEnum, StripeBillingIntervalEnum } from '@notify/shared';
 import { motion } from 'motion/react';
 import { useState } from 'react';
 import {

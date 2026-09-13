@@ -1,4 +1,4 @@
-import { Slug } from '@novu/shared';
+import { Slug } from '@notify/shared';
 import { Node as FlowNode, Handle, NodeProps, Position } from '@xyflow/react';
 import { FileCode2 } from 'lucide-react';
 import { ComponentProps, ComponentType, KeyboardEventHandler, useCallback, useState } from 'react';

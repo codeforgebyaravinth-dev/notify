@@ -1,4 +1,4 @@
-import { BlockItem } from '@novu/maily-core/blocks';
+import { BlockItem } from '@notify/maily-core/blocks';
 import { CardBlocks } from '@/components/icons/cards-blocks';
 import { HorizontalCardWithImage } from '@/components/icons/horizontal-card-with-image';
 import { InformationCardWithLogo } from '@/components/icons/information-card-with-logo';

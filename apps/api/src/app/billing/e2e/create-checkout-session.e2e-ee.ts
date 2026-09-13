@@ -1,4 +1,4 @@
-import { ApiServiceLevelEnum, StripeBillingIntervalEnum } from '@novu/shared';
+import { ApiServiceLevelEnum, StripeBillingIntervalEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 
@@ -23,11 +23,11 @@ const checkoutSessionCreateParamsMock = {
 };
 
 describe('Create checkout session #novu-v2', async () => {
-  if (!require('@novu/ee-billing').CreateCheckoutSession) {
+  if (!require('@notify/ee-billing').CreateCheckoutSession) {
     throw new Error("CreateCheckoutSession doesn't exist");
   }
 
-  const { CreateCheckoutSession } = require('@novu/ee-billing');
+  const { CreateCheckoutSession } = require('@notify/ee-billing');
 
   const getOrCreateCustomer = {
     execute: () => Promise.resolve({ id: 'customer_id' }),

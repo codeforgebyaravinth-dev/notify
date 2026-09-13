@@ -1,4 +1,4 @@
-import { EnvironmentTypeEnum } from '@novu/shared';
+import { EnvironmentTypeEnum } from '@notify/shared';
 import { HTMLAttributes, ReactNode } from 'react';
 import { RiSearchLine } from 'react-icons/ri';
 import { useCommandPalette } from '@/components/command-palette/hooks/use-command-palette';

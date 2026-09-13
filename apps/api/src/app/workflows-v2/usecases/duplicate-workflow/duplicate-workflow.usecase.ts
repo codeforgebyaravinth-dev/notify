@@ -13,9 +13,9 @@ import {
   UpsertWorkflowUseCase,
   WorkflowPreferencesDto,
   WorkflowResponseDto,
-} from '@novu/application-generic';
-import { LocalizationResourceEnum, PreferencesEntity, PreferencesRepository } from '@novu/dal';
-import { PreferencesTypeEnum, ResourceOriginEnum, WorkflowCreationSourceEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { LocalizationResourceEnum, PreferencesEntity, PreferencesRepository } from '@notify/dal';
+import { PreferencesTypeEnum, ResourceOriginEnum, WorkflowCreationSourceEnum } from '@notify/shared';
 import { DuplicateWorkflowDto } from '../../dtos';
 import { WorkflowNotDuplicableException } from '../../exceptions/workflow-not-duplicable-exception';
 import { DuplicateWorkflowCommand } from './duplicate-workflow.command';
@@ -155,7 +155,7 @@ export class DuplicateWorkflowUseCase {
     }
 
     try {
-      const duplicateLocales = this.moduleRef.get(require('@novu/ee-translation')?.DuplicateLocales, {
+      const duplicateLocales = this.moduleRef.get(require('@notify/ee-translation')?.DuplicateLocales, {
         strict: false,
       });
 

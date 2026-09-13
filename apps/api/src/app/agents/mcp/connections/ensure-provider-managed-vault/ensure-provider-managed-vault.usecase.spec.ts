@@ -5,8 +5,8 @@ import {
   NotFoundException,
   UnprocessableEntityException,
 } from '@nestjs/common';
-import * as ApplicationGeneric from '@novu/application-generic';
-import { FeatureFlagsService } from '@novu/application-generic';
+import * as ApplicationGeneric from '@notify/application-generic';
+import { FeatureFlagsService } from '@notify/application-generic';
 import {
   AgentMcpServerRepository,
   AgentRepository,
@@ -14,13 +14,13 @@ import {
   IntegrationRepository,
   McpConnectionRepository,
   SubscriberRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   AgentRuntimeProviderIdEnum,
   buildClaudePlatformVaultUrl,
   McpConnectionAuthModeEnum,
   McpConnectionStatusEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 

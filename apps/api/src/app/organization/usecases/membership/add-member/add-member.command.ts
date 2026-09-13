@@ -1,4 +1,4 @@
-import { MemberRoleEnum } from '@novu/shared';
+import { MemberRoleEnum } from '@notify/shared';
 import { ArrayNotEmpty } from 'class-validator';
 import { OrganizationCommand } from '../../../../shared/commands/organization.command';
 

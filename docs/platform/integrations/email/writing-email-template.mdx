@@ -1,10 +1,10 @@
 ---
-title: 'How to Write Email Templates in Novu'
+title: 'How to Write Email Templates in Notify'
 sidebarTitle: 'Writing Email Template'
-description: 'Create email templates in Novu using the block editor, custom HTML with LiquidJS, or the API. Personalize content with subscriber and payload variables.'
+description: 'Create email templates in Notify using the block editor, custom HTML with LiquidJS, or the API. Personalize content with subscriber and payload variables.'
 ---
 
-You can create email templates in Novu using the block editor, code editor, or API. Choose the block editor for visual layouts, the code editor for full HTML and LiquidJS control, or submit templates programmatically via the API.
+You can create email templates in Notify using the block editor, code editor, or API. Choose the block editor for visual layouts, the code editor for full HTML and LiquidJS control, or submit templates programmatically via the API.
 
 - **Block editor**: A visual drag-and-drop editor using prebuilt content blocks and basic variables.
 - **Code editor (custom HTML)**: Full HTML and [LiquidJS](https://liquidjs.com/index.html) control for layout, logic, styling, and rendering.
@@ -63,7 +63,7 @@ The `Repeat` block is a synonym of the JavaScript `for` loop. Use the + icon or 
   width="100%"
   height="400"
   src="https://www.youtube.com/embed/yC--z0mQ3Bg"
-  title="Learn how to use Novu email editor Repeat block"
+  title="Learn how to use Notify email editor Repeat block"
   frameBorder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
   allowFullScreen></iframe>
@@ -87,7 +87,7 @@ In the image above, the **Track your order** button is displayed only if a subsc
 
 ## Code editor (custom HTML)
 
-The code editor provides a built-in interface for writing raw HTML and embedding LiquidJS expressions directly inside the Novu dashboard. This gives you full control over layout, structure, and rendering beyond the capabilities of Novu's block editor.
+The code editor provides a built-in interface for writing raw HTML and embedding LiquidJS expressions directly inside the Notify dashboard. This gives you full control over layout, structure, and rendering beyond the capabilities of Notify's block editor.
 
 The editor supports advanced use cases such as:
 - Migrating existing HTML email templates
@@ -101,7 +101,7 @@ To use it:
 2. Select the **Code editor** tab to switch to Custom HTML mode.
 3. Start writing your template using HTML and LiquidJS syntax.
 
-![Novu code editor](/images/channels-and-providers/email/writing-email-template/code-editor.png)
+![Notify code editor](/images/channels-and-providers/email/writing-email-template/code-editor.png)
 
 <Warning>
   Once you switch to the Code editor, reverting the template back to the Block editor is not supported. Some HTML constructs might not map cleanly to block definitions, so further edits must be made directly in HTML.
@@ -109,15 +109,15 @@ To use it:
 
 ## Using the API
 
-You can also submit custom HTML email templates via the Novu API. This method supports workflows where you render templates externally and use Novu purely for delivery.
+You can also submit custom HTML email templates via the Notify API. This method supports workflows where you render templates externally and use Notify purely for delivery.
 
 During the sending phase:
 
-- Novu compiles your submitted HTML and LiquidJS template using the payload and subscriber context.
+- Notify compiles your submitted HTML and LiquidJS template using the payload and subscriber context.
 - The final rendered output is what gets delivered to recipients.
-- LiquidJS is executed on Novu’s servers - there’s no need to pre-render the template yourself.
+- LiquidJS is executed on Notify’s servers - there’s no need to pre-render the template yourself.
 
-This approach works well if you manage your templates in your own systems and want Novu to act as the delivery engine.
+This approach works well if you manage your templates in your own systems and want Notify to act as the delivery engine.
 
 ## Dynamic data sources
 
@@ -145,6 +145,6 @@ Both the block and code editors provide autocomplete as you write:
 
 While editing in the editors, the template preview shows how your email will render with real or mock data.
 
-- If your workflow defines a payload schema, then Novu uses that schema to generate preview data.
+- If your workflow defines a payload schema, then Notify uses that schema to generate preview data.
 - Otherwise, it falls back to using sample data from previous executions or default payloads.
 - Any inline or loop-scoped variables are also evaluated during preview rendering.

@@ -1,4 +1,4 @@
-import { AuthenticatedCommand, IsValidLocale } from '@novu/application-generic';
+import { AuthenticatedCommand, IsValidLocale } from '@notify/application-generic';
 import { IsArray, IsBoolean, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 export class UpdateOrganizationSettingsCommand extends AuthenticatedCommand {

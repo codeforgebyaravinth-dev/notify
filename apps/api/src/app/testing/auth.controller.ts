@@ -1,7 +1,7 @@
 import { Controller, Get } from '@nestjs/common';
 import { ApiExcludeController } from '@nestjs/swagger';
-import { RequirePermissions, SkipPermissionsCheck } from '@novu/application-generic';
-import { PermissionsEnum } from '@novu/shared';
+import { RequirePermissions, SkipPermissionsCheck } from '@notify/application-generic';
+import { PermissionsEnum } from '@notify/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 

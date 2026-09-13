@@ -1,4 +1,4 @@
-import { AgentSubscriberAccessEnum, ChannelEndpointType, ENDPOINT_TYPES } from '@novu/shared';
+import { AgentSubscriberAccessEnum, ChannelEndpointType, ENDPOINT_TYPES } from '@notify/shared';
 import { AgentPlatformEnum } from '../enums/agent-platform.enum';
 
 interface PlatformEndpointMapping {

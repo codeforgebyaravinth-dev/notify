@@ -4,8 +4,8 @@ import {
   PinoLogger,
   resolveAgentRuntime,
   type UploadSkillFile,
-} from '@novu/application-generic';
-import { IntegrationRepository } from '@novu/dal';
+} from '@notify/application-generic';
+import { IntegrationRepository } from '@notify/dal';
 
 import type { UploadCustomSkillSourceType } from '../../../shared/dtos/upload-custom-skill.dto';
 import {

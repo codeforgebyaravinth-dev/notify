@@ -1,4 +1,4 @@
-import { IActivityJob, JobStatusEnum } from '@novu/shared';
+import { IActivityJob, JobStatusEnum } from '@notify/shared';
 
 export const getActivityStatus = (jobs: IActivityJob[]) => {
   if (!jobs.length) return JobStatusEnum.PENDING;

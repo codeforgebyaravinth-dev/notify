@@ -1,6 +1,6 @@
 import { BadRequestException, ConflictException, NotFoundException } from '@nestjs/common';
-import { AgentRepository, DomainEntity, DomainRepository } from '@novu/dal';
-import { DomainRouteTypeEnum } from '@novu/shared';
+import { AgentRepository, DomainEntity, DomainRepository } from '@notify/dal';
+import { DomainRouteTypeEnum } from '@notify/shared';
 
 export function isDuplicateKeyError(err: unknown): boolean {
   return typeof err === 'object' && err !== null && (err as { code?: number }).code === 11000;

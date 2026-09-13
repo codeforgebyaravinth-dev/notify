@@ -1,7 +1,7 @@
 import { BadRequestException } from '@nestjs/common';
-import { buildMessageCountKey, CachedQuery } from '@novu/application-generic';
-import { MessageRepository, OrganizationRepository, SubscriberRepository } from '@novu/dal';
-import { ChannelTypeEnum } from '@novu/shared';
+import { buildMessageCountKey, CachedQuery } from '@notify/application-generic';
+import { MessageRepository, OrganizationRepository, SubscriberRepository } from '@notify/dal';
+import { ChannelTypeEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { NotificationsCountCommand } from './notifications-count.command';

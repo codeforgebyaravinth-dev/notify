@@ -1,4 +1,4 @@
-import { type ChannelEndpointType, ENDPOINT_TYPES } from '@novu/shared';
+import { type ChannelEndpointType, ENDPOINT_TYPES } from '@notify/shared';
 import { useState } from 'react';
 import type { ChannelEndpointPayload } from '@/api/channel-endpoints';
 import { AddCredentialDropdown } from './add-credential-dropdown';

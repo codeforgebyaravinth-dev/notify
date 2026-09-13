@@ -1,4 +1,4 @@
-import { PermissionsEnum } from '@novu/shared';
+import { PermissionsEnum } from '@notify/shared';
 import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { RiCheckLine, RiCloseLine, RiFileDownloadLine, RiUploadLine } from 'react-icons/ri';

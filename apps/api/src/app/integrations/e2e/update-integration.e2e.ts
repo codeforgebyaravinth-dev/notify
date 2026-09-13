@@ -1,4 +1,4 @@
-import { CommunityOrganizationRepository, EnvironmentRepository, IntegrationRepository } from '@novu/dal';
+import { CommunityOrganizationRepository, EnvironmentRepository, IntegrationRepository } from '@notify/dal';
 import {
   ChannelTypeEnum,
   ChatProviderIdEnum,
@@ -8,8 +8,8 @@ import {
   ITenantFilterPart,
   PushProviderIdEnum,
   ToolProviderIdEnum,
-} from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Update Integration - /integrations/:integrationId (PUT) #novu-v2', () => {

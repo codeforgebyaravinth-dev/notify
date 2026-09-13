@@ -1,4 +1,4 @@
-import { getMcpIconUrl, MCP_SERVERS } from '@novu/shared';
+import { getMcpIconUrl, MCP_SERVERS } from '@notify/shared';
 import type { Block } from '@slack/types';
 
 import type { SlackNativeDelivery } from '../../conversation-runtime/egress/slack-native-delivery';

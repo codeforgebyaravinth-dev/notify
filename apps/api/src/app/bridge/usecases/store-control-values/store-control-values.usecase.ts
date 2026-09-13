@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { UpsertControlValuesCommand, UpsertControlValuesUseCase } from '@novu/application-generic';
-import { NotificationTemplateRepository } from '@novu/dal';
-import { ControlValuesLevelEnum } from '@novu/shared';
+import { UpsertControlValuesCommand, UpsertControlValuesUseCase } from '@notify/application-generic';
+import { NotificationTemplateRepository } from '@notify/dal';
+import { ControlValuesLevelEnum } from '@notify/shared';
 import { StoreControlValuesCommand } from './store-control-values.command';
 
 @Injectable()

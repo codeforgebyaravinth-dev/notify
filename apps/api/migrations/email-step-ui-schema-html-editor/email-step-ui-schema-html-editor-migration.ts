@@ -1,8 +1,8 @@
 import '../../src/config';
 import { NestFactory } from '@nestjs/core';
-import { PinoLogger } from '@novu/application-generic';
-import { MessageTemplateRepository, OrganizationRepository } from '@novu/dal';
-import { UiComponentEnum } from '@novu/shared';
+import { PinoLogger } from '@notify/application-generic';
+import { MessageTemplateRepository, OrganizationRepository } from '@notify/dal';
+import { UiComponentEnum } from '@notify/shared';
 import { AppModule } from '../../src/app.module';
 
 export async function run() {

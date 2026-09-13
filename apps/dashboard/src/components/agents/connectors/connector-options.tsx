@@ -1,4 +1,4 @@
-import { AgentRuntimeProviderIdEnum } from '@novu/shared';
+import { AgentRuntimeProviderIdEnum } from '@notify/shared';
 import type { ReactNode } from 'react';
 import { RiFileCodeLine } from 'react-icons/ri';
 import { AiSdkIcon } from '@/components/icons/ai-sdk';

@@ -1,5 +1,5 @@
 import { BadRequestException } from '@nestjs/common';
-import { type AgentMcpServerDto, MCP_SERVERS } from '@novu/shared';
+import { type AgentMcpServerDto, MCP_SERVERS } from '@notify/shared';
 
 export type ResolvedMcpServer = { name: string; url: string };
 

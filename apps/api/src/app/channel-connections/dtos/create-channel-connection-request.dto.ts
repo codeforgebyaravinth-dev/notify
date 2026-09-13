@@ -1,6 +1,6 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { ApiContextPayload, IsValidContextPayload } from '@novu/application-generic';
-import { ConnectionMode, ContextPayload } from '@novu/shared';
+import { ApiContextPayload, IsValidContextPayload } from '@notify/application-generic';
+import { ConnectionMode, ContextPayload } from '@notify/shared';
 import { Type } from 'class-transformer';
 import { IsDefined, IsIn, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { AuthDto, WorkspaceDto } from './shared.dto';

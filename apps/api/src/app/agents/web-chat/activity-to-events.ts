@@ -4,13 +4,13 @@ import {
   type AgentEventEnvelope,
   type AgentFileRef,
   isDeltaEvent,
-} from '@novu/agent-event-protocol';
+} from '@notify/agent-event-protocol';
 import {
   ConversationActivityEntity,
   ConversationActivitySenderTypeEnum,
   ConversationActivityTypeEnum,
   type ConversationEventActivityFilter,
-} from '@novu/dal';
+} from '@notify/dal';
 
 /**
  * Which durable activities the web-chat history surface exposes as events.

@@ -1,5 +1,5 @@
 import { BadRequestException } from '@nestjs/common';
-import { SeverityLevelEnum, type TagsFilter } from '@novu/shared';
+import { SeverityLevelEnum, type TagsFilter } from '@notify/shared';
 import { plainToClass, Transform, Type } from 'class-transformer';
 import { ArrayMaxSize, IsArray, IsBoolean, IsDefined, IsOptional, ValidateNested } from 'class-validator';
 import { IsEnumOrArray } from '../../shared/validators/is-enum-or-array';

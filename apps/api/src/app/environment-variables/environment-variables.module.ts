@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { ResourceValidatorService } from '@novu/application-generic';
+import { ResourceValidatorService } from '@notify/application-generic';
 import { AuthModule } from '../auth/auth.module';
 import { SharedModule } from '../shared/shared.module';
 import { EnvironmentVariablesController } from './environment-variables.controller';

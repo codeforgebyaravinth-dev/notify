@@ -1,4 +1,4 @@
-import { DEFAULT_LOCALE, EnvironmentTypeEnum, PermissionsEnum } from '@novu/shared';
+import { DEFAULT_LOCALE, EnvironmentTypeEnum, PermissionsEnum } from '@notify/shared';
 import { forwardRef, useCallback, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { RiSettings4Line } from 'react-icons/ri';

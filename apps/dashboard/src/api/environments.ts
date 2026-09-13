@@ -1,4 +1,4 @@
-import { IApiKey, IEnvironment, ITagsResponse } from '@novu/shared';
+import { IApiKey, IEnvironment, ITagsResponse } from '@notify/shared';
 import { del, get, getV2, post, postV2, put } from './api.client';
 
 export interface IDiffSummary {

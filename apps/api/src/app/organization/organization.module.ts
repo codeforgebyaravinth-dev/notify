@@ -9,7 +9,7 @@ import {
 } from '@nestjs/common';
 import { Type } from '@nestjs/common/interfaces/type.interface';
 import { AuthGuard } from '@nestjs/passport';
-import { isBetterAuthEnabled, isClerkEnabled } from '@novu/shared';
+import { isBetterAuthEnabled, isClerkEnabled } from '@notify/shared';
 import { AuthModule } from '../auth/auth.module';
 import { EnvironmentsModuleV1 } from '../environments-v1/environments-v1.module';
 import { IntegrationModule } from '../integrations/integrations.module';
@@ -23,8 +23,8 @@ import { USE_CASES } from './usecases';
 const enterpriseImports = (): Array<Type | DynamicModule | Promise<DynamicModule> | ForwardReference> => {
   const modules: Array<Type | DynamicModule | Promise<DynamicModule> | ForwardReference> = [];
   if (process.env.NOVU_ENTERPRISE === 'true' || process.env.CI_EE_TEST === 'true') {
-    if (require('@novu/ee-billing')?.BillingModule) {
-      modules.push(require('@novu/ee-billing')?.BillingModule.forRoot());
+    if (require('@notify/ee-billing')?.BillingModule) {
+      modules.push(require('@notify/ee-billing')?.BillingModule.forRoot());
     }
   }
 

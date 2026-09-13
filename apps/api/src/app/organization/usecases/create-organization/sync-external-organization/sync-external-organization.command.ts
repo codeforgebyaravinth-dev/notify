@@ -1,4 +1,4 @@
-import { AuthenticatedCommand } from '@novu/application-generic';
+import { AuthenticatedCommand } from '@notify/application-generic';
 import { IsDefined, IsEnum, IsOptional, IsString } from 'class-validator';
 
 export class SyncExternalOrganizationCommand extends AuthenticatedCommand {

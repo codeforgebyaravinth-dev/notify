@@ -3,7 +3,7 @@
  * closure (not from an SDK — Meta has no usable types package for Cloud API messages).
  * Update `scripts/vendor/whatsapp-messages.openapi.json` manually when Meta's OpenAPI drifts.
  *
- *   pnpm --filter @novu/shared generate:whatsapp-schema
+ *   pnpm --filter @notify/shared generate:whatsapp-schema
  */
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
@@ -16,7 +16,7 @@ const scriptDir = dirname(fileURLToPath(import.meta.url));
 const vendorPath = join(scriptDir, 'vendor/whatsapp-messages.openapi.json');
 const outputDir = join(scriptDir, '../src/consts/providers/provider-overrides/whatsapp');
 
-const GENERATE_COMMAND = 'pnpm --filter @novu/shared generate:whatsapp-schema';
+const GENERATE_COMMAND = 'pnpm --filter @notify/shared generate:whatsapp-schema';
 
 /**
  * Flow `data` is a free-form map of screen inputs. Every other object with `properties` gets

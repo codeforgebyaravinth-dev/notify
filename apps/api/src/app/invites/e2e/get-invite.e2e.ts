@@ -1,6 +1,6 @@
-import { CommunityMemberRepository, CommunityOrganizationRepository } from '@novu/dal';
-import { MemberStatusEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { CommunityMemberRepository, CommunityOrganizationRepository } from '@notify/dal';
+import { MemberStatusEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Get invite object - /invites/:inviteToken (GET) #novu-v0-os', async () => {

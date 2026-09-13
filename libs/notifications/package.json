@@ -1,5 +1,5 @@
 {
-  "name": "@novu/notifications",
+  "name": "@notify/notifications",
   "version": "1.0.12",
   "description": "Novu notification templates and workflows",
   "main": "build/main/index.js",
@@ -24,8 +24,8 @@
   "dependencies": {
     "@react-email/components": "^0.5.1",
     "@react-email/render": "^1.2.1",
-    "@novu/framework": "workspace:*",
-    "@novu/shared": "workspace:*",
+    "@notify/framework": "workspace:*",
+    "@notify/shared": "workspace:*",
     "millify": "^6.1.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",

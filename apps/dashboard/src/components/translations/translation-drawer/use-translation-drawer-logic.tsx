@@ -1,4 +1,4 @@
-import { TranslationGroupDto } from '@novu/api/models/components';
+import { TranslationGroupDto } from '@notify/api/models/components';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useFetchTranslation } from '@/hooks/use-fetch-translation';
 import { useSaveTranslation } from '@/hooks/use-save-translation';

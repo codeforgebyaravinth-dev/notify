@@ -1,8 +1,8 @@
 import { HttpException, HttpStatus } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
-import { FeatureFlagsService, PinoLogger, TraceLogRepository } from '@novu/application-generic';
-import { CommunityOrganizationRepository, NotificationRepository, SubscriberRepository } from '@novu/dal';
-import { ApiServiceLevelEnum } from '@novu/shared';
+import { FeatureFlagsService, PinoLogger, TraceLogRepository } from '@notify/application-generic';
+import { CommunityOrganizationRepository, NotificationRepository, SubscriberRepository } from '@notify/dal';
+import { ApiServiceLevelEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { GetActivityFeed } from './get-activity-feed.usecase';

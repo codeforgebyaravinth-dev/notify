@@ -1,7 +1,7 @@
-import { Novu } from '@novu/api';
-import { JobRepository, JobStatusEnum, NotificationTemplateEntity, SubscriberEntity } from '@novu/dal';
-import { DigestTypeEnum, DigestUnitEnum, StepTypeEnum } from '@novu/shared';
-import { SubscribersService, UserSession } from '@novu/testing';
+import { Novu } from '@notify/api';
+import { JobRepository, JobStatusEnum, NotificationTemplateEntity, SubscriberEntity } from '@notify/dal';
+import { DigestTypeEnum, DigestUnitEnum, StepTypeEnum } from '@notify/shared';
+import { SubscribersService, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { initNovuClassSdk } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';
 

@@ -10,8 +10,8 @@ import {
   resolvePublicAddresses,
   SsrfBlockedError,
   safeOutboundJsonRequest,
-} from '@novu/application-generic';
-import { ConversationActivityEntity, ConversationEntity, SubscriberEntity } from '@novu/dal';
+} from '@notify/application-generic';
+import { ConversationActivityEntity, ConversationEntity, SubscriberEntity } from '@notify/dal';
 import type {
   AgentAction,
   AgentContextPayload,
@@ -21,15 +21,15 @@ import type {
   AgentPlatformContext,
   AgentReaction,
   AgentSubscriber,
-} from '@novu/framework';
-import type { AgentBridgeRequest } from '@novu/framework/internal';
-import { AgentEventEnum, HttpHeaderKeysEnum } from '@novu/framework/internal';
+} from '@notify/framework';
+import type { AgentBridgeRequest } from '@notify/framework/internal';
+import { AgentEventEnum, HttpHeaderKeysEnum } from '@notify/framework/internal';
 import {
   AGENT_PLATFORM_PROVISION_SOURCE,
   AGENT_PROVISION_DATA_KEYS,
   AgentSubscriberAccessEnum,
   FeatureFlagsKeysEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import type { Message } from 'chat';
 import { ResolvedAgentConfig } from '../../channels/agent-config-resolver.service';
 import { captureAgentException, captureAgentWarning } from '../../shared/errors/capture-agent-sentry';

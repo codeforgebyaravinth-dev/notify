@@ -8,8 +8,8 @@ import {
   RequestLogRepository,
   TraceLogRepository,
   WorkflowInMemoryProviderService,
-} from '@novu/application-generic';
-import { DalService, DomainRepository } from '@novu/dal';
+} from '@notify/application-generic';
+import { DalService, DomainRepository } from '@notify/dal';
 import logger from './logger';
 
 /**

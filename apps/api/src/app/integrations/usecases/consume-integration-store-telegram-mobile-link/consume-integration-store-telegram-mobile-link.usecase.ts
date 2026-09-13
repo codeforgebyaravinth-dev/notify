@@ -1,6 +1,6 @@
 import { BadGatewayException, ConflictException, Injectable, UnauthorizedException } from '@nestjs/common';
-import { PinoLogger } from '@novu/application-generic';
-import { ChannelTypeEnum, ChatProviderIdEnum, slugify } from '@novu/shared';
+import { PinoLogger } from '@notify/application-generic';
+import { ChannelTypeEnum, ChatProviderIdEnum, slugify } from '@notify/shared';
 import Axios from 'axios';
 import shortid from 'shortid';
 

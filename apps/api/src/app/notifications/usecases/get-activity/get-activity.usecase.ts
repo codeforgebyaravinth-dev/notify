@@ -10,7 +10,7 @@ import {
   TraceLogRepository,
   WorkflowRun,
   WorkflowRunRepository,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   ExecutionDetailFeedItem,
   JobFeedItem,
@@ -18,7 +18,7 @@ import {
   NotificationFeedItemEntity,
   NotificationRepository,
   NotificationStepEntity,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   ExecutionDetailsSourceEnum,
   ExecutionDetailsStatusEnum,
@@ -26,7 +26,7 @@ import {
   ProvidersIdEnum,
   StepTypeEnum,
   TriggerTypeEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { subDays } from 'date-fns';
 
 import { ActivityNotificationResponseDto } from '../../dtos/activities-response.dto';

@@ -1,5 +1,5 @@
-import { BaseCommand } from '@novu/application-generic';
-import type { AgentRuntime, UserSessionData } from '@novu/shared';
+import { BaseCommand } from '@notify/application-generic';
+import type { AgentRuntime, UserSessionData } from '@notify/shared';
 import { IsDefined, IsIn, IsObject, IsOptional, IsString, MaxLength, MinLength } from 'class-validator';
 
 const AGENT_RUNTIMES = ['managed', 'self-hosted'] as const satisfies readonly AgentRuntime[];
@@ -27,7 +27,7 @@ export class GenerateManagedAgentCommand extends BaseCommand {
 
   /**
    * Request-scoped abort signal. Currently used only to report accurate `isAborted`
-   * analytics — `@novu/ee-ai`'s `LlmService.generateObject` does not yet accept a
+   * analytics — `@notify/ee-ai`'s `LlmService.generateObject` does not yet accept a
    * signal, so the LLM call itself is not cancelled when the client disconnects.
    *
    * Intentionally undecorated: any class-validator/class-transformer decorator would

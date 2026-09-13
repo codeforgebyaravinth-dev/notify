@@ -29,7 +29,7 @@ export function ConfirmScaffoldContent({
           <Text color="cyan">{appName}</Text>
         </Text>
         <Text dimColor>
-          This installs <Text color="white">@novu/framework</Text>, <Text color="white">Next.js</Text>, and wires your
+          This installs <Text color="white">@notify/framework</Text>, <Text color="white">Next.js</Text>, and wires your
           Novu credentials into <Text color="white">.env.local</Text>.
         </Text>
         <Text color="cyan">Enter · scaffold · Esc · cancel</Text>
@@ -47,9 +47,9 @@ export function ConfirmScaffoldContent({
           <Text color="cyan">{appName}</Text>
         </Text>
         <Text dimColor>
-          This installs <Text color="white">@novu/framework</Text>, <Text color="white">Next.js</Text>, and wires your
+          This installs <Text color="white">@notify/framework</Text>, <Text color="white">Next.js</Text>, and wires your
           Novu credentials into <Text color="white">.env.local</Text>. Agent handlers use{' '}
-          <Text color="white">@novu/framework/ai-sdk</Text>.
+          <Text color="white">@notify/framework/ai-sdk</Text>.
         </Text>
         <Text color="cyan">Enter · scaffold · Esc · cancel</Text>
       </Box>
@@ -66,9 +66,9 @@ export function ConfirmScaffoldContent({
           <Text color="cyan">{appName}</Text>
         </Text>
         <Text dimColor>
-          This installs <Text color="white">@novu/framework</Text>, <Text color="white">langchain</Text>,{' '}
+          This installs <Text color="white">@notify/framework</Text>, <Text color="white">langchain</Text>,{' '}
           <Text color="white">Next.js</Text>, and wires your Novu credentials into <Text color="white">.env.local</Text>
-          . Agent handlers use <Text color="white">@novu/framework/langchain</Text>.
+          . Agent handlers use <Text color="white">@notify/framework/langchain</Text>.
         </Text>
         <Text color="cyan">Enter · scaffold · Esc · cancel</Text>
       </Box>
@@ -84,7 +84,7 @@ export function ConfirmScaffoldContent({
         <Text color="cyan">{appName}</Text>
       </Text>
       <Text dimColor>
-        This installs <Text color="white">chat</Text>, <Text color="white">@novu/chat-sdk-adapter</Text>, and wires your
+        This installs <Text color="white">chat</Text>, <Text color="white">@notify/chat-sdk-adapter</Text>, and wires your
         Novu credentials into <Text color="white">.env.local</Text>.
       </Text>
       <Text color="cyan">Enter · scaffold · Esc · cancel</Text>

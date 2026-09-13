@@ -1,5 +1,5 @@
 import { createHmac } from 'node:crypto';
-import { IEmailOptions } from '@novu/stateless';
+import { IEmailOptions } from '@notify/stateless';
 import { beforeEach, expect, test, vi } from 'vitest';
 import { AnypostEmailProvider } from './anypost.provider';
 

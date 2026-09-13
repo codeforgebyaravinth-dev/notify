@@ -1,4 +1,4 @@
-import { ICreateWorkflowOverrideResponseDto } from '@novu/shared';
+import { ICreateWorkflowOverrideResponseDto } from '@notify/shared';
 import { OverrideResponseDto } from './shared';
 
 export class CreateWorkflowOverrideResponseDto

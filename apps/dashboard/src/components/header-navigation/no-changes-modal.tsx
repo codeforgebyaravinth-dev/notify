@@ -1,4 +1,4 @@
-import type { IEnvironment } from '@novu/shared';
+import type { IEnvironment } from '@notify/shared';
 import { Button } from '../primitives/button';
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from '../primitives/dialog';
 import { VisuallyHidden } from '../primitives/visually-hidden';

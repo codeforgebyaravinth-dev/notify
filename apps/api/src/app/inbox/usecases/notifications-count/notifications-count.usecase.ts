@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { buildMessageCountKey, CachedQuery } from '@novu/application-generic';
-import { MessageRepository, SubscriberRepository } from '@novu/dal';
-import { ChannelTypeEnum, normalizeTagGroups } from '@novu/shared';
+import { buildMessageCountKey, CachedQuery } from '@notify/application-generic';
+import { MessageRepository, SubscriberRepository } from '@notify/dal';
+import { ChannelTypeEnum, normalizeTagGroups } from '@notify/shared';
 import type { NotificationFilter } from '../../utils/types';
 import type { NotificationsCountCommand } from './notifications-count.command';
 

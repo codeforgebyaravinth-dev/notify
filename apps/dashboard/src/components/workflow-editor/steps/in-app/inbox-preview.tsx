@@ -1,4 +1,4 @@
-import { ChannelTypeEnum, FeatureFlagsKeysEnum, type GeneratePreviewResponseDto } from '@novu/shared';
+import { ChannelTypeEnum, FeatureFlagsKeysEnum, type GeneratePreviewResponseDto } from '@notify/shared';
 import { ReactNode } from 'react';
 import {
   InAppPreview,

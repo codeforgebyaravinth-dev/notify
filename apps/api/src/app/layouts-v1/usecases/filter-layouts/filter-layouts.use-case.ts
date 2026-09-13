@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { LayoutDtoV0 } from '@novu/application-generic';
-import { LayoutEntity, LayoutRepository } from '@novu/dal';
+import { LayoutDtoV0 } from '@notify/application-generic';
+import { LayoutEntity, LayoutRepository } from '@notify/dal';
 import { FilterLayoutsCommand } from './filter-layouts.command';
 
 const DEFAULT_LAYOUT_LIMIT = 10;

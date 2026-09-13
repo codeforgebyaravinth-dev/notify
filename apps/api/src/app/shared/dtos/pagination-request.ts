@@ -1,5 +1,5 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { IPaginationParams } from '@novu/shared';
+import { IPaginationParams } from '@notify/shared';
 import { Type } from 'class-transformer';
 import { IsInt, Max, Min } from 'class-validator';
 

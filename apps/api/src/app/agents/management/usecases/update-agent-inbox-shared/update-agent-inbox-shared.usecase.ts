@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
-import { InstrumentUsecase, isAgentSharedInboxEnabled } from '@novu/application-generic';
-import { AgentIntegrationRepository, AgentRepository, DomainRouteRepository, IntegrationRepository } from '@novu/dal';
-import { ChannelTypeEnum, DomainRouteTypeEnum, EmailProviderIdEnum } from '@novu/shared';
+import { InstrumentUsecase, isAgentSharedInboxEnabled } from '@notify/application-generic';
+import { AgentIntegrationRepository, AgentRepository, DomainRouteRepository, IntegrationRepository } from '@notify/dal';
+import { ChannelTypeEnum, DomainRouteTypeEnum, EmailProviderIdEnum } from '@notify/shared';
 
 import type { AgentIntegrationResponseDto } from '../../../shared/dtos';
 import { toAgentIntegrationResponse } from '../../../shared/mappers/agent-response.mapper';

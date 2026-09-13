@@ -1,4 +1,4 @@
-import { TRANSLATION_NAMESPACE_SEPARATOR } from '@novu/shared';
+import { TRANSLATION_NAMESPACE_SEPARATOR } from '@notify/shared';
 import type { Editor, Range, Editor as TiptapEditor } from '@tiptap/core';
 import { VariableFrom } from '@/components/maily/types';
 import { DIGEST_VARIABLES } from '@/components/variable/utils/digest-variables';

@@ -7,8 +7,8 @@ import {
   InstrumentUsecase,
   RetryOnError,
   StepRunRepository,
-} from '@novu/application-generic';
-import { IDelayOrDigestJobResult, JobEntity, JobRepository, NotificationRepository } from '@novu/dal';
+} from '@notify/application-generic';
+import { IDelayOrDigestJobResult, JobEntity, JobRepository, NotificationRepository } from '@notify/dal';
 import {
   DigestCreationResultEnum,
   DigestTypeEnum,
@@ -18,7 +18,7 @@ import {
   IDigestRegularMetadata,
   IDigestTimedMetadata,
   JobStatusEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { isBefore } from 'date-fns';
 import { MergeOrCreateDigestCommand } from './merge-or-create-digest.command';
 

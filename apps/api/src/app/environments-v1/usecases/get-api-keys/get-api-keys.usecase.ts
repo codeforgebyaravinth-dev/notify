@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { decryptApiKey } from '@novu/application-generic';
-import { EnvironmentRepository, IApiKey } from '@novu/dal';
+import { decryptApiKey } from '@notify/application-generic';
+import { EnvironmentRepository, IApiKey } from '@notify/dal';
 import { createHash } from 'crypto';
 import { ApiKey } from '../../../shared/dtos/api-key';
 import { GetApiKeysCommand } from './get-api-keys.command';

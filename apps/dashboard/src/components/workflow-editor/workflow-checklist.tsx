@@ -1,5 +1,5 @@
 import { useUser } from '@clerk/react';
-import { ChannelTypeEnum, WorkflowResponseDto } from '@novu/shared';
+import { ChannelTypeEnum, WorkflowResponseDto } from '@notify/shared';
 import { motion } from 'motion/react';
 import { useEffect, useMemo, useState } from 'react';
 import {

@@ -4,8 +4,8 @@ import {
   ContextRepository,
   IntegrationRepository,
   SubscriberRepository,
-} from '@novu/dal';
-import { ChatProviderIdEnum, ENDPOINT_TYPES, ToolProviderIdEnum } from '@novu/shared';
+} from '@notify/dal';
+import { ChatProviderIdEnum, ENDPOINT_TYPES, ToolProviderIdEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { ConfirmLinkedAuthCards } from '../../../agents/conversation-runtime/link/confirm-linked-auth-cards.usecase';

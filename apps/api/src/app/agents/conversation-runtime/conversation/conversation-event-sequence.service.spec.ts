@@ -1,4 +1,4 @@
-import { ConversationActivityRepository, ConversationRepository } from '@novu/dal';
+import { ConversationActivityRepository, ConversationRepository } from '@notify/dal';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { ConversationEventSequenceService } from './conversation-event-sequence.service';

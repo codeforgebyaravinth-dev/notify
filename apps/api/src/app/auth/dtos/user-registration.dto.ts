@@ -1,4 +1,4 @@
-import { JobTitleEnum, ProductUseCases, passwordConstraints, SignUpOriginEnum } from '@novu/shared';
+import { JobTitleEnum, ProductUseCases, passwordConstraints, SignUpOriginEnum } from '@notify/shared';
 import { IsDefined, IsEmail, IsEnum, IsOptional, IsString, Matches, MaxLength, MinLength } from 'class-validator';
 
 export class UserRegistrationBodyDto {

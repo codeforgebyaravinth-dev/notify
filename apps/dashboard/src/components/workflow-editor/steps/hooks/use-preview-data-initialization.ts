@@ -1,4 +1,4 @@
-import { ContextPayload, WorkflowResponseDto } from '@novu/shared';
+import { ContextPayload, WorkflowResponseDto } from '@notify/shared';
 import { useCallback, useEffect, useRef } from 'react';
 import { PayloadData, PreviewSubscriberData } from '../types/preview-context.types';
 import { parseJsonValue } from '../utils/preview-context.utils';

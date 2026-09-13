@@ -10,7 +10,7 @@ import { checkDependencies } from '../utils/import.utils';
 export class JsonSchemaValidator implements Validator<JsonSchema> {
   /**
    * Json schema validation has no required dependencies as they are included in
-   * the `@novu/framework` package dependencies.
+   * the `@notify/framework` package dependencies.
    */
   readonly requiredImports: readonly ImportRequirement[] = [];
 

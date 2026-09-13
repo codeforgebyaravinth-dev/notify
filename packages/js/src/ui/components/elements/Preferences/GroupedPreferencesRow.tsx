@@ -97,7 +97,7 @@ export const GroupedPreferencesRow = (props: {
       <div
         class={style({
           key: 'preferencesGroupContainer',
-          className: 'nt-bg-neutral-alpha-25 nt-rounded-lg nt-border nt-border-neutral-alpha-50',
+          className: 'nt-bg-neutral-alpha-25 nt-nt-rounded-none nt-border nt-border-neutral-alpha-50',
           context: {
             preferenceGroup: props.group,
           } satisfies Parameters<InboxAppearanceCallback['preferencesGroupContainer']>[0],

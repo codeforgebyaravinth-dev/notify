@@ -3,7 +3,7 @@ title: 'LINE'
 description: 'Learn how to use the LINE Messaging API provider for chat notifications'
 ---
 
-The LINE chat integration lets you send messages to subscribers who have added your LINE Official Account as a friend. Novu uses the [LINE Messaging API](https://developers.line.biz/en/docs/messaging-api/) push endpoint with a Channel Access Token configured on the integration, and a LINE user ID stored on each subscriber's channel endpoint.
+The LINE chat integration lets you send messages to subscribers who have added your LINE Official Account as a friend. Notify uses the [LINE Messaging API](https://developers.line.biz/en/docs/messaging-api/) push endpoint with a Channel Access Token configured on the integration, and a LINE user ID stored on each subscriber's channel endpoint.
 
 Supported message types:
 
@@ -14,7 +14,7 @@ Supported message types:
 
 ## Configure a LINE Messaging API channel
 
-Before connecting LINE in Novu, create a Messaging API channel in the LINE Developers Console and issue a Channel Access Token.
+Before connecting LINE in Notify, create a Messaging API channel in the LINE Developers Console and issue a Channel Access Token.
 
 <Steps>
   <Step title="Open the LINE Developers Console">
@@ -26,11 +26,11 @@ Before connecting LINE in Novu, create a Messaging API channel in the LINE Devel
   </Step>
 
   <Step title="Issue a Channel Access Token">
-    Open your channel, go to the **Messaging API** tab, and issue a **Channel access token** (long-lived). Copy the token - you will paste it into Novu.
+    Open your channel, go to the **Messaging API** tab, and issue a **Channel access token** (long-lived). Copy the token - you will paste it into Notify.
   </Step>
 
   <Step title="Enable webhooks (recommended)">
-    On the same tab, enable **Use webhook** if you plan to capture subscriber LINE user IDs from follow or message events. Set the webhook URL to your backend endpoint that creates `line_user` channel endpoints in Novu.
+    On the same tab, enable **Use webhook** if you plan to capture subscriber LINE user IDs from follow or message events. Set the webhook URL to your backend endpoint that creates `line_user` channel endpoints in Notify.
 
     See LINE's docs on [getting user IDs](https://developers.line.biz/en/docs/messaging-api/getting-user-ids/) for details.
   </Step>
@@ -40,11 +40,11 @@ Before connecting LINE in Novu, create a Messaging API channel in the LINE Devel
   Push messages can only be delivered to users who have added your LINE Official Account as a friend.
 </Note>
 
-## Configure LINE integration in Novu
+## Configure LINE integration in Notify
 
 <Steps>
   <Step title="Open Integrations Store">
-    In the Novu Dashboard, click **Integrations Store** in the sidebar.
+    In the Notify Dashboard, click **Integrations Store** in the sidebar.
   </Step>
 
   <Step title="Connect LINE">
@@ -58,14 +58,14 @@ Before connecting LINE in Novu, create a Messaging API channel in the LINE Devel
 
 ## Connect subscribers
 
-Each subscriber needs a LINE user ID (for example, `U1234567890abcdef`) so Novu knows where to deliver messages. Create a `line_user` channel endpoint for the subscriber using the [channel endpoints API](/api-reference/channel-endpoints/create-a-channel-endpoint).
+Each subscriber needs a LINE user ID (for example, `U1234567890abcdef`) so Notify knows where to deliver messages. Create a `line_user` channel endpoint for the subscriber using the [channel endpoints API](/api-reference/channel-endpoints/create-a-channel-endpoint).
 
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({
+const notify = new Notify({
   secretKey: '<NOVU_SECRET_KEY>',
   // Required if using EU region
   // serverURL: 'https://eu.api.novu.co',
@@ -110,9 +110,9 @@ See the [Create a channel endpoint API reference](/api-reference/channel-endpoin
 Create a workflow with a **Chat** step, add your message content, and trigger the workflow for a subscriber that has a `line_user` channel endpoint configured.
 
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({
+const notify = new Notify({
   secretKey: '<NOVU_SECRET_KEY>',
 });
 
@@ -131,7 +131,7 @@ The chat step content is sent as a plain text LINE message unless you override t
 
 ## Rich message types
 
-Pass `flex`, `image`, or `sticker` under `overrides.chat` when triggering a workflow. When present, Novu sends that message type instead of plain text.
+Pass `flex`, `image`, or `sticker` under `overrides.chat` when triggering a workflow. When present, Notify sends that message type instead of plain text.
 
 <Tabs>
   <Tab title="Sticker">

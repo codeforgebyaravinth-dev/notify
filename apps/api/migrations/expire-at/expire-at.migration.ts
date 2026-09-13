@@ -8,7 +8,7 @@ import {
   MessageRepository,
   NotificationRepository,
   OrganizationRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import { addDays, addMinutes } from 'date-fns';
 import { AppModule } from '../../src/app.module';
 

@@ -1,5 +1,5 @@
-import { EnvironmentWithUserObjectCommand } from '@novu/application-generic';
-import { ClientSession } from '@novu/dal';
+import { EnvironmentWithUserObjectCommand } from '@notify/application-generic';
+import { ClientSession } from '@notify/dal';
 import { Exclude } from 'class-transformer';
 import { IsArray, IsBoolean, IsNotEmpty, IsObject, IsOptional, IsString } from 'class-validator';
 

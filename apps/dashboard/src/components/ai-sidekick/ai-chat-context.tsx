@@ -1,4 +1,4 @@
-import { AiAgentTypeEnum, AiMessageRoleEnum, AiResourceTypeEnum } from '@novu/shared';
+import { AiAgentTypeEnum, AiMessageRoleEnum, AiResourceTypeEnum } from '@notify/shared';
 import * as Sentry from '@sentry/react';
 import { useQueryClient } from '@tanstack/react-query';
 import { ChatStatus, DataUIPart, DynamicToolUIPart, UIMessage } from 'ai';

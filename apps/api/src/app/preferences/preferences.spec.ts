@@ -6,10 +6,10 @@ import {
   UpsertSubscriberWorkflowPreferencesCommand,
   UpsertUserWorkflowPreferencesCommand,
   UpsertWorkflowPreferencesCommand,
-} from '@novu/application-generic';
-import { PreferencesRepository, SubscriberRepository } from '@novu/dal';
-import { FeatureFlagsKeysEnum, PreferencesTypeEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/application-generic';
+import { PreferencesRepository, SubscriberRepository } from '@notify/dal';
+import { FeatureFlagsKeysEnum, PreferencesTypeEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 import { AuthModule } from '../auth/auth.module';

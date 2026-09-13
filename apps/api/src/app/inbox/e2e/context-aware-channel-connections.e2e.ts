@@ -1,6 +1,6 @@
-import { ChannelConnectionRepository, ChannelEndpointRepository, IntegrationRepository } from '@novu/dal';
-import { ChannelTypeEnum, ChatProviderIdEnum, ContextPayload, ENDPOINT_TYPES, InAppProviderIdEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { ChannelConnectionRepository, ChannelEndpointRepository, IntegrationRepository } from '@notify/dal';
+import { ChannelTypeEnum, ChatProviderIdEnum, ContextPayload, ENDPOINT_TYPES, InAppProviderIdEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 const channelConnectionRepository = new ChannelConnectionRepository();
@@ -27,10 +27,10 @@ describe('Context-aware inbox channel resources - /inbox/channel-* #novu-v2', ()
 
     const agent = session.testAgent;
     session.testAgent = {
-      get: (url: string) => agent.get(url).set('Novu-Client-Version', '@novu/js@3.13.0'),
-      post: (url: string) => agent.post(url).set('Novu-Client-Version', '@novu/js@3.13.0'),
-      patch: (url: string) => agent.patch(url).set('Novu-Client-Version', '@novu/js@3.13.0'),
-      delete: (url: string) => agent.delete(url).set('Novu-Client-Version', '@novu/js@3.13.0'),
+      get: (url: string) => agent.get(url).set('Novu-Client-Version', '@notify/js@3.13.0'),
+      post: (url: string) => agent.post(url).set('Novu-Client-Version', '@notify/js@3.13.0'),
+      patch: (url: string) => agent.patch(url).set('Novu-Client-Version', '@notify/js@3.13.0'),
+      delete: (url: string) => agent.delete(url).set('Novu-Client-Version', '@notify/js@3.13.0'),
     } as any;
 
     await ensureInAppIntegrationActive(session.environment._id, session.environment._organizationId);

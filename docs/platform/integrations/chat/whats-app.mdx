@@ -1,7 +1,7 @@
 ---
-title: "WhatsApp Business Chat Integration with Novu"
+title: "WhatsApp Business Chat Integration with Notify"
 sidebarTitle: "WhatsApp Business"
-description: "Connect WhatsApp Business to Novu to send chat notifications through workflows. Configure phone number IDs, access tokens, and approved message templates."
+description: "Connect WhatsApp Business to Notify to send chat notifications through workflows. Configure phone number IDs, access tokens, and approved message templates."
 ---
 
 <Note>
@@ -10,7 +10,7 @@ description: "Connect WhatsApp Business to Novu to send chat notifications throu
 
 ## Getting Started
 
-To integrate WhatsApp Business with Novu, You will have to create a facebook developer app and obtain the necessary credentials.
+To integrate WhatsApp Business with Notify, You will have to create a facebook developer app and obtain the necessary credentials.
 
 <Steps>
 <Step title="Create a Facebook developer app">
@@ -26,7 +26,7 @@ Select "Other" for "What do you want your app to do?" and select "Business" for 
 </Step>
 
 <Step title="Send a sandbox message">
-Copy the following pieces and paste them in the Novu WhatsApp Business integration settings:
+Copy the following pieces and paste them in the Notify WhatsApp Business integration settings:
 
 - Temporary access token - Access API token field
 - Phone Number ID - Phone number identification field
@@ -40,10 +40,10 @@ Copy the following pieces and paste them in the Novu WhatsApp Business integrati
 
 <Step title="Add a test phone number">
   You can add a test phone number to the sandbox by clicking on the **"Add Phone Number"** button.
-  This number can be used to test your integration with Novu before submitting for a review.
+  This number can be used to test your integration with Notify before submitting for a review.
 </Step>
 
-<Step title="Send a test notification from Novu">
+<Step title="Send a test notification from Notify">
 You can now create a new workflow with a "chat" node, and add your content. Save your workflow, and click on **"Trigger Notification"** button.
 
 In the to field, specify the phone number you added in the sandbox, and click on "Send Notification".
@@ -99,9 +99,9 @@ To send a notification with a template, you will need to add the following to th
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({ secretKey: "<NOVU_SECRET_KEY>" });
+const notify = new Notify({ secretKey: "<NOVU_SECRET_KEY>" });
 
 await novu.trigger({
   workflowId: "workflowId",
@@ -125,9 +125,9 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="workflowId",
         to={"subscriber_id": "subscriberId", "phone": "+11111111111"},
@@ -179,10 +179,10 @@ res, err := s.Trigger(context.Background(), components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 
 $sdk->trigger(
     triggerEventRequestDto: new Components\TriggerEventRequestDto(
@@ -205,8 +205,8 @@ $sdk->trigger(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
 
@@ -229,10 +229,10 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto() {
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 
 novu.trigger()
     .body(TriggerEventRequestDto.builder()
@@ -292,7 +292,7 @@ Save a WhatsApp Business override on the Chat step when you need Cloud API messa
 
 <Steps>
   <Step title="Open the Chat step">
-    In the [Novu Dashboard](https://dashboard.novu.co), open your workflow and select the Chat step that uses the WhatsApp Business integration.
+    In the [Notify Dashboard](https://dashboard.novu.co), open your workflow and select the Chat step that uses the WhatsApp Business integration.
   </Step>
 
   <Step title="Open the WhatsApp overrides editor">
@@ -308,7 +308,7 @@ Save a WhatsApp Business override on the Chat step when you need Cloud API messa
   </Step>
 </Steps>
 
-Override values may contain [Liquid](/platform/workflow/add-notification-content/personalize-content#apply-logic-with-liquidjs) templates, which Novu compiles at send time:
+Override values may contain [Liquid](/platform/workflow/add-notification-content/personalize-content#apply-logic-with-liquidjs) templates, which Notify compiles at send time:
 
 ```json
 {
@@ -319,14 +319,14 @@ Override values may contain [Liquid](/platform/workflow/add-notification-content
 }
 ```
 
-For text messages, `text.body` is the primary content field. If your override omits it, Novu fills it with the rendered Chat step body. Recipient addressing (`to`) is resolved from the subscriber endpoint — prefer addressing a different subscriber when you want a different destination.
+For text messages, `text.body` is the primary content field. If your override omits it, Notify fills it with the rendered Chat step body. Recipient addressing (`to`) is resolved from the subscriber endpoint — prefer addressing a different subscriber when you want a different destination.
 
 ## Using WhatsApp with agents
 
 WhatsApp is a supported [agent provider](/agents/get-started/agents-and-providers). Connect your WhatsApp Business account to an agent so users can message your number and get replies in the same thread - without building Meta webhook handling yourself.
 
 <Card title="Build agents on WhatsApp" icon="bot" href="/agents">
-  Learn how Novu agents work, including managed and custom code agents.
+  Learn how Notify agents work, including managed and custom code agents.
 </Card>
 
 ### What you get
@@ -344,7 +344,7 @@ See [agent conversations](/agents/conversations#supported-platforms) for capabil
 | Use case | What happens |
 | --- | --- |
 | **Agent conversation** | The user messages your WhatsApp number and your agent replies in the same chat. |
-| **Workflow notification** | You trigger a workflow with a Chat step and Novu sends a one-way template message to the subscriber. |
+| **Workflow notification** | You trigger a workflow with a Chat step and Notify sends a one-way template message to the subscriber. |
 
 ## Related
 

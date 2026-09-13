@@ -1,4 +1,4 @@
-import type { Novu } from '@novu/api';
+import type { Novu } from '@notify/api';
 import type {
   DeferredToolCall,
   DeferredToolCallInteractionResult,

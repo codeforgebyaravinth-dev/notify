@@ -4,7 +4,7 @@ description: "Connect your agent to email: threaded HTML replies, action-link bu
 sidebarTitle: Email
 ---
 
-Use email as a messaging channel for your agent. Novu preserves standard email threading, delivers HTML replies with action links, and can request tool approval in-thread. Email is request/response only: no typing indicator or plan card.
+Use email as a messaging channel for your agent. Notify preserves standard email threading, delivers HTML replies with action links, and can request tool approval in-thread. Email is request/response only: no typing indicator or plan card.
 
 ## Capabilities
 
@@ -31,7 +31,7 @@ Full matrix: [Channels overview](/agents/channels/overview).
 
 ### Inbound email
 
-A user emails the agent address. Novu reacts with eyes on the original message while the agent runs, then sends a threaded HTML reply with optional action links.
+A user emails the agent address. Notify reacts with eyes on the original message while the agent runs, then sends a threaded HTML reply with optional action links.
 
 ### Tool approval
 
@@ -44,11 +44,11 @@ Gated tools send Approve / Deny action links in a follow-up email. The handler r
 | Custom code agent | Follow a [connect guide](/agents/get-started/ai-sdk), then add email as another provider |
 | Managed agent | [Claude](/agents/get-started/claude-managed) or [AWS Claude](/agents/get-started/aws-claude), then link email in the dashboard |
 
-Email provider credentials are configured in the Novu dashboard when you add the provider.
+Email provider credentials are configured in the Notify dashboard when you add the provider.
 
 ## Connect component
 
-`@novu/react` does not ship an email connect button. Email connections are address-based: configure the email provider on the agent in the dashboard (or via the [Agents API](/api-reference/agents/create-an-agent-integration)). Users reach the agent by emailing that address; threading is handled by ACI.
+`@notify/react` does not ship an email connect button. Email connections are address-based: configure the email provider on the agent in the dashboard (or via the [Agents API](/api-reference/agents/create-an-agent-integration)). Users reach the agent by emailing that address; threading is handled by ACI.
 
 For Slack, Teams, and Telegram embeddable buttons, see [Connect components](/agents/custom-code-agent/connect-components).
 

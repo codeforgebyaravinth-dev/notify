@@ -1,4 +1,4 @@
-import { PermissionsEnum } from '@novu/shared';
+import { PermissionsEnum } from '@notify/shared';
 import { IconType } from 'react-icons';
 import { RiBookMarkedLine } from 'react-icons/ri';
 import { Link, useNavigate, useParams } from 'react-router-dom';

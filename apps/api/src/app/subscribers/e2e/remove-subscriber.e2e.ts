@@ -1,8 +1,8 @@
-import { Novu } from '@novu/api';
-import { TopicResponseDto } from '@novu/api/models/components';
-import { SubscriberEntity, SubscriberRepository, TopicSubscribersRepository } from '@novu/dal';
-import { ExternalSubscriberId, TopicKey, TopicName } from '@novu/shared';
-import { SubscribersService, UserSession } from '@novu/testing';
+import { Novu } from '@notify/api';
+import { TopicResponseDto } from '@notify/api/models/components';
+import { SubscriberEntity, SubscriberRepository, TopicSubscribersRepository } from '@notify/dal';
+import { ExternalSubscriberId, TopicKey, TopicName } from '@notify/shared';
+import { SubscribersService, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { initNovuClassSdk } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';
 

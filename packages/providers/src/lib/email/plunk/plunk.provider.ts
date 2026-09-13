@@ -1,4 +1,4 @@
-import { EmailProviderIdEnum } from '@novu/shared';
+import { EmailProviderIdEnum } from '@notify/shared';
 import {
   ChannelTypeEnum,
   CheckIntegrationResponseEnum,
@@ -7,7 +7,7 @@ import {
   IEmailOptions,
   IEmailProvider,
   ISendMessageSuccessResponse,
-} from '@novu/stateless';
+} from '@notify/stateless';
 
 import Plunk from '@plunk/node';
 import { SendParams } from '@plunk/node/dist/types/emails';

@@ -1,4 +1,4 @@
-import type { IEnvironment, PatchWorkflowDto, WorkflowResponseDto } from '@novu/shared';
+import type { IEnvironment, PatchWorkflowDto, WorkflowResponseDto } from '@notify/shared';
 import { useQueryClient } from '@tanstack/react-query';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { Control, FieldArrayWithId, UseFormReturn } from 'react-hook-form';

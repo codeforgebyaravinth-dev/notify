@@ -10,12 +10,12 @@ import { getResponse } from '../utils';
  *
  * Example:
  *
- * import { serve, Client, type Workflow } from '@novu/framework/hono';
+ * import { serve, Client, type Workflow } from '@notify/framework/hono';
  *
  * instead of
  *
- * import { serve } from '@novu/framework/hono';
- * import { Client, type Workflow } from '@novu/framework';
+ * import { serve } from '@notify/framework/hono';
+ * import { Client, type Workflow } from '@notify/framework';
  */
 export * from '../index';
 export const frameworkName: SupportedFrameworkName = 'hono';
@@ -31,7 +31,7 @@ export const frameworkName: SupportedFrameworkName = 'hono';
  * @example
  * ```ts
  * import { Hono } from "hono";
- * import { serve } from "@novu/framework/hono";
+ * import { serve } from "@notify/framework/hono";
  * import { myWorkflow } from "./src/novu/workflows";
  *
  * const app = new Hono();

@@ -1,5 +1,5 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { AgentSubscriberAccessEnum } from '@novu/shared';
+import { AgentSubscriberAccessEnum } from '@notify/shared';
 import { IsBoolean, IsEnum, IsOptional, ValidateIf } from 'class-validator';
 import { IsWellKnownEmoji } from '../validators/is-well-known-emoji.validator';
 

@@ -3,19 +3,19 @@ title: 'Multi-tenancy'
 description: 'Learn how to use context to implement multi-tenant notifications to support different organizations or workspaces within your application.'
 ---
 
-Multi-tenancy in Novu lets you isolate notifications for different organizations, environments, or workspaces within the same Novu project. Instead of creating separate subscribers or workflows for each tenant, you can use [contexts](/platform/concepts/contexts) to define and manage tenant boundaries.
+Multi-tenancy in Notify lets you isolate notifications for different organizations, environments, or workspaces within the same Notify project. Instead of creating separate subscribers or workflows for each tenant, you can use [contexts](/platform/concepts/contexts) to define and manage tenant boundaries.
 
 <Note>
   This guide assumes you already understand what contexts are. If not, start with [Contexts](/platform/concepts/contexts).
 </Note>
 
-## How multi-tenancy works in Novu
+## How multi-tenancy works in Notify
 
-Multi-tenancy in Novu is built on top of Contexts, which act as lightweight tags that group notifications by logical boundaries such as tenants, workspaces, or environments.
+Multi-tenancy in Notify is built on top of Contexts, which act as lightweight tags that group notifications by logical boundaries such as tenants, workspaces, or environments.
 
-When a notification is triggered with a tenant context, Novu automatically associates all notifications and preferences with that tenant. The same tenant context passed to the [`<Inbox />`](/platform/inbox/configuration/inbox-with-context) filters notifications for that specific organization, ensuring users only see messages relevant to their workspace.
+When a notification is triggered with a tenant context, Notify automatically associates all notifications and preferences with that tenant. The same tenant context passed to the [`<Inbox />`](/platform/inbox/configuration/inbox-with-context) filters notifications for that specific organization, ensuring users only see messages relevant to their workspace.
 
-## How to implement multi-tenancy in Novu
+## How to implement multi-tenancy in Notify
 
 Implementing a multi-tenant system involves a few key steps:
 
@@ -23,7 +23,7 @@ Implementing a multi-tenant system involves a few key steps:
 
 A Tenant Context is a JSON object that identifies a specific tenant and can store any related data you need, such as company name, logo, or plan type.
 
-You can create a tenant context using the Novu dashboard, API or from the [`<Inbox />`](/platform/inbox/configuration/inbox-with-context). if it doesn’t already exist, Novu automatically creates it.
+You can create a tenant context using the Notify dashboard, API or from the [`<Inbox />`](/platform/inbox/configuration/inbox-with-context). if it doesn’t already exist, Notify automatically creates it.
 
 Here are ways you can pass context:
 
@@ -47,7 +47,7 @@ context: {
 }
 ```
 
-You can also manage all tenant contexts centrally from the Novu dashboard or API.
+You can also manage all tenant contexts centrally from the Notify dashboard or API.
 
 <Note>
   To learn more about creating, updating, and deleting contexts, see [Manage contexts](/platform/workflow/advanced-features/contexts/manage-contexts).
@@ -55,18 +55,18 @@ You can also manage all tenant contexts centrally from the Novu dashboard or API
 
 ### Applying tenant context in workflows
 
-Once you’ve defined your tenant context, you can use it when triggering workflows. During a workflow trigger, Novu first checks if that context already exists.
+Once you’ve defined your tenant context, you can use it when triggering workflows. During a workflow trigger, Notify first checks if that context already exists.
 
-If not, Novu automatically creates it. If it exists and you pass a `data` object inline, Novu updates the stored tenant metadata - similar to subscriber upsert. If you pass only the tenant identifier as a string, Novu reuses the existing record without modifying `data`.
+If not, Notify automatically creates it. If it exists and you pass a `data` object inline, Notify updates the stored tenant metadata - similar to subscriber upsert. If you pass only the tenant identifier as a string, Notify reuses the existing record without modifying `data`.
 
 Inbox initialization always finds or creates contexts but never updates existing `data`.
 
 <Tabs>
   <Tab title="Node.js">
 ```ts
-import { Novu } from "@novu/api"
+import { Notify } from "@notify/api"
 
-const novu = new Novu({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
+const notify = new Notify({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
 
 await novu.trigger({
   workflowId: "workflowId",
@@ -91,9 +91,9 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="workflowId",
         to={"subscriber_id": "user-123"},
@@ -145,10 +145,10 @@ res, err := s.Trigger(context.Background(), components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()
+$sdk = notify\Notify::builder()
     ->setSecurity('<YOUR_SECRET_KEY_HERE>')
     ->build();
 
@@ -175,8 +175,8 @@ $sdk->trigger(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new NovuSDK(secretKey: "<YOUR_SECRET_KEY_HERE>");
@@ -204,11 +204,11 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto() {
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 import java.util.Map;
 
-Novu novu = Novu.builder()
+Notify novu = Notify.builder()
     .secretKey("<YOUR_SECRET_KEY_HERE>")
     .build();
 
@@ -276,7 +276,7 @@ Once your workflows are sending tenant-scoped notifications, you can filter the 
 This is done by passing the same tenant context used in your workflow triggers to the [`<Inbox />`](/platform/inbox/configuration/inbox-with-context).
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 
 <Inbox
   applicationIdentifier="APPLICATION_IDENTIFIER"
@@ -301,7 +301,7 @@ In this setup:
 - Notifications from other tenants are automatically excluded.
 
 <Note>
-  If the tenant context doesn’t already exist in Novu, the Inbox will automatically find or create it. Learn more in [Inbox with Context](/platform/inbox/configuration/inbox-with-context).
+  If the tenant context doesn’t already exist in Notify, the Inbox will automatically find or create it. Learn more in [Inbox with Context](/platform/inbox/configuration/inbox-with-context).
 </Note>
 
 ### Customize notification content based on tenant

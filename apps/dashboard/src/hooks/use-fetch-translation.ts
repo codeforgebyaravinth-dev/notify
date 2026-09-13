@@ -1,4 +1,4 @@
-import { TranslationResponseDto } from '@novu/api/models/components';
+import { TranslationResponseDto } from '@notify/api/models/components';
 import { useQuery } from '@tanstack/react-query';
 import { getTranslation } from '@/api/translations';
 import { requireEnvironment, useEnvironment } from '@/context/environment/hooks';

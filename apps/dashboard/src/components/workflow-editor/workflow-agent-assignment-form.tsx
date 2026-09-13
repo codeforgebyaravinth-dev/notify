@@ -4,7 +4,7 @@ import {
   PermissionsEnum,
   type WorkflowAgentConfig,
   WorkflowResponseDto,
-} from '@novu/shared';
+} from '@notify/shared';
 import { useQuery } from '@tanstack/react-query';
 import { motion } from 'motion/react';
 import {

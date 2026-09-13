@@ -1,5 +1,5 @@
-import { ChannelTypeEnum, IntegrationEntity, IntegrationRepository } from '@novu/dal';
-import { InAppProviderIdEnum } from '@novu/shared';
+import { ChannelTypeEnum, IntegrationEntity, IntegrationRepository } from '@notify/dal';
+import { InAppProviderIdEnum } from '@notify/shared';
 
 export class IntegrationService {
   private integrationRepository = new IntegrationRepository();

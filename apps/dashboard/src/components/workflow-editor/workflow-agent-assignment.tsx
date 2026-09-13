@@ -1,4 +1,4 @@
-import { EnvironmentTypeEnum } from '@novu/shared';
+import { EnvironmentTypeEnum } from '@notify/shared';
 import { useWorkflow } from '@/components/workflow-editor/workflow-provider';
 import { useEnvironment } from '@/context/environment/hooks';
 import { WorkflowAgentAssignmentForm } from './workflow-agent-assignment-form';

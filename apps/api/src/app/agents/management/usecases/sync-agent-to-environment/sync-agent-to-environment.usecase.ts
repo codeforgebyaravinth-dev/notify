@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { AgentIntegrationRepository, AgentRepository, IntegrationRepository } from '@novu/dal';
+import { AgentIntegrationRepository, AgentRepository, IntegrationRepository } from '@notify/dal';
 
 import { SyncAgentToEnvironmentCommand } from './sync-agent-to-environment.command';
 

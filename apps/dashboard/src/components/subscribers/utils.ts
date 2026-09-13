@@ -1,5 +1,5 @@
-import { SubscriberResponseDto } from '@novu/api/models/components';
-import { AGENT_PLATFORM_PROVISION_SOURCE, AGENT_PROVISION_DATA_KEYS, ISubscriberResponseDto } from '@novu/shared';
+import { SubscriberResponseDto } from '@notify/api/models/components';
+import { AGENT_PLATFORM_PROVISION_SOURCE, AGENT_PROVISION_DATA_KEYS, ISubscriberResponseDto } from '@notify/shared';
 
 export const getSubscriberTitle = (subscriber: ISubscriberResponseDto | SubscriberResponseDto) => {
   const fullName = `${subscriber.firstName || ''} ${subscriber.lastName || ''}`.trim();

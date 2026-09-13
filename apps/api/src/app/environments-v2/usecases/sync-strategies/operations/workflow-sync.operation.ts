@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { PinoLogger } from '@novu/application-generic';
-import { NotificationTemplateEntity } from '@novu/dal';
+import { PinoLogger } from '@notify/application-generic';
+import { NotificationTemplateEntity } from '@notify/dal';
 import { ResourceTypeEnum } from '../../../types/sync.types';
 import {
   WorkflowComparatorAdapter,

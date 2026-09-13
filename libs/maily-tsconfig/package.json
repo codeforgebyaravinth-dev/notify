@@ -1,5 +1,5 @@
 {
-  "name": "@novu/maily-tsconfig",
+  "name": "@notify/maily-tsconfig",
   "version": "0.0.0",
   "private": true,
   "publishConfig": {

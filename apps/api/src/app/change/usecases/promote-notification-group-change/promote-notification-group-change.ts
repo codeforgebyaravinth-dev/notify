@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { NotificationGroupEntity, NotificationGroupRepository } from '@novu/dal';
+import { NotificationGroupEntity, NotificationGroupRepository } from '@notify/dal';
 import { PromoteTypeChangeCommand } from '../promote-type-change.command';
 
 @Injectable()

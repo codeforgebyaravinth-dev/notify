@@ -1,4 +1,4 @@
-import { AiResourceTypeEnum } from '@novu/shared';
+import { AiResourceTypeEnum } from '@notify/shared';
 import { useQuery } from '@tanstack/react-query';
 import { useEnvironment } from '@/context/environment/hooks';
 import { QueryKeys } from '@/utils/query-keys';

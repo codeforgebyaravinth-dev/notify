@@ -1,11 +1,11 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { decryptChannelEndpoint, InstrumentUsecase } from '@novu/application-generic';
+import { decryptChannelEndpoint, InstrumentUsecase } from '@notify/application-generic';
 import {
   ChannelEndpointDBModel,
   ChannelEndpointEntity,
   ChannelEndpointRepository,
   EnforceEnvOrOrgIds,
-} from '@novu/dal';
+} from '@notify/dal';
 import { FilterQuery } from 'mongoose';
 import { GetChannelEndpointCommand } from './get-channel-endpoint.command';
 

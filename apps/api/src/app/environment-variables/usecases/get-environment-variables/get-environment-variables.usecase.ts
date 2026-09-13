@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { decryptEnvironmentVariableValue } from '@novu/application-generic';
-import { EnforceOrgId, EnvironmentVariableEntity, EnvironmentVariableRepository, FilterQuery } from '@novu/dal';
-import { EnvironmentVariableType } from '@novu/shared';
+import { decryptEnvironmentVariableValue } from '@notify/application-generic';
+import { EnforceOrgId, EnvironmentVariableEntity, EnvironmentVariableRepository, FilterQuery } from '@notify/dal';
+import { EnvironmentVariableType } from '@notify/shared';
 import { EnvironmentVariableResponseDto, SECRET_MASK } from '../../dtos/environment-variable-response.dto';
 import { GetEnvironmentVariablesCommand } from './get-environment-variables.command';
 

@@ -1,4 +1,4 @@
-import { SeverityLevelEnum } from '@novu/shared';
+import { SeverityLevelEnum } from '@notify/shared';
 import { Transform, Type } from 'class-transformer';
 import { IsArray, IsIn, IsInt, IsISO8601, IsOptional, IsString, Max, Min } from 'class-validator';
 import { WorkflowRunStatusDtoEnum } from './shared.dto';

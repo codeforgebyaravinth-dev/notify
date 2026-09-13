@@ -1,4 +1,4 @@
-import { PreferenceLevelEnum } from '@novu/shared';
+import { PreferenceLevelEnum } from '@notify/shared';
 import { IsBoolean, IsDefined, IsEnum, IsOptional, IsString } from 'class-validator';
 import { EnvironmentCommand } from '../../../shared/commands/project.command';
 

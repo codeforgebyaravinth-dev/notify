@@ -1,5 +1,5 @@
-import { IsValidContextPayload } from '@novu/application-generic';
-import { ConnectionMode, ContextPayload } from '@novu/shared';
+import { IsValidContextPayload } from '@notify/application-generic';
+import { ConnectionMode, ContextPayload } from '@notify/shared';
 import { IsArray, IsBoolean, IsIn, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 import { EnvironmentCommand } from '../../../shared/commands/project.command';
 import type { OAuthMode } from './generate-slack-oath-url/generate-slack-oauth-url.usecase';

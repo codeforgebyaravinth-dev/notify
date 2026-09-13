@@ -1,4 +1,4 @@
-import { ChannelTypeEnum, ChatProviderIdEnum, type IIntegration, providers } from '@novu/shared';
+import { ChannelTypeEnum, ChatProviderIdEnum, type IIntegration, providers } from '@notify/shared';
 import { useMemo } from 'react';
 
 import { useEnvironment } from '@/context/environment/hooks';

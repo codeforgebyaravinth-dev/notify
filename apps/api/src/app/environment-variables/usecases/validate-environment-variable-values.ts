@@ -1,5 +1,5 @@
 import { ForbiddenException, NotFoundException } from '@nestjs/common';
-import { EnvironmentRepository } from '@novu/dal';
+import { EnvironmentRepository } from '@notify/dal';
 
 type EnvironmentVariableValueInput = {
   _environmentId: string;

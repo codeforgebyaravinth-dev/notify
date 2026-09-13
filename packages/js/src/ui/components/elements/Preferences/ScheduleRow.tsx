@@ -186,7 +186,7 @@ const ScheduleRowBody = (props: { isOpened: Accessor<boolean>; globalPreference:
       class={style({
         key: 'scheduleBody',
         className:
-          'nt-flex nt-bg-background nt-border nt-border-neutral-alpha-200 nt-rounded-lg nt-p-2 nt-flex-col nt-gap-2 nt-overflow-hidden',
+          'nt-flex nt-bg-background nt-border nt-border-neutral-alpha-200 nt-nt-rounded-none nt-p-2 nt-flex-col nt-gap-2 nt-overflow-hidden',
         context: { schedule: schedule() } satisfies Parameters<InboxAppearanceCallback['scheduleBody']>[0],
       })}
     >
@@ -245,7 +245,7 @@ export const ScheduleRow = (props: ScheduleRowProps) => {
       <div
         class={style({
           key: 'scheduleContainer',
-          className: 'nt-p-1 nt-bg-neutral-alpha-25 nt-rounded-lg nt-border nt-border-neutral-alpha-50',
+          className: 'nt-p-1 nt-bg-neutral-alpha-25 nt-nt-rounded-none nt-border nt-border-neutral-alpha-50',
           context: {
             schedule: schedule(),
           } satisfies Parameters<InboxAppearanceCallback['scheduleContainer']>[0],

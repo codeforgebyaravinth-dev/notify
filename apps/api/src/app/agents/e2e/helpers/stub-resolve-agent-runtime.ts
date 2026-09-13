@@ -1,7 +1,7 @@
-import { decryptCredentials } from '@novu/application-generic';
-import type { IAgentRuntimeProvider } from '@novu/application-generic/build/main/agent-runtimes/i-agent-runtime-provider';
-import * as ResolveAgentRuntimeModule from '@novu/application-generic/build/main/agent-runtimes/resolve-agent-runtime';
-import { AgentRuntimeProviderIdEnum, type ICredentialsDto } from '@novu/shared';
+import { decryptCredentials } from '@notify/application-generic';
+import type { IAgentRuntimeProvider } from '@notify/application-generic/build/main/agent-runtimes/i-agent-runtime-provider';
+import * as ResolveAgentRuntimeModule from '@notify/application-generic/build/main/agent-runtimes/resolve-agent-runtime';
+import { AgentRuntimeProviderIdEnum, type ICredentialsDto } from '@notify/shared';
 import sinon from 'sinon';
 
 interface ResolvedAgentRuntimeStub {

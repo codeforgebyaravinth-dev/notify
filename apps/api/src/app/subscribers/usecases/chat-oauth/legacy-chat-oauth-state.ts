@@ -1,6 +1,6 @@
 import { BadRequestException } from '@nestjs/common';
-import { createHash, encodeOAuthState, peekOAuthStatePayload, splitOAuthState } from '@novu/application-generic';
-import { ChatProviderIdEnum } from '@novu/shared';
+import { createHash, encodeOAuthState, peekOAuthStatePayload, splitOAuthState } from '@notify/application-generic';
+import { ChatProviderIdEnum } from '@notify/shared';
 import { areHexDigestsEqual } from '../../../shared/helpers/timing-safe-equal';
 
 /**

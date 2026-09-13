@@ -8,7 +8,7 @@ The Inbox component is client-side only. Create a client component wrapper:
 // components/NotificationInbox.tsx
 "use client";
 
-import { Inbox } from "@novu/nextjs";
+import { Inbox } from "@notify/nextjs";
 
 export function NotificationInbox({
   subscriberId,
@@ -71,7 +71,7 @@ export function getSubscriberHash(subscriberId: string): string {
 
 ```tsx
 // pages/_app.tsx
-import { Inbox } from "@novu/nextjs";
+import { Inbox } from "@notify/nextjs";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -108,7 +108,7 @@ Handle notification clicks with Next.js router:
 ```tsx
 "use client";
 
-import { Inbox } from "@novu/nextjs";
+import { Inbox } from "@notify/nextjs";
 import { useRouter } from "next/navigation";
 
 export function NotificationInbox({ subscriberId, subscriberHash }) {

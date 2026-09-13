@@ -7,8 +7,8 @@ import {
   UpsertControlValuesUseCase,
   VerifyPayload,
   WorkflowRunService,
-} from '@novu/application-generic';
-import { CommunityUserRepository } from '@novu/dal';
+} from '@notify/application-generic';
+import { CommunityUserRepository } from '@notify/dal';
 import { GenerateUniqueApiKey } from '../../environments-v1/usecases/generate-unique-api-key/generate-unique-api-key.usecase';
 import { ParseEventRequest } from '../../events/usecases/parse-event-request';
 import { GetSubscriberGlobalPreference } from '../../subscribers/usecases/get-subscriber-global-preference';

@@ -1,5 +1,5 @@
-/** @jsxImportSource @novu/framework */
-import { Actions, agent, Button, Card, CardText } from '@novu/framework';
+/** @jsxImportSource @notify/framework */
+import { Actions, agent, Button, Card, CardText } from '@notify/framework';
 
 /**
  * Novu calls these handlers whenever a user sends a message or clicks an action

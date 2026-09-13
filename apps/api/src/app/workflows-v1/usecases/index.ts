@@ -4,8 +4,8 @@ import {
   GetWorkflowWithPreferencesUseCase,
   ResourceValidatorService,
   UpdateWorkflowV0,
-} from '@novu/application-generic';
-import { CommunityOrganizationRepository } from '@novu/dal';
+} from '@notify/application-generic';
+import { CommunityOrganizationRepository } from '@notify/dal';
 import { ChangeTemplateActiveStatus } from './change-template-active-status/change-template-active-status.usecase';
 import { DeleteNotificationTemplate } from './delete-notification-template/delete-notification-template.usecase';
 import { DeleteWorkflowUseCase } from './delete-workflow/delete-workflow.usecase';

@@ -1,5 +1,5 @@
 import { ConflictException } from '@nestjs/common';
-import { ContextRepository } from '@novu/dal';
+import { ContextRepository } from '@notify/dal';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { CreateContextCommand } from './create-context.command';

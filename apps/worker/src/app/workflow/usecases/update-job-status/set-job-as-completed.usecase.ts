@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { JobStatusEnum } from '@novu/dal';
+import { JobStatusEnum } from '@notify/dal';
 
 import { SetJobAsCommand } from './set-job-as.command';
 import { UpdateJobStatusCommand } from './update-job-status.command';

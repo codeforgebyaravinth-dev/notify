@@ -4,9 +4,9 @@ import {
   MessageTemplateRepository,
   NotificationGroupRepository,
   NotificationTemplateRepository,
-} from '@novu/dal';
-import { ChannelCTATypeEnum } from '@novu/shared';
-import { NotificationTemplateService, UserSession } from '@novu/testing';
+} from '@notify/dal';
+import { ChannelCTATypeEnum } from '@notify/shared';
+import { NotificationTemplateService, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Delete workflow by id - /workflows/:workflowId (DELETE) #novu-v0', async () => {

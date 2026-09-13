@@ -1,14 +1,14 @@
 ---
-title: "SendGrid Email Integration with Novu"
+title: "SendGrid Email Integration with Notify"
 sidebarTitle: 'SendGrid'
-description: "Connect SendGrid to Novu to send transactional emails through workflows. Store your SendGrid API key and verified sender identity in the Novu dashboard."
+description: "Connect SendGrid to Notify to send transactional emails through workflows. Store your SendGrid API key and verified sender identity in the Notify dashboard."
 ---
 
-You can use the [SendGrid](https://sendgrid.com/) provider to send transactional emails to your customers using the Novu Platform with a single API to create multi-channel experiences.
+You can use the [SendGrid](https://sendgrid.com/) provider to send transactional emails to your customers using the Notify Platform with a single API to create multi-channel experiences.
 
 ### Getting Started
 
-To use the Sendgrid provider in the email channel, you will need to create a Sendgrid account and add your API key to the SendGrid integration on the Novu platform.
+To use the Sendgrid provider in the email channel, you will need to create a Sendgrid account and add your API key to the SendGrid integration on the Notify platform.
 
 ### Generating an API Key
 
@@ -38,20 +38,20 @@ SendGrid allows you to authenticate your sender identity using one of the follow
 - [Single Sender Verification](https://docs.sendgrid.com/ui/sending-email/sender-verification) - This is the easiest way to authenticate your sender identity.
 - [Entire Domain Authentication](https://docs.sendgrid.com/ui/account-and-settings/how-to-set-up-domain-authentication) - This is recommended if you are sending emails from multiple accounts under your domain.
 
-### SendGrid integration with Novu
+### SendGrid integration with Notify
 
-- Visit the [Integrations store](https://dashboard.novu.co/integrations?utm_campaign=docs-sendgrid) on the Novu web dashboard.
+- Visit the [Integrations store](https://dashboard.novu.co/integrations?utm_campaign=docs-sendgrid) on the Notify web dashboard.
 - Click on Add a Provider.
 - Select SendGrid service.
 - Enter your SendGrid API Key.
 - Fill in the `From email address` field using the authenticated email from the previous step.
 - Click on the `Disabled` button and mark it as `Active`.
 - Click on the **Update** button.
-- You should now be able to send notifications through SendGrid using Novu.
+- You should now be able to send notifications through SendGrid using Notify.
 
 ### Using SendGrid template
 
-Novu has its own email editor for writing email template. To send pre-made template in SendGrid, providers overrides can be used to send template details. Make sure sendgrid `Api Key` has enough permission to read and process the template.
+Notify has its own email editor for writing email template. To send pre-made template in SendGrid, providers overrides can be used to send template details. Make sure sendgrid `Api Key` has enough permission to read and process the template.
 
 <Note>
   Sending `customData` field in overrides to send sendgrid template will work
@@ -66,9 +66,9 @@ Novu has its own email editor for writing email template. To send pre-made templ
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({ secretKey: "<NOVU_SECRET_KEY>" });
+const notify = new Notify({ secretKey: "<NOVU_SECRET_KEY>" });
 
 await novu.trigger({
   workflowId: "workflowId",
@@ -98,9 +98,9 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="workflowId",
         to={"subscriber_id": "subscriberId"},
@@ -165,10 +165,10 @@ res, err := s.Trigger(context.Background(), components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 
 $sdk->trigger(
     triggerEventRequestDto: new Components\TriggerEventRequestDto(
@@ -198,8 +198,8 @@ $sdk->trigger(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
 
@@ -229,10 +229,10 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto() {
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 
 novu.trigger()
     .body(TriggerEventRequestDto.builder()
@@ -291,9 +291,9 @@ curl --location 'https://api.novu.co/v1/events/trigger' \
 }'
 ```
   </Tab>
-  <Tab title="Novu Framework">
+  <Tab title="Notify Framework">
 ```typescript
-import { workflow } from "@novu/framework";
+import { workflow } from "@notify/framework";
 import { z } from "zod";
 
 export const sendgridOverridesEmailExample = workflow(

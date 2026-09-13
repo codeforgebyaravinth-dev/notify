@@ -1,7 +1,7 @@
 import { BadRequestException } from '@nestjs/common';
-import { AnalyticsService } from '@novu/application-generic';
-import { ChannelTypeEnum, MessageRepository } from '@novu/dal';
-import { ChannelCTATypeEnum } from '@novu/shared';
+import { AnalyticsService } from '@notify/application-generic';
+import { ChannelTypeEnum, MessageRepository } from '@notify/dal';
+import { ChannelCTATypeEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { GetSubscriber } from '../../../subscribers/usecases/get-subscriber';

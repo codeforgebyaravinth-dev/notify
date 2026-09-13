@@ -1,8 +1,8 @@
-import { Novu } from '@novu/api';
-import { CreateTelegramChatEndpointDto } from '@novu/api/models/components';
-import { IntegrationRepository } from '@novu/dal';
-import { ChannelTypeEnum, ChatProviderIdEnum, ENDPOINT_TYPES } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { Novu } from '@notify/api';
+import { CreateTelegramChatEndpointDto } from '@notify/api/models/components';
+import { IntegrationRepository } from '@notify/dal';
+import { ChannelTypeEnum, ChatProviderIdEnum, ENDPOINT_TYPES } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import {
   createConnection,

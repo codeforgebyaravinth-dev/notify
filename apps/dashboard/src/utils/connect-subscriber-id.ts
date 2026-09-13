@@ -1,1 +1,1 @@
-export { buildAgentConnectionIdentifier } from '@novu/shared';
+export { buildAgentConnectionIdentifier } from '@notify/shared';

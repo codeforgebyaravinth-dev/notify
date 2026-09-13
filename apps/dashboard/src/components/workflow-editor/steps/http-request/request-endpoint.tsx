@@ -1,4 +1,4 @@
-import { HttpMethodEnum } from '@novu/shared';
+import { HttpMethodEnum } from '@notify/shared';
 import { useCallback } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { RiCornerDownRightLine, RiLoader4Line, RiPlayCircleLine } from 'react-icons/ri';

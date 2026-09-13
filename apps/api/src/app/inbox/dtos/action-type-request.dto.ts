@@ -1,4 +1,4 @@
-import { ButtonTypeEnum } from '@novu/shared';
+import { ButtonTypeEnum } from '@notify/shared';
 import { IsDefined, IsEnum } from 'class-validator';
 
 export class ActionTypeRequestDto {

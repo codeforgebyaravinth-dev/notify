@@ -1,4 +1,4 @@
-import { EnvironmentTypeEnum } from '@novu/shared';
+import { EnvironmentTypeEnum } from '@notify/shared';
 import { IsBoolean, IsDefined, IsEnum, IsHexColor, IsMongoId, IsOptional, IsString } from 'class-validator';
 import { OrganizationCommand } from '../../../shared/commands/organization.command';
 

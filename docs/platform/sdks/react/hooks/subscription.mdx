@@ -1,10 +1,10 @@
 ---
 title: "Subscription"
-description: "Use useSubscriptions, useCreateSubscription, and related React hooks to fetch, create, and manage Novu topic subscriptions from your frontend."
+description: "Use useSubscriptions, useCreateSubscription, and related React hooks to fetch, create, and manage Notify topic subscriptions from your frontend."
 ---
 
 
-The `@novu/react` package provides a set of Subscription hooks for managing topic subscriptions without using the prebuilt Subscription components. 
+The `@notify/react` package provides a set of Subscription hooks for managing topic subscriptions without using the prebuilt Subscription components. 
 
 These hooks let you build fully custom experiences by working directly with the subscription data model.
 
@@ -39,7 +39,7 @@ Fetches all subscriptions associated with a specific topic for the current subsc
 This example fetches all subscriptions for a given topic and exposes them for rendering once loading completes.
 
 ```tsx
-import { useSubscriptions } from "@novu/react";
+import { useSubscriptions } from "@notify/react";
 
 const { subscriptions, isLoading } = useSubscriptions({
   topicKey: "project-123",
@@ -73,7 +73,7 @@ Fetches a specific subscription instance.
 This example shows how to retrieve a specific subscription by its identifier to access its preferences.
 
 ```tsx
-import { useSubscription } from "@novu/react";
+import { useSubscription } from "@notify/react";
 
 const { subscription, isLoading } = useSubscription({
   topicKey: "project-123",
@@ -98,7 +98,7 @@ Creates a new subscription to a topic for the current subscriber.
 This example demonstrates how to trigger the creation of a new subscription for a topic.
 
 ```tsx
-import { useCreateSubscription } from "@novu/react";
+import { useCreateSubscription } from "@notify/react";
 
 const { create, isCreating } = useCreateSubscription();
 
@@ -125,7 +125,7 @@ Updates an existing subscription's properties or preferences list.
 This example shows how to update the preferences of an existing subscription, such as toggling a specific workflow.
 
 ```tsx
-import { useUpdateSubscription } from "@novu/react";
+import { useUpdateSubscription } from "@notify/react";
 
 const { update, isUpdating } = useUpdateSubscription();
 
@@ -155,7 +155,7 @@ Unsubscribes the current user from a topic by removing the subscription instance
 This example renders an unsubscribe button that removes the subscription when clicked.
 
 ```tsx
-import { useRemoveSubscription } from "@novu/react";
+import { useRemoveSubscription } from "@notify/react";
 
 function UnsubscribeButton({ subscriptionId }) {
   const { remove, isRemoving } = useRemoveSubscription();

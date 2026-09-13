@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
-import { buildFeedKey, buildMessageCountKey, InvalidateCacheService } from '@novu/application-generic';
-import { MessageRepository } from '@novu/dal';
+import { buildFeedKey, buildMessageCountKey, InvalidateCacheService } from '@notify/application-generic';
+import { MessageRepository } from '@notify/dal';
 
 import { RemoveMessageCommand } from './remove-message.command';
 

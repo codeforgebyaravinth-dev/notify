@@ -1,19 +1,19 @@
 ---
 title: 'Add and Configure Steps'
-description: 'Learn how workflow steps work in Novu, the different step types available, and how to add and execute steps in a notification workflow.'
+description: 'Learn how workflow steps work in Notify, the different step types available, and how to add and execute steps in a notification workflow.'
 ---
 
 
 Steps are the building blocks of a workflow. Each step represents a distinct action or delivery mechanism that determines what happens, when it happens, and how a notification is delivered.
 
-A workflow is built as a sequence of steps, executed linearly from top to bottom. You define and arrange steps using the workflow editor in the Novu dashboard, where each node on the canvas represents a single step in the execution flow.
+A workflow is built as a sequence of steps, executed linearly from top to bottom. You define and arrange steps using the workflow editor in the Notify dashboard, where each node on the canvas represents a single step in the execution flow.
 
-Each step operates independently. If one step fails, other steps in the workflow can still succeed. Workflows support two types of steps from the Novu dashboard.
+Each step operates independently. If one step fails, other steps in the workflow can still succeed. Workflows support two types of steps from the Notify dashboard.
 
 ![Types of steps](/images/workflows/add-and-configure-steps/steps.png)
 
 <Note>
-  You can create a custom step using Novu Framework. For more information, refer to the [Custom steps](/framework/custom).
+  You can create a custom step using Notify Framework. For more information, refer to the [Custom steps](/framework/custom).
 </Note>
 
 ## Channel steps
@@ -33,7 +33,7 @@ Supported channel types include:
     title="In-App"
     icon="bell"
     href="/platform/inbox"
-    description="Deliver notifications directly inside your application through the Novu <Inbox/>."
+    description="Deliver notifications directly inside your application through the Notify <Inbox/>."
   />
   <Card
     title="Push"
@@ -58,7 +58,7 @@ Supported channel types include:
 To send notifications through Email, Push, Chat, or SMS channels, you must configure the appropriate [channel provider integration](/platform/integrations) for your environment. Without an active integration, messages sent through that channel won’t be delivered.
 
 <Note>
-  Novu provides built-in [demo integrations](/platform/integrations/demo-integration) for the Email and SMS channels. These sandboxed providers let you test workflows before configuring a provider.
+  Notify provides built-in [demo integrations](/platform/integrations/demo-integration) for the Email and SMS channels. These sandboxed providers let you test workflows before configuring a provider.
 </Note>
 
 ## Action steps
@@ -132,7 +132,7 @@ Steps placed before the Digest step execute in real time. Steps placed after the
 
 ### Throttle
 
-The Throttle step lets you limit the number of workflow executions within a specified time window. You can configure throttling directly in Novu workflow editor. By setting limits, you can prevent subscribers from receiving duplicate or excessive notifications when a trigger fires repeatedly.
+The Throttle step lets you limit the number of workflow executions within a specified time window. You can configure throttling directly in Notify workflow editor. By setting limits, you can prevent subscribers from receiving duplicate or excessive notifications when a trigger fires repeatedly.
 
 ![Throttle](/images/workflows/add-and-configure-steps/throttle.png)
 
@@ -161,7 +161,7 @@ To the subscriber, the experience is transparent. They are not aware that any th
 
 ### HTTP
 
-The HTTP step allows workflows to call external APIs during execution. It provides a native way to interact with systems outside of Novu directly from your workflows without relying on external webhooks or custom infrastructure.
+The HTTP step allows workflows to call external APIs during execution. It provides a native way to interact with systems outside of Notify directly from your workflows without relying on external webhooks or custom infrastructure.
 
 This is useful for use cases such as:
 - Fetching additional user or event data from your internal databases to enrich notifications.
@@ -214,4 +214,4 @@ This execution model allows you to build complex notification sequences that ada
 3. If the in-app message is unread, send an email. 
 4. If the subscriber is a premium user, then follow up with an SMS message. 
 
-This allows Novu workflows to adapt to user behavior and preferences while keeping the configuration visual and testable.
+This allows Notify workflows to adapt to user behavior and preferences while keeping the configuration visual and testable.

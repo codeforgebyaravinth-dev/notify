@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { IAuthService } from '@novu/application-generic';
-import { MemberEntity, SubscriberEntity, UserEntity } from '@novu/dal';
-import { AuthenticateContext, AuthProviderEnum, ISubscriberJwt, UserSessionData } from '@novu/shared';
+import { IAuthService } from '@notify/application-generic';
+import { MemberEntity, SubscriberEntity, UserEntity } from '@notify/dal';
+import { AuthenticateContext, AuthProviderEnum, ISubscriberJwt, UserSessionData } from '@notify/shared';
 
 @Injectable()
 export class AuthService implements IAuthService {

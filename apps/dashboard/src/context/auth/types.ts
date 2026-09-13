@@ -1,4 +1,4 @@
-import type { IOrganizationEntity, IUserEntity } from '@novu/shared';
+import type { IOrganizationEntity, IUserEntity } from '@notify/shared';
 
 type UserState =
   | {

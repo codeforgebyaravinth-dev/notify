@@ -1,6 +1,6 @@
-import { EnvironmentRepository, IntegrationEntity } from '@novu/dal';
-import { ChannelTypeEnum, EmailProviderIdEnum, SmsProviderIdEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { EnvironmentRepository, IntegrationEntity } from '@notify/dal';
+import { ChannelTypeEnum, EmailProviderIdEnum, SmsProviderIdEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Get Integrations - /integrations (GET) #novu-v2', () => {

@@ -1,5 +1,5 @@
-import { SubscriberRepository } from '@novu/dal';
-import { UserSession } from '@novu/testing';
+import { SubscriberRepository } from '@notify/dal';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Get in-app activated - /integrations/in-app/activated (GET) #novu-v2', async () => {

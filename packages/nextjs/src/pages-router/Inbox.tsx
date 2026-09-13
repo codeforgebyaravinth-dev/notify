@@ -1,6 +1,6 @@
 'use client';
 
-import { InboxProps, Inbox as RInbox } from '@novu/react';
+import { InboxProps, Inbox as RInbox } from '@notify/react';
 import { useRouter } from 'next/compat/router';
 import { useRouter as useAppRouter } from 'next/navigation';
 
@@ -30,4 +30,4 @@ export function Inbox(props: InboxProps) {
   return <RInbox {...inboxProps} />;
 }
 
-export { Bell, InboxContent, Notifications, NovuProvider, Preferences } from '@novu/react';
+export { Bell, InboxContent, Notifications, NovuProvider, Preferences } from '@notify/react';

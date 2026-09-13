@@ -196,7 +196,7 @@ export const MsTeamsConnectButton = (props: MsTeamsConnectButtonProps) => {
             class={style({
               key: 'channelConnectButtonIcon',
               className:
-                'nt-inline-flex nt-items-center nt-justify-center nt-size-4 nt-shrink-0 nt-rounded-full nt-bg-white nt-shadow-[0_1px_2px_0_rgba(10,13,20,0.03)]',
+                'nt-inline-flex nt-items-center nt-justify-center nt-size-4 nt-shrink-0 nt-nt-rounded-none nt-bg-white nt-shadow-[0_1px_2px_0_rgba(10,13,20,0.03)]',
               iconKey: 'channelConnected',
               context: { connected: true } satisfies Parameters<
                 ChannelConnectButtonAppearanceCallback['channelConnectButtonIcon']
@@ -207,7 +207,7 @@ export const MsTeamsConnectButton = (props: MsTeamsConnectButtonProps) => {
                 class={style({
                   key: 'channelConnectButtonIcon',
                   className:
-                    'nt-inline-flex nt-items-center nt-justify-center nt-size-4 nt-shrink-0 nt-rounded-full nt-bg-white nt-shadow-[0_1px_2px_0_rgba(10,13,20,0.03)]',
+                    'nt-inline-flex nt-items-center nt-justify-center nt-size-4 nt-shrink-0 nt-nt-rounded-none nt-bg-white nt-shadow-[0_1px_2px_0_rgba(10,13,20,0.03)]',
                   iconKey: 'channelConnected',
                   context: { connected: true } satisfies Parameters<
                     ChannelConnectButtonAppearanceCallback['channelConnectButtonIcon']
@@ -303,7 +303,7 @@ export const MsTeamsConnectButton = (props: MsTeamsConnectButtonProps) => {
                 class={style({
                   key: 'channelConnectButtonMisconfiguredTooltip',
                   className:
-                    'nt-bg-foreground nt-p-2 nt-shadow-tooltip nt-rounded-lg nt-text-background nt-text-xs nt-max-w-[220px]',
+                    'nt-bg-gradient-to-r nt-from-purple-600 nt-to-red-500 nt-p-2 nt-shadow-tooltip nt-nt-rounded-none nt-text-background nt-text-xs nt-max-w-[220px]',
                 })}
               >
                 Missing context — provide a <code>context</code> prop on <code>MsTeamsConnectButton</code> or{' '}

@@ -1,5 +1,5 @@
 import { UnauthorizedException } from '@nestjs/common';
-import { ApiAuthSchemeEnum, MemberRoleEnum, ROLE_PERMISSIONS, UserSessionData } from '@novu/shared';
+import { ApiAuthSchemeEnum, MemberRoleEnum, ROLE_PERMISSIONS, UserSessionData } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 
@@ -7,7 +7,7 @@ describe('ClerkOAuthStrategy', () => {
   let eeAuth: any;
 
   try {
-    eeAuth = require('@novu/ee-auth');
+    eeAuth = require('@notify/ee-auth');
   } catch (error) {
     return;
   }

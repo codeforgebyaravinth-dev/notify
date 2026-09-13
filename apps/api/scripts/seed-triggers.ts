@@ -5,7 +5,7 @@ dotenv.config({ path: path.join(__dirname, '..', 'src', '.env') });
 
 import '../src/config';
 import { NestFactory } from '@nestjs/core';
-import { AddressingTypeEnum, TriggerRequestCategoryEnum } from '@novu/shared';
+import { AddressingTypeEnum, TriggerRequestCategoryEnum } from '@notify/shared';
 import { v4 as uuidv4 } from 'uuid';
 import { ParseEventRequestMulticastCommand } from '../src/app/events/usecases/parse-event-request/parse-event-request.command';
 import { ParseEventRequest } from '../src/app/events/usecases/parse-event-request/parse-event-request.usecase';

@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { LayoutDtoV0 } from '@novu/application-generic';
+import { LayoutDtoV0 } from '@notify/application-generic';
 import { IsBoolean, IsOptional, IsString } from 'class-validator';
 import { LayoutVariables } from '../types';
 

@@ -4,7 +4,7 @@ import {
   getProviderPrimaryContentKey,
   ToolProviderIdEnum,
   type ToolRenderOutput,
-} from '@novu/shared';
+} from '@notify/shared';
 import { ToolFill } from '@/components/icons/tool-fill';
 import { Skeleton } from '@/components/primitives/skeleton';
 import { AnnotatedOverrideJson } from '@/components/workflow-editor/steps/shared/provider-overrides/annotated-override-json';

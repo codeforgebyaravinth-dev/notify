@@ -1,4 +1,4 @@
-import { SubscriberEntity } from '@novu/dal';
+import { SubscriberEntity } from '@notify/dal';
 import { Type } from 'class-transformer';
 import { IsEmail, IsNotEmpty, IsObject, ValidateNested } from 'class-validator';
 

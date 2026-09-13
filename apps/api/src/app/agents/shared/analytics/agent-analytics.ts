@@ -1,5 +1,5 @@
-import type { AnalyticsService } from '@novu/application-generic';
-import { AGENTS_ORG_FUNNEL_EVENTS, type AgentAnalyticsSource, type AgentsUsecaseSource } from '@novu/shared';
+import type { AnalyticsService } from '@notify/application-generic';
+import { AGENTS_ORG_FUNNEL_EVENTS, type AgentAnalyticsSource, type AgentsUsecaseSource } from '@notify/shared';
 
 const AGENT_SEGMENT_CATEGORY = '[Agents]';
 

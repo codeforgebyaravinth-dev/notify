@@ -1,4 +1,4 @@
-import { ChannelEndpointByType, ENDPOINT_TYPES, IChatOptions } from '@novu/stateless';
+import { ChannelEndpointByType, ENDPOINT_TYPES, IChatOptions } from '@notify/stateless';
 import { nanoid } from 'nanoid';
 import { expect, test } from 'vitest';
 import { axiosSpy } from '../../../utils/test/spy-axios';

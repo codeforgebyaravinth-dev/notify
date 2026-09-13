@@ -1,6 +1,6 @@
 import { HttpModule } from '@nestjs/axios';
 import { DynamicModule, Module } from '@nestjs/common';
-import { ResourceValidatorService } from '@novu/application-generic';
+import { ResourceValidatorService } from '@notify/application-generic';
 
 import { AuthModule } from '../auth/auth.module';
 import { OutboundWebhooksModule } from '../outbound-webhooks/outbound-webhooks.module';

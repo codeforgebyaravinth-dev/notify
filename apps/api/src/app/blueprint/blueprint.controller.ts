@@ -1,6 +1,6 @@
 import { ClassSerializerInterceptor, Controller, Get, Param, UseInterceptors } from '@nestjs/common';
 import { ApiExcludeController } from '@nestjs/swagger';
-import { EnvironmentRepository, NotificationTemplateRepository } from '@novu/dal';
+import { EnvironmentRepository, NotificationTemplateRepository } from '@notify/dal';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ApiCommonResponses } from '../shared/framework/response.decorator';
 import { GetBlueprintResponse } from './dtos/get-blueprint.response.dto';

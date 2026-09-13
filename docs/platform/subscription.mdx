@@ -1,18 +1,18 @@
 ---
 title: 'Introduction'
-description: "Learn what a Subscription is in Novu, how it stores subscriber preferences, and how it fits into the notification delivery and consent system."
+description: "Learn what a Subscription is in Notify, how it stores subscriber preferences, and how it fits into the notification delivery and consent system."
 ---
 
 Subscriptions introduce topic-level settings that allow subscribers to decide exactly which notifications they want to receive or mute.
 
-While standard preferences allow subscribers to toggle specific channels on or off, Subscriptions provide more precise control through conditional rules. With Subscriptions, subscribers can mute topics, subscribe or unsubscribe to them, and also define conditions that determine when Novu should deliver a notification.
+While standard preferences allow subscribers to toggle specific channels on or off, Subscriptions provide more precise control through conditional rules. With Subscriptions, subscribers can mute topics, subscribe or unsubscribe to them, and also define conditions that determine when Notify should deliver a notification.
 
 ## How subscription fits into the notification flow
 
 The Subscription introduces a filtering layer between the trigger and the subscriber. When you trigger a notification to a topic key, the system doesn't automatically send it to everyone. Instead, it follows this evaluation flow:
 
 1. **Trigger**: You trigger a workflow to a `topicKey` and include a data payload and optional [Context](/platform/concepts/contexts).
-2. **Match**: Novu retrieves topic subscriptions whose Context matches the trigger (exact match), then resolves the subscribers.
+2. **Match**: Notify retrieves topic subscriptions whose Context matches the trigger (exact match), then resolves the subscribers.
 3. **Evaluate**: The system checks each matching subscription's conditions against the trigger **payload** (and workflow preferences).
 4. **Deliver**: Only subscribers whose subscriptions pass receive the notification.
 
@@ -37,18 +37,18 @@ Each subscription can include one or more conditions. Conditions determine wheth
 
 ### Multiple subscriptions per topic
 
-Novu supports a 1-to-N relationship for subscriptions. This means, one subscriber can have multiple subscriptions to the same topic with different conditions. Novu evaluates each subscription independently.
+Notify supports a 1-to-N relationship for subscriptions. This means, one subscriber can have multiple subscriptions to the same topic with different conditions. Notify evaluates each subscription independently.
 
 For example, in a trading app, a subscriber can have three separate alerts set up for the same `price-alerts` topic:
 - Notify me when BTC is above $80k.
 - Notify me when BTC is below $40k.
 - Notify me when ETH is above $4k.
 
-Novu stores these configurations per subscriber, per topic, and per workflow.
+Notify stores these configurations per subscriber, per topic, and per workflow.
 
 ## Subscription components
 
-Novu provides a set of pre-built React components that you can use together or independently to build subscription experiences.
+Notify provides a set of pre-built React components that you can use together or independently to build subscription experiences.
 
 ![Subscription components](/images/subscription-preferences/subscription.png)
 
@@ -56,14 +56,14 @@ Novu provides a set of pre-built React components that you can use together or i
 
 The [`<Subscription />`](/platform/subscription/quickstart) component serves as the root provider and the default UI.
 
-It requires the `topicKey` prop and optionally an `identifier` prop, and you must wrap it with the Novu provider as the source of session context.
+It requires the `topicKey` prop and optionally an `identifier` prop, and you must wrap it with the Notify provider as the source of session context.
 
 ```tsx
-import { NovuProvider, Subscription } from '@novu/react';
+import { NotifyProvider, Subscription } from '@notify/react';
 
-export function Novu() {
+export function Notify() {
   return (
-    <NovuProvider 
+    <NotifyProvider 
       subscriber="SUBSCRIBER_ID"
       applicationIdentifier="APPLICATION_IDENTIFIER"
     >
@@ -71,7 +71,7 @@ export function Novu() {
         topicKey="product-updates"
         identifier="user-123"
       />
-    </NovuProvider>
+    </NotifyProvider>
   )
 }
 ```
@@ -83,11 +83,11 @@ The `<SubscriptionButton />` component renders only the subscribe or unsubscribe
 Use this component within the [`<Subscription />`](/platform/subscription/quickstart) component.
 
 ```tsx
-import { NovuProvider, Subscription, SubscriptionButton } from '@novu/react';
+import { NotifyProvider, Subscription, SubscriptionButton } from '@notify/react';
 
-export function Novu() {
+export function Notify() {
   return (
-    <NovuProvider 
+    <NotifyProvider 
       subscriber="SUBSCRIBER_ID"
       applicationIdentifier="APPLICATION_IDENTIFIER"
       >
@@ -97,7 +97,7 @@ export function Novu() {
         >
           <SubscriptionButton />
         </Subscription>
-    </NovuProvider>
+    </NotifyProvider>
   )
 }
 ```
@@ -109,11 +109,11 @@ The `<SubscriptionPreferences />` component renders the list of preferences asso
 Use this component when you want to control where and how preferences appear in your UI. Use it within a [`<Subscription />`](/platform/subscription/quickstart) context.
 
 ```tsx
-import {NovuProvider, Subscription, SubscriptionPreferences } from '@novu/react';
+import {NotifyProvider, Subscription, SubscriptionPreferences } from '@notify/react';
 
-export function Novu() {
+export function Notify() {
     return (
-      <NovuProvider 
+      <NotifyProvider 
         subscriber="SUBSCRIBER_ID"
         applicationIdentifier="APPLICATION_IDENTIFIER"
         >
@@ -123,7 +123,7 @@ export function Novu() {
         >
           <SubscriptionPreferences />
         </Subscription>
-      </NovuProvider>
+      </NotifyProvider>
     )
 }
 ```
@@ -136,4 +136,4 @@ Subscriptions work with or without the [`<Inbox />`](/platform/inbox), and have 
 
 ## Manage topic subscriptions
 
-To create subscriptions from your backend, from the browser with `@novu/js`, or in React with hooks and components (including payload-based JSON Logic conditions), see [Manage topic subscriptions](/platform/subscription/manage-topic-subscriptions).
+To create subscriptions from your backend, from the browser with `@notify/js`, or in React with hooks and components (including payload-based JSON Logic conditions), see [Manage topic subscriptions](/platform/subscription/manage-topic-subscriptions).

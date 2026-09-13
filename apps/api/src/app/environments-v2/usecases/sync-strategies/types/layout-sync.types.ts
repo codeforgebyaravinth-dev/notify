@@ -1,4 +1,4 @@
-import { LayoutResponseDto } from '@novu/application-generic';
+import { LayoutResponseDto } from '@notify/application-generic';
 
 export type INormalizedLayout = Omit<
   LayoutResponseDto,

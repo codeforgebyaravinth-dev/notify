@@ -1,4 +1,4 @@
-import { TelegramConnectButtonProps } from '@novu/js/ui';
+import { TelegramConnectButtonProps } from '@notify/js/ui';
 import { useCallback } from 'react';
 import { useNovuUI } from '../../context/NovuUIContext';
 import { Mounter } from '../Mounter';

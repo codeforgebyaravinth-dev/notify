@@ -5,7 +5,7 @@ import {
   getFeatureForTierAsBoolean,
   MemberRoleEnum,
   PermissionsEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { ReactNode, useEffect, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { DashboardLayout } from '@/components/dashboard-layout';

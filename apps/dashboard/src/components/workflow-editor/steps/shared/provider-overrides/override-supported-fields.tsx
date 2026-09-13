@@ -1,4 +1,4 @@
-import { getProviderPrimaryContentKey } from '@novu/shared';
+import { getProviderPrimaryContentKey } from '@notify/shared';
 import { useMemo } from 'react';
 import { RiAddLine, RiCheckLine, RiListUnordered } from 'react-icons/ri';
 import { LinkButton } from '@/components/primitives/button-link';

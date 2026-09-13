@@ -1,5 +1,5 @@
-import type { AgentSkillDto } from '@novu/shared';
-import { AgentRuntimeProviderIdEnum } from '@novu/shared';
+import type { AgentSkillDto } from '@notify/shared';
+import { AgentRuntimeProviderIdEnum } from '@notify/shared';
 import { Type } from 'class-transformer';
 import { IsArray, IsEnum, IsNotEmpty, IsOptional, IsString, ValidateNested } from 'class-validator';
 

@@ -20,7 +20,7 @@ describe('import utils', () => {
           'test schema'
         )
       ).rejects.toThrow(
-        'Tried to use a test schema in @novu/framework without missing-random-dependency installed. Please install it by running `npm install missing-random-dependency`.'
+        'Tried to use a test schema in @notify/framework without missing-random-dependency installed. Please install it by running `npm install missing-random-dependency`.'
       );
     });
 
@@ -36,7 +36,7 @@ describe('import utils', () => {
           'test schema'
         )
       ).rejects.toThrow(
-        'Tried to use a test schema in @novu/framework without missing-random-dependency-1, missing-random-dependency-2 installed. Please install them by running `npm install missing-random-dependency-1 missing-random-dependency-2`.'
+        'Tried to use a test schema in @notify/framework without missing-random-dependency-1, missing-random-dependency-2 installed. Please install them by running `npm install missing-random-dependency-1 missing-random-dependency-2`.'
       );
     });
 
@@ -52,7 +52,7 @@ describe('import utils', () => {
           'test schema'
         )
       ).rejects.toThrow(
-        'Tried to use a test schema in @novu/framework without missing-random-dependency installed. Please install it by running `npm install missing-random-dependency`.'
+        'Tried to use a test schema in @notify/framework without missing-random-dependency installed. Please install it by running `npm install missing-random-dependency`.'
       );
     });
   });

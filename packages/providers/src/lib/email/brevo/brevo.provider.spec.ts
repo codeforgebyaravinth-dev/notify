@@ -1,4 +1,4 @@
-import { EmailEventStatusEnum } from '@novu/stateless';
+import { EmailEventStatusEnum } from '@notify/stateless';
 import { describe, expect, test, vi } from 'vitest';
 import { axiosSpy } from '../../../utils/test/spy-axios';
 import { BrevoEmailProvider } from './brevo.provider';

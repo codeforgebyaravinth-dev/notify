@@ -1,6 +1,6 @@
-import { SubscriberRepository } from '@novu/dal';
-import { ChatProviderIdEnum, IChannelSettings, ISubscriber } from '@novu/shared';
-import { SubscribersService, UserSession } from '@novu/testing';
+import { SubscriberRepository } from '@notify/dal';
+import { ChatProviderIdEnum, IChannelSettings, ISubscriber } from '@notify/shared';
+import { SubscribersService, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { removeDuplicatedSubscribers } from './remove-duplicated-subscribers.migration';
 

@@ -1,4 +1,4 @@
-import { AgentRuntimeProviderIdEnum, type IIntegration } from '@novu/shared';
+import { AgentRuntimeProviderIdEnum, type IIntegration } from '@notify/shared';
 import { AnimatePresence, motion } from 'motion/react';
 import type { ReactNode } from 'react';
 import { RiCloseLine, RiInformation2Line, RiLoopLeftLine } from 'react-icons/ri';

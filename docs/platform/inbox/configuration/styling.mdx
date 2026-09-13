@@ -1,10 +1,10 @@
 ---
 title: 'Styling and Theming'
-description: 'Style and theme the prebuilt Novu Inbox component with appearance keys, custom CSS variables, and light or dark mode overrides to match your brand.'
+description: 'Style and theme the prebuilt Notify Inbox component with appearance keys, custom CSS variables, and light or dark mode overrides to match your brand.'
 ---
 
 
-The Novu Inbox component is designed to be fully themeable and adaptable to your application’s visual language. All theming options are exposed through the `appearance` prop, which allows you to apply custom styles at different levels of control from predefined themes to component-level overrides.
+The Notify Inbox component is designed to be fully themeable and adaptable to your application’s visual language. All theming options are exposed through the `appearance` prop, which allows you to apply custom styles at different levels of control from predefined themes to component-level overrides.
 
 The appearance prop supports the following keys:
 - `baseTheme`: Apply a predefined theme (for example, light or dark).
@@ -31,13 +31,13 @@ You can apply a predefined visual style to the entire Inbox UI by passing the `b
 
 ### Dark mode
 
-Novu currently provides a built-in dark theme, which you can import from `@novu/react/themes`.
+Notify currently provides a built-in dark theme, which you can import from `@notify/react/themes`.
 
 ```tsx
-import { Inbox } from '@novu/react';
-import { dark } from '@novu/react/themes';
+import { Inbox } from '@notify/react';
+import { dark } from '@notify/react/themes';
 
-function Novu() {
+function Notify() {
   return (
     <Inbox
       applicationIdentifier="YOUR_APPLICATION_IDENTIFIER"
@@ -47,7 +47,7 @@ function Novu() {
   );
 }
 
-export default Novu;
+export default Notify;
 ```
 
 ## Define global variables
@@ -57,7 +57,7 @@ You can override the default styles in the Inbox component by passing a `variabl
 ![Define global variables](/images/inbox/variables.png)
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 
 const appearance = {
   variables: {
@@ -66,7 +66,7 @@ const appearance = {
   },
 };
 
-function Novu() {
+function Notify() {
   return (
     <Inbox
       applicationIdentifier="YOUR_APPLICATION_IDENTIFIER"
@@ -76,7 +76,7 @@ function Novu() {
   );
 }
 
-export default Novu;
+export default Notify;
 ```
 
 <Note>
@@ -146,7 +146,7 @@ Here's a list of some available elements that can be styled using the elements o
 You can pass inline styles to individual elements using the `elements` object in the `appearance` prop. Each element accepts a style object.
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 
 const appearance = {
   elements: {
@@ -156,7 +156,7 @@ const appearance = {
   },
 };
 
-function Novu() {
+function Notify() {
   return (
     <Inbox
       applicationIdentifier="YOUR_APPLICATION_IDENTIFIER"
@@ -166,7 +166,7 @@ function Novu() {
   );
 }
 
-export default Novu;
+export default Notify;
 ```
 
   </Tab>
@@ -175,7 +175,7 @@ export default Novu;
 You can pass [Tailwind CSS](https://tailwindcss.com/docs/installation/tailwind-cli) classes to specific elements using the elements object within the appearance prop.
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
  
 const appearance = {
   elements: {
@@ -184,7 +184,7 @@ const appearance = {
   },
 };
  
-function Novu() {
+function Notify() {
   return (
     <Inbox
       applicationIdentifier="YOUR_APPLICATION_IDENTIFIER"
@@ -194,7 +194,7 @@ function Novu() {
   );
 }
 
-export default Novu;
+export default Notify;
 ```
 
   </Tab>
@@ -227,7 +227,7 @@ You can style the Inbox components using [CSS Modules](https://github.com/css-mo
 Then, import the CSS module into your component and apply the classes using the `elements` object in the `appearance` prop:
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 import styles from './styles.module.css';
  
 const appearance = {
@@ -237,7 +237,7 @@ const appearance = {
   },
 };
  
-function Novu() {
+function Notify() {
   return (
     <Inbox
       applicationIdentifier="YOUR_APPLICATION_IDENTIFIER"
@@ -247,7 +247,7 @@ function Novu() {
   );
 }
 
-export default Novu;
+export default Notify;
 ```
 
   </Tab>
@@ -370,9 +370,9 @@ Here are some examples:
 You can change the bell icon color gradient based on the total number of unread notifications. The callback receives an `unreadCount` object, which is then used in the conditional logic.
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 
-export default function Novu() {
+export default function Notify() {
 
   const appearance = {
     elements: {
@@ -402,9 +402,9 @@ export default function Novu() {
 You can style individual notifications based on custom data in their payload. In the example below, the notification's background color is changed if a specific field (foo) exists in the notification's data object.
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 
-export default function Novu() {
+export default function Notify() {
 
     const appearance = {
     elements: {
@@ -494,10 +494,10 @@ This table lists severity element keys:
 
 ## Responsive Inbox using CSS media queries
 
-On mobile and smaller devices, use the `inbox__popoverContent` element and apply a custom CSS class to it. Specify CSS media queries on this class and add the class in a global CSS file so that it takes effect. In the example below, media queries are applied to the `novu-inbox-popover-content` class in a global CSS file.
+On mobile and smaller devices, use the `inbox__popoverContent` element and apply a custom CSS class to it. Specify CSS media queries on this class and add the class in a global CSS file so that it takes effect. In the example below, media queries are applied to the `notify-inbox-popover-content` class in a global CSS file.
 
 ```tsx title="ResponsiveInbox.tsx"
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 
 const ResponsiveInbox = () => {
   return (
@@ -506,7 +506,7 @@ const ResponsiveInbox = () => {
       subscriber="YOUR_SUBSCRIBER_ID"
       appearance={{
         elements: {
-          inbox__popoverContent: "novu-inbox-popover-content",
+          inbox__popoverContent: "notify-inbox-popover-content",
         },
       }}
     />
@@ -517,24 +517,24 @@ export default ResponsiveInbox;
 ```
 
 ```css title="global.css"
-.novu-inbox-popover-content {
+.notify-inbox-popover-content {
   max-width: 500px;
 }
 
 @media (max-width: 768px) {
-  .novu-inbox-popover-content {
+  .notify-inbox-popover-content {
     max-width: 350px;
   }
 }
 
 @media (max-width: 480px) {
-  .novu-inbox-popover-content {
+  .notify-inbox-popover-content {
     max-width: 250px;
   }
 }
 
 @media (max-width: 320px) {
-  .novu-inbox-popover-content {
+  .notify-inbox-popover-content {
     max-width: 200px;
   }
 }

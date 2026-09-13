@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { AGENT_EVENT_PROTOCOL_VERSION, type AgentEvent, type AgentEventEnvelope } from '@novu/agent-event-protocol';
-import { shortId } from '@novu/application-generic';
+import { AGENT_EVENT_PROTOCOL_VERSION, type AgentEvent, type AgentEventEnvelope } from '@notify/agent-event-protocol';
+import { shortId } from '@notify/application-generic';
 
 type WebChatFactoryBaseInput = {
   conversationId: string;

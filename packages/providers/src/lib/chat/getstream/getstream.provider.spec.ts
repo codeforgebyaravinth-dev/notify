@@ -1,4 +1,4 @@
-import { ENDPOINT_TYPES } from '@novu/stateless';
+import { ENDPOINT_TYPES } from '@notify/stateless';
 import { expect, test, vi } from 'vitest';
 import { safeOutboundJsonSpy } from '../../../utils/test/spy-safe-outbound';
 import { GetstreamChatProvider } from './getstream.provider';

@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { ExecuteBridgeRequest, WorkflowResponseDto } from '@novu/application-generic';
-import { DiscoverOutput, GetActionEnum } from '@novu/framework/internal';
-import { ResourceOriginEnum } from '@novu/shared';
+import { ExecuteBridgeRequest, WorkflowResponseDto } from '@notify/application-generic';
+import { DiscoverOutput, GetActionEnum } from '@notify/framework/internal';
+import { ResourceOriginEnum } from '@notify/shared';
 import { BuildVirtualWorkflows } from '../build-virtual-workflows';
 import { DiscoverVirtualWorkflowsCommand } from './discover-virtual-workflows.command';
 

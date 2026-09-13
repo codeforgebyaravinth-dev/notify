@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { capitalize, SupportService } from '@novu/application-generic';
+import { capitalize, SupportService } from '@notify/application-generic';
 import { CreateSupportThreadCommand } from './create-thread.command';
 
 @Injectable()

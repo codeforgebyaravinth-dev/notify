@@ -1,5 +1,5 @@
 {
-  "name": "@novu/shared",
+  "name": "@notify/shared",
   "sourceRoot": "packages/shared/src",
   "projectType": "library",
   "targets": {

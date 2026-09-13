@@ -2,7 +2,7 @@
 
 ## About this project
 
-- Novu is the open-source notification infrastructure for in-app (Inbox), email, SMS, push, and chat
+- Notify is the open-source notification infrastructure for in-app (Inbox), email, SMS, push, and chat
 - This is a documentation site built on [Mintlify](https://mintlify.com)
 - Pages are MDX files with YAML frontmatter
 - Configuration lives in `docs.json`
@@ -11,7 +11,7 @@
 
 ## Terminology
 
-Use Novu-specific terms consistently. For full definitions, see the [glossary](/platform/additional-resources/glossary).
+Use Notify-specific terms consistently. For full definitions, see the [glossary](/platform/additional-resources/glossary).
 
 - Use **subscriber** (not "user") for notification recipients, identified by `subscriberId`
 - Use **workflow** for the notification flow definition; **step** for individual nodes; **trigger** for invocation
@@ -20,11 +20,11 @@ Use Novu-specific terms consistently. For full definitions, see the [glossary](/
 - Use **Inbox** (capitalized) for the in-app notification component; avoid "notification center"
 - Use **topic** for grouping subscribers for bulk notifications
 - Use **tenant** for multi-tenant isolation when relevant using contexts feature
-- Use **integration** for a configured provider connection in Novu
+- Use **integration** for a configured provider connection in Notify
 - Use **environment** for Development or Production contexts
-- Use **organization** for the top-level account in the Novu Dashboard
+- Use **organization** for the top-level account in the Notify Dashboard
 - Use **layout** for email HTML wrappers; **digest** for aggregated notification batches
-- Distinguish **Novu Cloud** from self-hosted deployments, and **Community** vs **Enterprise** editions where relevant
+- Distinguish **Notify Cloud** from self-hosted deployments, and **Community** vs **Enterprise** editions where relevant
 
 ## Style preferences
 
@@ -33,7 +33,7 @@ Use Novu-specific terms consistently. For full definitions, see the [glossary](/
 - Use sentence case for headings
 - Bold for UI elements: Click **Settings**
 - Code formatting for file names, commands, paths, and code references
-- Capitalize **Novu** and product names: Inbox, Framework, Dashboard
+- Capitalize **Notify** and product names: Inbox, Framework, Dashboard
 - Include frontmatter `title` and `description` on MDX pages
 - Use `sidebarTitle` for short navigation labels when the page `title` is long (for example, SEO question-format titles)
 - OpenAPI-backed API reference pages (`openapi: "METHOD /path"` in frontmatter) must **not** include a frontmatter `description` - Mintlify pulls the page description from the OpenAPI operation summary/description. Use `title` + `openapi` only, for example:
@@ -47,7 +47,7 @@ openapi: "POST /v1/agents"
 
 - Optional 1–2 sentence intro prose before the OpenAPI block is fine on endpoint pages; do not duplicate that text as frontmatter `description`
 - API schema reference pages use markdown tables (`Field | Type | Description`), not `<ResponseField>`. Escape union separators in the **Type** column as `\|` (for example, `` `string \| null` ``). Prefer `Record<string, unknown>` over `{ [k: string]: any; }` in table cells.
-- Provider integration pages use the title pattern `{Provider} {Channel} Integration with Novu` with `sidebarTitle` for the short provider name
+- Provider integration pages use the title pattern `{Provider} {Channel} Integration with Notify` with `sidebarTitle` for the short provider name
 - Use descriptive alt text on all diagrams and screenshots
 - See [SEO and GEO maintenance](/SEO_MAINTENANCE.md) for the ongoing review checklist
 - Use icons on top-level navigation section titles only (set `"icon"` on groups in `docs.json`), not on individual pages or nested collapsible groups
@@ -84,10 +84,10 @@ Pages under `docs/api-reference/**/**-schema.mdx` document resource field shapes
 Use the Mintlify `<Prompt>` component for pre-built AI prompts users can copy or open in Cursor. Write prompt text directly inside `<Prompt>` children - do not use `<Snippet />`, which copies as JSX instead of the prompt text.
 
 ```mdx
-<Prompt description="Add Novu Inbox to my Next.js app" icon="sparkles" actions={["copy", "cursor"]}>
-# Add Novu Inbox to Next.js App
+<Prompt description="Add Notify Inbox to my Next.js app" icon="sparkles" actions={["copy", "cursor"]}>
+# Add Notify Inbox to Next.js App
 
-Install `@novu/nextjs`...
+Install `@notify/nextjs`...
 </Prompt>
 ```
 
@@ -99,7 +99,7 @@ Install `@novu/nextjs`...
 
 **Conventions**
 
-- Always set `actions={["copy", "cursor"]}` to match the Novu dashboard
+- Always set `actions={["copy", "cursor"]}` to match the Notify dashboard
 - Use Lucide icons: `sparkles` (integration), `bot` (MCP/skills), `zap` (workflows), `plug` (agents)
 - Use `YOUR_*` placeholders for dashboard-specific values (application identifier, subscriber ID, workflow ID)
 - Add a `<Note>` near the first prompt on a page telling users to substitute values from **API Keys**, **Subscribers**, or **Workflows** in the dashboard
@@ -113,11 +113,11 @@ When documenting REST API operations that developers call from backend code, sho
 
 | Language | Package | Doc page |
 | --- | --- | --- |
-| TypeScript / Node.js | `@novu/api` | `/platform/sdks/server/typescript` |
-| Python | `novu-py` | `/platform/sdks/server/python` |
+| TypeScript / Node.js | `@notify/api` | `/platform/sdks/server/typescript` |
+| Python | `notify-py` | `/platform/sdks/server/python` |
 | Go | `github.com/novuhq/novu-go` | `/platform/sdks/server/go` |
 | PHP | `novuhq/novu` | `/platform/sdks/server/php` |
-| .NET | `Novu` | `/platform/sdks/server/dotnet` |
+| .NET | `Notify` | `/platform/sdks/server/dotnet` |
 | Java | `co.novu:novu-java` | `/platform/sdks/server/java` |
 
 **Tab order** - use `<Tabs>` with this consistent order:

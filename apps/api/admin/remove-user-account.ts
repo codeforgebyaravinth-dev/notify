@@ -1,6 +1,6 @@
 import '../src/config';
-import { CommunityMemberRepository, CommunityUserRepository } from '@novu/dal';
-import { normalizeEmail } from '@novu/shared';
+import { CommunityMemberRepository, CommunityUserRepository } from '@notify/dal';
+import { normalizeEmail } from '@notify/shared';
 import { connect } from './connect-to-dal';
 import { makeJsonBackup } from './make-json-backup';
 

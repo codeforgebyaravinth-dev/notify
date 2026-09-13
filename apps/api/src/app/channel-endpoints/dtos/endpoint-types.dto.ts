@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { GRAFANA_ONCALL_WEBHOOK_URL_PATTERN, OPSGENIE_API_KEY_PATTERN } from '@novu/shared';
+import { GRAFANA_ONCALL_WEBHOOK_URL_PATTERN, OPSGENIE_API_KEY_PATTERN } from '@notify/shared';
 import { IsIn, IsNotEmpty, IsObject, IsOptional, IsString, Matches } from 'class-validator';
 
 export class SlackChannelEndpointDto {

@@ -1,4 +1,4 @@
-import { AgentRuntimeProviderIdEnum, providers as novuProviders, PermissionsEnum } from '@novu/shared';
+import { AgentRuntimeProviderIdEnum, providers as novuProviders, PermissionsEnum } from '@notify/shared';
 import { ComponentProps } from 'react';
 import {
   RiChat3Line,

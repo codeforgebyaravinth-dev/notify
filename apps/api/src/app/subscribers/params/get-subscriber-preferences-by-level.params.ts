@@ -1,4 +1,4 @@
-import { PreferenceLevelEnum } from '@novu/shared';
+import { PreferenceLevelEnum } from '@notify/shared';
 import { IsEnum, IsString } from 'class-validator';
 
 export class GetSubscriberPreferencesByLevelParams {

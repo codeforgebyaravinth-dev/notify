@@ -1,13 +1,13 @@
 ---
 title: 'Environments'
-description: "Understand and manage development and production environments in Novu, including API keys, workflow syncing, and per-environment integrations."
+description: "Understand and manage development and production environments in Notify, including API keys, workflow syncing, and per-environment integrations."
 ---
 
-Novu uses environments to separate your workflows and its data. This lets you safely test changes, like a new workflow, in one environment before moving it to a live production environment.
+Notify uses environments to separate your workflows and its data. This lets you safely test changes, like a new workflow, in one environment before moving it to a live production environment.
 
 ## Types of environments
 
-When you create a Novu account, you are provided with a development and production environment by default. On certain plans, you can also create custom environments to match your team’s workflow.
+When you create a Notify account, you are provided with a development and production environment by default. On certain plans, you can also create custom environments to match your team’s workflow.
 
 - **Development environment**: Use the development environment to build and test new workflows, layouts, translations, and experiment with different configurations before publishing to other environments.
 - **Production environment**: The production environment is used to send notifications to your subscribers. To ensure stability and prevent unintended changes, this environment is view-only for workflows, layouts, and translations. Changes are not made here directly, they are made from other environment and then published to this production environment.
@@ -17,8 +17,8 @@ When you create a Novu account, you are provided with a development and producti
 
 To create a custom environment:
 
-1. Log in to the Novu dashboard.
-2. Go to the [Environments page](https://dashboard.novu.co/environments) in the Novu dashboard.
+1. Log in to the Notify dashboard.
+2. Go to the [Environments page](https://dashboard.novu.co/environments) in the Notify dashboard.
 3. Click **Create environment**. A menu appears. 
 4. Enter your preferred environment name in the **Name** field.
 5. Assign unique colors to easily distinguish between environments.
@@ -28,7 +28,7 @@ To create a custom environment:
 
 ## What's unique to each environment?
 
-Each environment in Novu has it's own isolated resources, while the development environment has assets that can be published to other environments.
+Each environment in Notify has it's own isolated resources, while the development environment has assets that can be published to other environments.
 
 Each environment maintains some isolated set of resources, while you can share or promote other assets through publishing.
 
@@ -71,7 +71,7 @@ Each environment has two unique identifiers:
 
 ## Publish changes to other environments
 
-Novu provides a publish mechanism that allows you to promote changes from your development environment to production or other custom environments. This process ensures that all changes are deliberate, reviewed, and deployed in a controlled manner.
+Notify provides a publish mechanism that allows you to promote changes from your development environment to production or other custom environments. This process ensures that all changes are deliberate, reviewed, and deployed in a controlled manner.
 
 The publishing process bundles all modifications made to workflows, layouts, and translations since the last publish event.
 

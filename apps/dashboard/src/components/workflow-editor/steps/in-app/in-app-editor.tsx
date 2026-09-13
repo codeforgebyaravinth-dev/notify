@@ -1,4 +1,4 @@
-import { EnvironmentTypeEnum, type UiSchema, UiSchemaGroupEnum } from '@novu/shared';
+import { EnvironmentTypeEnum, type UiSchema, UiSchemaGroupEnum } from '@notify/shared';
 import { RiInstanceLine } from 'react-icons/ri';
 import { Notification5Fill } from '@/components/icons';
 import { Separator } from '@/components/primitives/separator';

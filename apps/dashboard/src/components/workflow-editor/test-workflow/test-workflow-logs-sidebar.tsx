@@ -1,4 +1,4 @@
-import { WorkflowResponseDto } from '@novu/shared';
+import { WorkflowResponseDto } from '@notify/shared';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useFormContext, useWatch } from 'react-hook-form';
 import { RiCheckboxCircleFill } from 'react-icons/ri';

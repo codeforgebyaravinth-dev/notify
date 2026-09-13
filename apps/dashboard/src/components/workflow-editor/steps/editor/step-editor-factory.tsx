@@ -1,4 +1,4 @@
-import { FeatureFlagsKeysEnum, ResourceOriginEnum, StepTypeEnum } from '@novu/shared';
+import { FeatureFlagsKeysEnum, ResourceOriginEnum, StepTypeEnum } from '@notify/shared';
 import { useCallback, useMemo } from 'react';
 import { ChatEditor } from '@/components/workflow-editor/steps/chat/chat-editor';
 import { useStepEditor } from '@/components/workflow-editor/steps/context/step-editor-context';

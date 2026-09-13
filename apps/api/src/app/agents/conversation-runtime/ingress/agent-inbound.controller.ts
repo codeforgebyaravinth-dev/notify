@@ -1,6 +1,6 @@
 import { Controller, Get, HttpCode, HttpException, HttpStatus, Param, Post, Req, Res } from '@nestjs/common';
 import { ApiExcludeController } from '@nestjs/swagger';
-import { PinoLogger } from '@novu/application-generic';
+import { PinoLogger } from '@notify/application-generic';
 import { Request, Response } from 'express';
 import type { AgentConfigResolveSource } from '../../channels/agent-config-resolver.service';
 import { AgentInactiveException } from '../../shared/errors/agent-inactive.exception';

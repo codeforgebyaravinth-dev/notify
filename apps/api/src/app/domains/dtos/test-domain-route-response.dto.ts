@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { DomainRouteTypeEnum, DomainStatusEnum } from '@novu/shared';
+import { DomainRouteTypeEnum, DomainStatusEnum } from '@notify/shared';
 
 export class TestDomainRouteWebhookResultDto {
   @ApiPropertyOptional({

@@ -1,4 +1,4 @@
-import { ContentIssueEnum, StepResponseDto, StepUpdateDto, WorkflowResponseDto } from '@novu/shared';
+import { ContentIssueEnum, StepResponseDto, StepUpdateDto, WorkflowResponseDto } from '@notify/shared';
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { PageMeta } from '@/components/page-meta';

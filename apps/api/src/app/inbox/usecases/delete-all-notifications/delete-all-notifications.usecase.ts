@@ -7,9 +7,9 @@ import {
   messageWebhookMapper,
   SendWebhookMessage,
   WebSocketsQueueService,
-} from '@novu/application-generic';
-import { EnvironmentEntity, EnvironmentRepository, MessageEntity, MessageRepository } from '@novu/dal';
-import { normalizeTagGroups, WebhookEventEnum, WebhookObjectTypeEnum, WebSocketEventEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { EnvironmentEntity, EnvironmentRepository, MessageEntity, MessageRepository } from '@notify/dal';
+import { normalizeTagGroups, WebhookEventEnum, WebhookObjectTypeEnum, WebSocketEventEnum } from '@notify/shared';
 
 import { GetSubscriber } from '../../../subscribers/usecases/get-subscriber';
 import { AnalyticsEventsEnum } from '../../utils';

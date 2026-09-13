@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { AnalyticsService, PinoLogger, resolveAgentRuntime } from '@novu/application-generic';
-import { AgentMcpServerRepository, AgentRepository, IntegrationRepository, McpConnectionRepository } from '@novu/dal';
+import { AnalyticsService, PinoLogger, resolveAgentRuntime } from '@notify/application-generic';
+import { AgentMcpServerRepository, AgentRepository, IntegrationRepository, McpConnectionRepository } from '@notify/dal';
 
 import { trackAgentMcpServerDisabled } from '../../../shared/analytics/agent-analytics';
 import { AgentMcpDefinitionService } from '../../runtime/agent-mcp-definition.service';

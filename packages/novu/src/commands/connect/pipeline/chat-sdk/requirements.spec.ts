@@ -26,7 +26,7 @@ describe('computeChatSdkRequirements', () => {
       path.join(dir, 'package.json'),
       JSON.stringify({
         dependencies: {
-          '@novu/chat-sdk-adapter': 'latest',
+          '@notify/chat-sdk-adapter': 'latest',
           chat: '4.31.0',
           '@chat-adapter/state-memory': '4.31.0',
         },
@@ -39,7 +39,7 @@ describe('computeChatSdkRequirements', () => {
     fs.mkdirSync(path.join(dir, 'lib'), { recursive: true });
     fs.writeFileSync(
       path.join(dir, 'lib/bot.ts'),
-      "import { createNovuAdapter } from '@novu/chat-sdk-adapter';\nexport const novu = createNovuAdapter();"
+      "import { createNovuAdapter } from '@notify/chat-sdk-adapter';\nexport const novu = createNovuAdapter();"
     );
     fs.mkdirSync(path.join(dir, 'app/api/webhooks/novu'), { recursive: true });
     fs.writeFileSync(path.join(dir, 'app/api/webhooks/novu/route.ts'), 'export async function POST() {}');

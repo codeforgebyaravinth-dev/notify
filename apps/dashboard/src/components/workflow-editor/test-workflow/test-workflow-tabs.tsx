@@ -1,6 +1,6 @@
 /** biome-ignore-all lint/correctness/useUniqueElementIds: expected */
 import { standardSchemaResolver } from '@hookform/resolvers/standard-schema';
-import { createMockObjectFromSchema, type WorkflowTestDataResponseDto } from '@novu/shared';
+import { createMockObjectFromSchema, type WorkflowTestDataResponseDto } from '@notify/shared';
 import { useMemo, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { RiPlayCircleLine } from 'react-icons/ri';

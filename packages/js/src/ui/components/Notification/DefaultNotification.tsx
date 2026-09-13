@@ -124,7 +124,7 @@ export const DefaultNotification = (props: DefaultNotificationProps) => {
       class={style({
         key: SEVERITY_TO_NOTIFICATION_KEYS[severity()],
         className: cn(
-          'nt-transition nt-w-full nt-text-sm hover:nt-bg-primary-alpha-25 nt-group nt-relative nt-flex nt-items-start nt-p-4 nt-gap-2',
+          'nt-transition nt-w-full nt-text-sm hover:nt-bg-gradient-to-r nt-from-purple-600 nt-to-red-500-alpha-25 nt-group nt-relative nt-flex nt-items-start nt-p-4 nt-gap-2',
           '[&:not(:first-child)]:nt-border-t nt-border-neutral-alpha-100',
           {
             'nt-cursor-pointer': !props.notification.isRead || !!props.notification.redirect?.url,
@@ -162,7 +162,7 @@ export const DefaultNotification = (props: DefaultNotificationProps) => {
               <div
                 class={style({
                   key: 'notificationImageLoadingFallback',
-                  className: 'nt-size-8 nt-rounded-lg nt-shrink-0 nt-aspect-square',
+                  className: 'nt-size-8 nt-nt-rounded-none nt-shrink-0 nt-aspect-square',
                   context: { notification: props.notification } satisfies Parameters<
                     InboxAppearanceCallback['notificationImageLoadingFallback']
                   >[0],
@@ -173,7 +173,7 @@ export const DefaultNotification = (props: DefaultNotificationProps) => {
             <img
               class={style({
                 key: 'notificationImage',
-                className: 'nt-size-8 nt-rounded-lg nt-object-cover nt-aspect-square',
+                className: 'nt-size-8 nt-nt-rounded-none nt-object-cover nt-aspect-square',
                 context: { notification: props.notification } satisfies Parameters<
                   InboxAppearanceCallback['notificationImage']
                 >[0],
@@ -247,7 +247,7 @@ export const DefaultNotification = (props: DefaultNotificationProps) => {
             <div
               class={style({
                 key: 'notificationDefaultActions',
-                className: `nt-absolute nt-transition nt-duration-100 nt-ease-out nt-gap-0.5 nt-flex nt-shrink-0 nt-opacity-0 group-hover:nt-opacity-100 group-focus-within:nt-opacity-100 nt-justify-center nt-items-center nt-bg-background/90 nt-right-3 nt-top-3 nt-border nt-border-neutral-alpha-100 nt-rounded-lg nt-backdrop-blur-lg nt-p-0.5`,
+                className: `nt-absolute nt-transition nt-duration-100 nt-ease-out nt-gap-0.5 nt-flex nt-shrink-0 nt-opacity-0 group-hover:nt-opacity-100 group-focus-within:nt-opacity-100 nt-justify-center nt-items-center nt-bg-background/90 nt-right-3 nt-top-3 nt-border nt-border-neutral-alpha-100 nt-nt-rounded-none nt-backdrop-blur-lg nt-p-0.5`,
                 context: { notification: props.notification } satisfies Parameters<
                   InboxAppearanceCallback['notificationDefaultActions']
                 >[0],
@@ -404,7 +404,7 @@ export const DefaultNotification = (props: DefaultNotificationProps) => {
           <span
             class={style({
               key: 'notificationDot',
-              className: 'nt-size-1.5 nt-bg-primary nt-rounded-full',
+              className: 'nt-size-1.5 nt-bg-gradient-to-r nt-from-purple-600 nt-to-red-500 nt-nt-rounded-none',
               context: { notification: props.notification } satisfies Parameters<
                 InboxAppearanceCallback['notificationDot']
               >[0],

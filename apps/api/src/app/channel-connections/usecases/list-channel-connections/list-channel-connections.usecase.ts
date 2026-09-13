@@ -1,12 +1,12 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { InstrumentUsecase } from '@novu/application-generic';
+import { InstrumentUsecase } from '@notify/application-generic';
 import {
   ChannelConnectionDBModel,
   ChannelConnectionEntity,
   ChannelConnectionRepository,
   EnforceEnvOrOrgIds,
-} from '@novu/dal';
-import { DirectionEnum } from '@novu/shared';
+} from '@notify/dal';
+import { DirectionEnum } from '@notify/shared';
 import { FilterQuery } from 'mongoose';
 import { ListChannelConnectionsCommand } from './list-channel-connections.command';
 

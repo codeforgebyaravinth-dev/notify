@@ -1,4 +1,4 @@
-import { UiSchemaGroupEnum } from '@novu/shared';
+import { UiSchemaGroupEnum } from '@notify/shared';
 import { Separator } from '@/components/primitives/separator';
 import { SidebarContent } from '@/components/side-navigation/sidebar';
 import { getComponentByType } from '@/components/workflow-editor/steps/component-utils';

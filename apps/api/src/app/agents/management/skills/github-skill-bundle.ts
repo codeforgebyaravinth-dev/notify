@@ -1,7 +1,7 @@
 import { posix } from 'node:path';
 import { Readable } from 'node:stream';
 import { pipeline } from 'node:stream/promises';
-import type { UploadSkillFile } from '@novu/application-generic';
+import type { UploadSkillFile } from '@notify/application-generic';
 import { Parser } from 'tar';
 
 export type ParsedGithubUrl = {

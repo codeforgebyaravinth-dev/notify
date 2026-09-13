@@ -1,4 +1,4 @@
-import type { ResourceLimitSource } from '@novu/shared';
+import type { ResourceLimitSource } from '@notify/shared';
 
 /**
  * Per-environment usage of a plan-limited resource (agents, active channels)

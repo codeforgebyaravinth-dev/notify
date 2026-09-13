@@ -1,4 +1,4 @@
-import { ChannelTypeEnum, ResourceOriginEnum } from '@novu/shared';
+import { ChannelTypeEnum, ResourceOriginEnum } from '@notify/shared';
 import { AnimatePresence, motion } from 'motion/react';
 import { useMemo, useState } from 'react';
 import { RiMacLine, RiSmartphoneFill } from 'react-icons/ri';

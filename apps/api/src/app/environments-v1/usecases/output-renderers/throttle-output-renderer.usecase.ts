@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { InstrumentUsecase } from '@novu/application-generic';
-import { ThrottleRenderOutput } from '@novu/shared';
+import { InstrumentUsecase } from '@notify/application-generic';
+import { ThrottleRenderOutput } from '@notify/shared';
 import { RenderCommand } from './render-command';
 
 @Injectable()

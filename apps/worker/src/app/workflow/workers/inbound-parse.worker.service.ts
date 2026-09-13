@@ -7,8 +7,8 @@ import {
   WorkerBaseService,
   WorkerOptions,
   WorkflowInMemoryProviderService,
-} from '@novu/application-generic';
-import { JobTopicNameEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { JobTopicNameEnum } from '@notify/shared';
 import { InboundEmailParseCommand } from '../usecases/inbound-email-parse/inbound-email-parse.command';
 import { InboundEmailParse } from '../usecases/inbound-email-parse/inbound-email-parse.usecase';
 import { InboundParseProcessingError } from '../usecases/inbound-email-parse/inbound-parse-outcome';

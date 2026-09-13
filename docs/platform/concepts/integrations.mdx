@@ -1,19 +1,19 @@
 ---
 title: 'Integrations'
-description: "Learn how Novu integrations connect your account to third-party email, SMS, push, and chat providers with credentials, environments, and identifiers."
+description: "Learn how Notify integrations connect your account to third-party email, SMS, push, and chat providers with credentials, environments, and identifiers."
 ---
 
-In Novu, integrations are configured connections to third-party services that deliver notifications across supported channels, which are email, SMS, push, and chat.
+In Notify, integrations are configured connections to third-party services that deliver notifications across supported channels, which are email, SMS, push, and chat.
 
-The In-App channel is handled internally by Novu and does not require a third-party integration.
+The In-App channel is handled internally by Notify and does not require a third-party integration.
 
-Each integration connects Novu to a specific provider, which workflows use to deliver notifications over the related channel.
+Each integration connects Notify to a specific provider, which workflows use to deliver notifications over the related channel.
 
 ## How integrations fit into the notification flow
 
-Workflows in Novu handle the logic of what message to send and when. Integrations handle how that message is delivered by routing the message through a specific provider.
+Workflows in Notify handle the logic of what message to send and when. Integrations handle how that message is delivered by routing the message through a specific provider.
 
-When a workflow step executes a channel-based action (such as sending an email), Novu:
+When a workflow step executes a channel-based action (such as sending an email), Notify:
 - Resolves the correct integration for the channel.
 - Applies any configuration, such as sender name or title overrides.
 - Hands off the message to the provider through the integration.
@@ -26,12 +26,12 @@ It’s helpful to distinguish between providers and integrations:
 - A provider is the third-party service responsible for sending messages (for example, Twilio, SendGrid, Slack).
 - An integration is your instance of that provider, configured with the necessary credentials and settings.
 
-You can have multiple integrations for the same provider, for example, using two different SendGrid accounts for staging and production environments. Novu allows you to manage these as separate, named integrations.
+You can have multiple integrations for the same provider, for example, using two different SendGrid accounts for staging and production environments. Notify allows you to manage these as separate, named integrations.
 
-Refer to this resource to see the full list of [providerIds used in Novu](https://github.com/novuhq/novu/blob/next/packages/framework/src/shared.ts#L103).
+Refer to this resource to see the full list of [providerIds used in Notify](https://github.com/novuhq/novu/blob/next/packages/framework/src/shared.ts#L103).
 
 <Note>
-  Novu also lets you use [Trigger Overrides](/platform/integrations/trigger-overrides) to modify the default behavior of a message during workflow trigger, such as overriding the notification title or content, or using a different integration than the primary integration. This works alongside integrations to fine-tune delivery behavior. 
+  Notify also lets you use [Trigger Overrides](/platform/integrations/trigger-overrides) to modify the default behavior of a message during workflow trigger, such as overriding the notification title or content, or using a different integration than the primary integration. This works alongside integrations to fine-tune delivery behavior. 
 </Note>
 
 ## Environment-scoped behavior
@@ -48,13 +48,13 @@ The primary integration serves as the default route when a message is sent over 
 
 ## Integration credentials
 
-Integrations require credentials to authenticate with third-party providers. These credentials are encrypted at rest and managed securely within Novu. 
+Integrations require credentials to authenticate with third-party providers. These credentials are encrypted at rest and managed securely within Notify. 
 
 Alongside credentials, integrations may also define metadata, such as sender addresses or credentials, including API keys or tokens, as well as optional configuration settings depending on the provider.
 
 ## Available integrations
 
-Novu supports a wide range of providers across different channels:
+Notify supports a wide range of providers across different channels:
 
 <Columns cols={2}>
   <Card

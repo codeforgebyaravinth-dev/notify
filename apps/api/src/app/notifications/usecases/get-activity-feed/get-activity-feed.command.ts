@@ -1,4 +1,4 @@
-import { ChannelTypeEnum, SeverityLevelEnum } from '@novu/shared';
+import { ChannelTypeEnum, SeverityLevelEnum } from '@notify/shared';
 import { IsArray, IsEnum, IsMongoId, IsNumber, IsOptional, IsString } from 'class-validator';
 import { EnvironmentWithUserCommand } from '../../../shared/commands/project.command';
 

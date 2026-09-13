@@ -1,4 +1,4 @@
-import { BulkCreateExecutionDetails, CreateExecutionDetails } from '@novu/application-generic';
+import { BulkCreateExecutionDetails, CreateExecutionDetails } from '@notify/application-generic';
 
 import { GetExecutionDetails } from './get-execution-details';
 

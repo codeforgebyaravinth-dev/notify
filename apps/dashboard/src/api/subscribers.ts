@@ -5,8 +5,8 @@ import {
   PatchSubscriberRequestDto,
   RemoveSubscriberResponseDto,
   SubscriberResponseDto,
-} from '@novu/api/models/components';
-import type { DirectionEnum, IEnvironment, ISubscriberResponseDto } from '@novu/shared';
+} from '@notify/api/models/components';
+import type { DirectionEnum, IEnvironment, ISubscriberResponseDto } from '@notify/shared';
 import { delV2, getV2, patchV2, postV2 } from './api.client';
 import { ListTopicSubscriptionsResponse } from './topics';
 

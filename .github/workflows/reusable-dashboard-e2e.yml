@@ -99,7 +99,7 @@ jobs:
           NX_NO_CLOUD: ${{ secrets.NX_CLOUD_ACCESS_TOKEN == '' && 'true' || 'false' }}
         with:
           targets: build
-          projects: '@novu/dashboard,@novu/api-service,@novu/worker'
+          projects: '@notify/dashboard,@notify/api-service,@notify/worker'
 
       - uses: ./.github/actions/start-localstack
       - uses: ./.github/actions/setup-redis-cluster

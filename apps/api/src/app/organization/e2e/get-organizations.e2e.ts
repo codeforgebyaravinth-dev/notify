@@ -3,9 +3,9 @@ import {
   CommunityOrganizationRepository,
   OrganizationEntity,
   PartnerTypeEnum,
-} from '@novu/dal';
-import { MemberRoleEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/dal';
+import { MemberRoleEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Get organizations - /organizations (GET) #novu-v0-os', async () => {

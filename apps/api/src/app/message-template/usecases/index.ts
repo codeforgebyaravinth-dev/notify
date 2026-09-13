@@ -1,4 +1,4 @@
-import { CreateMessageTemplate, DeleteMessageTemplate, UpdateMessageTemplate } from '@novu/application-generic';
+import { CreateMessageTemplate, DeleteMessageTemplate, UpdateMessageTemplate } from '@notify/application-generic';
 
 import { FindMessageTemplatesByLayoutUseCase } from './find-message-templates-by-layout/find-message-templates-by-layout.use-case';
 

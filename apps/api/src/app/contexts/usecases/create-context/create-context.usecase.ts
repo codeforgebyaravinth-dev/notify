@@ -1,6 +1,6 @@
 import { ConflictException, Injectable } from '@nestjs/common';
-import { ContextEntity, ContextRepository, isDuplicateKeyError } from '@novu/dal';
-import { createContextKey } from '@novu/shared';
+import { ContextEntity, ContextRepository, isDuplicateKeyError } from '@notify/dal';
+import { createContextKey } from '@notify/shared';
 import { CreateContextCommand } from './create-context.command';
 
 @Injectable()

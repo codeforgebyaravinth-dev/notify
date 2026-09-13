@@ -1,4 +1,4 @@
-import type { FeatureFlagsKeysEnum, ApiRateLimitEnvVarFormat } from '@novu/shared';
+import type { FeatureFlagsKeysEnum, ApiRateLimitEnvVarFormat } from '@notify/shared';
 import type { ValidatedEnv } from '../config';
 
 type ApiRateLimitEnvVars = Record<ApiRateLimitEnvVarFormat, `${number}`>;

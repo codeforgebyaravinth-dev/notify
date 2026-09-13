@@ -1,4 +1,4 @@
-import { ChannelTypeEnum } from '@novu/shared';
+import { ChannelTypeEnum } from '@notify/shared';
 import * as Sentry from '@sentry/react';
 import { HTMLAttributes, ReactNode, useEffect } from 'react';
 import { useParams } from 'react-router-dom';

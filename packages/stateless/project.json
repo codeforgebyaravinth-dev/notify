@@ -1,5 +1,5 @@
 {
-  "name": "@novu/stateless",
+  "name": "@notify/stateless",
   "sourceRoot": "packages/stateless/src",
   "projectType": "library",
   "targets": {

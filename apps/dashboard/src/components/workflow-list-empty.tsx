@@ -1,4 +1,4 @@
-import { PermissionsEnum } from '@novu/shared';
+import { PermissionsEnum } from '@notify/shared';
 import { ComponentType, ReactNode, SVGProps } from 'react';
 import {
   RiAddLine,

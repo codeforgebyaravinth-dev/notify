@@ -1,4 +1,4 @@
-import { PermissionsEnum } from '@novu/shared';
+import { PermissionsEnum } from '@notify/shared';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useTopicsNavigate } from '@/components/topics/hooks/use-topics-navigate';

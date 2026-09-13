@@ -1,4 +1,4 @@
-import { UserSession } from '@novu/testing';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('[V1 Translations] GET translation - /translations/groups/:identifier/locales/:locale (GET) #novu-v2', async () => {

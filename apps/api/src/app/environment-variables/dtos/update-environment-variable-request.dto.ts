@@ -1,5 +1,5 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { EnvironmentVariableType, IUpdateEnvironmentVariableDto } from '@novu/shared';
+import { EnvironmentVariableType, IUpdateEnvironmentVariableDto } from '@notify/shared';
 import { Type } from 'class-transformer';
 import { IsArray, IsBoolean, IsEnum, IsOptional, IsString, Matches, MaxLength, ValidateNested } from 'class-validator';
 import { EnvironmentVariableValueDto } from './create-environment-variable-request.dto';

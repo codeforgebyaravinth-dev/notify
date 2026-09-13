@@ -13,7 +13,7 @@ import {
   mapTemplateConfiguration,
   overridePreferences,
   PreferenceSet,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   NotificationTemplateEntity,
   NotificationTemplateRepository,
@@ -21,7 +21,7 @@ import {
   PreferencesRepository,
   SubscriberEntity,
   SubscriberRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   ChannelTypeEnum,
   FeatureFlagsKeysEnum,
@@ -30,7 +30,7 @@ import {
   PreferencesTypeEnum,
   SeverityLevelEnum,
   WorkflowCriticalityEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { GetSubscriberPreferenceCommand } from './get-subscriber-preference.command';
 
 @Injectable()

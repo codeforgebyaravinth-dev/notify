@@ -5,7 +5,7 @@ import {
   MAX_DESCRIPTION_LENGTH,
   MAX_TAG_ELEMENTS,
   slugify,
-} from '@novu/shared';
+} from '@notify/shared';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import {

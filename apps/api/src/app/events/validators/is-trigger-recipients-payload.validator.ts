@@ -1,4 +1,4 @@
-import { TriggerRecipientsTypeEnum } from '@novu/shared';
+import { TriggerRecipientsTypeEnum } from '@notify/shared';
 import {
   registerDecorator,
   ValidationArguments,

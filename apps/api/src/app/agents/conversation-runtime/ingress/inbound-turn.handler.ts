@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException, type OnModuleInit } from '@nestjs/common';
-import { AnalyticsService, PinoLogger } from '@novu/application-generic';
+import { AnalyticsService, PinoLogger } from '@notify/application-generic';
 import {
   AgentIntegrationRepository,
   AgentRepository,
@@ -9,10 +9,10 @@ import {
   ConversationEntity,
   ConversationParticipantTypeEnum,
   SubscriberRepository,
-} from '@novu/dal';
-import type { AgentAction } from '@novu/framework';
-import { parseApprovalActionId } from '@novu/framework/internal';
-import { ENDPOINT_TYPES } from '@novu/shared';
+} from '@notify/dal';
+import type { AgentAction } from '@notify/framework';
+import { parseApprovalActionId } from '@notify/framework/internal';
+import { ENDPOINT_TYPES } from '@notify/shared';
 import type { CardElement, EmojiValue, Message, Thread } from 'chat';
 import { ConnectClaimTokenService } from '../../../connect/services/connect-claim-token.service';
 import { parsePositiveIntEnv } from '../../../keyless/keyless-abuse.constants';

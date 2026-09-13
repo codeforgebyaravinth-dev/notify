@@ -1,6 +1,6 @@
-import { EnvironmentRepository, LayoutRepository } from '@novu/dal';
-import { ChannelTypeEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { EnvironmentRepository, LayoutRepository } from '@notify/dal';
+import { ChannelTypeEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 import { addLayoutIdentifierMigration } from './add-layout-identifier-migration';

@@ -1,4 +1,4 @@
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { ActivityFeedContent } from '@/components/activity/activity-feed-content';

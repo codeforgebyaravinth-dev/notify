@@ -1,6 +1,6 @@
 ---
 title: 'Custom Step'
-description: "Use the custom step in Novu Framework to run arbitrary business logic, fetch data, or integrate services as part of a workflow execution."
+description: "Use the custom step in Notify Framework to run arbitrary business logic, fetch data, or integrate services as part of a workflow execution."
 ---
 
 A custom steps allows to execute any custom logic and persist in the durable execution context. The result of this step can be used in subsequent steps.
@@ -38,7 +38,7 @@ const stepResult = await step.custom(
 
 ### Output Schema Definition
 
-This JSON Schema definition is used to validate the output of the custom step. If the output does not match the schema, the workflow will fail. Novu Framework will infer the Typescript interface from the JSON Schema definition.
+This JSON Schema definition is used to validate the output of the custom step. If the output does not match the schema, the workflow will fail. Notify Framework will infer the Typescript interface from the JSON Schema definition.
 
 ### Return Value
 

@@ -1,5 +1,5 @@
-import { ApiServiceLevelEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { ApiServiceLevelEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { Stripe } from 'stripe';
@@ -56,7 +56,7 @@ const mockedStripeCustomer: DeepPartial<Stripe.Customer> = {
 describe('GetSubscription #novu-v2', async () => {
   let session: UserSession;
 
-  const eeBilling = require('@novu/ee-billing');
+  const eeBilling = require('@notify/ee-billing');
   if (!eeBilling) {
     throw new Error('ee-billing does not exist');
   }

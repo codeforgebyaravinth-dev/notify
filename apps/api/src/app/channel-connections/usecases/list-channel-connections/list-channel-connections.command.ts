@@ -1,6 +1,6 @@
-import { CursorBasedPaginatedCommand } from '@novu/application-generic';
-import { ChannelConnectionEntity } from '@novu/dal';
-import { ChannelTypeEnum, ConnectionMode, ProvidersIdEnum, providerIdValues } from '@novu/shared';
+import { CursorBasedPaginatedCommand } from '@notify/application-generic';
+import { ChannelConnectionEntity } from '@notify/dal';
+import { ChannelTypeEnum, ConnectionMode, ProvidersIdEnum, providerIdValues } from '@notify/shared';
 import { IsArray, IsEnum, IsIn, IsOptional, IsString } from 'class-validator';
 
 export class ListChannelConnectionsCommand extends CursorBasedPaginatedCommand<

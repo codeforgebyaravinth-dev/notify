@@ -1,5 +1,5 @@
 import { BadRequestException, Injectable, NotFoundException, Scope } from '@nestjs/common';
-import { EnvironmentRepository, MemberRepository } from '@novu/dal';
+import { EnvironmentRepository, MemberRepository } from '@notify/dal';
 import { RemoveMemberCommand } from './remove-member.command';
 
 @Injectable({

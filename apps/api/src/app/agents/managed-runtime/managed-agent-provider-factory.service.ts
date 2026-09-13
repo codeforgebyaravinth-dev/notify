@@ -5,9 +5,9 @@ import {
   type ResolvedAwsAnthropicCredentials,
   resolveAgentRuntime,
   toThalamusAwsAnthropicCredentials,
-} from '@novu/application-generic';
-import { type AgentEntity, AgentRepository, IntegrationRepository } from '@novu/dal';
-import { AgentRuntimeProviderIdEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { type AgentEntity, AgentRepository, IntegrationRepository } from '@notify/dal';
+import { AgentRuntimeProviderIdEnum } from '@notify/shared';
 import { cloudflare, thalamus, type WebhookProvider } from '@novu/thalamus';
 import { LRUCache } from 'lru-cache';
 

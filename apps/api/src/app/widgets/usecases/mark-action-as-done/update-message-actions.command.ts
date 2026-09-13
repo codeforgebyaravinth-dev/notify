@@ -1,4 +1,4 @@
-import { ButtonTypeEnum, MessageActionStatusEnum } from '@novu/shared';
+import { ButtonTypeEnum, MessageActionStatusEnum } from '@notify/shared';
 import { IsDefined, IsMongoId, IsOptional } from 'class-validator';
 import { EnvironmentWithSubscriber } from '../../../shared/commands/project.command';
 

@@ -1,4 +1,4 @@
-import { AGENT_EVENT_PROTOCOL_VERSION, type AgentEvent, type AgentEventEnvelope } from '@novu/agent-event-protocol';
+import { AGENT_EVENT_PROTOCOL_VERSION, type AgentEvent, type AgentEventEnvelope } from '@notify/agent-event-protocol';
 import { AgentDeliveryError } from './agent.errors';
 
 export interface AgentEventOutboxOptions {

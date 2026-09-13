@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException, UnauthorizedException } from '@nestjs/common';
-import { createHash } from '@novu/application-generic';
-import { EnvironmentRepository, IntegrationRepository } from '@novu/dal';
-import { ChatProviderIdEnum } from '@novu/shared';
+import { createHash } from '@notify/application-generic';
+import { EnvironmentRepository, IntegrationRepository } from '@notify/dal';
+import { ChatProviderIdEnum } from '@notify/shared';
 import { buildAgentApiRootUrl } from '../../../agents/shared/util/agent-api-root-url';
 import { encodeOAuthState } from '../generate-chat-oath-url/chat-oauth-state.util';
 import { GenerateAzureSetupOauthUrlCommand } from './generate-azure-setup-oauth-url.command';

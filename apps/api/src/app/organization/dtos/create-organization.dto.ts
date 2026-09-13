@@ -1,4 +1,4 @@
-import { ICreateOrganizationDto, JobTitleEnum, ProductUseCases } from '@novu/shared';
+import { ICreateOrganizationDto, JobTitleEnum, ProductUseCases } from '@notify/shared';
 import { IsDefined, IsEnum, IsOptional, IsString } from 'class-validator';
 
 export class CreateOrganizationDto implements ICreateOrganizationDto {

@@ -1,8 +1,8 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { ExecutionDetailsEntity, ExecutionDetailsRepository, MessageEntity } from '@novu/dal';
-import { ChannelTypeEnum, ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum } from '@novu/shared';
+import { ExecutionDetailsEntity, ExecutionDetailsRepository, MessageEntity } from '@notify/dal';
+import { ChannelTypeEnum, ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum } from '@notify/shared';
 
-import { EmailEventStatusEnum, SmsEventStatusEnum } from '@novu/stateless';
+import { EmailEventStatusEnum, SmsEventStatusEnum } from '@notify/stateless';
 import { IWebhookResult } from '../../dtos/webhooks-response.dto';
 import { CreateExecutionDetailsCommand, WebhookCommand } from './create-execution-details.command';
 

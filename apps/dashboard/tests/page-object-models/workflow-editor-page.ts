@@ -1,4 +1,4 @@
-import { StepTypeEnum } from '@novu/shared';
+import { StepTypeEnum } from '@notify/shared';
 import { expect, type Page } from '@playwright/test';
 
 export class WorkflowEditorPage {

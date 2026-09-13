@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { getContextPath, NovuComponentEnum, resolveDotenvPath } from '@novu/shared';
+import { getContextPath, NovuComponentEnum, resolveDotenvPath } from '@notify/shared';
 import dotenv from 'dotenv';
 
 // Local override directory at apps/inbound-mail/. Used by devs who mount

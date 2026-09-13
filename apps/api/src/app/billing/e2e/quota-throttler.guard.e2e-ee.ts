@@ -1,6 +1,6 @@
-import { GetEventResourceUsage } from '@novu/ee-billing';
-import { ApiServiceLevelEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { GetEventResourceUsage } from '@notify/ee-billing';
+import { ApiServiceLevelEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import sinon from 'sinon';
 

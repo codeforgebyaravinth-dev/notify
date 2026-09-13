@@ -14,7 +14,7 @@ import {
   StepIssuesDto,
   UpdateWorkflowCommandV0,
   UpdateWorkflowV0,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   ControlValuesEntity,
   ControlValuesRepository,
@@ -23,8 +23,8 @@ import {
   NotificationGroupRepository,
   NotificationTemplateEntity,
   NotificationTemplateRepository,
-} from '@novu/dal';
-import { DiscoverOutput, DiscoverStepOutput, DiscoverWorkflowOutput, GetActionEnum } from '@novu/framework/internal';
+} from '@notify/dal';
+import { DiscoverOutput, DiscoverStepOutput, DiscoverWorkflowOutput, GetActionEnum } from '@notify/framework/internal';
 import {
   ControlValuesLevelEnum,
   ResourceOriginEnum,
@@ -34,7 +34,7 @@ import {
   UserSessionData,
   WorkflowCreationSourceEnum,
   WorkflowPreferences,
-} from '@novu/shared';
+} from '@notify/shared';
 import { DeleteWorkflowCommand } from '../../../workflows-v1/usecases/delete-workflow/delete-workflow.command';
 import { DeleteWorkflowUseCase } from '../../../workflows-v1/usecases/delete-workflow/delete-workflow.usecase';
 import { CreateBridgeResponseDto } from '../../dtos/create-bridge-response.dto';

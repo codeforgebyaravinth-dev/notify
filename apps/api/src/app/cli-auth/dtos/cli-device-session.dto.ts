@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import type { ApproveCliDeviceSessionRequest, CreateCliDeviceSessionResponse } from '@novu/shared';
+import type { ApproveCliDeviceSessionRequest, CreateCliDeviceSessionResponse } from '@notify/shared';
 import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 export class CreateCliDeviceSessionRequestDto {

@@ -1,11 +1,11 @@
-import { ApiServiceLevelEnum, StripeBillingIntervalEnum } from '@novu/shared';
+import { ApiServiceLevelEnum, StripeBillingIntervalEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 
-const { StripeSubscriptionStatusEnum, StripeUsageTypeEnum } = require('@novu/ee-billing/src/stripe/types');
+const { StripeSubscriptionStatusEnum, StripeUsageTypeEnum } = require('@notify/ee-billing/src/stripe/types');
 
 describe('CreateSubscription #novu-v2', () => {
-  const eeBilling = require('@novu/ee-billing');
+  const eeBilling = require('@notify/ee-billing');
   if (!eeBilling) {
     throw new Error('ee-billing does not exist');
   }

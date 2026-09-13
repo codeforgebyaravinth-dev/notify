@@ -1,4 +1,4 @@
-import { ENDPOINT_TYPES } from '@novu/shared';
+import { ENDPOINT_TYPES } from '@notify/shared';
 import { expect, test, vi } from 'vitest';
 import { safeOutboundJsonSpy } from '../../../utils/test/spy-safe-outbound';
 import { DiscordProvider } from './discord.provider';

@@ -7,7 +7,7 @@ import {
   getProviderOverrideKeys,
   type IProviderConfig,
   providers,
-} from '@novu/shared';
+} from '@notify/shared';
 
 export const DEFAULT_CONTENT_SOURCE = 'default' as const;
 

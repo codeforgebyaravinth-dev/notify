@@ -1,4 +1,4 @@
-import { IEmailOptions } from '@novu/stateless';
+import { IEmailOptions } from '@notify/stateless';
 import axios from 'axios';
 import { beforeEach, describe, expect, Mocked, test, vi } from 'vitest';
 import { NetCoreProvider } from './netcore.provider';

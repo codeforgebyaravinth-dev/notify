@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { PinoLogger } from '@novu/application-generic';
-import { AgentIntegrationRepository, DomainRouteRepository, IntegrationRepository } from '@novu/dal';
-import { EmailProviderIdEnum } from '@novu/shared';
+import { PinoLogger } from '@notify/application-generic';
+import { AgentIntegrationRepository, DomainRouteRepository, IntegrationRepository } from '@notify/dal';
+import { EmailProviderIdEnum } from '@notify/shared';
 import { ClientSession } from 'mongoose';
 
 const LOG_CONTEXT = 'NovuEmailCleanupService';

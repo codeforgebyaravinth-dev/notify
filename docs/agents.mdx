@@ -1,10 +1,10 @@
 ---
-title: "Novu Connect - Agent Communication Infrastructure (ACI)"
-description: "Connect AI agents to Slack, Teams, WhatsApp, Telegram, and email. Route inbound messages, preserve conversation context, and deliver replies through Novu ACI."
+title: "Notify Connect - Agent Communication Infrastructure (ACI)"
+description: "Connect AI agents to Slack, Teams, WhatsApp, Telegram, and email. Route inbound messages, preserve conversation context, and deliver replies through Notify ACI."
 sidebarTitle: Overview
 ---
 
-Novu Connect is based on the [Agent Communication Infrastructure (ACI)](/agents/get-started/what-is-aci). It ingests channel webhooks, normalizes events, maintains conversation state, and delivers replies so you can run one agent across Slack, Microsoft Teams, WhatsApp, Telegram, and email without rebuilding each integration.
+Notify Connect is based on the [Agent Communication Infrastructure (ACI)](/agents/get-started/what-is-aci). It ingests channel webhooks, normalizes events, maintains conversation state, and delivers replies so you can run one agent across Slack, Microsoft Teams, WhatsApp, Telegram, and email without rebuilding each integration.
 
 ACI separates two layers:
 
@@ -16,7 +16,7 @@ ACI separates two layers:
 
 ### Inbound conversations
 
-Users message the agent on a connected channel (DM, @mention, or email). Novu loads the conversation history and forwards it to your agent brain with the current turn. Replies go back to the same thread.
+Users message the agent on a connected channel (DM, @mention, or email). Notify loads the conversation history and forwards it to your agent brain with the current turn. Replies go back to the same thread.
 
 ### Tool approval
 
@@ -42,13 +42,13 @@ Choose how the agent brain runs:
 
 <Columns cols={3}>
   <Card title="AI SDK" icon="sparkles" href="/agents/get-started/ai-sdk">
-    `@novu/framework/ai-sdk` + Vercel AI SDK.
+    `@notify/framework/ai-sdk` + Vercel AI SDK.
   </Card>
   <Card title="LangChain" icon="link" href="/agents/get-started/langchain">
-    `@novu/framework/langchain`.
+    `@notify/framework/langchain`.
   </Card>
   <Card title="Mastra" icon="boxes" href="/agents/get-started/mastra">
-    `@novu/framework` calling Mastra `generate()`.
+    `@notify/framework` calling Mastra `generate()`.
   </Card>
 </Columns>
 
@@ -77,11 +77,11 @@ Platform differences are listed in [Channels overview](/agents/channels/overview
 ## Message flow
 
 1. A user sends a message on a connected channel.
-2. Novu ingests the webhook, normalizes the event, and resolves identity.
-3. Novu forwards the event and conversation history to your agent brain.
+2. Notify ingests the webhook, normalizes the event, and resolves identity.
+3. Notify forwards the event and conversation history to your agent brain.
 4. Your agent returns a reply (and may wait on tool approval).
-5. Novu delivers the reply to the correct thread.
-6. The conversation is stored and visible in the [Novu dashboard](https://dashboard.novu.co/agents).
+5. Notify delivers the reply to the correct thread.
+6. The conversation is stored and visible in the [Notify dashboard](https://dashboard.novu.co/agents).
 
 ## Learn more
 

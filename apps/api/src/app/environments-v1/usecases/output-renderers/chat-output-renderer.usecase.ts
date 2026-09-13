@@ -8,12 +8,12 @@ import {
   PinoLogger,
   transformMailyContent,
   wrapMailyInLiquid,
-} from '@novu/application-generic';
-import { LocalizationResourceEnum, NotificationTemplateEntity, OrganizationEntity } from '@novu/dal';
-import { createLiquidEngine } from '@novu/framework/internal';
-import { JSONContent as MailyJSONContent } from '@novu/maily-render';
-import { cardToFallbackMarkdown } from '@novu/providers';
-import { ChatRenderOutput, FeatureFlagsKeysEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { LocalizationResourceEnum, NotificationTemplateEntity, OrganizationEntity } from '@notify/dal';
+import { createLiquidEngine } from '@notify/framework/internal';
+import { JSONContent as MailyJSONContent } from '@notify/maily-render';
+import { cardToFallbackMarkdown } from '@notify/providers';
+import { ChatRenderOutput, FeatureFlagsKeysEnum } from '@notify/shared';
 import { Liquid } from 'liquidjs';
 import { BaseTranslationRendererUsecase, TranslationContext } from './base-translation-renderer.usecase';
 import { ControlsTranslationService } from './controls-translation.service';

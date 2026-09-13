@@ -1,5 +1,5 @@
 import { ApiExtraModels, ApiProperty, ApiPropertyOptional, getSchemaPath } from '@nestjs/swagger';
-import { SubscriberResponseDto } from '@novu/application-generic';
+import { SubscriberResponseDto } from '@notify/application-generic';
 import {
   ButtonTypeEnum,
   ChannelCTATypeEnum,
@@ -10,7 +10,7 @@ import {
   IMessageCTA,
   MessageActionStatusEnum,
   TextAlignEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { WorkflowResponse } from '../../workflows-v1/dtos/workflow-response.dto';
 
 class EmailBlockStyles {

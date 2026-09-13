@@ -77,7 +77,7 @@ For custom fields you store on the subscriber (e.g. plan, preferences), use the 
 
 ### Payload data
 
-You can use data from the [payload schema](/platform/workflow/configure-workflow#payload-schema) or custom payload data passed during the workflow trigger call to the Novu API to configure step conditions. This allows you to define dynamic rules based on the data unique to each workflow execution.
+You can use data from the [payload schema](/platform/workflow/configure-workflow#payload-schema) or custom payload data passed during the workflow trigger call to the Notify API to configure step conditions. This allows you to define dynamic rules based on the data unique to each workflow execution.
 
 Example payload data:
 
@@ -150,5 +150,5 @@ In this case, the step will execute only if `payload.foo` is equal to `payload.b
 <Note>
   **Advanced application state calculations**
 
-  For more complex scenarios where you need to perform advanced calculations based on your application state, you can use the [Novu Framework](/framework/typescript/steps).
+  For more complex scenarios where you need to perform advanced calculations based on your application state, you can use the [Notify Framework](/framework/typescript/steps).
 </Note>

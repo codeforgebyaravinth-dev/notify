@@ -15,7 +15,7 @@ import {
   IGetInviteResponseDto,
   MemberRoleEnum,
   UserSessionData,
-} from '@novu/shared';
+} from '@notify/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ThrottlerCost } from '../rate-limiting/guards';
 import { ApiCommonResponses } from '../shared/framework/response.decorator';

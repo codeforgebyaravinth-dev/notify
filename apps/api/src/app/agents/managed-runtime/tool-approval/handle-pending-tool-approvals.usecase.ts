@@ -1,8 +1,8 @@
 import { forwardRef, Inject, Injectable } from '@nestjs/common';
-import type { IAgentRuntimeProvider, PendingToolApproval } from '@novu/application-generic';
-import { PinoLogger } from '@novu/application-generic';
-import { ConversationParticipant, ConversationRepository } from '@novu/dal';
-import { isNovuInternalToolName, isNovuResolveToolName, isNovuToolCatalogName } from '@novu/shared';
+import type { IAgentRuntimeProvider, PendingToolApproval } from '@notify/application-generic';
+import { PinoLogger } from '@notify/application-generic';
+import { ConversationParticipant, ConversationRepository } from '@notify/dal';
+import { isNovuInternalToolName, isNovuResolveToolName, isNovuToolCatalogName } from '@notify/shared';
 import { AgentSubscriberResolver } from '../../conversation-runtime/conversation/agent-subscriber-resolver.service';
 import { HandleAgentReplyCommand } from '../../conversation-runtime/reply/handle-agent-reply/handle-agent-reply.command';
 import { HandleAgentReply } from '../../conversation-runtime/reply/handle-agent-reply/handle-agent-reply.usecase';

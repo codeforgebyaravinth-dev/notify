@@ -1,11 +1,11 @@
-import { getInlineDecoratorSuggestionsReact, InlineDecoratorExtension } from '@novu/maily-core/extensions';
+import { getInlineDecoratorSuggestionsReact, InlineDecoratorExtension } from '@notify/maily-core/extensions';
 import {
   TRANSLATION_DEFAULT_TEMPLATE,
   TRANSLATION_DELIMITER_CLOSE,
   TRANSLATION_DELIMITER_OPEN,
   TRANSLATION_KEY_SINGLE_REGEX,
   TRANSLATION_TRIGGER_CHARACTER,
-} from '@novu/shared';
+} from '@notify/shared';
 import { forwardRef, useMemo } from 'react';
 import { useDataRef } from '@/hooks/use-data-ref';
 import { LocalizationResourceEnum, TranslationKey } from '@/types/translations';

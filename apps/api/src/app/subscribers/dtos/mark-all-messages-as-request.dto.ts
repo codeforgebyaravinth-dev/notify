@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { MessagesStatusEnum } from '@novu/shared';
+import { MessagesStatusEnum } from '@notify/shared';
 
 export class MarkAllMessageAsRequestDto {
   @ApiPropertyOptional({

@@ -1,4 +1,4 @@
-import { FeatureNameEnum } from '@novu/shared';
+import { FeatureNameEnum } from '@notify/shared';
 import { RiArrowRightLine, RiFlashlightLine, RiShieldKeyholeLine, RiWebhookLine } from 'react-icons/ri';
 import { useNavigate } from 'react-router-dom';
 import { ROUTES } from '@/utils/routes';

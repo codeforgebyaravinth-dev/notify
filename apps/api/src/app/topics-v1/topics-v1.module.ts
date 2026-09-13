@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 
-import { StorageHelperService } from '@novu/application-generic';
-import { CommunityOrganizationRepository } from '@novu/dal';
+import { StorageHelperService } from '@notify/application-generic';
+import { CommunityOrganizationRepository } from '@notify/dal';
 import { AuthModule } from '../auth/auth.module';
 import { SharedModule } from '../shared/shared.module';
 import { SubscribersV1Module } from '../subscribers/subscribersV1.module';

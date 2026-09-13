@@ -1,13 +1,13 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
-import { decryptCredentials, MsTeamsTokenService, PinoLogger } from '@novu/application-generic';
+import { decryptCredentials, MsTeamsTokenService, PinoLogger } from '@notify/application-generic';
 import {
   ChannelTypeEnum,
   EnvironmentRepository,
   ICredentialsEntity,
   IntegrationEntity,
   IntegrationRepository,
-} from '@novu/dal';
-import { ChatProviderIdEnum, ENDPOINT_TYPES } from '@novu/shared';
+} from '@notify/dal';
+import { ChatProviderIdEnum, ENDPOINT_TYPES } from '@notify/shared';
 import axios from 'axios';
 import { CreateChannelConnectionCommand } from '../../../../channel-connections/usecases/create-channel-connection/create-channel-connection.command';
 import { CreateChannelConnection } from '../../../../channel-connections/usecases/create-channel-connection/create-channel-connection.usecase';

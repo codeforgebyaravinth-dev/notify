@@ -1,4 +1,4 @@
-import { DomainStatusEnum } from '@novu/shared';
+import { DomainStatusEnum } from '@notify/shared';
 import { useState } from 'react';
 import { RiAddLine, RiExpandUpDownLine, RiSearchLine } from 'react-icons/ri';
 import { useNavigate } from 'react-router-dom';

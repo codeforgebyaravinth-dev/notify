@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { GetDecryptedSecretKey, InMemoryLRUCacheService } from '@novu/application-generic';
-import { NovuClient, NovuHandler } from '@novu/framework/nest';
+import { GetDecryptedSecretKey, InMemoryLRUCacheService } from '@notify/application-generic';
+import { NovuClient, NovuHandler } from '@notify/framework/nest';
 import { SharedModule } from '../../shared/shared.module';
 import { NovuCopilotBridgeClient } from './novu-copilot-bridge.client';
 import { NovuCopilotBridgeController } from './novu-copilot-bridge.controller';
@@ -10,7 +10,7 @@ import { NovuCopilotBridgeController } from './novu-copilot-bridge.controller';
  * `NovuClient` override (bound to {@link NovuCopilotBridgeClient}) stays scoped to this controller —
  * exactly like {@link NovuBridgeModule} does for the workflow bridge.
  *
- * The agent implementation is loaded lazily from `@novu/ee-ai` inside the client, so this module is
+ * The agent implementation is loaded lazily from `@notify/ee-ai` inside the client, so this module is
  * safe to register in every build; it responds 404 in OSS/unconfigured deployments.
  */
 @Module({

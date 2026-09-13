@@ -29,18 +29,18 @@ function scaffoldTitle(variant: BridgeScaffoldVariant): string {
 
 function scaffoldSummary(variant: BridgeScaffoldVariant): string {
   if (variant === 'custom-code') {
-    return 'This installs @novu/framework, Next.js, and wires your Novu credentials into .env.local.';
+    return 'This installs @notify/framework, Next.js, and wires your Novu credentials into .env.local.';
   }
 
   if (variant === 'ai-sdk') {
-    return 'This installs @novu/framework, Next.js, and wires your Novu credentials into .env.local. Agent handlers use @novu/framework/ai-sdk.';
+    return 'This installs @notify/framework, Next.js, and wires your Novu credentials into .env.local. Agent handlers use @notify/framework/ai-sdk.';
   }
 
   if (variant === 'langchain') {
-    return 'This installs @novu/framework, langchain, Next.js, and wires your Novu credentials into .env.local. Agent handlers use @novu/framework/langchain.';
+    return 'This installs @notify/framework, langchain, Next.js, and wires your Novu credentials into .env.local. Agent handlers use @notify/framework/langchain.';
   }
 
-  return 'This installs chat, @novu/chat-sdk-adapter, and wires your Novu credentials into .env.local.';
+  return 'This installs chat, @notify/chat-sdk-adapter, and wires your Novu credentials into .env.local.';
 }
 
 export async function promptConfirmScaffoldInConsole(opts: {

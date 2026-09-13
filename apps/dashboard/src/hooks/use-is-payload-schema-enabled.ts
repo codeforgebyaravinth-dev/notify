@@ -1,4 +1,4 @@
-import { ResourceOriginEnum } from '@novu/shared';
+import { ResourceOriginEnum } from '@notify/shared';
 import { useWorkflow } from '@/components/workflow-editor/workflow-provider';
 
 export function useIsPayloadSchemaEnabled(): boolean {

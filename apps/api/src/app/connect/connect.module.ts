@@ -11,7 +11,7 @@ import {
   IntegrationRepository,
   McpConnectionRepository,
   SubscriberRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import { AuthModule } from '../auth/auth.module';
 import { SharedModule } from '../shared/shared.module';
 import { ConnectController } from './connect.controller';

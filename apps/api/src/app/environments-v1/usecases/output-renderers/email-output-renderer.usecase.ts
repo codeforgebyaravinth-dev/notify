@@ -14,7 +14,7 @@ import {
   sanitizeHTML,
   transformMailyContent,
   wrapMailyInLiquid,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   ControlValuesEntity,
   ControlValuesRepository,
@@ -23,9 +23,9 @@ import {
   LocalizationResourceEnum,
   NotificationTemplateEntity,
   OrganizationEntity,
-} from '@novu/dal';
-import { createLiquidEngine } from '@novu/framework/internal';
-import { JSONContent as MailyJSONContent, render as mailyRender } from '@novu/maily-render';
+} from '@notify/dal';
+import { createLiquidEngine } from '@notify/framework/internal';
+import { JSONContent as MailyJSONContent, render as mailyRender } from '@notify/maily-render';
 import {
   ControlValuesLevelEnum,
   EmailRenderOutput,
@@ -33,7 +33,7 @@ import {
   ExecutionDetailsStatusEnum,
   LAYOUT_CONTENT_VARIABLE,
   LAYOUT_PREVIEW_EMAIL_STEP,
-} from '@novu/shared';
+} from '@notify/shared';
 import { decodeHTML } from 'entities';
 import { Liquid } from 'liquidjs';
 import { GetOrganizationSettingsCommand } from '../../../organization/usecases/get-organization-settings/get-organization-settings.command';

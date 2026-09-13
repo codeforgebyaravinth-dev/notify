@@ -1,6 +1,6 @@
-import { IntegrationRepository } from '@novu/dal';
-import { ChannelTypeEnum, SmsProviderIdEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { IntegrationRepository } from '@notify/dal';
+import { ChannelTypeEnum, SmsProviderIdEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { deactivateMisconfiguredInfobipSmsIntegrations } from './deactivate-misconfigured-infobip-sms-integrations.migration';
 

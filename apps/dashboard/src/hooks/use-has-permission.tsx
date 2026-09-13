@@ -6,7 +6,7 @@ import {
   FeatureNameEnum,
   GetSubscriptionDto,
   getFeatureForTierAsBoolean,
-} from '@novu/shared';
+} from '@notify/shared';
 import { useMemo } from 'react';
 import { useFeatureFlag } from '@/hooks/use-feature-flag';
 import { useFetchSubscription } from '@/hooks/use-fetch-subscription';

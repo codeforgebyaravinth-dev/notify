@@ -1,5 +1,5 @@
 import { NotFoundException, UnprocessableEntityException } from '@nestjs/common';
-import { ChatProviderIdEnum } from '@novu/shared';
+import { ChatProviderIdEnum } from '@notify/shared';
 import { expect } from 'chai';
 import { restore, stub } from 'sinon';
 

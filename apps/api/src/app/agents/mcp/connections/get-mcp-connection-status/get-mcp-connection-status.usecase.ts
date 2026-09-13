@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { AgentMcpServerRepository, AgentRepository, McpConnectionRepository, SubscriberRepository } from '@novu/dal';
-import { McpConnectionAuthModeEnum, McpConnectionScopeEnum, McpConnectionStatusEnum } from '@novu/shared';
+import { AgentMcpServerRepository, AgentRepository, McpConnectionRepository, SubscriberRepository } from '@notify/dal';
+import { McpConnectionAuthModeEnum, McpConnectionScopeEnum, McpConnectionStatusEnum } from '@notify/shared';
 
 import { McpConnectionResponseDto } from '../../../shared/dtos/mcp-server.dto';
 import { GetMcpConnectionStatusCommand } from './get-mcp-connection-status.command';

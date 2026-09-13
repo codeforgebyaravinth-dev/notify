@@ -1,4 +1,4 @@
-import { SeverityLevelEnum } from '@novu/shared';
+import { SeverityLevelEnum } from '@notify/shared';
 import React from 'react';
 import { capitalize } from '@/utils/string';
 import { Badge, BadgeRootProps } from '../primitives/badge';

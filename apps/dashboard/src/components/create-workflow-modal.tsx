@@ -1,6 +1,6 @@
 /** biome-ignore-all lint/correctness/useUniqueElementIds: working correctly */
 import { standardSchemaResolver } from '@hookform/resolvers/standard-schema';
-import { AiAgentTypeEnum, AiResourceTypeEnum, DuplicateWorkflowDto } from '@novu/shared';
+import { AiAgentTypeEnum, AiResourceTypeEnum, DuplicateWorkflowDto } from '@notify/shared';
 import * as Sentry from '@sentry/react';
 import { useQuery } from '@tanstack/react-query';
 import { ChatOnDataCallback, generateId, UIMessage } from 'ai';

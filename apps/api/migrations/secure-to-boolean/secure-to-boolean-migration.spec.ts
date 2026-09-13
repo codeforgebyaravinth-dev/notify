@@ -1,4 +1,4 @@
-import { IntegrationRepository } from '@novu/dal';
+import { IntegrationRepository } from '@notify/dal';
 import { expect } from 'chai';
 import { beforeEach } from 'mocha';
 import { updateFalseValues, updateTrueValues } from './secure-to-boolean-migration';

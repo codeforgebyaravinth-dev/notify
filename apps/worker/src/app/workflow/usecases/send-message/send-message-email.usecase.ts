@@ -20,7 +20,7 @@ import {
   SelectVariant,
   SendWebhookMessage,
   BillingService,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   EnvironmentEntity,
   EnvironmentRepository,
@@ -31,8 +31,8 @@ import {
   OrganizationEntity,
   SubscriberRepository,
   UserEntity,
-} from '@novu/dal';
-import { EmailOutput } from '@novu/framework/internal';
+} from '@notify/dal';
+import { EmailOutput } from '@notify/framework/internal';
 import {
   ChannelTypeEnum,
   DeliveryLifecycleDetail,
@@ -46,7 +46,7 @@ import {
   safeJsonStringify,
   WebhookEventEnum,
   WebhookObjectTypeEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import inlineCss from 'inline-css';
 
 import { PlatformException } from '../../../shared/utils';

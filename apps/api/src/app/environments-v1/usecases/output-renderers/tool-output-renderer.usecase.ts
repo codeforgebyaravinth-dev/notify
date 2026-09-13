@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { InstrumentUsecase } from '@novu/application-generic';
-import { ToolRenderOutput } from '@novu/shared';
+import { InstrumentUsecase } from '@notify/application-generic';
+import { ToolRenderOutput } from '@notify/shared';
 
 /** Maps already-translated tool controls to the body-only step output. */
 @Injectable()

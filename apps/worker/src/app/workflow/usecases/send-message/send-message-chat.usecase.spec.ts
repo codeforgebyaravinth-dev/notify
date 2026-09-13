@@ -1,5 +1,5 @@
-import { ChatFactory } from '@novu/application-generic';
-import { ChannelTypeEnum, ChatProviderIdEnum, ENDPOINT_TYPES, TriggerOverrides } from '@novu/shared';
+import { ChatFactory } from '@notify/application-generic';
+import { ChannelTypeEnum, ChatProviderIdEnum, ENDPOINT_TYPES, TriggerOverrides } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { SendMessageChannelCommand } from './send-message-channel.command';

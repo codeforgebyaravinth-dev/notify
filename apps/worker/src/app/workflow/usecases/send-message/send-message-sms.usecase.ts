@@ -14,10 +14,10 @@ import {
   SendWebhookMessage,
   SmsFactory,
   BillingService,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 
-import { IntegrationEntity, MessageEntity, MessageRepository, SubscriberRepository } from '@novu/dal';
-import { SmsOutput } from '@novu/framework/internal';
+import { IntegrationEntity, MessageEntity, MessageRepository, SubscriberRepository } from '@notify/dal';
+import { SmsOutput } from '@notify/framework/internal';
 import {
   ChannelTypeEnum,
   DeliveryLifecycleDetail,
@@ -26,7 +26,7 @@ import {
   ExecutionDetailsStatusEnum,
   WebhookEventEnum,
   WebhookObjectTypeEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { addBreadcrumb } from '@sentry/node';
 import { PlatformException } from '../../../shared/utils';
 import { combineProviderOverrides, SendMessageBase } from './send-message.base';

@@ -1,12 +1,12 @@
 import { ConflictException } from '@nestjs/common';
-import type { AgentEntity, IntegrationEntity } from '@novu/dal';
+import type { AgentEntity, IntegrationEntity } from '@notify/dal';
 import {
   AgentSubscriberAccessEnum,
   ApiServiceLevelEnum,
   ChannelTypeEnum,
   EmailProviderIdEnum,
   NOVU_PROVIDERS,
-} from '@novu/shared';
+} from '@notify/shared';
 import { expect } from 'chai';
 import { restore, stub } from 'sinon';
 

@@ -1,4 +1,4 @@
-import { VALID_ID_REGEX } from '@novu/shared';
+import { VALID_ID_REGEX } from '@notify/shared';
 import { z } from 'zod';
 
 export const subscriberIdSchema = z.string().trim().regex(VALID_ID_REGEX);

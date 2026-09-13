@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { SendWebhookMessageCommand } from '@novu/application-generic';
+import { SendWebhookMessageCommand } from '@notify/application-generic';
 
 @Injectable()
 export class NoopSendWebhookMessage {

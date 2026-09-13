@@ -1,6 +1,6 @@
-import { CommunityUserRepository } from '@novu/dal';
-import { UserSessionData } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { CommunityUserRepository } from '@notify/dal';
+import { UserSessionData } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { subMinutes } from 'date-fns';
 import jwt from 'jsonwebtoken';

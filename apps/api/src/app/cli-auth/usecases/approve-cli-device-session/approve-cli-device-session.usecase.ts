@@ -1,8 +1,8 @@
 import { createHash } from 'node:crypto';
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
-import { buildSlug, shortenEnvironmentName } from '@novu/application-generic';
-import { EnvironmentRepository } from '@novu/dal';
-import { ShortIsPrefixEnum } from '@novu/shared';
+import { buildSlug, shortenEnvironmentName } from '@notify/application-generic';
+import { EnvironmentRepository } from '@notify/dal';
+import { ShortIsPrefixEnum } from '@notify/shared';
 
 import { CliDeviceSessionNotFoundError, CliDeviceSessionService } from '../../services/cli-device-session.service';
 import { ApproveCliDeviceSessionCommand } from './approve-cli-device-session.command';

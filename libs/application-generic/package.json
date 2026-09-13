@@ -1,5 +1,5 @@
 {
-  "name": "@novu/application-generic",
+  "name": "@notify/application-generic",
   "version": "3.19.0",
   "description": "Generic backend code used inside of Novu's different services",
   "main": "build/main/index.js",
@@ -47,13 +47,13 @@
     "@clickhouse/client": "^1.20.0",
     "@google-cloud/storage": "^6.2.3",
     "@launchdarkly/node-server-sdk": "^9.7.3",
-    "@novu/dal": "workspace:*",
-    "@novu/framework": "workspace:*",
-    "@novu/maily-render": "workspace:*",
-    "@novu/providers": "workspace:*",
-    "@novu/shared": "workspace:*",
-    "@novu/stateless": "workspace:*",
-    "@novu/testing": "workspace:*",
+    "@notify/dal": "workspace:*",
+    "@notify/framework": "workspace:*",
+    "@notify/maily-render": "workspace:*",
+    "@notify/providers": "workspace:*",
+    "@notify/shared": "workspace:*",
+    "@notify/stateless": "workspace:*",
+    "@notify/testing": "workspace:*",
     "@opentelemetry/api": "1.9.0",
     "@opentelemetry/auto-instrumentations-node": "0.75.0",
     "@opentelemetry/context-async-hooks": "2.7.1",
@@ -123,7 +123,7 @@
     "zod-to-json-schema": "^3.23.3"
   },
   "optionalDependencies": {
-    "@novu/ee-shared-services": "workspace:*",
+    "@notify/ee-shared-services": "workspace:*",
     "@taskforcesh/bullmq-pro": "6.11.0"
   },
   "devDependencies": {

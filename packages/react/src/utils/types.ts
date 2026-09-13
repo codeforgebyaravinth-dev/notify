@@ -1,4 +1,4 @@
-import type { Context, DefaultSchedule, NovuSocketOptions, Subscriber, UnreadCount } from '@novu/js';
+import type { Context, DefaultSchedule, NovuSocketOptions, Subscriber, UnreadCount } from '@notify/js';
 import type {
   AllIconKey,
   AllTheme,
@@ -16,7 +16,7 @@ import type {
   SubscriptionIconKey,
   SubscriptionTheme,
   Tab,
-} from '@novu/js/ui';
+} from '@notify/js/ui';
 import type { ReactNode } from 'react';
 
 export type NotificationsRenderer = (notification: Notification) => React.ReactNode;

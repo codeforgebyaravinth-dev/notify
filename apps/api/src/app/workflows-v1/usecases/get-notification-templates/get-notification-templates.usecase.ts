@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { NotificationTemplateEntity, NotificationTemplateRepository } from '@novu/dal';
+import { NotificationTemplateEntity, NotificationTemplateRepository } from '@notify/dal';
 import { WorkflowResponse } from '../../dtos/workflow-response.dto';
 import { WorkflowsResponseDto } from '../../dtos/workflows.response.dto';
 import { GetActiveIntegrationsStatusCommand } from '../get-active-integrations-status/get-active-integrations-status.command';

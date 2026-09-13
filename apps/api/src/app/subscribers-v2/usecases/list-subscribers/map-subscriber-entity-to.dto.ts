@@ -1,5 +1,5 @@
-import { SubscriberResponseDto } from '@novu/application-generic';
-import { SubscriberEntity } from '@novu/dal';
+import { SubscriberResponseDto } from '@notify/application-generic';
+import { SubscriberEntity } from '@notify/dal';
 
 export function mapSubscriberEntityToDto(subscriber: SubscriberEntity): SubscriberResponseDto {
   return {

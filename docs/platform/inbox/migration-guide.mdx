@@ -1,31 +1,31 @@
 ---
 title: 'Migrate to the New Inbox'
-description: "Migrate from the legacy @novu/notification-center package to the new @novu/react Inbox with a step-by-step guide covering setup and props."
+description: "Migrate from the legacy @notify/notification-center package to the new @notify/react Inbox with a step-by-step guide covering setup and props."
 ---
 
 <Note>
-  - Use [@novu/react](/platform/sdks/react) Inbox React component and
-  [@novu/js](/platform/sdks/javascript) headless package with new dashboard workflows and [@novu/framework](/platform/workflow)-based workflows.
+  - Use [@notify/react](/platform/sdks/react) Inbox React component and
+  [@notify/js](/platform/sdks/javascript) headless package with new dashboard workflows and [@notify/framework](/platform/workflow)-based workflows.
 
    - With legacy dashboard based workflows, use
-  [@novu/notification-center](https://v0.x-docs.novu.co/notification-center/client/react/get-started) package.
+  [@notify/notification-center](https://v0.x-docs.novu.co/notification-center/client/react/get-started) package.
 </Note>
 
-The `@novu/react` package introduces a more flexible and customizable way to display notifications in your application. This guide outlines the key differences between the `@novu/notification-center` package and the new `@novu/react` package. 
+The `@notify/react` package introduces a more flexible and customizable way to display notifications in your application. This guide outlines the key differences between the `@notify/notification-center` package and the new `@notify/react` package. 
 
 Follow the steps below to migrate your application to the latest Inbox version.
 
-## Why you should upgrade to `@novu/react`
+## Why you should upgrade to `@notify/react`
 
-- **Customization**: The `@novu/react` package provides more customization options for the appearance and behavior of the notification components.
+- **Customization**: The `@notify/react` package provides more customization options for the appearance and behavior of the notification components.
 - **Flexibility**: The new package offers more flexibility in handling notifications and integrating with third-party libraries.
 - **Performance**: It is optimized for performance and provides a smoother user experience.
 - **Bundle Size**: The new package has a smaller bundle size and improved tree-shaking capabilities.
-- **Compatibility with the `@novu/framework`**: The `@novu/react` package is designed to work seamlessly with the `@novu/framework` package for creating and managing notifications.
+- **Compatibility with the `@notify/framework`**: The `@notify/react` package is designed to work seamlessly with the `@notify/framework` package for creating and managing notifications.
 
 ## Breaking Changes
 
-The `@novu/react` package introduces several breaking changes compared to the `@novu/notification-center` package. Here are the key differences:
+The `@notify/react` package introduces several breaking changes compared to the `@notify/notification-center` package. Here are the key differences:
 
 ### Components
 
@@ -118,75 +118,75 @@ type Action = {
 
 ## Getting started
 
-To begin, install the `@novu/react` package.
+To begin, install the `@notify/react` package.
 
 ```package-install
-npm install @novu/react
+npm install @notify/react
 ```
 
 ## Basic usage
 
-### Legacy implementation with `@novu/notification-center`
+### Legacy implementation with `@notify/notification-center`
 
 ```tsx
 import {
-  NovuProvider,
+  NotifyProvider,
   PopoverNotificationCenter,
   NotificationBell,
-} from '@novu/notification-center';
+} from '@notify/notification-center';
 
-function Novu() {
+function Notify() {
   return (
-    <NovuProvider subscriber="YOUR_SUBSCRIBER_ID" applicationIdentifier="YOUR_APP_ID">
+    <NotifyProvider subscriber="YOUR_SUBSCRIBER_ID" applicationIdentifier="YOUR_APP_ID">
       <PopoverNotificationCenter>
         {({ unseenCount }) => <NotificationBell unseenCount={unseenCount} />}
       </PopoverNotificationCenter>
-    </NovuProvider>
+    </NotifyProvider>
   );
 }
-export default Novu;
+export default Notify;
 ```
 
-### Current implementation with `@novu/react`
+### Current implementation with `@notify/react`
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 
-function Novu() {
+function Notify() {
   return (
     <Inbox applicationIdentifier="YOUR_APPLICATION_IDENTIFIER" subscriber="YOUR_SUBSCRIBER_ID" />
   );
 }
 
-export default Novu;
+export default Notify;
 ```
 
 ## Notification center without bell icon
 
-The @novu/react package introduces a flexible way to display notifications as a list without the default bell icon. Use the `Inbox` and `Notifications` components to achieve this functionality.
+The @notify/react package introduces a flexible way to display notifications as a list without the default bell icon. Use the `Inbox` and `Notifications` components to achieve this functionality.
 
-### Legacy implementation with `@novu/notification-center`
+### Legacy implementation with `@notify/notification-center`
 
 ```tsx
-import { NovuProvider, NotificationCenter } from '@novu/notification-center';
+import { NotifyProvider, NotificationCenter } from '@notify/notification-center';
 
-function Novu() {
+function Notify() {
   return (
-    <NovuProvider subscriber="YOUR_SUBSCRIBER_ID" applicationIdentifier="YOUR_APP_ID">
+    <NotifyProvider subscriber="YOUR_SUBSCRIBER_ID" applicationIdentifier="YOUR_APP_ID">
       <NotificationCenter colorScheme="dark" />
-    </NovuProvider>
+    </NotifyProvider>
   );
 }
 
-export default Novu;
+export default Notify;
 ```
 
-### Current implementation with `@novu/react`
+### Current implementation with `@notify/react`
 
 ```tsx
-import { Inbox, Notifications } from '@novu/react';
+import { Inbox, Notifications } from '@notify/react';
 
-function Novu() {
+function Notify() {
   return (
     <Inbox applicationIdentifier="YOUR_APP_ID" subscriber="YOUR_SUBSCRIBER_ID">
       <Notifications />
@@ -194,22 +194,22 @@ function Novu() {
   );
 }
 
-export default Novu;
+export default Notify;
 ```
 
 ## Custom bell icon
 
 Customize the bell icon that triggers the notifications popover using the `renderBell` prop.
 
-### Legacy implementation with `@novu/notification-center`
+### Legacy implementation with `@notify/notification-center`
 
 ```tsx
-import { NovuProvider, PopoverNotificationCenter } from '@novu/notification-center';
+import { NotifyProvider, PopoverNotificationCenter } from '@notify/notification-center';
 import CustomBell from './CustomBell'; // Your custom bell icon component
 
-function Novu() {
+function Notify() {
   return (
-    <NovuProvider subscriber="YOUR_SUBSCRIBER_ID" applicationIdentifier="YOUR_APP_ID">
+    <NotifyProvider subscriber="YOUR_SUBSCRIBER_ID" applicationIdentifier="YOUR_APP_ID">
       <PopoverNotificationCenter colorScheme="dark">
         {({ unseenCount }) => (
           <CustomBell
@@ -220,20 +220,20 @@ function Novu() {
           />
         )}
       </PopoverNotificationCenter>
-    </NovuProvider>
+    </NotifyProvider>
   );
 }
 
-export default Novu;
+export default Notify;
 ```
 
-### Current implementation with `@novu/react`
+### Current implementation with `@notify/react`
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 import CustomBell from './CustomBell'; // Your custom bell icon component
 
-function Novu() {
+function Notify() {
   return (
     <Inbox
       applicationIdentifier="YOUR_APP_ID"
@@ -243,28 +243,28 @@ function Novu() {
   );
 }
 
-export default Novu;
+export default Notify;
 ```
 
 ## Notification actions
 
-Handle user interactions with notifications effectively using the action handlers provided by `@novu/react`.
+Handle user interactions with notifications effectively using the action handlers provided by `@notify/react`.
 
 ### onNotificationClick
 
 Trigger a callback function when a user clicks on a notification item.
 
-#### Legacy implementation with `@novu/notification-center`
+#### Legacy implementation with `@notify/notification-center`
 
 ```tsx
 import {
-  NovuProvider,
+  NotifyProvider,
   PopoverNotificationCenter,
   NotificationBell,
   IMessage,
-} from '@novu/notification-center';
+} from '@notify/notification-center';
 
-function Novu() {
+function Notify() {
   function handleOnNotificationClick(message: IMessage) {
     // your logic to handle the notification click
     if (message?.cta?.data?.url) {
@@ -273,23 +273,23 @@ function Novu() {
   }
 
   return (
-    <NovuProvider subscriber="YOUR_SUBSCRIBER_ID" applicationIdentifier="YOUR_APP_ID">
+    <NotifyProvider subscriber="YOUR_SUBSCRIBER_ID" applicationIdentifier="YOUR_APP_ID">
       <PopoverNotificationCenter colorScheme="dark" onNotificationClick={handleOnNotificationClick}>
         {({ unseenCount }) => <NotificationBell unseenCount={unseenCount} />}
       </PopoverNotificationCenter>
-    </NovuProvider>
+    </NotifyProvider>
   );
 }
 
-export default Novu;
+export default Notify;
 ```
 
-#### Current implementation with `@novu/react`
+#### Current implementation with `@notify/react`
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 
-function Novu() {
+function Notify() {
   const handleNotificationClick = (notification) => {
     // Your custom logic here
     console.log('Notification clicked:', notification);
@@ -304,27 +304,27 @@ function Novu() {
   );
 }
 
-export default Novu;
+export default Notify;
 ```
 
 ### onPrimaryActionClick and onSecondaryActionClick
 
 Handle primary and secondary actions within a notification explicitly.
 
-#### Legacy implementation with `@novu/notification-center`
+#### Legacy implementation with `@notify/notification-center`
 
 ```tsx
 import {
-  NovuProvider,
+  NotifyProvider,
   PopoverNotificationCenter,
   IMessage,
   MessageActionStatusEnum,
   useUpdateAction,
   ButtonTypeEnum,
   NotificationBell,
-} from '@novu/notification-center';
+} from '@notify/notification-center';
 
-function Novu() {
+function Notify() {
   const CustomNotificationCenter = () => {
     const { updateAction } = useUpdateAction();
 
@@ -337,7 +337,7 @@ function Novu() {
         if (btnType === 'primary') {
           /** Call your API to accept the friend request here **/
 
-          /** And then update Novu that this action has been taken, so the user won't see the button again **/
+          /** And then update Notify that this action has been taken, so the user won't see the button again **/
           updateAction({
             messageId: notification._id,
             actionButtonType: btnType,
@@ -355,21 +355,21 @@ function Novu() {
   };
 
   return (
-    <NovuProvider subscriber="YOUR_SUBSCRIBER_ID" applicationIdentifier="YOUR_APP_ID">
+    <NotifyProvider subscriber="YOUR_SUBSCRIBER_ID" applicationIdentifier="YOUR_APP_ID">
       <CustomNotificationCenter />
-    </NovuProvider>
+    </NotifyProvider>
   );
 }
 
-export default Novu;
+export default Notify;
 ```
 
-#### Current implementation with `@novu/react`
+#### Current implementation with `@notify/react`
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 
-function Novu() {
+function Notify() {
   const handlePrimaryActionClick = (notification) => {
     // Handle primary action
     console.log('Primary action clicked:', notification);
@@ -390,12 +390,12 @@ function Novu() {
   );
 }
 
-export default Novu;
+export default Notify;
 ```
 
 ## Avatar icons
 
-In the legacy implementation, you could set a notification’s avatar icon by enabling the Add an avatar option in the workflow UI. Novu would then use the avatar field of the actor subscriber as the icon.
+In the legacy implementation, you could set a notification’s avatar icon by enabling the Add an avatar option in the workflow UI. Notify would then use the avatar field of the actor subscriber as the icon.
 
 In the new implementation, you can set the avatar icon for a notification by adding the avatar icon in the workflow UI. There are three options to choose from:
 
@@ -409,36 +409,36 @@ For more information, refer to [Icons](/platform/inbox/configuration/icons#chang
 
 For advanced positioning and styling of the notifications popover, integrate third-party popover libraries such as Radix UI.
 
-### Legacy implementation with `@novu/notification-center`
+### Legacy implementation with `@notify/notification-center`
 
 ```tsx
 import {
   PopoverNotificationCenter,
   NotificationBell,
-  NovuProvider,
-} from '@novu/notification-center';
+  NotifyProvider,
+} from '@notify/notification-center';
 
-function Novu() {
+function Notify() {
   return (
-    <NovuProvider subscriber="YOUR_SUBSCRIBER_ID" applicationIdentifier="YOUR_APP_ID">
+    <NotifyProvider subscriber="YOUR_SUBSCRIBER_ID" applicationIdentifier="YOUR_APP_ID">
       <PopoverNotificationCenter position="left-start" offset={20}>
         {({ unseenCount }) => <NotificationBell unseenCount={unseenCount} />}
       </PopoverNotificationCenter>
-    </NovuProvider>
+    </NotifyProvider>
   );
 }
 
-export default Novu;
+export default Notify;
 ```
 
-### Current implementation with `@novu/react` and Radix UI as an example
+### Current implementation with `@notify/react` and Radix UI as an example
 
 ```tsx
 import React from 'react';
 import * as RadixPopover from '@radix-ui/react-popover';
-import { Inbox, Bell, Notifications } from '@novu/react';
+import { Inbox, Bell, Notifications } from '@notify/react';
 
-function Novu() {
+function Notify() {
   return (
     <Inbox applicationIdentifier="YOUR_APP_ID" subscriber="YOUR_SUBSCRIBER_ID">
       <RadixPopover.Root>
@@ -456,25 +456,25 @@ function Novu() {
   );
 }
 
-export default Novu;
+export default Notify;
 ```
 
 ## Custom notification item
 
 Customize the appearance and structure of individual notification items using the `renderNotification` prop.
 
-### Legacy implementation with `@novu/notification-center`
+### Legacy implementation with `@notify/notification-center`
 
 ```tsx
 import {
-  NovuProvider,
+  NotifyProvider,
   PopoverNotificationCenter,
   NotificationBell,
-} from '@novu/notification-center';
+} from '@notify/notification-center';
 
-function Novu() {
+function Notify() {
   return (
-    <NovuProvider subscriber="YOUR_SUBSCRIBER_ID" applicationIdentifier="YOUR_APP_ID">
+    <NotifyProvider subscriber="YOUR_SUBSCRIBER_ID" applicationIdentifier="YOUR_APP_ID">
       <PopoverNotificationCenter
         colorScheme={colorScheme}
         onNotificationClick={handlerOnNotificationClick}
@@ -495,19 +495,19 @@ function Novu() {
           return <NotificationBell unseenCount={unseenCount} />;
         }}
       </PopoverNotificationCenter>
-    </NovuProvider>
+    </NotifyProvider>
   );
 }
 
-export default Novu;
+export default Notify;
 ```
 
-### Current implementation with `@novu/react`
+### Current implementation with `@notify/react`
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 
-function Novu() {
+function Notify() {
   const renderCustomNotificationItem = (notification) => (
     <div
       className={`notification-item ${notification.isRead ? 'read' : 'unread'}`}
@@ -529,44 +529,44 @@ function Novu() {
   );
 }
 
-export default Novu;
+export default Notify;
 ```
 
 ## Styling with appearance prop
 
 Customize the overall look and feel of the notification components using the appearance prop, which supports both CSS objects and class names (including Tailwind CSS classes).
 
-### Legacy implementation with `@novu/notification-center`
+### Legacy implementation with `@notify/notification-center`
 
 ```tsx
 import {
-  NovuProvider,
+  NotifyProvider,
   PopoverNotificationCenter,
   NotificationBell,
-} from '@novu/notification-center';
+} from '@notify/notification-center';
 
-function Novu() {
+function Notify() {
   return (
-    <NovuProvider
+    <NotifyProvider
       applicationIdentifier="YOUR_APP_ID"
       subscriber="YOUR_SUBSCRIBER_ID"
       styles={{ notifications: { listItem: { layout: { color: '#E3554D' } } } }}>
       <PopoverNotificationCenter>
         {({ unseenCount }) => <NotificationBell unseenCount={unseenCount} />}
       </PopoverNotificationCenter>
-    </NovuProvider>
+    </NotifyProvider>
   );
 }
 
-export default Novu;
+export default Notify;
 ```
 
-### Current implementation with `@novu/react`
+### Current implementation with `@notify/react`
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 
-function Novu() {
+function Notify() {
   return (
     <Inbox
       applicationIdentifier="YOUR_APP_ID"
@@ -599,7 +599,7 @@ function Novu() {
   );
 }
 
-export default Novu;
+export default Notify;
 ```
 
 For more information on `appearance` customization visit [here](/platform/inbox/configuration/styling).
@@ -610,20 +610,20 @@ Organize notifications into different categories using tabs by leveraging the ta
 
 ### Create multiple tabs
 
-#### Legacy implementation with `@novu/notification-center`
+#### Legacy implementation with `@notify/notification-center`
 
 After defining the feeds on the workflow UI, you were able to filter notifications based on the feedIdentifier.
 
 ```tsx
 import {
-  NovuProvider,
+  NotifyProvider,
   PopoverNotificationCenter,
   NotificationBell,
-} from '@novu/notification-center';
+} from '@notify/notification-center';
 
-function Novu() {
+function Notify() {
   return (
-    <NovuProvider
+    <NotifyProvider
       stores={[
         {
           storeId: 'product-updates',
@@ -648,14 +648,14 @@ function Novu() {
           return <NotificationBell colorScheme={colorScheme} unseenCount={unseenCount} />;
         }}
       </PopoverNotificationCenter>
-    </NovuProvider>
+    </NotifyProvider>
   );
 }
 
-export default Novu;
+export default Notify;
 ```
 
-#### Current implementation with `@novu/react`
+#### Current implementation with `@notify/react`
 
 1. Define multiple workflows with relevant tags.
 
@@ -664,7 +664,7 @@ Add tags on the workflow Tags field. One tag can be used for multiple workflows.
 2. Use those tags in the `tabs` prop of the `Inbox` component.
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 
 const tabs = [
   { label: 'All Notifications', value: [] },
@@ -701,9 +701,9 @@ Handle notifications using the methods provided by the notification object.
 Mark notifications as read using the `read` method provided by the notification object.
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 
-function Novu() {
+function Notify() {
   const handleNotificationClick = (notification) => {
     notification.read();
   };
@@ -717,7 +717,7 @@ function Novu() {
   );
 }
 
-export default Novu;
+export default Notify;
 ```
 
 ### Marking notifications as unread
@@ -725,9 +725,9 @@ export default Novu;
 Mark notifications as unread using the `unread` method provided by the notification object.
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 
-function Novu() {
+function Notify() {
   const handleNotificationClick = (notification) => {
     notification.unread();
   };
@@ -741,7 +741,7 @@ function Novu() {
   );
 }
 
-export default Novu;
+export default Notify;
 ```
 
 ### Marking notifications as archive
@@ -749,9 +749,9 @@ export default Novu;
 Mark notifications as archive using the `archive` method provided by the notification object.
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 
-function Novu() {
+function Notify() {
   const handleNotificationClick = (notification) => {
     notification.archive();
   };
@@ -765,7 +765,7 @@ function Novu() {
   );
 }
 
-export default Novu;
+export default Notify;
 ```
 
 ### Marking notifications as unarchive
@@ -773,9 +773,9 @@ export default Novu;
 Mark notifications as unarchive using the `unarchive` method provided by the notification object.
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 
-function Novu() {
+function Notify() {
   const handleNotificationClick = (notification) => {
     notification.unarchive();
   };
@@ -789,7 +789,7 @@ function Novu() {
   );
 }
 
-export default Novu;
+export default Notify;
 ```
 
-If you still have questions or need further assistance, please reach out to us at [support@novu.co](mailto:support@novu.co).
+If you still have questions or need further assistance, please reach out to us at [support@notify.co](mailto:support@notify.co).

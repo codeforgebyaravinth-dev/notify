@@ -1,15 +1,15 @@
 ---
-title: Novu MCP Server
-description: Connect Cursor, Claude, ChatGPT, and other AI tools to the Novu MCP server to manage notifications, workflows, and subscribers using natural language.
+title: Notify MCP Server
+description: Connect Cursor, Claude, ChatGPT, and other AI tools to the Notify MCP server to manage notifications, workflows, and subscribers using natural language.
 ---
 
-The Novu MCP Server exposes Novu's notification infrastructure as tools that AI assistants can discover and use in real time. Connect your AI tool to manage subscribers, workflows, integrations, and delivery activity from natural-language prompts.
+The Notify MCP Server exposes Notify's notification infrastructure as tools that AI assistants can discover and use in real time. Connect your AI tool to manage subscribers, workflows, integrations, and delivery activity from natural-language prompts.
 
 <Note>
-  Novu also hosts a separate **documentation MCP server** at [docs.novu.co/mcp](https://docs.novu.co/mcp) that lets AI tools search and read this documentation site. The Novu MCP Server described on this page manages your Novu account - triggers, workflows, subscribers, and more.
+  Notify also hosts a separate **documentation MCP server** at [docs.novu.co/mcp](https://docs.novu.co/mcp) that lets AI tools search and read this documentation site. The Notify MCP Server described on this page manages your Notify account - triggers, workflows, subscribers, and more.
 </Note>
 
-## About the Novu MCP server
+## About the Notify MCP server
 
 The [Model Context Protocol (MCP)](https://modelcontextprotocol.io) is an open standard for connecting AI applications to external services. Once connected, you can prompt your AI assistant to:
 
@@ -20,16 +20,16 @@ The [Model Context Protocol (MCP)](https://modelcontextprotocol.io) is an open s
 - Analyze notification activity and logs
 - Create and manage workflows
 
-Some AI tools support both MCP and [Agent Skills](/platform/build-with-ai/skills). MCP gives your assistant live access to your Novu account, while skills instruct agents how to use Novu APIs and SDKs effectively. They're complementary - connect the MCP server for account operations and install skills for implementation guidance.
+Some AI tools support both MCP and [Agent Skills](/platform/build-with-ai/skills). MCP gives your assistant live access to your Notify account, while skills instruct agents how to use Notify APIs and SDKs effectively. They're complementary - connect the MCP server for account operations and install skills for implementation guidance.
 
 ## Prerequisites
 
-- A Novu Cloud account (to sign in with OAuth), or a [Novu API key](https://dashboard.novu.co/settings/api-keys)
+- A Notify Cloud account (to sign in with OAuth), or a [Notify API key](https://dashboard.novu.co/settings/api-keys)
 - An MCP-compatible AI tool - Cursor, Claude Code, ChatGPT, Claude Desktop, VS Code, Codex, or similar
 
 ## Endpoints
 
-Novu Cloud has one MCP endpoint per region:
+Notify Cloud has one MCP endpoint per region:
 
 | Region | MCP URL |
 | --- | --- |
@@ -40,7 +40,7 @@ Use the URL that matches your dashboard region - `eu.dashboard.novu.co` pairs wi
 
 ## Connect your AI tool
 
-Connecting with **OAuth** is recommended - you don't copy or paste a key; your client signs you in and picks up your organization automatically. If your client doesn't support OAuth, or you're on self-hosted Novu, use an [API key](#api-key-fallback) instead.
+Connecting with **OAuth** is recommended - you don't copy or paste a key; your client signs you in and picks up your organization automatically. If your client doesn't support OAuth, or you're on self-hosted Notify, use an [API key](#api-key-fallback) instead.
 
 <Tabs>
   <Tab title="Cursor">
@@ -50,14 +50,14 @@ Open **Cursor Settings** → **Tools & Integrations** → **New MCP Server**, an
 ```json
 {
   "mcpServers": {
-    "novu": {
+    "notify": {
       "url": "https://mcp.novu.co/"
     }
   }
 }
 ```
 
-Save the file. Cursor will prompt you to sign in to Novu the first time it calls a tool.
+Save the file. Cursor will prompt you to sign in to Notify the first time it calls a tool.
 
   </Tab>
 
@@ -68,7 +68,7 @@ Add to `.vscode/mcp.json` (or your user MCP settings):
 ```json
 {
   "servers": {
-    "novu": {
+    "notify": {
       "type": "http",
       "url": "https://mcp.novu.co/"
     }
@@ -83,7 +83,7 @@ Reload VS Code and approve the sign-in prompt when it appears.
   <Tab title="Claude Code">
 
 ```bash
-claude mcp add --transport http novu https://mcp.novu.co/
+claude mcp add --transport http notify https://mcp.novu.co/
 ```
 
 Then run `/mcp` inside Claude Code to sign in.
@@ -92,7 +92,7 @@ Then run `/mcp` inside Claude Code to sign in.
 
   <Tab title="ChatGPT">
 
-Add Novu as a custom connector using the MCP URL for your region, and choose **OAuth** as the connection mechanism. ChatGPT will prompt you to sign in to Novu.
+Add Notify as a custom connector using the MCP URL for your region, and choose **OAuth** as the connection mechanism. ChatGPT will prompt you to sign in to Notify.
 
   </Tab>
 
@@ -103,13 +103,13 @@ Claude Desktop doesn't yet support remote OAuth, so connect with an API key thro
 ```json
 {
   "mcpServers": {
-    "novu": {
+    "notify": {
       "command": "npx",
       "args": [
         "mcp-remote",
         "https://mcp.novu.co/",
         "--header",
-        "Authorization:Bearer your-novu-api-key"
+        "Authorization:Bearer your-notify-api-key"
       ]
     }
   }
@@ -123,7 +123,7 @@ Claude Desktop doesn't yet support remote OAuth, so connect with an API key thro
 Codex connects with an API key today:
 
 ```bash
-export NOVU_API_KEY="your-novu-api-key"
+export NOVU_API_KEY="your-notify-api-key"
 ```
 
 ```toml
@@ -149,15 +149,15 @@ Any MCP client that supports remote OAuth can connect with just the URL and no h
 
 ### API key (fallback)
 
-Use a Novu API key for clients without OAuth support, `mcp-remote` / stdio setups, autonomous agents, and **all self-hosted Novu** deployments. Copy your secret key from the [Novu Dashboard](https://dashboard.novu.co/settings/api-keys) and send it as a bearer token:
+Use a Notify API key for clients without OAuth support, `mcp-remote` / stdio setups, autonomous agents, and **all self-hosted Notify** deployments. Copy your secret key from the [Notify Dashboard](https://dashboard.novu.co/settings/api-keys) and send it as a bearer token:
 
 ```json
 {
   "mcpServers": {
-    "novu": {
+    "notify": {
       "url": "https://mcp.novu.co/",
       "headers": {
-        "Authorization": "Bearer your-novu-api-key"
+        "Authorization": "Bearer your-notify-api-key"
       }
     }
   }
@@ -173,35 +173,35 @@ OAuth sessions are scoped to your organization and default to the **Development*
 API keys are already bound to one environment, so `environmentId` has no effect on API key sessions.
 
 <Prompt description="Switch an OAuth session to a specific environment" icon="bot" actions={["copy", "cursor"]}>
-List my Novu environments, then show notifications from Production (not Development).
+List my Notify environments, then show notifications from Production (not Development).
 </Prompt>
 
 ## Example prompts
 
-After connecting the Novu MCP server, copy or open these prompts in Cursor to verify the connection and perform common tasks.
+After connecting the Notify MCP server, copy or open these prompts in Cursor to verify the connection and perform common tasks.
 
 <Note>
-  Replace placeholder values (for example, subscriber IDs and workflow identifiers) with values from your Novu dashboard.
+  Replace placeholder values (for example, subscriber IDs and workflow identifiers) with values from your Notify dashboard.
 </Note>
 
 ### Verify connection
 
-<Prompt description="Test your Novu MCP connection" icon="bot" actions={["copy", "cursor"]}>
-Run `whoami` to verify I'm authenticated and show my Novu region.
+<Prompt description="Test your Notify MCP connection" icon="bot" actions={["copy", "cursor"]}>
+Run `whoami` to verify I'm authenticated and show my Notify region.
 </Prompt>
 
 <Prompt description="List your notification workflows" icon="bot" actions={["copy", "cursor"]}>
-Show me all my notification workflows in Novu.
+Show me all my notification workflows in Notify.
 </Prompt>
 
 ### Subscriber management
 
 <Prompt description="Find a subscriber by email" icon="bot" actions={["copy", "cursor"]}>
-Find subscriber user@example.com in my Novu account and show their profile details.
+Find subscriber user@example.com in my Notify account and show their profile details.
 </Prompt>
 
 <Prompt description="Create a new subscriber" icon="bot" actions={["copy", "cursor"]}>
-Create a new subscriber with subscriberId user-456, email jane@example.com, and firstName Jane in my Novu account.
+Create a new subscriber with subscriberId user-456, email jane@example.com, and firstName Jane in my Notify account.
 </Prompt>
 
 ### Trigger and debug
@@ -250,14 +250,14 @@ Your AI assistant discovers these tools automatically when it connects, and call
 
 ## Use multiple MCP servers
 
-You can connect both the Novu MCP server and the [Novu documentation MCP server](https://docs.novu.co/mcp) at the same time. Each serves a different purpose:
+You can connect both the Notify MCP server and the [Notify documentation MCP server](https://docs.novu.co/mcp) at the same time. Each serves a different purpose:
 
 | Server | URL | Purpose |
 | --- | --- | --- |
-| Novu MCP | `https://mcp.novu.co/` (US) / `https://eu.mcp.novu.co/` (EU) | Manage your Novu account - workflows, subscribers, triggers |
-| Novu Docs MCP | `https://docs.novu.co/mcp` | Search and read Novu documentation |
+| Notify MCP | `https://mcp.novu.co/` (US) / `https://eu.mcp.novu.co/` (EU) | Manage your Notify account - workflows, subscribers, triggers |
+| Notify Docs MCP | `https://docs.novu.co/mcp` | Search and read Notify documentation |
 
-Connected MCP servers don't consume context until the AI calls a tool. Be specific in your prompts so the assistant uses the most relevant server - for example, "trigger my welcome workflow" uses the Novu MCP, while "how do I configure digest steps?" uses the Docs MCP.
+Connected MCP servers don't consume context until the AI calls a tool. Be specific in your prompts so the assistant uses the most relevant server - for example, "trigger my welcome workflow" uses the Notify MCP, while "how do I configure digest steps?" uses the Docs MCP.
 
 ## Troubleshooting
 
@@ -278,7 +278,7 @@ Connected MCP servers don't consume context until the AI calls a tool. Be specif
     Double-check you're on the endpoint for your region (`eu.dashboard.novu.co` → `https://eu.mcp.novu.co/`), and that any API key is sent as `Authorization: Bearer your-api-key` with no extra spaces.
   </Accordion>
 
-  <Accordion title="Self-hosted Novu">
+  <Accordion title="Self-hosted Notify">
     OAuth isn't available on self-hosted deployments - connect with an [API key](#api-key-fallback) from your instance. See [API keys](/platform/developer/api-keys).
   </Accordion>
 
@@ -292,19 +292,19 @@ Connected MCP servers don't consume context until the AI calls a tool. Be specif
 - Prefer OAuth over long-lived API keys for interactive clients - OAuth tokens are short-lived and revocable.
 - The server never puts credentials in URLs, and holds no ambient credentials between sessions.
 - Rotate an API key from the Dashboard immediately if you suspect it's been exposed.
-- Self-hosted Novu always uses API keys; OAuth is available for Novu Cloud only.
-- Use caution when combining the Novu MCP server with other MCP servers or untrusted data in the same session, and review tool calls before approving actions that modify your data.
+- Self-hosted Notify always uses API keys; OAuth is available for Notify Cloud only.
+- Use caution when combining the Notify MCP server with other MCP servers or untrusted data in the same session, and review tool calls before approving actions that modify your data.
 
 ## Related topics
 
 <Columns cols={2}>
   <Card title="Agent Skills" href="/platform/build-with-ai/skills">
-    Give AI coding assistants implementation guidance for Novu SDKs and workflows.
+    Give AI coding assistants implementation guidance for Notify SDKs and workflows.
   </Card>
   <Card title="Agent Toolkit" href="/platform/build-with-ai/agent-toolkit">
-    Embed Novu tools inside your own AI agents with the `@novu/agent-toolkit` package.
+    Embed Notify tools inside your own AI agents with the `@notify/agent-toolkit` package.
   </Card>
-  <Card title="Novu Docs MCP" href="https://docs.novu.co/mcp">
+  <Card title="Notify Docs MCP" href="https://docs.novu.co/mcp">
     Connect AI tools to search and read this documentation site.
   </Card>
   <Card title="API keys" href="/platform/developer/api-keys">

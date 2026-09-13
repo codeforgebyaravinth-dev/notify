@@ -1,6 +1,6 @@
-import { EnvironmentWithSubscriber } from '@novu/application-generic';
-import { NotificationTemplateEntity, PreferencesEntity, SubscriberEntity } from '@novu/dal';
-import { SeverityLevelEnum, WorkflowCriticalityEnum } from '@novu/shared';
+import { EnvironmentWithSubscriber } from '@notify/application-generic';
+import { NotificationTemplateEntity, PreferencesEntity, SubscriberEntity } from '@notify/dal';
+import { SeverityLevelEnum, WorkflowCriticalityEnum } from '@notify/shared';
 import { IsArray, IsBoolean, IsDefined, IsEnum, IsOptional, IsString } from 'class-validator';
 
 export class GetSubscriberPreferenceCommand extends EnvironmentWithSubscriber {

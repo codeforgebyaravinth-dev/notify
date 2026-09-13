@@ -1,6 +1,6 @@
 import { AuthType, Infobip } from '@infobip-api/sdk';
-import { SmsProviderIdEnum } from '@novu/shared';
-import { ChannelTypeEnum, ISendMessageSuccessResponse, ISmsOptions, ISmsProvider } from '@novu/stateless';
+import { SmsProviderIdEnum } from '@notify/shared';
+import { ChannelTypeEnum, ISendMessageSuccessResponse, ISmsOptions, ISmsProvider } from '@notify/stateless';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
 import { resolveSafeInfobipBaseUrl } from '../../../utils/safe-infobip-base-url';
 import { WithPassthrough } from '../../../utils/types';

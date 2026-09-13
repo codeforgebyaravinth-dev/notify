@@ -8,7 +8,7 @@ import type {
   UpdateWorkflowDto,
   WorkflowResponseDto,
   WorkflowTestDataResponseDto,
-} from '@novu/shared';
+} from '@notify/shared';
 import { delV2, getV2, patchV2, post, postV2, putV2 } from './api.client';
 
 export const getWorkflow = async ({

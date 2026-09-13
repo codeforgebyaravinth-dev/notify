@@ -1,10 +1,10 @@
 ---
 title: "Connect AWS Claude managed agent"
-description: "Create a managed agent on Claude Platform for AWS with the Novu CLI. Provide region, workspace ID, and API key, then connect Slack."
+description: "Create a managed agent on Claude Platform for AWS with the Notify CLI. Provide region, workspace ID, and API key, then connect Slack."
 sidebarTitle: AWS Claude Managed
 ---
 
-Create a managed agent on **Claude Platform for AWS** and connect it to Slack with the Novu CLI. No bridge server is required.
+Create a managed agent on **Claude Platform for AWS** and connect it to Slack with the Notify CLI. No bridge server is required.
 
 This path uses AWS Claude Platform credentials (region, workspace ID, API key). For Anthropic Claude directly, see [Connect Claude managed agent](/agents/get-started/claude-managed).
 
@@ -15,7 +15,7 @@ This path uses AWS Claude Platform credentials (region, workspace ID, API key). 
 ## Prerequisites
 
 - Node.js on your machine
-- A [Novu account](https://dashboard.novu.co/agents) (you can create one during setup)
+- A [Notify account](https://dashboard.novu.co/agents) (you can create one during setup)
 - An [AWS Claude Platform](https://docs.aws.amazon.com/claude-platform/latest/userguide/setup.html) workspace with:
   - Commercial **AWS region**
   - **Workspace ID** (`wrkspc_…`)
@@ -30,7 +30,7 @@ This path uses AWS Claude Platform credentials (region, workspace ID, API key). 
 ## Run the CLI
 
 ```bash
-npx novu connect
+npx notify connect
 ```
 </Step>
 
@@ -45,7 +45,7 @@ The CLI prompts for:
 2. **AWS Claude region** — commercial region for your workspace
 3. **AWS Claude workspace ID** — `wrkspc_…` under Workspaces in the AWS Console
 
-Novu verifies the credentials and creates an AWS Claude runtime integration in your environment.
+Notify verifies the credentials and creates an AWS Claude runtime integration in your environment.
 </Step>
 
 <Step>
@@ -57,7 +57,7 @@ Novu verifies the credentials and creates an AWS Claude runtime integration in y
     Create an engineering assistant agent that checks Linear and GitHub for open issues, pending PR reviews, and review requests. It summarizes what needs attention, flags blockers and stale tickets, and posts a short daily standup digest. It keeps responses concise and links back to the relevant Linear issue or GitHub pull request.
     ```
 
-2. Novu generates a name, identifier, system prompt, tools, MCP servers, and skills from that description.
+2. Notify generates a name, identifier, system prompt, tools, MCP servers, and skills from that description.
 3. Review the fields. Select **Create this agent**, or **Regenerate from description** to revise.
 </Step>
 
@@ -69,7 +69,7 @@ When prompted to pick a channel, select **Slack**.
 1. Open [https://api.slack.com/apps](https://api.slack.com/apps).
 2. Under **App Configuration Tokens**, click **Generate Token**.
 3. Copy the access token (starts with `xoxe.xoxp-`).
-4. Paste it into the CLI. Novu uses it once to create the Slack app and does not store it.
+4. Paste it into the CLI. Notify uses it once to create the Slack app and does not store it.
 5. Follow the install link to add the bot to your workspace.
 </Step>
 
@@ -78,7 +78,7 @@ When prompted to pick a channel, select **Slack**.
 
 Open Slack and DM the agent (or @mention it in a channel). If the generated config includes Linear or GitHub MCP servers, the agent may prompt you to authorize them in-thread.
 
-Manage channels and conversations in the [Novu dashboard](https://dashboard.novu.co/agents).
+Manage channels and conversations in the [Notify dashboard](https://dashboard.novu.co/agents).
 </Step>
 
 </Steps>
@@ -87,7 +87,7 @@ Manage channels and conversations in the [Novu dashboard](https://dashboard.novu
   Non-interactive / CI:
 
   ```bash
-  npx novu connect \
+  npx notify connect \
     --runtime claude-aws \
     --aws-claude-api-key <key> \
     --aws-claude-region <region> \
@@ -100,7 +100,7 @@ Manage channels and conversations in the [Novu dashboard](https://dashboard.novu
 <Prompt description="Copy an example agent description" icon="plug" actions={["copy", "cursor"]}>
 Create an engineering assistant agent that checks Linear and GitHub for open issues, pending PR reviews, and review requests. It summarizes what needs attention, flags blockers and stale tickets, and posts a short daily standup digest. It keeps responses concise and links back to the relevant Linear issue or GitHub pull request.
 
-Use the Novu CLI (`npx novu connect`) with AWS Claude Managed Agent. Provide AWS region, workspace ID (wrkspc_…), and API key. Connect Slack as the first channel.
+Use the Notify CLI (`npx notify connect`) with AWS Claude Managed Agent. Provide AWS region, workspace ID (wrkspc_…), and API key. Connect Slack as the first channel.
 
 Reference: https://docs.novu.co/agents/get-started/aws-claude
 </Prompt>

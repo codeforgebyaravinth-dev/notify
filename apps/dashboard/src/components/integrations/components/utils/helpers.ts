@@ -6,7 +6,7 @@ import {
   EmailProviderIdEnum,
   IConfigCredential,
   SmsProviderIdEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 
 export function isDemoIntegration(providerId: string) {
   return (

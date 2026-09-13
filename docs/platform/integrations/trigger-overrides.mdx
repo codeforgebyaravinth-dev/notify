@@ -1,6 +1,6 @@
 ---
 title: 'Trigger Overrides'
-description: "Customize workflow behavior at trigger time in Novu using overrides. Override provider settings, headers, and payloads per event without editing your workflow."
+description: "Customize workflow behavior at trigger time in Notify using overrides. Override provider settings, headers, and payloads per event without editing your workflow."
 ---
 
 
@@ -31,11 +31,11 @@ Channel overrides let you customize specific channel settings and content during
 
 Provider overrides give you fine-tuned control over how messages are delivered by allowing direct configuration of the underlying provider SDKs during the workflow's trigger phase.
 
-This feature is designed for advanced use cases where Novu's default message editor or UI does not expose specific provider capabilities.
+This feature is designed for advanced use cases where Notify's default message editor or UI does not expose specific provider capabilities.
 
 Use provider overrides to:
-- Access native provider features not surfaced by Novu’s abstraction layer. For example, custom headers in SendGrid, topic messaging in FCM, or [Slack Block Kit](/platform/integrations/chat/slack#format-messages-with-block-kit).
-- Adapt to provider-specific options by injecting parameters that Novu doesn’t yet officially support.
+- Access native provider features not surfaced by Notify’s abstraction layer. For example, custom headers in SendGrid, topic messaging in FCM, or [Slack Block Kit](/platform/integrations/chat/slack#format-messages-with-block-kit).
+- Adapt to provider-specific options by injecting parameters that Notify doesn’t yet officially support.
 - Configure shared or unique settings across steps without altering templates or workflow logic.
 
 This mechanism offers a flexible customization layer that lets you pass deeply nested payloads that align directly with your provider’s native API. It helps decouple workflow behavior from provider-specific implementation details, which is essential when working across multiple channels like email, push, or chat.
@@ -67,9 +67,9 @@ Use workflow-level overrides when:
 <Tabs>
   <Tab title="Node.js">
 ```ts
-import { Novu } from "@novu/api";
+import { Notify } from "@notify/api";
 
-const novu = new Novu({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
+const notify = new Notify({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
 
 await novu.trigger({
   to: {
@@ -104,9 +104,9 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="workflow_identifier",
         to={
@@ -179,10 +179,10 @@ res, err := s.Trigger(context.Background(), components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()
+$sdk = notify\Notify::builder()
     ->setSecurity('<YOUR_SECRET_KEY_HERE>')
     ->build();
 
@@ -219,8 +219,8 @@ $sdk->trigger(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new NovuSDK(secretKey: "<YOUR_SECRET_KEY_HERE>");
@@ -256,11 +256,11 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto() {
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 import java.util.Map;
 
-Novu novu = Novu.builder()
+Notify novu = Notify.builder()
     .secretKey("<YOUR_SECRET_KEY_HERE>")
     .build();
 
@@ -356,9 +356,9 @@ Use step-level overrides when:
 <Tabs>
   <Tab title="Node.js">
 ```ts
-import { Novu } from "@novu/api";
+import { Notify } from "@notify/api";
 
-const novu = new Novu({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
+const notify = new Notify({ secretKey: "<YOUR_SECRET_KEY_HERE>" });
 
 await novu.trigger({
   to: {
@@ -407,9 +407,9 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="workflow_identifier",
         to={
@@ -510,10 +510,10 @@ res, err := s.Trigger(context.Background(), components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()
+$sdk = notify\Notify::builder()
     ->setSecurity('<YOUR_SECRET_KEY_HERE>')
     ->build();
 
@@ -564,8 +564,8 @@ $sdk->trigger(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new NovuSDK(secretKey: "<YOUR_SECRET_KEY_HERE>");
@@ -615,11 +615,11 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto() {
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 import java.util.Map;
 
-Novu novu = Novu.builder()
+Notify novu = Notify.builder()
     .secretKey("<YOUR_SECRET_KEY_HERE>")
     .build();
 
@@ -701,7 +701,7 @@ curl -L -g -X POST 'https://api.novu.co/v1/events/trigger' \
 </Tabs>
 
 <Note>
-  The `push-step` refers to the step identifier, which you can copy directly from your workflow in the Novu dashboard. Use this identifier to target the specific step you want to override. 
+  The `push-step` refers to the step identifier, which you can copy directly from your workflow in the Notify dashboard. Use this identifier to target the specific step you want to override. 
 </Note>
 
 In this example, only the `push-step` is affected, and multiple FCM-specific settings are overridden for that step, which are the notification title, body, and sound configurations for both Android and iOS platforms.

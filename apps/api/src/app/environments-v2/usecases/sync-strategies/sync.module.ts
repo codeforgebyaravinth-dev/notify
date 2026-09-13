@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { DeletePreferencesUseCase, GetWorkflowByIdsUseCase, ResourceValidatorService } from '@novu/application-generic';
+import { DeletePreferencesUseCase, GetWorkflowByIdsUseCase, ResourceValidatorService } from '@notify/application-generic';
 import { AgentsModule } from '../../../agents/agents.module';
 import { LayoutsV2Module } from '../../../layouts-v2/layouts.module';
 import { DeleteLayoutUseCase } from '../../../layouts-v2/usecases/delete-layout';

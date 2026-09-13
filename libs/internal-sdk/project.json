@@ -1,5 +1,5 @@
 {
-  "name": "@novu/api",
+  "name": "@notify/api",
   "sourceRoot": "libs/internal-sdk/src",
   "projectType": "library",
   "targets": {

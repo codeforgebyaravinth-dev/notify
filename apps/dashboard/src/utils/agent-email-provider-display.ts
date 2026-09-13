@@ -1,4 +1,4 @@
-import { EmailProviderIdEnum } from '@novu/shared';
+import { EmailProviderIdEnum } from '@notify/shared';
 
 export const AGENT_EMAIL_PROVIDER_LABEL = 'Email';
 

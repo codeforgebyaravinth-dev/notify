@@ -4,8 +4,8 @@ import {
   buildMessageCountKey,
   buildSubscriberKey,
   InvalidateCacheService,
-} from '@novu/application-generic';
-import { PreferencesRepository, SubscriberRepository, TopicSubscribersRepository } from '@novu/dal';
+} from '@notify/application-generic';
+import { PreferencesRepository, SubscriberRepository, TopicSubscribersRepository } from '@notify/dal';
 
 import { RemoveSubscriberCommand } from './remove-subscriber.command';
 

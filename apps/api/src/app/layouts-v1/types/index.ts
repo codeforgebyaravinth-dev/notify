@@ -11,7 +11,7 @@ import {
   OrganizationId,
   TemplateVariableTypeEnum,
   UserId,
-} from '@novu/shared';
+} from '@notify/shared';
 
 export type LayoutVariables = ITemplateVariable[];
 

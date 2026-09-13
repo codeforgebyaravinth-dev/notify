@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
-import { PinoLogger } from '@novu/application-generic';
+import { PinoLogger } from '@notify/application-generic';
 import {
   ChangeEntity,
   ChangeRepository,
@@ -9,8 +9,8 @@ import {
   MessageTemplateRepository,
   NotificationGroupRepository,
   NotificationTemplateRepository,
-} from '@novu/dal';
-import { ChangeEntityTypeEnum } from '@novu/shared';
+} from '@notify/dal';
+import { ChangeEntityTypeEnum } from '@notify/shared';
 import { TRANSLATIONS_SERVICE } from '../../../shared/constants';
 import { ChangesResponseDto } from '../../dtos/change-response.dto';
 import { GetChangesCommand } from './get-changes.command';

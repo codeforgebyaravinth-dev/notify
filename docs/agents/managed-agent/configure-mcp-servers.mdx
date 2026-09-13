@@ -1,6 +1,6 @@
 ---
 title: "Configure MCP servers"
-description: "Enable external tools like Linear, GitHub, and Notion on your Novu managed agent by configuring MCP servers in the dashboard for tool-augmented replies."
+description: "Enable external tools like Linear, GitHub, and Notion on your Notify managed agent by configuring MCP servers in the dashboard for tool-augmented replies."
 ---
 
 
@@ -10,7 +10,7 @@ MCP (Model Context Protocol) servers give your managed agent access to external 
 
 <Steps>
   <Step title="Open the agent detail page">
-    Open the [Novu dashboard](https://dashboard.novu.co) and go to your managed agent's detail page.
+    Open the [Notify dashboard](https://dashboard.novu.co) and go to your managed agent's detail page.
   </Step>
 
   <Step title="Open MCP Servers">
@@ -25,7 +25,7 @@ MCP (Model Context Protocol) servers give your managed agent access to external 
   </Step>
 
   <Step title="Wait for sync">
-    Novu syncs the configuration to the AI platform.
+    Notify syncs the configuration to the AI platform.
   </Step>
 </Steps>
 
@@ -38,7 +38,7 @@ MCP servers have different authentication requirements:
 | Mode | How it works |
 | --- | --- |
 | **No auth** | The server is publicly accessible. No credentials needed. |
-| **Novu-managed OAuth** | Novu handles the OAuth flow. End users authorize on first use and Novu stores the tokens. |
+| **Notify-managed OAuth** | Notify handles the OAuth flow. End users authorize on first use and Notify stores the tokens. |
 | **Provider-managed** | The AI platform manages credentials in its own vault. |
 
 ### Subscriber authorization flow
@@ -47,7 +47,7 @@ For servers that require OAuth (like Linear, GitHub, or Slack):
 
 <Steps>
   <Step title="Agent encounters a tool call">
-    Novu prompts the user to authorize the tool before continuing.
+    Notify prompts the user to authorize the tool before continuing.
   </Step>
 
   <Step title="Agent sends authorization link">
@@ -58,8 +58,8 @@ For servers that require OAuth (like Linear, GitHub, or Slack):
     The user clicks the link and completes the OAuth flow on the external service.
   </Step>
 
-  <Step title="Novu stores tokens">
-    Novu stores the tokens securely and uses them on every subsequent turn.
+  <Step title="Notify stores tokens">
+    Notify stores the tokens securely and uses them on every subsequent turn.
   </Step>
 </Steps>
 
@@ -76,7 +76,7 @@ Authorization is scoped to a single subscriber and a single MCP server. Each use
   </Step>
 
   <Step title="Wait for removal">
-    Novu removes the server from the AI platform and deletes any associated connections.
+    Notify removes the server from the AI platform and deletes any associated connections.
   </Step>
 </Steps>
 
@@ -86,7 +86,7 @@ Authorization is scoped to a single subscriber and a single MCP server. Each use
 
 ## Available MCP servers
 
-The exact list depends on your connector and Novu account tier. Common servers include:
+The exact list depends on your connector and Notify account tier. Common servers include:
 
 | Server | What it does |
 | --- | --- |

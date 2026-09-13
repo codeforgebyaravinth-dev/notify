@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { DomainRepository, DomainRouteRepository } from '@novu/dal';
+import { DomainRepository, DomainRouteRepository } from '@notify/dal';
 
 import { resolveDomainName } from '../domain-route.utils';
 import { DeleteDomainCommand } from './delete-domain.command';

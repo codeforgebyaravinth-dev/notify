@@ -1,14 +1,14 @@
 import { MiddlewareConsumer, ModuleMetadata } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
-import { PassportStrategyEnum } from '@novu/shared';
+import { PassportStrategyEnum } from '@notify/shared';
 import {
   cacheService,
   FeatureFlagsService,
   featureFlagsService,
   InMemoryLRUCacheService,
   PlatformException,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import { RootEnvironmentGuard } from './framework/root-environment-guard.service';
 import { AuthService } from './services/auth.service';
 import { CommunityAuthService } from './services/community.auth.service';
@@ -18,10 +18,10 @@ import { USE_CASES } from './usecases';
 import { SharedModule } from '../shared/shared.module';
 import { UserModule } from '../user/user.module';
 import { EnvironmentsModuleV1 } from '../environments-v1/environments-v1.module';
-import { CommunityMemberRepository, CommunityOrganizationRepository, CommunityUserRepository } from '@novu/dal';
+import { CommunityMemberRepository, CommunityOrganizationRepository, CommunityUserRepository } from '@notify/dal';
 
 export function getEEModuleConfig(): ModuleMetadata {
-  const eeAuthPackage = require('@novu/ee-auth');
+  const eeAuthPackage = require('@notify/ee-auth');
   const eeAuthModule = eeAuthPackage?.eeAuthModule;
 
   if (!eeAuthModule) {
@@ -92,7 +92,7 @@ export function getEEModuleConfig(): ModuleMetadata {
 }
 
 export function configure(consumer: MiddlewareConsumer) {
-  const eeAuthPackage = require('@novu/ee-auth');
+  const eeAuthPackage = require('@notify/ee-auth');
 
   if (!eeAuthPackage?.configure) {
     throw new PlatformException('ee-auth configure() is not loaded');

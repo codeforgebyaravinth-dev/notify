@@ -1,5 +1,5 @@
-import { NOVU_ENCRYPTION_SUB_MASK } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { NOVU_ENCRYPTION_SUB_MASK } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 const mutableEnv = process.env as Record<string, string | undefined>;

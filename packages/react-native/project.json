@@ -1,5 +1,5 @@
 {
-  "name": "@novu/react-native",
+  "name": "@notify/react-native",
   "sourceRoot": "packages/react-native/src",
   "projectType": "library",
   "targets": {

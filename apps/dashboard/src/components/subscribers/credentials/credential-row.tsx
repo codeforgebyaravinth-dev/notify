@@ -1,4 +1,4 @@
-import type { ChannelEndpointType } from '@novu/shared';
+import type { ChannelEndpointType } from '@notify/shared';
 import { useState } from 'react';
 import type { ChannelEndpointPayload } from '@/api/channel-endpoints';
 import { ProviderIcon } from '@/components/integrations/components/provider-icon';

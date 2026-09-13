@@ -1,6 +1,6 @@
 import { BadRequestException, Controller, Get, HttpStatus, NotFoundException, Param, Query, Res } from '@nestjs/common';
 import { ApiExcludeController, ApiOperation } from '@nestjs/swagger';
-import { ApiRateLimitCategoryEnum } from '@novu/shared';
+import { ApiRateLimitCategoryEnum } from '@notify/shared';
 import { Response } from 'express';
 
 import { ThrottlerCategory } from '../../../rate-limiting/guards';

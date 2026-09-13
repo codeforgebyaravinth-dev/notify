@@ -1,17 +1,17 @@
 ---
-title: "APNS Push Integration with Novu"
+title: "APNS Push Integration with Notify"
 sidebarTitle: 'APNS'
-description: "Connect Apple Push Notification service (APNS) to Novu to send iOS push notifications through workflows using your APNS auth key, key ID, and team ID."
+description: "Connect Apple Push Notification service (APNS) to Notify to send iOS push notifications through workflows using your APNS auth key, key ID, and team ID."
 ---
 
-This guide explains how to configure and use the [Apple Push Notification Service (APNS)](https://developer.apple.com/notifications/) with Novu to deliver push notifications to iOS devices. It outlines:
+This guide explains how to configure and use the [Apple Push Notification Service (APNS)](https://developer.apple.com/notifications/) with Notify to deliver push notifications to iOS devices. It outlines:
 - The required setup in your Apple Developer account.
-- The connection process in Novu.
+- The connection process in Notify.
 - How to manage device tokens and message payloads.
 
-## Configuring APNS with Novu
+## Configuring APNS with Notify
 
-Before sending notifications, APNS must be configured with the correct credentials from your Apple Developer account. Novu uses these credentials to securely authenticate with Apple’s servers.
+Before sending notifications, APNS must be configured with the correct credentials from your Apple Developer account. Notify uses these credentials to securely authenticate with Apple’s servers.
 
 ### Obtain APNS credentials
 
@@ -19,7 +19,7 @@ Apple provides two authentication options for connecting to APNS:
 - A certificate-based `.p12` certificate  
 - A token-based `.p8` key
 
-Novu supports both, but this guide focuses on the `.p8` token-based approach, which is recommended for most production setups.
+Notify supports both, but this guide focuses on the `.p8` token-based approach, which is recommended for most production setups.
 
 To generate the required credentials, use an [Apple Developer account](https://developer.apple.com/) with an [Admin role](https://appstoreconnect.apple.com/access/users). Follow [Apple’s official steps](https://developer.apple.com/help/account/keys/create-a-private-key) to create and download a private `.p8` key.
 
@@ -29,11 +29,11 @@ The following identifiers are also needed for integration:
 - **Team ID**: This is found in your Apple Developer account.  
 - **Bundle ID**: The identifier for your app, which is available in the app info section.
 
-### Add APNS credentials to Novu
+### Add APNS credentials to Notify
 
-Once the Apple credentials are available, you can add them in Novu’s Integration Store.
+Once the Apple credentials are available, you can add them in Notify’s Integration Store.
 
-1. Log in to your Novu account.
+1. Log in to your Notify account.
 2. On your dashboard, click **Integration Store**.  
 3. Click **Connect provider**.
 4. Click the **Push** tab.
@@ -44,24 +44,24 @@ Once the Apple credentials are available, you can add them in Novu’s Integrati
     * **Key ID**: Your 10-character Key ID.
     * **Team ID**: Your 10-character Team ID.
     * **Bundle ID**: Your app's Bundle ID.
-![APNS Integration in Novu](/images/channels-and-providers/push/apns/apns-integration.png)
+![APNS Integration in Notify](/images/channels-and-providers/push/apns/apns-integration.png)
 8. Click **Create Integration**.
 
 ## Sending notifications with APNS
 
-After configuration, APNS can be used in any Novu workflow that includes a Push step. The process involves registering device tokens for subscribers and then triggering workflows to deliver messages.
+After configuration, APNS can be used in any Notify workflow that includes a Push step. The process involves registering device tokens for subscribers and then triggering workflows to deliver messages.
 
 ### Registering subscriber device tokens
 
-Each subscriber (user) must have one or more device tokens registered to receive push notifications. Tokens can be added or updated through Novu’s API using the [Update Subscriber Credentials](/api-reference/subscribers/update-provider-credentials) endpoint.
+Each subscriber (user) must have one or more device tokens registered to receive push notifications. Tokens can be added or updated through Notify’s API using the [Update Subscriber Credentials](/api-reference/subscribers/update-provider-credentials) endpoint.
 
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
-import { ChatOrPushProviderEnum } from "@novu/api/models/components";
+import { Notify } from '@notify/api';
+import { ChatOrPushProviderEnum } from "@notify/api/models/components";
 
-const novu = new Novu({ secretKey: "<NOVU_SECRET_KEY>" });
+const notify = new Notify({ secretKey: "<NOVU_SECRET_KEY>" });
 
 await novu.subscribers.credentials.update(
   {
@@ -77,9 +77,9 @@ await novu.subscribers.credentials.update(
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.subscribers.credentials.update(
         subscriber_id="subscriberId",
         update_subscriber_channel_request_dto={
@@ -113,10 +113,10 @@ res, err := s.Subscribers.Credentials.Update(context.Background(), "subscriberId
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 
 $sdk->subscribersCredentials->update(
     subscriberId: 'subscriberId',
@@ -132,8 +132,8 @@ $sdk->subscribersCredentials->update(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 using System.Collections.Generic;
 
@@ -152,11 +152,11 @@ await sdk.Subscribers.Credentials.UpdateAsync(
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 import java.util.List;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 
 novu.subscribers().credentials().update()
     .subscriberId("subscriberId")
@@ -192,14 +192,14 @@ curl -L -X PUT 'https://api.novu.co/v1/subscribers/<SUBSCRIBER_ID>/credentials' 
 
 ### Triggering workflows
 
-Once subscribers’ devices are registered, push notifications are delivered through [workflows that include a Push step](/platform/workflow/create-a-workflow). A workflow can be triggered using the Novu [SDK](/platform/sdks) or [API](/api-reference/events/trigger-event).
+Once subscribers’ devices are registered, push notifications are delivered through [workflows that include a Push step](/platform/workflow/create-a-workflow). A workflow can be triggered using the Notify [SDK](/platform/sdks) or [API](/api-reference/events/trigger-event).
 
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({ secretKey: "<NOVU_SECRET_KEY>" });
+const notify = new Notify({ secretKey: "<NOVU_SECRET_KEY>" });
 
 await novu.trigger({
   workflowId: "workflowId",
@@ -212,9 +212,9 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="workflowId",
         to={"subscriber_id": "SUBSCRIBER_ID"},
@@ -245,10 +245,10 @@ res, err := s.Trigger(context.Background(), components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 
 $sdk->trigger(
     triggerEventRequestDto: new Components\TriggerEventRequestDto(
@@ -261,8 +261,8 @@ $sdk->trigger(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
@@ -276,11 +276,11 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto() {
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 import java.util.Map;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 
 novu.trigger()
     .body(TriggerEventRequestDto.builder()
@@ -308,16 +308,16 @@ curl --location 'https://api.novu.co/v1/events/trigger' \
 </Tabs>
 ## Customizing notifications with overrides
 
-Novu supports an `overrides` field that lets you attach APNS-specific payload parameters when triggering a workflow.
+Notify supports an `overrides` field that lets you attach APNS-specific payload parameters when triggering a workflow.
 
 The `overrides` field supports all [APNS Notification payload](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification?language=objc) values. Here is an example:
 
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({ secretKey: "<NOVU_SECRET_KEY>" });
+const notify = new Notify({ secretKey: "<NOVU_SECRET_KEY>" });
 
 await novu.trigger({
   workflowId: "workflowId",
@@ -347,9 +347,9 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="workflowId",
         to={"subscriber_id": "subscriberId"},
@@ -414,10 +414,10 @@ res, err := s.Trigger(context.Background(), components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 
 $sdk->trigger(
     triggerEventRequestDto: new Components\TriggerEventRequestDto(
@@ -445,8 +445,8 @@ $sdk->trigger(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
@@ -477,11 +477,11 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto() {
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 import java.util.Map;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 
 novu.trigger()
     .body(TriggerEventRequestDto.builder()

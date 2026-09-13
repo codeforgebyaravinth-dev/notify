@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { InstrumentUsecase } from '@novu/application-generic';
-import { ChannelConnectionRepository } from '@novu/dal';
+import { InstrumentUsecase } from '@notify/application-generic';
+import { ChannelConnectionRepository } from '@notify/dal';
 import { DeleteChannelConnectionCommand } from './delete-channel-connection.command';
 
 @Injectable()

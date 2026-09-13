@@ -54,46 +54,46 @@ describe('renderInstallCommand', () => {
     expect(
       renderInstallCommand({
         descriptor: PACKAGE_MANAGER_BY_NAME.pnpm,
-        packages: ['@novu/nextjs', '@novu/api'],
+        packages: ['@notify/nextjs', '@notify/api'],
       })
-    ).toBe('pnpm add @novu/nextjs @novu/api --ignore-workspace-root-check');
+    ).toBe('pnpm add @notify/nextjs @notify/api --ignore-workspace-root-check');
   });
 
   it('appends --legacy-peer-deps only for npm + opt-in', () => {
     expect(
       renderInstallCommand({
         descriptor: PACKAGE_MANAGER_BY_NAME.npm,
-        packages: ['@novu/react'],
+        packages: ['@notify/react'],
         legacyPeerDeps: true,
       })
-    ).toBe('npm install @novu/react --legacy-peer-deps');
+    ).toBe('npm install @notify/react --legacy-peer-deps');
 
     expect(
       renderInstallCommand({
         descriptor: PACKAGE_MANAGER_BY_NAME.pnpm,
-        packages: ['@novu/react'],
+        packages: ['@notify/react'],
         legacyPeerDeps: true,
       })
-    ).toBe('pnpm add @novu/react --ignore-workspace-root-check');
+    ).toBe('pnpm add @notify/react --ignore-workspace-root-check');
   });
 
   it('puts the yarn workspace filter before `add`', () => {
     expect(
       renderInstallCommand({
         descriptor: PACKAGE_MANAGER_BY_NAME['yarn-v2'],
-        packages: ['@novu/react'],
+        packages: ['@notify/react'],
         workspaceName: '@app/web',
       })
-    ).toBe('yarn workspace @app/web add @novu/react');
+    ).toBe('yarn workspace @app/web add @notify/react');
   });
 
   it('appends --force when requested', () => {
     expect(
       renderInstallCommand({
         descriptor: PACKAGE_MANAGER_BY_NAME.npm,
-        packages: ['@novu/react'],
+        packages: ['@notify/react'],
         force: true,
       })
-    ).toBe('npm install @novu/react --force');
+    ).toBe('npm install @notify/react --force');
   });
 });

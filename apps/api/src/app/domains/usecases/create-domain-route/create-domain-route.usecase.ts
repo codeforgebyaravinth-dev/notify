@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { AgentRepository, DomainRepository, DomainRouteRepository } from '@novu/dal';
-import { DomainRouteTypeEnum } from '@novu/shared';
+import { AgentRepository, DomainRepository, DomainRouteRepository } from '@notify/dal';
+import { DomainRouteTypeEnum } from '@notify/shared';
 import { DomainRouteResponseDto } from '../../dtos/domain-route-response.dto';
 import { toDomainRouteResponse } from '../../mappers/domain-route-response.mapper';
 import {

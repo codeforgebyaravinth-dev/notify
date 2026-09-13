@@ -6,9 +6,9 @@ import {
   GetLayoutUseCase,
   LayoutResponseDto,
   PinoLogger,
-} from '@novu/application-generic';
-import { ControlValuesRepository, LayoutRepository, LocalizationResourceEnum } from '@novu/dal';
-import { ControlValuesLevelEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { ControlValuesRepository, LayoutRepository, LocalizationResourceEnum } from '@notify/dal';
+import { ControlValuesLevelEnum } from '@notify/shared';
 import { DeleteLayoutCommand } from './delete-layout.command';
 
 @Injectable()
@@ -96,7 +96,7 @@ export class DeleteLayoutUseCase {
 
     try {
       const deleteTranslationGroupUseCase = this.moduleRef.get(
-        require('@novu/ee-translation')?.DeleteTranslationGroup,
+        require('@notify/ee-translation')?.DeleteTranslationGroup,
         {
           strict: false,
         }

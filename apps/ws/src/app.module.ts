@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ServeStaticModule } from '@nestjs/serve-static';
-import { TracingModule } from '@novu/application-generic';
+import { TracingModule } from '@notify/application-generic';
 import { SentryModule } from '@sentry/nestjs/setup';
 import { join } from 'path';
 import packageJson from '../package.json';

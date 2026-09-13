@@ -1,4 +1,4 @@
-import { CredentialsKeyEnum } from '@novu/shared';
+import { CredentialsKeyEnum } from '@notify/shared';
 import { type ClipboardEvent, useCallback, useMemo, useRef, useState } from 'react';
 import { type Control, type UseFormSetValue, useWatch } from 'react-hook-form';
 import { RiCheckLine, RiClipboardLine, RiCloseLine, RiEyeOffLine, RiInformationLine } from 'react-icons/ri';

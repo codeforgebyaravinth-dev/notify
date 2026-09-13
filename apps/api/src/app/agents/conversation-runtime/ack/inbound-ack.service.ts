@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { PinoLogger } from '@novu/application-generic';
+import { PinoLogger } from '@notify/application-generic';
 import type { WellKnownEmoji } from 'chat';
 import type { ResolvedAgentConfig } from '../../channels/agent-config-resolver.service';
 import { type AgentPlatformEnum, PLATFORMS_WITH_TYPING_INDICATOR } from '../../shared/enums/agent-platform.enum';

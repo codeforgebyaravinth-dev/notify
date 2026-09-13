@@ -1,5 +1,5 @@
-import type { AgentMcpServerAuthMode } from '@novu/dal';
-import { MCP_SERVERS, McpConnectionAuthModeEnum, McpConnectionStatusEnum } from '@novu/shared';
+import type { AgentMcpServerAuthMode } from '@notify/dal';
+import { MCP_SERVERS, McpConnectionAuthModeEnum, McpConnectionStatusEnum } from '@notify/shared';
 
 export interface OAuthMcp {
   mcpId: string;

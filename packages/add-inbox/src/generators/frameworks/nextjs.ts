@@ -64,9 +64,9 @@ export function generateNextJsComponent(
 // The Novu inbox component is a React component that allows you to display a notification inbox.
 // Learn more: https://docs.novu.co/platform/inbox/overview
 
-import { Inbox } from '@novu/nextjs';
+import { Inbox } from '@notify/nextjs';
 
-// import { dark } from '@novu/nextjs/themes'; => To enable dark theme support, uncomment this line.
+// import { dark } from '@notify/nextjs/themes'; => To enable dark theme support, uncomment this line.
 
 // Get the subscriber ID based on the auth provider
 // const getSubscriberId = () => {};

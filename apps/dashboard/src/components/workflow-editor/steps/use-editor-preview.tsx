@@ -1,4 +1,4 @@
-import type { PreviewPayload } from '@novu/shared';
+import type { PreviewPayload } from '@notify/shared';
 import * as Sentry from '@sentry/react';
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
 import { useCallback, useEffect, useRef, useState } from 'react';

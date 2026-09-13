@@ -5,14 +5,14 @@ import {
   CreateOrUpdateSubscriberCommand,
   CreateOrUpdateSubscriberUseCase,
   PinoLogger,
-} from '@novu/application-generic';
-import { ChannelEndpointRepository, isDuplicateKeyError, SubscriberEntity, SubscriberRepository } from '@novu/dal';
+} from '@notify/application-generic';
+import { ChannelEndpointRepository, isDuplicateKeyError, SubscriberEntity, SubscriberRepository } from '@notify/dal';
 import {
   AGENT_PLATFORM_PROVISION_SOURCE,
   AGENT_PROVISION_DATA_KEYS,
   type ChannelEndpointByType,
   ENDPOINT_TYPES,
-} from '@novu/shared';
+} from '@notify/shared';
 import { CreateChannelEndpointCommand } from '../../../channel-endpoints/usecases/create-channel-endpoint/create-channel-endpoint.command';
 import { CreateChannelEndpoint } from '../../../channel-endpoints/usecases/create-channel-endpoint/create-channel-endpoint.usecase';
 import { AgentPlatformEnum } from '../../shared/enums/agent-platform.enum';

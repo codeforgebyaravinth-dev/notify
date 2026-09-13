@@ -1,4 +1,4 @@
-import { ResourceOriginEnum, StepResponseDto } from '@novu/shared';
+import { ResourceOriginEnum, StepResponseDto } from '@notify/shared';
 import { RiArrowRightSLine, RiGuideFill } from 'react-icons/ri';
 import { RQBJsonLogic } from 'react-querybuilder';
 import { Link } from 'react-router-dom';

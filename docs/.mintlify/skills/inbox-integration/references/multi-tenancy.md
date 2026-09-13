@@ -46,12 +46,12 @@ const acmeContext = { tenant: "acme-corp" };
 
 Contexts are **auto-created** when first seen by Novu (via trigger or Inbox). Existing contexts are **not** auto-updated to prevent overwriting tenant data.
 
-To manage contexts manually, use the dashboard's **Contexts** section, the API, or `@novu/api`.
+To manage contexts manually, use the dashboard's **Contexts** section, the API, or `@notify/api`.
 
 ### 2. Trigger workflows with context
 
 ```typescript
-import { Novu } from "@novu/api";
+import { Novu } from "@notify/api";
 
 const novu = new Novu({ secretKey: process.env.NOVU_SECRET_KEY! });
 
@@ -73,7 +73,7 @@ All notifications emitted by this trigger are isolated to the `acme-corp` tenant
 ### 3. Filter the Inbox by tenant
 
 ```tsx
-import { Inbox } from "@novu/react";
+import { Inbox } from "@notify/react";
 
 <Inbox
   applicationIdentifier="YOUR_NOVU_APP_ID"
@@ -138,7 +138,7 @@ Pass both `context` and `contextHash` to the Inbox:
 "use client";
 
 import { useState } from "react";
-import { Inbox } from "@novu/react";
+import { Inbox } from "@notify/react";
 
 export function MultiTenantInbox({ user, tenants }) {
   const [activeTenant, setActiveTenant] = useState(tenants[0]);

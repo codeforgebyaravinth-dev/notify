@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { AgentRepository, DomainRepository, DomainRouteRepository } from '@novu/dal';
-import { DirectionEnum } from '@novu/shared';
+import { AgentRepository, DomainRepository, DomainRouteRepository } from '@notify/dal';
+import { DirectionEnum } from '@notify/shared';
 import { ListDomainRoutesResponseDto } from '../../dtos/list-domain-routes-response.dto';
 import { toDomainRouteResponse } from '../../mappers/domain-route-response.mapper';
 import { resolveAgentIdentifier, resolveDomainName } from '../domain-route.utils';

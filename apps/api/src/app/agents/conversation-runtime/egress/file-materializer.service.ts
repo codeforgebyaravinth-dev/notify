@@ -2,7 +2,7 @@ import * as dns from 'node:dns';
 import * as http from 'node:http';
 import * as https from 'node:https';
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { assertSafeOutboundUrl, isPrivateIp, PinoLogger, SsrfBlockedError } from '@novu/application-generic';
+import { assertSafeOutboundUrl, isPrivateIp, PinoLogger, SsrfBlockedError } from '@notify/application-generic';
 import type { FileRef, ReplyContentDto } from '../../shared/dtos/agent-reply-payload.dto';
 import { AgentPlatformEnum } from '../../shared/enums/agent-platform.enum';
 

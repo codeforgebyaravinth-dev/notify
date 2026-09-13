@@ -1,5 +1,5 @@
 import { Injectable, ServiceUnavailableException } from '@nestjs/common';
-import { CacheService, InstrumentUsecase, PinoLogger } from '@novu/application-generic';
+import { CacheService, InstrumentUsecase, PinoLogger } from '@notify/application-generic';
 import { Ratelimit } from '@upstash/ratelimit';
 import { EvaluateTokenBucketRateLimitCommand } from './evaluate-token-bucket-rate-limit.command';
 import {

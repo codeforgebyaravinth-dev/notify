@@ -22,7 +22,7 @@ import {
   RequirePermissions,
   SubscriberResponseDto,
   UserSession,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   ApiRateLimitCategoryEnum,
   ButtonTypeEnum,
@@ -31,7 +31,7 @@ import {
   PermissionsEnum,
   SubscriberCustomData,
   UserSessionData,
-} from '@novu/shared';
+} from '@notify/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { GetPreferencesResponseDto } from '../inbox/dtos/get-preferences-response.dto';
 import { BulkUpdatePreferencesCommand } from '../inbox/usecases/bulk-update-preferences/bulk-update-preferences.command';

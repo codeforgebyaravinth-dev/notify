@@ -1,4 +1,4 @@
-import { ApiServiceLevelEnum, DomainStatusEnum, FeatureNameEnum, getFeatureForTierAsBoolean } from '@novu/shared';
+import { ApiServiceLevelEnum, DomainStatusEnum, FeatureNameEnum, getFeatureForTierAsBoolean } from '@notify/shared';
 import { formatDistanceToNow } from 'date-fns';
 import { useState } from 'react';
 import { RiAddLine, RiMore2Fill } from 'react-icons/ri';

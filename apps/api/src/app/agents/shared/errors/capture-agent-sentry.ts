@@ -5,7 +5,7 @@ import {
   AgentRuntimeNotFoundError,
   AgentRuntimeRateLimitedError,
   AgentRuntimeUnauthorizedError,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import { captureException } from '@sentry/node';
 
 export interface AgentSentryContext {

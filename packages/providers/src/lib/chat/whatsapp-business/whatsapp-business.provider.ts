@@ -1,4 +1,4 @@
-import { ChatProviderIdEnum, ENDPOINT_TYPES } from '@novu/shared';
+import { ChatProviderIdEnum, ENDPOINT_TYPES } from '@notify/shared';
 import {
   CardElement,
   ChannelTypeEnum,
@@ -7,7 +7,7 @@ import {
   IChatRenderResult,
   ISendMessageSuccessResponse,
   isChannelDataOfType,
-} from '@novu/stateless';
+} from '@notify/stateless';
 import Axios, { AxiosInstance } from 'axios';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
 import { WithPassthrough } from '../../../utils/types';

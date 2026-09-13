@@ -1,5 +1,5 @@
 import { CanActivate, ExecutionContext, Injectable, NotFoundException } from '@nestjs/common';
-import { FeatureFlagsService } from '@novu/application-generic';
+import { FeatureFlagsService } from '@notify/application-generic';
 
 import type { SubscriberSession } from '../../shared/framework/user.decorator';
 import { assertWebChatEnabled } from './assert-web-chat-enabled';

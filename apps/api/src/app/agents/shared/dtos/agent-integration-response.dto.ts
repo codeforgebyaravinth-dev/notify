@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { ChannelTypeEnum } from '@novu/shared';
+import { ChannelTypeEnum } from '@notify/shared';
 
 /** Picked integration fields embedded on an agent–integration link response. */
 export class AgentIntegrationResponseIntegrationDto {

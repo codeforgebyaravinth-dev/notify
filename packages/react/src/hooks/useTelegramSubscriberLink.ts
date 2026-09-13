@@ -2,8 +2,8 @@ import type {
   TelegramSubscriberLinkOptions,
   TelegramSubscriberLinkState,
   TelegramSubscriberLinkStatus,
-} from '@novu/js';
-import { TelegramSubscriberLink } from '@novu/js';
+} from '@notify/js';
+import { TelegramSubscriberLink } from '@notify/js';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 export type UseTelegramSubscriberLinkProps = TelegramSubscriberLinkOptions;
@@ -22,7 +22,7 @@ export type UseTelegramSubscriberLinkResult = {
 };
 
 /**
- * React hook wrapping {@link TelegramSubscriberLink} from `@novu/js`.
+ * React hook wrapping {@link TelegramSubscriberLink} from `@notify/js`.
  *
  * Issues a Telegram subscriber-link deep link, polls for connection, and
  * re-issues automatically on code expiry. Returns reactive state that
@@ -34,7 +34,7 @@ export type UseTelegramSubscriberLinkResult = {
  *
  * @example
  * ```tsx
- * import { useTelegramSubscriberLink } from '@novu/react';
+ * import { useTelegramSubscriberLink } from '@notify/react';
  *
  * function TelegramConnect() {
  *   const { deepLinkUrl, botUsername, status, refresh } = useTelegramSubscriberLink({

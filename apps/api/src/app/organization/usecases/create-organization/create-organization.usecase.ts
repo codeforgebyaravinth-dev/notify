@@ -1,7 +1,7 @@
 import { BadRequestException, Inject, Injectable } from '@nestjs/common';
-import { AnalyticsService } from '@novu/application-generic';
-import { OrganizationEntity, OrganizationRepository, UserRepository } from '@novu/dal';
-import { ApiServiceLevelEnum, EnvironmentEnum, JobTitleEnum, MemberRoleEnum } from '@novu/shared';
+import { AnalyticsService } from '@notify/application-generic';
+import { OrganizationEntity, OrganizationRepository, UserRepository } from '@notify/dal';
+import { ApiServiceLevelEnum, EnvironmentEnum, JobTitleEnum, MemberRoleEnum } from '@notify/shared';
 
 import { CreateEnvironmentCommand } from '../../../environments-v1/usecases/create-environment/create-environment.command';
 import { CreateEnvironment } from '../../../environments-v1/usecases/create-environment/create-environment.usecase';

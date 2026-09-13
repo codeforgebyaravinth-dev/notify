@@ -1,6 +1,6 @@
-import { ExecutionDetailsRepository, IntegrationRepository, MessageRepository } from '@novu/dal';
-import { ChannelTypeEnum, ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum } from '@novu/shared';
-import { IEmailEventBody } from '@novu/stateless';
+import { ExecutionDetailsRepository, IntegrationRepository, MessageRepository } from '@notify/dal';
+import { ChannelTypeEnum, ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum } from '@notify/shared';
+import { IEmailEventBody } from '@notify/stateless';
 import axios from 'axios';
 import { expect } from 'chai';
 

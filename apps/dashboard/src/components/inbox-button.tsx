@@ -1,6 +1,6 @@
 import { useUser } from '@clerk/react';
-import { Bell, Inbox, InboxContent, useNovu } from '@novu/react';
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { Bell, Inbox, InboxContent, useNovu } from '@notify/react';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { useQuery } from '@tanstack/react-query';
 import { useEffect, useMemo, useState } from 'react';
 import { getNovuInboxContext } from '@/api/novu-context';

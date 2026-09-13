@@ -1,6 +1,6 @@
 import { NotFoundException, UnprocessableEntityException } from '@nestjs/common';
-import { CreateOrUpdateSubscriberCommand, CreateOrUpdateSubscriberUseCase } from '@novu/application-generic';
-import { SubscriberRepository } from '@novu/dal';
+import { CreateOrUpdateSubscriberCommand, CreateOrUpdateSubscriberUseCase } from '@notify/application-generic';
+import { SubscriberRepository } from '@notify/dal';
 
 interface SubscriberLookupParams {
   subscriberId: string;

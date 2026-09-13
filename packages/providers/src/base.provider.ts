@@ -18,7 +18,7 @@ type MergedPassthrough<T> = {
 
 export abstract class BaseProvider {
   /**
-   * The casing of the provider API. This is used to transform the @novu/framework provider data from
+   * The casing of the provider API. This is used to transform the @notify/framework provider data from
    * a language-preferred casing to the casing required by the provider.
    *
    * The currently supported casings are:

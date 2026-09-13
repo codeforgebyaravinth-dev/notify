@@ -1,4 +1,4 @@
-import { type Controls } from '@novu/shared';
+import { type Controls } from '@notify/shared';
 import { RJSFSchema } from '@rjsf/utils';
 import isEqual from 'lodash.isequal';
 import { motion } from 'motion/react';

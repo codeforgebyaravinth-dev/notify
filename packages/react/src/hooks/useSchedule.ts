@@ -1,4 +1,4 @@
-import { NovuError, Schedule } from '@novu/js';
+import { NovuError, Schedule } from '@notify/js';
 import { useEffect, useState } from 'react';
 import { useNovu } from './NovuProvider';
 

@@ -1,6 +1,6 @@
-import { Novu } from '@novu/api';
-import { ContextRepository } from '@novu/dal';
-import { UserSession } from '@novu/testing';
+import { Novu } from '@notify/api';
+import { ContextRepository } from '@notify/dal';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { initNovuClassSdk } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';
 

@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { RequestLogSource, RequestLogSourceEnum } from '@novu/application-generic';
+import { RequestLogSource, RequestLogSourceEnum } from '@notify/application-generic';
 import { Type } from 'class-transformer';
 import { IsNumber, IsOptional, IsString } from 'class-validator';
 

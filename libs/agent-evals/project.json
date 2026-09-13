@@ -1,5 +1,5 @@
 {
-  "name": "@novu/agent-evals",
+  "name": "@notify/agent-evals",
   "sourceRoot": "libs/agent-evals/src",
   "projectType": "library",
   "targets": {
@@ -12,13 +12,13 @@
     "eval": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "pnpm --filter @novu/agent-evals eval"
+        "command": "pnpm --filter @notify/agent-evals eval"
       }
     },
     "test": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "pnpm --filter @novu/agent-evals test"
+        "command": "pnpm --filter @notify/agent-evals test"
       }
     }
   }

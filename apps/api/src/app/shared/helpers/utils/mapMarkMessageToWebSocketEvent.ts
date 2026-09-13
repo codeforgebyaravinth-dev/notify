@@ -1,4 +1,4 @@
-import { MessagesStatusEnum, WebSocketEventEnum } from '@novu/shared';
+import { MessagesStatusEnum, WebSocketEventEnum } from '@notify/shared';
 
 export function mapMarkMessageToWebSocketEvent(markAs: MessagesStatusEnum): WebSocketEventEnum | undefined {
   if (markAs === MessagesStatusEnum.READ || markAs === MessagesStatusEnum.UNREAD) {

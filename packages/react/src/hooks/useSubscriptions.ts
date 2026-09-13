@@ -1,4 +1,4 @@
-import { NovuError, TopicSubscription } from '@novu/js';
+import { NovuError, TopicSubscription } from '@notify/js';
 import { useCallback, useEffect, useState } from 'react';
 import { useNovu } from './NovuProvider';
 

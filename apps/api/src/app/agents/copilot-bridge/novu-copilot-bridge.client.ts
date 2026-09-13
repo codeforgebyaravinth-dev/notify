@@ -1,8 +1,8 @@
 import { Inject } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
-import { PinoLogger } from '@novu/application-generic';
-import type { Agent } from '@novu/framework';
-import { Client, NovuHandler, NovuRequestHandler } from '@novu/framework/nest';
+import { PinoLogger } from '@notify/application-generic';
+import type { Agent } from '@notify/framework';
+import { Client, NovuHandler, NovuRequestHandler } from '@notify/framework/nest';
 import type { Request, Response } from 'express';
 
 /*
@@ -12,7 +12,7 @@ import type { Request, Response } from 'express';
 const frameworkName = 'novu-nest';
 
 /**
- * Minimal structural view of `@novu/ee-ai`'s `NovuCopilotAgentFactory`. The concrete class is loaded
+ * Minimal structural view of `@notify/ee-ai`'s `NovuCopilotAgentFactory`. The concrete class is loaded
  * lazily (see {@link NovuCopilotBridgeClient.getAgent}) so the API package stays buildable when the EE
  * module is absent (OSS).
  */
@@ -22,7 +22,7 @@ type EeAiCopilotModule = {
 };
 
 /**
- * Serves the Novu-hosted Novu Copilot agent over the `@novu/framework` Nest bridge, mirroring
+ * Serves the Novu-hosted Novu Copilot agent over the `@notify/framework` Nest bridge, mirroring
  * {@link NovuBridgeClient} (the workflow bridge): it resolves the Novu Copilot bridge secret
  * and runs the framework handler with `strictAuthentication`, so inbound turns
  * signed by `BridgeExecutorService` are HMAC-verified against the Novu Copilot bridge secret.
@@ -51,7 +51,7 @@ export class NovuCopilotBridgeClient {
     try {
       agent = this.getAgent();
     } catch (error) {
-      this.logger.error({ err: error }, 'NovuCopilot bridge could not resolve the agent factory from @novu/ee-ai');
+      this.logger.error({ err: error }, 'NovuCopilot bridge could not resolve the agent factory from @notify/ee-ai');
       res.status(404).json({
         error: 'NovuCopilot bridge is unavailable',
         details: 'The enterprise AI module is not available in this deployment.',
@@ -80,10 +80,10 @@ export class NovuCopilotBridgeClient {
       return this.copilotAgent;
     }
 
-    // biome-ignore lint/style/noCommonJs: dynamic require keeps @novu/ee-ai optional for OSS builds
-    const eeAi = require('@novu/ee-ai') as EeAiCopilotModule | undefined;
+    // biome-ignore lint/style/noCommonJs: dynamic require keeps @notify/ee-ai optional for OSS builds
+    const eeAi = require('@notify/ee-ai') as EeAiCopilotModule | undefined;
     if (!eeAi?.NovuCopilotAgentFactory) {
-      throw new Error('Required @novu/ee-ai export NovuCopilotAgentFactory is not available in the current build');
+      throw new Error('Required @notify/ee-ai export NovuCopilotAgentFactory is not available in the current build');
     }
 
     const factory = this.moduleRef.get<NovuCopilotAgentFactoryLike>(eeAi.NovuCopilotAgentFactory, { strict: false });

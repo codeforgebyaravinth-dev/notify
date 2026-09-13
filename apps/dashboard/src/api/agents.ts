@@ -7,8 +7,8 @@ import type {
   ChannelTypeEnum,
   DirectionEnum,
   IEnvironment,
-} from '@novu/shared';
-import { NOVU_ANALYTICS_SOURCE_HEADER } from '@novu/shared';
+} from '@notify/shared';
+import { NOVU_ANALYTICS_SOURCE_HEADER } from '@notify/shared';
 import type { AgentPlanUsage, PlanUsage } from '@/api/agents-plan-usage';
 import { del, get, getApiBaseUrl, NovuApiError, patch, post, put } from '@/api/api.client';
 

@@ -13,7 +13,7 @@ import {
 } from '@nestjs/common';
 
 import { ApiBody, ApiExtraModels, ApiOperation, ApiParam, ApiTags, getSchemaPath } from '@nestjs/swagger';
-import { ExternalApiAccessible, RequirePermissions } from '@novu/application-generic';
+import { ExternalApiAccessible, RequirePermissions } from '@notify/application-generic';
 import {
   ApiRateLimitCategoryEnum,
   ChannelEndpointByType,
@@ -21,7 +21,7 @@ import {
   ENDPOINT_TYPES,
   PermissionsEnum,
   UserSessionData,
-} from '@novu/shared';
+} from '@notify/shared';
 
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ThrottlerCategory } from '../rate-limiting/guards/throttler.decorator';

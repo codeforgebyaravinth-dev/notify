@@ -6,7 +6,7 @@ import type { AllAppearanceKey } from '../../../types';
 import { Popover, usePopover } from '../Popover';
 
 export const dropdownItemVariants = () =>
-  'focus:nt-outline-none nt-flex nt-items-center nt-gap-1.5 nt-text-sm nt-rounded-lg nt-items-center hover:nt-bg-neutral-alpha-50 focus-visible:nt-bg-neutral-alpha-50 nt-py-1 nt-px-2';
+  'focus:nt-outline-none nt-flex nt-items-center nt-gap-1.5 nt-text-sm nt-nt-rounded-none nt-items-center hover:nt-bg-neutral-alpha-50 focus-visible:nt-bg-neutral-alpha-50 nt-py-1 nt-px-2';
 
 type DropdownItemProps = JSX.IntrinsicElements['button'] & {
   appearanceKey?: AllAppearanceKey;

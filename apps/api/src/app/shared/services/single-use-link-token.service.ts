@@ -1,4 +1,4 @@
-import { CacheService, PinoLogger } from '@novu/application-generic';
+import { CacheService, PinoLogger } from '@notify/application-generic';
 
 import { mintAutolinkSafeOpaqueToken } from '../helpers';
 

@@ -5,10 +5,10 @@ import {
   CompileTemplate,
   GetLayoutUseCase,
   GetNovuLayout,
-} from '@novu/application-generic';
-import { DalService, LayoutRepository, OrganizationRepository } from '@novu/dal';
-import { ChannelTypeEnum, EmailBlockTypeEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/application-generic';
+import { DalService, LayoutRepository, OrganizationRepository } from '@notify/dal';
+import { ChannelTypeEnum, EmailBlockTypeEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 const dalService = new DalService();

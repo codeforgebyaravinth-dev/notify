@@ -1,10 +1,10 @@
 ---
 title: 'Using Translations'
-description: "Translate Novu Framework workflow step content into multiple languages with translation keys, locales, and per-subscriber locale resolution."
+description: "Translate Notify Framework workflow step content into multiple languages with translation keys, locales, and per-subscriber locale resolution."
 ---
 
 
-Novu Framework workflows are code-first: workflow definitions and content are expressed in code rather than in the dashboard. Internationalization (i18n) is implemented in the application layer - translations are defined there and resolved at runtime - so that workflow step content (e.g. subject and body fields) can be locale-aware.
+Notify Framework workflows are code-first: workflow definitions and content are expressed in code rather than in the dashboard. Internationalization (i18n) is implemented in the application layer - translations are defined there and resolved at runtime - so that workflow step content (e.g. subject and body fields) can be locale-aware.
 
 This guide implements a locale-aware email notification workflow using **i18next** for translation resolution and **React Email** for the message template, with a Twitch welcome email as the reference implementation. 
 
@@ -231,13 +231,13 @@ export function renderEmail(
 
 <Step title="Create the workflow and use translations">
 
-- Create the workflow definition by importing the `workflow` function from the `@novu/framework` library.
+- Create the workflow definition by importing the `workflow` function from the `@notify/framework` library.
 - Import the `renderEmail` function from the `react-email-template.tsx` file. This is the email template that will be used to send the notification.
 - Import the `i18n` from the `translations.ts` file.
 - Import the `zod` library to validate the workflow payload.
 
 ```ts title="workflow-with-translations.ts"
-import { workflow } from "@novu/framework";
+import { workflow } from "@notify/framework";
 import { renderEmail } from "./react-email-template";
 import i18n from "./translations";
 import { z } from "zod";
@@ -253,7 +253,7 @@ export const workflowWithTranslations = workflow(
         ]);
 
         const subject = translate("welcomeEmailSubject", {
-          username: subscriber?.firstName || "Novu",
+          username: subscriber?.firstName || "Notify",
         });
         const welcomeEmailIntroduction = translate("welcomeEmailIntroduction");
         const linkText = translate("linkText");
@@ -283,7 +283,7 @@ export const workflowWithTranslations = workflow(
 <Step title="Add workflow to serve function">
 
 ```ts title="api/novu/route.ts"
-import { serve } from '@novu/framework/next';
+import { serve } from '@notify/framework/next';
 import { workflowWithTranslations } from '../../workflow-with-translations';
 
 export const { GET, POST, OPTIONS } = serve({
@@ -295,7 +295,7 @@ export const { GET, POST, OPTIONS } = serve({
 
 <Step title="Sync and test the workflow">
 
-- [Sync the workflow](/framework/deployment/syncing) to the Novu cloud.
+- [Sync the workflow](/framework/deployment/syncing) to the Notify cloud.
 - Test the workflow by triggering it to subscribers with different locales.
 
 </Step>

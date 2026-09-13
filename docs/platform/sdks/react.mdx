@@ -1,15 +1,15 @@
 ---
-title: "@novu/react"
-description: "API reference for the @novu/react SDK components, including Inbox, Bell, Notifications, Subscription, and hooks for building custom notification experiences."
+title: "@notify/react"
+description: "API reference for the @notify/react SDK components, including Inbox, Bell, Notifications, Subscription, and hooks for building custom notification experiences."
 ---
 
 ## Requirements
 
-`@novu/react` requires **React 18.0.0 or later** (`^18.0.0` or `^19.0.0`). React 17 and earlier versions are not supported. When rendering Inbox components, you also need `react-dom` at a matching version.
+`@notify/react` requires **React 18.0.0 or later** (`^18.0.0` or `^19.0.0`). React 17 and earlier versions are not supported. When rendering Inbox components, you also need `react-dom` at a matching version.
 
 ## Components
 
-The @novu/react package provides React components for building notification UIs.
+The @notify/react package provides React components for building notification UIs.
 
 ## Inbox
 
@@ -40,9 +40,9 @@ The main component for displaying notifications.
 ### Usage
 
 ```tsx
-import { Inbox } from "@novu/react";
+import { Inbox } from "@notify/react";
 
-function NovuInbox() {
+function NotifyInbox() {
   return (
     <Inbox
       applicationIdentifier="APPLICATION_IDENTIFIER"
@@ -403,7 +403,7 @@ A customizable notification bell component.
 ### Usage
 
 ```tsx
-import { Bell } from "@novu/react";
+import { Bell } from "@notify/react";
 import { BellIcon } from "lucide-react";
 
 function NotificationBell() {
@@ -445,7 +445,7 @@ A component for rendering a list of notifications.
 ### Usage
 
 ```tsx
-import { Notifications } from "@novu/react";
+import { Notifications } from "@notify/react";
 
 function NotificationList() {
   return (
@@ -492,7 +492,7 @@ A component for building custom notification inboxes.
 ### Usage
 
 ```tsx
-import { InboxContent } from "@novu/react";
+import { InboxContent } from "@notify/react";
 
 function CustomInbox() {
   return (
@@ -550,11 +550,11 @@ function CustomInbox() {
 ### Usage
 
 ```tsx
-import { NovuProvider, Subscription } from "@novu/react";
+import { NotifyProvider, Subscription } from "@notify/react";
 
 function SubscriptionManager() {
   return (
-    <NovuProvider
+    <NotifyProvider
       subscriber="SUBSCRIBER_ID"
       applicationIdentifier="APPLICATION_IDENTIFIER"
     >
@@ -566,7 +566,7 @@ function SubscriptionManager() {
         baseTheme: isDark ? subscriptionDarkTheme : undefined,
       }}
     />
-    </NovuProvider>
+    </NotifyProvider>
   );
 }
 ```

@@ -1,6 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { CreateExecutionDetails, CreateExecutionDetailsCommand, DetailEnum } from '@novu/application-generic';
-import { ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum } from '@novu/shared';
+import { CreateExecutionDetails, CreateExecutionDetailsCommand, DetailEnum } from '@notify/application-generic';
+import { ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum } from '@notify/shared';
 
 import { WebhookFilterBackoffStrategyCommand } from './webhook-filter-backoff-strategy.command';
 

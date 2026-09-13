@@ -3,8 +3,8 @@ import type { TeamsAdapter } from '@chat-adapter/teams';
 import type { TelegramAdapter } from '@chat-adapter/telegram';
 import type { WhatsAppAdapter } from '@chat-adapter/whatsapp';
 import { BadRequestException, Injectable, OnModuleDestroy } from '@nestjs/common';
-import { CacheService, PinoLogger } from '@novu/application-generic';
-import type { NovuWebChatAdapter } from '@novu/chat-adapter-web';
+import { CacheService, PinoLogger } from '@notify/application-generic';
+import type { NovuWebChatAdapter } from '@notify/chat-adapter-web';
 import type { Adapter, Chat, Message, ReactionEvent, SlashCommandEvent, Thread } from 'chat';
 import { LRUCache } from 'lru-cache';
 import { resolveWhatsAppAppSecret } from '../../../integrations/usecases/whatsapp/whatsapp-credentials.utils';
@@ -60,7 +60,7 @@ export interface InboundCallbacks {
     agentId: string,
     config: ResolvedAgentConfig,
     thread: Thread,
-    action: import('@novu/framework').AgentAction,
+    action: import('@notify/framework').AgentAction,
     userId: string,
     rawEvent: unknown
   ) => Promise<void>;
@@ -425,7 +425,7 @@ export class ChatInstanceRegistry implements OnModuleDestroy {
           );
         }
 
-        const { createSendblueAdapter } = await esmImport('@novu/chat-adapter-sendblue');
+        const { createSendblueAdapter } = await esmImport('@notify/chat-adapter-sendblue');
 
         return {
           // The underlying official Sendblue SDK reads `SENDBLUE_API_BASE_URL`
@@ -446,7 +446,7 @@ export class ChatInstanceRegistry implements OnModuleDestroy {
           throw new BadRequestException('Email agent integration requires secretKey credentials');
         }
 
-        const { createNovuEmailAdapter } = await esmImport('@novu/chat-adapter-email');
+        const { createNovuEmailAdapter } = await esmImport('@notify/chat-adapter-email');
 
         return {
           email: createNovuEmailAdapter({
@@ -477,7 +477,7 @@ export class ChatInstanceRegistry implements OnModuleDestroy {
         };
       }
       case AgentPlatformEnum.WEB_CHAT: {
-        const { createWebChatAdapter } = await esmImport('@novu/chat-adapter-web');
+        const { createWebChatAdapter } = await esmImport('@notify/chat-adapter-web');
         const deliveryContext = { agentId, config };
 
         return {

@@ -1,6 +1,6 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { WorkflowResponseDto } from '@novu/application-generic';
-import { WorkflowStatusEnum } from '@novu/shared';
+import { WorkflowResponseDto } from '@notify/application-generic';
+import { WorkflowStatusEnum } from '@notify/shared';
 import { Transform } from 'class-transformer';
 import { IsArray, IsEnum, IsOptional, IsString } from 'class-validator';
 import { LimitOffsetPaginationQueryDto } from '../../shared/dtos/limit-offset-pagination.dto';

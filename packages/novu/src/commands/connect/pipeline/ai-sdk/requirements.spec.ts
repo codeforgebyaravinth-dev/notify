@@ -26,7 +26,7 @@ describe('computeAiSdkRequirements', () => {
       path.join(dir, 'package.json'),
       JSON.stringify({
         dependencies: {
-          '@novu/framework': 'latest',
+          '@notify/framework': 'latest',
           ai: '^7.0.0',
         },
         scripts: {
@@ -38,10 +38,10 @@ describe('computeAiSdkRequirements', () => {
     fs.mkdirSync(path.join(dir, 'app/novu/agents'), { recursive: true });
     fs.writeFileSync(
       path.join(dir, 'app/novu/agents/support-agent.tsx'),
-      "import { agent } from '@novu/framework/ai-sdk';\nexport const supportAgent = agent('x', {});"
+      "import { agent } from '@notify/framework/ai-sdk';\nexport const supportAgent = agent('x', {});"
     );
     fs.mkdirSync(path.join(dir, 'app/api/novu'), { recursive: true });
-    fs.writeFileSync(path.join(dir, 'app/api/novu/route.ts'), "import { serve } from '@novu/framework/next';");
+    fs.writeFileSync(path.join(dir, 'app/api/novu/route.ts'), "import { serve } from '@notify/framework/next';");
 
     const snapshot = computeAiSdkRequirements({
       projectDir: dir,
@@ -77,7 +77,7 @@ describe('computeAiSdkRequirements', () => {
       path.join(dir, 'package.json'),
       JSON.stringify({
         dependencies: {
-          '@novu/framework': 'latest',
+          '@notify/framework': 'latest',
           ai: '^6.0.0',
         },
       })
@@ -103,7 +103,7 @@ describe('computeAiSdkRequirements', () => {
       path.join(dir, 'package.json'),
       JSON.stringify({
         dependencies: {
-          '@novu/framework': 'latest',
+          '@notify/framework': 'latest',
           ai: '^7.0.0',
           '@ai-sdk/openai': '1.0.0',
         },
@@ -116,10 +116,10 @@ describe('computeAiSdkRequirements', () => {
     fs.mkdirSync(path.join(dir, 'app/novu/agents'), { recursive: true });
     fs.writeFileSync(
       path.join(dir, 'app/novu/agents/support-agent.tsx'),
-      "import { agent } from '@novu/framework/ai-sdk';\nexport const supportAgent = agent('x', {});"
+      "import { agent } from '@notify/framework/ai-sdk';\nexport const supportAgent = agent('x', {});"
     );
     fs.mkdirSync(path.join(dir, 'app/api/novu'), { recursive: true });
-    fs.writeFileSync(path.join(dir, 'app/api/novu/route.ts'), "import { serve } from '@novu/framework/next';");
+    fs.writeFileSync(path.join(dir, 'app/api/novu/route.ts'), "import { serve } from '@notify/framework/next';");
 
     const snapshot = computeAiSdkRequirements({
       projectDir: dir,

@@ -31,7 +31,7 @@ function controlSchema(fields: ControlFields, useZod: boolean): string {
 }
 
 function stepImports(useZod: boolean, extras: string[] = []): string {
-  const lines = ["import { step } from '@novu/framework/step-resolver';"];
+  const lines = ["import { step } from '@notify/framework/step-resolver';"];
 
   if (useZod) lines.push("import { z } from 'zod';");
 

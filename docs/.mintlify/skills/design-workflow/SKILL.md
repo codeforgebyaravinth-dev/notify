@@ -1,11 +1,11 @@
 ---
 name: novu-design-workflow
-description: Design notification workflows the Novu way — choose channels, set severity, decide when a workflow is critical, configure digests, and route based on subscriber state. Applies to BOTH dashboard-authored and code-first (`@novu/framework`) workflows. Use when planning a new workflow, deciding which channels to include, picking severity, configuring digest behavior, or matching a use case (order confirmation, payment failed, account suspended, comment, trial expiring, password reset, webhook fan-out, fetch-then-notify) to a proven template.
+description: Design notification workflows the Novu way — choose channels, set severity, decide when a workflow is critical, configure digests, and route based on subscriber state. Applies to BOTH dashboard-authored and code-first (`@notify/framework`) workflows. Use when planning a new workflow, deciding which channels to include, picking severity, configuring digest behavior, or matching a use case (order confirmation, payment failed, account suspended, comment, trial expiring, password reset, webhook fan-out, fetch-then-notify) to a proven template.
 ---
 
 # Design Workflow
 
-Design rules for any Novu workflow — independent of whether you author it in the **Dashboard** (no-code) or in **code** with [`@novu/framework`](../framework-integration). The decisions here (channels, severity, critical, digest, conditions) are the same on both surfaces; only the syntax differs.
+Design rules for any Novu workflow — independent of whether you author it in the **Dashboard** (no-code) or in **code** with [`@notify/framework`](../framework-integration). The decisions here (channels, severity, critical, digest, conditions) are the same on both surfaces; only the syntax differs.
 
 > Authoring **in code**? Pair this skill with [`framework-integration/`](../framework-integration) for `workflow(...)`, `step.*`, `controlSchema`, and Bridge Endpoint setup.
 > Authoring **in the Dashboard or via the Novu MCP**? After designing here, fill in step content (subject, body, `editorType`, headers, conditions) using [`dashboard-workflows/`](../dashboard-workflows).

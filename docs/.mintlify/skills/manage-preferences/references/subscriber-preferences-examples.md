@@ -5,7 +5,7 @@
 ### Node.js
 
 ```typescript
-import { Novu } from "@novu/api";
+import { Novu } from "@notify/api";
 
 const novu = new Novu({
   secretKey: process.env.NOVU_SECRET_KEY,
@@ -66,10 +66,10 @@ await novu.subscribers.preferences.update(
 
 ## Client-Side Preference Updates
 
-Using `@novu/js`:
+Using `@notify/js`:
 
 ```typescript
-import { Novu } from "@novu/js";
+import { Novu } from "@notify/js";
 
 const novu = new Novu({
   applicationIdentifier: "YOUR_NOVU_APP_ID",

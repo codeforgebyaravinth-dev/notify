@@ -1,4 +1,4 @@
-import type { GeneratePreviewResponseDto } from '@novu/shared';
+import type { GeneratePreviewResponseDto } from '@notify/shared';
 import { useMutation } from '@tanstack/react-query';
 import { useCallback } from 'react';
 import { previewStatelessStep } from '@/api/stateless-bridge';

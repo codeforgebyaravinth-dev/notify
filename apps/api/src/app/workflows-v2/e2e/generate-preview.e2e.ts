@@ -1,5 +1,5 @@
 import { randomUUID } from 'node:crypto';
-import { Novu } from '@novu/api';
+import { Novu } from '@notify/api';
 import {
   ChannelTypeEnum,
   CreateWorkflowDto,
@@ -12,14 +12,14 @@ import {
   UpdateWorkflowDtoSteps,
   WorkflowCreationSourceEnum,
   WorkflowResponseDto,
-} from '@novu/api/models/components';
+} from '@notify/api/models/components';
 import {
   buildActorSchema,
   buildWorkflowSchema,
   DEFAULT_ARRAY_ELEMENTS,
   EmailControlType,
-} from '@novu/application-generic';
-import { EnvironmentRepository, NotificationTemplateEntity, NotificationTemplateRepository } from '@novu/dal';
+} from '@notify/application-generic';
+import { EnvironmentRepository, NotificationTemplateEntity, NotificationTemplateRepository } from '@notify/dal';
 import {
   ChatProviderIdEnum,
   CronExpressionEnum,
@@ -27,8 +27,8 @@ import {
   StepTypeEnum,
   slugify,
   ToolProviderIdEnum,
-} from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { beforeEach } from 'mocha';
 import { initNovuClassSdkInternalAuth } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';
@@ -1489,7 +1489,7 @@ describe('Workflow Step Preview - POST /:workflowId/step/:stepId/preview #novu-v
     });
 
     it('tool: should echo providerOverrides fields in the preview response', async () => {
-      // Use raw HTTP — @novu/api SDK Zod schemas do not include `tool` yet (internal-sdk lag).
+      // Use raw HTTP — @notify/api SDK Zod schemas do not include `tool` yet (internal-sdk lag).
       // testAgent returns API DTO field names (`_id`), not SDK remapped `id`.
       const createResponse = await session.testAgent.post('/v2/workflows').send({
         __source: WorkflowCreationSourceEnum.Editor,
@@ -1550,7 +1550,7 @@ describe('Workflow Step Preview - POST /:workflowId/step/:stepId/preview #novu-v
     });
 
     it('chat: should echo providerOverrides fields in the preview response', async () => {
-      // Use raw HTTP — @novu/api SDK Zod schemas do not include chat providerOverrides yet (internal-sdk lag).
+      // Use raw HTTP — @notify/api SDK Zod schemas do not include chat providerOverrides yet (internal-sdk lag).
       const createResponse = await session.testAgent.post('/v2/workflows').send({
         __source: WorkflowCreationSourceEnum.Editor,
         name: 'Chat Override Preview Workflow',

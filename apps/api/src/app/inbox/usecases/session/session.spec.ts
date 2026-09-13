@@ -7,7 +7,7 @@ import {
   PinoLogger,
   SelectIntegration,
   UpsertControlValuesUseCase,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   CommunityOrganizationRepository,
   CommunityUserRepository,
@@ -18,14 +18,14 @@ import {
   MessageTemplateRepository,
   NotificationTemplateRepository,
   PreferencesRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   ApiServiceLevelEnum,
   ChannelTypeEnum,
   EnvironmentTypeEnum,
   InAppProviderIdEnum,
   SeverityLevelEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { AuthService } from '../../../auth/services/auth.service';

@@ -5,7 +5,7 @@ import {
   AnalyticsService,
   PinoLogger,
   throwPlanLimitExceeded,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   CommunityOrganizationRepository,
   ConversationActivationReasonEnum,
@@ -14,8 +14,8 @@ import {
   ConversationRepository,
   ConversationThreadKindEnum,
   classifyActivationReason,
-} from '@novu/dal';
-import { ApiServiceLevelEnum, UNLIMITED_VALUE } from '@novu/shared';
+} from '@notify/dal';
+import { ApiServiceLevelEnum, UNLIMITED_VALUE } from '@notify/shared';
 import {
   trackAgentActiveConversationCounted,
   trackAgentActiveConversationLimitReached,
@@ -253,8 +253,8 @@ export class ConversationActivationService {
   // biome-ignore lint/suspicious/noExplicitAny: optional EE module surface is untyped in OSS builds
   private loadEeBilling(): any {
     try {
-      // biome-ignore lint/style/noCommonJs: dynamic require keeps @novu/ee-billing optional for OSS builds
-      return require('@novu/ee-billing');
+      // biome-ignore lint/style/noCommonJs: dynamic require keeps @notify/ee-billing optional for OSS builds
+      return require('@notify/ee-billing');
     } catch {
       return null;
     }

@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { InstrumentUsecase } from '@novu/application-generic';
-import { AgentIntegrationRepository, AgentRepository, IntegrationRepository } from '@novu/dal';
+import { InstrumentUsecase } from '@notify/application-generic';
+import { AgentIntegrationRepository, AgentRepository, IntegrationRepository } from '@notify/dal';
 
 import { resolveDashboardBaseUrl } from '../../../shared/helpers';
 import type { IssueWhatsAppSignupLinkResponseDto } from '../../dtos/whatsapp-signup-link.dto';

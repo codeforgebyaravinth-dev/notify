@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException, UnprocessableEntityException } from '@nestjs/common';
-import { decryptCredentials, InstrumentUsecase, PinoLogger } from '@novu/application-generic';
-import { AgentIntegrationRepository, AgentRepository, IntegrationRepository, SubscriberRepository } from '@novu/dal';
-import { ChatProviderIdEnum, type ICredentials } from '@novu/shared';
+import { decryptCredentials, InstrumentUsecase, PinoLogger } from '@notify/application-generic';
+import { AgentIntegrationRepository, AgentRepository, IntegrationRepository, SubscriberRepository } from '@notify/dal';
+import { ChatProviderIdEnum, type ICredentials } from '@notify/shared';
 
 import {
   debugAccessToken,

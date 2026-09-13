@@ -1,6 +1,6 @@
 import { useAuth as useClerkAuth } from '@clerk/react';
-import type { IEnvironment } from '@novu/shared';
-import { EnvironmentTypeEnum } from '@novu/shared';
+import type { IEnvironment } from '@notify/shared';
+import { EnvironmentTypeEnum } from '@notify/shared';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { RiCheckLine, RiLoader4Line } from 'react-icons/ri';
 import { Navigate, useNavigate, useSearchParams } from 'react-router-dom';

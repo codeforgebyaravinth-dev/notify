@@ -6,7 +6,7 @@ import {
   getFeatureForTierAsNumber,
   getFeatureForTierAsText,
   UNLIMITED_VALUE,
-} from '@novu/shared';
+} from '@notify/shared';
 import { Check, Minus } from 'lucide-react';
 import { useEffect } from 'react';
 import { RiCalendarEventLine, RiChat3Line, RiTeamLine } from 'react-icons/ri';

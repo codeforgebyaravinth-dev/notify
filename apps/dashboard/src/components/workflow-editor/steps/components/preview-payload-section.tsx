@@ -1,4 +1,4 @@
-import { ResourceOriginEnum } from '@novu/shared';
+import { ResourceOriginEnum } from '@notify/shared';
 import { RiInformation2Line, RiRefreshLine } from 'react-icons/ri';
 import { AccordionContent, AccordionItem, AccordionTrigger } from '@/components/primitives/accordion';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/primitives/tooltip';

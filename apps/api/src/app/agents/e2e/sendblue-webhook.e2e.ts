@@ -1,4 +1,4 @@
-import { encryptCredentials } from '@novu/application-generic';
+import { encryptCredentials } from '@notify/application-generic';
 import {
   AgentIntegrationRepository,
   AgentRepository,
@@ -9,9 +9,9 @@ import {
   ConversationRepository,
   IntegrationRepository,
   SubscriberRepository,
-} from '@novu/dal';
-import { AgentSubscriberAccessEnum, ChannelTypeEnum, ChatProviderIdEnum } from '@novu/shared';
-import { testServer, UserSession } from '@novu/testing';
+} from '@notify/dal';
+import { AgentSubscriberAccessEnum, ChannelTypeEnum, ChatProviderIdEnum } from '@notify/shared';
+import { testServer, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { OutboundGateway } from '../conversation-runtime/egress/outbound.gateway';

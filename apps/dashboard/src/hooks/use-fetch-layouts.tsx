@@ -1,4 +1,4 @@
-import { DirectionEnum } from '@novu/shared';
+import { DirectionEnum } from '@notify/shared';
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
 import { getLayouts } from '@/api/layouts';
 import { QueryKeys } from '@/utils/query-keys';

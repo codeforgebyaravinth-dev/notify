@@ -1,6 +1,6 @@
-import { AGENT_EVENT_PROTOCOL_VERSION, type AgentEvent, type AgentEventEnvelope } from '@novu/agent-event-protocol';
-import { ConversationActivitySenderTypeEnum, ConversationActivityTypeEnum } from '@novu/dal';
-import { testServer } from '@novu/testing';
+import { AGENT_EVENT_PROTOCOL_VERSION, type AgentEvent, type AgentEventEnvelope } from '@notify/agent-event-protocol';
+import { ConversationActivitySenderTypeEnum, ConversationActivityTypeEnum } from '@notify/dal';
+import { testServer } from '@notify/testing';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { OutboundGateway } from '../conversation-runtime/egress/outbound.gateway';

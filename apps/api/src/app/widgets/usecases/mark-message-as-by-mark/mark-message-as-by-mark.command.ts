@@ -1,4 +1,4 @@
-import { MessagesStatusEnum } from '@novu/shared';
+import { MessagesStatusEnum } from '@notify/shared';
 import { IsArray, IsDefined, IsEnum, IsNotEmpty, IsString } from 'class-validator';
 import { EnvironmentWithSubscriber } from '../../../shared/commands/project.command';
 

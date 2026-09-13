@@ -1,10 +1,10 @@
 ---
-title: "PagerDuty Tool Integration with Novu"
+title: "PagerDuty Tool Integration with Notify"
 sidebarTitle: 'PagerDuty'
-description: "Page different PagerDuty services per subscriber from a single Novu workflow. Store each subscriber's Events API v2 routing key as a channel endpoint and trigger incidents from a Tool step."
+description: "Page different PagerDuty services per subscriber from a single Notify workflow. Store each subscriber's Events API v2 routing key as a channel endpoint and trigger incidents from a Tool step."
 ---
 
-PagerDuty in Novu is routed **per subscriber**. Each subscriber brings their own Events API v2 integration key, so one workflow trigger can page different PagerDuty services and escalation policies for different recipients. The integration itself never stores a routing key. It acts as the anchor that per-subscriber [channel endpoints](/api-reference/channel-endpoints/create-a-channel-endpoint) hang off of.
+PagerDuty in Notify is routed **per subscriber**. Each subscriber brings their own Events API v2 integration key, so one workflow trigger can page different PagerDuty services and escalation policies for different recipients. The integration itself never stores a routing key. It acts as the anchor that per-subscriber [channel endpoints](/api-reference/channel-endpoints/create-a-channel-endpoint) hang off of.
 
 <Note>
   There is no shared, environment-level PagerDuty routing key. If a subscriber has no PagerDuty endpoint registered, the Tool step is marked **skipped** for that subscriber; no incident is created and no error is raised.
@@ -14,7 +14,7 @@ PagerDuty in Novu is routed **per subscriber**. Each subscriber brings their own
 
 - A [PagerDuty](https://www.pagerduty.com/) account with permission to add integrations to services
 - A PagerDuty **service** to page (create one under **Services** → **Service Directory** if needed)
-- Access to the [Novu dashboard](https://dashboard.novu.co)
+- Access to the [Notify dashboard](https://dashboard.novu.co)
 
 ## Get an Events API v2 routing key
 
@@ -22,7 +22,7 @@ Every subscriber routes to their own PagerDuty service, so each subscriber needs
 
 <Steps>
   <Step title="Open the service in PagerDuty">
-    In PagerDuty, go to **Services** → **Service Directory** and open the service you want Novu to page.
+    In PagerDuty, go to **Services** → **Service Directory** and open the service you want Notify to page.
   </Step>
 
   <Step title="Add an Events API v2 integration">
@@ -30,7 +30,7 @@ Every subscriber routes to their own PagerDuty service, so each subscriber needs
   </Step>
 
   <Step title="Copy the integration key">
-    PagerDuty generates a 32-character alphanumeric **Integration Key**. Copy it. This is the routing key Novu will store for the subscriber.
+    PagerDuty generates a 32-character alphanumeric **Integration Key**. Copy it. This is the routing key Notify will store for the subscriber.
   </Step>
 </Steps>
 
@@ -38,11 +38,11 @@ Every subscriber routes to their own PagerDuty service, so each subscriber needs
   The routing key grants the ability to create incidents on the service. Treat it like a password: keep it on your server, never embed it in client-side code, and never log it.
 </Warning>
 
-## Add PagerDuty in Novu
+## Add PagerDuty in Notify
 
 <Steps>
   <Step title="Open the Integrations Store">
-    In the Novu dashboard, click **Integrations Store** in the sidebar.
+    In the Notify dashboard, click **Integrations Store** in the sidebar.
   </Step>
 
   <Step title="Add PagerDuty">
@@ -56,17 +56,17 @@ Every subscriber routes to their own PagerDuty service, so each subscriber needs
 
 ## Store a subscriber's routing key
 
-Register each subscriber's routing key as a **channel endpoint** on the PagerDuty integration. Novu encrypts the routing key at rest on `ChannelEndpoint.endpoint` and returns the wire shape `{ routingKey, region }` on reads (`region` stays plaintext).
+Register each subscriber's routing key as a **channel endpoint** on the PagerDuty integration. Notify encrypts the routing key at rest on `ChannelEndpoint.endpoint` and returns the wire shape `{ routingKey, region }` on reads (`region` stays plaintext).
 
 <Warning>
-  Registering an endpoint requires your Novu secret key. Always call the channel-endpoints API from your server, never from a browser or mobile client. A typical flow is: your app UI sends the routing key to **your** backend, and your backend forwards it to Novu.
+  Registering an endpoint requires your Notify secret key. Always call the channel-endpoints API from your server, never from a browser or mobile client. A typical flow is: your app UI sends the routing key to **your** backend, and your backend forwards it to Notify.
 </Warning>
 
 ```mermaid
 sequenceDiagram
   participant Browser
   participant CustomerBackend as Customer backend
-  participant NovuAPI as Novu API
+  participant NovuAPI as Notify API
   participant PagerDutyAPI as PagerDuty Events API v2
   Browser->>CustomerBackend: routing key (over HTTPS)
   CustomerBackend->>NovuAPI: POST /v1/channel-endpoints (secret key)
@@ -79,14 +79,14 @@ sequenceDiagram
 
 ### Create the endpoint
 
-Send the routing key as a `pagerduty_service` endpoint. Set `createSubscriberIfMissing: true` so this call also provisions the Novu subscriber the first time an end user connects PagerDuty, with no separate identify call required.
+Send the routing key as a `pagerduty_service` endpoint. Set `createSubscriberIfMissing: true` so this call also provisions the Notify subscriber the first time an end user connects PagerDuty, with no separate identify call required.
 
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({ secretKey: '<NOVU_SECRET_KEY>' });
+const notify = new Notify({ secretKey: '<NOVU_SECRET_KEY>' });
 
 await novu.channelEndpoints.create({
   type: 'pagerduty_service',
@@ -103,9 +103,9 @@ await novu.channelEndpoints.create({
   <Tab title="Python">
 ```python
 import os
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.channel_endpoints.create(create_channel_endpoint_request_body={
         "type": "pagerduty_service",
         "integration_identifier": "pagerduty",
@@ -144,10 +144,10 @@ _, err := s.ChannelEndpoints.Create(context.Background(), components.CreatePager
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 
 $sdk->channelEndpoints->create(
     createChannelEndpointRequestBody: new Components\CreatePagerDutyServiceEndpointDto(
@@ -165,8 +165,8 @@ $sdk->channelEndpoints->create(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
 
@@ -187,10 +187,10 @@ await sdk.ChannelEndpoints.CreateAsync(
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 
 novu.channelEndpoints().create()
     .body(CreatePagerDutyServiceEndpointDto.builder()
@@ -232,7 +232,7 @@ curl -L -X POST 'https://api.novu.co/v1/channel-endpoints' \
 | `type` | `"pagerduty_service"` | Discriminator for the endpoint variant. |
 | `integrationIdentifier` | `string` | Identifier of the PagerDuty integration created in the Integrations Store. |
 | `subscriberId` | `string` | The subscriber to page when a workflow selects this endpoint. |
-| `createSubscriberIfMissing` | `boolean` | Optional. When `true`, Novu creates the subscriber on the fly if it does not exist yet. Existing subscribers are never modified. Defaults to `false`. |
+| `createSubscriberIfMissing` | `boolean` | Optional. When `true`, Notify creates the subscriber on the fly if it does not exist yet. Existing subscribers are never modified. Defaults to `false`. |
 | `endpoint.routingKey` | `string` | The 32-character Events API v2 integration key from PagerDuty. Stored encrypted. |
 | `endpoint.region` | `"us" \| "eu"` | Selects the PagerDuty data-center endpoint (`events.pagerduty.com` vs `events.eu.pagerduty.com`). |
 
@@ -254,7 +254,7 @@ curl -L -X PATCH 'https://api.novu.co/v1/channel-endpoints/<ENDPOINT_IDENTIFIER>
 
 ### Reading and disconnecting
 
-Reads return the full wire shape (including the routing key), so you can display connection status. Mask it in your UI (the Novu dashboard shows only the last four characters).
+Reads return the full wire shape (including the routing key), so you can display connection status. Mask it in your UI (the Notify dashboard shows only the last four characters).
 
 ```bash
 curl -L 'https://api.novu.co/v1/channel-endpoints?subscriberId=<SUBSCRIBER_ID>&integrationIdentifier=pagerduty' \
@@ -282,16 +282,16 @@ Once a subscriber has a PagerDuty endpoint, add a **Tool** step with PagerDuty t
   </Step>
 
   <Step title="Trigger the workflow">
-    Send a trigger for a subscriber who has connected PagerDuty. Novu resolves that subscriber's routing key and creates an incident on their PagerDuty service.
+    Send a trigger for a subscriber who has connected PagerDuty. Notify resolves that subscriber's routing key and creates an incident on their PagerDuty service.
   </Step>
 </Steps>
 
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({ secretKey: '<NOVU_SECRET_KEY>' });
+const notify = new Notify({ secretKey: '<NOVU_SECRET_KEY>' });
 
 await novu.trigger({
   workflowId: 'order-failed',
@@ -307,9 +307,9 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="order-failed",
         to={"subscriber_id": "<SUBSCRIBER_ID>"},
@@ -346,10 +346,10 @@ _, err := s.Trigger(context.Background(), components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 
 $sdk->trigger(
     triggerEventRequestDto: new Components\TriggerEventRequestDto(
@@ -365,8 +365,8 @@ $sdk->trigger(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
 
@@ -384,10 +384,10 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto()
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 
 novu.trigger()
     .body(TriggerEventRequestDto.builder()
@@ -425,15 +425,15 @@ curl --location 'https://api.novu.co/v1/events/trigger' \
 | `event_action` | `trigger` | Step control (`trigger`, `acknowledge`, `resolve`). |
 | `payload.summary` | Step content | Step content or a `summary` override on the step. |
 | `payload.severity` | `critical` | `severity` step override (`critical`, `error`, `warning`, `info`). |
-| `payload.source` | `novu` | `source` step override. |
+| `payload.source` | `notify` | `source` step override. |
 | `dedup_key` | Deterministic, derived from the workflow `transactionId`, `subscriberId`, and step ID. | Explicit `dedup_key` step override. |
 | `payload.custom_details` | Any extra keys you pass on the step (excluding reserved names). | Step overrides. |
 
-The deterministic `dedup_key` means Novu retries for the same step will update the same PagerDuty incident instead of creating duplicates.
+The deterministic `dedup_key` means Notify retries for the same step will update the same PagerDuty incident instead of creating duplicates.
 
 ## What happens without an endpoint
 
-If a workflow triggers for a subscriber who has **no** PagerDuty endpoint on the target integration, Novu marks the step as **skipped** in the Activity feed for that subscriber and does not create an incident. Other subscribers on the same trigger are unaffected. Each is routed to their own PagerDuty service.
+If a workflow triggers for a subscriber who has **no** PagerDuty endpoint on the target integration, Notify marks the step as **skipped** in the Activity feed for that subscriber and does not create an incident. Other subscribers on the same trigger are unaffected. Each is routed to their own PagerDuty service.
 
 ## Related
 

@@ -1,4 +1,4 @@
-import type { WorkflowResponseDto } from '@novu/shared';
+import type { WorkflowResponseDto } from '@notify/shared';
 import { useState } from 'react';
 import { toast } from 'sonner';
 import { getActivityList } from '@/api/activity';

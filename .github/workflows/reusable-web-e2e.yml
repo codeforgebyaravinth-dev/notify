@@ -73,7 +73,7 @@ jobs:
       - uses: mansagroup/nrwl-nx-action@a531870269e0c1eeb7af6247c4a206c31cae82cc # v3
         with:
           targets: build
-          projects: "@novu/web,@novu/api-service,@novu/worker"
+          projects: "@notify/web,@notify/api-service,@notify/worker"
 
       - uses: ./.github/actions/start-localstack
       - uses: ./.github/actions/setup-redis-cluster

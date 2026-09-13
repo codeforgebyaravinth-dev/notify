@@ -1,5 +1,5 @@
 import { BadRequestException, Injectable, UnauthorizedException } from '@nestjs/common';
-import { MemberRepository, UserRepository } from '@novu/dal';
+import { MemberRepository, UserRepository } from '@notify/dal';
 import { AuthService } from '../../services/auth.service';
 import { SwitchOrganizationCommand } from './switch-organization.command';
 

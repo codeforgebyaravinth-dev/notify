@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
-import { FeatureFlagsService, PinoLogger } from '@novu/application-generic';
-import { OrganizationRepository } from '@novu/dal';
-import { BrandEnrichmentStatus, FeatureFlagsKeysEnum, IBrandEnrichment, OnboardingWorkflowsStatus } from '@novu/shared';
+import { FeatureFlagsService, PinoLogger } from '@notify/application-generic';
+import { OrganizationRepository } from '@notify/dal';
+import { BrandEnrichmentStatus, FeatureFlagsKeysEnum, IBrandEnrichment, OnboardingWorkflowsStatus } from '@notify/shared';
 import { captureException } from '@sentry/node';
 import { BrandData, BrandRetrievalService } from './brand-retrieval.service';
 import { EnrichOrganizationBrandCommand } from './enrich-organization-brand.command';
@@ -195,7 +195,7 @@ export class EnrichOrganizationBrand {
     brandData: BrandData
   ): Promise<boolean> {
     try {
-      const eeAi = require('@novu/ee-ai');
+      const eeAi = require('@notify/ee-ai');
       const { GenerateOnboardingWorkflowsUseCase } = eeAi;
 
       if (!GenerateOnboardingWorkflowsUseCase) {

@@ -1,16 +1,16 @@
 ---
-title: 'useNovu'
-description: "Use the useNovu hook to access the Novu client instance inside your React Native components for actions like marking notifications as read."
+title: 'useNotify'
+description: "Use the useNotify hook to access the Notify client instance inside your React Native components for actions like marking notifications as read."
 ---
 
 
-The `useNovu` hook provides access to the [Novu client instance](/platform/inbox/headless-mode) from anywhere in your React Native application. This hook must be used within a component that is wrapped by the `NovuProvider`.
+The `useNotify` hook provides access to the [Notify client instance](/platform/inbox/headless-mode) from anywhere in your React Native application. This hook must be used within a component that is wrapped by the `NotifyProvider`.
 
 ## Return Value
 
 ```typescript
 type NovuReturn = {
-  novu: Novu;
+  notify: Notify;
   isLoading: boolean;
   error: Error | null;
 };
@@ -18,14 +18,14 @@ type NovuReturn = {
 
 ## Example Usage
 
-Here's how to use the `useNovu` hook to interact with the Novu client:
+Here's how to use the `useNotify` hook to interact with the Notify client:
 
 ```tsx
-import { useNovu } from '@novu/react-native';
+import { useNotify } from '@notify/react-native';
 import { View, Button, ActivityIndicator } from 'react-native';
 
 function NotificationActions() {
-  const novu = useNovu();
+  const notify = useNotify();
 
   if (isLoading) return <ActivityIndicator />;
 
@@ -48,14 +48,14 @@ function NotificationActions() {
 
 ### Accessing Notification Methods
 
-The Novu client provides methods for managing notifications:
+The Notify client provides methods for managing notifications:
 
 ```tsx
 import { View, Text, Button } from 'react-native';
-import { useNovu } from '@novu/react-native';
+import { useNotify } from '@notify/react-native';
 
 function NotificationItem({ notification }) {
-  const { novu } = useNovu();
+  const { notify } = useNotify();
 
   const markAsRead = async () => {
     await novu.notifications.read(notification.id);
@@ -81,10 +81,10 @@ Workflow's channel preferences can be updated using `novu.preferences.update` me
 
 ```tsx
 import { Button } from 'react-native';
-import { useNovu } from '@novu/react-native';
+import { useNotify } from '@notify/react-native';
 
 function PreferencesManager() {
-  const novu = useNovu();
+  const notify = useNotify();
 
   const updatePreferences = async () => {
     await novu.preferences.update({
@@ -106,10 +106,10 @@ Using `novu.preferences.bulkUpdate` method multiple workflow's channel preferenc
 
 ```tsx
 import { Button } from 'react-native';
-import { useNovu } from "@novu/react-native";
+import { useNotify } from "@notify/react-native";
 
 function UpdateMultiplePreferences() {
-  const novu = useNovu();
+  const notify = useNotify();
 
   const updateBulkPreferences = async () => {
     try {
@@ -141,10 +141,10 @@ function UpdateMultiplePreferences() {
 ### Listening for new notifications 
 
 ```tsx
-import { useNovu } from '@novu/react-native';
+import { useNotify } from '@notify/react-native';
 
 const NotificationToast = () => {
-  const novu = useNovu();
+  const notify = useNotify();
 
   useEffect(() => {
     const listener = ({ result: notification }) => {
@@ -156,14 +156,14 @@ const NotificationToast = () => {
     return () => {
       novu.off('notifications.notification_received', listener);
     };
-  }, [novu]);
+  }, [notify]);
 
   return null;
 };
 ```
 
 <Note>
-  The Novu client instance provides access to all the functionality available in the [Headless
+  The Notify client instance provides access to all the functionality available in the [Headless
   API](/platform/inbox/headless-mode).
 </Note>
 

@@ -1,6 +1,6 @@
-import { EnvironmentCommand } from '@novu/application-generic';
-import { MessageEntity } from '@novu/dal';
-import { ChannelTypeEnum } from '@novu/shared';
+import { EnvironmentCommand } from '@notify/application-generic';
+import { MessageEntity } from '@notify/dal';
+import { ChannelTypeEnum } from '@notify/shared';
 import { IsDefined } from 'class-validator';
 import { IWebhookResult } from '../../dtos/webhooks-response.dto';
 import { WebhookTypes } from '../../interfaces/webhook.interface';

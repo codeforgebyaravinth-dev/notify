@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { InstrumentUsecase, PinoLogger, WorkflowRunRepository } from '@novu/application-generic';
+import { InstrumentUsecase, PinoLogger, WorkflowRunRepository } from '@notify/application-generic';
 import { WorkflowRunsMetricDataPointDto } from '../../dtos/get-charts.response.dto';
 import { BuildWorkflowRunsMetricChartCommand } from './build-workflow-runs-metric-chart.command';
 

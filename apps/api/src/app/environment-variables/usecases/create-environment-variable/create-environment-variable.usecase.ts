@@ -1,7 +1,7 @@
 import { BadRequestException, ConflictException, Injectable } from '@nestjs/common';
-import { encryptSecret, ResourceValidatorService } from '@novu/application-generic';
-import { EnvironmentRepository, EnvironmentVariableRepository, ErrorCodesEnum } from '@novu/dal';
-import { EnvironmentVariableType, SECRET_MASK } from '@novu/shared';
+import { encryptSecret, ResourceValidatorService } from '@notify/application-generic';
+import { EnvironmentRepository, EnvironmentVariableRepository, ErrorCodesEnum } from '@notify/dal';
+import { EnvironmentVariableType, SECRET_MASK } from '@notify/shared';
 import { EnvironmentVariableResponseDto } from '../../dtos/environment-variable-response.dto';
 import { toEnvironmentVariableResponseDto } from '../get-environment-variables/get-environment-variables.usecase';
 import { validateEnvironmentVariableValues } from '../validate-environment-variable-values';

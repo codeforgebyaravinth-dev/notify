@@ -1,6 +1,6 @@
-import { decryptCredentials, isInfobipSmsBaseUrlValid } from '@novu/application-generic';
-import { IntegrationRepository } from '@novu/dal';
-import { ChannelTypeEnum, SmsProviderIdEnum } from '@novu/shared';
+import { decryptCredentials, isInfobipSmsBaseUrlValid } from '@notify/application-generic';
+import { IntegrationRepository } from '@notify/dal';
+import { ChannelTypeEnum, SmsProviderIdEnum } from '@notify/shared';
 export async function deactivateMisconfiguredInfobipSmsIntegrations() {
   console.log('start migration - deactivate misconfigured Infobip SMS integrations');
 

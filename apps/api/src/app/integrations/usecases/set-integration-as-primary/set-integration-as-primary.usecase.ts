@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
-import { AnalyticsService, PinoLogger } from '@novu/application-generic';
-import { IntegrationEntity, IntegrationRepository } from '@novu/dal';
-import { CHANNELS_WITH_PRIMARY } from '@novu/shared';
+import { AnalyticsService, PinoLogger } from '@notify/application-generic';
+import { IntegrationEntity, IntegrationRepository } from '@notify/dal';
+import { CHANNELS_WITH_PRIMARY } from '@notify/shared';
 
 import { assertIntegrationEnvironmentScope } from '../../utils/assert-integration-environment-scope';
 import { SetIntegrationAsPrimaryCommand } from './set-integration-as-primary.command';

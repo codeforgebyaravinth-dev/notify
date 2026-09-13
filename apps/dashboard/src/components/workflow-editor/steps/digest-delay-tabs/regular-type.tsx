@@ -1,4 +1,4 @@
-import { TimeUnitEnum } from '@novu/shared';
+import { TimeUnitEnum } from '@notify/shared';
 import { useMemo } from 'react';
 
 import { AmountInput } from '@/components/amount-input';

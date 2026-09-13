@@ -1,4 +1,4 @@
-import { IntegrationEntity, IntegrationRepository } from '@novu/dal';
+import { IntegrationEntity, IntegrationRepository } from '@notify/dal';
 import {
   ChannelTypeEnum,
   ChatProviderIdEnum,
@@ -6,8 +6,8 @@ import {
   InAppProviderIdEnum,
   PushProviderIdEnum,
   SmsProviderIdEnum,
-} from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Get Webhook Support Status - /webhook/provider/:providerOrIntegrationId/status (GET) #novu-v0', () => {

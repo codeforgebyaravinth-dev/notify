@@ -1,4 +1,4 @@
-import { AgentRuntimeProviderIdEnum } from '@novu/shared';
+import { AgentRuntimeProviderIdEnum } from '@notify/shared';
 import type { IntegrationRecord } from './integrations';
 
 const AGENT_INTEGRATION_KIND = 'agent' as const;

@@ -1,6 +1,6 @@
 import { ApiExtraModels, ApiProperty, ApiPropertyOptional, getSchemaPath } from '@nestjs/swagger';
-import { WorkflowCommonsFields } from '@novu/application-generic';
-import { ResourceOriginEnum, SeverityLevelEnum, StepTypeEnum } from '@novu/shared';
+import { WorkflowCommonsFields } from '@notify/application-generic';
+import { ResourceOriginEnum, SeverityLevelEnum, StepTypeEnum } from '@notify/shared';
 import { Type } from 'class-transformer';
 import { IsArray, IsEnum, IsOptional, ValidateNested } from 'class-validator';
 import {

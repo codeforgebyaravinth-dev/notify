@@ -1,6 +1,6 @@
-import { EnvironmentWithUserCommand, SubscriberTopicPreference } from '@novu/application-generic';
-import { SubscriberEntity } from '@novu/dal';
-import { DiscoverWorkflowOutput } from '@novu/framework/internal';
+import { EnvironmentWithUserCommand, SubscriberTopicPreference } from '@notify/application-generic';
+import { SubscriberEntity } from '@notify/dal';
+import { DiscoverWorkflowOutput } from '@notify/framework/internal';
 import {
   ContextPayload,
   ISubscribersDefine,
@@ -9,7 +9,7 @@ import {
   SubscriberSourceEnum,
   TriggerOverrides,
   TriggerRequestCategoryEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import {
   IsArray,
   IsDefined,

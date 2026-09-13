@@ -12,9 +12,9 @@ import {
   storage,
   WorkerOptions,
   WorkflowInMemoryProviderService,
-} from '@novu/application-generic';
-import { CommunityOrganizationRepository } from '@novu/dal';
-import { FeatureFlagsKeysEnum, ObservabilityBackgroundTransactionEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { CommunityOrganizationRepository } from '@notify/dal';
+import { FeatureFlagsKeysEnum, ObservabilityBackgroundTransactionEnum } from '@notify/shared';
 import { SubscriberJobBound } from '../usecases/subscriber-job-bound/subscriber-job-bound.usecase';
 
 const nr = require('newrelic');

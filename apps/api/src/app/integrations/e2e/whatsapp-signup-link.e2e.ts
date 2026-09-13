@@ -1,7 +1,7 @@
-import { encryptCredentials } from '@novu/application-generic';
-import { AgentIntegrationRepository, AgentRepository, IntegrationRepository } from '@novu/dal';
-import { ChannelTypeEnum, ChatProviderIdEnum, FeatureFlagsKeysEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { encryptCredentials } from '@notify/application-generic';
+import { AgentIntegrationRepository, AgentRepository, IntegrationRepository } from '@notify/dal';
+import { ChannelTypeEnum, ChatProviderIdEnum, FeatureFlagsKeysEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 const mutableEnv = process.env as Record<string, string | undefined>;

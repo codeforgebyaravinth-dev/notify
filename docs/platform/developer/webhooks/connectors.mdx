@@ -1,11 +1,11 @@
 ---
 title: 'Webhook connectors'
-description: "Send Novu webhook events directly to data warehouses, analytics databases, and AWS messaging services using webhook connectors for downstream processing."
+description: "Send Notify webhook events directly to data warehouses, analytics databases, and AWS messaging services using webhook connectors for downstream processing."
 ---
 
-In addition to standard HTTP webhook endpoints, Novu supports webhook connectors that deliver events directly to third-party services. Use them to route Novu events to data warehouses, analytics databases, and AWS messaging services without building a custom receiver.
+In addition to standard HTTP webhook endpoints, Notify supports webhook connectors that deliver events directly to third-party services. Use them to route Notify events to data warehouses, analytics databases, and AWS messaging services without building a custom receiver.
 
-Novu webhook delivery is powered by [Svix](https://docs.svix.com/introduction). Connector endpoints use Svix [transformations](https://docs.svix.com/transformations) to shape each event before it is written to your destination.
+Notify webhook delivery is powered by [Svix](https://docs.svix.com/introduction). Connector endpoints use Svix [transformations](https://docs.svix.com/transformations) to shape each event before it is written to your destination.
 
 <Note>
   Outbound webhooks feature is only available in the [Team and Enterprise plans](https://novu.co/pricing).
@@ -15,11 +15,11 @@ Novu webhook delivery is powered by [Svix](https://docs.svix.com/introduction). 
 
 <Steps>
   <Step title="Open Webhooks in the dashboard">
-    Go to the **[Webhooks](https://dashboard.novu.co/webhooks)** page in the Novu dashboard.
+    Go to the **[Webhooks](https://dashboard.novu.co/webhooks)** page in the Notify dashboard.
   </Step>
 
   <Step title="Select the Endpoints tab">
-    In the Novu dashboard, open **Settings** > **Webhooks**, then select **Endpoints**.
+    In the Notify dashboard, open **Settings** > **Webhooks**, then select **Endpoints**.
   </Step>
 
   <Step title="Add an endpoint">
@@ -40,7 +40,7 @@ Novu webhook delivery is powered by [Svix](https://docs.svix.com/introduction). 
   </Step>
 
   <Step title="Define table schema and transformation (data warehouses)">
-    For **data warehouse connectors** (ClickHouse, Snowflake, Redshift): define the **table schema** and write a **transformation** that maps Novu webhook payloads to rows matching that schema. See [Data warehouse connectors](#data-warehouse-connectors).
+    For **data warehouse connectors** (ClickHouse, Snowflake, Redshift): define the **table schema** and write a **transformation** that maps Notify webhook payloads to rows matching that schema. See [Data warehouse connectors](#data-warehouse-connectors).
   </Step>
 
   <Step title="Customize transformation (message connectors)">
@@ -60,11 +60,11 @@ Novu webhook delivery is powered by [Svix](https://docs.svix.com/introduction). 
   </Step>
 </Steps>
 
-After the endpoint is created, Novu delivers matching events to your configured destination. You can monitor delivery attempts, retry failed messages, and test the endpoint from the dashboard.
+After the endpoint is created, Notify delivers matching events to your configured destination. You can monitor delivery attempts, retry failed messages, and test the endpoint from the dashboard.
 
 ## Available connectors
 
-Novu supports the following webhook connectors:
+Notify supports the following webhook connectors:
 
 | Connector | Type | Description |
 | --- | --- | --- |
@@ -78,9 +78,9 @@ Additional warehouse connectors (such as BigQuery) may appear in the dashboard. 
 
 ## Transformations
 
-Every connector endpoint runs a JavaScript **transformation** before delivery. The transformation converts the raw Novu webhook into the format your destination expects.
+Every connector endpoint runs a JavaScript **transformation** before delivery. The transformation converts the raw Notify webhook into the format your destination expects.
 
-In the Novu dashboard, configure the transformation when creating or editing a connector endpoint. Each connector type ships with a default template - use it as your starting point.
+In the Notify dashboard, configure the transformation when creating or editing a connector endpoint. Each connector type ships with a default template - use it as your starting point.
 
 ### How to write a transformation
 
@@ -88,7 +88,7 @@ Svix expects a function named `handler`. For connector endpoints, the handler re
 
 | Property | Description |
 | --- | --- |
-| `webhook.eventType` | The Novu event type (for example, `message.sent`). |
+| `webhook.eventType` | The Notify event type (for example, `message.sent`). |
 | `webhook.payload` | The webhook JSON body. Shape depends on the event type - see [event types](/platform/developer/webhooks/event-types). |
 | `webhook.method` | HTTP method. Usually `"POST"`. |
 | `webhook.url` | Destination URL. Generally leave unchanged for connectors. |
@@ -115,19 +115,19 @@ Data warehouse connectors (ClickHouse, Snowflake, Redshift, and similar) insert 
   </Step>
 
   <Step title="Grant insert permissions">
-    Ensure the database user Novu connects with can insert rows into the destination table.
+    Ensure the database user Notify connects with can insert rows into the destination table.
   </Step>
 
   <Step title="Add the connector endpoint">
-    In Novu, add the connector endpoint and fill in connection settings (URL, credentials, database, and table).
+    In Notify, add the connector endpoint and fill in connection settings (URL, credentials, database, and table).
   </Step>
 
   <Step title="Define the table schema">
-    Map Novu payload fields to your destination table columns.
+    Map Notify payload fields to your destination table columns.
   </Step>
 
   <Step title="Write the transformation">
-    Map Novu payloads into your table schema. Start from the dashboard template and adjust as needed.
+    Map Notify payloads into your table schema. Start from the dashboard template and adjust as needed.
   </Step>
 
   <Step title="Subscribe to event types">
@@ -162,7 +162,7 @@ function handler(webhook) {
 }
 ```
 
-If deliveries succeed in Novu but no rows appear in your warehouse, the transformation output likely does not match your table schema. Compare the transformed payload in the **Logs** tab with your table definition.
+If deliveries succeed in Notify but no rows appear in your warehouse, the transformation output likely does not match your table schema. Compare the transformed payload in the **Logs** tab with your table definition.
 
 ## Message connectors
 
@@ -185,7 +185,7 @@ After creating the endpoint, send a test event and confirm the message appears i
 
 ## ClickHouse
 
-The ClickHouse connector stores Novu webhook events directly in a ClickHouse table. Use it when you want to analyze notification events in ClickHouse without building a custom ingestion pipeline.
+The ClickHouse connector stores Notify webhook events directly in a ClickHouse table. Use it when you want to analyze notification events in ClickHouse without building a custom ingestion pipeline.
 
 ### Configuration
 
@@ -210,8 +210,8 @@ The ClickHouse connector stores Novu webhook events directly in a ClickHouse tab
     Ensure the configured user has permission to insert rows into the target table.
   </Step>
 
-  <Step title="Select ClickHouse in Novu">
-    In the Novu dashboard, select **ClickHouse** when adding a webhook endpoint.
+  <Step title="Select ClickHouse in Notify">
+    In the Notify dashboard, select **ClickHouse** when adding a webhook endpoint.
   </Step>
 
   <Step title="Fill in connection settings">
@@ -225,7 +225,7 @@ The ClickHouse connector stores Novu webhook events directly in a ClickHouse tab
 
 ## Snowflake
 
-The Snowflake connector stores Novu webhook events directly in a Snowflake table. Use it when you want notification data available in your Snowflake data warehouse for reporting, analytics, or downstream pipelines.
+The Snowflake connector stores Notify webhook events directly in a Snowflake table. Use it when you want notification data available in your Snowflake data warehouse for reporting, analytics, or downstream pipelines.
 
 ### Configuration
 
@@ -251,8 +251,8 @@ The Snowflake connector stores Novu webhook events directly in a Snowflake table
     Configure a Snowflake user with key-pair authentication and insert permissions on the target table.
   </Step>
 
-  <Step title="Select Snowflake in Novu">
-    In the Novu dashboard, select **Snowflake** when adding a webhook endpoint.
+  <Step title="Select Snowflake in Notify">
+    In the Notify dashboard, select **Snowflake** when adding a webhook endpoint.
   </Step>
 
   <Step title="Fill in connection settings">
@@ -266,7 +266,7 @@ The Snowflake connector stores Novu webhook events directly in a Snowflake table
 
 ## Amazon Redshift
 
-The Amazon Redshift connector stores Novu webhook events directly in a Redshift table. Use it when you want notification events available in your Redshift data warehouse for analytics and reporting.
+The Amazon Redshift connector stores Notify webhook events directly in a Redshift table. Use it when you want notification events available in your Redshift data warehouse for analytics and reporting.
 
 ### Configuration
 
@@ -299,8 +299,8 @@ The Amazon Redshift connector stores Novu webhook events directly in a Redshift 
     Grant only the permissions this connector needs.
   </Step>
 
-  <Step title="Select Redshift in Novu">
-    In the Novu dashboard, select **Redshift** when adding a webhook endpoint.
+  <Step title="Select Redshift in Notify">
+    In the Notify dashboard, select **Redshift** when adding a webhook endpoint.
   </Step>
 
   <Step title="Fill in connection settings">
@@ -314,7 +314,7 @@ The Amazon Redshift connector stores Novu webhook events directly in a Redshift 
 
 ## Amazon SQS
 
-The Amazon SQS connector sends Novu webhook events to an Amazon SQS queue. Use it when you want to process notification events asynchronously through your existing AWS messaging infrastructure.
+The Amazon SQS connector sends Notify webhook events to an Amazon SQS queue. Use it when you want to process notification events asynchronously through your existing AWS messaging infrastructure.
 
 ### Configuration
 
@@ -331,15 +331,15 @@ The Amazon SQS connector sends Novu webhook events to an Amazon SQS queue. Use i
 
 <Steps>
   <Step title="Create an SQS queue">
-    Use this queue as the destination for Novu webhook events.
+    Use this queue as the destination for Notify webhook events.
   </Step>
 
   <Step title="Create an IAM user">
     Grant only the permissions this connector needs.
   </Step>
 
-  <Step title="Select SQS in Novu">
-    In the Novu dashboard, select **SQS** when adding a webhook endpoint.
+  <Step title="Select SQS in Notify">
+    In the Notify dashboard, select **SQS** when adding a webhook endpoint.
   </Step>
 
   <Step title="Fill in connection settings">
@@ -353,7 +353,7 @@ The Amazon SQS connector sends Novu webhook events to an Amazon SQS queue. Use i
 
 ## Amazon SNS
 
-The Amazon SNS connector publishes Novu webhook events to an Amazon SNS topic. Use it when you want to fan out notification events to multiple subscribers through SNS.
+The Amazon SNS connector publishes Notify webhook events to an Amazon SNS topic. Use it when you want to fan out notification events to multiple subscribers through SNS.
 
 ### Configuration
 
@@ -370,15 +370,15 @@ The Amazon SNS connector publishes Novu webhook events to an Amazon SNS topic. U
 
 <Steps>
   <Step title="Create an SNS topic">
-    Use this topic as the destination for Novu webhook events.
+    Use this topic as the destination for Notify webhook events.
   </Step>
 
   <Step title="Create an IAM user">
     Grant only the permissions this connector needs.
   </Step>
 
-  <Step title="Select SNS in Novu">
-    In the Novu dashboard, select **SNS** when adding a webhook endpoint.
+  <Step title="Select SNS in Notify">
+    In the Notify dashboard, select **SNS** when adding a webhook endpoint.
   </Step>
 
   <Step title="Fill in connection settings">
@@ -392,7 +392,7 @@ The Amazon SNS connector publishes Novu webhook events to an Amazon SNS topic. U
 
 ## Monitoring and troubleshooting
 
-Connector endpoints support the same delivery monitoring, retry, and recovery features as standard webhook endpoints. From the endpoint details page in the Novu dashboard, you can:
+Connector endpoints support the same delivery monitoring, retry, and recovery features as standard webhook endpoints. From the endpoint details page in the Notify dashboard, you can:
 
 - View delivery attempts and failure reasons in the **Logs** tab.
 - Inspect the transformed payload sent to your destination.
@@ -408,4 +408,4 @@ If deliveries fail consistently, check the following:
 | Missing rows or messages | Delivery shows success in **Logs** but destination is empty - transformation may not match the expected insert or message format. |
 | Unhandled event types | Transformation includes a branch for every subscribed [event type](/platform/developer/webhooks/event-types). |
 
-If the destination service is unreachable from Novu's webhook infrastructure, deliveries will continue to retry according to the [retry schedule](/platform/developer/webhooks#recovery-and-resending-failed-messages) before the endpoint is disabled.
+If the destination service is unreachable from Notify's webhook infrastructure, deliveries will continue to retry according to the [retry schedule](/platform/developer/webhooks#recovery-and-resending-failed-messages) before the endpoint is disabled.

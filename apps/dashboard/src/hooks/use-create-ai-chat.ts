@@ -1,4 +1,4 @@
-import { AiResourceTypeEnum } from '@novu/shared';
+import { AiResourceTypeEnum } from '@notify/shared';
 import { useMutation } from '@tanstack/react-query';
 import { createAiChat } from '@/api/ai';
 import { useEnvironment } from '@/context/environment/hooks';

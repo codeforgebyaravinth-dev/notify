@@ -35,11 +35,11 @@ describe('generateWorkerWrapper', () => {
     expect(result).toMatchSnapshot('single-step');
   });
 
-  it('should import providerSchemas from @novu/framework/step-resolver', () => {
+  it('should import providerSchemas from @notify/framework/step-resolver', () => {
     const result = generateWorkerWrapper(mockSteps, '/root');
 
     expect(result).toContain(
-      "import { actionStepSchemas, channelStepSchemas, providerSchemas } from '@novu/framework/step-resolver'"
+      "import { actionStepSchemas, channelStepSchemas, providerSchemas } from '@notify/framework/step-resolver'"
     );
   });
 

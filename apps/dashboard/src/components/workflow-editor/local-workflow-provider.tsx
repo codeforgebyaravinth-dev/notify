@@ -1,4 +1,4 @@
-import { WorkflowResponseDto } from '@novu/shared';
+import { WorkflowResponseDto } from '@notify/shared';
 import { QueryObserverResult, RefetchOptions } from '@tanstack/react-query';
 import { ReactNode, useCallback, useMemo } from 'react';
 import { useParams } from 'react-router-dom';

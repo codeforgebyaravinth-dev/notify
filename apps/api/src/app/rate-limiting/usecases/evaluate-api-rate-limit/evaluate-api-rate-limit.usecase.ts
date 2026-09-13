@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
-import { buildEvaluateApiRateLimitKey, InstrumentUsecase } from '@novu/application-generic';
+import { buildEvaluateApiRateLimitKey, InstrumentUsecase } from '@notify/application-generic';
 import {
   ApiRateLimitAlgorithmEnum,
   ApiServiceLevelEnum,
   FeatureNameEnum,
   getFeatureForTierAsNumber,
-} from '@novu/shared';
+} from '@notify/shared';
 import { EvaluateTokenBucketRateLimitCommand } from '../evaluate-token-bucket-rate-limit/evaluate-token-bucket-rate-limit.command';
 import { EvaluateTokenBucketRateLimit } from '../evaluate-token-bucket-rate-limit/evaluate-token-bucket-rate-limit.usecase';
 import { GetApiRateLimitAlgorithmConfig } from '../get-api-rate-limit-algorithm-config';

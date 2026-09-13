@@ -13,14 +13,14 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { ApiExcludeEndpoint, ApiOperation, ApiTags } from '@nestjs/swagger';
-import { ProductFeature, RequirePermissions } from '@novu/application-generic';
+import { ProductFeature, RequirePermissions } from '@notify/application-generic';
 import {
   ApiRateLimitCategoryEnum,
   DirectionEnum,
   PermissionsEnum,
   ProductFeatureKeyEnum,
   UserSessionData,
-} from '@novu/shared';
+} from '@notify/shared';
 import { RequireAuthentication } from '../../../auth/framework/auth.decorator';
 import { ExternalApiAccessible } from '../../../auth/framework/external-api.decorator';
 import { ThrottlerCategory } from '../../../rate-limiting/guards';

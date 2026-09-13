@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Param, Post, Req, Scope, ServiceUnavailableException } from '@nestjs/common';
 import { ApiExcludeEndpoint, ApiOperation, ApiTags } from '@nestjs/swagger';
-import { FeatureFlagsService, RequirePermissions, ResourceCategory } from '@novu/application-generic';
+import { FeatureFlagsService, RequirePermissions, ResourceCategory } from '@notify/application-generic';
 import {
   AddressingTypeEnum,
   ApiRateLimitCategoryEnum,
@@ -10,7 +10,7 @@ import {
   ResourceEnum,
   TriggerRequestCategoryEnum,
   UserSessionData,
-} from '@novu/shared';
+} from '@notify/shared';
 import { PayloadValidationExceptionDto } from '../../error-dto';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ExternalApiAccessible, OAuthAccessible } from '../auth/framework/external-api.decorator';

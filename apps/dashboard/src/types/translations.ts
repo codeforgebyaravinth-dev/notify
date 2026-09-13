@@ -1,4 +1,4 @@
-import { ResourceType } from '@novu/api/models/components';
+import { ResourceType } from '@notify/api/models/components';
 
 // Re-export SDK type with const values for runtime usage
 export type LocalizationResourceEnum = ResourceType;

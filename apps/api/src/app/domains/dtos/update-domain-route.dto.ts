@@ -1,5 +1,5 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { DomainRouteTypeEnum } from '@novu/shared';
+import { DomainRouteTypeEnum } from '@notify/shared';
 import { IsEnum, IsOptional, IsString } from 'class-validator';
 import { IsBoundedRecord } from '../validators/bounded-record.validator';
 

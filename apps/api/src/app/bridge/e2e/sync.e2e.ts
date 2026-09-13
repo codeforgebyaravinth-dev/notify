@@ -3,10 +3,10 @@ import {
   EnvironmentRepository,
   MessageTemplateRepository,
   NotificationTemplateRepository,
-} from '@novu/dal';
-import { SeverityLevelEnum, workflow } from '@novu/framework';
-import { ResourceOriginEnum, ResourceTypeEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/dal';
+import { SeverityLevelEnum, workflow } from '@notify/framework';
+import { ResourceOriginEnum, ResourceTypeEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import getPort from 'get-port';
 import { TestBridgeServer } from '../../../../e2e/test-bridge-server';

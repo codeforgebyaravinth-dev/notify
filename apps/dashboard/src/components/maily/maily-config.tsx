@@ -18,7 +18,7 @@ import {
   section,
   spacer,
   text,
-} from '@novu/maily-core/blocks';
+} from '@notify/maily-core/blocks';
 import {
   ButtonExtension,
   getSlashCommandSuggestions,
@@ -38,13 +38,13 @@ import {
   Variable,
   VariableExtension,
   Variables,
-} from '@novu/maily-core/extensions';
+} from '@notify/maily-core/extensions';
 import {
   LAYOUT_CONTENT_VARIABLE,
   StepResponseDto,
   TRANSLATION_NAMESPACE_SEPARATOR,
   TRANSLATION_TRIGGER_CHARACTER,
-} from '@novu/shared';
+} from '@notify/shared';
 import type { AnyExtension, Editor, NodeViewProps, Editor as TiptapEditor } from '@tiptap/core';
 import { ReactNodeViewRenderer } from '@tiptap/react';
 import { ForwardRefExoticComponent, useMemo } from 'react';

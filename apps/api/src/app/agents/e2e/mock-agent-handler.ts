@@ -1,5 +1,5 @@
 /**
- * Agent Handler — E2E test utility using @novu/framework
+ * Agent Handler — E2E test utility using @notify/framework
  *
  * This is a real serve() endpoint that uses the agent SDK to handle bridge calls.
  * Run alongside the Novu API to test the full agent round-trip with Slack.
@@ -27,7 +27,7 @@ import {
   Select,
   SelectOption,
   serve,
-} from '@novu/framework/express';
+} from '@notify/framework/express';
 import express from 'express';
 
 const NOVU_SECRET_KEY = process.env.NOVU_SECRET_KEY;
@@ -180,7 +180,7 @@ app.use(
 );
 
 const server = app.listen(PORT, () => {
-  console.log(`\nAgent Handler (using @novu/framework) running on http://localhost:${PORT}/api/novu`);
+  console.log(`\nAgent Handler (using @notify/framework) running on http://localhost:${PORT}/api/novu`);
   console.log('\nWaiting for bridge calls...\n');
 });
 

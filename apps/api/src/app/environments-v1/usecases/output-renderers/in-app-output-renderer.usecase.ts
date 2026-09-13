@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { InstrumentUsecase, PinoLogger, sanitizeHtmlInObject } from '@novu/application-generic';
-import { LocalizationResourceEnum, NotificationTemplateEntity } from '@novu/dal';
-import { InAppRenderOutput } from '@novu/shared';
+import { InstrumentUsecase, PinoLogger, sanitizeHtmlInObject } from '@notify/application-generic';
+import { LocalizationResourceEnum, NotificationTemplateEntity } from '@notify/dal';
+import { InAppRenderOutput } from '@notify/shared';
 import { BaseTranslationRendererUsecase } from './base-translation-renderer.usecase';
 import { ControlsTranslationService } from './controls-translation.service';
 import { RenderCommand } from './render-command';

@@ -1,11 +1,11 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import type { AgentEventEnvelope } from '@novu/agent-event-protocol';
+import type { AgentEventEnvelope } from '@notify/agent-event-protocol';
 import {
   AgentRepository,
   ConversationActivityRepository,
   ConversationParticipantTypeEnum,
   ConversationRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import { AgentPlatformEnum } from '../../../shared/enums/agent-platform.enum';
 import {
   type EventMapContext,

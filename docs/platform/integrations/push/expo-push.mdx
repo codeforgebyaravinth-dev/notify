@@ -1,18 +1,18 @@
 ---
-title: "Expo Push Push Integration with Novu"
+title: "Expo Push Push Integration with Notify"
 sidebarTitle: "Expo Push"
-description: "Connect Expo Push to Novu to send push notifications to Expo-managed iOS and Android apps through workflows using Expo push tokens and access credentials."
+description: "Connect Expo Push to Notify to send push notifications to Expo-managed iOS and Android apps through workflows using Expo push tokens and access credentials."
 ---
 
-This guide explains the process of configuring and using Expo Push with Novu, from getting your credentials to sending your first notification.
+This guide explains the process of configuring and using Expo Push with Notify, from getting your credentials to sending your first notification.
 
-## How to configure Expo with Novu
+## How to configure Expo with Notify
 
-Before you can send notifications, you must connect your Expo project to Novu by generating an access token and adding it to your integration settings.
+Before you can send notifications, you must connect your Expo project to Notify by generating an access token and adding it to your integration settings.
 
 ### Step 1: Generate your access token from Expo Push
 
-Generate an access token from your dashboard. This token authorizes Novu to send notifications on behalf of your project.
+Generate an access token from your dashboard. This token authorizes Notify to send notifications on behalf of your project.
 
 <Steps>
   <Step title="Log in to Expo">
@@ -40,17 +40,17 @@ Generate an access token from your dashboard. This token authorizes Novu to send
   </Step>
 </Steps>
 
-### Step 2: Connect Expo Push to Novu
+### Step 2: Connect Expo Push to Notify
 
-Next, add the access token to your Expo integration in the Novu dashboard.
+Next, add the access token to your Expo integration in the Notify dashboard.
 
 <Steps>
-  <Step title="Log in to the Novu dashboard">
-    Open the [Novu Dashboard](https://dashboard.novu.co).
+  <Step title="Log in to the Notify dashboard">
+    Open the [Notify Dashboard](https://dashboard.novu.co).
   </Step>
 
 <Step title="Open Integration Store">
-    On the Novu dashboard, navigate to the **Integration Store**.
+    On the Notify dashboard, navigate to the **Integration Store**.
   </Step>
 
 <Step title="Connect a provider">
@@ -63,7 +63,7 @@ Next, add the access token to your Expo integration in the Novu dashboard.
 
 <Step title="Paste the access token">
     In the Expo integration form, paste the access token that you copied from Expo into the **Access Token** field.
-    ![Expo Integration in Novu](/images/channels-and-providers/push/expo-push/expo-integration.png)
+    ![Expo Integration in Notify](/images/channels-and-providers/push/expo-push/expo-integration.png)
   </Step>
 
 <Step title="Create the integration">
@@ -71,23 +71,23 @@ Next, add the access token to your Expo integration in the Novu dashboard.
   </Step>
 </Steps>
 
-## Using Expo Push with Novu
+## Using Expo Push with Notify
 
 Once your integration is configured, you can start sending push notifications by registering your subscribers' device tokens and triggering a workflow.
 
 ### Step 1: Add subscriber device token
 
-Before Novu can send a push notification to a subscriber (user), you must associate their device's unique push token with their Novu subscriber profile.
+Before Notify can send a push notification to a subscriber (user), you must associate their device's unique push token with their Notify subscriber profile.
 
 You can do this by making an API call to [update the subscriber's credentials](/api-reference/subscribers/update-provider-credentials).
 
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
-import { ChatOrPushProviderEnum } from "@novu/api/models/components";
+import { Notify } from '@notify/api';
+import { ChatOrPushProviderEnum } from "@notify/api/models/components";
 
-const novu = new Novu({ secretKey: "<NOVU_SECRET_KEY>" });
+const notify = new Notify({ secretKey: "<NOVU_SECRET_KEY>" });
 
 await novu.subscribers.credentials.update(
   {
@@ -103,9 +103,9 @@ await novu.subscribers.credentials.update(
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.subscribers.credentials.update(
         subscriber_id="subscriberId",
         update_subscriber_channel_request_dto={
@@ -139,10 +139,10 @@ res, err := s.Subscribers.Credentials.Update(context.Background(), "subscriberId
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 
 $sdk->subscribersCredentials->update(
     subscriberId: 'subscriberId',
@@ -158,8 +158,8 @@ $sdk->subscribersCredentials->update(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
@@ -177,11 +177,11 @@ await sdk.Subscribers.Credentials.UpdateAsync(
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 import java.util.List;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 
 novu.subscribers().credentials().update()
     .subscriberId("subscriberId")
@@ -215,7 +215,7 @@ curl -L -X PUT 'https://api.novu.co/v1/subscribers/<SUBSCRIBER_ID>/credentials' 
 </Tabs>
 
 <Note>
-  Novu automatically removes invalid device tokens from a subscribers' profile and then sends the failure details to the `MESSAGE_FAILED` webhook.
+  Notify automatically removes invalid device tokens from a subscribers' profile and then sends the failure details to the `MESSAGE_FAILED` webhook.
 </Note>
 
 ### Step 2: Send a notification
@@ -225,9 +225,9 @@ Now you're ready to send a push notification.
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({ secretKey: "<NOVU_SECRET_KEY>" });
+const notify = new Notify({ secretKey: "<NOVU_SECRET_KEY>" });
 
 await novu.trigger({
   workflowId: "workflowId",
@@ -240,9 +240,9 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="workflowId",
         to={"subscriber_id": "SUBSCRIBER_ID"},
@@ -273,10 +273,10 @@ res, err := s.Trigger(context.Background(), components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 
 $sdk->trigger(
     triggerEventRequestDto: new Components\TriggerEventRequestDto(
@@ -289,8 +289,8 @@ $sdk->trigger(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
 
@@ -303,10 +303,10 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto() {
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 
 novu.trigger()
     .body(TriggerEventRequestDto.builder()
@@ -337,9 +337,9 @@ curl --location 'https://api.novu.co/v1/events/trigger' \
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({ secretKey: "<NOVU_SECRET_KEY>" });
+const notify = new Notify({ secretKey: "<NOVU_SECRET_KEY>" });
 
 await novu.trigger({
   workflowId: "workflowId",
@@ -369,9 +369,9 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="workflowId",
         to={"subscriber_id": "subscriber-id-123"},
@@ -436,10 +436,10 @@ res, err := s.Trigger(context.Background(), components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 
 $sdk->trigger(
     triggerEventRequestDto: new Components\TriggerEventRequestDto(
@@ -469,8 +469,8 @@ $sdk->trigger(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
 
@@ -500,10 +500,10 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto() {
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 
 novu.trigger()
     .body(TriggerEventRequestDto.builder()

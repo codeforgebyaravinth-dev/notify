@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { LayoutEntity } from '@novu/dal';
+import { LayoutEntity } from '@notify/dal';
 import { IBaseRepositoryService } from '../base/interfaces/base-repository.interface';
 import { LayoutRepositoryService } from '../operations/layout-repository.service';
 

@@ -1,4 +1,4 @@
-import { getDateRangeInMs, type IActivity, type IEnvironment, SeverityLevelEnum } from '@novu/shared';
+import { getDateRangeInMs, type IActivity, type IEnvironment, SeverityLevelEnum } from '@notify/shared';
 import { get } from './api.client';
 
 export type ActivityFilters = {

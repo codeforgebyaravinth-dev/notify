@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TerminusModule } from '@nestjs/terminus';
 
-import { GetNovuProviderCredentials, StorageHelperService } from '@novu/application-generic';
+import { GetNovuProviderCredentials, StorageHelperService } from '@notify/application-generic';
 
-import { CommunityOrganizationRepository, CommunityUserRepository } from '@novu/dal';
+import { CommunityOrganizationRepository, CommunityUserRepository } from '@notify/dal';
 import { AuthModule } from '../auth/auth.module';
 import { BridgeModule } from '../bridge';
 import { ContentTemplatesModule } from '../content-templates/content-templates.module';

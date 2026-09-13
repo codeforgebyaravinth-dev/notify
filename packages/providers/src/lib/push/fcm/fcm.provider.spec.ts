@@ -1,4 +1,4 @@
-import { IPushOptions } from '@novu/stateless';
+import { IPushOptions } from '@notify/stateless';
 import app from 'firebase-admin/app';
 import { beforeEach, describe, expect, test, vi } from 'vitest';
 

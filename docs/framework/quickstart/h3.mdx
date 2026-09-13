@@ -1,10 +1,10 @@
 ---
 title: 'H3'
-description: "Get started with Novu Framework in an H3 application by scaffolding a bridge, defining a workflow, and triggering your first notification."
+description: "Get started with Notify Framework in an H3 application by scaffolding a bridge, defining a workflow, and triggering your first notification."
 ---
 
 
-In this guide, we will add a Novu [Bridge Endpoint](/framework/endpoint) to a H3 application and send our first test workflow.
+In this guide, we will add a Notify [Bridge Endpoint](/framework/endpoint) to a H3 application and send our first test workflow.
 
 <Steps>
     <Step>
@@ -13,31 +13,31 @@ In this guide, we will add a Novu [Bridge Endpoint](/framework/endpoint) to a H3
 Start local development by running:
 
 ```bash
-npx novu dev
+npx notify dev
 ```
 
-This opens the Novu Dashboard in **Local mode** - a local environment connected to your running app through a tunnel - where you can preview and test the workflows running on your machine. See [Local development](/framework/studio) for details.
+This opens the Notify Dashboard in **Local mode** - a local environment connected to your running app through a tunnel - where you can preview and test the workflows running on your machine. See [Local development](/framework/studio) for details.
 
     </Step>
    <Step>
          ## Install packages
 
-Install the Novu Framework package:
+Install the Notify Framework package:
 
 ```bash
-npm install @novu/framework
+npm install @notify/framework
 ```
 
 This package provides all the necessary tools to build and manage your notification workflows.
 
     </Step>
    <Step>
-         ## Add a Novu API Endpoint
+         ## Add a Notify API Endpoint
         ```typescript app/server/api/novu.ts
 
         const app = createApp();
 
-        app.use("/api/novu", eventHandler(serve({ workflows: [testWorkflow] }) ));
+        app.use("/api/notify", eventHandler(serve({ workflows: [testWorkflow] }) ));
 
         createServer(toNodeListener(app)).listen(4000);
         ```
@@ -45,7 +45,7 @@ This package provides all the necessary tools to build and manage your notificat
     <Step>
         ## Configure your secret key
 
-Add your Novu secret key to your environment variables:
+Add your Notify secret key to your environment variables:
 
 ```bash .env
 NOVU_SECRET_KEY=your_secret_key
@@ -54,16 +54,16 @@ NOVU_SECRET_KEY=your_secret_key
     </Step>
     <Step>
         ## Create your workflow definition
-        Add a `novu` folder in your app folder as such ```novu/workflows.ts``` that will contain your workflow definitions.
+        Add a `notify` folder in your app folder as such ```notify/workflows.ts``` that will contain your workflow definitions.
 
-```ts app/novu/workflows.ts
-import { workflow } from '@novu/framework';
+```ts app/notify/workflows.ts
+import { workflow } from '@notify/framework';
 
 export const testWorkflow = workflow('test-workflow', async ({ step }) => {
   await step.email('test-email', async () => {
     return {
       subject: 'Test Email',
-      body: 'This is a test email from Novu Framework!',
+      body: 'This is a test email from Notify Framework!',
     };
   });
 });
@@ -72,18 +72,18 @@ export const testWorkflow = workflow('test-workflow', async ({ step }) => {
     </Step>
     <Step>
         ## Start your application
-        Start your H3 server with the Novu Endpoint configured.
+        Start your H3 server with the Notify Endpoint configured.
 
-        If your H3 application is running on a port other than `4000`, restart `npx novu dev` with that port:
+        If your H3 application is running on a port other than `4000`, restart `npx notify dev` with that port:
 
         ```tsx
-        npx novu@latest dev --port <YOUR_H3_APPLICATION_PORT>
+        npx notify@latest dev --port <YOUR_H3_APPLICATION_PORT>
         ```
     </Step>
     <Step>
         ## Test your endpoint
 
-Test your workflow by triggering it from the Local environment or using the Novu API:
+Test your workflow by triggering it from the Local environment or using the Notify API:
 
 ```bash
 curl -X POST https://api.novu.co/v1/events/trigger \
@@ -102,7 +102,7 @@ You should see the notification being processed in the Local environment.
     <Step>
         ## Deploy your application
 
-Deploy your application to your preferred hosting provider. Make sure the `/api/novu` endpoint is accessible from the internet.
+Deploy your application to your preferred hosting provider. Make sure the `/api/notify` endpoint is accessible from the internet.
 
 For local development and testing, you can use tools like ngrok to expose your local server to the internet.
 

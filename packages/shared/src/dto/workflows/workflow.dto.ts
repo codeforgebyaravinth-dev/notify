@@ -7,7 +7,7 @@ import {
   StepTypeEnum,
   WorkflowCreationSourceEnum,
   WorkflowPreferences,
-} from '@novu/shared';
+} from '@notify/shared';
 import type { JSONSchemaDto } from './json-schema-dto';
 import { StepCreateDto, StepListResponseDto, StepResponseDto, StepUpdateDto } from './step.dto';
 import { WorkflowStatusEnum } from './workflow-status-enum';

@@ -4,7 +4,7 @@ import {
   FeatureFlagsService,
   InstrumentUsecase,
   PinoLogger,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   BaseRepository,
   NotificationTemplateEntity,
@@ -16,8 +16,8 @@ import {
   TopicRepository,
   TopicSubscribersEntity,
   TopicSubscribersRepository,
-} from '@novu/dal';
-import { FeatureFlagsKeysEnum, PreferencesTypeEnum, SeverityLevelEnum } from '@novu/shared';
+} from '@notify/dal';
+import { FeatureFlagsKeysEnum, PreferencesTypeEnum, SeverityLevelEnum } from '@notify/shared';
 import { RulesLogic } from 'json-logic-js';
 import _ from 'lodash';
 import { GroupPreferenceFilterDto } from '../../../shared/dtos/subscriptions/create-subscriptions.dto';

@@ -1,5 +1,5 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
-import { FeatureFlagsService, InstrumentUsecase } from '@novu/application-generic';
+import { FeatureFlagsService, InstrumentUsecase } from '@notify/application-generic';
 import {
   NotificationTemplateRepository,
   PreferencesEntity,
@@ -7,8 +7,8 @@ import {
   SubscriberRepository,
   TopicSubscribersEntity,
   TopicSubscribersRepository,
-} from '@novu/dal';
-import { DirectionEnum, EnvironmentId, FeatureFlagsKeysEnum, PreferencesTypeEnum } from '@novu/shared';
+} from '@notify/dal';
+import { DirectionEnum, EnvironmentId, FeatureFlagsKeysEnum, PreferencesTypeEnum } from '@notify/shared';
 import { SubscriptionPreferenceDto } from '../../../shared/dtos/subscriptions/create-subscriptions-response.dto';
 import {
   mapTopicSubscriptionToDto,

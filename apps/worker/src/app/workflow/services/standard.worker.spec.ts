@@ -7,7 +7,7 @@ import {
   SqsService,
   StandardQueueService,
   WorkflowInMemoryProviderService,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   CommunityOrganizationRepository,
   EnvironmentEntity,
@@ -23,8 +23,8 @@ import {
   RUNNING_CLAIM_STALE_AFTER_MS,
   SubscriberEntity,
   UserEntity,
-} from '@novu/dal';
-import { StepTypeEnum } from '@novu/shared';
+} from '@notify/dal';
+import { StepTypeEnum } from '@notify/shared';
 import {
   EnvironmentService,
   JobsService,
@@ -32,7 +32,7 @@ import {
   OrganizationService,
   SubscribersService,
   UserService,
-} from '@novu/testing';
+} from '@notify/testing';
 import { expect } from 'chai';
 import { formatISO } from 'date-fns';
 import { setTimeout } from 'timers/promises';

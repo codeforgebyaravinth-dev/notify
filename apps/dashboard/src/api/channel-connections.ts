@@ -1,4 +1,4 @@
-import type { IEnvironment } from '@novu/shared';
+import type { IEnvironment } from '@notify/shared';
 import { get } from './api.client';
 
 export type ChannelConnectionDto = {

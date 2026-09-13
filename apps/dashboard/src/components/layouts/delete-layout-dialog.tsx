@@ -1,4 +1,4 @@
-import { LayoutResponseDto } from '@novu/shared';
+import { LayoutResponseDto } from '@notify/shared';
 import { useEnvironment } from '@/context/environment/hooks';
 import { useFetchLayoutUsage } from '@/hooks/use-fetch-layout-usage';
 import { DeleteResourceConfirmationDialog } from '../delete-resource-confirmation-dialog';

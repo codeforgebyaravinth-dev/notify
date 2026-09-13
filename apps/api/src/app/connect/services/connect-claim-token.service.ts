@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { CacheService, PinoLogger } from '@novu/application-generic';
-import { isConnectClaimTokenFormat } from '@novu/shared';
+import { CacheService, PinoLogger } from '@notify/application-generic';
+import { isConnectClaimTokenFormat } from '@notify/shared';
 
 import { SingleUseTokenCache } from '../../shared/services/single-use-link-token.service';
 

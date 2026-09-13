@@ -49,7 +49,7 @@ function renderDetectionRows(session: WizardSession): React.ReactElement[] {
     { label: 'Package manager', value: project.packageManager },
     { label: 'TypeScript', value: project.hasTypeScript ? 'yes' : 'no' },
     {
-      label: 'Existing @novu/* packages',
+      label: 'Existing @notify/* packages',
       value: installedNovuPackages.length ? installedNovuPackages.join(', ') : 'none',
     },
   ];

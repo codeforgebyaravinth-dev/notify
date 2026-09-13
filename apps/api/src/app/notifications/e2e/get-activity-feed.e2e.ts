@@ -1,8 +1,8 @@
-import { Novu } from '@novu/api';
-import { ActivityNotificationResponseDto, ChannelTypeEnum } from '@novu/api/models/components';
-import { NotificationTemplateEntity, NotificationTemplateRepository, SubscriberRepository } from '@novu/dal';
-import { CreateWorkflowDto, StepTypeEnum, WorkflowCreationSourceEnum, WorkflowResponseDto } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { Novu } from '@notify/api';
+import { ActivityNotificationResponseDto, ChannelTypeEnum } from '@notify/api/models/components';
+import { NotificationTemplateEntity, NotificationTemplateRepository, SubscriberRepository } from '@notify/dal';
+import { CreateWorkflowDto, StepTypeEnum, WorkflowCreationSourceEnum, WorkflowResponseDto } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { initNovuClassSdk } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';
 

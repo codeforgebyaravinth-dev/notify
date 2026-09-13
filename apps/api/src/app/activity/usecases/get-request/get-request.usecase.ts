@@ -6,7 +6,7 @@ import {
   RequestLogSource,
   Trace,
   TraceLogRepository,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import { subDays } from 'date-fns';
 import { GetRequestResponseDto, TraceResponseDto } from '../../dtos/get-request.response.dto';
 import { mapTraceToResponseDto } from '../../shared/mappers';

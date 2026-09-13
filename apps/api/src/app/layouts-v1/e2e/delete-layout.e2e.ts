@@ -1,8 +1,8 @@
 import { Test } from '@nestjs/testing';
-import { CreateMessageTemplate, CreateMessageTemplateCommand } from '@novu/application-generic';
-import { MessageTemplateRepository } from '@novu/dal';
-import { EmailBlockTypeEnum, ResourceTypeEnum, StepTypeEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { CreateMessageTemplate, CreateMessageTemplateCommand } from '@notify/application-generic';
+import { MessageTemplateRepository } from '@notify/dal';
+import { EmailBlockTypeEnum, ResourceTypeEnum, StepTypeEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { MessageTemplateModule } from '../../message-template/message-template.module';
 import { SharedModule } from '../../shared/shared.module';

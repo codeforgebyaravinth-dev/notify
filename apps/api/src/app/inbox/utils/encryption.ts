@@ -1,5 +1,5 @@
 import { BadRequestException } from '@nestjs/common';
-import { ContextPayload } from '@novu/shared';
+import { ContextPayload } from '@notify/shared';
 import { isContextHmacValidForAnyKey, isHmacValidForAnyKey } from '../../shared/helpers/is-valid-hmac';
 
 export function validateHmacEncryption({

@@ -1,4 +1,4 @@
-import { ChatProviderIdEnum, FeatureFlagsKeysEnum, type ICredentials } from '@novu/shared';
+import { ChatProviderIdEnum, FeatureFlagsKeysEnum, type ICredentials } from '@notify/shared';
 import { type ReactNode, useId, useMemo } from 'react';
 import { RiArrowRightSLine, RiArrowRightUpLine, RiCheckLine, RiInformationLine } from 'react-icons/ri';
 import { useNavigate } from 'react-router-dom';

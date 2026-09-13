@@ -13,7 +13,7 @@ Copy the closest sibling:
 ## Skeleton — `<channel>-setup-guide.tsx`
 
 ```tsx
-import { ChatProviderIdEnum } from '@novu/shared';
+import { ChatProviderIdEnum } from '@notify/shared';
 import { useQueryClient } from '@tanstack/react-query';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { RiKey2Line } from 'react-icons/ri';

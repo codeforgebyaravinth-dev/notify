@@ -10,9 +10,9 @@ import {
   CreateOrUpdateSubscriberCommand,
   CreateOrUpdateSubscriberUseCase,
   decryptCredentials,
-} from '@novu/application-generic';
-import { IntegrationRepository } from '@novu/dal';
-import { ChatProviderIdEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { IntegrationRepository } from '@notify/dal';
+import { ChatProviderIdEnum } from '@notify/shared';
 import Axios from 'axios';
 import { ConnectContextVerifier } from '../../integrations/usecases/generate-chat-oath-url/connect-context-verifier.service';
 import { ConfigureTelegramWebhookCommand } from '../configure-telegram-webhook/configure-telegram-webhook.command';

@@ -1,4 +1,4 @@
-import { IApiKey } from '@novu/shared';
+import { IApiKey } from '@notify/shared';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { useEnvironment } from '@/context/environment/hooks';
 import { QueryKeys } from '@/utils/query-keys';

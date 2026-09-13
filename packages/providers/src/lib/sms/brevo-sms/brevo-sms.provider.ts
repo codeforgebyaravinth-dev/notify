@@ -1,7 +1,7 @@
-import { ChannelTypeEnum, ISendMessageSuccessResponse, ISmsOptions, ISmsProvider } from '@novu/stateless';
+import { ChannelTypeEnum, ISendMessageSuccessResponse, ISmsOptions, ISmsProvider } from '@notify/stateless';
 import { ProxyAgent } from 'proxy-agent';
 import 'cross-fetch';
-import { SmsProviderIdEnum } from '@novu/shared';
+import { SmsProviderIdEnum } from '@notify/shared';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
 import { WithPassthrough } from '../../../utils/types';
 

@@ -1,1 +1,1 @@
-export { buildSubscriber } from '@novu/js/internal';
+export { buildSubscriber } from '@notify/js/internal';

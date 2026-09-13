@@ -1,5 +1,5 @@
 import { BadRequestException, ConflictException, Injectable } from '@nestjs/common';
-import { FeatureFlagsService, PinoLogger } from '@novu/application-generic';
+import { FeatureFlagsService, PinoLogger } from '@notify/application-generic';
 import {
   CommunityOrganizationRepository,
   EnvironmentEntity,
@@ -8,8 +8,8 @@ import {
   TopicEntity,
   TopicRepository,
   UserEntity,
-} from '@novu/dal';
-import { FeatureFlagsKeysEnum, VALID_ID_REGEX } from '@novu/shared';
+} from '@notify/dal';
+import { FeatureFlagsKeysEnum, VALID_ID_REGEX } from '@notify/shared';
 import { TopicDto } from '../../dtos/topic.dto';
 import { CreateTopicCommand } from './create-topic.command';
 

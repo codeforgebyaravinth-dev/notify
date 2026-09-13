@@ -1,5 +1,5 @@
 import { standardSchemaResolver } from '@hookform/resolvers/standard-schema';
-import { SubscriberResponseDto } from '@novu/api/models/components';
+import { SubscriberResponseDto } from '@notify/api/models/components';
 import { useQueryClient } from '@tanstack/react-query';
 import { loadLanguage } from '@uiw/codemirror-extensions-langs';
 import { useEffect, useState } from 'react';

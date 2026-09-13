@@ -11,8 +11,8 @@ import {
   PinoLogger,
   processControlValuesByLiquid,
   processControlValuesBySchema,
-} from '@novu/application-generic';
-import { ContentIssueEnum, LAYOUT_CONTENT_VARIABLE, LayoutIssuesDto, ResourceOriginEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { ContentIssueEnum, LAYOUT_CONTENT_VARIABLE, LayoutIssuesDto, ResourceOriginEnum } from '@notify/shared';
 import { merge } from 'es-toolkit/compat';
 import { BuildLayoutIssuesCommand } from './build-layout-issues.command';
 

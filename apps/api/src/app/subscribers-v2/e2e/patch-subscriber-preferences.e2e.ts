@@ -1,13 +1,13 @@
-import { Novu } from '@novu/api';
+import { Novu } from '@notify/api';
 import {
   BulkUpdateSubscriberPreferencesDto,
   PatchSubscriberPreferencesDto,
   SubscriberResponseDto,
-} from '@novu/api/models/components';
-import { buildSlug } from '@novu/application-generic';
-import { NotificationTemplateEntity } from '@novu/dal';
-import { ShortIsPrefixEnum, StepTypeEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/api/models/components';
+import { buildSlug } from '@notify/application-generic';
+import { NotificationTemplateEntity } from '@notify/dal';
+import { ShortIsPrefixEnum, StepTypeEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { randomBytes } from 'crypto';
 import {

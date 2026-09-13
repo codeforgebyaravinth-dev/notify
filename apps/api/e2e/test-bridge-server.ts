@@ -1,5 +1,5 @@
 import http from 'node:http';
-import { Client, serve } from '@novu/framework/express';
+import { Client, serve } from '@notify/framework/express';
 import express from 'express';
 
 export class TestBridgeServer {

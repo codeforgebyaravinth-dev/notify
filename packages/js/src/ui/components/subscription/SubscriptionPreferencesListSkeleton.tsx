@@ -19,11 +19,11 @@ export const SubscriptionPreferencesListSkeleton = () => {
       >
         <SkeletonText
           appearanceKey="notificationList__skeletonText"
-          class="nt-h-3.5 nt-w-1/3 nt-bg-neutral-alpha-50 nt-rounded-sm nt-animate-shimmer"
+          class="nt-h-3.5 nt-w-1/3 nt-bg-neutral-alpha-50 nt-nt-rounded-none nt-animate-shimmer"
         />
         <SkeletonText
           appearanceKey="preferencesList__skeletonText"
-          class="nt-size-4 nt-bg-neutral-alpha-50 nt-rounded-sm nt-animate-shimmer"
+          class="nt-size-4 nt-bg-neutral-alpha-50 nt-nt-rounded-none nt-animate-shimmer"
         />
       </div>
       <div
@@ -34,11 +34,11 @@ export const SubscriptionPreferencesListSkeleton = () => {
       >
         <SkeletonText
           appearanceKey="notificationList__skeletonText"
-          class="nt-h-3.5 nt-w-1/3 nt-bg-neutral-alpha-50 nt-rounded-sm nt-animate-shimmer"
+          class="nt-h-3.5 nt-w-1/3 nt-bg-neutral-alpha-50 nt-nt-rounded-none nt-animate-shimmer"
         />
         <SkeletonText
           appearanceKey="preferencesList__skeletonText"
-          class="nt-size-4 nt-bg-neutral-alpha-50 nt-rounded-sm nt-animate-shimmer"
+          class="nt-size-4 nt-bg-neutral-alpha-50 nt-nt-rounded-none nt-animate-shimmer"
         />
       </div>
       <div
@@ -49,11 +49,11 @@ export const SubscriptionPreferencesListSkeleton = () => {
       >
         <SkeletonText
           appearanceKey="notificationList__skeletonText"
-          class="nt-h-3.5 nt-w-1/3 nt-bg-neutral-alpha-50 nt-rounded-sm nt-animate-shimmer"
+          class="nt-h-3.5 nt-w-1/3 nt-bg-neutral-alpha-50 nt-nt-rounded-none nt-animate-shimmer"
         />
         <SkeletonText
           appearanceKey="preferencesList__skeletonText"
-          class="nt-size-4 nt-bg-neutral-alpha-50 nt-rounded-sm nt-animate-shimmer"
+          class="nt-size-4 nt-bg-neutral-alpha-50 nt-nt-rounded-none nt-animate-shimmer"
         />
       </div>
     </div>

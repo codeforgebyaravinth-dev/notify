@@ -1,4 +1,4 @@
-import { Novu } from '@novu/api';
+import { Novu } from '@notify/api';
 import {
   CreateWorkflowDto,
   DirectionEnum,
@@ -6,8 +6,8 @@ import {
   WorkflowResponseDto,
   WorkflowResponseDtoSortField,
   WorkflowStatusEnum,
-} from '@novu/api/models/components';
-import { UserSession } from '@novu/testing';
+} from '@notify/api/models/components';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { initNovuClassSdkInternalAuth } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';
 

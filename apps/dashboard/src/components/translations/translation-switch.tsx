@@ -1,4 +1,4 @@
-import { ApiServiceLevelEnum, FeatureNameEnum, getFeatureForTierAsBoolean, PermissionsEnum } from '@novu/shared';
+import { ApiServiceLevelEnum, FeatureNameEnum, getFeatureForTierAsBoolean, PermissionsEnum } from '@notify/shared';
 import { Switch } from '@/components/primitives/switch';
 import { UpgradeCTATooltip } from '@/components/upgrade-cta-tooltip';
 import { IS_SELF_HOSTED_CE } from '@/config';

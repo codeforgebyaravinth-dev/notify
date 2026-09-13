@@ -1,7 +1,7 @@
 import { Body, Controller, HttpCode, HttpStatus, Param, Post } from '@nestjs/common';
 import { ApiBody, ApiExtraModels, ApiOperation, ApiParam, ApiTags, getSchemaPath } from '@nestjs/swagger';
-import type { Signal, ToolResult } from '@novu/framework/internal';
-import { UserSessionData } from '@novu/shared';
+import type { Signal, ToolResult } from '@notify/framework/internal';
+import { UserSessionData } from '@notify/shared';
 import { RequireAuthentication } from '../../../auth/framework/auth.decorator';
 import { ExternalApiAccessible } from '../../../auth/framework/external-api.decorator';
 import { ApiCommonResponses, ApiNotFoundResponse, ApiOkResponse } from '../../../shared/framework/response.decorator';
@@ -96,7 +96,7 @@ export class AgentReplyController {
     description: [
       'Send a message or side-effect into an existing agent conversation from your backend.',
       '',
-      'Use this endpoint when you are not using `@novu/framework` (for example Python, Go, PHP, .NET, or Java SDKs),',
+      'Use this endpoint when you are not using `@notify/framework` (for example Python, Go, PHP, .NET, or Java SDKs),',
       'or when a server process outside the bridge needs to post into a live conversation.',
       '',
       '**Message actions**',

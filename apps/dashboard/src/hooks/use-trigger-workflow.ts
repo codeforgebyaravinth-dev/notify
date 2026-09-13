@@ -1,4 +1,4 @@
-import { IEnvironment } from '@novu/shared';
+import { IEnvironment } from '@notify/shared';
 import { useMutation } from '@tanstack/react-query';
 import { triggerWorkflow } from '@/api/workflows';
 import { useEnvironment } from '../context/environment/hooks';

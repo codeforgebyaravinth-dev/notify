@@ -1,6 +1,6 @@
 import { BadRequestException } from '@nestjs/common';
-import { EnvironmentRepository, SubscriberRepository } from '@novu/dal';
-import { ChatProviderIdEnum } from '@novu/shared';
+import { EnvironmentRepository, SubscriberRepository } from '@notify/dal';
+import { ChatProviderIdEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { GenerateMsTeamsOauthUrlCommand } from './generate-msteams-oauth-url.command';

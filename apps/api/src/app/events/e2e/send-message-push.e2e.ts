@@ -1,7 +1,7 @@
 /** cspell:disable */
-import { Novu } from '@novu/api';
-import { WorkflowCreationSourceEnum } from '@novu/api/models/components';
-import { DetailEnum } from '@novu/application-generic';
+import { Novu } from '@notify/api';
+import { WorkflowCreationSourceEnum } from '@notify/api/models/components';
+import { DetailEnum } from '@notify/application-generic';
 import {
   ExecutionDetailsRepository,
   IntegrationRepository,
@@ -9,15 +9,15 @@ import {
   JobStatusEnum,
   MessageRepository,
   NotificationTemplateEntity,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   ChannelTypeEnum,
   ExecutionDetailsStatusEnum,
   InboxCountTypeEnum,
   PushProviderIdEnum,
   StepTypeEnum,
-} from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { initNovuClassSdk } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';
 

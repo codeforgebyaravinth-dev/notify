@@ -1,4 +1,4 @@
-import { EnvironmentLevelWithUserCommand } from '@novu/application-generic';
+import { EnvironmentLevelWithUserCommand } from '@notify/application-generic';
 import { IsDefined, IsOptional } from 'class-validator';
 
 export class SetJobAsCommand extends EnvironmentLevelWithUserCommand {

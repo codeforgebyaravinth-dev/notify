@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
-import { PinoLogger } from '@novu/application-generic';
-import { AgentMcpServerRepository, AgentRepository } from '@novu/dal';
-import { MCP_SERVERS } from '@novu/shared';
+import { PinoLogger } from '@notify/application-generic';
+import { AgentMcpServerRepository, AgentRepository } from '@notify/dal';
+import { MCP_SERVERS } from '@notify/shared';
 
 import {
   type SetAgentMcpServersFailureDto,

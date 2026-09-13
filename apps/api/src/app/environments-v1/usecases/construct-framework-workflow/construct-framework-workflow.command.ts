@@ -1,6 +1,6 @@
-import { EnvironmentLevelCommand } from '@novu/application-generic';
-import { PostActionEnum } from '@novu/framework/internal';
-import { EnvironmentTypeEnum } from '@novu/shared';
+import { EnvironmentLevelCommand } from '@notify/application-generic';
+import { PostActionEnum } from '@notify/framework/internal';
+import { EnvironmentTypeEnum } from '@notify/shared';
 import { IsBoolean, IsDefined, IsEnum, IsObject, IsOptional, IsString } from 'class-validator';
 
 export class ConstructFrameworkWorkflowCommand extends EnvironmentLevelCommand {

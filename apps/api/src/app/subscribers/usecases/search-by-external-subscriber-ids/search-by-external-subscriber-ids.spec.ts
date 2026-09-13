@@ -1,6 +1,6 @@
 import { Test } from '@nestjs/testing';
-import { SubscriberEntity } from '@novu/dal';
-import { SubscribersService, UserSession } from '@novu/testing';
+import { SubscriberEntity } from '@notify/dal';
+import { SubscribersService, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { SharedModule } from '../../../shared/shared.module';
 

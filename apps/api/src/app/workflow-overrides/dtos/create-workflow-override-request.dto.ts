@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { ICreateWorkflowOverrideRequestDto } from '@novu/shared';
+import { ICreateWorkflowOverrideRequestDto } from '@notify/shared';
 import { Type } from 'class-transformer';
 import { IsBoolean, IsDefined, IsOptional, IsString, ValidateNested } from 'class-validator';
 

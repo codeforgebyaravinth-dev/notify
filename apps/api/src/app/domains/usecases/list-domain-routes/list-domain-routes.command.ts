@@ -1,5 +1,5 @@
-import { CursorBasedPaginatedCommand } from '@novu/application-generic';
-import { DomainRouteEntity } from '@novu/dal';
+import { CursorBasedPaginatedCommand } from '@notify/application-generic';
+import { DomainRouteEntity } from '@notify/dal';
 import { IsOptional, IsString } from 'class-validator';
 
 export class ListDomainRoutesCommand extends CursorBasedPaginatedCommand<DomainRouteEntity, 'updatedAt' | '_id'> {

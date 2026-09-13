@@ -1,6 +1,6 @@
 import { ClerkClient } from '@clerk/backend';
-import { CommunityOrganizationRepository } from '@novu/dal';
-import { EEOrganizationRepository } from '@novu/ee-auth';
+import { CommunityOrganizationRepository } from '@notify/dal';
+import { EEOrganizationRepository } from '@notify/ee-auth';
 
 export class OrganizationService {
   constructor(private clerkClient: ClerkClient) {}

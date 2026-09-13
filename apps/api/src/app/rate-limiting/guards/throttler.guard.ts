@@ -15,15 +15,15 @@ import {
   HttpResponseHeaderKeysEnum,
   Instrument,
   PinoLogger,
-} from '@novu/application-generic';
-import { EnvironmentEntity, OrganizationEntity, UserEntity } from '@novu/dal';
+} from '@notify/application-generic';
+import { EnvironmentEntity, OrganizationEntity, UserEntity } from '@notify/dal';
 import {
   ApiAuthSchemeEnum,
   ApiRateLimitCategoryEnum,
   ApiRateLimitCostEnum,
   FeatureFlagsKeysEnum,
   UserSessionData,
-} from '@novu/shared';
+} from '@notify/shared';
 import { getClientIp } from 'request-ip';
 import {
   isKeylessApplicationIdentifierHeader,

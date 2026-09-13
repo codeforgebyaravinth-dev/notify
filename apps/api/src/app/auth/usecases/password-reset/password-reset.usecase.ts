@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { buildUserKey, InvalidateCacheService } from '@novu/application-generic';
-import { UserRepository } from '@novu/dal';
+import { buildUserKey, InvalidateCacheService } from '@notify/application-generic';
+import { UserRepository } from '@notify/dal';
 import { hash } from 'bcrypt';
 import { isBefore, subDays } from 'date-fns';
 import { AuthService } from '../../services/auth.service';

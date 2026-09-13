@@ -1,4 +1,4 @@
-import { IExecutionDetail } from '@novu/shared';
+import { IExecutionDetail } from '@notify/shared';
 import { format } from 'date-fns';
 import { useMemo } from 'react';
 import { formatJSONString } from '../../utils/string';

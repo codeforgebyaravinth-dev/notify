@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { DomainRepository } from '@novu/dal';
-import { DirectionEnum } from '@novu/shared';
+import { DomainRepository } from '@notify/dal';
+import { DirectionEnum } from '@notify/shared';
 
 import { ListDomainsResponseDto } from '../../dtos/list-domains-response.dto';
 import { toDomainResponse } from '../../mappers/domain-response.mapper';

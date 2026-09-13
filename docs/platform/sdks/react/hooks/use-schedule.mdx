@@ -25,7 +25,7 @@ Schedules define when notifications should be delivered by setting availability 
 
 ## Schedule type
 
-The `Schedule` type from `@novu/react` includes these properties:
+The `Schedule` type from `@notify/react` includes these properties:
 
 | Property | Type | Description |
 | --- | --- | --- |
@@ -64,7 +64,7 @@ const handleClick = async () => {
 Here's how to use the `useSchedule` hook to display and update a subscriber's notification schedule. The `schedule.update()` method creates a schedule if one doesn't exist or updates the existing one.
 
 ```tsx
-import { useSchedule } from "@novu/react";
+import { useSchedule } from "@notify/react";
 
 function ScheduleManager() {
   const { schedule, isLoading, error, refetch } = useSchedule();

@@ -3,7 +3,7 @@ import {
   buildAnnotatedPreviewLines,
   getProviderPrimaryContentKey,
   mergeProviderPreview,
-} from '@novu/shared';
+} from '@notify/shared';
 import { useMemo } from 'react';
 
 export const PREVIEW_PANEL_CLASS =

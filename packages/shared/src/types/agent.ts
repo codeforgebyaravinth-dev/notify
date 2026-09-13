@@ -48,7 +48,7 @@ export const AGENT_PLATFORM_PROVISION_SOURCE = 'agent-platform-provision' as con
  * - `authCardMessageId`: platform message id of the posted CTA card (which message to edit).
  * - `authLinkedCard`: the fully-resolved "account linked" confirmation card to swap in.
  *
- * IMPORTANT: `@novu/framework` does not depend on `@novu/shared`, so it declares the
+ * IMPORTANT: `@notify/framework` does not depend on `@notify/shared`, so it declares the
  * same literals in `packages/framework/src/resources/agent/auth-gate.ts`. These two
  * definitions MUST stay in sync.
  */

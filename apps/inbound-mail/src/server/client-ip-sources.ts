@@ -1,4 +1,4 @@
-import { isPrivateIp, normalizeHostnameForLookup } from '@novu/application-generic';
+import { isPrivateIp, normalizeHostnameForLookup } from '@notify/application-generic';
 
 export interface ClientIpSourceCandidate {
   rank: number;

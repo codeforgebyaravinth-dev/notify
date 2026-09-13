@@ -1,4 +1,4 @@
-import { ChatProviderIdEnum, type ICredentials } from '@novu/shared';
+import { ChatProviderIdEnum, type ICredentials } from '@notify/shared';
 import type { AgentIntegrationLink, AgentResponse } from '@/api/agents';
 import { API_HOSTNAME } from '@/config';
 import {

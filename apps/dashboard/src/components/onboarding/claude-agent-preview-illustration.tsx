@@ -4,7 +4,7 @@ import {
   ClaudeBuiltinTool,
   CONVERSATIONAL_PROVIDERS,
   getMcpIconPath,
-} from '@novu/shared';
+} from '@notify/shared';
 import { AnimatePresence, motion } from 'motion/react';
 import { useMemo, useState } from 'react';
 import { RiFileCodeLine, RiFlashlightFill } from 'react-icons/ri';

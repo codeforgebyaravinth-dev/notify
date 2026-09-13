@@ -1,6 +1,6 @@
 'use client';
 
-import { Inbox } from '@novu/nextjs';
+import { Inbox } from '@notify/nextjs';
 import { useRouter } from 'next/navigation';
 
 const novuConfig = {

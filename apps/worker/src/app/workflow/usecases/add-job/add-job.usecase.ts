@@ -28,7 +28,7 @@ import {
   TierRestrictionsValidateCommand,
   TierRestrictionsValidateUsecase,
   WorkflowRunStatusEnum,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   JobEntity,
   JobRepository,
@@ -37,8 +37,8 @@ import {
   NotificationTemplateEntity,
   SubscriberRepository,
   TopicPreferenceEvaluation,
-} from '@novu/dal';
-import { DelayOutput, DigestOutput, ExecuteOutput } from '@novu/framework/internal';
+} from '@notify/dal';
+import { DelayOutput, DigestOutput, ExecuteOutput } from '@notify/framework/internal';
 import {
   castUnitToDigestUnitEnum,
   DelayTypeEnum,
@@ -55,7 +55,7 @@ import {
   IDigestTimedMetadata,
   IWorkflowStepMetadata,
   StepTypeEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { parseExpression as parseCronExpression } from 'cron-parser';
 import { differenceInMilliseconds } from 'date-fns';
 import { formatInTimeZone } from 'date-fns-tz';

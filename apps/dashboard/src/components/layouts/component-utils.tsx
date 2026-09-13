@@ -1,4 +1,4 @@
-import { ChannelTypeEnum, LAYOUT_CONTENT_VARIABLE, UiComponentEnum } from '@novu/shared';
+import { ChannelTypeEnum, LAYOUT_CONTENT_VARIABLE, UiComponentEnum } from '@notify/shared';
 import { useMemo } from 'react';
 import { useFormContext } from 'react-hook-form';
 

@@ -4,22 +4,22 @@ description: "Agent entities, lifecycle, and handler building blocks for custom 
 ---
 
 
-These are the ideas behind Novu for Agents (Agent Communication Infrastructure, or ACI). You write handler code; Novu handles providers, delivery, and conversation state.
+These are the ideas behind Notify for Agents (Agent Communication Infrastructure, or ACI). You write handler code; Notify handles providers, delivery, and conversation state.
 
 ## Inbound flow
 
-Users can message your agent, and your agent can message back. When someone interacts on a connected platform, Novu resolves identity and conversation state, forwards a context object to your server, then delivers your reply to the right thread.
+Users can message your agent, and your agent can message back. When someone interacts on a connected platform, Notify resolves identity and conversation state, forwards a context object to your server, then delivers your reply to the right thread.
 
 ![Inbound message flow](/images/agents/custom-code-agent/concept-inbound-flow.png)
 
-| Step | What Novu does |
+| Step | What Notify does |
 | --- | --- |
-| **Receive and identify** | Normalizes the platform webhook. Maps the platform user (for example a Slack user ID) to a Novu subscriber when possible. Known users get full profiles; unknown users stay anonymous until resolved. |
+| **Receive and identify** | Normalizes the platform webhook. Maps the platform user (for example a Slack user ID) to a Notify subscriber when possible. Known users get full profiles; unknown users stay anonymous until resolved. |
 | **Load conversation** | Creates or loads the conversation for that thread. Assembles message history, metadata, and subscriber data into one context object. |
 | **Your handler** | Calls your code with message, history, subscriber, and platform details. You run your LLM or business logic and call `ctx.reply()`. |
 | **Deliver and persist** | Sends the reply to the provider thread, stores it in history, and logs activity in the dashboard. |
 
-Your server never calls Slack, Teams, or email APIs directly. It gets a context object and returns a reply; Novu handles the rest.
+Your server never calls Slack, Teams, or email APIs directly. It gets a context object and returns a reply; Notify handles the rest.
 
 ## Key entities
 
@@ -33,19 +33,19 @@ It does not define your model, prompts, tools, or business rules. It is the brid
 
 Credentials and config that link an agent to a platform (Slack, Teams, WhatsApp, email, and others).
 
-Setup and capabilities differ per provider (reactions, typing indicators, attachments, cards, message edits, and so on). Novu normalizes inbound events before your handler runs, so you work with one interface instead of provider-specific webhooks. Your handler code stays provider-agnostic; Novu translates outbound replies per platform.
+Setup and capabilities differ per provider (reactions, typing indicators, attachments, cards, message edits, and so on). Notify normalizes inbound events before your handler runs, so you work with one interface instead of provider-specific webhooks. Your handler code stays provider-agnostic; Notify translates outbound replies per platform.
 
 ### Conversation
 
-The stateful thread for a chat. Novu creates or loads it when a message arrives. It holds history, metadata, participants, status, and platform context.
+The stateful thread for a chat. Notify creates or loads it when a message arrives. It holds history, metadata, participants, status, and platform context.
 
-The agent is a participant, not the conversation itself (relevant when you read threads in the dashboard). A Slack thread, email thread, or similar maps to one Novu conversation.
+The agent is a participant, not the conversation itself (relevant when you read threads in the dashboard). A Slack thread, email thread, or similar maps to one Notify conversation.
 
 **Lifecycle:** **Active** from the first message until resolved. **Resolved** when the agent emits the resolve signal (`onResolve` runs; optional summary stored). **Reopened** automatically if the user messages again after resolution.
 
 ### Participants and identity
 
-Novu maps platform users to subscribers when it can:
+Notify maps platform users to subscribers when it can:
 
 - **Match found:** handler gets subscriber ID, name, email, and related fields.
 - **No match:** user is tracked as a platform user; write handlers that tolerate missing subscriber data.
@@ -54,7 +54,7 @@ Later resolution upgrades them to a full subscriber. Identity is provider-aware 
 
 ## Bridge surface
 
-The same handler API applies no matter which provider sent the event or which model you use. Your app exposes a bridge endpoint where Novu calls your handlers - see [Connecting your app](/agents/custom-code-agent/connecting-your-app) for project structure, `serve()`, and environment variables.
+The same handler API applies no matter which provider sent the event or which model you use. Your app exposes a bridge endpoint where Notify calls your handlers - see [Connecting your app](/agents/custom-code-agent/connecting-your-app) for project structure, `serve()`, and environment variables.
 
 ### Event handlers
 
@@ -66,7 +66,7 @@ The same handler API applies no matter which provider sent the event or which mo
 | `onResolve` | Conversation marked resolved | Cleanup, analytics, summary |
 | `onError` | Turn fails in the handler | Log, suppress, custom reply, or generic user copy |
 
-Handlers connect Novu's delivery layer to your app. An `onMessage` handler might pass context to an LLM and return a reply through Novu.
+Handlers connect Notify's delivery layer to your app. An `onMessage` handler might pass context to an LLM and return a reply through Notify.
 
 ### Context object
 
@@ -90,7 +90,7 @@ That object is the only interface your code needs. You do not integrate Slack, T
 | Signal | What it does |
 | --- | --- |
 | Metadata | Key-value data on the conversation, persists across turns |
-| Trigger | Starts a Novu workflow from the thread |
+| Trigger | Starts a Notify workflow from the thread |
 | Resolve | Marks the conversation resolved, optional summary |
 
 Replies talk to the user; signals update the system around the conversation. One handler turn can reply, set metadata, trigger a workflow, and resolve.
@@ -99,12 +99,12 @@ Signals queue in memory and batch with your next `ctx.reply()` in one request. I
 
 ## Conversations and workflows
 
-Conversations and Novu workflows share the same account:
+Conversations and Notify workflows share the same account:
 
 - **Conversation to workflow:** User asks in Slack for a report by email; handler calls `ctx.trigger()` and an existing workflow sends the email.
 - **Workflow to conversation:** User replies to a digest email; that reply opens a new agent conversation.
 
-ACI extends Novu's workflow system; it does not replace it. Transactional workflows and open-ended chat work together on one platform.
+ACI extends Notify's workflow system; it does not replace it. Transactional workflows and open-ended chat work together on one platform.
 
 ## Full flow (example: Slack)
 
@@ -113,15 +113,15 @@ ACI extends Novu's workflow system; it does not replace it. Transactional workfl
     The user sends a message from a connected provider such as Slack.
   </Step>
 
-  <Step title="Novu receives the event">
+  <Step title="Notify receives the event">
     The provider delivers the inbound message to your agent endpoint.
   </Step>
 
-  <Step title="Novu maps the thread">
-    Novu resolves the conversation and subscriber from the provider metadata.
+  <Step title="Notify maps the thread">
+    Notify resolves the conversation and subscriber from the provider metadata.
   </Step>
 
-  <Step title="Novu calls onMessage">
+  <Step title="Notify calls onMessage">
     Your agent handler receives the message context and generates a reply.
   </Step>
 
@@ -137,12 +137,12 @@ ACI extends Novu's workflow system; it does not replace it. Transactional workfl
     Your handler returns a reply, calls `ctx.reply()`, or emits signals.
   </Step>
 
-  <Step title="Novu posts the reply">
+  <Step title="Notify posts the reply">
     The reply is sent to the provider thread the user is messaging from.
   </Step>
 
-  <Step title="Novu records conversation state">
-    Novu records messages, participants, metadata, signals, and status.
+  <Step title="Notify records conversation state">
+    Notify records messages, participants, metadata, signals, and status.
   </Step>
 </Steps>
 
@@ -155,10 +155,10 @@ The same handler code works on every connected provider; adding a provider does 
     Connect an existing agent to Slack and get a reply in-thread.
   </Card>
   <Card icon="sparkles" href="/agents/custom-code-agent/frameworks/ai-sdk" title="AI SDK reference">
-    Adapter API for `@novu/framework/ai-sdk`.
+    Adapter API for `@notify/framework/ai-sdk`.
   </Card>
   <Card icon="link" href="/agents/custom-code-agent/frameworks/langchain" title="LangChain reference">
-    Adapter API for `@novu/framework/langchain`.
+    Adapter API for `@notify/framework/langchain`.
   </Card>
   <Card icon="code" href="/api-reference/agents/agent-schema" title="Agents API reference">
     Create agents, link providers, and update bridge URLs programmatically.

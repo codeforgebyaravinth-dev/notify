@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { buildUserKey, InvalidateCacheService } from '@novu/application-generic';
-import { UserRepository } from '@novu/dal';
+import { buildUserKey, InvalidateCacheService } from '@notify/application-generic';
+import { UserRepository } from '@notify/dal';
 import type { UserResponseDto } from '../../dtos/user-response.dto';
 import { BaseUserProfileUsecase } from '../base-user-profile.usecase';
 import { UpdateOnBoardingTourCommand } from './update-on-boarding-tour.command';

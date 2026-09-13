@@ -1,4 +1,4 @@
-import { GetSubscriptionDto } from '@novu/shared';
+import { GetSubscriptionDto } from '@notify/shared';
 import { format } from 'date-fns';
 import { RiCalendarEventLine, RiErrorWarningLine } from 'react-icons/ri';
 import { Link } from 'react-router-dom';

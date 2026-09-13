@@ -1,4 +1,4 @@
-import { BaseCommand } from '@novu/application-generic';
+import { BaseCommand } from '@notify/application-generic';
 import { IsDefined, IsEmail, IsNotEmpty } from 'class-validator';
 
 export class LoginCommand extends BaseCommand {

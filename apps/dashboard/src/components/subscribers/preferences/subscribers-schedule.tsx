@@ -1,5 +1,5 @@
-import { SubscriberGlobalPreferenceDto } from '@novu/api/models/components';
-import { WeeklySchedule } from '@novu/shared';
+import { SubscriberGlobalPreferenceDto } from '@notify/api/models/components';
+import { WeeklySchedule } from '@notify/shared';
 import { motion } from 'motion/react';
 import { useState } from 'react';
 import {

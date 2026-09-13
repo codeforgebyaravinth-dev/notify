@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { StorageService } from '@novu/application-generic';
-import { FILE_EXTENSION_TO_MIME_TYPE, UploadTypesEnum } from '@novu/shared';
+import { StorageService } from '@notify/application-generic';
+import { FILE_EXTENSION_TO_MIME_TYPE, UploadTypesEnum } from '@notify/shared';
 import { randomBytes } from 'crypto';
 
 import { UploadUrlResponse } from '../../dtos/upload-url-response.dto';

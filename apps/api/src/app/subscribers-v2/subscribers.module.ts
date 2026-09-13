@@ -13,7 +13,7 @@ import {
   UpdateSubscriber,
   UpdateSubscriberChannel,
   UpsertPreferences,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   CommunityOrganizationRepository,
   ContextRepository,
@@ -27,7 +27,7 @@ import {
   TenantRepository,
   TopicSubscribersRepository,
   WorkflowOverrideRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import { InboxModule } from '../inbox/inbox.module';
 import { UpdatePreferences } from '../inbox/usecases/update-preferences/update-preferences.usecase';
 import { OutboundWebhooksModule } from '../outbound-webhooks/outbound-webhooks.module';

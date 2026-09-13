@@ -1,4 +1,4 @@
-import type { JSONSchemaDto, WorkflowTestDataResponseDto } from '@novu/shared';
+import type { JSONSchemaDto, WorkflowTestDataResponseDto } from '@notify/shared';
 import { useMemo } from 'react';
 import { getWorkflowTestData } from '@/api/workflows';
 import { useEnvironment } from '@/context/environment/hooks';

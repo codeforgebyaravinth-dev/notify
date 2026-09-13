@@ -1,5 +1,5 @@
 import { UIMessage, useChat as useChatStream } from '@ai-sdk/react';
-import { AiAgentTypeEnum } from '@novu/shared';
+import { AiAgentTypeEnum } from '@notify/shared';
 import {
   ChatOnDataCallback,
   ChatOnFinishCallback,

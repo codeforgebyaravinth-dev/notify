@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
-import { PinoLogger } from '@novu/application-generic';
+import { PinoLogger } from '@notify/application-generic';
 import {
   ConversationActivityEntity,
   ConversationActivitySenderTypeEnum,
   ConversationChannel,
   ConversationEntity,
-} from '@novu/dal';
+} from '@notify/dal';
 import { captureAgentWarning } from '../../shared/errors/capture-agent-sentry';
 import {
   findOrphanedApprovedToolApprovalRequests,

@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { CustomDataType, SeverityLevelEnum } from '@novu/shared';
+import { CustomDataType, SeverityLevelEnum } from '@notify/shared';
 import { IsArray, IsBoolean, IsDefined, IsEnum, IsObject, IsOptional, IsString } from 'class-validator';
 
 export class WorkflowDto {

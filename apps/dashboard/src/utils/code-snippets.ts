@@ -38,7 +38,7 @@ export const createNodeJsSnippet = ({ identifier, to, payload, secretKey }: Code
     serverConfig = `,\n  serverURL: '${API_HOSTNAME}'`;
   }
 
-  return `import { Novu } from '@novu/api'; 
+  return `import { Novu } from '@notify/api'; 
 
 const novu = new Novu({ 
   secretKey: ${renderedSecretKey}${serverConfig}
@@ -171,7 +171,7 @@ export const generatePostmanCollection = ({
 };
 
 export const createFrameworkSnippet = ({ identifier, to, payload }: CodeSnippet) => {
-  return `import { Novu } from '@novu/api';
+  return `import { Novu } from '@notify/api';
 
 const novu = new Novu({ 
   secretKey: process.env.${SECRET_KEY_ENV_KEY}

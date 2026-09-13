@@ -30,13 +30,13 @@ const baseConfig: Options = {
   sourcemap: false,
   clean: true,
   dts: {
-    resolve: ['@novu/agent-event-protocol'],
+    resolve: ['@notify/agent-event-protocol'],
   },
   minify: true,
   minifyWhitespace: true,
   minifyIdentifiers: true,
   minifySyntax: true,
-  noExternal: ['chat', '@novu/agent-event-protocol'],
+  noExternal: ['chat', '@notify/agent-event-protocol'],
   define: {
     SDK_VERSION: `"${version}"`,
     FRAMEWORK_VERSION: `"2024-06-26"`,

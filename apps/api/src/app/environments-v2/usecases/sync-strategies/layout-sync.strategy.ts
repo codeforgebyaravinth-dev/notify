@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { PinoLogger } from '@novu/application-generic';
-import { UserSessionData } from '@novu/shared';
+import { PinoLogger } from '@notify/application-generic';
+import { UserSessionData } from '@notify/shared';
 import { IDiffResult, ISyncContext, ISyncResult, ResourceTypeEnum } from '../../types/sync.types';
 import { BaseSyncStrategy } from './base/base-sync.strategy';
 import { LayoutDiffOperation } from './operations/layout-diff.operation';

@@ -1,6 +1,6 @@
-import { CalculateDemoClaudeQuota, CalculateDemoClaudeQuotaCommand } from '@novu/application-generic';
-import { AgentRepository, ConversationRepository, IntegrationRepository } from '@novu/dal';
-import { AgentRuntimeProviderIdEnum, IntegrationKindEnum } from '@novu/shared';
+import { CalculateDemoClaudeQuota, CalculateDemoClaudeQuotaCommand } from '@notify/application-generic';
+import { AgentRepository, ConversationRepository, IntegrationRepository } from '@notify/dal';
+import { AgentRuntimeProviderIdEnum, IntegrationKindEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 

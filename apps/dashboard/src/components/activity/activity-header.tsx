@@ -1,4 +1,4 @@
-import { type ContextPayload, IActivity } from '@novu/shared';
+import { type ContextPayload, IActivity } from '@notify/shared';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { motion } from 'motion/react';
 import { RiCloseLine, RiRouteFill } from 'react-icons/ri';

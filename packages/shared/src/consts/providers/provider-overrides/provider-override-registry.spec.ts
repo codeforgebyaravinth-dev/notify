@@ -150,7 +150,7 @@ describe('provider override registry', () => {
     const config = getProviderOverrideConfig(ChatProviderIdEnum.Slack);
 
     expect(config?.schema).toBeUndefined();
-    expect(config?.schemaSubpath).toBe('@novu/shared/provider-overrides/slack');
+    expect(config?.schemaSubpath).toBe('@notify/shared/provider-overrides/slack');
     expect(getProviderOverrideKeys(ChatProviderIdEnum.Slack)).toContain('blocks');
     expect(getProviderOverrideKeysOnlySchema(ChatProviderIdEnum.Slack)?.properties?.blocks).toBe(true);
   });
@@ -159,7 +159,7 @@ describe('provider override registry', () => {
     const config = getProviderOverrideConfig(ChatProviderIdEnum.Telegram);
 
     expect(config?.schema).toBeUndefined();
-    expect(config?.schemaSubpath).toBe('@novu/shared/provider-overrides/telegram');
+    expect(config?.schemaSubpath).toBe('@notify/shared/provider-overrides/telegram');
     expect(config?.primaryContentKey).toBe('text');
     expect(getProviderOverrideKeys(ChatProviderIdEnum.Telegram)).toContain('parse_mode');
     expect(getProviderOverrideKeys(ChatProviderIdEnum.Telegram)).toContain('reply_markup');
@@ -170,7 +170,7 @@ describe('provider override registry', () => {
     const config = getProviderOverrideConfig(ChatProviderIdEnum.WhatsAppBusiness);
 
     expect(config?.schema).toBeUndefined();
-    expect(config?.schemaSubpath).toBe('@novu/shared/provider-overrides/whatsapp');
+    expect(config?.schemaSubpath).toBe('@notify/shared/provider-overrides/whatsapp');
     expect(config?.primaryContentKey).toBe('text.body');
     expect(getProviderOverrideKeys(ChatProviderIdEnum.WhatsAppBusiness)).toContain('type');
     expect(getProviderOverrideKeys(ChatProviderIdEnum.WhatsAppBusiness)).toContain('text');

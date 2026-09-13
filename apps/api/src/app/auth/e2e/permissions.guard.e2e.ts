@@ -1,6 +1,6 @@
-import { HttpRequestHeaderKeysEnum } from '@novu/application-generic';
-import { ApiAuthSchemeEnum, ApiServiceLevelEnum, PermissionsEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { HttpRequestHeaderKeysEnum } from '@notify/application-generic';
+import { ApiAuthSchemeEnum, ApiServiceLevelEnum, PermissionsEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('PermissionsGuard #novu-v2', () => {

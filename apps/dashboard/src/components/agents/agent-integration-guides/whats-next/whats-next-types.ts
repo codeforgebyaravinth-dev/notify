@@ -1,4 +1,4 @@
-import type { ICredentials } from '@novu/shared';
+import type { ICredentials } from '@notify/shared';
 import type { ReactNode } from 'react';
 import type { AgentIntegrationLink, AgentResponse } from '@/api/agents';
 import type { StepStatus } from '../../setup-guide-step-utils';

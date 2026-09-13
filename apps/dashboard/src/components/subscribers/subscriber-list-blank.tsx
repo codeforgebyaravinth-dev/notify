@@ -1,4 +1,4 @@
-import { PermissionsEnum } from '@novu/shared';
+import { PermissionsEnum } from '@notify/shared';
 import { RiBookMarkedLine, RiRouteFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import { AddSubscriberIllustration } from '@/components/icons/add-subscriber-illustration';

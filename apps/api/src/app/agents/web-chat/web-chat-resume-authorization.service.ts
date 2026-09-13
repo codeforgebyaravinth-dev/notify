@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import type { WebChatSession } from '@novu/chat-adapter-web';
-import { ConversationParticipantTypeEnum, ConversationRepository } from '@novu/dal';
+import type { WebChatSession } from '@notify/chat-adapter-web';
+import { ConversationParticipantTypeEnum, ConversationRepository } from '@notify/dal';
 import { AgentPlatformEnum } from '../shared/enums/agent-platform.enum';
 
 @Injectable()

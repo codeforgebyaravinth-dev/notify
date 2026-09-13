@@ -135,7 +135,7 @@ export default defineConfig(({ mode }) => {
       },
     },
     optimizeDeps: {
-      include: ['@novu/api'],
+      include: ['@notify/api'],
       esbuildOptions: esbuildDestructuringWorkaround,
     },
     esbuild: esbuildDestructuringWorkaround,

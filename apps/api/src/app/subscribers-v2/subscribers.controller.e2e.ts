@@ -1,9 +1,9 @@
-import { Novu } from '@novu/api';
-import { SubscriberResponseDto } from '@novu/api/models/components';
-import { OrderDirection } from '@novu/api/models/operations';
-import { SubscribersControllerSearchSubscribersRequest } from '@novu/api/src/models/operations';
-import { SubscriberRepository } from '@novu/dal';
-import { UserSession } from '@novu/testing';
+import { Novu } from '@notify/api';
+import { SubscriberResponseDto } from '@notify/api/models/components';
+import { OrderDirection } from '@notify/api/models/operations';
+import { SubscribersControllerSearchSubscribersRequest } from '@notify/api/src/models/operations';
+import { SubscriberRepository } from '@notify/dal';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { randomBytes } from 'crypto';
 import { initNovuClassSdk } from '../shared/helpers/e2e/sdk/e2e-sdk.helper';

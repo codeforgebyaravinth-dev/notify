@@ -1,4 +1,4 @@
-import { Novu } from '@novu/api';
+import { Novu } from '@notify/api';
 import {
   MessageEntity,
   MessageRepository,
@@ -7,9 +7,9 @@ import {
   SubscriberRepository,
   TopicRepository,
   TopicSubscribersRepository,
-} from '@novu/dal';
-import { ChannelTypeEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/dal';
+import { ChannelTypeEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { randomBytes } from 'crypto';
 import { initNovuClassSdk } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';

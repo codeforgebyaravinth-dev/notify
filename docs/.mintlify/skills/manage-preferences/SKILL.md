@@ -3,7 +3,7 @@ name: novu-manage-preferences
 description: Configure notification preferences in Novu at the workflow and subscriber level. Set default channel preferences (email, SMS, push, chat, in-app), mark preferences as read-only or subscriber-editable, and manage subscriber-specific overrides. Use when setting up notification opt-in/opt-out, configuring per-channel delivery preferences, or building a preferences management UI.
 inputs:
   - name: NOVU_SECRET_KEY
-    description: "Server-side API key from https://dashboard.novu.co/api-keys. Used by @novu/api."
+    description: "Server-side API key from https://dashboard.novu.co/api-keys. Used by @notify/api."
     required: true
     type: secret
 ---
@@ -16,10 +16,10 @@ Novu has a two-level preference system:
 
 ## Workflow-Level Preferences
 
-Set default preferences when defining a workflow with `@novu/framework`:
+Set default preferences when defining a workflow with `@notify/framework`:
 
 ```typescript
-import { workflow } from "@novu/framework";
+import { workflow } from "@notify/framework";
 
 const alertWorkflow = workflow("system-alert", execute, {
   preferences: {
@@ -91,7 +91,7 @@ Subscribers can override workflow defaults (unless `readOnly: true`).
 ### Get Subscriber Preferences
 
 ```typescript
-import { Novu } from "@novu/api";
+import { Novu } from "@notify/api";
 
 const novu = new Novu({
   secretKey: process.env.NOVU_SECRET_KEY,
@@ -148,7 +148,7 @@ The most specific preference wins. If a subscriber disables email for a specific
 ### React
 
 ```tsx
-import { Inbox } from "@novu/react";
+import { Inbox } from "@notify/react";
 
 function App() {
   return (
@@ -170,7 +170,7 @@ The `<Inbox />` component includes a built-in Preferences panel accessible via t
 Use the `<Preferences />` component independently:
 
 ```tsx
-import { Inbox, Preferences } from "@novu/react";
+import { Inbox, Preferences } from "@notify/react";
 
 function PreferencesPage() {
   return (

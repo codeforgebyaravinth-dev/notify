@@ -1,7 +1,7 @@
 import { PromptConfig, replaceConfigVariables } from './types';
 
 const KITCHEN_SINK_INBOX_SNIPPET = `'use client';
-import { Inbox } from '@novu/nextjs';
+import { Inbox } from '@notify/nextjs';
 
 export default function NotificationInbox({ subscriberId }: { subscriberId: string }) {
   // Ensure the environment variable is available
@@ -108,11 +108,11 @@ Potential common places where the inbox could be integrated in the UI:
 ## Implementation Checklist
 
 ### Step 1: Package Installation
-**Objective**: Install the required @novu/nextjs package using the project's package manager
+**Objective**: Install the required @notify/nextjs package using the project's package manager
 
 **Actions**:
 1. Detect the project's package manager (pnpm, yarn, npm, bun)
-2. Install @novu/nextjs using the appropriate command:
+2. Install @notify/nextjs using the appropriate command:
 
 **Verification**:
 - [ ] Package installed successfully

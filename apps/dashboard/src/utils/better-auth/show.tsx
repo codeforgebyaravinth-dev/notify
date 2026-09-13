@@ -1,5 +1,5 @@
 import type { CheckAuthorizationWithCustomPermissions, ShowWhenCondition } from '@clerk/shared/types';
-import { MemberRoleEnum, PermissionsEnum } from '@novu/shared';
+import { MemberRoleEnum, PermissionsEnum } from '@notify/shared';
 import React, { useContext } from 'react';
 import { AuthContext } from './auth-context';
 

@@ -223,7 +223,7 @@ jobs:
         id: check-ee-files
         run: |
           patterns=(
-            './node_modules/@novu/ee-**/dist/index.js'
+            './node_modules/@notify/ee-**/dist/index.js'
             './node_modules/@taskforcesh/bullmq-pro'  # Add more patterns as needed
           )
           for pattern in "${patterns[@]}"; do

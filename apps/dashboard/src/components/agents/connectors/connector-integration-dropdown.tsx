@@ -1,4 +1,4 @@
-import { type IIntegration } from '@novu/shared';
+import { type IIntegration } from '@notify/shared';
 import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import {

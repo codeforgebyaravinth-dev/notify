@@ -1,6 +1,6 @@
 import { standardSchemaResolver } from '@hookform/resolvers/standard-schema';
-import { GetContextResponseDto } from '@novu/api/models/components';
-import { ContextId, ContextType } from '@novu/shared';
+import { GetContextResponseDto } from '@notify/api/models/components';
+import { ContextId, ContextType } from '@notify/shared';
 import { loadLanguage } from '@uiw/codemirror-extensions-langs';
 import { useId, useState } from 'react';
 import { useForm } from 'react-hook-form';

@@ -26,9 +26,9 @@ import {
   SsrfBlockedError,
   UserSession,
   WorkflowResponseDto,
-} from '@novu/application-generic';
-import { ControlValuesRepository, EnvironmentRepository, NotificationTemplateRepository } from '@novu/dal';
-import { HealthCheck, HttpHeaderKeysEnum } from '@novu/framework/internal';
+} from '@notify/application-generic';
+import { ControlValuesRepository, EnvironmentRepository, NotificationTemplateRepository } from '@notify/dal';
+import { HealthCheck, HttpHeaderKeysEnum } from '@notify/framework/internal';
 import {
   ChannelTypeEnum,
   ControlValuesLevelEnum,
@@ -36,7 +36,7 @@ import {
   ResourceOriginEnum,
   ResourceTypeEnum,
   UserSessionData,
-} from '@novu/shared';
+} from '@notify/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { CreateBridgeRequestDto } from './dtos/create-bridge-request.dto';
 import { CreateBridgeResponseDto } from './dtos/create-bridge-response.dto';

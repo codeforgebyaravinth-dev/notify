@@ -1,12 +1,12 @@
-import { Novu } from '@novu/api';
+import { Novu } from '@notify/api';
 import {
   LogRepository,
   RequestLog,
   RequestLogRepository,
   RequestLogSource,
   RequestLogSourceEnum,
-} from '@novu/application-generic';
-import { UserSession } from '@novu/testing';
+} from '@notify/application-generic';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { format, isAfter, subHours } from 'date-fns';
 import { generateTransactionId } from '../../shared/helpers';

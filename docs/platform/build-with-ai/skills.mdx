@@ -1,21 +1,21 @@
 ---
 title: Agent Skills
-description: "Use Novu Agent Skills to help AI coding assistants build multi-channel notification systems in your codebase, with guided prompts and reusable patterns."
+description: "Use Notify Agent Skills to help AI coding assistants build multi-channel notification systems in your codebase, with guided prompts and reusable patterns."
 ---
 
 
 ## What are Agent Skills?
 
-Agent Skills are an open standard that gives AI agents (Claude Code, Cursor, Copilot, etc.) the context they need to work with specific tools and platforms. Novu's skills provide AI agents with everything required to build multi-channel notification systems - triggering workflows, managing subscribers, integrating the in-app inbox, and configuring preferences.
+Agent Skills are an open standard that gives AI agents (Claude Code, Cursor, Copilot, etc.) the context they need to work with specific tools and platforms. Notify's skills provide AI agents with everything required to build multi-channel notification systems - triggering workflows, managing subscribers, integrating the in-app inbox, and configuring preferences.
 
 ## Prerequisites
 
-- A Novu account
+- A Notify account
 - Secret key from [dashboard.novu.co/settings/api-keys](https://dashboard.novu.co/settings/api-keys)
 
 ## Setup
 
-Install the Novu skills into your project using the `skills` CLI:
+Install the Notify skills into your project using the `skills` CLI:
 
 ```bash
 npx skills add novuhq/skills
@@ -45,12 +45,12 @@ Use this guide to pick the right skill for your task:
 
 ## Example prompts
 
-Copy or open these prompts in Cursor after installing Novu skills with `npx skills add novuhq/skills`. Replace `YOUR_*` placeholders with values from your Novu dashboard.
+Copy or open these prompts in Cursor after installing Notify skills with `npx skills add novuhq/skills`. Replace `YOUR_*` placeholders with values from your Notify dashboard.
 
 ### Core skills
 
 <Prompt description="Send a welcome notification" icon="bot" actions={["copy", "cursor"]}>
-Send a welcome notification to subscriber-123 using the welcome-email workflow. Use @novu/api with NOVU_SECRET_KEY from environment variables.
+Send a welcome notification to subscriber-123 using the welcome-email workflow. Use @notify/api with NOVU_SECRET_KEY from environment variables.
 
 Example payload:
 
@@ -61,19 +61,19 @@ Example payload:
 }
 ```
 
-Follow the novu-trigger-notification skill. Do not create documentation files - implement the trigger in my existing codebase.
+Follow the notify-trigger-notification skill. Do not create documentation files - implement the trigger in my existing codebase.
 </Prompt>
 
 <Prompt description="Create a subscriber" icon="bot" actions={["copy", "cursor"]}>
-Create a subscriber with subscriberId user-456, email jane@example.com, and firstName Jane in my Novu account using @novu/api.
+Create a subscriber with subscriberId user-456, email jane@example.com, and firstName Jane in my Notify account using @notify/api.
 
-Follow the novu-manage-subscribers skill. Store NOVU_SECRET_KEY in environment variables.
+Follow the notify-manage-subscribers skill. Store NOVU_SECRET_KEY in environment variables.
 </Prompt>
 
 <Prompt description="Add a bell icon to my app" icon="bot" actions={["copy", "cursor"]}>
-Add a notification bell (Novu Inbox) to my Next.js app navbar. Install @novu/nextjs, use applicationIdentifier YOUR_APPLICATION_IDENTIFIER and subscriberId from my auth system.
+Add a notification bell (Notify Inbox) to my Next.js app navbar. Install @notify/nextjs, use applicationIdentifier YOUR_APPLICATION_IDENTIFIER and subscriberId from my auth system.
 
-Follow the novu-inbox-integration skill. Place the Inbox inline in existing UI - no new pages or wrappers.
+Follow the notify-inbox-integration skill. Place the Inbox inline in existing UI - no new pages or wrappers.
 
 Latest docs: https://docs.novu.co/platform/quickstart/nextjs
 </Prompt>
@@ -81,17 +81,17 @@ Latest docs: https://docs.novu.co/platform/quickstart/nextjs
 <Prompt description="Configure subscriber preferences" icon="bot" actions={["copy", "cursor"]}>
 Let subscriber-123 opt out of marketing email notifications while keeping transactional emails enabled.
 
-Follow the novu-manage-preferences skill using @novu/api with NOVU_SECRET_KEY from environment variables.
+Follow the notify-manage-preferences skill using @notify/api with NOVU_SECRET_KEY from environment variables.
 </Prompt>
 
 ### Additional skills
 
-These skills are available in the [Novu documentation MCP](/platform/build-with-ai/mcp) and Mintlify-hosted skill packages:
+These skills are available in the [Notify documentation MCP](/platform/build-with-ai/mcp) and Mintlify-hosted skill packages:
 
 <Prompt description="Set up a code-first workflow" icon="bot" actions={["copy", "cursor"]}>
-Set up a code-first Novu workflow using @novu/framework in my Next.js app. Create a welcome-email workflow with an email step and show me how to trigger it.
+Set up a code-first Notify workflow using @notify/framework in my Next.js app. Create a welcome-email workflow with an email step and show me how to trigger it.
 
-Follow the novu-framework-integration skill. Use NOVU_SECRET_KEY from environment variables.
+Follow the notify-framework-integration skill. Use NOVU_SECRET_KEY from environment variables.
 
 Latest docs: https://docs.novu.co/framework/quickstart/nextjs
 </Prompt>
@@ -99,13 +99,13 @@ Latest docs: https://docs.novu.co/framework/quickstart/nextjs
 <Prompt description="Design a multi-channel workflow" icon="bot" actions={["copy", "cursor"]}>
 Help me design a multi-channel notification workflow for order-shipped events. Include in-app, email, and optional SMS steps with appropriate conditions.
 
-Follow the novu-design-workflow skill. Ask clarifying questions about my channels and subscriber preferences before proposing the workflow structure.
+Follow the notify-design-workflow skill. Ask clarifying questions about my channels and subscriber preferences before proposing the workflow structure.
 </Prompt>
 
 <Prompt description="Configure workflow step content" icon="bot" actions={["copy", "cursor"]}>
 Configure the email step in my welcome-email workflow: set the subject to "Welcome, [payload userName]!" and add a body with the activation link from the payload activationLink field.
 
-Follow the novu-dashboard-workflows skill. Use Liquid variables for personalization.
+Follow the notify-dashboard-workflows skill. Use Liquid variables for personalization.
 </Prompt>
 
 ## Common Combinations
@@ -118,26 +118,26 @@ Follow the novu-dashboard-workflows skill. Use Liquid variables for personalizat
 
 | Package | Side | Purpose |
 | --- | --- | --- |
-| `@novu/api` | Server | Trigger notifications, manage subscribers/topics/workflows via REST |
-| `@novu/react` | Client | React Inbox component, Notifications, Preferences, Bell |
-| `@novu/nextjs` | Client | Next.js-optimized Inbox integration |
-| `@novu/react-native` | Client | React Native hooks-based Inbox integration |
-| `@novu/js` | Client | Vanilla JavaScript client for non-React apps |
+| `@notify/api` | Server | Trigger notifications, manage subscribers/topics/workflows via REST |
+| `@notify/react` | Client | React Inbox component, Notifications, Preferences, Bell |
+| `@notify/nextjs` | Client | Next.js-optimized Inbox integration |
+| `@notify/react-native` | Client | React Native hooks-based Inbox integration |
+| `@notify/js` | Client | Vanilla JavaScript client for non-React apps |
 
 ## Skill Reference
 
 ### Trigger Notification
 
-Send notifications by triggering Novu workflows. Supports single, bulk, broadcast, and topic-based delivery.
+Send notifications by triggering Notify workflows. Supports single, bulk, broadcast, and topic-based delivery.
 
 #### Single trigger
 
 <Tabs>
 <Tab title="Node.js">
 ```typescript
-import { Novu } from "@novu/api";
+import { Notify } from "@notify/api";
 
-const novu = new Novu({ secretKey: process.env.NOVU_SECRET_KEY });
+const notify = new Notify({ secretKey: process.env.NOVU_SECRET_KEY });
 
 await novu.trigger({
   workflowId: "welcome-email",
@@ -153,9 +153,9 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="welcome-email",
         to="subscriber-123",
@@ -190,10 +190,10 @@ _, err := s.Trigger(context.Background(), components.TriggerEventRequestDto{
 </Tab>
 <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()
+$sdk = notify\Notify::builder()
     ->setSecurity('<YOUR_SECRET_KEY_HERE>')
     ->build();
 
@@ -211,8 +211,8 @@ $sdk->trigger(
 </Tab>
 <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new NovuSDK(secretKey: "<YOUR_SECRET_KEY_HERE>");
@@ -229,11 +229,11 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto() {
 </Tab>
 <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 import java.util.Map;
 
-Novu novu = Novu.builder()
+Notify novu = Notify.builder()
     .secretKey("<YOUR_SECRET_KEY_HERE>")
     .build();
 
@@ -933,11 +933,11 @@ Add an in-app Inbox to your web application. The Inbox provides a bell icon, not
 <Tab title="React">
 
 ```bash
-npm install @novu/react
+npm install @notify/react
 ```
 
 ```tsx
-import { Inbox } from "@novu/react";
+import { Inbox } from "@notify/react";
 
 function App() {
   return (
@@ -954,14 +954,14 @@ function App() {
 <Tab title="Next.js">
 
 ```bash
-npm install @novu/nextjs
+npm install @notify/nextjs
 ```
 
 ```tsx
 // components/NotificationInbox.tsx
 "use client"; // Required for App Router
 
-import { Inbox } from "@novu/nextjs";
+import { Inbox } from "@notify/nextjs";
 
 export function NotificationInbox() {
   return (
@@ -978,13 +978,13 @@ export function NotificationInbox() {
 <Tab title="Vanilla JS">
 
 ```bash
-npm install @novu/js
+npm install @notify/js
 ```
 
 ```typescript
-import { Novu } from "@novu/js";
+import { Notify } from "@notify/js";
 
-const novu = new Novu({
+const notify = new Notify({
   applicationIdentifier: "YOUR_NOVU_APP_ID",
   subscriberId: "subscriber-123",
 });
@@ -1007,9 +1007,9 @@ const subscriberHash = createHmac("sha256", process.env.NOVU_SECRET_KEY!)
 
 ### Manage Preferences
 
-Novu uses a two-level preference system: **workflow defaults** and **subscriber overrides** (set by end users).
+Notify uses a two-level preference system: **workflow defaults** and **subscriber overrides** (set by end users).
 
-**Workflow-level defaults**: Workflow level defaults can be configured in the Novu Dashboard. To do so, click on the workflow you want to configure and then click on the `Manage Preferences` option.
+**Workflow-level defaults**: Workflow level defaults can be configured in the Notify Dashboard. To do so, click on the workflow you want to configure and then click on the `Manage Preferences` option.
 
 **Subscriber-level overrides**:
 
@@ -1160,4 +1160,4 @@ curl -X PATCH 'https://api.novu.co/v2/subscribers/subscriber-123/preferences' \
 
 The `Inbox` component includes a built-in Preferences panel accessible via the settings icon, or use `<Preferences />` as a standalone component.
 
-For additional help, check the [Novu documentation](https://docs.novu.co) or contact us at [support@novu.co](mailto:support@novu.co).
+For additional help, check the [Notify documentation](https://docs.novu.co) or contact us at [support@notify.co](mailto:support@notify.co).

@@ -5,9 +5,9 @@ import {
   GetLayoutUseCaseV0,
   LayoutDtoV0,
   layoutControlSchema,
-} from '@novu/application-generic';
-import { LayoutEntity, LayoutRepository } from '@novu/dal';
-import { ResourceOriginEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { LayoutEntity, LayoutRepository } from '@notify/dal';
+import { ResourceOriginEnum } from '@notify/shared';
 import { CreateLayoutChangeCommand, CreateLayoutChangeUseCase } from '../create-layout-change';
 import { SetDefaultLayoutCommand, SetDefaultLayoutUseCase } from '../set-default-layout';
 import { UpdateLayoutCommand } from './update-layout.command';

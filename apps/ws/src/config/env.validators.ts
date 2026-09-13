@@ -1,4 +1,4 @@
-import { StringifyEnv } from '@novu/shared';
+import { StringifyEnv } from '@notify/shared';
 import { bool, CleanedEnv, cleanEnv, json, num, port, str, ValidatorSpec } from 'envalid';
 
 export function validateEnv() {

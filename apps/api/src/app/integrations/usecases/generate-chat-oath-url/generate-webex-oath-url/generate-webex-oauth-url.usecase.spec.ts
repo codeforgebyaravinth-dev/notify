@@ -1,5 +1,5 @@
-import { EnvironmentRepository, SubscriberRepository } from '@novu/dal';
-import { ChatProviderIdEnum } from '@novu/shared';
+import { EnvironmentRepository, SubscriberRepository } from '@notify/dal';
+import { ChatProviderIdEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { GenerateWebexOauthUrlCommand } from './generate-webex-oauth-url.command';

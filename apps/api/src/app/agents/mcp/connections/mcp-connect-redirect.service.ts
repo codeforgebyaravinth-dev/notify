@@ -1,6 +1,6 @@
 import { randomBytes } from 'node:crypto';
 import { Injectable } from '@nestjs/common';
-import { CacheService, PinoLogger } from '@novu/application-generic';
+import { CacheService, PinoLogger } from '@notify/application-generic';
 
 import { buildAgentApiRootUrl } from '../../shared/util/agent-api-root-url';
 

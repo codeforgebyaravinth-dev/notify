@@ -2,8 +2,8 @@ import { CallHandler, ExecutionContext, Injectable, NestInterceptor } from '@nes
 import { Observable } from 'rxjs';
 
 /**
- * Parses @novu/js version from Novu-Client-Version header.
- * Example: "@novu/js@3.13.0" -> "3.13.0"
+ * Parses @notify/js version from Novu-Client-Version header.
+ * Example: "@notify/js@3.13.0" -> "3.13.0"
  */
 function parseClientVersion(clientVersion?: string): string | null {
   if (!clientVersion) return null;
@@ -29,7 +29,7 @@ function isContextAwareVersion(version: string): boolean {
 
 /**
  * Determines if context should be disabled for this request.
- * Only disables for old @novu/js client versions.
+ * Only disables for old @notify/js client versions.
  */
 function shouldDisableContextForOldClient(clientVersion?: string): boolean {
   const version = parseClientVersion(clientVersion);
@@ -43,7 +43,7 @@ function shouldDisableContextForOldClient(clientVersion?: string): boolean {
 /**
  * Interceptor that disables context features for old clients.
  *
- * Old @novu/js versions auto-generate identifiers without :ctx_,
+ * Old @notify/js versions auto-generate identifiers without :ctx_,
  * but if contextKeys exist in JWT, server would create subscriptions
  * with :ctx_ causing identifier mismatches.
  *

@@ -5,7 +5,7 @@ import {
   IEnvironment,
   StepTypeEnum,
   WorkflowResponseDto,
-} from '@novu/shared';
+} from '@notify/shared';
 import { UIMessage } from 'ai';
 import { IS_AI_FEATURES_ENABLED } from '@/config';
 import { getApiBaseUrl, getV2, postV2 } from './api.client';

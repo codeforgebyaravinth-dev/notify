@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { getJobDigest, InstrumentUsecase } from '@novu/application-generic';
+import { getJobDigest, InstrumentUsecase } from '@notify/application-generic';
 
 import { DigestEventsCommand } from './digest-events.command';
 import { GetDigestEvents } from './get-digest-events.usecase';

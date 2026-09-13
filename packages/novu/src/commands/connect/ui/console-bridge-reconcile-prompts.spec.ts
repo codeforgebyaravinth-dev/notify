@@ -33,7 +33,7 @@ describe('console-bridge-reconcile-prompts', () => {
 
     await promptBridgeReconcilePlanInConsole({
       projectDir: '/tmp/ai-sdk',
-      requirements: [{ id: 'package', status: 'ok', detail: '@novu/framework installed' }],
+      requirements: [{ id: 'package', status: 'ok', detail: '@notify/framework installed' }],
       envPaths: [],
       variant: 'ai-sdk',
     });

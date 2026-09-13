@@ -19,7 +19,7 @@ import {
   RequirePermissions,
   UpdateWorkflowCommandV0,
   UpdateWorkflowV0,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   buildWorkflowPreferencesFromPreferenceChannels,
   DEFAULT_WORKFLOW_PREFERENCES,
@@ -27,7 +27,7 @@ import {
   ResourceOriginEnum,
   ResourceTypeEnum,
   UserSessionData,
-} from '@novu/shared';
+} from '@notify/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import { RootEnvironmentGuard } from '../auth/framework/root-environment-guard.service';

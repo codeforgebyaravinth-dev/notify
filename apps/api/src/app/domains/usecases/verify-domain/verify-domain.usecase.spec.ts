@@ -1,7 +1,7 @@
 import * as dns from 'node:dns';
 import { NotFoundException } from '@nestjs/common';
-import type { DomainEntity } from '@novu/dal';
-import { DomainStatusEnum } from '@novu/shared';
+import type { DomainEntity } from '@notify/dal';
+import { DomainStatusEnum } from '@notify/shared';
 import { expect } from 'chai';
 import { restore, stub } from 'sinon';
 

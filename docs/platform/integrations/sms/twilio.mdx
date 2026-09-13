@@ -1,7 +1,7 @@
 ---
-title: "Twilio SMS Integration with Novu"
+title: "Twilio SMS Integration with Notify"
 sidebarTitle: 'Twilio'
-description: "Connect Twilio to Novu to send SMS notifications through workflows. Store your Twilio account SID, auth token, and sender phone number in the Novu dashboard."
+description: "Connect Twilio to Notify to send SMS notifications through workflows. Store your Twilio account SID, auth token, and sender phone number in the Notify dashboard."
 ---
 
 You can utilize the [Twilio](https://www.twilio.com/) API to communicate with your customers using SMS messaging. Let's look at how you can do that:
@@ -42,11 +42,11 @@ For more detailed instructions, follow one of their many [Tutorials](https://www
 </Step>
 </Steps>
 
-## Creating a Twilio integration with Novu
+## Creating a Twilio integration with Notify
 
 <Steps>
-<Step title="Connect Twilio to Novu">
-1. Visit the [Integrations Store](https://dashboard.novu.co/integrations) on Novu
+<Step title="Connect Twilio to Notify">
+1. Visit the [Integrations Store](https://dashboard.novu.co/integrations) on Notify
 2. Click the "Add a provider" button
 3. Locate **Twilio** and click on the `Disabled` button and mark it as `Active`
 4. Click on the **Connect** button
@@ -65,7 +65,7 @@ For more detailed instructions, follow one of their many [Tutorials](https://www
 
 ## Multi-region data residency
 
-Twilio supports processing and storing SMS data in specific regions. Novu lets you choose the API region when connecting your Twilio integration.
+Twilio supports processing and storing SMS data in specific regions. Notify lets you choose the API region when connecting your Twilio integration.
 
 | Region | Twilio region | When to use |
 | --- | --- | --- |
@@ -80,15 +80,15 @@ Twilio supports processing and storing SMS data in specific regions. Novu lets y
 
 <Steps>
 <Step title="Create IE1 API credentials">
-In the Twilio Console, create API credentials for the **IE1** region. Use those credentials in your Novu Twilio integration instead of your US credentials.
+In the Twilio Console, create API credentials for the **IE1** region. Use those credentials in your Notify Twilio integration instead of your US credentials.
 </Step>
 
 <Step title="Configure senders for IE1">
 If you send with phone numbers, set each number's active messaging region to **IE1** in the Twilio Console under **Numbers & Senders**.
 </Step>
 
-<Step title="Select EU in Novu">
-When connecting or updating your Twilio integration in Novu, set **Data residency region** to **EU (Ireland)** and save your IE1 credentials.
+<Step title="Select EU in Notify">
+When connecting or updating your Twilio integration in Notify, set **Data residency region** to **EU (Ireland)** and save your IE1 credentials.
 </Step>
 </Steps>
 
@@ -99,9 +99,9 @@ To send WhatsApp messages with Twilio integration, prefix the phone number of th
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({ secretKey: "<NOVU_SECRET_KEY>" });
+const notify = new Notify({ secretKey: "<NOVU_SECRET_KEY>" });
 
 await novu.trigger({
   workflowId: "workflowId",
@@ -127,9 +127,9 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="workflowId",
         to={"subscriber_id": "subscriberId", "phone": "whatsapp:+14155238886"},
@@ -185,10 +185,10 @@ res, err := s.Trigger(context.Background(), components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 
 $sdk->trigger(
     triggerEventRequestDto: new Components\TriggerEventRequestDto(
@@ -213,8 +213,8 @@ $sdk->trigger(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
 
@@ -239,10 +239,10 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto() {
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 
 novu.trigger()
     .body(TriggerEventRequestDto.builder()
@@ -301,9 +301,9 @@ To send WhatsApp template messages with Twilio integration, you can use the `tem
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from "@novu/api";
+import { Notify } from "@notify/api";
 
-const novu = new Novu({ 
+const notify = new Notify({ 
   secretKey: "<NOVU_SECRET_KEY>",
   // Required if using EU region
   // serverURL: "https://eu.api.novu.co",
@@ -335,9 +335,9 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="workflowId",
         to={"subscriber_id": "subscriberId", "phone": "whatsapp:+14155238886"},
@@ -393,10 +393,10 @@ res, err := s.Trigger(context.Background(), components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 
 $sdk->trigger(
     triggerEventRequestDto: new Components\TriggerEventRequestDto(
@@ -421,8 +421,8 @@ $sdk->trigger(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
@@ -448,11 +448,11 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto() {
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 import java.util.Map;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 
 novu.trigger()
     .body(TriggerEventRequestDto.builder()

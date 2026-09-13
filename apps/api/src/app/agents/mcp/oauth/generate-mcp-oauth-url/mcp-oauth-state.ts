@@ -1,5 +1,5 @@
-import type { McpConnectionOAuthCallbackContext } from '@novu/dal';
-import { McpConnectionScopeEnum } from '@novu/shared';
+import type { McpConnectionOAuthCallbackContext } from '@notify/dal';
+import { McpConnectionScopeEnum } from '@notify/shared';
 
 import { buildAgentApiRootUrl } from '../../../shared/util/agent-api-root-url';
 import { MCP_OAUTH_CALLBACK_PATH } from './mcp-oauth.constants';

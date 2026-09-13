@@ -10,7 +10,7 @@ export const SkeletonText = (props: SkeletonTextProps) => {
       class={style({
         key: props.appearanceKey,
         className: cn(
-          'nt-w-full nt-h-3 nt-rounded nt-bg-gradient-to-r nt-from-foreground-alpha-50 nt-to-transparent',
+          'nt-w-full nt-h-3 nt-nt-rounded-none nt-bg-gradient-to-r nt-from-foreground-alpha-50 nt-to-transparent',
           props.class
         ),
       })}
@@ -27,7 +27,7 @@ export const SkeletonAvatar = (props: SkeletonAvatarProps) => {
       class={style({
         key: props.appearanceKey,
         className: cn(
-          'nt-size-8 nt-rounded-lg nt-bg-gradient-to-r nt-from-foreground-alpha-50 nt-to-transparent',
+          'nt-size-8 nt-nt-rounded-none nt-bg-gradient-to-r nt-from-foreground-alpha-50 nt-to-transparent',
           props.class
         ),
       })}
@@ -51,14 +51,14 @@ export const SkeletonSwitch = (props: SkeletonSwitchProps) => {
       <div
         class={style({
           key: props.appearanceKey,
-          className: 'nt-h-4 nt-w-7 nt-rounded-full nt-bg-gradient-to-r nt-from-foreground-alpha-50 nt-to-transparent',
+          className: 'nt-h-4 nt-w-7 nt-nt-rounded-none nt-bg-gradient-to-r nt-from-foreground-alpha-50 nt-to-transparent',
         })}
       />
       {/* The thumb */}
       <div
         class={style({
           key: props.thumbAppearanceKey,
-          className: 'nt-absolute nt-top-0.5 nt-left-0.5 nt-size-3 nt-rounded-full nt-bg-background nt-shadow',
+          className: 'nt-absolute nt-top-0.5 nt-left-0.5 nt-size-3 nt-nt-rounded-none nt-bg-background nt-shadow',
         })}
       />
     </div>

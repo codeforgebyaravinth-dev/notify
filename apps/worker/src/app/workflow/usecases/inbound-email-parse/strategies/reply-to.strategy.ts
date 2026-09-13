@@ -8,7 +8,7 @@ import {
   normalizeOutboundHttpUrl,
   SsrfBlockedError,
   safeOutboundJsonRequest,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   JobEntity,
   JobRepository,
@@ -16,8 +16,8 @@ import {
   MessageRepository,
   NotificationEntity,
   NotificationTemplateEntity,
-} from '@novu/dal';
-import { InboundEmailAttachment, StepTypeEnum } from '@novu/shared';
+} from '@notify/dal';
+import { InboundEmailAttachment, StepTypeEnum } from '@notify/shared';
 import { InboundEmailParseCommand } from '../inbound-email-parse.command';
 import {
   InboundParseOutcome,

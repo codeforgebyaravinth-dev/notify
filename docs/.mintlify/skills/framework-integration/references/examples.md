@@ -1,13 +1,13 @@
 # Examples Cookbook
 
-Real-world workflow patterns built with `@novu/framework`.
+Real-world workflow patterns built with `@notify/framework`.
 
 ## Multi-Step Onboarding
 
 Send a welcome email immediately, wait a week, then nudge with an in-app reminder if the user opted in.
 
 ```typescript
-import { workflow } from "@novu/framework";
+import { workflow } from "@notify/framework";
 import { z } from "zod";
 import { renderEmail } from "../emails/welcome";
 
@@ -62,7 +62,7 @@ export const onboardingWorkflow = workflow(
 Send an in-app notification, wait 6 hours, then send an email — but skip the email if the in-app was read.
 
 ```typescript
-import { workflow } from "@novu/framework";
+import { workflow } from "@notify/framework";
 import { z } from "zod";
 
 export const reminderWorkflow = workflow(
@@ -98,7 +98,7 @@ export const reminderWorkflow = workflow(
 Aggregate all triggers within 24 hours into a single email.
 
 ```typescript
-import { workflow } from "@novu/framework";
+import { workflow } from "@notify/framework";
 import { z } from "zod";
 import { render } from "@react-email/components";
 import { ActivityDigestEmail } from "../emails/activity-digest";

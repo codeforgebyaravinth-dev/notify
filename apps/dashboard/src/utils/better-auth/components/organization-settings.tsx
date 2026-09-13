@@ -1,4 +1,4 @@
-import { PermissionsEnum } from '@novu/shared';
+import { PermissionsEnum } from '@notify/shared';
 import * as React from 'react';
 import { useState } from 'react';
 import { RiEdit2Line, RiLoader4Line, RiOrganizationChart } from 'react-icons/ri';

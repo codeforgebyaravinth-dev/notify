@@ -1,5 +1,5 @@
-import type { AgentEntity, ConversationEntity, SubscriberEntity } from '@novu/dal';
-import type { AgentAction, AgentContextPayload } from '@novu/framework';
+import type { AgentEntity, ConversationEntity, SubscriberEntity } from '@notify/dal';
+import type { AgentAction, AgentContextPayload } from '@notify/framework';
 import type { Message, Thread } from 'chat';
 import type { ResolvedAgentConfig } from '../../channels/agent-config-resolver.service';
 import type { AgentEventEnum } from '../../shared/enums/agent-event.enum';

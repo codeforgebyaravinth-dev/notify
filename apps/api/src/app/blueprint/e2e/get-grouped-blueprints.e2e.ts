@@ -4,8 +4,8 @@ import {
   CacheService,
   InvalidateCacheService,
   PinoLogger,
-} from '@novu/application-generic';
-import { EnvironmentEntity, EnvironmentRepository, NotificationTemplateRepository } from '@novu/dal';
+} from '@notify/application-generic';
+import { EnvironmentEntity, EnvironmentRepository, NotificationTemplateRepository } from '@notify/dal';
 import {
   EmailBlockTypeEnum,
   FieldLogicalOperatorEnum,
@@ -14,8 +14,8 @@ import {
   INotificationTemplate,
   INotificationTemplateStep,
   StepTypeEnum,
-} from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { CreateWorkflowRequestDto } from '../../workflows-v1/dtos';

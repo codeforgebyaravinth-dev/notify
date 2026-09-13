@@ -1,5 +1,5 @@
-import { EmailBlockTypeEnum, PreferenceLevelEnum, StepTypeEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { EmailBlockTypeEnum, PreferenceLevelEnum, StepTypeEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Update global preferences - /inbox/preferences (PATCH) #novu-v2', () => {

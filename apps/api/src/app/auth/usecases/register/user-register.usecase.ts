@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { AnalyticsService } from '@novu/application-generic';
-import { OrganizationEntity, UserRepository } from '@novu/dal';
-import { normalizeEmail, SignUpOriginEnum } from '@novu/shared';
+import { AnalyticsService } from '@notify/application-generic';
+import { OrganizationEntity, UserRepository } from '@notify/dal';
+import { normalizeEmail, SignUpOriginEnum } from '@notify/shared';
 import { hash } from 'bcrypt';
 import { CreateOrganizationCommand } from '../../../organization/usecases/create-organization/create-organization.command';
 import { CreateOrganization } from '../../../organization/usecases/create-organization/create-organization.usecase';

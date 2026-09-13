@@ -1,11 +1,11 @@
 ---
 title: "Connect AI SDK to Slack"
-description: "Add @novu/framework/ai-sdk to an existing app, connect Slack, and return generateText from onMessage. Same handler works on Teams, WhatsApp, Telegram, and email."
+description: "Add @notify/framework/ai-sdk to an existing app, connect Slack, and return generateText from onMessage. Same handler works on Teams, WhatsApp, Telegram, and email."
 sidebarTitle: Connect AI SDK
 boost: 3
 ---
 
-Connect a [Vercel AI SDK](https://ai-sdk.dev/) agent to Novu Connect. Return `generateText()` from `onMessage`; Novu delivers the reply on Slack. After you add other providers, the same handler serves Teams, WhatsApp, Telegram, and email.
+Connect a [Vercel AI SDK](https://ai-sdk.dev/) agent to Notify Connect. Return `generateText()` from `onMessage`; Notify delivers the reply on Slack. After you add other providers, the same handler serves Teams, WhatsApp, Telegram, and email.
 
 This guide uses **Slack** first and assumes an existing Node.js app. Examples use OpenAI or Anthropic via the AI SDK.
 
@@ -15,7 +15,7 @@ This guide uses **Slack** first and assumes an existing Node.js app. Examples us
 
 ## Prerequisites
 
-- A [Novu account](https://dashboard.novu.co)
+- A [Notify account](https://dashboard.novu.co)
 - Node.js 22+
 - An existing app (Next.js, Express, Hono, or similar)
 - A Slack workspace where you can install apps
@@ -28,16 +28,16 @@ This guide uses **Slack** first and assumes an existing Node.js app. Examples us
 <Step>
 ## Create the agent and connect Slack
 
-In the [Novu dashboard](https://dashboard.novu.co):
+In the [Notify dashboard](https://dashboard.novu.co):
 
 1. Go to **Agents** → **Create agent**.
 2. Under **Custom code**, pick **AI SDK**.
 3. Set **Agent name** and **Identifier** (your code must use the same identifier).
 4. Select **Slack**, generate a [Slack App Configuration Token](https://api.slack.com/apps), paste it, and finish the install / Allow flow.
 
-The token is used once to create the Slack app. Novu does not store it. Screenshots: [Create a Slack app](/agents/channels/slack#create-a-slack-app).
+The token is used once to create the Slack app. Notify does not store it. Screenshots: [Create a Slack app](/agents/channels/slack#create-a-slack-app).
 
-Alternatively run `npx novu connect`, choose **AI SDK** and **Slack**, and skip creating a starter project when prompted.
+Alternatively run `npx notify connect`, choose **AI SDK** and **Slack**, and skip creating a starter project when prompted.
 </Step>
 
 <Step>
@@ -46,12 +46,12 @@ Alternatively run `npx novu connect`, choose **AI SDK** and **Slack**, and skip 
 <Tabs>
   <Tab title="OpenAI">
 ```bash
-npm install @novu/framework ai @ai-sdk/openai
+npm install @notify/framework ai @ai-sdk/openai
 ```
   </Tab>
   <Tab title="Claude">
 ```bash
-npm install @novu/framework ai @ai-sdk/anthropic
+npm install @notify/framework ai @ai-sdk/anthropic
 ```
   </Tab>
 </Tabs>
@@ -59,7 +59,7 @@ npm install @novu/framework ai @ai-sdk/anthropic
 Add to `.env.local` (or your app env file):
 
 ```bash
-NOVU_SECRET_KEY=your-novu-secret-key
+NOVU_SECRET_KEY=your-notify-secret-key
 OPENAI_API_KEY=sk-...   # or ANTHROPIC_API_KEY
 ```
 
@@ -69,12 +69,12 @@ Copy `NOVU_SECRET_KEY` from **API Keys** in the dashboard.
 <Step>
 ## Add the handler
 
-Create `app/novu/agents/<your-identifier>.ts` (or the equivalent path). Match `agent('...')` to the dashboard **Identifier**.
+Create `app/notify/agents/<your-identifier>.ts` (or the equivalent path). Match `agent('...')` to the dashboard **Identifier**.
 
 <Tabs>
   <Tab title="OpenAI">
 ```typescript
-import { agent, toModelMessages } from '@novu/framework/ai-sdk';
+import { agent, toModelMessages } from '@notify/framework/ai-sdk';
 import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
@@ -90,7 +90,7 @@ export const supportBot = agent('support-bot', {
   </Tab>
   <Tab title="Claude">
 ```typescript
-import { agent, toModelMessages } from '@novu/framework/ai-sdk';
+import { agent, toModelMessages } from '@notify/framework/ai-sdk';
 import { anthropic } from '@ai-sdk/anthropic';
 import { generateText } from 'ai';
 
@@ -121,7 +121,7 @@ export { supportBot } from './support-bot';
 For Next.js, create `app/api/novu/route.ts`:
 
 ```typescript
-import { serve } from '@novu/framework/next';
+import { serve } from '@notify/framework/next';
 import { supportBot } from '../../novu/agents';
 
 export const { GET, POST, OPTIONS } = serve({
@@ -136,10 +136,10 @@ For Express, Hono, and other servers, see [Connecting your app](/agents/custom-c
 ## Run locally and message Slack
 
 ```bash
-npx novu dev --port 4000
+npx notify dev --port 4000
 ```
 
-Or `npm run dev:novu` if that script exists. Keep the process running.
+Or `npm run dev:notify` if that script exists. Keep the process running.
 
 DM or @mention the bot in Slack. The reply should come from your model in the same thread.
 
@@ -158,7 +158,7 @@ If nothing comes back:
 Gate a tool so the turn pauses for Approve / Deny in Slack:
 
 ```typescript
-import { agent, toModelMessages } from '@novu/framework/ai-sdk';
+import { agent, toModelMessages } from '@notify/framework/ai-sdk';
 import { openai } from '@ai-sdk/openai';
 import { generateText, tool } from 'ai';
 import { z } from 'zod';
@@ -186,7 +186,7 @@ See [Tool approval](/agents/custom-code-agent/building-blocks/tool-approval) and
 If you do not have an app yet:
 
 ```bash
-npx novu connect
+npx notify connect
 ```
 
 Choose **AI SDK**, name the agent, authenticate the model, choose **Slack**, and accept the starter project. Then run `npm run dev:novu`.
@@ -199,8 +199,8 @@ For an existing codebase, use [Connect an existing app](#connect-an-existing-app
   <Accordion title="Which channels work with an AI SDK agent?">
     Slack, Microsoft Teams, WhatsApp, Telegram, and email. One handler covers all of them after you link providers. See [Channels overview](/agents/channels/overview).
   </Accordion>
-  <Accordion title="Does Novu run my AI SDK code?">
-    No. Your app serves the bridge endpoint. Novu forwards the inbound event and conversation context, then delivers whatever the handler returns.
+  <Accordion title="Does Notify run my AI SDK code?">
+    No. Your app serves the bridge endpoint. Notify forwards the inbound event and conversation context, then delivers whatever the handler returns.
   </Accordion>
   <Accordion title="How do I pass conversation history to the model?">
     Use `toModelMessages(ctx.history)`. Do not append the inbound `message` again. The current message is already included.
@@ -212,20 +212,20 @@ For an existing codebase, use [Connect an existing app](#connect-an-existing-app
 
 ## Set this up with an AI assistant
 
-<Prompt description="Connect my Vercel AI SDK agent to Slack with Novu" icon="plug" actions={["copy", "cursor"]}>
-# Connect a Vercel AI SDK agent to Slack with Novu Connect
+<Prompt description="Connect my Vercel AI SDK agent to Slack with Notify" icon="plug" actions={["copy", "cursor"]}>
+# Connect a Vercel AI SDK agent to Slack with Notify Connect
 
 Follow https://docs.novu.co/agents/get-started/ai-sdk
 
 ## Goal
 
-Add Novu bridge + AI SDK handler to this repo and connect Slack. Prefer the existing project over scaffolding a new one.
+Add Notify bridge + AI SDK handler to this repo and connect Slack. Prefer the existing project over scaffolding a new one.
 
 ## Rules
 
 ALWAYS:
 
-- Match `agent('id')` to the Novu dashboard agent Identifier
+- Match `agent('id')` to the Notify dashboard agent Identifier
 - Use `toModelMessages(ctx.history)` for conversation context
 - Keep handlers channel-agnostic
 - Follow the project's package manager and TypeScript conventions
@@ -233,7 +233,7 @@ ALWAYS:
 NEVER:
 
 - Hardcode API keys
-- Call `ctx.reply()` when returning `generateText()` (Novu delivers the result)
+- Call `ctx.reply()` when returning `generateText()` (Notify delivers the result)
 
 </Prompt>
 
@@ -250,6 +250,6 @@ NEVER:
     Deploy the bridge and disable local tunneling.
   </Card>
   <Card icon="link" href="/agents/get-started/langchain" title="Connect LangChain">
-    Same flow with @novu/framework/langchain.
+    Same flow with @notify/framework/langchain.
   </Card>
 </Columns>

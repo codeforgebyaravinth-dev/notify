@@ -1,4 +1,4 @@
-import { DirectionEnum } from '@novu/shared';
+import { DirectionEnum } from '@notify/shared';
 import { useCallback, useMemo } from 'react';
 import { createSearchParams, useSearchParams } from 'react-router-dom';
 import { ActivityFilters } from '@/api/activity';

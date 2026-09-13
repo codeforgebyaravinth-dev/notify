@@ -1,5 +1,5 @@
 import { BadRequestException } from '@nestjs/common';
-import { PinoLogger } from '@novu/application-generic';
+import { PinoLogger } from '@notify/application-generic';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { InboundEmailParseCommand } from './inbound-email-parse.command';

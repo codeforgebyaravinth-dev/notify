@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { encryptChannelConnectionAuth, InstrumentUsecase } from '@novu/application-generic';
-import { ChannelConnectionEntity, ChannelConnectionRepository, IntegrationRepository } from '@novu/dal';
+import { encryptChannelConnectionAuth, InstrumentUsecase } from '@notify/application-generic';
+import { ChannelConnectionEntity, ChannelConnectionRepository, IntegrationRepository } from '@notify/dal';
 import { AuthDto } from '../../dtos/shared.dto';
 import { validateAndNormalizeConnectionAuth } from '../channel-connection.utils';
 import { UpdateChannelConnectionCommand } from './update-channel-connection.command';

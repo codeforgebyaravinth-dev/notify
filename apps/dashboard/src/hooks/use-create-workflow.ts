@@ -1,4 +1,4 @@
-import { type CreateWorkflowDto, StepTypeEnum, WorkflowCreationSourceEnum } from '@novu/shared';
+import { type CreateWorkflowDto, StepTypeEnum, WorkflowCreationSourceEnum } from '@notify/shared';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 import { z } from 'zod';

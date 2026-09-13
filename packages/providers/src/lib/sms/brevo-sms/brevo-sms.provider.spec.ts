@@ -1,4 +1,4 @@
-import { ISmsOptions } from '@novu/stateless';
+import { ISmsOptions } from '@notify/stateless';
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 import { BrevoSmsProvider } from './brevo-sms.provider';
 

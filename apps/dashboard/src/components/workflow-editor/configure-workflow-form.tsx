@@ -8,7 +8,7 @@ import {
   ResourceOriginEnum,
   UpdateWorkflowDto,
   WorkflowResponseDto,
-} from '@novu/shared';
+} from '@notify/shared';
 import { useQuery } from '@tanstack/react-query';
 import { ChevronsUpDown, CircleDot, FilesIcon, FileText, Hash, Tags } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';

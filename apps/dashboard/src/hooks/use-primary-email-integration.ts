@@ -1,4 +1,4 @@
-import { ChannelTypeEnum, IIntegration } from '@novu/shared';
+import { ChannelTypeEnum, IIntegration } from '@notify/shared';
 import { useMemo } from 'react';
 import { useEnvironment } from '../context/environment/hooks';
 import { useFetchIntegrations } from './use-fetch-integrations';

@@ -7,7 +7,7 @@ import {
   RotatingConnectionTokenService,
   UpdateSubscriber,
   UpdateSubscriberChannel,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   AgentMcpServerRepository,
   AgentToolTrustRepository,
@@ -22,7 +22,7 @@ import {
   McpConnectionRepository,
   MessageRepository,
   SubscriberRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 
 import { AuthModule } from '../auth/auth.module';
 import { ChannelEndpointsModule } from '../channel-endpoints/channel-endpoints.module';

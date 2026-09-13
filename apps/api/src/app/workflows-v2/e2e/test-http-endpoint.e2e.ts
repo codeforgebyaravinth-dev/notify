@@ -1,4 +1,4 @@
-import { UserSession } from '@novu/testing';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 /** Public HTTPS URL for outbound tests (localhost is blocked by SSRF validation). */

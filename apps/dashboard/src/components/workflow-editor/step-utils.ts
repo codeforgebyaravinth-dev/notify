@@ -5,8 +5,8 @@ import type {
   StepUpdateDto,
   UpdateWorkflowDto,
   WorkflowResponseDto,
-} from '@novu/shared';
-import { SeverityLevelEnum, StepIssueSeverityEnum, StepTypeEnum } from '@novu/shared';
+} from '@notify/shared';
+import { SeverityLevelEnum, StepIssueSeverityEnum, StepTypeEnum } from '@notify/shared';
 import { flatten } from 'flat';
 import { ERROR_AVATAR, INFO_AVATAR, WARNING_AVATAR } from '@/utils/avatars';
 import {

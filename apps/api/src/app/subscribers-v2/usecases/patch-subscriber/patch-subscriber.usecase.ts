@@ -5,7 +5,7 @@ import {
   SubscriberResponseDto,
   UpdateSubscriber,
   UpdateSubscriberCommand,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   CommunityOrganizationRepository,
   EnvironmentEntity,
@@ -13,8 +13,8 @@ import {
   OrganizationEntity,
   SubscriberRepository,
   UserEntity,
-} from '@novu/dal';
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+} from '@notify/dal';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { subscriberIdSchema } from '../../../events/utils/trigger-recipient-validation';
 import { mapSubscriberEntityToDto } from '../list-subscribers/map-subscriber-entity-to.dto';
 import { PatchSubscriberCommand } from './patch-subscriber.command';

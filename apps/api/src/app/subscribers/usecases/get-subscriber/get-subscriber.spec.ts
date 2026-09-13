@@ -1,6 +1,6 @@
 import { NotFoundException } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
-import { SubscribersService, UserSession } from '@novu/testing';
+import { SubscribersService, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { SharedModule } from '../../../shared/shared.module';
 import { SubscribersV1Module } from '../../subscribersV1.module';

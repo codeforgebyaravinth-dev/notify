@@ -1,5 +1,5 @@
-import { RulesLogic } from '@novu/js';
-import type { CustomDataType, DirectionEnum, IEnvironment, SeverityLevelEnum } from '@novu/shared';
+import { RulesLogic } from '@notify/js';
+import type { CustomDataType, DirectionEnum, IEnvironment, SeverityLevelEnum } from '@notify/shared';
 import { Topic } from '@/components/topics/types';
 import { convertContextKeysToPayload } from '@/utils/context-variable-utils';
 import { delV2, getV2, patchV2, postV2 } from './api.client';

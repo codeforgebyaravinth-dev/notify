@@ -1,4 +1,4 @@
-import { ChannelTypeEnum, providers as novuProviders, PermissionsEnum } from '@novu/shared';
+import { ChannelTypeEnum, providers as novuProviders, PermissionsEnum } from '@notify/shared';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Button } from '@/components/primitives/button';

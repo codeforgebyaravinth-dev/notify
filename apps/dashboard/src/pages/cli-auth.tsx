@@ -1,5 +1,5 @@
 import { useClerk, useAuth as useClerkAuth, useUser } from '@clerk/react';
-import { CLI_DEVICE_SESSION_NAME_NOVU_CONNECT, FeatureFlagsKeysEnum, PermissionsEnum } from '@novu/shared';
+import { CLI_DEVICE_SESSION_NAME_NOVU_CONNECT, FeatureFlagsKeysEnum, PermissionsEnum } from '@notify/shared';
 import { AnimatePresence, motion } from 'motion/react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { RiArrowRightSLine, RiCheckLine, RiCommandLine, RiLockLine } from 'react-icons/ri';

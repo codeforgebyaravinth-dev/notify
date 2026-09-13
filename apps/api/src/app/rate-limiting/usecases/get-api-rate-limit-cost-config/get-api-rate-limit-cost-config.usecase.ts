@@ -4,7 +4,7 @@ import {
   ApiRateLimitCostEnvVarFormat,
   DEFAULT_API_RATE_LIMIT_COST_CONFIG,
   IApiRateLimitCost,
-} from '@novu/shared';
+} from '@notify/shared';
 
 @Injectable()
 export class GetApiRateLimitCostConfig {

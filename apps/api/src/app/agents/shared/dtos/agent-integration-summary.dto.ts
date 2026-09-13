@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { ChannelTypeEnum } from '@novu/shared';
+import { ChannelTypeEnum } from '@notify/shared';
 
 export class AgentIntegrationSummaryDto {
   @ApiProperty({ description: 'Integration document id.' })

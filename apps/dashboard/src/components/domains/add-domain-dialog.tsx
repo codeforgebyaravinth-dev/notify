@@ -1,4 +1,4 @@
-import type { ResourceLimitSource } from '@novu/shared';
+import type { ResourceLimitSource } from '@notify/shared';
 import { useMemo, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';

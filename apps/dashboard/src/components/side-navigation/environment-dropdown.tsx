@@ -1,4 +1,4 @@
-import { EnvironmentTypeEnum, IEnvironment } from '@novu/shared';
+import { EnvironmentTypeEnum, IEnvironment } from '@notify/shared';
 import { useState } from 'react';
 import { RiExpandUpDownLine, RiTerminalFill } from 'react-icons/ri';
 import TruncatedText from '../../components/truncated-text';

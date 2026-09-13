@@ -1,6 +1,6 @@
-import { Novu } from '@novu/api';
-import type { InboxNotificationDto } from '@novu/api/models/components';
-import { NotificationTemplateEntity } from '@novu/dal';
+import { Novu } from '@notify/api';
+import type { InboxNotificationDto } from '@notify/api/models/components';
+import { NotificationTemplateEntity } from '@notify/dal';
 import {
   ActorTypeEnum,
   ButtonTypeEnum,
@@ -9,8 +9,8 @@ import {
   StepTypeEnum,
   SystemAvatarIconEnum,
   TemplateVariableTypeEnum,
-} from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { randomBytes } from 'crypto';
 import { initNovuClassSdk } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';

@@ -10,7 +10,7 @@ import {
   StepResponseDto,
   StepTypeEnum,
   WorkflowResponseDto,
-} from '@novu/shared';
+} from '@notify/shared';
 import { FC, SVGProps, useMemo, useState } from 'react';
 import { IconType } from 'react-icons';
 import {

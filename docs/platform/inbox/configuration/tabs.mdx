@@ -1,6 +1,6 @@
 ---
 title: 'Tabs'
-description: "Configure and filter tabs in the Novu Inbox component to group notifications by workflow, tag, or custom filter criteria for your users."
+description: "Configure and filter tabs in the Notify Inbox component to group notifications by workflow, tag, or custom filter criteria for your users."
 ---
 
 In the Inbox components, you can use Tabs to organize **Inbox** notifications into separate sections, creating a cleaner, more organized experience for your subscribers. Each tab displays a subset of in-app notifications based on defined rules, making it easier to surface important notifications.
@@ -15,12 +15,12 @@ Each tab is defined using the `tabs` prop of the Inbox component. Every tab obje
 
 ### Using tags
 
-[Tags](/platform/workflow/configure-workflow#tags) can be assigned to any workflow in the Novu workflow editor. These tags can then be used in the filter object to group notifications from one or more workflows under the same tab.
+[Tags](/platform/workflow/configure-workflow#tags) can be assigned to any workflow in the Notify workflow editor. These tags can then be used in the filter object to group notifications from one or more workflows under the same tab.
 
-For example, assign a **promotions** tag to marketing workflows or **security** and **alert** tags to security workflows to group their notifications under dedicated tabs. To show all the notifications in a tab, pass an empty array to the tags property. If multiple tags are provided, Novu evaluates them using `OR` logic, meaning a notification is included if it contains at least one of the specified tags.
+For example, assign a **promotions** tag to marketing workflows or **security** and **alert** tags to security workflows to group their notifications under dedicated tabs. To show all the notifications in a tab, pass an empty array to the tags property. If multiple tags are provided, Notify evaluates them using `OR` logic, meaning a notification is included if it contains at least one of the specified tags.
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 
 function InboxTabs() {
 
@@ -58,7 +58,7 @@ The [data object](/platform/inbox/configuration/data-object) can be included in 
 For example, use `{ priority: "high" }` to group all high-priority notifications under a dedicated "High Priority" tab.
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 
 function InboxTabs() {
 
@@ -88,7 +88,7 @@ export default InboxTabs;
 You can combine tags and the data object in the same filter to create more specific tabs tailored to your use case.
 
 ```tsx
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 
 function InboxTabs() {
 
@@ -121,7 +121,7 @@ After setting [workflow notification severity in the dashboard](/platform/workfl
 To achieve this, add the severity key to the filter object for any tab in your Inbox component. The severity property can accept a single severity level or an array of levels.
 
 ```tsx
-import { Inbox, SeverityLevelEnum } from '@novu/react';
+import { Inbox, SeverityLevelEnum } from '@notify/react';
 
 export default function InboxWithFilters() {
 

@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
-import { CreateOrUpdateSubscriberUseCase, createHash } from '@novu/application-generic';
-import { EnvironmentRepository, ICredentialsEntity, IntegrationEntity, SubscriberRepository } from '@novu/dal';
-import { ChatProviderIdEnum, ConnectionMode, ContextPayload } from '@novu/shared';
+import { CreateOrUpdateSubscriberUseCase, createHash } from '@notify/application-generic';
+import { EnvironmentRepository, ICredentialsEntity, IntegrationEntity, SubscriberRepository } from '@notify/dal';
+import { ChatProviderIdEnum, ConnectionMode, ContextPayload } from '@notify/shared';
 import { validateConnectionMode } from '../../../../channel-connections/usecases/channel-connection.utils';
 import { ensureSubscriberProvisioned } from '../../../../channel-connections/usecases/ensure-connect-dashboard-subscriber';
 import { areHexDigestsEqual } from '../../../../shared/helpers/timing-safe-equal';

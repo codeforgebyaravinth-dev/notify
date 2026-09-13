@@ -5,9 +5,9 @@ import {
   PinoLogger,
   WorkflowRunCountRepository,
   WorkflowRunRepository,
-} from '@novu/application-generic';
-import { NotificationTemplateRepository } from '@novu/dal';
-import { FeatureFlagsKeysEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { NotificationTemplateRepository } from '@notify/dal';
+import { FeatureFlagsKeysEnum } from '@notify/shared';
 import { WorkflowVolumeDataPointDto } from '../../dtos/get-charts.response.dto';
 import { BuildWorkflowByVolumeChartCommand } from './build-workflow-by-volume-chart.command';
 

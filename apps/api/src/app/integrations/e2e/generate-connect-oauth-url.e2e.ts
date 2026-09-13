@@ -1,7 +1,7 @@
-import { createContextHash } from '@novu/application-generic';
-import { IntegrationRepository } from '@novu/dal';
-import { ChannelTypeEnum, ChatProviderIdEnum, ContextPayload } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { createContextHash } from '@notify/application-generic';
+import { IntegrationRepository } from '@notify/dal';
+import { ChannelTypeEnum, ChatProviderIdEnum, ContextPayload } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 const integrationRepository = new IntegrationRepository();

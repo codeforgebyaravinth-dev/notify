@@ -1,4 +1,4 @@
-import { ApiServiceLevelEnum, FeatureNameEnum, getFeatureForTierAsText, StripeBillingIntervalEnum } from '@novu/shared';
+import { ApiServiceLevelEnum, FeatureNameEnum, getFeatureForTierAsText, StripeBillingIntervalEnum } from '@notify/shared';
 import { useEffect, useState } from 'react';
 import { ActionType } from '@/components/billing/utils/action.button.constants.ts';
 import { useAuth } from '@/context/auth/hooks';

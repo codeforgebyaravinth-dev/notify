@@ -2,7 +2,7 @@
  * biome-ignore-all lint/correctness/useUniqueElementIds: expected
  */
 import { standardSchemaResolver } from '@hookform/resolvers/standard-schema';
-import { type IEnvironment, PermissionsEnum } from '@novu/shared';
+import { type IEnvironment, PermissionsEnum } from '@notify/shared';
 import { type ComponentProps, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { RiAddLine, RiArrowRightSLine, RiDatabase2Line } from 'react-icons/ri';

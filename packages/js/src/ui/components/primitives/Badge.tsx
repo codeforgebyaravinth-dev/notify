@@ -10,7 +10,7 @@ export const badgeVariants = cva(cn('nt-inline-flex nt-flex-row nt-gap-1 nt-item
       secondary: 'nt-bg-neutral-alpha-50',
     },
     size: {
-      default: 'nt-px-1 nt-py-px nt-rounded-sm nt-text-xs nt-px-1',
+      default: 'nt-px-1 nt-py-px nt-nt-rounded-none nt-text-xs nt-px-1',
     },
   },
   defaultVariants: {

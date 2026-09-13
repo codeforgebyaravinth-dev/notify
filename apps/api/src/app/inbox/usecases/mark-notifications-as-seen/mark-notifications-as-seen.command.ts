@@ -1,4 +1,4 @@
-import { type TagsFilter } from '@novu/shared';
+import { type TagsFilter } from '@notify/shared';
 import { IsArray, IsMongoId, IsOptional, IsString } from 'class-validator';
 
 import { EnvironmentWithSubscriber } from '../../../shared/commands/project.command';

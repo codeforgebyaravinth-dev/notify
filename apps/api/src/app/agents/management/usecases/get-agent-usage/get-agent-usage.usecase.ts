@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { AgentRepository, NotificationTemplateRepository } from '@novu/dal';
+import { AgentRepository, NotificationTemplateRepository } from '@notify/dal';
 import { AgentWorkflowInfoDto, GetAgentUsageResponseDto } from '../../../shared/dtos/get-agent-usage-response.dto';
 import { GetAgentUsageCommand } from './get-agent-usage.command';
 

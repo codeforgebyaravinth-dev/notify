@@ -7,10 +7,10 @@ export const isBridgeWorkflow = (workflowType?: ResourceTypeEnum): boolean => {
 };
 
 /**
- * This typing already lives in @novu/framework, but due to a circular dependency, we currently
+ * This typing already lives in @notify/framework, but due to a circular dependency, we currently
  * need to duplicate it here.
  *
- * TODO: reconsider the dependency tree between @novu/shared and @novu/framework and move this
+ * TODO: reconsider the dependency tree between @notify/shared and @notify/framework and move this
  * function to be shared across all apps. We will likely want to create a separate package for
  * schemas and their inferred type definitions.
  */

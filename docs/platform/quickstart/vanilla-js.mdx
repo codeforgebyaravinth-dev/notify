@@ -1,31 +1,31 @@
 ---
-title: 'Vanilla JS In-App Notifications Quickstart - Novu Inbox'
-description: "Integrate the Novu Inbox component into a Vanilla JS or plain HTML project and start showing real-time in-app notifications without a frontend framework."
+title: 'Vanilla JS In-App Notifications Quickstart - Notify Inbox'
+description: "Integrate the Notify Inbox component into a Vanilla JS or plain HTML project and start showing real-time in-app notifications without a frontend framework."
 sidebarTitle: 'Vanilla JS'
 ---
 
 
-Add real-time in-app notifications to a Vanilla JS and HTML project using the Novu Inbox component.
+Add real-time in-app notifications to a Vanilla JS and HTML project using the Notify Inbox component.
 
-<Prompt description="Add Novu Inbox to my JavaScript app" icon="sparkles" actions={["copy", "cursor"]}>
-# Add Novu Inbox to JavaScript App
+<Prompt description="Add Notify Inbox to my JavaScript app" icon="sparkles" actions={["copy", "cursor"]}>
+# Add Notify Inbox to JavaScript App
 
-Install `@novu/js`. Mount the Inbox in your header, navbar, or sidebar.
+Install `@notify/js`. Mount the Inbox in your header, navbar, or sidebar.
 
 Latest docs: https://docs.novu.co/platform/quickstart/vanilla-js
 
 ## Install
 
 ```bash
-npm install @novu/js
+npm install @notify/js
 ```
 
 ## Component
 
 ```ts
-import { NovuUI } from '@novu/js/ui';
+import { NovuUI } from '@notify/js/ui';
 
-const novu = new NovuUI({
+const notify = new NovuUI({
   options: {
     applicationIdentifier: 'YOUR_APPLICATION_IDENTIFIER',
     subscriber: 'YOUR_SUBSCRIBER_ID',
@@ -52,7 +52,7 @@ Extract design tokens from the host app and apply via the appearance configurati
 ALWAYS:
 
 - Detect the project's package manager and use it for installation
-- Initialize Novu after DOM content is loaded
+- Initialize Notify after DOM content is loaded
 - Mount the Inbox inline in existing UI - no new pages or wrappers
 - Use the existing auth system to source subscriberId when available
 
@@ -64,7 +64,7 @@ NEVER:
 
 ## Verify Before Responding
 
-1. Is `@novu/js` installed with the project's package manager?
+1. Is `@notify/js` installed with the project's package manager?
 2. Is the Inbox mounted inline in existing UI?
 3. Is subscriberId sourced from the auth system when available?
 
@@ -73,7 +73,7 @@ If any fails, revise.
 
 <Steps>
   <Step>
-  ### Add Novu ESM script 
+  ### Add Notify ESM script 
   Add the following code to your HTML file:
 
   ```html title="index.html"
@@ -82,12 +82,12 @@ If any fails, revise.
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Novu Inbox - Vanilla JS</title>
+    <title>Notify Inbox - Vanilla JS</title>
 
-    <!-- Novu Styles (important for proper UI rendering) -->
+    <!-- Notify Styles (important for proper UI rendering) -->
     <link
       rel="stylesheet"
-      href="https://unpkg.com/@novu/js@3.11.0/dist/index.css"
+      href="https://unpkg.com/@notify/js@3.11.0/dist/index.css"
     />
     <style>
       /*
@@ -104,26 +104,26 @@ If any fails, revise.
     </style>
   </head>
   <body>
-    <h2>Novu Inbox - Vanilla JS Demo</h2>
+    <h2>Notify Inbox - Vanilla JS Demo</h2>
 
-    <!-- Mount point: Novu will inject Inbox UI here -->
-    <div id="novu-inbox"></div>
+    <!-- Mount point: Notify will inject Inbox UI here -->
+    <div id="notify-inbox"></div>
 
     <!--
-    Novu UI for vanilla HTML:
+    Notify UI for vanilla HTML:
     - The published UI entrypoint is ESM and has dependencies (SolidJS, etc.)
     - esm.sh bundles those deps so it can run directly in the browser.
   -->
     <script type="module">
 
       document.addEventListener("DOMContentLoaded", () => {
-        const mountEl = document.getElementById("novu-inbox");
+        const mountEl = document.getElementById("notify-inbox");
         if (!mountEl) {
-          console.error("Missing #novu-inbox mount element");
+          console.error("Missing #notify-inbox mount element");
           return;
         }
 
-        const novu = new NovuUI({
+        const notify = new NovuUI({
           options: {
             applicationIdentifier: "NOVU_APPLICATION_IDENTIFIER",
             subscriberId: "NOVU_SUBSCRIBER_ID",
@@ -138,7 +138,7 @@ If any fails, revise.
           },
         });
 
-        // Mount Inbox into #novu-inbox
+        // Mount Inbox into #notify-inbox
         novu.mountComponent({
           name: "Inbox",
           props: {
@@ -164,12 +164,12 @@ If any fails, revise.
   <Step>
   ### Change subscriberId and applicationIdentifier
 
-  In above code, replace `NOVU_APPLICATION_IDENTIFIER` with actual <Tooltip tip="The application identifier is a unique identifier for your application. You can find it in the Novu Dashboard under the API keys page.">applicationIdentifier</Tooltip> value and `NOVU_SUBSCRIBER_ID` with actual <Tooltip tip="The subscriber ID is the unique identifier for the user in your application, typically the user's id in your database.">subscriberId</Tooltip> value.
-    * `applicationIdentifier` – In the Novu dashboard, click API Keys, and then locate your unique Application Identifier.
+  In above code, replace `NOVU_APPLICATION_IDENTIFIER` with actual <Tooltip tip="The application identifier is a unique identifier for your application. You can find it in the Notify Dashboard under the API keys page.">applicationIdentifier</Tooltip> value and `NOVU_SUBSCRIBER_ID` with actual <Tooltip tip="The subscriber ID is the unique identifier for the user in your application, typically the user's id in your database.">subscriberId</Tooltip> value.
+    * `applicationIdentifier` – In the Notify dashboard, click API Keys, and then locate your unique Application Identifier.
     * `subscriberId` – This represents a user in your system (typically the user's ID in your database). For quick start purposes, an auto-generated subscriberId is provided for your Dashboard user.
 
     <Note>
-      If you pass a `subscriberId` that does not exist yet, Novu will automatically create a new subscriber with that ID.
+      If you pass a `subscriberId` that does not exist yet, Notify will automatically create a new subscriber with that ID.
     </Note>
 
   </Step>
@@ -178,23 +178,23 @@ If any fails, revise.
 
   <Step>
   ### Run Your Application
-    Open `index.html` in your browser. You should see the Novu Inbox component with a bell icon.
+    Open `index.html` in your browser. You should see the Notify Inbox component with a bell icon.
 
   </Step>
 
   <Step>
   ### Trigger your first notification
 
-In this step, you'll create a simple workflow to send your first notification via the Inbox component. Follow these steps to set up and trigger a workflow from your Novu dashboard.
+In this step, you'll create a simple workflow to send your first notification via the Inbox component. Follow these steps to set up and trigger a workflow from your Notify dashboard.
 
-1. Go to your [Novu dashboard](https://dashboard.novu.co/auth/sign-in).
+1. Go to your [Notify dashboard](https://dashboard.novu.co/auth/sign-in).
 2. In the sidebar, click **Workflows**.
 3. Click **Create Workflow**. Enter a name for your workflow (e.g., "Welcome Notification").
 4. Click **Create Workflow** to save it.
 5. Click the **Add Step** icon in the workflow editor and then select **In-App** as the step type.
 6. In the In-App template editor, enter the following:
 
-   - **Subject**: "Welcome to Novu"
+   - **Subject**: "Welcome to Notify"
    - **Body**: "Hello, world! "
 
 7. Once you’ve added the subject and body, close the editor.
@@ -207,7 +207,7 @@ In this step, you'll create a simple workflow to send your first notification vi
 ###  View the notification in your app
 Open `index.html` in your browser, then click the bell icon.
 
-You should see the notification you just sent from Novu! 🎉
+You should see the notification you just sent from Notify! 🎉
 
 </Step>
 

@@ -1,8 +1,8 @@
-import { decryptCredentials, encryptCredentials } from '@novu/application-generic';
-import * as AgentRuntimeFactoryModule from '@novu/application-generic/build/main/agent-runtimes/agent-runtime.factory';
-import { AgentMcpServerRepository, AgentRepository, IntegrationRepository } from '@novu/dal';
-import { AgentRuntimeProviderIdEnum, IntegrationKindEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { decryptCredentials, encryptCredentials } from '@notify/application-generic';
+import * as AgentRuntimeFactoryModule from '@notify/application-generic/build/main/agent-runtimes/agent-runtime.factory';
+import { AgentMcpServerRepository, AgentRepository, IntegrationRepository } from '@notify/dal';
+import { AgentRuntimeProviderIdEnum, IntegrationKindEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import sinon from 'sinon';
 

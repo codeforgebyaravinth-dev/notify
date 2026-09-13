@@ -1,7 +1,7 @@
 import { ModuleRef } from '@nestjs/core';
-import { FeatureFlagsService, PinoLogger } from '@novu/application-generic';
-import { JSONContent as MailyJSONContent } from '@novu/maily-render';
-import { CardElement, FeatureFlagsKeysEnum } from '@novu/shared';
+import { FeatureFlagsService, PinoLogger } from '@notify/application-generic';
+import { JSONContent as MailyJSONContent } from '@notify/maily-render';
+import { CardElement, FeatureFlagsKeysEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { ChatOutputRendererCommand, ChatOutputRendererUsecase } from './chat-output-renderer.usecase';
@@ -13,7 +13,7 @@ import { FullPayloadForRender } from './render-command';
  * Mirrors the setup in `email-output-renderer.spec.ts`.
  */
 function setupTranslationMocks(moduleRef: sinon.SinonStubbedInstance<ModuleRef>): sinon.SinonStub {
-  const eeTranslation = require('@novu/ee-translation');
+  const eeTranslation = require('@notify/ee-translation');
   if (!eeTranslation) {
     throw new Error('ee-translation does not exist');
   }

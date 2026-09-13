@@ -1,5 +1,5 @@
 {
-  "name": "@novu/js",
+  "name": "@notify/js",
   "sourceRoot": "packages/js/src",
   "projectType": "library",
   "targets": {

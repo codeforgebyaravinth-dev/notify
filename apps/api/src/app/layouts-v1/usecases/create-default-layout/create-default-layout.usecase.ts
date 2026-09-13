@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { GetNovuLayout, LayoutDtoV0 } from '@novu/application-generic';
-import { LayoutRepository } from '@novu/dal';
+import { GetNovuLayout, LayoutDtoV0 } from '@notify/application-generic';
+import { LayoutRepository } from '@notify/dal';
 import { CreateLayoutCommand, CreateLayoutUseCase } from '../create-layout';
 import { SetDefaultLayoutUseCase } from '../set-default-layout';
 import { CreateDefaultLayoutCommand } from './create-default-layout.command';

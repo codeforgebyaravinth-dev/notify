@@ -1,20 +1,20 @@
 ---
-title: "Adding Email Channel Email Integration with Novu"
+title: "Adding Email Channel Email Integration with Notify"
 sidebarTitle: "Adding Email Channel"
-description: "Add an email channel provider in Novu to send transactional emails through workflows. Covers selecting a provider, storing credentials, and testing delivery."
+description: "Add an email channel provider in Notify to send transactional emails through workflows. Covers selecting a provider, storing credentials, and testing delivery."
 ---
 
 The Email channel enables you to send email notifications to users for events like password resets, onboarding, or system alerts.
 
 <Steps>
-  <Step title="Enable Email Channel in Novu Dashboard">
+  <Step title="Enable Email Channel in Notify Dashboard">
 
 <Note>
-  By default, the Email channel is enabled and configured with Novu's default provider. If it is
+  By default, the Email channel is enabled and configured with Notify's default provider. If it is
   disabled, notifications sent to this channel will not be processed.
 </Note>
 
-1. Go to the Novu Dashboard and click **"Integrations"** on the left sidebar
+1. Go to the Notify Dashboard and click **"Integrations"** on the left sidebar
 2. Click **"Add a provider"**
 3. Locate the **Email** channel and select the provider you want to use and click **"Next"**
 4. Select for which environment you want to add the Provider
@@ -28,9 +28,9 @@ The Email channel enables you to send email notifications to users for events li
 
 </Step>
 
-<Step title="Setup workflow with email channel in Novu Dashboard">
+<Step title="Setup workflow with email channel in Notify Dashboard">
     
-    1. Go to the Novu Dashboard and click **"Workflows"** on the left sidebar.
+    1. Go to the Notify Dashboard and click **"Workflows"** on the left sidebar.
     2. Click the **"Add a Workflow"** button.
     3. Add a step and select **"Email"** as the channel.
     4. Configure the email content, such as subject, message body, and any dynamic variables.
@@ -38,7 +38,7 @@ The Email channel enables you to send email notifications to users for events li
 </Step>
 
 <Step title="Add a workflow trigger to your backend">
-Novu's server-side SDKs make integrating Novu's REST APIs straightforward, letting you focus on implementing workflows without dealing with repetitive code.
+Notify's server-side SDKs make integrating Notify's REST APIs straightforward, letting you focus on implementing workflows without dealing with repetitive code.
 
 <Card title="Server-side SDKs" icon="code" href="/platform/sdks/server" />
   </Step>
@@ -46,9 +46,9 @@ Novu's server-side SDKs make integrating Novu's REST APIs straightforward, letti
 <Step title="Test and Verify Email Channel">
 Ensure your configuration is working by sending a test notification.
 
-1. Go to the Novu Dashboard, navigate to the "Workflows" section, and locate your configured workflow.
+1. Go to the Notify Dashboard, navigate to the "Workflows" section, and locate your configured workflow.
     2. Click **"Test Workflow"** and provide sample data (e.g., user ID, email address).
-    3. Verify the email delivery in the Novu Logs or your email provider dashboard.
+    3. Verify the email delivery in the Notify Logs or your email provider dashboard.
 
 </Step>
 </Steps>

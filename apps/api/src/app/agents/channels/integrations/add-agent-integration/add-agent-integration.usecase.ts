@@ -8,7 +8,7 @@ import {
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
-import { AnalyticsService, encryptSecret, isAgentEmailEnabled } from '@novu/application-generic';
+import { AnalyticsService, encryptSecret, isAgentEmailEnabled } from '@notify/application-generic';
 import {
   type AgentEntity,
   AgentIntegrationRepository,
@@ -17,7 +17,7 @@ import {
   EnvironmentRepository,
   IntegrationEntity,
   IntegrationRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   ApiServiceLevelEnum,
   ChatProviderIdEnum,
@@ -25,7 +25,7 @@ import {
   EnvironmentTypeEnum,
   FeatureNameEnum,
   getFeatureForTierAsBoolean,
-} from '@novu/shared';
+} from '@notify/shared';
 import { NovuEmailProvisioningService } from '../../../email/novu-email/find-or-create-novu-email/find-or-create-novu-email.service';
 import { trackAgentIntegrationConnected } from '../../../shared/analytics/agent-analytics';
 import type { AgentIntegrationResponseDto } from '../../../shared/dtos';

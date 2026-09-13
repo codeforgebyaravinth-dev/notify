@@ -1,1 +1,1 @@
-export * from '@novu/js/themes';
+export * from '@notify/js/themes';

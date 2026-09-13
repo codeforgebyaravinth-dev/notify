@@ -1,5 +1,5 @@
 import { useOrganization } from '@clerk/react';
-import { EnvironmentTypeEnum, FeatureFlagsKeysEnum } from '@novu/shared';
+import { EnvironmentTypeEnum, FeatureFlagsKeysEnum } from '@notify/shared';
 import { CalendarIcon } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useEffect, useMemo, useState } from 'react';

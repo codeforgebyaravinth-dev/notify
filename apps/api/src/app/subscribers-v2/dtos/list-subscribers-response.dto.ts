@@ -1,4 +1,4 @@
-import { SubscriberResponseDto } from '@novu/application-generic';
+import { SubscriberResponseDto } from '@notify/application-generic';
 import { withCursorPagination } from '../../shared/dtos/cursor-paginated-response';
 
 export class ListSubscribersResponseDto extends withCursorPagination(SubscriberResponseDto, {

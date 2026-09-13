@@ -1,5 +1,5 @@
 import { ConflictException, Injectable, NotFoundException } from '@nestjs/common';
-import { AgentIntegrationRepository, AgentRepository } from '@novu/dal';
+import { AgentIntegrationRepository, AgentRepository } from '@notify/dal';
 import Axios from 'axios';
 
 import { buildTelegramBotApiUrl } from './telegram-webhook.utils';

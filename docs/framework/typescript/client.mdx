@@ -1,6 +1,6 @@
 ---
 title: 'Client'
-description: "Configure the Novu Framework Client for global settings like API URL, secret key, strict authentication, and payload logging in your bridge app."
+description: "Configure the Notify Framework Client for global settings like API URL, secret key, strict authentication, and payload logging in your bridge app."
 ---
 
 The `Client` is an optional Class you can pass to the `serve` function to override some global settings.
@@ -12,7 +12,7 @@ By default, we will inject a new instance of the `Client` class in your `serve` 
 
 - **Type**: `string`
 - **Default**: `process.env.NOVU_SECRET_KEY`
-- **Description**: Your Novu Secret Key, used to sign the HMAC header to guarantee the authenticity of our requests.
+- **Description**: Your Notify Secret Key, used to sign the HMAC header to guarantee the authenticity of our requests.
 
 ### strictAuthentication
 
@@ -36,7 +36,7 @@ By default, we will inject a new instance of the `Client` class in your `serve` 
 
 Unless specified in the `Client` constructor the `Client` class will look for the following environment variables:
 
-- `NOVU_SECRET_KEY` - Your Novu Secret Key
+- `NOVU_SECRET_KEY` - Your Notify Secret Key
 - `NOVU_API_URL` - Defaults to `https://api.novu.co`. For EU customers, this should be set to `https://eu.api.novu.co`.
 
 ## Development Environment
@@ -48,8 +48,8 @@ When your service is running in development mode `process.env.NODE_ENV=developme
 ## Code Example
 
 ```tsx
-import { Client as NovuFrameworkClient } from '@novu/framework';
-import { serve } from '@novu/framework/next';
+import { Client as NovuFrameworkClient } from '@notify/framework';
+import { serve } from '@notify/framework/next';
 import { passwordResetWorkflow } from './workflows';
 
 export const { GET, POST, OPTIONS } = serve({

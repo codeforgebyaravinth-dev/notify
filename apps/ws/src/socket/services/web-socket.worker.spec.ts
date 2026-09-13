@@ -7,9 +7,9 @@ import {
   SqsService,
   WebSocketsQueueService,
   WorkflowInMemoryProviderService,
-} from '@novu/application-generic';
-import { CommunityOrganizationRepository } from '@novu/dal';
-import { WebSocketEventEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { CommunityOrganizationRepository } from '@notify/dal';
+import { WebSocketEventEnum } from '@notify/shared';
 import { expect } from 'chai';
 import { setTimeout } from 'timers/promises';
 import { SocketModule } from '../socket.module';

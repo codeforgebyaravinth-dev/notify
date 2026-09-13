@@ -5,7 +5,7 @@ import {
   InAppRenderOutput,
   PushRenderOutput,
   StepTypeEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { Maily } from './maily/maily';
 import { ChatPreview } from './workflow-editor/steps/chat/chat-preview';
 import { EmailPreviewHeader, EmailPreviewSubject } from './workflow-editor/steps/email/email-preview';

@@ -18,9 +18,9 @@ import {
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiExcludeController, ApiTags } from '@nestjs/swagger';
-import { buildOauthRedirectUrl, PinoLogger } from '@novu/application-generic';
-import { MemberEntity, MemberRepository, UserRepository } from '@novu/dal';
-import { PasswordResetFlowEnum, UserSessionData } from '@novu/shared';
+import { buildOauthRedirectUrl, PinoLogger } from '@notify/application-generic';
+import { MemberEntity, MemberRepository, UserRepository } from '@notify/dal';
+import { PasswordResetFlowEnum, UserSessionData } from '@notify/shared';
 import { ApiCommonResponses } from '../shared/framework/response.decorator';
 import { UserSession } from '../shared/framework/user.decorator';
 import { LoginBodyDto } from './dtos/login.dto';

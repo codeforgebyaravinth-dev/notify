@@ -1,4 +1,4 @@
-import { DirectionEnum, PermissionsEnum } from '@novu/shared';
+import { DirectionEnum, PermissionsEnum } from '@notify/shared';
 import { keepPreviousData, useInfiniteQuery, useQuery } from '@tanstack/react-query';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {

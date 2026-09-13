@@ -15,7 +15,7 @@ import {
   UpsertWorkflowUseCase,
   WorkflowPreferencesDto,
   WorkflowResponseDto,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   BaseRepository,
   ClientSession,
@@ -24,7 +24,7 @@ import {
   NotificationTemplateRepository,
   PreferencesEntity,
   PreferencesRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   FeatureFlagsKeysEnum,
   PreferencesTypeEnum,
@@ -33,7 +33,7 @@ import {
   WebhookEventEnum,
   WebhookObjectTypeEnum,
   WorkflowCreationSourceEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import {
   SyncAgentToEnvironment,
   SyncAgentToEnvironmentCommand,
@@ -245,7 +245,7 @@ export class SyncToEnvironmentUseCase {
       return;
     }
 
-    const publishTranslationGroup = this.moduleRef.get(require('@novu/ee-translation')?.PublishTranslationGroup, {
+    const publishTranslationGroup = this.moduleRef.get(require('@notify/ee-translation')?.PublishTranslationGroup, {
       strict: false,
     });
 

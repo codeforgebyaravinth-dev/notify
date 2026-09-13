@@ -4,7 +4,7 @@ import {
   ResourceOriginEnum,
   ResourceTypeEnum,
   ToolProviderIdEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { ExecuteBridgeJob } from './execute-bridge-job.usecase';

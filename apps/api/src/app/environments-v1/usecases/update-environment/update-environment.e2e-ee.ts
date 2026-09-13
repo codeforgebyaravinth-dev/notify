@@ -1,4 +1,4 @@
-import { UserSession } from '@novu/testing';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { UpdateEnvironmentRequestDto } from '../../dtos/update-environment-request.dto';
 

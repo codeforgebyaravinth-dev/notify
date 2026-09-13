@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { ContextEntity, ContextRepository } from '@novu/dal';
+import { ContextEntity, ContextRepository } from '@notify/dal';
 import { GetContextCommand } from './get-context.command';
 
 @Injectable()

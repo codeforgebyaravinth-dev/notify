@@ -1,10 +1,10 @@
 ---
-title: "Opsgenie Tool Integration with Novu"
+title: "Opsgenie Tool Integration with Notify"
 sidebarTitle: 'Opsgenie'
-description: "Create Opsgenie alerts for different subscribers from a single Novu workflow. Store each subscriber's API integration key as a channel endpoint and raise alerts from a Tool step."
+description: "Create Opsgenie alerts for different subscribers from a single Notify workflow. Store each subscriber's API integration key as a channel endpoint and raise alerts from a Tool step."
 ---
 
-Opsgenie in Novu is routed **per subscriber**. Each subscriber brings their own Opsgenie API integration key (GenieKey), so one workflow trigger can raise alerts in different Opsgenie accounts and teams for different recipients. The integration itself never stores an API key. It acts as the anchor that per-subscriber [channel endpoints](/api-reference/channel-endpoints/create-a-channel-endpoint) hang off of.
+Opsgenie in Notify is routed **per subscriber**. Each subscriber brings their own Opsgenie API integration key (GenieKey), so one workflow trigger can raise alerts in different Opsgenie accounts and teams for different recipients. The integration itself never stores an API key. It acts as the anchor that per-subscriber [channel endpoints](/api-reference/channel-endpoints/create-a-channel-endpoint) hang off of.
 
 <Note>
   There is no shared, environment-level Opsgenie API key. If a subscriber has no Opsgenie endpoint registered, the Tool step is marked **skipped** for that subscriber; no alert is created and no error is raised.
@@ -13,7 +13,7 @@ Opsgenie in Novu is routed **per subscriber**. Each subscriber brings their own 
 ## Prerequisites
 
 - An [Opsgenie](https://www.atlassian.com/software/opsgenie) account with permission to manage integrations
-- Access to the [Novu dashboard](https://dashboard.novu.co)
+- Access to the [Notify dashboard](https://dashboard.novu.co)
 
 ## Get an API key from Opsgenie
 
@@ -29,7 +29,7 @@ Every subscriber routes to their own Opsgenie account or team, so each subscribe
   </Step>
 
   <Step title="Copy the API key">
-    Opsgenie generates a UUID-format **API Key** (for example `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`). Copy it. This is the GenieKey Novu will store for the subscriber.
+    Opsgenie generates a UUID-format **API Key** (for example `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`). Copy it. This is the GenieKey Notify will store for the subscriber.
   </Step>
 </Steps>
 
@@ -41,11 +41,11 @@ Every subscriber routes to their own Opsgenie account or team, so each subscribe
   The API key grants the ability to create alerts in the Opsgenie account. Treat it like a password: keep it on your server, never embed it in client-side code, and never log it.
 </Warning>
 
-## Add Opsgenie in Novu
+## Add Opsgenie in Notify
 
 <Steps>
   <Step title="Open the Integrations Store">
-    In the Novu dashboard, click **Integrations Store** in the sidebar.
+    In the Notify dashboard, click **Integrations Store** in the sidebar.
   </Step>
 
   <Step title="Add Opsgenie">
@@ -59,17 +59,17 @@ Every subscriber routes to their own Opsgenie account or team, so each subscribe
 
 ## Store a subscriber's API key
 
-Register each subscriber's API key as a **channel endpoint** on the Opsgenie integration. Novu encrypts the API key at rest on `ChannelEndpoint.endpoint` and returns the wire shape `{ apiKey, region }` on reads (`region` stays plaintext).
+Register each subscriber's API key as a **channel endpoint** on the Opsgenie integration. Notify encrypts the API key at rest on `ChannelEndpoint.endpoint` and returns the wire shape `{ apiKey, region }` on reads (`region` stays plaintext).
 
 <Warning>
-  Registering an endpoint requires your Novu secret key. Always call the channel-endpoints API from your server, never from a browser or mobile client. A typical flow is: your app UI sends the API key to **your** backend, and your backend forwards it to Novu.
+  Registering an endpoint requires your Notify secret key. Always call the channel-endpoints API from your server, never from a browser or mobile client. A typical flow is: your app UI sends the API key to **your** backend, and your backend forwards it to Notify.
 </Warning>
 
 ```mermaid
 sequenceDiagram
   participant Browser
   participant CustomerBackend as Customer backend
-  participant NovuAPI as Novu API
+  participant NovuAPI as Notify API
   participant OpsgenieAPI as Opsgenie Alert API
   Browser->>CustomerBackend: API key (over HTTPS)
   CustomerBackend->>NovuAPI: POST /v1/channel-endpoints (secret key)
@@ -82,14 +82,14 @@ sequenceDiagram
 
 ### Create the endpoint
 
-Send the API key as an `opsgenie_integration` endpoint. Set `createSubscriberIfMissing: true` so this call also provisions the Novu subscriber the first time an end user connects Opsgenie, with no separate identify call required.
+Send the API key as an `opsgenie_integration` endpoint. Set `createSubscriberIfMissing: true` so this call also provisions the Notify subscriber the first time an end user connects Opsgenie, with no separate identify call required.
 
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({ secretKey: '<NOVU_SECRET_KEY>' });
+const notify = new Notify({ secretKey: '<NOVU_SECRET_KEY>' });
 
 await novu.channelEndpoints.create({
   type: 'opsgenie_integration',
@@ -106,9 +106,9 @@ await novu.channelEndpoints.create({
   <Tab title="Python">
 ```python
 import os
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.channel_endpoints.create(create_channel_endpoint_request_body={
         "type": "opsgenie_integration",
         "integration_identifier": "opsgenie",
@@ -147,10 +147,10 @@ _, err := s.ChannelEndpoints.Create(context.Background(), components.CreateOpsge
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 
 $sdk->channelEndpoints->create(
     createChannelEndpointRequestBody: new Components\CreateOpsgenieIntegrationEndpointDto(
@@ -168,8 +168,8 @@ $sdk->channelEndpoints->create(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
 
@@ -190,10 +190,10 @@ await sdk.ChannelEndpoints.CreateAsync(
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 
 novu.channelEndpoints().create()
     .body(CreateOpsgenieIntegrationEndpointDto.builder()
@@ -235,7 +235,7 @@ curl -L -X POST 'https://api.novu.co/v1/channel-endpoints' \
 | `type` | `"opsgenie_integration"` | Discriminator for the endpoint variant. |
 | `integrationIdentifier` | `string` | Identifier of the Opsgenie integration created in the Integrations Store. |
 | `subscriberId` | `string` | The subscriber to alert when a workflow selects this endpoint. |
-| `createSubscriberIfMissing` | `boolean` | Optional. When `true`, Novu creates the subscriber on the fly if it does not exist yet. Existing subscribers are never modified. Defaults to `false`. |
+| `createSubscriberIfMissing` | `boolean` | Optional. When `true`, Notify creates the subscriber on the fly if it does not exist yet. Existing subscribers are never modified. Defaults to `false`. |
 | `endpoint.apiKey` | `string` | The UUID-format API key from an Opsgenie API integration. Stored encrypted. |
 | `endpoint.region` | `"us" \| "eu"` | Selects the Opsgenie data-center endpoint (`api.opsgenie.com` vs `api.eu.opsgenie.com`). |
 
@@ -257,7 +257,7 @@ curl -L -X PATCH 'https://api.novu.co/v1/channel-endpoints/<ENDPOINT_IDENTIFIER>
 
 ### Reading and disconnecting
 
-Reads return the full wire shape (including the API key), so you can display connection status. Mask it in your UI (the Novu dashboard shows only the last four characters).
+Reads return the full wire shape (including the API key), so you can display connection status. Mask it in your UI (the Notify dashboard shows only the last four characters).
 
 ```bash
 curl -L 'https://api.novu.co/v1/channel-endpoints?subscriberId=<SUBSCRIBER_ID>&integrationIdentifier=opsgenie' \
@@ -281,20 +281,20 @@ Once a subscriber has an Opsgenie endpoint, add a **Tool** step with Opsgenie to
   </Step>
 
   <Step title="Write the alert message">
-    The step content becomes the alert `message` in the Opsgenie Alert API request. Use dynamic placeholders such as `{{payload.orderNumber}}` or `{{subscriber.firstName}}`. Opsgenie caps `message` at 130 characters; Novu truncates longer content.
+    The step content becomes the alert `message` in the Opsgenie Alert API request. Use dynamic placeholders such as `{{payload.orderNumber}}` or `{{subscriber.firstName}}`. Opsgenie caps `message` at 130 characters; Notify truncates longer content.
   </Step>
 
   <Step title="Trigger the workflow">
-    Send a trigger for a subscriber who has connected Opsgenie. Novu resolves that subscriber's API key and creates an alert in their Opsgenie account. Opsgenie accepts the request asynchronously (`202` with a `requestId`).
+    Send a trigger for a subscriber who has connected Opsgenie. Notify resolves that subscriber's API key and creates an alert in their Opsgenie account. Opsgenie accepts the request asynchronously (`202` with a `requestId`).
   </Step>
 </Steps>
 
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({ secretKey: '<NOVU_SECRET_KEY>' });
+const notify = new Notify({ secretKey: '<NOVU_SECRET_KEY>' });
 
 await novu.trigger({
   workflowId: 'order-failed',
@@ -310,9 +310,9 @@ await novu.trigger({
 ```python
 import os
 import novu_py
-from novu_py import Novu
+from novu_py import Notify
 
-with Novu(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as novu:
+with Notify(secret_key=os.getenv("NOVU_SECRET_KEY", "")) as notify:
     novu.trigger(trigger_event_request_dto=novu_py.TriggerEventRequestDto(
         workflow_id="order-failed",
         to={"subscriber_id": "<SUBSCRIBER_ID>"},
@@ -349,10 +349,10 @@ _, err := s.Trigger(context.Background(), components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
-use novu\Models\Components;
+use notify;
+use notify\Models\Components;
 
-$sdk = novu\Novu::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
+$sdk = notify\Notify::builder()->setSecurity('<NOVU_SECRET_KEY>')->build();
 
 $sdk->trigger(
     triggerEventRequestDto: new Components\TriggerEventRequestDto(
@@ -368,8 +368,8 @@ $sdk->trigger(
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
-using Novu.Models.Components;
+using Notify;
+using Notify.Models.Components;
 
 var sdk = new NovuSDK(secretKey: "<NOVU_SECRET_KEY>");
 
@@ -387,10 +387,10 @@ await sdk.TriggerAsync(triggerEventRequestDto: new TriggerEventRequestDto()
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 import co.novu.models.components.*;
 
-Novu novu = Novu.builder().secretKey("<NOVU_SECRET_KEY>").build();
+Notify novu = Notify.builder().secretKey("<NOVU_SECRET_KEY>").build();
 
 novu.trigger()
     .body(TriggerEventRequestDto.builder()
@@ -427,18 +427,18 @@ curl --location 'https://api.novu.co/v1/events/trigger' \
 | --- | --- | --- |
 | `message` | Step content, truncated at 130 characters (the Opsgenie limit). | Step content or a `message` override on the step. |
 | `description` | Not sent. | `description` step override (up to 15,000 characters). |
-| `alias` | Deterministic: `novu:{transactionId}:{subscriberId}:{stepId}`. | Explicit `alias` step override (up to 512 characters). |
+| `alias` | Deterministic: `notify:{transactionId}:{subscriberId}:{stepId}`. | Explicit `alias` step override (up to 512 characters). |
 | `priority` | Not sent (Opsgenie applies its own default). | `priority` step override (`P1` to `P5`). |
 | `tags` | Not sent. | `tags` step override. |
 | `responders` | Not sent. | `responders` step override. |
 | `source` | Not sent. | `source` step override. |
 | `details` | Any extra keys you pass on the step (excluding reserved names). | Step overrides. |
 
-The deterministic `alias` is Opsgenie's deduplication key: Novu retries for the same step will deduplicate into the same Opsgenie alert instead of creating duplicates.
+The deterministic `alias` is Opsgenie's deduplication key: Notify retries for the same step will deduplicate into the same Opsgenie alert instead of creating duplicates.
 
 ## What happens without an endpoint
 
-If a workflow triggers for a subscriber who has **no** Opsgenie endpoint on the target integration, Novu marks the step as **skipped** in the Activity feed for that subscriber and does not create an alert. Other subscribers on the same trigger are unaffected. Each is routed to their own Opsgenie account.
+If a workflow triggers for a subscriber who has **no** Opsgenie endpoint on the target integration, Notify marks the step as **skipped** in the Activity feed for that subscriber and does not create an alert. Other subscribers on the same trigger are unaffected. Each is routed to their own Opsgenie account.
 
 ## Related
 

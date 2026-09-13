@@ -6,9 +6,9 @@ import {
   GetLayoutUseCase,
   LayoutResponseDto,
   PinoLogger,
-} from '@novu/application-generic';
-import { ControlValuesRepository, LocalizationResourceEnum } from '@novu/dal';
-import { ControlValuesLevelEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { ControlValuesRepository, LocalizationResourceEnum } from '@notify/dal';
+import { ControlValuesLevelEnum } from '@notify/shared';
 import { UpsertLayout, UpsertLayoutCommand } from '../upsert-layout';
 import { DuplicateLayoutCommand } from './duplicate-layout.command';
 
@@ -92,7 +92,7 @@ export class DuplicateLayoutUseCase {
     }
 
     try {
-      const duplicateLocales = this.moduleRef.get(require('@novu/ee-translation')?.DuplicateLocales, {
+      const duplicateLocales = this.moduleRef.get(require('@notify/ee-translation')?.DuplicateLocales, {
         strict: false,
       });
 

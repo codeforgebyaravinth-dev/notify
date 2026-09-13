@@ -1,6 +1,6 @@
-import { SubscriberEntity, SubscriberRepository, TopicSubscribersRepository } from '@novu/dal';
-import { ExternalSubscriberId, TopicId, TopicKey, TopicName } from '@novu/shared';
-import { SubscribersService, UserSession } from '@novu/testing';
+import { SubscriberEntity, SubscriberRepository, TopicSubscribersRepository } from '@notify/dal';
+import { ExternalSubscriberId, TopicId, TopicKey, TopicName } from '@notify/shared';
+import { SubscribersService, UserSession } from '@notify/testing';
 import axios from 'axios';
 import { expect } from 'chai';
 import { beforeEach } from 'mocha';

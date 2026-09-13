@@ -1,5 +1,5 @@
-import { SeverityLevelEnum, StepTypeEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { SeverityLevelEnum, StepTypeEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Get all preferences - /inbox/preferences (GET) #novu-v2', () => {

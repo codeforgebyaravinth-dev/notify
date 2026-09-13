@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsValidContextData } from '@novu/application-generic';
-import { CONTEXT_IDENTIFIER_REGEX, ContextData, ContextId, ContextType } from '@novu/shared';
+import { IsValidContextData } from '@notify/application-generic';
+import { CONTEXT_IDENTIFIER_REGEX, ContextData, ContextId, ContextType } from '@notify/shared';
 import { IsDefined, IsOptional, IsString, Matches, MaxLength, MinLength } from 'class-validator';
 
 export class CreateContextRequestDto {

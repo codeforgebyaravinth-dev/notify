@@ -1,5 +1,5 @@
 import { Completion, CompletionContext, CompletionSource } from '@codemirror/autocomplete';
-import { TRANSLATION_DELIMITER_CLOSE, TRANSLATION_TRIGGER_CHARACTER } from '@novu/shared';
+import { TRANSLATION_DELIMITER_CLOSE, TRANSLATION_TRIGGER_CHARACTER } from '@notify/shared';
 import { EditorView } from '@uiw/react-codemirror';
 import React from 'react';
 import { createRoot } from 'react-dom/client';

@@ -1,4 +1,4 @@
-import { UploadTypesEnum } from '@novu/shared';
+import { UploadTypesEnum } from '@notify/shared';
 import { IsDefined, IsEnum, IsIn, IsString } from 'class-validator';
 
 import { EnvironmentWithUserCommand } from '../../../shared/commands/project.command';

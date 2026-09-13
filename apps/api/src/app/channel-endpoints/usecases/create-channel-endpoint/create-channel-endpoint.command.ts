@@ -1,5 +1,5 @@
-import { BaseCommand, IsValidContextPayload } from '@novu/application-generic';
-import { ChannelEndpointByType, ChannelEndpointType, ContextPayload, ENDPOINT_TYPES } from '@novu/shared';
+import { BaseCommand, IsValidContextPayload } from '@notify/application-generic';
+import { ChannelEndpointByType, ChannelEndpointType, ContextPayload, ENDPOINT_TYPES } from '@notify/shared';
 import { IsArray, IsBoolean, IsDefined, IsEnum, IsOptional, IsString } from 'class-validator';
 import { EnvironmentCommand } from '../../../shared/commands/project.command';
 import { IsValidChannelEndpoint } from '../../validators/channel-endpoint.validator';

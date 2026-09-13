@@ -1,5 +1,5 @@
 import { MiddlewareConsumer, Module, NestModule, OnApplicationShutdown } from '@nestjs/common';
-import { CompileTemplate, WorkflowInMemoryProviderService } from '@novu/application-generic';
+import { CompileTemplate, WorkflowInMemoryProviderService } from '@notify/application-generic';
 import { AuthModule } from '../auth/auth.module';
 import { SharedModule } from '../shared/shared.module';
 import { InboundParseController } from './inbound-parse.controller';

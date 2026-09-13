@@ -1,4 +1,4 @@
-import { type PreviewError, ResourceOriginEnum, StepTypeEnum } from '@novu/shared';
+import { type PreviewError, ResourceOriginEnum, StepTypeEnum } from '@notify/shared';
 import { memo } from 'react';
 import { InlineToast } from '@/components/primitives/inline-toast';
 import { ChatPreviewPanel } from '@/components/workflow-editor/steps/chat/chat-preview-panel';

@@ -1,4 +1,4 @@
-import { WorkflowCriticalityEnum } from '@novu/shared';
+import { WorkflowCriticalityEnum } from '@notify/shared';
 import { IsEnum, IsOptional } from 'class-validator';
 import { EnvironmentWithSubscriber } from '../../../shared/commands/project.command';
 

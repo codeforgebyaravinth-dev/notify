@@ -18,7 +18,7 @@ import {
   InstrumentUsecase,
   PlatformException,
   resolveEnvironmentVariables,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   ContextRepository,
   EnvironmentEntity,
@@ -29,8 +29,8 @@ import {
   SubscriberRepository,
   TenantEntity,
   TenantRepository,
-} from '@novu/dal';
-import { ContextResolved, ExecuteOutput } from '@novu/framework/internal';
+} from '@notify/dal';
+import { ContextResolved, ExecuteOutput } from '@notify/framework/internal';
 import {
   DeliveryLifecycleDetail,
   DeliveryLifecycleStatusEnum,
@@ -44,7 +44,7 @@ import {
   PreferencesTypeEnum,
   ResourceTypeEnum,
   StepTypeEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { ExecuteBridgeJob } from '../execute-bridge-job';
 import { Digest } from './digest';
 import { ExecuteCodeFirstCustomStep } from './execute-code-first-custom-step.usecase';

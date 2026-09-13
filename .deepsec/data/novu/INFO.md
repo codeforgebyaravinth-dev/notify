@@ -15,7 +15,7 @@ organization → environment → subscriber. Open-core — `enterprise/`,
 
 - `@RequireAuthentication()` — MUST wrap every protected controller/route.
   Swaps between community `CommunityUserAuthGuard` (JWT **or** API key) and
-  `@novu/ee-auth` via `isEEAuthEnabled()`.
+  `@notify/ee-auth` via `isEEAuthEnabled()`.
 - `@ExternalApiAccessible()` — gates whether a route accepts API-key auth
   (public SDK/API). Without it, API-key requests are rejected even if the key
   is valid. Absence ≠ safe; presence widens the attack surface.

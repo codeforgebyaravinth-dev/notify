@@ -1,6 +1,6 @@
 import { NotFoundException } from '@nestjs/common';
-import type { AgentEntity, AgentIntegrationEntity, IntegrationEntity } from '@novu/dal';
-import { AgentSubscriberAccessEnum, ChannelTypeEnum } from '@novu/shared';
+import type { AgentEntity, AgentIntegrationEntity, IntegrationEntity } from '@notify/dal';
+import { AgentSubscriberAccessEnum, ChannelTypeEnum } from '@notify/shared';
 import { expect } from 'chai';
 import { restore, stub } from 'sinon';
 import { SyncAgentToEnvironmentCommand } from './sync-agent-to-environment.command';

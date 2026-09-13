@@ -1,6 +1,6 @@
 import { NotFoundException } from '@nestjs/common';
-import { AgentIntegrationRepository, AgentRepository, IntegrationEntity, IntegrationRepository } from '@novu/dal';
-import { ChatProviderIdEnum } from '@novu/shared';
+import { AgentIntegrationRepository, AgentRepository, IntegrationEntity, IntegrationRepository } from '@notify/dal';
+import { ChatProviderIdEnum } from '@notify/shared';
 
 export interface ResolvedWhatsAppAgentIntegration {
   agent: { _id: string; identifier: string; name: string };

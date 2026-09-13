@@ -1,7 +1,7 @@
 /** biome-ignore-all lint/correctness/useUniqueElementIds: working correctly */
 
 import { standardSchemaResolver } from '@hookform/resolvers/standard-schema';
-import { slugify } from '@novu/shared';
+import { slugify } from '@notify/shared';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { layoutSchema } from '@/components/layouts/schema';

@@ -64,9 +64,9 @@ function generateSharedInboxCode(
     urlProps = `\n    ${props.join(' ')}`;
   }
 
-  return `import { Inbox } from '@novu/react';
+  return `import { Inbox } from '@notify/react';
 
-// import { dark } from '@novu/react/themes'; => To enable dark theme support, uncomment this line.
+// import { dark } from '@notify/react/themes'; => To enable dark theme support, uncomment this line.
 
 export function NovuInbox() {
  // ${subscriberId ? 'Using provided subscriber ID - replace with your actual subscriber ID from your auth system' : 'TODO: Replace with your actual subscriber ID from your auth system'}

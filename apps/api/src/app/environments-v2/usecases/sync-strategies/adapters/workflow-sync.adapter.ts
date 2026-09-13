@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { NotificationTemplateEntity } from '@novu/dal';
+import { NotificationTemplateEntity } from '@notify/dal';
 import { SyncToEnvironmentCommand } from '../../../../workflows-v2/usecases/sync-to-environment/sync-to-environment.command';
 import { SyncToEnvironmentUseCase } from '../../../../workflows-v2/usecases/sync-to-environment/sync-to-environment.usecase';
 import { ISyncContext } from '../../../types/sync.types';

@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { IWorkflowBulkJobDto, WorkflowQueueService } from '@novu/application-generic';
-import { NotificationTemplateRepository } from '@novu/dal';
-import { AddressingTypeEnum, TriggerEventStatusEnum, TriggerRequestCategoryEnum } from '@novu/shared';
+import { IWorkflowBulkJobDto, WorkflowQueueService } from '@notify/application-generic';
+import { NotificationTemplateRepository } from '@notify/dal';
+import { AddressingTypeEnum, TriggerEventStatusEnum, TriggerRequestCategoryEnum } from '@notify/shared';
 import { TriggerEventResponseDto } from '../../dtos';
 import { ParseEventRequestMulticastCommand } from '../parse-event-request/parse-event-request.command';
 import { ParseEventRequest } from '../parse-event-request/parse-event-request.usecase';

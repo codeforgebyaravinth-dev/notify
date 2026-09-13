@@ -1,11 +1,11 @@
-import { Novu } from '@novu/api';
+import { Novu } from '@notify/api';
 import {
   ContextRepository,
   JobRepository,
   MessageRepository,
   NotificationRepository,
   SubscriberEntity,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   ContextPayload,
   CreateWorkflowDto,
@@ -15,8 +15,8 @@ import {
   TriggerTenantContext,
   WorkflowCreationSourceEnum,
   WorkflowResponseDto,
-} from '@novu/shared';
-import { SubscribersService, UserSession } from '@novu/testing';
+} from '@notify/shared';
+import { SubscribersService, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { initNovuClassSdk } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';
 

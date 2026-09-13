@@ -1,5 +1,5 @@
 import { ConflictException, Injectable } from '@nestjs/common';
-import { TopicRepository } from '@novu/dal';
+import { TopicRepository } from '@notify/dal';
 import { GetTopicUseCase } from '../get-topic';
 import { DeleteTopicCommand } from './delete-topic.command';
 

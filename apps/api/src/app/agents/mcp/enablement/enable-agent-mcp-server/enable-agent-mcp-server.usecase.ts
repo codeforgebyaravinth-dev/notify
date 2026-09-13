@@ -1,7 +1,7 @@
 import { BadRequestException, ConflictException, Injectable, NotFoundException } from '@nestjs/common';
-import { AnalyticsService, FeatureFlagsService } from '@novu/application-generic';
-import { AgentMcpServerEntity, AgentMcpServerRepository, AgentRepository } from '@novu/dal';
-import { MCP_SERVERS, McpConnectionAuthModeEnum, McpConnectionScopeEnum } from '@novu/shared';
+import { AnalyticsService, FeatureFlagsService } from '@notify/application-generic';
+import { AgentMcpServerEntity, AgentMcpServerRepository, AgentRepository } from '@notify/dal';
+import { MCP_SERVERS, McpConnectionAuthModeEnum, McpConnectionScopeEnum } from '@notify/shared';
 import { trackAgentMcpServerEnabled } from '../../../shared/analytics/agent-analytics';
 import { AgentMcpServerEnablementResponseDto } from '../../../shared/dtos/mcp-server.dto';
 import { AgentMcpDefinitionService } from '../../runtime/agent-mcp-definition.service';

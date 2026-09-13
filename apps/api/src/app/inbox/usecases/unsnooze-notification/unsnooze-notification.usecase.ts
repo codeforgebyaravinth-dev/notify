@@ -4,9 +4,9 @@ import {
   CreateExecutionDetailsCommand,
   DetailEnum,
   PinoLogger,
-} from '@novu/application-generic';
-import { ChannelTypeEnum, JobEntity, JobRepository, JobStatusEnum, MessageRepository } from '@novu/dal';
-import { ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum } from '@novu/shared';
+} from '@notify/application-generic';
+import { ChannelTypeEnum, JobEntity, JobRepository, JobStatusEnum, MessageRepository } from '@notify/dal';
+import { ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum } from '@notify/shared';
 import { GetSubscriber } from '../../../subscribers/usecases/get-subscriber';
 import { InboxNotificationDto } from '../../dtos/inbox-notification.dto';
 import { MarkNotificationAsCommand } from '../mark-notification-as/mark-notification-as.command';

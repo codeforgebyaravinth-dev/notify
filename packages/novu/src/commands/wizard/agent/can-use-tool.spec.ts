@@ -83,10 +83,10 @@ describe('novuCanUseTool — global rules', () => {
   });
 
   it('denies package installs (the wizard CLI handles them outside the sandbox)', () => {
-    expect(novuCanUseTool('Bash', { command: 'npm install @novu/nextjs' }).behavior).toBe('deny');
-    expect(novuCanUseTool('Bash', { command: 'pnpm add @novu/react' }).behavior).toBe('deny');
-    expect(novuCanUseTool('Bash', { command: 'yarn add @novu/api' }).behavior).toBe('deny');
-    expect(novuCanUseTool('Bash', { command: 'bun add @novu/framework' }).behavior).toBe('deny');
+    expect(novuCanUseTool('Bash', { command: 'npm install @notify/nextjs' }).behavior).toBe('deny');
+    expect(novuCanUseTool('Bash', { command: 'pnpm add @notify/react' }).behavior).toBe('deny');
+    expect(novuCanUseTool('Bash', { command: 'yarn add @notify/api' }).behavior).toBe('deny');
+    expect(novuCanUseTool('Bash', { command: 'bun add @notify/framework' }).behavior).toBe('deny');
   });
 
   it('denies dangerous Bash commands', () => {

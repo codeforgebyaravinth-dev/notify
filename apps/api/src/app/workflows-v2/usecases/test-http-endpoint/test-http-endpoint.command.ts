@@ -1,4 +1,4 @@
-import { EnvironmentWithUserObjectCommand, PreviewPayloadDto } from '@novu/application-generic';
+import { EnvironmentWithUserObjectCommand, PreviewPayloadDto } from '@notify/application-generic';
 import { IsObject, IsOptional } from 'class-validator';
 
 export class TestHttpEndpointCommand extends EnvironmentWithUserObjectCommand {

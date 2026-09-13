@@ -3,7 +3,7 @@
 ## Basic Inbox
 
 ```tsx
-import { Inbox } from "@novu/react";
+import { Inbox } from "@notify/react";
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
 ## Custom Bell Icon
 
 ```tsx
-import { Inbox } from "@novu/react";
+import { Inbox } from "@notify/react";
 
 function App() {
   return (
@@ -42,7 +42,7 @@ function App() {
 ## Custom Notification Rendering
 
 ```tsx
-import { Inbox } from "@novu/react";
+import { Inbox } from "@notify/react";
 
 function App() {
   return (
@@ -139,7 +139,7 @@ Customize individual parts instead of the entire notification:
 Use child components for full layout control:
 
 ```tsx
-import { Inbox, Bell, Notifications, Preferences } from "@novu/react";
+import { Inbox, Bell, Notifications, Preferences } from "@notify/react";
 
 function NotificationCenter() {
   return (

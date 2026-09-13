@@ -1,4 +1,4 @@
-import { SubscriberEntity, TopicEntity, TopicSubscribersEntity } from '@novu/dal';
+import { SubscriberEntity, TopicEntity, TopicSubscribersEntity } from '@notify/dal';
 import { SubscriptionPreferenceDto } from '../../../shared/dtos/subscriptions/create-subscriptions-response.dto';
 import { TopicResponseDto } from '../../dtos/topic-response.dto';
 import { TopicSubscriptionResponseDto } from '../../dtos/topic-subscription-response.dto';

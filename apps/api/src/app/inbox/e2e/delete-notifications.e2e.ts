@@ -1,13 +1,13 @@
-import { Novu } from '@novu/api';
+import { Novu } from '@notify/api';
 import {
   MessageEntity,
   MessageRepository,
   NotificationTemplateEntity,
   SubscriberEntity,
   SubscriberRepository,
-} from '@novu/dal';
-import { ChannelCTATypeEnum, StepTypeEnum, TemplateVariableTypeEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/dal';
+import { ChannelCTATypeEnum, StepTypeEnum, TemplateVariableTypeEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { randomBytes } from 'crypto';
 import { initNovuClassSdk } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';

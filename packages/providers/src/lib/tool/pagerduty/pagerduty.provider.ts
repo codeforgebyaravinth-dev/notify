@@ -1,5 +1,5 @@
-import { TOOL_PROVIDER_OVERRIDE_KEYS, ToolProviderIdEnum } from '@novu/shared';
-import { safeOutboundJsonRequest } from '@novu/shared/utils/safe-outbound-http';
+import { TOOL_PROVIDER_OVERRIDE_KEYS, ToolProviderIdEnum } from '@notify/shared';
+import { safeOutboundJsonRequest } from '@notify/shared/utils/safe-outbound-http';
 import {
   ChannelTypeEnum,
   ENDPOINT_TYPES,
@@ -8,7 +8,7 @@ import {
   IToolProvider,
   isChannelDataOfType,
   PagerDutyRegion,
-} from '@novu/stateless';
+} from '@notify/stateless';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
 import { WithPassthrough } from '../../../utils/types';
 

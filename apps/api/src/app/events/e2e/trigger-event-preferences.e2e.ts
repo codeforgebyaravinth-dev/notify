@@ -1,5 +1,5 @@
-import { Novu } from '@novu/api';
-import { DetailEnum } from '@novu/application-generic';
+import { Novu } from '@notify/api';
+import { DetailEnum } from '@notify/application-generic';
 import {
   ExecutionDetailsRepository,
   MessageRepository,
@@ -7,9 +7,9 @@ import {
   NotificationTemplateRepository,
   PreferencesRepository,
   SubscriberEntity,
-} from '@novu/dal';
-import { PreferencesTypeEnum, StepTypeEnum, WorkflowCreationSourceEnum } from '@novu/shared';
-import { SubscribersService, UserSession } from '@novu/testing';
+} from '@notify/dal';
+import { PreferencesTypeEnum, StepTypeEnum, WorkflowCreationSourceEnum } from '@notify/shared';
+import { SubscribersService, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { initNovuClassSdk } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';
 

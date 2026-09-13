@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { AgentRuntimeProviderIdEnum, AWS_CLAUDE_COMMERCIAL_REGIONS } from '@novu/shared';
+import { AgentRuntimeProviderIdEnum, AWS_CLAUDE_COMMERCIAL_REGIONS } from '@notify/shared';
 import { IsEnum, IsIn, IsNotEmpty, IsString, ValidateIf } from 'class-validator';
 
 export class VerifyManagedCredentialsRequestDto {

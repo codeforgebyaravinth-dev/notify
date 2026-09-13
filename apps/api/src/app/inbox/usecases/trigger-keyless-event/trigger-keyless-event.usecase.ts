@@ -1,7 +1,7 @@
 import { ForbiddenException, Injectable, InternalServerErrorException } from '@nestjs/common';
-import { LogDecorator, PinoLogger } from '@novu/application-generic';
-import { EnvironmentEntity, EnvironmentRepository } from '@novu/dal';
-import { AddressingTypeEnum, TriggerRequestCategoryEnum } from '@novu/shared';
+import { LogDecorator, PinoLogger } from '@notify/application-generic';
+import { EnvironmentEntity, EnvironmentRepository } from '@notify/dal';
+import { AddressingTypeEnum, TriggerRequestCategoryEnum } from '@notify/shared';
 import { TriggerEventResponseDto } from '../../../events/dtos/trigger-event-response.dto';
 import { ParseEventRequest, ParseEventRequestMulticastCommand } from '../../../events/usecases/parse-event-request';
 import { KEYLESS_ENVIRONMENT_PREFIX, KEYLESS_WORKFLOW_IDENTIFIER } from '../../utils';

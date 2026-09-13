@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { AnalyticsService, buildSubscriberKey, InvalidateCacheService } from '@novu/application-generic';
-import { SubscriberRepository } from '@novu/dal';
+import { AnalyticsService, buildSubscriberKey, InvalidateCacheService } from '@notify/application-generic';
+import { SubscriberRepository } from '@notify/dal';
 import { DeleteSubscriberCredentialsCommand } from './delete-subscriber-credentials.command';
 
 @Injectable()

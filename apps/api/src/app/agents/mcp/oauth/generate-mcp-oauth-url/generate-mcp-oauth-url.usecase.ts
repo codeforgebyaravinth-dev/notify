@@ -8,7 +8,7 @@ import {
   encryptMcpConnectionOAuthClient,
   FeatureFlagsService,
   PinoLogger,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   AgentMcpServerEntity,
   AgentMcpServerRepository,
@@ -19,7 +19,7 @@ import {
   McpConnectionOAuthState,
   McpConnectionRepository,
   SubscriberRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   type DcrOAuthCatalogEntry,
   MCP_SERVERS,
@@ -29,7 +29,7 @@ import {
   type McpOAuthCatalogEntry,
   type McpServer,
   type NovuAppOAuthCatalogEntry,
-} from '@novu/shared';
+} from '@notify/shared';
 import { trackAgentMcpOAuthCreated } from '../../../shared/analytics/agent-analytics';
 import { GenerateMcpOAuthUrlResponseDto } from '../../../shared/dtos/mcp-server.dto';
 import {

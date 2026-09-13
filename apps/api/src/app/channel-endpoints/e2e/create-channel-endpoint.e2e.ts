@@ -1,14 +1,14 @@
-import { Novu } from '@novu/api';
+import { Novu } from '@notify/api';
 import {
   CreateSlackChannelEndpointDto,
   CreateTelegramChatEndpointDto,
   CreateWebexPersonEndpointDto,
   CreateWebexRoomEndpointDto,
   CreateWebhookEndpointDto,
-} from '@novu/api/models/components';
-import { ChannelEndpointRepository, IntegrationRepository } from '@novu/dal';
-import { ChannelTypeEnum, ChatProviderIdEnum, ENDPOINT_TYPES } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/api/models/components';
+import { ChannelEndpointRepository, IntegrationRepository } from '@notify/dal';
+import { ChannelTypeEnum, ChatProviderIdEnum, ENDPOINT_TYPES } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import {
   createConnection,

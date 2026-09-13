@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { EnvironmentRepository, IntegrationEntity } from '@novu/dal';
-import { ContextPayload } from '@novu/shared';
+import { EnvironmentRepository, IntegrationEntity } from '@notify/dal';
+import { ContextPayload } from '@notify/shared';
 import { validateContextHmacEncryption } from '../../../inbox/utils/encryption';
 
 /**

@@ -7,7 +7,7 @@ import {
   getFeatureForTierAsBoolean,
   MemberRoleEnum,
   PermissionsEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { ReactNode } from 'react';
 import { useFeatureFlag } from '@/hooks/use-feature-flag';
 import { useFetchSubscription } from '@/hooks/use-fetch-subscription';

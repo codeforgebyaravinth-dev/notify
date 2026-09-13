@@ -1,5 +1,5 @@
-import { IntegrationEntity } from '@novu/dal';
-import { ChatProviderIdEnum } from '@novu/shared';
+import { IntegrationEntity } from '@notify/dal';
+import { ChatProviderIdEnum } from '@notify/shared';
 import { expect } from 'chai';
 import { AuthDto } from '../dtos/shared.dto';
 import { validateAndNormalizeConnectionAuth } from './channel-connection.utils';

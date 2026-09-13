@@ -1,4 +1,4 @@
-import { type ProviderColorToken } from '@novu/shared';
+import { type ProviderColorToken } from '@notify/shared';
 import { StepTypeEnum } from './enums';
 
 export type { ProviderColorToken };

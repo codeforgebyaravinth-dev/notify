@@ -1,6 +1,6 @@
-import { ClickHouseClient, ClickHouseService, createClickHouseClient } from '@novu/application-generic';
-import { DalService } from '@novu/dal';
-import { testServer } from '@novu/testing';
+import { ClickHouseClient, ClickHouseService, createClickHouseClient } from '@notify/application-generic';
+import { DalService } from '@notify/dal';
+import { testServer } from '@notify/testing';
 import axios from 'axios';
 import chai from 'chai';
 import { Connection } from 'mongoose';

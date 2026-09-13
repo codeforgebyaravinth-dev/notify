@@ -1,7 +1,7 @@
 import { Body, ClassSerializerInterceptor, Controller, Get, Put, UseInterceptors } from '@nestjs/common';
 import { ApiExcludeController, ApiOperation, ApiTags } from '@nestjs/swagger';
-import { OAuthAccessible, PinoLogger } from '@novu/application-generic';
-import { UserSessionData } from '@novu/shared';
+import { OAuthAccessible, PinoLogger } from '@notify/application-generic';
+import { UserSessionData } from '@notify/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import { ApiCommonResponses, ApiResponse } from '../shared/framework/response.decorator';

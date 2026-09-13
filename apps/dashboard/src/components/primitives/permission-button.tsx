@@ -1,4 +1,4 @@
-import { PermissionsEnum } from '@novu/shared';
+import { PermissionsEnum } from '@notify/shared';
 import { ReactNode } from 'react';
 import { Button, ButtonProps } from '@/components/primitives/button';
 import { useHasPermission } from '@/hooks/use-has-permission';

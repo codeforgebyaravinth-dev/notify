@@ -1,9 +1,9 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import type { WhatsAppSignupLinkInvalidReason } from '@novu/shared';
+import type { WhatsAppSignupLinkInvalidReason } from '@notify/shared';
 
 /**
  * Flat OpenAPI projection of the `WhatsAppSignupLinkStatus` discriminated
- * union from `@novu/shared` (Swagger cannot express the union directly):
+ * union from `@notify/shared` (Swagger cannot express the union directly):
  * `valid: true` carries the progress fields, `valid: false` carries `reason`.
  */
 export class WhatsAppSignupLinkStatusResponseDto {

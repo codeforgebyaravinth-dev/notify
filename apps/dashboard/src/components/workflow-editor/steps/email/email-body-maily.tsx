@@ -1,4 +1,4 @@
-import { Variable } from '@novu/maily-core/extensions';
+import { Variable } from '@notify/maily-core/extensions';
 import { Editor, NodeViewProps } from '@tiptap/core';
 import { EditorView } from '@uiw/react-codemirror';
 import React, { useCallback, useMemo, useRef } from 'react';

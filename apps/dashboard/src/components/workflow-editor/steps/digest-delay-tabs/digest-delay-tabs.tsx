@@ -1,4 +1,4 @@
-import { DelayTypeEnum, DigestTypeEnum, EnvironmentTypeEnum, ResourceOriginEnum, TimeUnitEnum } from '@novu/shared';
+import { DelayTypeEnum, DigestTypeEnum, EnvironmentTypeEnum, ResourceOriginEnum, TimeUnitEnum } from '@notify/shared';
 import { Tabs } from '@radix-ui/react-tabs';
 import { useState } from 'react';
 import { FieldValues, useFormContext } from 'react-hook-form';

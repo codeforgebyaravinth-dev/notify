@@ -1,11 +1,11 @@
-import { Novu } from '@novu/api';
+import { Novu } from '@notify/api';
 import {
   SubscriberPayloadDto,
   TopicPayloadDto,
   TopicResponseDto,
   TriggerEventRequestDto,
   TriggerRecipientsTypeEnum,
-} from '@novu/api/models/components';
+} from '@notify/api/models/components';
 import {
   MessageRepository,
   NotificationRepository,
@@ -13,7 +13,7 @@ import {
   PreferencesRepository,
   SubscriberEntity,
   TopicSubscribersRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   ChannelTypeEnum,
   DigestTypeEnum,
@@ -24,8 +24,8 @@ import {
   StepTypeEnum,
   TopicKey,
   TopicName,
-} from '@novu/shared';
-import { SubscribersService, UserSession } from '@novu/testing';
+} from '@notify/shared';
+import { SubscribersService, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { initNovuClassSdk } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';
 

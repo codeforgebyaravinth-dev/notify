@@ -1,5 +1,5 @@
 import { randomUUID } from 'node:crypto';
-import { Novu } from '@novu/api';
+import { Novu } from '@notify/api';
 import {
   CreateLayoutDto,
   CreateWorkflowDto,
@@ -10,8 +10,8 @@ import {
   UpdateWorkflowDto,
   WorkflowCreationSourceEnum,
   WorkflowResponseDto,
-} from '@novu/api/models/components';
-import { ControlValuesRepository, IntegrationRepository } from '@novu/dal';
+} from '@notify/api/models/components';
+import { ControlValuesRepository, IntegrationRepository } from '@notify/dal';
 import {
   ChannelTypeEnum,
   ChatProviderIdEnum,
@@ -21,8 +21,8 @@ import {
   StepIssueSeverityEnum,
   StepTypeEnum,
   ToolProviderIdEnum,
-} from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { JSONSchemaDto } from '../../shared/dtos/json-schema.dto';
 import { initNovuClassSdkInternalAuth } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';
@@ -148,7 +148,7 @@ describe('Upsert Workflow #novu-v2', () => {
 
   describe('tool step providerOverrides', () => {
     it('should persist providerOverrides as a step sibling and keep them out of controlValues', async () => {
-      // Raw HTTP — @novu/api SDK may lag behind tool / providerOverrides DTO changes.
+      // Raw HTTP — @notify/api SDK may lag behind tool / providerOverrides DTO changes.
       const createResponse = await session.testAgent.post('/v2/workflows').send({
         __source: WorkflowCreationSourceEnum.Editor,
         name: 'Tool Provider Overrides Workflow',

@@ -1,4 +1,4 @@
-import { NotificationTemplateEntity } from '@novu/dal';
+import { NotificationTemplateEntity } from '@notify/dal';
 import { EnvironmentWithUserCommand } from '../../../shared/commands/project.command';
 
 /**

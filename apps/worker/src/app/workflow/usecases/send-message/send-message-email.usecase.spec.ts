@@ -1,5 +1,5 @@
-import { MailFactory } from '@novu/application-generic';
-import { ChannelTypeEnum, EmailProviderIdEnum } from '@novu/shared';
+import { MailFactory } from '@notify/application-generic';
+import { ChannelTypeEnum, EmailProviderIdEnum } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { SendMessageChannelCommand } from './send-message-channel.command';

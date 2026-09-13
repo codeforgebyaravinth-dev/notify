@@ -1,4 +1,4 @@
-import { AGENTS_ORG_FUNNEL_EVENTS, type AgentsUsecaseSource } from '@novu/shared';
+import { AGENTS_ORG_FUNNEL_EVENTS, type AgentsUsecaseSource } from '@notify/shared';
 import { measure } from '@/api/telemetry';
 
 /**

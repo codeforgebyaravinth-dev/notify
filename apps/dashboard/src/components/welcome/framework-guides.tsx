@@ -190,13 +190,13 @@ function StepCodeBlock({
 }
 
 const FRAMEWORK_PACKAGES: Record<string, string> = {
-  'Next.js': '@novu/nextjs',
-  React: '@novu/react',
-  Remix: '@novu/react',
-  Native: '@novu/react-native',
-  Angular: '@novu/js',
-  JavaScript: '@novu/js',
-  Vue: '@novu/js',
+  'Next.js': '@notify/nextjs',
+  React: '@notify/react',
+  Remix: '@notify/react',
+  Native: '@notify/react-native',
+  Angular: '@notify/js',
+  JavaScript: '@notify/js',
+  Vue: '@notify/js',
 };
 
 const FRAMEWORK_DOCS: Record<string, string> = {
@@ -213,7 +213,7 @@ function getFrameworkCodeSnippet(frameworkName: string, applicationIdentifier: s
   switch (frameworkName) {
     case 'Next.js':
       return `'use client';
-import { Inbox } from '@novu/nextjs';
+import { Inbox } from '@notify/nextjs';
 
 export default function NotificationInbox() {
   return (
@@ -224,7 +224,7 @@ export default function NotificationInbox() {
   );
 }`;
     case 'React':
-      return `import { Inbox } from '@novu/react';
+      return `import { Inbox } from '@notify/react';
 import { useNavigate } from 'react-router-dom';
 
 export default function NotificationInbox() {
@@ -239,7 +239,7 @@ export default function NotificationInbox() {
   );
 }`;
     default:
-      return `import { Inbox } from '${FRAMEWORK_PACKAGES[frameworkName] ?? '@novu/js'}';
+      return `import { Inbox } from '${FRAMEWORK_PACKAGES[frameworkName] ?? '@notify/js'}';
 
 // applicationIdentifier: "${applicationIdentifier}"
 // subscriberId: "${subscriberId}"`;
@@ -247,7 +247,7 @@ export default function NotificationInbox() {
 }
 
 function buildCondensedPrompt(frameworkName: string, applicationIdentifier: string, subscriberId: string): string {
-  const pkg = FRAMEWORK_PACKAGES[frameworkName] ?? '@novu/js';
+  const pkg = FRAMEWORK_PACKAGES[frameworkName] ?? '@notify/js';
   const docs = FRAMEWORK_DOCS[frameworkName] ?? 'https://docs.novu.co';
   const snippet = getFrameworkCodeSnippet(frameworkName, applicationIdentifier, subscriberId);
 

@@ -1,10 +1,10 @@
 ---
-title: "Braze Email Integration with Novu"
+title: "Braze Email Integration with Notify"
 sidebarTitle: "Braze"
-description: "Connect Braze to Novu to send transactional emails through workflows. Store your Braze API key, REST endpoint, and app ID in the Novu dashboard."
+description: "Connect Braze to Notify to send transactional emails through workflows. Store your Braze API key, REST endpoint, and app ID in the Notify dashboard."
 ---
 
-You can use [Braze](https://www.braze.com/) to send transactional emails through Novu. Novu calls Braze's messaging API and maps recipients by email address to Braze external user IDs.
+You can use [Braze](https://www.braze.com/) to send transactional emails through Notify. Notify calls Braze's messaging API and maps recipients by email address to Braze external user IDs.
 
 ## Getting started
 
@@ -20,15 +20,15 @@ You need a Braze account, a REST API key with messaging permissions, your Braze 
 ## Finding your base URL and app ID
 
 1. Use the [Braze REST endpoint](https://www.braze.com/docs/api/basics/#endpoints) that matches your Braze instance (for example `https://rest.iad-01.braze.com`).
-2. Copy an **App Identifier** from **Settings > APIs and Identifiers**. Novu sends this as `app_id` on each email message.
+2. Copy an **App Identifier** from **Settings > APIs and Identifiers**. Notify sends this as `app_id` on each email message.
 
 <Note>
-  Recipients must already exist in Braze with an email address Novu can resolve to a Braze `external_id`. If Braze cannot map the email, the send fails.
+  Recipients must already exist in Braze with an email address Notify can resolve to a Braze `external_id`. If Braze cannot map the email, the send fails.
 </Note>
 
-## Creating a Braze integration with Novu
+## Creating a Braze integration with Notify
 
-1. Visit the [Integrations](https://dashboard.novu.co/integrations?utm_campaign=docs-braze) page on Novu.
+1. Visit the [Integrations](https://dashboard.novu.co/integrations?utm_campaign=docs-braze) page on Notify.
 2. Click **Add a provider**.
 3. Locate **Braze** under the Email section and click **Connect**.
 4. Enter your:
@@ -40,7 +40,7 @@ You need a Braze account, a REST API key with messaging permissions, your Braze 
 5. Confirm **Active Integration** is on. New integrations start active by default.
 6. Click **Create Integration**.
 
-You can now send transactional email with Braze through Novu.
+You can now send transactional email with Braze through Notify.
 
 ## Next Steps
 

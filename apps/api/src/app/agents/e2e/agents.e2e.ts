@@ -1,5 +1,5 @@
 import { randomUUID } from 'node:crypto';
-import { AgentIntegrationRepository, AgentRepository } from '@novu/dal';
+import { AgentIntegrationRepository, AgentRepository } from '@notify/dal';
 import {
   AGENT_IDENTIFIER_MAX_LENGTH,
   ChannelTypeEnum,
@@ -7,8 +7,8 @@ import {
   SmsProviderIdEnum,
   StepTypeEnum,
   WorkflowCreationSourceEnum,
-} from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Agents API - /agents #novu-v2', () => {
@@ -428,7 +428,7 @@ describe('Agents API - /agents #novu-v2', () => {
   });
 
   describe('Name length validation', () => {
-    // Kept in sync with AGENT_NAME_MAX_LENGTH in @novu/shared. Validation failures are
+    // Kept in sync with AGENT_NAME_MAX_LENGTH in @notify/shared. Validation failures are
     // surfaced by AllExceptionsFilter as 422 (not the class-validator default 400).
     const MAX = 60;
 

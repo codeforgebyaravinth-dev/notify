@@ -1,4 +1,4 @@
-import { TranslationGroupDto } from '@novu/api/models/components';
+import { TranslationGroupDto } from '@notify/api/models/components';
 import { ConfirmationModal } from '../confirmation-modal';
 
 type DeleteTranslationGroupDialogProps = {

@@ -1,4 +1,4 @@
-import { ChangeRepository, EnvironmentRepository, LayoutRepository } from '@novu/dal';
+import { ChangeRepository, EnvironmentRepository, LayoutRepository } from '@notify/dal';
 import {
   ChangeEntityTypeEnum,
   ITemplateVariable,
@@ -7,8 +7,8 @@ import {
   LayoutIdentifier,
   LayoutName,
   TemplateVariableTypeEnum,
-} from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 
 describe('Promote Layout Changes #novu-v0', () => {

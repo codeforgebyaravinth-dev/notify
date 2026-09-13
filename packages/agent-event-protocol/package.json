@@ -1,5 +1,5 @@
 {
-  "name": "@novu/agent-event-protocol",
+  "name": "@notify/agent-event-protocol",
   "version": "0.0.1",
   "private": true,
   "description": "AgentEvent wire protocol types and runtime guards (private workspace package).",

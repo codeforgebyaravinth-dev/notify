@@ -1,4 +1,4 @@
-import { IProviderConfig } from '@novu/shared';
+import { IProviderConfig } from '@notify/shared';
 import { RiArrowRightSLine } from 'react-icons/ri';
 import { Button } from '@/components/primitives/button';
 import { ProviderDeprecatedBadge } from './provider-deprecation';

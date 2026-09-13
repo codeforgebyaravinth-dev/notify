@@ -1,6 +1,6 @@
-import { IntegrationRepository } from '@novu/dal';
-import { ChannelTypeEnum, ChatProviderIdEnum } from '@novu/shared';
-import { testServer, UserSession } from '@novu/testing';
+import { IntegrationRepository } from '@notify/dal';
+import { ChannelTypeEnum, ChatProviderIdEnum } from '@notify/shared';
+import { testServer, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { IssueTelegramSubscriberLink } from '../../telegram-linking/issue-telegram-subscriber-link/issue-telegram-subscriber-link.usecase';

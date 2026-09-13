@@ -17,7 +17,7 @@ import {
   PinoLogger,
   stitchProviderOverridesFromDocs,
   withStitchedProviderOverrides,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   ControlValuesRepository,
   EnvironmentRepository,
@@ -26,7 +26,7 @@ import {
   MessageRepository,
   NotificationTemplateEntity,
   NotificationTemplateRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import {
   DelayResult,
   DigestResult,
@@ -36,7 +36,7 @@ import {
   PostActionEnum,
   State,
   ThrottleResult,
-} from '@novu/framework/internal';
+} from '@notify/framework/internal';
 import {
   ControlValuesLevelEnum,
   ExecutionDetailsSourceEnum,
@@ -45,7 +45,7 @@ import {
   JobStatusEnum,
   ResourceOriginEnum,
   ResourceTypeEnum,
-} from '@novu/shared';
+} from '@notify/shared';
 import { ExecuteBridgeJobCommand } from './execute-bridge-job.command';
 
 @Injectable()

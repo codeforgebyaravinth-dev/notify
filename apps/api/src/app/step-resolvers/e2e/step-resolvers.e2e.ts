@@ -1,14 +1,14 @@
-import { Novu } from '@novu/api';
-import { WorkflowCreationSourceEnum } from '@novu/api/models/components';
-import { FeatureFlagsService, ResourceValidatorService } from '@novu/application-generic';
+import { Novu } from '@notify/api';
+import { WorkflowCreationSourceEnum } from '@notify/api/models/components';
+import { FeatureFlagsService, ResourceValidatorService } from '@notify/application-generic';
 import {
   ControlValuesRepository,
   EnvironmentRepository,
   MessageTemplateRepository,
   NotificationTemplateRepository,
-} from '@novu/dal';
-import { ControlValuesLevelEnum, StepTypeEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+} from '@notify/dal';
+import { ControlValuesLevelEnum, StepTypeEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { initNovuClassSdkInternalAuth } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';

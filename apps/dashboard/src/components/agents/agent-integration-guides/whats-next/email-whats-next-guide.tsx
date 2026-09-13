@@ -1,4 +1,4 @@
-import { EmailProviderIdEnum } from '@novu/shared';
+import { EmailProviderIdEnum } from '@notify/shared';
 import { type ReactNode, useMemo, useState } from 'react';
 import { RiArrowRightSLine, RiCloseLine, RiExpandUpDownLine, RiKey2Line } from 'react-icons/ri';
 import { useNavigate } from 'react-router-dom';

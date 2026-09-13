@@ -1,4 +1,4 @@
-import type { Novu } from '@novu/api';
+import type { Novu } from '@notify/api';
 import { z } from 'zod';
 import { NovuTool } from '../core/novu-tool.js';
 import type { NovuToolDefinition, NovuToolkitConfig } from '../core/types.js';

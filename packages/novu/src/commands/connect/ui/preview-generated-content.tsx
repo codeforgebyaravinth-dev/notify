@@ -1,5 +1,5 @@
 import { MultiSelect, TextInput } from '@inkjs/ui';
-import { MAX_GENERATED_MCP_SERVERS, MAX_GENERATED_SKILLS, validateManagedAgentSpec } from '@novu/shared';
+import { MAX_GENERATED_MCP_SERVERS, MAX_GENERATED_SKILLS, validateManagedAgentSpec } from '@notify/shared';
 import { Box, Text, useInput, useStdout } from 'ink';
 // biome-ignore lint/correctness/noUnusedImports: classic-JSX linter falls back here because tsconfig.json excludes ui/.
 import React from 'react';

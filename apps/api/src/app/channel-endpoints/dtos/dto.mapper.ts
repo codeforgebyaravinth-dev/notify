@@ -1,4 +1,4 @@
-import { ChannelEndpointEntity } from '@novu/dal';
+import { ChannelEndpointEntity } from '@notify/dal';
 import { GetChannelEndpointResponseDto } from './get-channel-endpoint-response.dto';
 
 export function mapChannelEndpointEntityToDto(channelEndpoint: ChannelEndpointEntity): GetChannelEndpointResponseDto {

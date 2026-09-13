@@ -9,8 +9,8 @@ import {
   MsTeamsTokenService,
   UpdateSubscriber,
   UpdateSubscriberChannel,
-} from '@novu/application-generic';
-import { CommunityOrganizationRepository, CommunityUserRepository, IntegrationRepository } from '@novu/dal';
+} from '@notify/application-generic';
+import { CommunityOrganizationRepository, CommunityUserRepository, IntegrationRepository } from '@notify/dal';
 import { AgentsModule } from '../agents/agents.module';
 import { AuthModule } from '../auth/auth.module';
 import { ChannelConnectionsModule } from '../channel-connections/channel-connections.module';

@@ -3,7 +3,7 @@ name: novu-manage-subscribers
 description: Create, update, search, and delete subscribers in Novu. Manage topics for group-based notification targeting. Set subscriber credentials for push and chat channels. Use when managing notification recipients, creating subscriber records, organizing subscribers into topics, or configuring channel-specific credentials.
 inputs:
   - name: NOVU_SECRET_KEY
-    description: "Server-side API key from https://dashboard.novu.co/api-keys. Used by @novu/api."
+    description: "Server-side API key from https://dashboard.novu.co/api-keys. Used by @notify/api."
     required: true
     type: secret
 ---
@@ -15,7 +15,7 @@ Subscribers are the recipients of your notifications. Each subscriber has a uniq
 ## SDK Setup
 
 ```typescript
-import { Novu } from "@novu/api";
+import { Novu } from "@notify/api";
 
 const novu = new Novu({
   secretKey: process.env.NOVU_SECRET_KEY,

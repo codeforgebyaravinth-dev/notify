@@ -1,4 +1,4 @@
-import { IOrganizationEntity } from '@novu/shared';
+import { IOrganizationEntity } from '@notify/shared';
 import React from 'react';
 import { AuthContextProvider } from './auth.resource';
 import { ClerkLoaded } from './clerk-loaded';

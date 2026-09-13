@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { FeatureFlagsService } from '@novu/application-generic';
-import { PreferenceLevelEnum, WorkflowCriticalityEnum } from '@novu/shared';
+import { FeatureFlagsService } from '@notify/application-generic';
+import { PreferenceLevelEnum, WorkflowCriticalityEnum } from '@notify/shared';
 import { assertGetPreferencesEnabled } from '../../utils/assert-get-preferences-enabled';
 import {
   GetSubscriberGlobalPreference,

@@ -1,5 +1,5 @@
-import { decryptChannelConnectionAuth } from '@novu/application-generic';
-import { ChannelConnectionEntity } from '@novu/dal';
+import { decryptChannelConnectionAuth } from '@notify/application-generic';
+import { ChannelConnectionEntity } from '@notify/dal';
 import { GetChannelConnectionResponseDto } from './get-channel-connection-response.dto';
 
 /**

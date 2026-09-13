@@ -1,5 +1,5 @@
-import { BlockItem } from '@novu/maily-core/blocks';
-import { StepResponseDto } from '@novu/shared';
+import { BlockItem } from '@notify/maily-core/blocks';
+import { StepResponseDto } from '@notify/shared';
 import { RiShadowLine } from 'react-icons/ri';
 import { Badge } from '@/components/primitives/badge';
 import { useTelemetry } from '@/hooks/use-telemetry';

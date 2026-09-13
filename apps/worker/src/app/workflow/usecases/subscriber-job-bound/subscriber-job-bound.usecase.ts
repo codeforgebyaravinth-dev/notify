@@ -1,5 +1,5 @@
 import { BadRequestException, Injectable, Logger } from '@nestjs/common';
-import type { EventType, RequestTraceInput, Trace } from '@novu/application-generic';
+import type { EventType, RequestTraceInput, Trace } from '@notify/application-generic';
 import {
   AnalyticsService,
   CreateNotificationJobs,
@@ -18,7 +18,7 @@ import {
   PinoLogger,
   SubscriberTopicPreference,
   TraceLogRepository,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   ContextRepository,
   IntegrationRepository,
@@ -27,8 +27,8 @@ import {
   PreferencesRepository,
   SubscriberEntity,
   TopicPreferenceEvaluation,
-} from '@novu/dal';
-import type { ContextResolved } from '@novu/framework/internal';
+} from '@notify/dal';
+import type { ContextResolved } from '@notify/framework/internal';
 import {
   buildWorkflowPreferences,
   ChannelTypeEnum,
@@ -42,7 +42,7 @@ import {
   SeverityLevelEnum,
   STEP_TYPE_TO_CHANNEL_TYPE,
   WorkflowPreferencesPartial,
-} from '@novu/shared';
+} from '@notify/shared';
 import type { RulesLogic } from 'json-logic-js';
 import jsonLogic from 'json-logic-js';
 import { StoreSubscriberJobs, StoreSubscriberJobsCommand } from '../store-subscriber-jobs';

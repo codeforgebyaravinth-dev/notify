@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { DeliveryLifecycleStatusEnum, SeverityLevelEnum } from '@novu/shared';
+import { DeliveryLifecycleStatusEnum, SeverityLevelEnum } from '@notify/shared';
 import { IsArray, IsBoolean, IsEnum, IsIn, IsOptional, IsString } from 'class-validator';
 
 export enum WorkflowRunStatusDtoEnum {

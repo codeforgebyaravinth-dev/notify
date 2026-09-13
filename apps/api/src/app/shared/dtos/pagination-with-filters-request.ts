@@ -1,5 +1,5 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { IPaginationWithQueryParams } from '@novu/shared';
+import { IPaginationWithQueryParams } from '@notify/shared';
 import { IsOptional, IsString } from 'class-validator';
 
 import { Constructor } from '../types';

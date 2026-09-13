@@ -1,5 +1,5 @@
-import type { TagsFilter } from '@novu/shared';
-import { TagsFilterValidationError } from '@novu/shared';
+import type { TagsFilter } from '@notify/shared';
+import { TagsFilterValidationError } from '@notify/shared';
 
 /**
  * Coerce Express query / mixed shapes into `TagsFilter` for validation + normalization.

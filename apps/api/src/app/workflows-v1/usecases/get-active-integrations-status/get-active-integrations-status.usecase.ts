@@ -6,7 +6,7 @@ import {
   GetActiveIntegrationsCommand,
   IntegrationResponseDto,
   NotificationStep,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   ChannelTypeEnum,
   ChatProviderIdEnum,
@@ -14,7 +14,7 @@ import {
   SmsProviderIdEnum,
   StepTypeEnum,
   WorkflowChannelsIntegrationStatus,
-} from '@novu/shared';
+} from '@notify/shared';
 import { WorkflowResponse } from '../../dtos/workflow-response.dto';
 import { GetActiveIntegrationsStatusCommand } from './get-active-integrations-status.command';
 

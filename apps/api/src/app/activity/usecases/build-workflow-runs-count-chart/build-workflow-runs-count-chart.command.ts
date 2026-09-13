@@ -1,4 +1,4 @@
-import { EnvironmentCommand, WorkflowRunStatusEnum } from '@novu/application-generic';
+import { EnvironmentCommand, WorkflowRunStatusEnum } from '@notify/application-generic';
 import { IsArray, IsDate, IsDefined, IsIn, IsOptional, IsString } from 'class-validator';
 import { WorkflowRunStatusDtoEnum } from '../../dtos/shared.dto';
 

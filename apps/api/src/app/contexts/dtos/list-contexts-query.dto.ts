@@ -1,5 +1,5 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { ContextType } from '@novu/shared';
+import { ContextType } from '@notify/shared';
 import { IsOptional, IsString } from 'class-validator';
 import { CursorPaginationQueryDto } from './cursor-pagination-query.dto';
 import { GetContextResponseDto } from './get-context-response.dto';

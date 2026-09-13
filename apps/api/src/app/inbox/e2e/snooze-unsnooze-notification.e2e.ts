@@ -1,7 +1,7 @@
-import { Novu } from '@novu/api';
-import { MessageRepository, NotificationTemplateEntity, SubscriberEntity, SubscriberRepository } from '@novu/dal';
-import { ActorTypeEnum, ChannelTypeEnum, StepTypeEnum, SystemAvatarIconEnum } from '@novu/shared';
-import { UserSession } from '@novu/testing';
+import { Novu } from '@notify/api';
+import { MessageRepository, NotificationTemplateEntity, SubscriberEntity, SubscriberRepository } from '@notify/dal';
+import { ActorTypeEnum, ChannelTypeEnum, StepTypeEnum, SystemAvatarIconEnum } from '@notify/shared';
+import { UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { initNovuClassSdk } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';
 

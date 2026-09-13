@@ -1,4 +1,4 @@
-import { PermissionsEnum } from '@novu/shared';
+import { PermissionsEnum } from '@notify/shared';
 import { useParams } from 'react-router-dom';
 import { SubscriberTabs } from '@/components/subscribers/subscriber-tabs';
 import { useHasPermission } from '@/hooks/use-has-permission';

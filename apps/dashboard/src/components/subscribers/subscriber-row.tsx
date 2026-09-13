@@ -1,4 +1,4 @@
-import { ISubscriberResponseDto, PermissionsEnum } from '@novu/shared';
+import { ISubscriberResponseDto, PermissionsEnum } from '@notify/shared';
 import { useQueryClient } from '@tanstack/react-query';
 import { ComponentProps, useState } from 'react';
 import { RiDeleteBin2Line, RiFileCopyLine, RiMore2Fill, RiPulseFill } from 'react-icons/ri';

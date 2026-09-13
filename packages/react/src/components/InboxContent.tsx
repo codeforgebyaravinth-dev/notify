@@ -1,4 +1,4 @@
-import type { InboxPage, NotificationActionClickHandler, NotificationClickHandler } from '@novu/js/ui';
+import type { InboxPage, NotificationActionClickHandler, NotificationClickHandler } from '@notify/js/ui';
 import React from 'react';
 import { useNovuUI } from '../context/NovuUIContext';
 import { useRenderer } from '../context/RendererContext';

@@ -1,4 +1,4 @@
-import { FeatureFlagsKeysEnum, IProviderConfig } from '@novu/shared';
+import { FeatureFlagsKeysEnum, IProviderConfig } from '@notify/shared';
 import { useMemo } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/primitives/tabs';
 import { useFeatureFlag } from '@/hooks/use-feature-flag';

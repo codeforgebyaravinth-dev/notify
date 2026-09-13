@@ -1,8 +1,8 @@
-import { Novu } from '@novu/api';
-import { ClickHouseService, WorkflowRunRepository, WorkflowRunStatusEnum } from '@novu/application-generic';
-import { NotificationEntity, NotificationRepository, NotificationTemplateEntity, SubscriberEntity } from '@novu/dal';
-import { EmailBlockTypeEnum, StepTypeEnum } from '@novu/shared';
-import { SubscribersService, UserSession } from '@novu/testing';
+import { Novu } from '@notify/api';
+import { ClickHouseService, WorkflowRunRepository, WorkflowRunStatusEnum } from '@notify/application-generic';
+import { NotificationEntity, NotificationRepository, NotificationTemplateEntity, SubscriberEntity } from '@notify/dal';
+import { EmailBlockTypeEnum, StepTypeEnum } from '@notify/shared';
+import { SubscribersService, UserSession } from '@notify/testing';
 import { expect } from 'chai';
 import { sleep } from '../../events/e2e/utils/sleep.util';
 import { initNovuClassSdk } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';

@@ -1,4 +1,4 @@
-import { ResourceOriginEnum } from '@novu/shared';
+import { ResourceOriginEnum } from '@notify/shared';
 import { RiCloseLine, RiGuideFill } from 'react-icons/ri';
 import { useNavigate } from 'react-router-dom';
 

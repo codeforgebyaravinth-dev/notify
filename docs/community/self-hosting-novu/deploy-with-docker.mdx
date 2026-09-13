@@ -1,9 +1,9 @@
 ---
 title: 'Deploy with Docker'
-description: "Deploy Novu on your own infrastructure using Docker Compose, configure environment variables, and run the API, worker, and web dashboard locally."
+description: "Deploy Notify on your own infrastructure using Docker Compose, configure environment variables, and run the API, worker, and web dashboard locally."
 ---
 
-Docker compose is the easiest way to get started with self-hosted Novu. This guide will walk you through the steps to run all services in single virtual machine using docker compose. This guide uses latest docker images. If you are looking to self host 0.24.x version, checkout [0.24.x docs](https://v0.x-docs.novu.co/self-hosting-novu/deploy-with-docker)
+Docker compose is the easiest way to get started with self-hosted Notify. This guide will walk you through the steps to run all services in single virtual machine using docker compose. This guide uses latest docker images. If you are looking to self host 0.24.x version, checkout [0.24.x docs](https://v0.x-docs.novu.co/self-hosting-notify/deploy-with-docker)
 
 ## Prerequisites
 
@@ -14,7 +14,7 @@ You need the following installed in your system:
 
 ## Quick Start
 
-Run the setup script to download the required files, generate secure secrets, and start Novu:
+Run the setup script to download the required files, generate secure secrets, and start Notify:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/novuhq/novu/next/docker/community/setup.sh | bash
@@ -23,16 +23,16 @@ curl -fsSL https://raw.githubusercontent.com/novuhq/novu/next/docker/community/s
 To install into a specific directory, set `NOVU_DIR`:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/novuhq/novu/next/docker/community/setup.sh | NOVU_DIR=~/novu bash
+curl -fsSL https://raw.githubusercontent.com/novuhq/novu/next/docker/community/setup.sh | NOVU_DIR=~/notify bash
 ```
 
 The script will:
 1. Download `docker-compose.yml` and `.env.example` into the target directory (defaults to `./novu`)
 2. Generate cryptographically random values for `JWT_SECRET`, `STORE_ENCRYPTION_KEY`, and `NOVU_SECRET_KEY`
 3. Create a `.env` file with the generated secrets
-4. Start all Novu services via `docker compose up -d`
+4. Start all Notify services via `docker compose up -d`
 
-Once complete, visit [http://localhost:4000](http://localhost:4000/) to start using Novu.
+Once complete, visit [http://localhost:4000](http://localhost:4000/) to start using Notify.
 
 <Note>
   If you already have a `.env` file in the target directory, the script will only fill in any missing secret values without overwriting existing configuration.
@@ -49,7 +49,7 @@ When deploying to a VPS, update your `.env` file with your server's information:
 HOST_NAME=http://<vps-ip-address>
 ```
 
-Start Novu on your VPS:
+Start Notify on your VPS:
 
 ```bash
 docker compose up -d
@@ -81,12 +81,12 @@ We strongly recommend that you decouple your database before deploying.
 
 ## Setting Up the Inbox Component
 
-This section explains how to integrate the Novu Inbox component into your application when using a self-hosted Novu deployment.
+This section explains how to integrate the Notify Inbox component into your application when using a self-hosted Notify deployment.
 
 ### Install the required packages
 
 ```bash
-npm install @novu/react react-router-dom
+npm install @notify/react react-router-dom
 ```
 
 ### Create the Inbox component
@@ -95,7 +95,7 @@ Create a component file (e.g., `inbox.tsx`) in your project:
 
 ```tsx
 import React from 'react';
-import { Inbox } from '@novu/react';
+import { Inbox } from '@notify/react';
 import { useNavigate } from 'react-router';
  
 export function NotificationCenter() {
@@ -105,8 +105,8 @@ export function NotificationCenter() {
     <Inbox
       applicationIdentifier="YOUR_APPLICATION_IDENTIFIER"
       subscriber="YOUR_SUBSCRIBER_ID"
-      backendUrl="http://<your-docker-host>:3000" // Docker host address where Novu API is running
-      socketUrl="http://<your-docker-host>:3002" // Docker host address where Novu socket is running
+      backendUrl="http://<your-docker-host>:3000" // Docker host address where Notify API is running
+      socketUrl="http://<your-docker-host>:3002" // Docker host address where Notify socket is running
       routerPush={(path: string) => navigate(path)}
     />
   );
@@ -121,25 +121,25 @@ Adjust the `backendUrl` and `socketUrl` based on your deployment:
 
 Once your application is running, you should see the bell icon in your navbar. Clicking it will open the notification inbox UI.
 
-To test notifications, create and trigger a workflow from your self-hosted Novu dashboard, selecting In-App as the channel.
+To test notifications, create and trigger a workflow from your self-hosted Notify dashboard, selecting In-App as the channel.
 
 For more information on customizing the Inbox component, refer to the [Inbox documentation](/platform/inbox).
 
 ## Initializing the Server SDK
 
-When using a self-hosted Novu deployment with your backend services, configure the server SDK to connect to your Docker-hosted Novu API instance.
+When using a self-hosted Notify deployment with your backend services, configure the server SDK to connect to your Docker-hosted Notify API instance.
 
 ### Install the package
 
 <Tabs>
   <Tab title="Node.js">
     ```bash
-    npm install @novu/api
+    npm install @notify/api
     ```
   </Tab>
   <Tab title="Python">
     ```bash
-    pip install novu-py
+    pip install notify-py
     ```
   </Tab>
   <Tab title="Go">
@@ -154,7 +154,7 @@ When using a self-hosted Novu deployment with your backend services, configure t
   </Tab>
   <Tab title=".NET">
     ```bash
-    dotnet add package Novu
+    dotnet add package Notify
     ```
   </Tab>
   <Tab title="Java">
@@ -162,7 +162,7 @@ When using a self-hosted Novu deployment with your backend services, configure t
     ```xml
     <dependency>
       <groupId>co.novu</groupId>
-      <artifactId>novu-java</artifactId>
+      <artifactId>notify-java</artifactId>
       <version>LATEST</version>
     </dependency>
     ```
@@ -176,9 +176,9 @@ Configure the SDK with your self-hosted backend URL:
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({
+const notify = new Notify({
   secretKey: '<YOUR_SECRET_KEY_HERE>',
   serverURL: 'http://<your-docker-host>:3000',
 });
@@ -187,9 +187,9 @@ const novu = new Novu({
   <Tab title="Python">
 ```python
 import os
-from novu_py import Novu
+from novu_py import Notify
 
-novu = Novu(
+notify = Notify(
     secret_key=os.getenv('NOVU_SECRET_KEY', ''),
     server_url='http://<your-docker-host>:3000',
 )
@@ -210,9 +210,9 @@ s := novugo.New(
   </Tab>
   <Tab title="PHP">
 ```php
-use novu;
+use notify;
 
-$novu = novu\Novu::builder()
+$notify = notify\Notify::builder()
     ->setServerURL('http://<your-docker-host>:3000')
     ->setSecurity('<YOUR_SECRET_KEY_HERE>')
     ->build();
@@ -220,9 +220,9 @@ $novu = novu\Novu::builder()
   </Tab>
   <Tab title=".NET">
 ```csharp
-using Novu;
+using Notify;
 
-var novu = new NovuSDK(
+var notify = new NovuSDK(
     serverUrl: "http://<your-docker-host>:3000",
     secretKey: "<YOUR_SECRET_KEY_HERE>"
 );
@@ -230,9 +230,9 @@ var novu = new NovuSDK(
   </Tab>
   <Tab title="Java">
 ```java
-import co.novu.Novu;
+import co.novu.Notify;
 
-Novu novu = Novu.builder()
+Notify novu = Notify.builder()
     .serverUrl("http://<your-docker-host>:3000")
     .secretKey("<YOUR_SECRET_KEY_HERE>")
     .build();
@@ -292,7 +292,7 @@ _, err := s.Trigger(ctx, components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-$novu->trigger(
+$notify->trigger(
     triggerEventRequestDto: new Components\TriggerEventRequestDto(
         workflowId: 'workflowId',
         to: new Components\SubscriberPayloadDto(subscriberId: 'subscriberId'),
@@ -341,11 +341,11 @@ For more information on using the server SDKs, refer to the [Server-Side SDKs do
 
 #### Setting Up the bridge application
 
-The bridge application is application where workflow definition are written using `@novu/framework`. Here's how to set it up:
+The bridge application is application where workflow definition are written using `@notify/framework`. Here's how to set it up:
 
 ```bash
 # Initialize the bridge application
-npx novu@latest init \
+npx notify@latest init \
   --secret-key=<secret_key> \
   --api-url=http://localhost:3000
 
@@ -356,7 +356,7 @@ npm install
 npm run dev -- --port 4005
 ```
 
-A Next.js bridge application with a sample `@novu/framework` workflow runs on the port you choose (for example `http://localhost:4005`). Visit `http://localhost:4005/api/novu` to verify the bridge endpoint.
+A Next.js bridge application with a sample `@notify/framework` workflow runs on the port you choose (for example `http://localhost:4005`). Visit `http://localhost:4005/api/notify` to verify the bridge endpoint.
 
 <Warning>
   The self-hosted Dashboard also runs on port **4000**. Use a different port (such as **4005**) for your bridge application to avoid a conflict.
@@ -364,21 +364,21 @@ A Next.js bridge application with a sample `@novu/framework` workflow runs on th
 
 #### Setting up local development
 
-[Local development](/framework/studio) with `npx novu dev` opens the Novu Dashboard in Local mode, so you can test and manage the workflows running on your machine. The setup varies based on your deployment:
+[Local development](/framework/studio) with `npx notify dev` opens the Notify Dashboard in Local mode, so you can test and manage the workflows running on your machine. The setup varies based on your deployment:
 
 <Tabs>
   <Tab title="Local">
 
-if novu is run using above docker compose command in local machine, use below commmand
+if notify is run using above docker compose command in local machine, use below commmand
 
 ```bash
-npx novu@latest dev -d http://localhost:4000 -p 4005
+npx notify@latest dev -d http://localhost:4000 -p 4005
 ```
 
 Following actions will occur:
 
 - Your self-hosted Dashboard will open in the **Local** environment,
-- Novu will generate a tunnel url that will forward the request to bridge application running on `<bridge_application_port>`
+- Notify will generate a tunnel url that will forward the request to bridge application running on `<bridge_application_port>`
 - The Local environment will use `http://localhost:4000` as dashboard url
 
 **Using bridge application url as bridge url**
@@ -386,7 +386,7 @@ Following actions will occur:
 To use bridge application url as bridge url, use below command:
 
 ```bash
-npx novu@latest dev -d http://localhost:4000 -p 4005 -t http://host.docker.internal:4005
+npx notify@latest dev -d http://localhost:4000 -p 4005 -t http://host.docker.internal:4005
 ```
 
 <Warning>
@@ -409,10 +409,10 @@ extra_hosts:
 NOVU_API_URL=http://<vps-ip-address>:3000
 
 # Start local development with your VPS dashboard URL and bridge application URL
-npx novu@latest dev -d http://<vps-ip-address>:4000
+npx notify@latest dev -d http://<vps-ip-address>:4000
 ```
 
-Check all [available flags](/framework/studio#novu-cli-flags) with `npx novu dev` command
+Check all [available flags](/framework/studio#notify-cli-flags) with `npx notify dev` command
 
   </Tab>
 </Tabs>
@@ -423,8 +423,8 @@ Check all [available flags](/framework/studio#novu-cli-flags) with `npx novu dev
   <Tab title="Local">
 
 ```bash
-npx novu@latest sync \
-  --bridge-url <tunnel-url>/api/novu \
+npx notify@latest sync \
+  --bridge-url <tunnel-url>/api/notify \
   --api-url http://localhost:3000 \
   --secret-key <secret_key>
 ```
@@ -433,8 +433,8 @@ npx novu@latest sync \
   <Tab title="VPS">
 
 ```bash
-npx novu@latest sync \
-  --bridge-url <tunnel_url>/api/novu \
+npx notify@latest sync \
+  --bridge-url <tunnel_url>/api/notify \
   --api-url http://<vps-ip-address>:3000 \
   --secret-key <secret_key>
 ```
@@ -454,14 +454,14 @@ When deploying to a VPS, consider these additional security measures:
 
 ### Triggering events with custom installation
 
-When self-hosting Novu, configure your server SDK with the self-hosted `serverURL` (or `server_url`) before triggering events.
+When self-hosting Notify, configure your server SDK with the self-hosted `serverURL` (or `server_url`) before triggering events.
 
 <Tabs>
   <Tab title="Node.js">
 ```typescript
-import { Novu } from '@novu/api';
+import { Notify } from '@notify/api';
 
-const novu = new Novu({
+const notify = new Notify({
   secretKey: '<YOUR_SECRET_KEY_HERE>',
   serverURL: 'http://<your-docker-host>:3000',
 });
@@ -475,9 +475,9 @@ await novu.trigger({
   </Tab>
   <Tab title="Python">
 ```python
-from novu_py import Novu
+from novu_py import Notify
 
-novu = Novu(
+notify = Notify(
     secret_key='<YOUR_SECRET_KEY_HERE>',
     server_url='http://<your-docker-host>:3000',
 )
@@ -507,12 +507,12 @@ _, err := s.Trigger(ctx, components.TriggerEventRequestDto{
   </Tab>
   <Tab title="PHP">
 ```php
-$novu = novu\Novu::builder()
+$notify = notify\Notify::builder()
     ->setServerURL('http://<your-docker-host>:3000')
     ->setSecurity('<YOUR_SECRET_KEY_HERE>')
     ->build();
 
-$novu->trigger(
+$notify->trigger(
     triggerEventRequestDto: new Components\TriggerEventRequestDto(
         workflowId: 'workflowId',
         to: new Components\SubscriberPayloadDto(subscriberId: 'subscriberId'),
@@ -523,7 +523,7 @@ $novu->trigger(
   </Tab>
   <Tab title=".NET">
 ```csharp
-var novu = new NovuSDK(
+var notify = new NovuSDK(
     serverUrl: "http://<your-docker-host>:3000",
     secretKey: "<YOUR_SECRET_KEY_HERE>"
 );
@@ -536,7 +536,7 @@ await novu.TriggerAsync(new TriggerEventRequestDto {
   </Tab>
   <Tab title="Java">
 ```java
-Novu novu = Novu.builder()
+Notify novu = Notify.builder()
     .serverUrl("http://<your-docker-host>:3000")
     .secretKey("<YOUR_SECRET_KEY_HERE>")
     .build();
@@ -572,34 +572,34 @@ Currently, caching is applied in the most heavily loaded areas of the system: In
 
 ### Reverse-Proxy / Load Balancers
 
-To implement a reverse-proxy or load balancer in front of Novu, you need to set the GLOBAL_CONTEXT_PATH for the base path of the application. This is the path that the application will be served from after the domain. For example: - company.com/novu This is used to set the base path for the application, and is used to set the base path for the API, Dashboard, and WebSocket connections.
+To implement a reverse-proxy or load balancer in front of Notify, you need to set the GLOBAL_CONTEXT_PATH for the base path of the application. This is the path that the application will be served from after the domain. For example: - company.com/novu This is used to set the base path for the application, and is used to set the base path for the API, Dashboard, and WebSocket connections.
 
 The following environment variables set the context path for each public service: `API_CONTEXT_PATH`, `WS_CONTEXT_PATH`, `WEBHOOK_CONTEXT_PATH`, and `FRONT_BASE_CONTEXT_PATH`.
 
 These can be set independently or together with `GLOBAL_CONTEXT_PATH`.
 
-For example, to serve Novu from `company.com/novu`, set `GLOBAL_CONTEXT_PATH=novu`, then set `API_CONTEXT_PATH=api` and `WS_CONTEXT_PATH=ws`. That produces:
+For example, to serve Notify from `company.com/novu`, set `GLOBAL_CONTEXT_PATH=notify`, then set `API_CONTEXT_PATH=api` and `WS_CONTEXT_PATH=ws`. That produces:
 
 - API: `company.com/novu/api`
 - WS: `company.com/novu/ws`
 
-You can also set a service context path without `GLOBAL_CONTEXT_PATH`. For example, `API_CONTEXT_PATH=novu-api` exposes the API at `company.com/novu-api`.
+You can also set a service context path without `GLOBAL_CONTEXT_PATH`. For example, `API_CONTEXT_PATH=notify-api` exposes the API at `company.com/novu-api`.
 
 The Dashboard container is served separately on its configured port (default **4000**) and is not controlled by these API/WS context-path variables.
 
 <Note>
-  These env variables should be present on all services novu provides due to tight coupling.
+  These env variables should be present on all services notify provides due to tight coupling.
 </Note>
 
 ## FAQs
 
 <AccordionGroup>
   <Accordion title="Local Tunnel and Self-Hosted Deployments">
-    Novu uses a local tunnel as bridge url. It can be used as bridge url during local development (`npx novu dev`) and for testing purpose in development environment. It should not be used in production environment. It is recommended to use deployed application url as bridge url
+    Notify uses a local tunnel as bridge url. It can be used as bridge url during local development (`npx notify dev`) and for testing purpose in development environment. It should not be used in production environment. It is recommended to use deployed application url as bridge url
   </Accordion>
 
   <Accordion title="When is Local Tunnel Not Required?">
-    If the customer's application and the self-hosted Novu deployment are within the same network, there is no need for a local tunnel. In this case, the application can communicate directly with Novu through the internal network. Checkout `Using bridge application url as bridge url` section to learn more.
+    If the customer's application and the self-hosted Notify deployment are within the same network, there is no need for a local tunnel. In this case, the application can communicate directly with Notify through the internal network. Checkout `Using bridge application url as bridge url` section to learn more.
 
     Private or loopback bridge URLs (for example `http://10.x.x.x/...` or `http://127.0.0.1/...`) are blocked by outbound SSRF protection by default. Allow specific internal hosts or CIDRs with `NOVU_SAFE_OUTBOUND_ALLOW` on the API and Worker services:
 
@@ -611,12 +611,12 @@ The Dashboard container is served separately on its configured port (default **4
   </Accordion>
 
   <Accordion title="When is Local Tunnel Required?">
-    If the application and Novu deployment reside on different networks, you can still interact with your self-hosted Novu instance using the Novu CLI. The CLI allows you to specify the Dashboard URL and Bridge Endpoint Origin to enable communication across networks via the Novu Cloud Local Tunnel.
+    If the application and Notify deployment reside on different networks, you can still interact with your self-hosted Notify instance using the Notify CLI. The CLI allows you to specify the Dashboard URL and Bridge Endpoint Origin to enable communication across networks via the Notify Cloud Local Tunnel.
 
     For example, you can use the following command:
 
     ```bash
-    npx novu@latest dev -d http://my-self-hosted-novu-domain.com:my-port
+    npx notify@latest dev -d http://my-self-hosted-novu-domain.com:my-port
     ```
   </Accordion>
 </AccordionGroup>

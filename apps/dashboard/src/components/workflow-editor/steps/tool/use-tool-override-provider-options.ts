@@ -1,4 +1,4 @@
-import { ChannelTypeEnum } from '@novu/shared';
+import { ChannelTypeEnum } from '@notify/shared';
 import { useMemo } from 'react';
 import { type OverrideFieldSchema } from '@/components/workflow-editor/steps/shared/provider-overrides/override-field-schema';
 import { useProviderOverrideOptions } from '@/components/workflow-editor/steps/shared/provider-overrides/use-provider-override-options';

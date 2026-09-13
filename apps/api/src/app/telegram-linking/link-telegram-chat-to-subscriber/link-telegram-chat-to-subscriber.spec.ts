@@ -1,5 +1,5 @@
 import { NotFoundException } from '@nestjs/common';
-import { ChatProviderIdEnum, ENDPOINT_TYPES } from '@novu/shared';
+import { ChatProviderIdEnum, ENDPOINT_TYPES } from '@notify/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { LinkTelegramChatToSubscriberCommand } from './link-telegram-chat-to-subscriber.command';

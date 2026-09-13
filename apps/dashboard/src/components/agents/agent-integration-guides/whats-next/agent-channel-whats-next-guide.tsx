@@ -1,4 +1,4 @@
-import type { ICredentials } from '@novu/shared';
+import type { ICredentials } from '@notify/shared';
 import { useMemo, useState } from 'react';
 import { RiExpandUpDownLine } from 'react-icons/ri';
 import type { AgentIntegrationLink, AgentResponse } from '@/api/agents';

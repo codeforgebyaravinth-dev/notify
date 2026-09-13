@@ -1,5 +1,5 @@
-import { ConversationActivitySenderTypeEnum, ConversationActivityTypeEnum, ConversationStatusEnum } from '@novu/dal';
-import { testServer } from '@novu/testing';
+import { ConversationActivitySenderTypeEnum, ConversationActivityTypeEnum, ConversationStatusEnum } from '@notify/dal';
+import { testServer } from '@notify/testing';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { OutboundGateway } from '../conversation-runtime/egress/outbound.gateway';

@@ -6,7 +6,7 @@ import {
   RotatingConnectionTokenService,
   UpdateSubscriber,
   UpdateSubscriberChannel,
-} from '@novu/application-generic';
+} from '@notify/application-generic';
 import {
   ChannelConnectionRepository,
   CommunityOrganizationRepository,
@@ -14,7 +14,7 @@ import {
   EnvironmentRepository,
   IntegrationRepository,
   SubscriberRepository,
-} from '@novu/dal';
+} from '@notify/dal';
 import { SharedModule } from '../shared/shared.module';
 import { ChannelConnectionsController } from './channel-connections.controller';
 import { CreateChannelConnection } from './usecases/create-channel-connection/create-channel-connection.usecase';

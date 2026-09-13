@@ -1,7 +1,7 @@
 'use client';
 
 // First export to override anything that we redeclare
-export type * from '@novu/react';
+export type * from '@notify/react';
 export {
   Bell,
   InboxContent,
@@ -19,6 +19,6 @@ export {
   TelegramConnectButton,
   useNovu,
   WorkflowCriticalityEnum,
-} from '@novu/react';
+} from '@notify/react';
 export { Inbox } from './Inbox';
 export { Subscription } from './Subscription';
